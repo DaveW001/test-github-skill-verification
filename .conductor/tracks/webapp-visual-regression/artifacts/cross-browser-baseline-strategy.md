@@ -16,12 +16,13 @@ Define how Firefox and WebKit visual checks are introduced without destabilizing
   - `visual-cross-browser-report-*`
   - `visual-cross-browser-results-*`
 - Keep Chromium as the only blocking gate.
-- Current default fallback in workflow is `non_blocking` unless overridden.
+- This mode can still be selected manually via workflow input.
 
 ### Mode 3: `blocking`
 - Run Firefox/WebKit checks in CI.
 - Fail workflow on cross-browser failures.
 - Use after at least 1-2 weeks of stable non-blocking signal.
+- Current workflow fallback default is `blocking` (with override via `VISUAL_CROSS_BROWSER_MODE` or dispatch input).
 
 ## Activation Controls
 - Workflow input: `cross_browser_mode` (`off`, `non_blocking`, `blocking`)

@@ -134,8 +134,8 @@
 **Goal:** Expand coverage after Phase 1-3 stability is proven.
 
 ### Task 4.1: Cross-Browser Visual Checks
-- [~] Add Firefox and WebKit projects (scaffolded behind `PW_CROSS_BROWSER=1`)
-- [~] Maintain browser-specific baselines where needed (strategy documented; Firefox/WebKit baselines validated for component pack + full P0 matrix; awaiting CI streak before blocking mode)
+- [x] Add Firefox and WebKit projects (scaffolded behind `PW_CROSS_BROWSER=1`)
+- [x] Maintain browser-specific baselines where needed (strategy documented; Firefox/WebKit baselines validated; blocking mode enabled)
 
 ### Task 4.2: Component-Level Visuals
 - [x] Add optional component visual runs
@@ -150,7 +150,7 @@
 - [x] Document reliable long-page capture patterns
 
 ### Phase 4 Deliverables
-- [~] Cross-browser visual coverage
+- [x] Cross-browser visual coverage
 - [x] Component-level visual examples
 - [x] Accessibility visual checks
 - [x] Long-content capture helpers
@@ -158,7 +158,7 @@
 ## Current Status
 
 ### In Progress
-- [~] Phase 4 Advanced Expansion
+- [ ] None
 
 ### Completed
 - [x] Initial planning and scope alignment
@@ -184,9 +184,11 @@
 - [x] Initial Firefox/WebKit baseline validation completed (component pack + full P0 matrix)
 - [x] Weekday CI schedule added to build cross-browser stability signal
 - [x] Stability-log helper script added (`npm run test:visual:stability-log`)
+- [x] Five non-blocking CI cycles recorded from GitHub workflow dispatch runs
+- [x] Default cross-browser mode promoted to `blocking`
 
 ### Pending
-- [ ] Phase 4 execution
+- [ ] Monitor first blocking cross-browser CI cycle and triage if needed
 
 ### Blocked (Needs Target App Inputs)
 - [ ] Refine selectors for mobile-menu overlay behavior to support strict CI enforcement
@@ -210,6 +212,6 @@
 3. Should full-suite visual runs be nightly or manual-only initially?
 
 ## Progress Snapshot
-**Current Phase:** 4 of 4  
+**Current Phase:** 4 of 4 (complete)  
 **Plan Health:** On track  
-**Last Updated:** 2026-03-05 (phase-4 kickoff: cross-browser CI guard modes and baseline strategy added)
+**Last Updated:** 2026-03-06 (cross-browser promoted to blocking after 5 successful non-blocking CI runs)

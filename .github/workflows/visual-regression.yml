@@ -62,7 +62,7 @@ jobs:
       VISUAL_RUN_MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.run_mode || 'p0' }}
       VISUAL_UPDATE_BASELINES: ${{ github.event_name == 'workflow_dispatch' && inputs.update_baselines && '1' || '0' }}
       VISUAL_CONFIG: .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts
-      VISUAL_CROSS_BROWSER_MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.cross_browser_mode || vars.VISUAL_CROSS_BROWSER_MODE || 'non_blocking' }}
+      VISUAL_CROSS_BROWSER_MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.cross_browser_mode || vars.VISUAL_CROSS_BROWSER_MODE || 'blocking' }}
 
     steps:
       - name: Checkout

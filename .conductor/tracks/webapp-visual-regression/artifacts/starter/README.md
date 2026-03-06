@@ -57,7 +57,7 @@ This starter kit provides an executable baseline for Phase 1 visual QA using Pla
 - Synthetic known-bad guard tests are included to validate detector behavior.
 - Cross-browser rollout strategy and CI policy: `../cross-browser-baseline-strategy.md`
 - Cross-browser stability tracker: `../cross-browser-stability-log.md`
-- CI defaults cross-browser mode to `non_blocking` unless overridden by `VISUAL_CROSS_BROWSER_MODE` or workflow input.
+- CI defaults cross-browser mode to `blocking` unless overridden by `VISUAL_CROSS_BROWSER_MODE` or workflow input.
 - CI schedule is enabled for weekday automatic runs (14:00 UTC) to accumulate stability signal.
 - Storybook/component rollout plan: `../storybook-adoption-path.md`
 - Long-page capture patterns: `../long-page-capture-patterns.md`

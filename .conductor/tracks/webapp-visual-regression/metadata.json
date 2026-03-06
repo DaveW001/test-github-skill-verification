@@ -1,9 +1,9 @@
 {
   "trackId": "webapp-visual-regression",
   "title": "WebApp Visual QA and Regression Track",
-  "status": "active",
+  "status": "completed",
   "created": "2026-03-04",
-  "completed": null,
+  "completed": "2026-03-06",
   "estimatedHours": "80",
   "assignedTo": "Dave Witkin",
   "type": "feature",
@@ -16,8 +16,8 @@
   ],
   "progress": {
     "totalTasks": 34,
-    "completedTasks": 32,
-    "percentage": 94
+    "completedTasks": 34,
+    "percentage": 100
   },
   "summary": "Implement a practical visual QA workflow centered on Playwright native snapshots, deterministic rendering, page/state manifests, and controlled baseline governance. Start with a Chromium-only Phase 1 MVP, then add layout guardrails, CI gating, and advanced coverage.",
   "keyOutcomes": [
@@ -121,11 +121,11 @@
     },
     {
       "name": "Phase 4: Advanced Expansion",
-      "status": "in-progress",
-      "completion": 96,
+      "status": "completed",
+      "completion": 100,
       "tasks": 4,
-      "completedTasks": 3,
-      "focus": "Component visuals, accessibility guards, and long-content helpers are implemented; Firefox/WebKit baselines are validated and CI streak tooling is in place before blocking promotion"
+      "completedTasks": 4,
+      "focus": "Cross-browser baselines validated, five non-blocking CI runs recorded, and default mode promoted to blocking"
     }
   ],
   "priority": "high",
