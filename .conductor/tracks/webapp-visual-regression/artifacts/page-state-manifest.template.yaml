@@ -1,0 +1,128 @@
+version: 1
+trackId: webapp-visual-regression
+description: >
+  Phase 1 visual QA manifest template. Defines which pages/states are captured,
+  across which viewports, and how noisy regions are handled.
+
+owners:
+  product: ""
+  design: ""
+  engineering: ""
+
+deterministicProfile:
+  locale: en-US
+  timezoneId: UTC
+  colorScheme: light
+  reducedMotion: reduce
+  animationPolicy:
+    disableCssAnimations: true
+    disableTransitions: true
+  readiness:
+    waitForNetworkIdle: true
+    waitForFontsReady: true
+    waitForImageLoadSelectors: []
+  volatileContentPolicy:
+    ignoreSelectors: []
+    ignoreRegions: []
+
+viewportMatrix:
+  - id: mobile-narrow
+    width: 360
+    height: 800
+  - id: mobile
+    width: 390
+    height: 844
+  - id: tablet
+    width: 768
+    height: 1024
+  - id: laptop
+    width: 1366
+    height: 768
+  - id: desktop
+    width: 1920
+    height: 1080
+
+severityModel:
+  blocker:
+    - content hidden by sticky/fixed chrome
+    - critical CTA off-screen or clipped
+    - horizontal overflow on default content
+  warn:
+    - obvious spacing/alignment drift
+    - non-critical overlap or truncation
+  info:
+    - minor cosmetic drift within review band
+
+pages:
+  - id: example-page-id
+    route: /example
+    owner: engineering
+    priority: P0 # P0 blocks PR by default
+    visualGate: true
+    tags: [core, responsive]
+    states:
+      - id: default
+        preconditions: []
+        capture:
+          mode: full-page # full-page | viewport
+          scrollProbes: [top, mid, lower]
+        thresholds:
+          maxDiffPixels: 200
+          maxDiffPixelRatio: 0.002
+      - id: empty
+        preconditions:
+          - "Use fixture with no records"
+        capture:
+          mode: full-page
+          scrollProbes: [top]
+        thresholds:
+          maxDiffPixels: 200
+          maxDiffPixelRatio: 0.002
+      - id: loading
+        preconditions:
+          - "Delay API response"
+        capture:
+          mode: viewport
+          scrollProbes: [top]
+        thresholds:
+          maxDiffPixels: 150
+          maxDiffPixelRatio: 0.002
+      - id: error
+        preconditions:
+          - "Force API 500"
+        capture:
+          mode: viewport
+          scrollProbes: [top]
+        thresholds:
+          maxDiffPixels: 150
+          maxDiffPixelRatio: 0.002
+      - id: overlay
+        preconditions:
+          - "Open modal/drawer/menu"
+        capture:
+          mode: viewport
+          scrollProbes: [top]
+        thresholds:
+          maxDiffPixels: 200
+          maxDiffPixelRatio: 0.002
+      - id: long-content
+        preconditions:
+          - "Load long list/content"
+        capture:
+          mode: full-page
+          scrollProbes: [top, mid, lower]
+        thresholds:
+          maxDiffPixels: 300
+          maxDiffPixelRatio: 0.003
+
+governance:
+  baselineUpdates:
+    requiresApproval: true
+    approvedBy: []
+    requirePrRationale: true
+    allowAutoUpdateInPrChecks: false
+  reviewChecklist:
+    - Any new horizontal scrollbars?
+    - Any heading/CTA obscured by sticky header?
+    - Any clipped/off-canvas content?
+    - Any obvious spacing/alignment regression?

@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "test:visual": "npm run test:visual:p0",
+    "test:visual:p0": "playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts tests/visual/p0.visual.spec.ts",
+    "test:visual:components": "playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts tests/visual/components.synthetic.spec.ts",
+    "test:visual:full": "playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts",
+    "test:visual:cross:p0": "set PW_CROSS_BROWSER=1&& playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts tests/visual/p0.visual.spec.ts --project=firefox --project=webkit",
+    "test:visual:cross:components": "set PW_CROSS_BROWSER=1&& playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts tests/visual/components.synthetic.spec.ts --project=firefox --project=webkit",
+    "test:visual:cross": "set PW_CROSS_BROWSER=1&& playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts",
+    "test:visual:update": "playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts tests/visual/p0.visual.spec.ts --update-snapshots",
+    "test:visual:update:components": "playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts tests/visual/components.synthetic.spec.ts --update-snapshots",
+    "test:visual:update:cross": "set PW_CROSS_BROWSER=1&& playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts --update-snapshots",
+    "test:visual:update:full": "playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts --update-snapshots",
+    "test:visual:report": "playwright show-report .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright-report",
+    "test:visual:stability-log": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Update-CrossBrowserStabilityLog.ps1"
+  },
+  "dependencies": {
+    "openwork-orchestrator": "^0.11.126"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  }
+}

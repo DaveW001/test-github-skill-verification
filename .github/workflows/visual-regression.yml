@@ -1,0 +1,293 @@
+name: Visual Regression
+
+on:
+  pull_request:
+    branches: [main, master]
+    paths:
+      - '.github/workflows/visual-regression.yml'
+      - '.github/pull_request_template.md'
+      - '.conductor/tracks/webapp-visual-regression/**'
+      - 'package.json'
+      - 'package-lock.json'
+  schedule:
+    - cron: '0 14 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      run_mode:
+        description: "Visual scope to run"
+        required: true
+        default: "p0"
+        type: choice
+        options:
+          - p0
+          - components
+          - full
+      update_baselines:
+        description: "Update snapshots with --update-snapshots"
+        required: true
+        default: false
+        type: boolean
+      base_url:
+        description: "Optional app URL override"
+        required: false
+        default: ""
+        type: string
+      app_start_command:
+        description: "Optional app start command override"
+        required: false
+        default: ""
+        type: string
+      cross_browser_mode:
+        description: "Cross-browser run policy"
+        required: true
+        default: "off"
+        type: choice
+        options:
+          - off
+          - non_blocking
+          - blocking
+
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON((github.event_name == 'workflow_dispatch' && (inputs.update_baselines || inputs.run_mode == 'full' || inputs.run_mode == 'components')) && '[{"id":"single","label":"single-run","grep":""}]' || '[{"id":"p0-mobile","label":"p0-mobile-tablet","grep":"p0 visual (mobile-narrow|mobile|tablet)"},{"id":"p0-desktop","label":"p0-laptop-desktop","grep":"p0 visual (laptop|desktop)"}]') }}
+    env:
+      PW_BASE_URL: ${{ github.event_name == 'workflow_dispatch' && inputs.base_url || vars.VISUAL_APP_BASE_URL || 'http://localhost:3000' }}
+      VISUAL_APP_START_COMMAND: ${{ github.event_name == 'workflow_dispatch' && inputs.app_start_command || vars.VISUAL_APP_START_COMMAND }}
+      VISUAL_REQUIRED: ${{ github.event_name == 'pull_request' && '1' || '0' }}
+      VISUAL_RUN_MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.run_mode || 'p0' }}
+      VISUAL_UPDATE_BASELINES: ${{ github.event_name == 'workflow_dispatch' && inputs.update_baselines && '1' || '0' }}
+      VISUAL_CONFIG: .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts
+      VISUAL_CROSS_BROWSER_MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.cross_browser_mode || vars.VISUAL_CROSS_BROWSER_MODE || 'non_blocking' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect baseline snapshot changes
+        if: ${{ github.event_name == 'pull_request' }}
+        id: snapshotcheck
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          changed=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" | grep -E '^\.conductor/tracks/webapp-visual-regression/artifacts/starter/snapshots/.*\.png$' || true)
+          if [ -n "$changed" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Detected baseline snapshot changes:"
+            printf '%s\n' "$changed"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Enforce baseline rationale on PR
+        if: ${{ github.event_name == 'pull_request' && steps.snapshotcheck.outputs.changed == 'true' }}
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_LABELS: ${{ toJSON(github.event.pull_request.labels.*.name) }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import re
+          import sys
+
+          body = os.getenv("PR_BODY", "") or ""
+          labels_raw = os.getenv("PR_LABELS", "[]")
+          try:
+              labels = [str(x).lower() for x in json.loads(labels_raw)]
+          except Exception:
+              labels = []
+
+          checks = [
+              (r"-\s*\[x\]\s*This PR updates visual baselines", "Check the baseline update box in PR template."),
+              (r"Why the visual change is intentional:\s*\S", "Fill 'Why the visual change is intentional'."),
+              (r"Routes/states affected:\s*\S", "Fill 'Routes/states affected'."),
+              (r"Reviewer focus areas:\s*\S", "Fill 'Reviewer focus areas'."),
+          ]
+          failures = [msg for pattern, msg in checks if not re.search(pattern, body, flags=re.IGNORECASE | re.DOTALL)]
+          if "visual-baseline-approved" not in labels:
+              failures.append("Add PR label 'visual-baseline-approved' to confirm baseline approval.")
+          if failures:
+              for msg in failures:
+                  print(f"::error::{msg}")
+              sys.exit(1)
+          print("Baseline rationale checks passed.")
+          PY
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browser (chromium)
+        run: npx playwright install chromium --with-deps
+
+      - name: Install Playwright browsers (cross-browser mode)
+        if: ${{ env.VISUAL_CROSS_BROWSER_MODE != 'off' }}
+        run: npx playwright install firefox webkit --with-deps
+
+      - name: Start app (optional)
+        if: ${{ env.VISUAL_APP_START_COMMAND != '' }}
+        shell: bash
+        run: |
+          nohup bash -lc "$VISUAL_APP_START_COMMAND" > visual-app.log 2>&1 &
+
+      - name: Check app availability
+        id: appcheck
+        shell: bash
+        run: |
+          set +e
+          ok=0
+          for i in {1..30}; do
+            curl -fsS "$PW_BASE_URL" >/dev/null && ok=1 && break
+            sleep 2
+          done
+          if [ "$ok" -eq 1 ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+            echo "App reachable at $PW_BASE_URL"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            if [ "$VISUAL_REQUIRED" = "1" ]; then
+              echo "::error::Visual app not reachable at $PW_BASE_URL. Failing because VISUAL_REQUIRED=1."
+              exit 1
+            fi
+            echo "::warning::Visual app not reachable at $PW_BASE_URL. Skipping visual suite."
+          fi
+
+      - name: Run visual regression suite
+        id: visualrun
+        if: ${{ steps.appcheck.outputs.available == 'true' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test_cmd="npx playwright test -c $VISUAL_CONFIG"
+          if [ "$VISUAL_RUN_MODE" = "p0" ] && [ "${{ matrix.id }}" != "single" ]; then
+            test_cmd="$test_cmd tests/visual/p0.visual.spec.ts --grep \"${{ matrix.grep }}\""
+          elif [ "$VISUAL_RUN_MODE" = "p0" ]; then
+            test_cmd="$test_cmd tests/visual/p0.visual.spec.ts"
+          elif [ "$VISUAL_RUN_MODE" = "components" ]; then
+            test_cmd="$test_cmd tests/visual/components.synthetic.spec.ts"
+          fi
+          if [ "$VISUAL_UPDATE_BASELINES" = "1" ]; then
+            test_cmd="$test_cmd --update-snapshots"
+          fi
+          echo "command=$test_cmd" >> "$GITHUB_OUTPUT"
+          echo "Running: $test_cmd"
+          bash -lc "$test_cmd"
+
+      - name: Run cross-browser suite
+        id: crossrun
+        if: ${{ steps.appcheck.outputs.available == 'true' && env.VISUAL_CROSS_BROWSER_MODE != 'off' && env.VISUAL_UPDATE_BASELINES != '1' }}
+        shell: bash
+        run: |
+          set +e
+          cross_cmd="npx playwright test -c $VISUAL_CONFIG --project=firefox --project=webkit"
+          if [ "$VISUAL_RUN_MODE" = "p0" ]; then
+            cross_cmd="$cross_cmd tests/visual/p0.visual.spec.ts"
+          elif [ "$VISUAL_RUN_MODE" = "components" ]; then
+            cross_cmd="$cross_cmd tests/visual/components.synthetic.spec.ts"
+          fi
+          echo "command=$cross_cmd" >> "$GITHUB_OUTPUT"
+          echo "Running: $cross_cmd"
+          PW_CROSS_BROWSER=1 PW_REPORT_DIR=playwright-report-cross PW_TEST_OUTPUT_DIR=test-results-cross bash -lc "$cross_cmd"
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -ne 0 ]; then
+            if [ "$VISUAL_CROSS_BROWSER_MODE" = "blocking" ]; then
+              echo "outcome=failed" >> "$GITHUB_OUTPUT"
+              echo "::error::Cross-browser suite failed in blocking mode."
+              exit "$code"
+            fi
+            echo "outcome=warning" >> "$GITHUB_OUTPUT"
+            echo "::warning::Cross-browser suite failed in non-blocking mode; see cross-browser artifacts."
+            exit 0
+          fi
+          echo "outcome=passed" >> "$GITHUB_OUTPUT"
+
+      - name: Upload cross-browser report
+        if: ${{ !cancelled() && env.VISUAL_CROSS_BROWSER_MODE != 'off' && hashFiles('.conductor/tracks/webapp-visual-regression/artifacts/starter/playwright-report-cross/index.html') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-cross-browser-report-${{ matrix.id }}
+          path: .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright-report-cross/
+          retention-days: 14
+
+      - name: Upload cross-browser test results
+        if: ${{ !cancelled() && env.VISUAL_CROSS_BROWSER_MODE != 'off' && hashFiles('.conductor/tracks/webapp-visual-regression/artifacts/starter/test-results-cross/**') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-cross-browser-results-${{ matrix.id }}
+          path: .conductor/tracks/webapp-visual-regression/artifacts/starter/test-results-cross/
+          retention-days: 7
+
+      - name: Upload updated snapshots
+        if: ${{ !cancelled() && env.VISUAL_UPDATE_BASELINES == '1' && hashFiles('.conductor/tracks/webapp-visual-regression/artifacts/starter/snapshots/**/*.png') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-updated-snapshots-${{ matrix.id }}
+          path: .conductor/tracks/webapp-visual-regression/artifacts/starter/snapshots/
+          retention-days: 7
+
+      - name: Upload Playwright report
+        if: ${{ !cancelled() && (hashFiles('.conductor/tracks/webapp-visual-regression/artifacts/starter/playwright-report/index.html') != '' || hashFiles('playwright-report/index.html') != '') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-playwright-report-${{ matrix.id }}
+          path: |
+            .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright-report/
+            playwright-report/
+          retention-days: 14
+
+      - name: Upload test results
+        if: ${{ failure() && hashFiles('.conductor/tracks/webapp-visual-regression/artifacts/starter/test-results/**') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-test-results-${{ matrix.id }}
+          path: .conductor/tracks/webapp-visual-regression/artifacts/starter/test-results/
+          retention-days: 7
+
+      - name: Upload app log
+        if: ${{ !cancelled() && hashFiles('visual-app.log') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-app-log-${{ matrix.id }}
+          path: visual-app.log
+          retention-days: 7
+
+      - name: CI summary
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          {
+            echo "## Visual Regression Summary"
+            echo "- Event: ${{ github.event_name }}"
+            echo "- Shard: \`${{ matrix.label }}\`"
+            echo "- Base URL: \`$PW_BASE_URL\`"
+            echo "- Mode: \`$VISUAL_RUN_MODE\`"
+            echo "- Baseline update mode: \`$VISUAL_UPDATE_BASELINES\`"
+            echo "- Cross-browser mode: \`$VISUAL_CROSS_BROWSER_MODE\`"
+            echo "- App reachable: \`${{ steps.appcheck.outputs.available || 'unknown' }}\`"
+            echo "- Test step outcome: \`${{ steps.visualrun.outcome || 'skipped' }}\`"
+            echo "- Cross-browser outcome: \`${{ steps.crossrun.outputs.outcome || 'skipped' }}\`"
+            if [ "${{ steps.appcheck.outputs.available }}" != "true" ]; then
+              echo "- Note: Visual run skipped because app was unreachable."
+            fi
+            if [ "$VISUAL_UPDATE_BASELINES" = "1" ]; then
+              echo "- Snapshot artifact: \`visual-updated-snapshots-${{ matrix.id }}\`"
+            fi
+            echo "- Report artifact: \`visual-playwright-report-${{ matrix.id }}\`"
+            if [ "$VISUAL_CROSS_BROWSER_MODE" != "off" ] && [ "$VISUAL_UPDATE_BASELINES" != "1" ]; then
+              echo "- Cross-browser report artifact: \`visual-cross-browser-report-${{ matrix.id }}\`"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

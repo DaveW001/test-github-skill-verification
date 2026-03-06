@@ -1,0 +1,249 @@
+version: 1
+trackId: webapp-visual-regression
+status: draft
+source: runtime-discovery-localhost-3000
+notes:
+  - Base URL confirmed as localhost:3000.
+  - P0 routes selected for immediate visual gate: / and /contact.
+  - Route and selector choices are from runtime HTML inspection.
+
+owners:
+  product: Dave Witkin
+  design: TBD
+  engineering: TBD
+
+execution:
+  canonicalBaseUrl: http://localhost:3000
+  fallbackBaseUrls: []
+
+deterministicProfile:
+  locale: en-US
+  timezoneId: UTC
+  colorScheme: light
+  reducedMotion: reduce
+  animationPolicy:
+    disableCssAnimations: true
+    disableTransitions: true
+  readiness:
+    waitForNetworkIdle: true
+    waitForFontsReady: true
+    waitForImageLoadSelectors: []
+  volatileContentPolicy:
+    ignoreSelectors:
+      - .timestamp
+      - .relative-time
+      - "[data-random-id]"
+      - "[aria-live='polite']"
+    ignoreRegions: []
+
+defaults:
+  capture:
+    mode: viewport
+    fullPage: false
+    scrollProbes: [top]
+  thresholds:
+    maxDiffPixels: 200
+    maxDiffPixelRatio: 0.002
+  setup:
+    fixture: default
+    mocks: []
+    actions: []
+    ready:
+      waitForSelector: main
+
+viewportMatrix:
+  - id: mobile-narrow
+    width: 360
+    height: 800
+  - id: mobile
+    width: 390
+    height: 844
+  - id: tablet
+    width: 768
+    height: 1024
+  - id: laptop
+    width: 1366
+    height: 768
+  - id: desktop
+    width: 1920
+    height: 1080
+
+severityModel:
+  blocker:
+    - content hidden by sticky/fixed chrome
+    - critical CTA off-screen or clipped
+    - horizontal overflow on default content
+  warn:
+    - obvious spacing/alignment drift
+    - non-critical overlap or truncation
+  info:
+    - minor cosmetic drift within review band
+
+pages:
+  - id: home
+    route: /
+    owner: engineering
+    priority: P0
+    visualGate: true
+    riskTargets:
+      stickyHeaderSelector: "header.fixed"
+      primaryCtaSelector: "a[href='/contact']"
+      mustBeVisibleAtProbes:
+        - selector: "a[href='/contact']"
+          probes: [top, mid]
+    states:
+      - id: default
+        expectedSeverity: blocker
+        setup:
+          fixture: default
+          mocks: []
+          actions: []
+          ready:
+            waitForSelector: "header.fixed"
+        capture:
+          mode: full-page
+          fullPage: true
+          scrollProbes: [top, mid, lower]
+        thresholds:
+          maxDiffPixels: 4500
+          maxDiffPixelRatio: 0.012
+      - id: overlay
+        expectedSeverity: warn
+        setup:
+          fixture: default
+          mocks: []
+          actions:
+            - open-mobile-menu
+          ready:
+            waitForSelector: "button[aria-haspopup='dialog']"
+        capture:
+          mode: viewport
+          fullPage: false
+          scrollProbes: [top]
+        thresholds:
+          maxDiffPixels: 220
+          maxDiffPixelRatio: 0.002
+      - id: long-content
+        expectedSeverity: blocker
+        setup:
+          fixture: default
+          mocks: []
+          actions: []
+          ready:
+            waitForSelector: "header.fixed"
+        capture:
+          mode: full-page
+          fullPage: true
+          scrollProbes: [top, mid, lower]
+        thresholds:
+          maxDiffPixels: 300
+          maxDiffPixelRatio: 0.003
+
+  - id: contact
+    route: /contact
+    owner: engineering
+    priority: P0
+    visualGate: true
+    riskTargets:
+      stickyHeaderSelector: "header.fixed"
+      primaryCtaSelector: "form button[type='submit']"
+      mustBeVisibleAtProbes:
+        - selector: "form button[type='submit']"
+          probes: [top]
+    states:
+      - id: default
+        expectedSeverity: blocker
+        setup:
+          fixture: default
+          mocks: []
+          actions: []
+          ready:
+            waitForSelector: "form"
+        capture:
+          mode: full-page
+          fullPage: true
+          scrollProbes: [top, mid]
+        thresholds:
+          maxDiffPixels: 250
+          maxDiffPixelRatio: 0.002
+      - id: error
+        expectedSeverity: blocker
+        setup:
+          fixture: default
+          mocks:
+            - route: "**/api/**"
+              behavior: fail-500
+          actions:
+            - submit-empty-or-invalid-form
+          ready:
+            waitForSelector: "form"
+        capture:
+          mode: viewport
+          fullPage: false
+          scrollProbes: [top]
+        thresholds:
+          maxDiffPixels: 200
+          maxDiffPixelRatio: 0.002
+      - id: long-content
+        expectedSeverity: warn
+        setup:
+          fixture: default
+          mocks: []
+          actions: []
+          ready:
+            waitForSelector: "form"
+        capture:
+          mode: full-page
+          fullPage: true
+          scrollProbes: [top, mid, lower]
+        thresholds:
+          maxDiffPixels: 300
+          maxDiffPixelRatio: 0.003
+
+  - id: insights
+    route: /insights
+    owner: engineering
+    priority: P1
+    visualGate: false
+    riskTargets:
+      stickyHeaderSelector: "header.fixed"
+      primaryCtaSelector: "a[href*='/contact']"
+      mustBeVisibleAtProbes: []
+    states:
+      - id: default
+        expectedSeverity: warn
+        setup:
+          fixture: default
+          mocks: []
+          actions: []
+          ready:
+            waitForSelector: "h1"
+        capture:
+          mode: full-page
+          fullPage: true
+          scrollProbes: [top, mid]
+        thresholds:
+          maxDiffPixels: 220
+          maxDiffPixelRatio: 0.002
+
+phase2RiskChecks:
+  - sticky-header-overlap
+  - horizontal-overflow
+  - off-page-elements
+  - spacing-outliers
+
+governance:
+  baselineUpdates:
+    requiresApproval: true
+    approvedBy:
+      - Dave Witkin
+    requirePrRationale: true
+    allowAutoUpdateInPrChecks: false
+  reviewChecklist:
+    - Any new horizontal scrollbars?
+    - Any heading/CTA obscured by sticky header?
+    - Any clipped/off-canvas content?
+    - Any obvious spacing/alignment regression?
+  unresolved:
+    - Confirm which P1 routes should be promoted to P0 after first week.
+    - Mobile overlay checks run by default; finalize stable app-side selector contract before enabling strict overlay mode in CI.

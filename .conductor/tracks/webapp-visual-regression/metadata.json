@@ -1,0 +1,135 @@
+{
+  "trackId": "webapp-visual-regression",
+  "title": "WebApp Visual QA and Regression Track",
+  "status": "active",
+  "created": "2026-03-04",
+  "completed": null,
+  "estimatedHours": "80",
+  "assignedTo": "Dave Witkin",
+  "type": "feature",
+  "tags": [
+    "webapp-testing",
+    "visual-regression",
+    "playwright",
+    "responsive-qa",
+    "ci-cd"
+  ],
+  "progress": {
+    "totalTasks": 34,
+    "completedTasks": 32,
+    "percentage": 94
+  },
+  "summary": "Implement a practical visual QA workflow centered on Playwright native snapshots, deterministic rendering, page/state manifests, and controlled baseline governance. Start with a Chromium-only Phase 1 MVP, then add layout guardrails, CI gating, and advanced coverage.",
+  "keyOutcomes": [
+    "Reliable visual regression checks with low false-positive noise",
+    "Coverage for key routes and UI states across critical viewports",
+    "Detection of sticky overlap, overflow, and off-page issues",
+    "PR-ready artifact workflow for fast visual triage",
+    "Controlled baseline update process with explicit approvals"
+  ],
+  "risks": [
+    {
+      "risk": "Visual noise from dynamic content causes unstable snapshots",
+      "impact": "high",
+      "mitigation": "Deterministic profile, masking policy, per-page thresholds"
+    },
+    {
+      "risk": "Baseline churn hides real regressions",
+      "impact": "high",
+      "mitigation": "Approval workflow, rationale requirement, no automatic updates"
+    },
+    {
+      "risk": "CI runtime increases with viewport matrix",
+      "impact": "medium",
+      "mitigation": "P0 page set for PR gates, parallelization, optional full runs"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "Playwright test runner",
+      "type": "external",
+      "status": "available",
+      "notes": "Native snapshot assertions are core approach"
+    },
+    {
+      "name": "GitHub Actions",
+      "type": "external",
+      "status": "required-for-phase-3",
+      "notes": "Needed for PR gating and artifact publication"
+    }
+  ],
+  "blocking": [
+    "Need final selector contract for strict mobile overlay enforcement in CI"
+  ],
+  "relatedTracks": [],
+  "deliverables": [
+    "Updated webapp-testing skill docs with deterministic visual QA workflow",
+    "Page/state manifest and viewport matrix",
+    "Manifest template at .conductor/tracks/webapp-visual-regression/artifacts/page-state-manifest.template.yaml",
+    "Initial manifest draft at .conductor/tracks/webapp-visual-regression/artifacts/page-state-manifest.draft.yaml",
+    "Execution runbook at .conductor/tracks/webapp-visual-regression/artifacts/phase1-execution-runbook.md",
+    "Deterministic profile artifact at .conductor/tracks/webapp-visual-regression/artifacts/deterministic-rendering-profile.md",
+    "Route/selector intake at .conductor/tracks/webapp-visual-regression/artifacts/app-route-selector-intake.md",
+    "Starter Playwright config at .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts",
+    "Starter P0 visual spec at .conductor/tracks/webapp-visual-regression/artifacts/starter/tests/visual/p0.visual.spec.ts",
+    "Layout guard helpers at .conductor/tracks/webapp-visual-regression/artifacts/starter/tests/visual/helpers/layout-guards.ts",
+    "Contrast guard helpers at .conductor/tracks/webapp-visual-regression/artifacts/starter/tests/visual/helpers/contrast-guards.ts",
+    "Starter CI workflow template at .conductor/tracks/webapp-visual-regression/artifacts/starter/.github/workflows/visual-regression.yml",
+    "Active CI workflow scaffold at .github/workflows/visual-regression.yml",
+    "PR template with baseline rationale at .github/pull_request_template.md",
+    "Root npm scripts for visual runs in package.json",
+    "Overlay investigation log at .conductor/tracks/webapp-visual-regression/artifacts/starter/overlay-investigation.md",
+    "Cross-browser baseline rollout strategy at .conductor/tracks/webapp-visual-regression/artifacts/cross-browser-baseline-strategy.md",
+    "Cross-browser stability log at .conductor/tracks/webapp-visual-regression/artifacts/cross-browser-stability-log.md",
+    "Component synthetic visual spec at .conductor/tracks/webapp-visual-regression/artifacts/starter/tests/visual/components.synthetic.spec.ts",
+    "Storybook adoption path at .conductor/tracks/webapp-visual-regression/artifacts/storybook-adoption-path.md",
+    "Long-page capture patterns at .conductor/tracks/webapp-visual-regression/artifacts/long-page-capture-patterns.md",
+    "Playwright snapshot-based visual checks and baseline policy",
+    "Layout guardrails for sticky overlap and overflow/off-page issues",
+    "GitHub Actions workflow with visual artifacts and governance"
+  ],
+  "validationCriteria": [
+    "Phase 1 snapshots run reliably across defined viewports and states",
+    "Visual failures produce actionable diffs and HTML report artifacts",
+    "Baseline updates require explicit workflow and approval",
+    "Layout guardrails catch known synthetic overlap/overflow failures"
+  ],
+  "phases": [
+    {
+      "name": "Phase 1: Visual Baseline MVP",
+      "status": "completed",
+      "completion": 100,
+      "tasks": 7,
+      "completedTasks": 7,
+      "focus": "Deterministic profile and native snapshot workflow operational with stable baseline and CI scaffold"
+    },
+    {
+      "name": "Phase 2: Layout Guardrails",
+      "status": "completed",
+      "completion": 100,
+      "tasks": 4,
+      "completedTasks": 4,
+      "focus": "Sticky overlap, off-page, and spacing guardrails integrated with synthetic validation"
+    },
+    {
+      "name": "Phase 3: CI/CD and PR Workflow",
+      "status": "completed",
+      "completion": 100,
+      "tasks": 4,
+      "completedTasks": 4,
+      "focus": "P0 sharded PR execution, manual run modes, artifact publishing, and baseline rationale/approval-label enforcement"
+    },
+    {
+      "name": "Phase 4: Advanced Expansion",
+      "status": "in-progress",
+      "completion": 96,
+      "tasks": 4,
+      "completedTasks": 3,
+      "focus": "Component visuals, accessibility guards, and long-content helpers are implemented; Firefox/WebKit baselines are validated and CI streak tooling is in place before blocking promotion"
+    }
+  ],
+  "priority": "high",
+  "estimatedWeeks": 4,
+  "startDate": "2026-03-04",
+  "targetCompletion": "2026-04-01"
+}

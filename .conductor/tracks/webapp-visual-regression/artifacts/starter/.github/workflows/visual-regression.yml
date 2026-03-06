@@ -1,0 +1,37 @@
+name: Visual Regression (Template)
+
+on:
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Run P0 visual tests
+        run: npx playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts
+
+      - name: Upload Playwright report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-playwright-report
+          path: .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright-report/
+          retention-days: 14
