@@ -58,7 +58,7 @@ jobs:
     env:
       PW_BASE_URL: ${{ github.event_name == 'workflow_dispatch' && inputs.base_url || vars.VISUAL_APP_BASE_URL || 'http://localhost:3000' }}
       VISUAL_APP_START_COMMAND: ${{ github.event_name == 'workflow_dispatch' && inputs.app_start_command || vars.VISUAL_APP_START_COMMAND }}
-      VISUAL_REQUIRED: ${{ github.event_name == 'pull_request' && '1' || '0' }}
+      VISUAL_REQUIRED: ${{ (github.event_name == 'pull_request' || github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.cross_browser_mode == 'blocking')) && '1' || '0' }}
       VISUAL_RUN_MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.run_mode || 'p0' }}
       VISUAL_UPDATE_BASELINES: ${{ github.event_name == 'workflow_dispatch' && inputs.update_baselines && '1' || '0' }}
       VISUAL_CONFIG: .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts
