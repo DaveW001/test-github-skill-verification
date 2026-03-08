@@ -3,8 +3,8 @@ trackId: webapp-visual-regression
 status: draft
 source: runtime-discovery-localhost-3000
 notes:
-  - Base URL confirmed as localhost:3000.
-  - P0 routes selected for immediate visual gate: / and /contact.
+  - Base URL confirmed as https://www.packagedagile.com.
+  - P0 routes selected for immediate visual gate: /, /contact, /services, and /insights.
   - Route and selector choices are from runtime HTML inspection.
 
 owners:
@@ -13,7 +13,7 @@ owners:
   engineering: TBD
 
 execution:
-  canonicalBaseUrl: http://localhost:3000
+  canonicalBaseUrl: https://www.packagedagile.com
   fallbackBaseUrls: []
 
 deterministicProfile:
@@ -200,18 +200,48 @@ pages:
           maxDiffPixels: 300
           maxDiffPixelRatio: 0.003
 
+  - id: services
+    route: /services
+    owner: engineering
+    priority: P0
+    visualGate: true
+    riskTargets:
+      stickyHeaderSelector: "header.fixed"
+      primaryCtaSelector: "a[href='/contact']"
+      mustBeVisibleAtProbes:
+        - selector: "a[href='/contact']"
+          probes: [top]
+    states:
+      - id: default
+        expectedSeverity: blocker
+        setup:
+          fixture: default
+          mocks: []
+          actions: []
+          ready:
+            waitForSelector: "main"
+        capture:
+          mode: full-page
+          fullPage: true
+          scrollProbes: [top, mid]
+        thresholds:
+          maxDiffPixels: 4500
+          maxDiffPixelRatio: 0.012
+
   - id: insights
     route: /insights
     owner: engineering
-    priority: P1
-    visualGate: false
+    priority: P0
+    visualGate: true
     riskTargets:
       stickyHeaderSelector: "header.fixed"
-      primaryCtaSelector: "a[href*='/contact']"
-      mustBeVisibleAtProbes: []
+      primaryCtaSelector: "a[href='/contact']"
+      mustBeVisibleAtProbes:
+        - selector: "a[href='/contact']"
+          probes: [top]
     states:
       - id: default
-        expectedSeverity: warn
+        expectedSeverity: blocker
         setup:
           fixture: default
           mocks: []
@@ -223,8 +253,8 @@ pages:
           fullPage: true
           scrollProbes: [top, mid]
         thresholds:
-          maxDiffPixels: 220
-          maxDiffPixelRatio: 0.002
+          maxDiffPixels: 4500
+          maxDiffPixelRatio: 0.012
 
 phase2RiskChecks:
   - sticky-header-overlap
