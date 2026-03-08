@@ -58,9 +58,7 @@
       "notes": "Needed for PR gating and artifact publication"
     }
   ],
-  "blocking": [
-    "Need final selector contract for strict mobile overlay enforcement in CI"
-  ],
+  "blocking": [],
   "relatedTracks": [],
   "deliverables": [
     "Updated webapp-testing skill docs with deterministic visual QA workflow",

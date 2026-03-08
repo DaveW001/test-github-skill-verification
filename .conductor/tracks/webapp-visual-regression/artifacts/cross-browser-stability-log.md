@@ -29,6 +29,13 @@ Notes:
 | 2026-03-06 | main | blocking | components + cross-browser | success | https://github.com/DaveW001/test-github-skill-verification/actions/runs/22773071643 |
 | 2026-03-06 | main | blocking | components + cross-browser | success | https://github.com/DaveW001/test-github-skill-verification/actions/runs/22773072351 |
 
+### Production Website P0 Rollout (2026-03-08)
+
+| Date | Branch | Mode | Scope | Result | Notes |
+| --- | --- | --- | --- | --- | --- |
+| 2026-03-08 | main | blocking | p0 + cross-browser | failure | https://github.com/DaveW001/test-github-skill-verification/actions/runs/22826551817 (cross-browser baselines drifted after website target switch) |
+| 2026-03-08 | main | blocking | p0 + cross-browser | success | https://github.com/DaveW001/test-github-skill-verification/actions/runs/22827937885 (after CI artifact baseline sync) |
+
 ### Latest CI Extract (2026-03-06)
 
 | Date | Branch | Mode | Scope | Result | Notes |
@@ -44,3 +51,4 @@ Notes:
 - [x] Firefox and WebKit baseline diffs reviewed and accepted (local pass set)
 - [x] No open blocker findings from cross-browser artifacts (local pass set)
 - [x] `VISUAL_CROSS_BROWSER_MODE` switched to `blocking`
+- [x] Production website P0 blocking run succeeds after baseline alignment
