@@ -1,0 +1,33 @@
+{
+  "track_id": "20260311-osgrep-disable-and-root-cause",
+  "status": "active",
+  "priority": "high",
+  "created": "2026-03-11",
+  "updated": "2026-03-11",
+  "assignee": "Build",
+  "tags": ["osgrep", "reliability", "debugging", "windows", "mcp"],
+  "tasks": {
+    "total": 20,
+    "completed": 10,
+    "in_progress": 0,
+    "not_started": 10
+  },
+  "decision": "Disable osgrep by default until a reproducible root cause and fix path are established.",
+  "related_tracks": [
+    "20260309-osgrep-desktop-hang",
+    "20260129-osgrep-unwanted-folder-creation",
+    "20260112-debug-osgrep-mcp-failed-to-get-tools",
+    "20260114-osgrep-bridge-cleanup"
+  ],
+  "references": {
+    "primary": [
+      "docs/troubleshooting/active/osgrep-desktop-hang-2026-03-09.md",
+      "docs/troubleshooting/active/osgrep-unwanted-folder-creation-SUMMARY.md",
+      "docs/reference/osgrep-configuration.md",
+      "docs/troubleshooting/active/osgrep-intermittent-hang-disablement-2026-03-11.md",
+      ".conductor/tracks/20260311-osgrep-disable-and-root-cause/ISSUES-BACKLOG.md",
+      "scripts/utils/osgrep_debug_wrapper.py",
+      "scripts/utils/osgrep_process_snapshot.ps1"
+    ]
+  }
+}
