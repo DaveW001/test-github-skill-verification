@@ -1,0 +1,20 @@
+{
+  "label": "phase4-invalid-cwd",
+  "started": "2026-03-12T15:22:53.853273+00:00",
+  "cwd": "C:/development/opencode/tmp/does-not-exist",
+  "command": [
+    "osgrep",
+    "--",
+    "--help"
+  ],
+  "timeout_seconds": 20,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "Working directory does not exist: C:/development/opencode/tmp/does-not-exist",
+  "timed_out": false,
+  "duration_seconds": 0,
+  "finished": "2026-03-12T15:22:53.855937+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- --help"
+}

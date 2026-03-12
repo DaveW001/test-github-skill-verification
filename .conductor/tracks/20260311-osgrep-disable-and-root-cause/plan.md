@@ -24,13 +24,13 @@
 - [x] Compare direct CLI vs MCP/server invocation on the same repo
 - [x] Test clean repo vs large repo vs repo with existing `.osgrep` state
 - [x] Test search vs index vs trace style commands separately
-- [ ] Test with antivirus exclusions and with stale worker cleanup before launch
-- [~] Test invalid-path and quoted-path inputs to check cwd/path handling regressions
+- [x] Test with antivirus exclusions and with stale worker cleanup before launch
+- [x] Test invalid-path and quoted-path inputs to check cwd/path handling regressions
 
 ## Phase 5: Root Cause and Fix Path
-- [ ] Narrow the primary failure mode with evidence
-- [ ] Decide whether the fix belongs in local wrapper/config, OpenCode integration, or upstream osgrep
-- [ ] Draft upstream issue or local patch plan with reproduction steps and logs
+- [x] Narrow the primary failure mode with evidence
+- [x] Decide whether the fix belongs in local wrapper/config, OpenCode integration, or upstream osgrep
+- [x] Draft upstream issue or local patch plan with reproduction steps and logs
 
 ## Phase 6: Post-Build Consistency and Quality Fixes
 - [x] Resolve osgrep policy conflicts in active guidance (keep disabled-by-default direction)
@@ -50,3 +50,4 @@ The track is ready to close when we have a repeatable reproduction, captured log
 - Timed-out MCP startup required Windows process-tree kill behavior; simple parent termination was not enough for reliable cleanup.
 - Current evidence points more strongly at MCP/server lifecycle behavior than at basic indexing, search, trace, or path-with-spaces handling.
 - Documentation is now being normalized around one central current-status doc and a CLI-only next-step plan.
+- Additional Phase 4/5 execution details and fix-owner decisions were captured in `.conductor/tracks/20260311-osgrep-disable-and-root-cause/PHASE4-5-RESULTS-2026-03-12.md`.

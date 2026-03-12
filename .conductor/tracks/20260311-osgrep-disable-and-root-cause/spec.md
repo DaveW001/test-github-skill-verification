@@ -53,6 +53,13 @@ Disable routine osgrep usage in OpenCode guidance, document what actually happen
 - Completed validator hardening by adding `scripts/validate-prompt-patterns.py` quality checks for variables, section completeness, and title/filename consistency.
 - Completed trigger-ambiguity tightening by changing overlap phrases to `find code path for` (osgrep) and `find web sources for` (perplexity-search).
 
+## Phase 4/5 Completion (2026-03-12)
+
+- Completed stale-worker cleanup, invalid-cwd, and spaced-path CLI regression checks with wrapper logs under `logs/osgrep-debug/`.
+- Recorded antivirus exclusion visibility constraint in non-admin shell; retained as environmental note, not a blocker to CLI evidence.
+- Narrowed primary failure mode to MCP/service startup lifecycle behavior on Windows while CLI runs remained successful in controlled tests.
+- Added local fix-path artifacts (`scripts/utils/osgrep_debug_wrapper.py` and `scripts/utils/osgrep_process_snapshot.ps1`) and documented upstream issue expectations in the Phase 4/5 results file.
+
 ## Risks
 
 1. The hang remains intermittent and difficult to reproduce on demand.

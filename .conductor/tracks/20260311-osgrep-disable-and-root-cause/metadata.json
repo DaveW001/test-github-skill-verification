@@ -8,9 +8,9 @@
   "tags": ["osgrep", "reliability", "debugging", "windows", "mcp"],
   "tasks": {
     "total": 24,
-    "completed": 20,
+    "completed": 24,
     "in_progress": 0,
-    "not_started": 4
+    "not_started": 0
   },
   "decision": "Disable osgrep by default until a reproducible root cause and fix path are established.",
   "working_hypothesis": "The dominant current failure mode appears to be MCP/server startup lifecycle hanging after sync initialization on Windows, not basic CLI indexing or search.",
@@ -25,8 +25,10 @@
       "docs/troubleshooting/active/osgrep-unwanted-folder-creation-SUMMARY.md",
       "docs/reference/osgrep-configuration.md",
       "docs/troubleshooting/active/osgrep-intermittent-hang-disablement-2026-03-11.md",
+      "docs/troubleshooting/active/osgrep-cli-only-re-enable-checklist.md",
+      "docs/troubleshooting/active/osgrep-unwanted-folder-creation-SUMMARY.md",
       ".conductor/tracks/20260311-osgrep-disable-and-root-cause/ISSUES-BACKLOG.md",
-      "AGENTS-STREAMLINING-SUMMARY.md",
+      ".conductor/tracks/20260311-osgrep-disable-and-root-cause/PHASE4-5-RESULTS-2026-03-12.md",
       "scripts/validate-prompt-patterns.py",
       "patterns/prompts/README.md",
       "patterns/prompts/TEMPLATE.md",
@@ -34,7 +36,11 @@
       "scripts/utils/osgrep_debug_wrapper.py",
       "scripts/utils/osgrep_process_snapshot.ps1",
       "logs/osgrep-debug/20260311-145834-small-mcp-timeout-treekill/result.json",
-      "logs/osgrep-debug/20260311-145834-large-mcp-timeout-treekill/result.json"
+      "logs/osgrep-debug/20260311-145834-large-mcp-timeout-treekill/result.json",
+      "logs/osgrep-debug/20260312-112251-phase4-small-index/result.json",
+      "logs/osgrep-debug/20260312-112252-phase4-spaced-search/result.json",
+      "logs/osgrep-debug/20260312-112253-phase4-invalid-cwd/result.json",
+      "logs/osgrep-debug/20260312-112344-phase4-stale-cleanup/result.json"
     ]
   }
 }

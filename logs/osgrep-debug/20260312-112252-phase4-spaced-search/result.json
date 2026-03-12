@@ -1,0 +1,21 @@
+{
+  "label": "phase4-spaced-search",
+  "started": "2026-03-12T15:22:52.354441+00:00",
+  "cwd": "C:/development/opencode/tmp/osgrep path repro",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "folder creation"
+  ],
+  "timeout_seconds": 20,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "src\\auth.ts:1 [Definition]\n  export function validateUserPermission(role: string): boolean {\n    return role === \"admin\"\n  }\n\n.gitignore:1\n  .osgrep\n\n.gitignore:1\n  .osgrep\n\nREADME.md:1\n  # Osgrep Path Repro\n  This repo exists to test osgrep behavior in a path containing spaces.\n\nosgrep results (4 matches across 3 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.423,
+  "finished": "2026-03-12T15:22:53.780790+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search 'folder creation'"
+}

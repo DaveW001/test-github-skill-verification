@@ -1,0 +1,25 @@
+{
+  "label": "phase4-small-index",
+  "started": "2026-03-12T15:22:51.058675+00:00",
+  "cwd": "C:/development/opencode/tmp/osgrep-small-repro",
+  "command": [
+    "osgrep",
+    "--",
+    "index"
+  ],
+  "timeout_seconds": 20,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "- Indexing...\n\u00e2\u0153\u201d Indexing complete(4 / 4) \u00e2\u20ac\u00a2 indexed 0 \n",
+  "timed_out": false,
+  "duration_seconds": 0.843,
+  "finished": "2026-03-12T15:22:52.275651+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- index"
+}

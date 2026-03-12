@@ -1,0 +1,25 @@
+{
+  "label": "phase4-stale-cleanup",
+  "started": "2026-03-12T15:23:44.899535+00:00",
+  "cwd": "C:/development/opencode/tmp/osgrep-small-repro",
+  "command": [
+    "osgrep",
+    "--",
+    "--help"
+  ],
+  "timeout_seconds": 20,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": "src\\app.ts:1 [Definition]\n  export function greet(name: string): string {\n    return `hello ${name}`\n  }\n\nsrc\\app.ts:5 [Definition]\n  export function canAccess(role: string): boolean {\n    return role === \"admin\"\n  }\n\n.gitignore:1\n  .osgrep\n\n.gitignore:1\n  .osgrep\n\ndocs\\notes.md:1\n  # Notes\n  Authentication and access checks are intentionally simple in this tiny repo.\n\nosgrep results (5 matches across 3 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.22,
+  "finished": "2026-03-12T15:23:46.482982+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- --help"
+}
