@@ -21,11 +21,11 @@
 - [x] Add database-path snapshots for `.osgrep`, LMDB, and LanceDB state
 
 ## Phase 4: Controlled Reproduction Matrix
-- [ ] Compare direct CLI vs MCP/server invocation on the same repo
-- [ ] Test clean repo vs large repo vs repo with existing `.osgrep` state
-- [ ] Test search vs index vs trace style commands separately
+- [x] Compare direct CLI vs MCP/server invocation on the same repo
+- [x] Test clean repo vs large repo vs repo with existing `.osgrep` state
+- [x] Test search vs index vs trace style commands separately
 - [ ] Test with antivirus exclusions and with stale worker cleanup before launch
-- [ ] Test invalid-path and quoted-path inputs to check cwd/path handling regressions
+- [~] Test invalid-path and quoted-path inputs to check cwd/path handling regressions
 
 ## Phase 5: Root Cause and Fix Path
 - [ ] Narrow the primary failure mode with evidence
@@ -33,11 +33,20 @@
 - [ ] Draft upstream issue or local patch plan with reproduction steps and logs
 
 ## Phase 6: Post-Build Consistency and Quality Fixes
-- [ ] Resolve osgrep policy conflicts in active guidance (keep disabled-by-default direction)
-- [ ] Replace hardcoded local absolute paths in global standards with portable repo-relative references
-- [ ] Strengthen `scripts/validate-prompt-patterns.py` with content-quality checks
-- [ ] Tighten remaining `osgrep` vs `perplexity-search` trigger phrase ambiguity
+- [x] Resolve osgrep policy conflicts in active guidance (keep disabled-by-default direction)
+- [x] Replace hardcoded local absolute paths in global standards with portable repo-relative references
+- [x] Strengthen `scripts/validate-prompt-patterns.py` with content-quality checks
+- [x] Tighten remaining `osgrep` vs `perplexity-search` trigger phrase ambiguity
 
 ## Validation
 
 The track is ready to close when we have a repeatable reproduction, captured logs, and a clear fix owner/path.
+
+## Current Findings
+
+- Direct CLI behavior is healthy in current tests: `index`, semantic search, and `trace` all completed in small, large, and spaced-path repos.
+- MCP-style startup (`osgrep mcp`) consistently failed to exit or become ready within the 10 second window in both the small repro repo and the main `opencode` repo.
+- During timed-out MCP runs, stderr consistently showed only sync logs: `Scheduling initial sync`, `Starting file sync`, `Sync complete`.
+- Timed-out MCP startup required Windows process-tree kill behavior; simple parent termination was not enough for reliable cleanup.
+- Current evidence points more strongly at MCP/server lifecycle behavior than at basic indexing, search, trace, or path-with-spaces handling.
+- Documentation is now being normalized around one central current-status doc and a CLI-only next-step plan.

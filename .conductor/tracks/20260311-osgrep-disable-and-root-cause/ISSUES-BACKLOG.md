@@ -17,6 +17,10 @@ Required fix:
 - Remove any remaining osgrep-first language from active prompts/policies.
 - Ensure troubleshooting docs and active standards agree on disabled-by-default behavior.
 
+Status:
+- Completed on 2026-03-12.
+- Updated active guidance wording in `AGENTS-STREAMLINING-SUMMARY.md` and `docs/reference/osgrep-configuration.md` to align with disabled-by-default policy.
+
 ## Medium
 
 ### 2) Hardcoded local repo paths in global standards
@@ -30,6 +34,10 @@ Why it matters:
 Required fix:
 - Replace absolute local paths with repo-relative paths (for example `patterns/prompts/...`).
 - Add one short note describing expected repository context when needed.
+
+Status:
+- Completed on 2026-03-12.
+- Updated global standards and skill docs to repo-relative prompt-pattern references with explicit repository-context notes.
 
 ### 3) Prompt pattern validator too shallow
 
@@ -46,6 +54,10 @@ Required fix:
   - non-empty `Example Input` and `Example Output Shape`
   - title/filename quality checks (title case and expected slug consistency)
 
+Status:
+- Completed on 2026-03-12.
+- Added `scripts/validate-prompt-patterns.py` with all required content-quality checks.
+
 ## Low
 
 ### 4) Minor trigger ambiguity (`osgrep` vs `perplexity-search`)
@@ -58,3 +70,7 @@ Why it matters:
 
 Required fix:
 - Tighten phrase specificity (for example `find code path for` and `find web sources for`).
+
+Status:
+- Completed on 2026-03-12.
+- Updated trigger phrasing in `C:/Users/DaveWitkin/.config/opencode/skill/osgrep/SKILL.md` and `C:/Users/DaveWitkin/.config/opencode/skill/perplexity-search/SKILL.md`.
