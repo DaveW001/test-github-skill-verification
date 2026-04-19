@@ -1,0 +1,26 @@
+{
+  "label": "tc11-stale-index-search",
+  "started": "2026-03-12T19:57:04.483079+00:00",
+  "cwd": "C:/development/opencode/osgrep path repro",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "staleIndexSymbol"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": "osgrep path repro\\.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\deterministic.ts:19\n  type StableRenderOptions = {\n    imageReadySelectors?: string[];\n    settleMs?: number;\n  };\n\nosgrep path repro\\.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\contrast-guards.ts:3\n  export type ContrastFinding = {\n    severity: \"warn\" | \"info\";\n    selector: string;\n    message: string;\n  };\n\nosgrep path repro\\.github\\workflows\\visual-regression.yml:263\n  h:\n            name: visual-app-log-${{ matrix.id }}\n            path: visual-app.log\n            retention-days: 7\n        - name: CI summary\n          if: ${{ always() }}\n          shell: bash\n\nosgrep path repro\\.gitignore:1\n  .osgrep\n\nosgrep path repro\\logs\\osgrep-debug\\20260312-155634-tc09-query-during-index\\result.json:20\n  \": {},\\n    \\\"exit_code\\\": 0,\\n  ... (+11 more lines)\\n\\n.conductor\\\\tracks\\\\20260312-osgrep-cli-only-reenable\\\\metadata.json:1\\n  {\\n    \\\"\u001b[2m ...\u001b[22m\n    \"stderr\": \"\",\n    \"timed_out\": false,\n    \"duration_seconds\": 1.372,\n    \"finished\": \"2026-03-12T19:56:36.382137+00:00\",\n    \"command_text\": \"'C:\\\\Users\\\\DaveWitkin\\\\AppData\\\\Roaming\\\\npm\\\\osgrep.CMD' -- search osgrep\"\n  }\n\nosgrep results (5 matches across 5 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.124,
+  "finished": "2026-03-12T19:57:05.895303+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search staleIndexSymbol"
+}

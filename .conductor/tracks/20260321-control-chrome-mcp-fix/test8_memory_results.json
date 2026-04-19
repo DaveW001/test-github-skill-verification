@@ -1,0 +1,108 @@
+{
+  "test_name": "Test Case 8: Memory Snapshot Analysis",
+  "url": "https://packagedagile.com",
+  "interactions": [
+    {
+      "action": "click",
+      "element": "Navigation link",
+      "type": "navigation_link"
+    },
+    {
+      "action": "click",
+      "element": "Services",
+      "type": "button"
+    },
+    {
+      "action": "scroll",
+      "direction": "down",
+      "amount": "5 pages"
+    }
+  ],
+  "console_logs": [
+    {
+      "type": "warning",
+      "text": "The resource https://www.packagedagile.com/fonts/Radikal-Bold.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://www.packagedagile.com/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource https://www.packagedagile.com/fonts/Radikal-Medium.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://www.packagedagile.com/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource https://www.packagedagile.com/fonts/Radikal.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://www.packagedagile.com/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource https://www.packagedagile.com/_next/static/css/6fd7348e8e450fa8.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://www.packagedagile.com/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource https://www.packagedagile.com/fonts/Radikal-Bold.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://www.packagedagile.com/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource https://www.packagedagile.com/fonts/Radikal-Medium.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://www.packagedagile.com/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource https://www.packagedagile.com/fonts/Radikal.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://www.packagedagile.com/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "type": "warning",
+      "text": "The resource https://www.packagedagile.com/_next/static/css/6fd7348e8e450fa8.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.",
+      "location": {
+        "url": "https://www.packagedagile.com/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "memory_snapshots": {
+    "initial": {
+      "timestamp": "2026-03-22T13:34:10.859304",
+      "used_heap_size": 7624904,
+      "total_heap_size": 11796480
+    },
+    "final": {
+      "timestamp": "2026-03-22T13:34:46.013088",
+      "used_heap_size": 13416192,
+      "total_heap_size": 14397440
+    }
+  },
+  "screenshot_path": "C:/development/opencode/.conductor/tracks/20260321-control-chrome-mcp-fix/test8_memory.png"
+}

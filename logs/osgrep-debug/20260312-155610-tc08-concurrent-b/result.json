@@ -1,0 +1,26 @@
+{
+  "label": "tc08-concurrent-b",
+  "started": "2026-03-12T19:56:10.863241+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "conductor"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": ".conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\contrast-guards.ts:15\n  type RGB = { r: number; g: number; b: number };\n\n.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\contrast-guards.ts:37 [Definition]\n  function ratio(fg: RGB, bg: RGB): number {\n    const l1 = luminance(fg);\n    const l2 = luminance(bg);\n    const light = Math.max(l1, l2);\n    const dark = Math.min(l1, l2);\n    return (light + 0.05) / (dark + 0.05);\n  }\n\n.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\contrast-guards.ts:29 [Definition]\n  function luminance({ r, g, b }: RGB): number {\n    const toLinear = (v: number) => {\n      const n = v / 255;\n      return n <= 0.03928 ? n / 12.92 : ((n + 0.055) / 1.055) ** 2.4;\n    };\n    return 0.2126 * toLinear(r) + 0.7152 * toLinear(g) + 0.0722 * toLinear(b);\n  }\n\n.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\layout-guards.ts:12\n  type LayoutGuardOptions = {\n    stickySelector: string;\n    criticalSelectors: string[];\n    offPageSelectors: string[];\n    spacingGroupSelectors: string[];\n  };\n\n.conductor\\tracks\\webapp-visual-regression\\artifacts\\page-state-manifest.draft.yaml:131\n  actions: []\n            ready:\n              waitForSelector: \"header.fixed\"\n          capture:\n            mode: full-page\n            fullPage: true\n            scrollProbes: [top, mid, lower]\n          thresholds:\n            maxDiffPixels: 300\n            maxDiffPixelRatio: 0.003\n    - id: contact\n      route: /contact\n      owner: engineering\n      priority: P0\n  ... (+60 more lines)\n\nosgrep results (5 matches across 3 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.231,
+  "finished": "2026-03-12T19:56:12.363050+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search conductor"
+}

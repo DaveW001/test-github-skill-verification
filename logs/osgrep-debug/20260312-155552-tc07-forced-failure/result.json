@@ -1,0 +1,21 @@
+{
+  "label": "tc07-forced-failure",
+  "started": "2026-03-12T19:55:52.300020+00:00",
+  "cwd": "C:/development/opencode/does-not-exist",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "auth token refresh"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "Working directory does not exist: C:/development/opencode/does-not-exist",
+  "timed_out": false,
+  "duration_seconds": 0,
+  "finished": "2026-03-12T19:55:52.302221+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search 'auth token refresh'"
+}

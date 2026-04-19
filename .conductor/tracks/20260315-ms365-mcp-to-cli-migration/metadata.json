@@ -1,0 +1,28 @@
+{
+  "trackId": "20260315-ms365-mcp-to-cli-migration",
+  "title": "Migrate M365 Operations from MCP to CLI",
+  "status": "completed",
+  "priority": "high",
+  "createdAt": "2026-03-15",
+  "owner": "01-Planner",
+  "tags": [
+    "opencode",
+    "mcp",
+    "microsoft-graph",
+    "powershell",
+    "cli",
+    "documentation"
+  ],
+  "tasks": {
+    "total": 20,
+    "completed": 20,
+    "inProgress": 0,
+    "pending": 0
+  },
+  "blockingIssues": [],
+  "nextActions": [
+    "Review and approve spec plus phased plan",
+    "Confirm final migration scope: ms365-only or all MCP reduction",
+    "Execute Phase 1 inventory freeze and baseline measurements"
+  ]
+}

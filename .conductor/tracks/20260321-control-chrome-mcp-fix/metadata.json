@@ -1,0 +1,170 @@
+{
+  "track_id": "20260321-control-chrome-mcp-fix",
+  "created": "2026-03-21T10:34:00Z",
+  "status": "completed",
+  "owner": "01-Planner",
+  "description": "Move and fix the 'control-chrome' MCP server from project-level to global user-level configuration with comprehensive test suite",
+  "priority": "medium",
+  "tags": ["opencode", "mcp", "desktop", "troubleshooting", "testing"],
+  "links": {
+    "spec": "spec.md",
+    "plan": "plan.md",
+    "test_script": "test_chrome_devtools_mcp.py"
+  },
+  "root_cause": "The control-chrome MCP server is configured to run 'chrome-devtools-mcp' directly, but it should be run via 'npx -y chrome-devtools-mcp@latest'",
+  "solution": "1. Move configuration from C:/development/marketing/opencode.jsonc to C:/Users/DaveWitkin/.config/opencode/opencode.jsonc\n2. Update command from ['chrome-devtools-mcp'] to ['npx', '-y', 'chrome-devtools-mcp@latest']",
+  "changes_made": {
+    "global_config": "Added control-chrome server with corrected command to C:/Users/DaveWitkin/.config/opencode/opencode.jsonc",
+    "project_config": "Removed control-chrome server from C:/development/marketing/opencode.jsonc"
+  },
+  "verification": "Verified via `opencode mcp list` that control-chrome is now connected and showing with correct command",
+  "test_suite": {
+    "test_cases_count": 8,
+    "test_script": "test_chrome_devtools_mcp.py",
+    "execution_method": "Executed via OpenCode agents with MCP tool invocation",
+    "execution_date": "2026-03-22",
+    "target_website": "https://packagedagile.com",
+    "overall_result": "ALL TESTS PASSED",
+    "test_cases": [
+      {
+        "id": 1,
+        "name": "Performance Audit of 2025 PA Website",
+        "tools": ["navigate_page", "take_screenshot", "performance_start_trace", "performance_stop_trace", "performance_analyze_insight"],
+        "status": "PASSED",
+        "results": {
+          "navigation_time": "0.85s",
+          "dom_complete": "282ms",
+          "resources_loaded": 63,
+          "total_size": "8.24MB",
+          "js_heap_used": "8.18MB",
+          "layout_count": 0,
+          "recommendation": "No major issues detected"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Visual Regression Testing - Homepage Screenshot",
+        "tools": ["navigate_page", "take_screenshot", "resize_page"],
+        "status": "PASSED",
+        "results": {
+          "desktop_viewport": "1280x720",
+          "mobile_viewport": "375x667",
+          "desktop_screenshot": "237.8KB",
+          "mobile_screenshot": "105.3KB",
+          "dom_nodes": 440,
+          "links": 21,
+          "images": 47
+        }
+      },
+      {
+        "id": 3,
+        "name": "Contact Form Testing",
+        "tools": ["navigate_page", "take_screenshot", "fill", "fill_form", "list_console_messages"],
+        "status": "PASSED",
+        "results": {
+          "form_fields_found": 5,
+          "fields_filled": ["Name", "Email", "Message"],
+          "console_errors": 0,
+          "submit_button": "Found and enabled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Network Request Monitoring",
+        "tools": ["navigate_page", "list_network_requests", "get_network_request", "list_console_messages"],
+        "status": "PASSED",
+        "results": {
+          "total_requests": 46,
+          "javascript_files": 26,
+          "fonts": 6,
+          "api_calls": 6,
+          "images": 4,
+          "console_errors": 0,
+          "main_document_status": "308 Redirect to www subdomain"
+        }
+      },
+      {
+        "id": 5,
+        "name": "JavaScript Execution and Debugging",
+        "tools": ["navigate_page", "evaluate_script", "list_console_messages"],
+        "status": "PASSED",
+        "results": {
+          "page_title": "Federal IT Modernization Consulting | Digital Transformation | Packaged Agile",
+          "h1_count": 1,
+          "link_count": 21,
+          "current_url": "https://www.packagedagile.com/",
+          "viewport": "1280x720",
+          "console_errors": 0
+        }
+      },
+      {
+        "id": 6,
+        "name": "Page Navigation and Multi-Page Testing",
+        "tools": ["navigate_page", "list_pages", "take_screenshot"],
+        "status": "PASSED",
+        "results": {
+          "pages_navigated": ["Homepage", "Services", "About", "Contact"],
+          "screenshots_captured": 4,
+          "console_errors": 0,
+          "navigation_model": "Single-page sequential"
+        }
+      },
+      {
+        "id": 7,
+        "name": "Lighthouse Audit",
+        "tools": ["navigate_page", "lighthouse_audit"],
+        "status": "PASSED",
+        "results": {
+          "performance": "99/100",
+          "accessibility": "94/100",
+          "best_practices": "100/100",
+          "seo": "100/100",
+          "lcp": "1.0s",
+          "fid": "40ms",
+          "cls": 0,
+          "critical_issues": "None"
+        }
+      },
+      {
+        "id": 8,
+        "name": "Memory Snapshot Analysis",
+        "tools": ["navigate_page", "take_memory_snapshot", "click", "press_key"],
+        "status": "PASSED",
+        "results": {
+          "memory_increase": "5.52MB",
+          "assessment": "Normal for navigation + scrolling",
+          "memory_leaks": "None detected",
+          "console_errors": 0
+        }
+      }
+    ],
+    "available_tools_reference": [
+      "navigate_page", "new_page", "close_page", "list_pages",
+      "take_screenshot", "take_snapshot",
+      "performance_start_trace", "performance_stop_trace", "performance_analyze_insight",
+      "lighthouse_audit",
+      "evaluate_script",
+      "list_network_requests", "get_network_request",
+      "list_console_messages", "get_console_message",
+      "click", "fill", "fill_form", "type_text", "press_key", "hover", "drag",
+      "take_memory_snapshot",
+      "emulate", "resize_page",
+      "wait_for", "handle_dialog", "upload_file"
+    ],
+    "artifacts_generated": [
+      "test1_screenshot.png",
+      "test2_desktop.png",
+      "test2_mobile.png",
+      "test2_dom_snapshot.html",
+      "test3_initial.png",
+      "test3_filled.png",
+      "test4_network.png",
+      "test6_homepage.png",
+      "test6_services.png",
+      "test6_about.png",
+      "test6_contact.png",
+      "test7_lighthouse.png",
+      "test8_memory.png"
+    ]
+  }
+}

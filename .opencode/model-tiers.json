@@ -1,0 +1,60 @@
+{
+  "$schema": "https://opencode.ai/model-tiers.schema.json",
+  "version": "1.0.0",
+  "status": "proposal-only",
+  "notes": "Planning artifact only. No runtime wiring yet.",
+  "tiers": {
+    "low": {
+      "intent": "Lowest-cost execution for simple, high-volume tasks",
+      "models": [
+        "zai-coding-plan/glm-5",
+        "zai-coding/glm-4.7",
+        "openrouter/kimi-2.5"
+      ],
+      "fallback": [
+        "gpt-4o-mini"
+      ]
+    },
+    "mid": {
+      "intent": "Balanced cost/quality for moderate reasoning",
+      "models": [
+        "gpt-4o-mini",
+        "claude-3.5-haiku"
+      ],
+      "fallback": [
+        "gpt-4o"
+      ]
+    },
+    "high": {
+      "intent": "Best quality for complex/high-risk tasks",
+      "models": [
+        "claude-3.5-sonnet",
+        "gpt-4o",
+        "gpt-5.2"
+      ],
+      "fallback": [
+        "gpt-4o-mini"
+      ]
+    }
+  },
+  "routing": {
+    "verify_single_fact": "low",
+    "extract_atomic_claims": "low",
+    "draft_minor_rewrite": "mid",
+    "claim_reconciliation": "mid",
+    "architecture_planning": "high",
+    "high_stakes_review": "high"
+  },
+  "risk_overrides": {
+    "security": "high",
+    "legal": "high",
+    "financial": "high",
+    "medical": "high"
+  },
+  "preflight": {
+    "enabled": true,
+    "max_duration_seconds": 10,
+    "behavior": "pick-first-available-in-tier-else-fallback",
+    "on_no_model_available": "escalate_to_next_tier"
+  }
+}

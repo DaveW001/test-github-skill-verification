@@ -1,0 +1,26 @@
+{
+  "label": "tc02-feature-flag",
+  "started": "2026-03-12T19:54:47.308208+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "feature flag"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Search failed: Table 'chunks' already exists\n",
+  "timed_out": false,
+  "duration_seconds": 0.547,
+  "finished": "2026-03-12T19:54:48.274242+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search 'feature flag'"
+}

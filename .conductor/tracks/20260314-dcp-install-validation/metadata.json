@@ -1,0 +1,25 @@
+{
+  "trackId": "20260314-dcp-install-validation",
+  "title": "Install and Validate OpenCode DCP Plugin",
+  "status": "completed",
+  "priority": "high",
+  "createdAt": "2026-03-14",
+  "owner": "Build",
+  "tags": [
+    "opencode",
+    "plugin",
+    "dcp",
+    "validation"
+  ],
+  "tasks": {
+    "total": 7,
+    "completed": 7,
+    "inProgress": 0,
+    "pending": 0
+  },
+  "blockingIssues": [],
+  "nextActions": [
+    "Restart OpenCode TUI so DCP is loaded into the live session",
+    "Run /dcp in a live session to verify slash command behavior end-to-end"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "label": "tc03-refactor-scope",
+  "started": "2026-03-12T19:54:47.316967+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "call sites interface"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": ".conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\layout-guards.ts:84 [Definition]\n  }\n          if (rect.bottom < 0 || rect.top > vh) {\n            continue;\n          }\n          const leftOverflow = rect.left < -4;\n          const rightOverflow = rect.right > vw + 4;\n          if (leftOverflow || rightOverflow) {\n            findings.push({\n              kind: \"off-page\",\n              severity: \"warn\",\n              selector,\n              message: `Element escapes viewport: ${selector} rect=(${Math.round(rect.left)},${Math.round(rect.top)},${Math.round(rect.right)}\u001b[2m ...\u001b[22m\n            });\n            break;\n          }\n  ... (+50 more lines)\n\n.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\layout-guards.ts:143 [Definition]\n  ue;\n        }\n        for (const gap of gaps) {\n          const tooLarge = gap - baselineGap > 24 && gap > baselineGap * 2.2;\n          const tooSmall = baselineGap - gap > 24 && gap < baselineGap * 0.3;\n          if (tooLarge || tooSmall) {\n            findings.push({\n              kind: \"spacing-outlier\",\n              severity: \"info\",\n              selector,\n              message: `Spacing outlier in ${selector}: gap=${Math.round(gap)} baseline=${Math.round(baselineGap)}`,\n            });\n            break;\n          }\n  ... (+1 more lines)\n\nscripts\\utils\\osgrep_debug_wrapper.py:18 [Definition]\n  // scripts\\utils\\osgrep_debug_wrapper.py\n  import argparse\n  import json\n  import os\n  import shlex\n  import shutil\n  import subprocess\n  import sys\n  import time\n  def now_iso() -> str:\n      return datetime.now(timezone.utc).isoformat()\n\n.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\deterministic.ts:50 [Definition]\n  export async function scrollProbe(page: Page, probe: \"top\" | \"mid\" | \"lower\"): Promise<void> {\n    if (probe === \"top\") {\n      await page.evaluate(() => window.scrollTo(0, 0));\n      await page.waitForTimeout(120);\n      return;\n    }\n    if (probe === \"mid\") {\n      await page.evaluate(() => {\n        const y = Math.round(window.innerHeight * 0.9);\n        window.scrollTo(0, y);\n      });\n      await page.waitForTimeout(140);\n      return;\n    }\n    await page.evaluate(() => {\n  ... (+5 more lines)\n\n.conductor\\tracks\\20260312-osgrep-cli-only-reenable\\artifacts\\validation-matrix.md:1\n  # Validation Matrix: Osgrep CLI-Only Re-Enablement\n  **Track ID**: 20260312-osgrep-cli-only-reenable\n  **Date**: 2026-03-12\n  ## Run Summary\n  - Run owner:\n  - Environment:\n  - OpenCode version:\n  - Agent:\n  - Result: PASS / FAIL\n  ## Test Cases\n  | ID | Scenario | Prompt | Expected | Actual | Evidence Link | Pass/Fail | Notes |\n  |---|---|---|---|---|---|---|---|\n  | TC-01 | Code-path discovery | find code path for auth token refresh | osgrep invoked before fallback | | | | |\n  | TC-02 | Cross-file impact | find where feature flag X is read and written | osgrep invoked and cited | | | | |\n  ... (+11 more lines)\n\nosgrep results (5 matches across 4 files)\n",
+  "stderr": "- Indexing repository (first run)...\n\u00e2\u0153\u201d Initial indexing complete (63/63) \u00e2\u20ac\u00a2 indexed 63\n",
+  "timed_out": false,
+  "duration_seconds": 15.689,
+  "finished": "2026-03-12T19:55:03.400210+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search 'call sites interface'"
+}

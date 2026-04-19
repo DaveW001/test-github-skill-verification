@@ -1,0 +1,26 @@
+{
+  "label": "tc12-large-result-set",
+  "started": "2026-03-12T19:57:26.058891+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "function"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": ".conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\layout-guards.ts:143 [Definition]\n  ue;\n        }\n        for (const gap of gaps) {\n          const tooLarge = gap - baselineGap > 24 && gap > baselineGap * 2.2;\n          const tooSmall = baselineGap - gap > 24 && gap < baselineGap * 0.3;\n          if (tooLarge || tooSmall) {\n            findings.push({\n              kind: \"spacing-outlier\",\n              severity: \"info\",\n              selector,\n              message: `Spacing outlier in ${selector}: gap=${Math.round(gap)} baseline=${Math.round(baselineGap)}`,\n            });\n            break;\n          }\n  ... (+1 more lines)\n\nscripts\\utils\\osgrep_debug_wrapper.py:67 [Definition]\n  // scripts\\utils\\osgrep_debug_wrapper.py\n  import argparse\n  import json\n  import os\n  import shlex\n  import shutil\n  import subprocess\n  import sys\n  import time\n  def main() -> int:\n      parser = argparse.ArgumentParser(description=\"Run osgrep with reproducible logs.\")\n      parser.add_argument(\"--cwd\", default=os.getcwd(), help=\"Working directory to run osgrep from\")\n      parser.add_argument(\"--label\", default=\"run\", help=\"Label for output folder\")\n      parser.add_argument(\"--timeout\", type=int, default=20, help=\"Timeout in seconds\")\n  ... (+42 more lines)\n\n.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\layout-guards.ts:19 [Definition]\n  export async function runLayoutGuards(page: Page, options: LayoutGuardOptions): Promise<GuardFinding[]> {\n    return page.evaluate((opts) => {\n      type Finding = GuardFinding;\n      const findings: Finding[] = [];\n      const vw = window.innerWidth;\n      const vh = window.innerHeight;\n      const visibleRect = (el: Element) => {\n        const rect = el.getBoundingClientRect();\n        if (rect.width < 2 || rect.height < 2) {\n          return null;\n        }\n        const style = window.getComputedStyle(el);\n        if (style.visibility === \"hidden\" || style.display === \"none\" || Number(style.opacity) === 0) {\n  ... (+45 more lines)\n\n.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\contrast-guards.ts:17 [Definition]\n  function parseRgb(input: string): RGB | null {\n    const match = input.match(/rgba?\\(([^)]+)\\)/i);\n    if (!match) {\n      return null;\n    }\n    const parts = match[1].split(\",\").map((p) => Number.parseFloat(p.trim()));\n    if (parts.length < 3 || parts.slice(0, 3).some((n) => Number.isNaN(n))) {\n      return null;\n    }\n    return { r: parts[0], g: parts[1], b: parts[2] };\n  }\n\nosgrep path repro\\sample.ts:5 [Definition]\n  export function readFeatureFlag(flagName: string): boolean {\n    return flagName === \"osgrep_canary\";\n  }\n\nosgrep results (5 matches across 4 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.175,
+  "finished": "2026-03-12T19:57:27.517422+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search function"
+}

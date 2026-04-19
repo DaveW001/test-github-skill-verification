@@ -1,0 +1,26 @@
+{
+  "label": "tc09-query-during-index",
+  "started": "2026-03-12T19:56:34.742897+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "osgrep"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": "osgrep path repro\\sample.ts:5 [Definition]\n  export function readFeatureFlag(flagName: string): boolean {\n    return flagName === \"osgrep_canary\";\n  }\n\nosgrep path repro\\sample.ts:1 [Definition]\n  export function refreshAuthToken(token: string): string {\n    return `${token}-refreshed`;\n  }\n\ndocs\\reference\\osgrep-configuration.md:1\n  # Osgrep Configuration Reference\n  ## Current Policy\n  - Osgrep is disabled-by-default for normal OpenCode workflows while reliability work remains active.\n  - Prefer `grep`, `glob`, and targeted `Read` for routine navigation.\n  - Use osgrep only for controlled debugging and reproduction work.\n  ## CLI Health Commands\n  ```bash\n  osgrep --help\n  osgrep doctor\n  ```\n  ## Debug Wrapper\n  Use the local wrapper when capturing reproducible logs:\n  ```bash\n  python scripts/utils/osgrep_debug_wrapper.py --label help-check -- -- --help\n  ... (+15 more lines)\n\nlogs\\osgrep-debug\\20260312-112252-phase4-spaced-search\\result.json:1\n  {\n    \"label\": \"phase4-spaced-search\",\n    \"started\": \"2026-03-12T15:22:52.354441+00:00\",\n    \"cwd\": \"C:/development/opencode/tmp/osgrep path repro\",\n    \"command\": [\n      \"osgrep\",\n      \"--\",\n      \"search\",\n      \"folder creation\"\n    ],\n    \"timeout_seconds\": 20,\n    \"platform\": \"nt\",\n    \"cleanup\": {},\n    \"exit_code\": 0,\n  ... (+11 more lines)\n\n.conductor\\tracks\\20260312-osgrep-cli-only-reenable\\metadata.json:1\n  {\n    \"track_id\": \"20260312-osgrep-cli-only-reenable\",\n    \"title\": \"Re-enable osgrep for OpenCode automation (CLI-only)\",\n    \"status\": \"active\",\n    \"priority\": \"high\",\n    \"created\": \"2026-03-12\",\n    \"updated\": \"2026-03-12\",\n    \"assignee\": \"Build\",\n    \"tags\": [\n      \"osgrep\",\n      \"cli\",\n      \"re-enable\",\n      \"validation\",\n      \"agent-automation\"\n    ],\n  ... (+29 more lines)\n\nosgrep results (5 matches across 4 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.372,
+  "finished": "2026-03-12T19:56:36.382137+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search osgrep"
+}

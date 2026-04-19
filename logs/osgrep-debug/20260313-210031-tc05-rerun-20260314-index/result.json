@@ -1,0 +1,25 @@
+{
+  "label": "tc05-rerun-20260314-index",
+  "started": "2026-03-14T01:00:31.754046+00:00",
+  "cwd": "C:/development/opencode/osgrep path repro",
+  "command": [
+    "osgrep",
+    "--",
+    "index"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "- Indexing...\n\u00e2\u0153\u201d Indexing complete(96 / 96) \u00e2\u20ac\u00a2 indexed 13 \n",
+  "timed_out": false,
+  "duration_seconds": 4.884,
+  "finished": "2026-03-14T01:00:37.019703+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- index"
+}

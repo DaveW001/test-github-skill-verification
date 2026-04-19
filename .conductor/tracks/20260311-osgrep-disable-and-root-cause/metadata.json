@@ -18,7 +18,8 @@
     "20260309-osgrep-desktop-hang",
     "20260129-osgrep-unwanted-folder-creation",
     "20260112-debug-osgrep-mcp-failed-to-get-tools",
-    "20260114-osgrep-bridge-cleanup"
+    "20260114-osgrep-bridge-cleanup",
+    "20260312-osgrep-cli-only-reenable"
   ],
   "references": {
     "primary": [

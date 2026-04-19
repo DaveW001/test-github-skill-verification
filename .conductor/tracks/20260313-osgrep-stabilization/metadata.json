@@ -1,0 +1,37 @@
+{
+  "trackId": "20260313-osgrep-stabilization",
+  "title": "Osgrep Stabilization (Path A)",
+  "status": "completed",
+  "priority": "high",
+  "createdAt": "2026-03-13",
+  "parentTrackId": "20260312-osgrep-cli-only-reenable",
+  "owner": "01-Planner",
+  "tags": ["osgrep", "stabilization", "bug-fix", "cli-only", "race-condition", "tool-path"],
+  "tasks": {
+    "total": 24,
+    "completed": 24,
+    "inProgress": 0,
+    "pending": 0
+  },
+  "phases": {
+    "phase0": { "name": "Baseline and Reproducibility", "status": "completed", "progress": "100%" },
+    "phase1": { "name": "Fix 1 - Table Creation Race", "status": "completed", "progress": "100%" },
+    "phase2": { "name": "Fix 2 - FTS Reliability", "status": "completed", "progress": "100%" },
+    "phase3": { "name": "Fix 3 - Stale Index Determinism", "status": "completed", "progress": "100%" },
+    "phase4": { "name": "Tool-Path Activation Gate", "status": "completed", "progress": "100%" },
+    "phase5": { "name": "Integrated Validation Matrix", "status": "completed", "progress": "100%" },
+    "phase6": { "name": "Decision, Rollout, and Rollback", "status": "completed", "progress": "100%" }
+  },
+  "blockingIssues": [],
+  "successCriteria": [
+    "All blocking criteria pass (TC-01..TC-05, tool-path activation, MCP guardrail)",
+    "No unresolved 'Table chunks already exists' recurrence during gate run",
+    "Fallback behavior remains validated (TC-07)",
+    "Any TC-04/TC-11 residuals are explicitly risk-accepted with owner and re-evaluation date"
+  ],
+  "nextActions": [
+    "Close parent track decision package with staged GO note",
+    "Keep one-week and one-month monitoring windows for recurrence detection",
+    "Escalate only if chunks-table race or static tool-path behavior reappears"
+  ]
+}

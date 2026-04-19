@@ -1,0 +1,26 @@
+{
+  "label": "tc04-large-repo",
+  "started": "2026-03-12T19:54:47.350172+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "conductor track"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": "No matches found.\n",
+  "stderr": "[Searcher] FTS search failed: Failed to execute query stream: GenericFailure, lance error: Invalid user input: Cannot perform full text search unless an INVERTED index has been created on at least one column, C:\\Users\\runneradmin\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lance-index-0.39.0\\src\\scalar\\inverted\\query.rs:703:25  Caused by: Invalid user input: Cannot perform full text search unless an INVERTED index has been created on at least one column, C:\\Users\\runneradmin\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lance-index-0.39.0\\src\\scalar\\inverted\\query.rs:703:25    Caused by: Cannot perform full text search unless an INVERTED index has been created on at least one column\n",
+  "timed_out": false,
+  "duration_seconds": 1.275,
+  "finished": "2026-03-12T19:54:49.008739+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search 'conductor track'"
+}

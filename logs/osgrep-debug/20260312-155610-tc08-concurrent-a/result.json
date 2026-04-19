@@ -1,0 +1,26 @@
+{
+  "label": "tc08-concurrent-a",
+  "started": "2026-03-12T19:56:10.791045+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "validation matrix"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": "scripts\\validate-prompt-patterns.py:126 [Definition]\n  // scripts\\validate-prompt-patterns.py\n  import argparse\n  import re\n  import sys\n  def main() -> int:\n      parser = argparse.ArgumentParser(description=\"Validate markdown prompt patterns.\")\n      parser.add_argument(\n          \"--dir\",\n          type=Path,\n          default=Path(\"patterns/prompts\"),\n          help=\"Prompt pattern directory (default: patterns/prompts)\",\n      )\n      args = parser.parse_args()\n  ... (+26 more lines)\n\nscripts\\validate-prompt-patterns.py:82 [Definition]\n  // scripts\\validate-prompt-patterns.py\n  import argparse\n  import re\n  import sys\n  def validate_pattern_file(file_path: Path) -> ValidationResult:\n      text = file_path.read_text(encoding=\"utf-8\")\n      errors: list[str] = []\n      title_match = re.search(r\"^#\\s+(.+?)\\s*$\", text, re.MULTILINE)\n      if not title_match:\n          errors.append(\"Missing top-level title heading (# Title).\")\n          return ValidationResult(file_path=file_path, errors=errors)\n      title = title_match.group(1).strip()\n  ... (+27 more lines)\n\nscripts\\validate-prompt-patterns.py:62 [Definition]\n  // scripts\\validate-prompt-patterns.py\n  import argparse\n  import re\n  import sys\n  def is_title_case(title: str) -> bool:\n      words = [w for w in re.split(r\"\\s+\", title.strip()) if w]\n      if not words:\n          return False\n      for word in words:\n          if not re.search(r\"[A-Za-z]\", word):\n              continue\n          if word.isupper():\n              continue\n  ... (+8 more lines)\n\n.github\\workflows\\visual-regression.yml:263\n  h:\n            name: visual-app-log-${{ matrix.id }}\n            path: visual-app.log\n            retention-days: 7\n        - name: CI summary\n          if: ${{ always() }}\n          shell: bash\n\n.conductor\\tracks\\20260312-osgrep-cli-only-reenable\\artifacts\\validation-matrix.md:1\n  # Validation Matrix: Osgrep CLI-Only Re-Enablement\n  **Track ID**: 20260312-osgrep-cli-only-reenable\n  **Date**: 2026-03-12\n  ## Run Summary\n  - Run owner:\n  - Environment:\n  - OpenCode version:\n  - Agent:\n  - Result: PASS / FAIL\n  ## Test Cases\n  | ID | Scenario | Prompt | Expected | Actual | Evidence Link | Pass/Fail | Notes |\n  |---|---|---|---|---|---|---|---|\n  | TC-01 | Code-path discovery | find code path for auth token refresh | osgrep invoked before fallback | | | | |\n  | TC-02 | Cross-file impact | find where feature flag X is read and written | osgrep invoked and cited | | | | |\n  ... (+11 more lines)\n\nosgrep results (5 matches across 3 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.24,
+  "finished": "2026-03-12T19:56:12.316215+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search 'validation matrix'"
+}

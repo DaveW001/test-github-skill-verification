@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-03-22T13:23:52.280605",
+  "url": "https://packagedagile.com",
+  "total_requests": 46,
+  "resource_breakdown": {
+    "document": 2,
+    "image": 4,
+    "stylesheet": 2,
+    "script": 26,
+    "font": 6,
+    "fetch": 6
+  },
+  "main_document": {
+    "url": "https://packagedagile.com/",
+    "method": "GET",
+    "resource_type": "document",
+    "headers": {
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/143.0.7499.4 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "timestamp": "2026-03-22T13:23:48.860452",
+    "response": {
+      "status": 308,
+      "status_text": "",
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/html",
+        "date": "Sun, 22 Mar 2026 17:23:49 GMT",
+        "location": "https://www.packagedagile.com/",
+        "refresh": "0;url=https://www.packagedagile.com/",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "iad1::wbzrn-1774200229472-4e18863d2872"
+      },
+      "size": null
+    }
+  },
+  "console_messages": [],
+  "errors_count": 0,
+  "warnings_count": 0
+}

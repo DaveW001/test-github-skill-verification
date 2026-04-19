@@ -1,0 +1,120 @@
+{
+  "test_case": "Performance Audit - Packaged Agile Website",
+  "url": "https://packagedagile.com",
+  "timestamp": "2026-03-22T13:17:43.355432",
+  "steps": [
+    {
+      "step": 1,
+      "action": "navigate_page",
+      "status": "SUCCESS",
+      "url": "https://packagedagile.com",
+      "response_status": 200,
+      "navigation_time_seconds": 0.85
+    },
+    {
+      "step": 2,
+      "action": "take_screenshot",
+      "status": "SUCCESS",
+      "path": "C:/development/opencode/.conductor/tracks/20260321-control-chrome-mcp-fix/test1_screenshot.png",
+      "full_page": true
+    },
+    {
+      "step": 3,
+      "action": "performance_start_trace",
+      "status": "SUCCESS",
+      "method": "Playwright Tracing + CDP Performance API"
+    },
+    {
+      "step": 4,
+      "action": "wait",
+      "status": "SUCCESS",
+      "duration_seconds": 5
+    },
+    {
+      "step": 5,
+      "action": "performance_stop_trace",
+      "status": "SUCCESS",
+      "trace_saved": "C:/development/opencode/.conductor/tracks/20260321-control-chrome-mcp-fix/test1_trace.zip",
+      "metrics_collected": 36
+    },
+    {
+      "step": 6,
+      "action": "performance_analyze_insight",
+      "status": "SUCCESS",
+      "insights_generated": 5
+    }
+  ],
+  "performance_metrics": {
+    "Timestamp": 430208.701596,
+    "AudioHandlers": 0,
+    "AudioWorkletProcessors": 0,
+    "Documents": 7,
+    "Frames": 3,
+    "JSEventListeners": 491,
+    "LayoutObjects": 606,
+    "MediaKeySessions": 0,
+    "MediaKeys": 0,
+    "Nodes": 842,
+    "Resources": 74,
+    "ContextLifecycleStateObservers": 10,
+    "V8PerContextDatas": 4,
+    "WorkerGlobalScopes": 0,
+    "UACSSResources": 0,
+    "RTCPeerConnections": 0,
+    "ResourceFetchers": 7,
+    "AdSubframes": 0,
+    "DetachedScriptStates": 2,
+    "ArrayBufferContents": 17,
+    "LayoutCount": 0,
+    "RecalcStyleCount": 300,
+    "LayoutDuration": 0,
+    "RecalcStyleDuration": 0.02391,
+    "DevToolsCommandDuration": 5.8e-05,
+    "ScriptDuration": 0.000803,
+    "V8CompileDuration": 0,
+    "TaskDuration": 0.124017,
+    "TaskOtherDuration": 0.099246,
+    "ThreadTime": 0.129802,
+    "ProcessTime": 1.824527,
+    "JSHeapUsedSize": 8575580,
+    "JSHeapTotalSize": 12886016,
+    "FirstMeaningfulPaint": 0,
+    "DomContentLoaded": 430201.455173,
+    "NavigationStart": 430201.303762
+  },
+  "insights": {
+    "page_load_analysis": {
+      "navigation_start": 430201.303762,
+      "first_meaningful_paint": 0
+    },
+    "memory_analysis": {
+      "js_heap_used_mb": 8.18,
+      "memory_rating": "EXCELLENT",
+      "js_heap_total_mb": 12.29
+    },
+    "rendering_analysis": {
+      "layout_count": 0,
+      "style_recalc_count": 300
+    },
+    "recommendations": [
+      "Page performance appears good - no major issues detected"
+    ],
+    "page_metrics": {
+      "title": "Federal IT Modernization Consulting | Digital Transformation | Packaged Agile",
+      "url": "https://www.packagedagile.com/",
+      "loadEventEnd": 282,
+      "domComplete": 282,
+      "resourceCount": 63,
+      "totalResourceSize": 8636828,
+      "total_resource_size_mb": 8.24
+    }
+  },
+  "final_page_info": {
+    "title": "Federal IT Modernization Consulting | Digital Transformation | Packaged Agile",
+    "url": "https://www.packagedagile.com/",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    }
+  }
+}

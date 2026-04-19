@@ -1,0 +1,13 @@
+.osgrep
+
+# python cache artifacts
+**/__pycache__/
+*.py[cod]
+
+# local scratch files
+/temp_*
+/tmp_*
+nul
+
+# migration backups with credentials
+.conductor/tracks/*/artifacts/opencode.json.backup-pre-migration

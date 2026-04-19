@@ -1,0 +1,9 @@
+{
+  "trackId": "20260406-openrouter-desktop-auth-fix",
+  "title": "Fix OpenCode Desktop OpenRouter Auth Header",
+  "status": "completed",
+  "created": "2026-04-06",
+  "closed": "2026-04-06",
+  "summary": "Resolved 'Missing Authentication header' in OpenCode Desktop by promoting OPENROUTER_API_KEY from local .env to Windows user-level environment variable. Documented in environment-variables.md.",
+  "tags": ["opencode", "desktop", "auth", "openrouter", "environment-variables"]
+}

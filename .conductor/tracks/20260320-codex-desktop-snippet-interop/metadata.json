@@ -1,0 +1,33 @@
+{
+  "trackId": "20260320-codex-desktop-snippet-interop",
+  "title": "OpenCode Snippet Interop for Codex Desktop",
+  "status": "planned",
+  "priority": "high",
+  "createdAt": "2026-03-20",
+  "owner": "01-Planner",
+  "tags": [
+    "codex-desktop",
+    "opencode",
+    "snippets",
+    "interop",
+    "prompt-expansion",
+    "windows",
+    "validation"
+  ],
+  "tasks": {
+    "total": 35,
+    "completed": 0,
+    "inProgress": 0,
+    "pending": 35
+  },
+  "blockingIssues": [
+    "Need verified determination of whether Codex Desktop exposes a supported native prompt-preprocessing or command hook for #snippet expansion",
+    "Need explicit decision on how OpenCode shell interpolation syntax should behave in the Windows Codex Desktop environment"
+  ],
+  "nextActions": [
+    "Complete baseline inventory of the existing OpenCode snippet corpus and portability risks",
+    "Run native-hook discovery for Codex Desktop before committing to an implementation lane",
+    "Choose and document the compatibility architecture",
+    "Build parser, resolver, and end-to-end validation harness with real snippet fixtures"
+  ]
+}

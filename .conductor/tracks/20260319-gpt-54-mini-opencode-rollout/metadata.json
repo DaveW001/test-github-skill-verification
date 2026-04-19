@@ -1,0 +1,32 @@
+{
+  "trackId": "20260319-gpt-54-mini-opencode-rollout",
+  "title": "Enable GPT-5.4 Mini Across OpenCode CLI and Desktop",
+  "status": "completed",
+  "priority": "high",
+  "createdAt": "2026-03-19",
+  "owner": "01-Planner",
+  "tags": [
+    "opencode",
+    "openai",
+    "models",
+    "gpt-5.4-mini",
+    "oauth",
+    "proxy",
+    "desktop",
+    "cli"
+  ],
+  "tasks": {
+    "total": 25,
+    "completed": 0,
+    "inProgress": 1,
+    "pending": 24
+  },
+  "blockingIssues": [
+    "Need explicit decision whether strict upstream model identity gpt-5.4-mini is required or OAuth-normalized behavior is acceptable"
+  ],
+  "nextActions": [
+    "Approve connection strategy (dual-lane recommended: keep OAuth Codex + add API/proxy lane for exact mini)",
+    "Prepare implementation patch in opencode.jsonc with backup and rollback",
+    "Run CLI and Desktop validation with runtime model-id verification evidence"
+  ]
+}

@@ -1,0 +1,3192 @@
+{
+  "timestamp": "2026-03-14T20:09:47.822055",
+  "total": 96,
+  "delete": [
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6enAAA=",
+      "receivedDateTime": "2026-02-25T11:43:44Z",
+      "subject": "agile outreach thoughts",
+      "sender_email": "dustinbowman@veritskybound.com",
+      "sender_name": "Dustin Bowman",
+      "bodyPreview": "[You don't often get email from dustinbowman@veritskybound.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHi Dave,\r\n\r\nPackaged Agile’s success in boosting gover",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: veritskybound.com",
+          "Suspicious username pattern: ^dustinbowman",
+          "Subject keyword: outreach"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6edAAA=",
+      "receivedDateTime": "2026-02-25T01:08:28Z",
+      "subject": "packagedagile",
+      "sender_email": "homer.lee@ygcn26.org.cn",
+      "sender_name": "Homer Lee(Mr.)",
+      "bodyPreview": "You don't often get email from homer.lee@ygcn26.org.cn. Learn why this is important\r\n\r\nDear Manager,\r\n\r\n\r\n(If you are not the person who is in charge of this, please forward this to your CEO, because ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: ygcn26.org.cn",
+          "Suspicious username pattern: ^homer\\.lee"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6eKAAA=",
+      "receivedDateTime": "2026-02-24T19:23:40Z",
+      "subject": "Outdated contact info blocking outreach? Our analysts can help",
+      "sender_email": "s_takale@bizkonnect.net",
+      "sender_name": "Sudeep Takale",
+      "bodyPreview": "You don't often get email from s_takale@bizkonnect.net. Learn why this is important\r\n40 hours pilot at $8 per hour\r\n\r\nHi Dave,\r\n\r\nMany consulting teams spend the first part of Q1:\r\n\r\n  *   Cleaning ou",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (4)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: bizkonnect.net",
+          "Suspicious username pattern: ^s_takale",
+          "Subject keyword: outreach",
+          "Body phrase: prospect"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAfxyUPfAAA=",
+      "receivedDateTime": "2026-02-24T17:42:20Z",
+      "subject": "Shadow AI to Secure AI + Countering AI Attacks",
+      "sender_email": "communications@zscaler.com",
+      "sender_name": "Zscaler Webinars",
+      "bodyPreview": "You don't often get email from communications@zscaler.com. Learn why this is important\r\nRegister Today\r\n                                                    ‍͏  ͏  ‍͏  ͏  ‍͏  ͏  ‍͏  ͏  ‍͏  ͏  ‍͏  ͏  ‍͏",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: zscaler.com",
+          "Suspicious username pattern: ^communications$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6d3AAA=",
+      "receivedDateTime": "2026-02-24T15:36:01Z",
+      "subject": "AI MVP Launch for Packaged Agile",
+      "sender_email": "aprillia.davis@partners.hal9.com",
+      "sender_name": "Aprillia Davis",
+      "bodyPreview": "You don't often get email from aprillia.davis@partners.hal9.com. Learn why this is important\r\nHi Dave,\r\n\r\nAre high setup costs and long timelines stalling your AI projects at Packaged Agile? Many star",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: partners.hal9.com",
+          "Suspicious username pattern: ^aprillia\\.davis"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6dvAAA=",
+      "receivedDateTime": "2026-02-24T14:37:25Z",
+      "subject": "Re: Costs??",
+      "sender_email": "ujwqqyb2378@hotmail.com",
+      "sender_name": "Jay King",
+      "bodyPreview": "You don't often get email from ujwqqyb2378@hotmail.com. Learn why this is important\r\nHi,\r\nI’m still waiting to hear from you. Please let me know if you’re interested in my service.\r\nThank you.\r\nSpence",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Suspicious username pattern: ^ujwqqyb[0-9]+",
+          "Body phrase: let me know if"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6dlAAA=",
+      "receivedDateTime": "2026-02-24T11:54:53Z",
+      "subject": "Argentina Shale Production 2026",
+      "sender_email": "Delegates=iq-hub.com@vrmailer3.com",
+      "sender_name": "Terry Tamayo",
+      "bodyPreview": "You don't often get email from delegates=iq-hub.com@vrmailer3.com. Learn why this is important\r\n\r\n\r\n\r\nThe Premier Forum for Shale Gas and Tight Oil Production for South American Unconventional Plays\r\n",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: vrmailer3.com",
+          "Suspicious username pattern: ^delegates=iq-hub\\.com"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6dkAAA=",
+      "receivedDateTime": "2026-02-24T11:14:38Z",
+      "subject": "Next-Gen Leadership: Skills Every First-Time Manager Needs to Succeed in 2026",
+      "sender_email": "m.clark@conferencetimex.com",
+      "sender_name": "Mandeline Clark",
+      "bodyPreview": "You don't often get email from m.clark@conferencetimex.com. Learn why this is important\r\nleadership for Gen Z managers\r\nNext-Gen Leadership: Skills Every First-Time Manager Needs to Succeed\r\n\r\nSpeaker",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: conferencetimex.com",
+          "Suspicious username pattern: ^m\\.clark"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6dYAAA=",
+      "receivedDateTime": "2026-02-23T23:42:09Z",
+      "subject": "You’re Invited: Three Whistles DC Grand Opening 🎉",
+      "sender_email": "info@cobot.me",
+      "sender_name": "CoworkCafe at Three Whistles (Clarendon)",
+      "bodyPreview": "You don't often get email from info@cobot.me. Learn why this is important\r\n\r\n\r\nHi CoworkCafe Community,\r\n\r\nBecause you’ve been such an important part of our story in Workspace in Clarendon, you’re the",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: cobot.me",
+          "Suspicious username pattern: ^info$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6c_AAA=",
+      "receivedDateTime": "2026-02-23T17:53:08Z",
+      "subject": "Step 3",
+      "sender_email": "sadie@tryedgestack.com",
+      "sender_name": "Sadie Taylor",
+      "bodyPreview": "You don't often get email from sadie@tryedgestack.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nI'll keep this super brief - just wanted to check one last time if you'd be interested in sharing your",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: tryedgestack.com",
+          "Suspicious username pattern: ^sadie$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6c5AAA=",
+      "receivedDateTime": "2026-02-23T17:25:25Z",
+      "subject": "Personal invite",
+      "sender_email": "sage@tryrefstack.com",
+      "sender_name": "Sage Meyer",
+      "bodyPreview": "You don't often get email from sage@tryrefstack.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nMy colleague, Stephen, found you on LinkedIn and thought you'd be a great fit to interview for our white",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: tryrefstack.com",
+          "Suspicious username pattern: ^sage$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6cwAAA=",
+      "receivedDateTime": "2026-02-23T15:51:13Z",
+      "subject": "40-hour, Deal of the Week",
+      "sender_email": "cara@codingcopssquad.com",
+      "sender_name": "Cara Mitchell",
+      "bodyPreview": "You don't often get email from cara@codingcopssquad.com. Learn why this is important\r\nHi Dave,\r\n\r\nI'm sure you're juggling a dozen priorities - so to be respectful of your time, I'll jump right in.\r\n\r",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: codingcopssquad.com",
+          "Suspicious username pattern: ^cara$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6cvAAA=",
+      "receivedDateTime": "2026-02-23T15:33:30Z",
+      "subject": "GSA Contract Support for PACKAGED AGILE LLC",
+      "sender_email": "tony.p@pricereporter.com",
+      "sender_name": "Tony Pularia",
+      "bodyPreview": "You don't often get email from tony.p@pricereporter.com. Learn why this is important\r\nHello Dave,\r\n\r\nI attempted to reach you by phone earlier but was unable to connect.\r\n\r\nI’ve reviewed your GSA cont",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: pricereporter.com",
+          "Suspicious username pattern: ^tony\\.p"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6cXAAA=",
+      "receivedDateTime": "2026-02-23T00:42:52Z",
+      "subject": "Cursor + 2B tokens + Myuser",
+      "sender_email": "zach@himmyuser.com",
+      "sender_name": "Zach Slate",
+      "bodyPreview": "[You don't often get email from zach@himmyuser.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHey Dave,\r\n\r\nSaw you've burned through 2B tokens on Cursor since A",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: himmyuser.com",
+          "Suspicious username pattern: ^zach$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6cPAAA=",
+      "receivedDateTime": "2026-02-22T21:04:16Z",
+      "subject": "U.S. Treasury Debt Is Surging—Here’s What It Means for Income",
+      "sender_email": "investing@gt.greenety.com",
+      "sender_name": "U.S. Treasury Debt, Brian from Greenety",
+      "bodyPreview": "You don't often get email from investing@gt.greenety.com. Learn why this is important\r\n\r\nRecord Treasury Borrowing Is Changing Income Strategies\r\n\r\nThe U.S. Treasury is issuing debt at record levels.\r",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: gt.greenety.com",
+          "Suspicious username pattern: ^investing$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6cKAAA=",
+      "receivedDateTime": "2026-02-22T18:52:26Z",
+      "subject": "Fast & Flexible Funding — Apply in Minutes ",
+      "sender_email": "supports@wallstreetenglish.ar",
+      "sender_name": "CENT",
+      "bodyPreview": "You don't often get email from supports@wallstreetenglish.ar. Learn why this is important\r\n\r\nLooking for fast, flexible funding?\r\n\r\nAt CENT Financial Solutions LLC, we provide financing solutions for:",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: wallstreetenglish.ar",
+          "Suspicious username pattern: ^supports",
+          "Subject keyword: funding"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6bCAAA=",
+      "receivedDateTime": "2026-02-21T09:04:06Z",
+      "subject": "Welcome to Rail Technology Magazine",
+      "sender_email": "RailTechnologyMagazine@cognitivepublishing.co.uk",
+      "sender_name": "Rail Technology Magazine",
+      "bodyPreview": "A quick introduction!\r\n\r\nView in browser\r\n\r\n\r\n\r\nHi there!\r\n\r\nThank you for subscribing to Rail Technology Magazine, you’ve taken the first step towards gaining exclusive access to the best news and an",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: cognitivepublishing.co.uk",
+          "Suspicious username pattern: ^railtechnologymagazine"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6a0AAA=",
+      "receivedDateTime": "2026-02-20T21:57:08Z",
+      "subject": "RE: outbound strategy",
+      "sender_email": "matt@anevomarketingba.com",
+      "sender_name": "Matthew Lucero",
+      "bodyPreview": "You don't often get email from matt@anevomarketingba.com. Learn why this is important\r\nHey Dave,\r\n\r\nPicture this: instead of chasing cold leads, your team is spending time closing sales-ready conversa",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: anevomarketingba.com",
+          "Suspicious username pattern: ^matt$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6auAAA=",
+      "receivedDateTime": "2026-02-20T20:49:31Z",
+      "subject": "RFQ",
+      "sender_email": "ian@winaviations.com",
+      "sender_name": "Ian Blackie",
+      "bodyPreview": "You don't often get email from ian@winaviations.com. Learn why this is important\r\n\r\nHello,\r\n\r\n\r\n\r\nWe need a quote on the items in the attached RFQ.\r\n\r\n\r\n\r\nPlease revert at your earliest convenience.\r\n",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: winaviations.com",
+          "Suspicious username pattern: ^ian$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6anAAA=",
+      "receivedDateTime": "2026-02-20T18:42:57Z",
+      "subject": "Dave, got 15 seconds?",
+      "sender_email": "kate.clark@pltechhire.site",
+      "sender_name": "Kate Clark",
+      "bodyPreview": "You don't often get email from kate.clark@pltechhire.site. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nLet’s skip the “game-changing solution” pitch. You’ve probably read ten of those today.\r\n\r\nWe help",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: pltechhire.site",
+          "Suspicious username pattern: ^kate\\.clark"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6aiAAA=",
+      "receivedDateTime": "2026-02-20T17:59:22Z",
+      "subject": "An update on Tersa",
+      "sender_email": "hello@haydenbleasel.com",
+      "sender_name": "hello@haydenbleasel.com",
+      "bodyPreview": "You don't often get email from hello@haydenbleasel.com. Learn why this is important\r\n\r\nHi there,\r\n\r\nI wanted to share an update about Tersa.\r\n\r\n\r\nI’ve decided to shut down Tersa as a hosted product - ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: haydenbleasel.com",
+          "Suspicious username pattern: ^hello$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6aTAAA=",
+      "receivedDateTime": "2026-02-20T16:22:59Z",
+      "subject": "Need UX? Let’s Partner on Your Project & Proposal | Curtis Consulting",
+      "sender_email": "admin@yuricurtis.com",
+      "sender_name": "Curtis Consulting",
+      "bodyPreview": "You don't often get email from admin@yuricurtis.com. Learn why this is important\r\nUX design partner for enterprise and public-sector digital products. Team with Curtis Consulting.\r\n\r\nUX Design • Enter",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: yuricurtis.com",
+          "Suspicious username pattern: ^admin$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6aNAAA=",
+      "receivedDateTime": "2026-02-20T15:13:14Z",
+      "subject": "Two LP Intros for Your Fund",
+      "sender_email": "lyza.saluria@gotrademissions.digital",
+      "sender_name": "Lyza Saluria",
+      "bodyPreview": "[You don't often get email from lyza.saluria@gotrademissions.digital. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHello Dave,\r\n\r\nI have 2 LPs that I think would b",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: gotrademissions.digital",
+          "Suspicious username pattern: ^lyza\\.saluria"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6Z1AAA=",
+      "receivedDateTime": "2026-02-20T05:29:14Z",
+      "subject": "Virginia Tech - Packaged Agile Job Post Invitation",
+      "sender_email": "gregrw@supoll.com",
+      "sender_name": "gregrw@supoll.com",
+      "bodyPreview": "You don't often get email from gregrw@supoll.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nI would like to invite you to post Packaged Agile jobs on a community website for Virginia Tech:\r\n\r\nhttps:/",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: supoll.com",
+          "Suspicious username pattern: ^gregrw"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6ZqAAA=",
+      "receivedDateTime": "2026-02-19T20:54:25Z",
+      "subject": "[Webinar] HA Kubernetes Storage for Stateful Workloads",
+      "sender_email": "art@starwind.com",
+      "sender_name": "Artem Berman, VP of Sales Engineering",
+      "bodyPreview": "You don't often get email from art@starwind.com. Learn why this is important\r\n\r\nHey,\r\n\r\n\r\n\r\nThank you for using StarWind V2V Converter!\r\n\r\n\r\n\r\nAs you may know, StarWind is now part of the DataCore eco",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: starwind.com",
+          "Suspicious username pattern: ^art$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAfxyUPaAAA=",
+      "receivedDateTime": "2026-02-19T18:02:48Z",
+      "subject": "He got 578,106 impressions in 30 days…",
+      "sender_email": "lara@mail.kleo.so",
+      "sender_name": "Lara at Kleo",
+      "bodyPreview": "(and spent 2hrs a week doing so)\r\n\r\n͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: mail.kleo.so",
+          "Suspicious username pattern: ^lara$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6ZVAAA=",
+      "receivedDateTime": "2026-02-19T17:02:28Z",
+      "subject": "Dave, Unlock your 20hour?",
+      "sender_email": "jerry@softaimsapppoint.pro",
+      "sender_name": "Jerry Brown",
+      "bodyPreview": "You don't often get email from jerry@softaimsapppoint.pro. Learn why this is important\r\nHi Dave,\r\n\r\nIf AI, a web platform, or a mobile app isn’t something you’re considering this year, I’m happy to st",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: softaimsapppoint.pro",
+          "Suspicious username pattern: ^jerry$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6ZRAAA=",
+      "receivedDateTime": "2026-02-19T16:10:24Z",
+      "subject": "Guest spot - Podcast invite for Dave",
+      "sender_email": "eden@lovemythic.com",
+      "sender_name": "Eden Clayton",
+      "bodyPreview": "You don't often get email from eden@lovemythic.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nWe'd love to invite you as a guest on our podcast - Core Conversations: Leadership, Growth and the Future",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: lovemythic.com",
+          "Suspicious username pattern: ^eden$",
+          "Subject keyword: podcast"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6ZNAAA=",
+      "receivedDateTime": "2026-02-19T15:16:06Z",
+      "subject": "LinkedIn <> Vendor Testing Post",
+      "sender_email": "ambi.moorthy@gozendeepagent.com",
+      "sender_name": "Ambi Moorthy",
+      "bodyPreview": "[You don't often get email from ambi.moorthy@gozendeepagent.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHello Dave,\r\n\r\n\r\nReally enjoyed your recent post abou",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: gozendeepagent.com",
+          "Suspicious username pattern: ^ambi\\.moorthy"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6ZGAAA=",
+      "receivedDateTime": "2026-02-19T13:48:31Z",
+      "subject": "Quick revenue expansion idea",
+      "sender_email": "arden@tryechocloud.com",
+      "sender_name": "Arden James",
+      "bodyPreview": "You don't often get email from arden@tryechocloud.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nMany consulting firms I speak with are strong on strategy but don’t monetize backend automation infras",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: tryechocloud.com",
+          "Suspicious username pattern: ^arden$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6Y6AAA=",
+      "receivedDateTime": "2026-02-19T08:02:59Z",
+      "subject": "Supply Chain Alert: Scotland’s £4.8B Rail Overhaul Is Live",
+      "sender_email": "info@information.transcityrail.com",
+      "sender_name": "TransCityRail Scotland",
+      "bodyPreview": "You don't often get email from info@information.transcityrail.com. Learn why this is important\r\n\r\nThe £4.8 Billion Opportunity Every Supplier Needs to See\r\n\r\n\r\nCan't read this email properly?\r\n\r\nHi Da",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: information.transcityrail.com",
+          "Suspicious username pattern: ^info$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIajAAA=",
+      "receivedDateTime": "2026-02-19T01:47:07Z",
+      "subject": "Packaged agile llc is Approved – Let’s Finalize Your Dollar Amount!",
+      "sender_email": "eshaulov@pmfus.com",
+      "sender_name": "eshaulov@pmfus.com",
+      "bodyPreview": "You don't often get email from eshaulov@pmfus.com. Learn why this is important\r\n\r\nHi David\r\n\r\nGreat news — Packaged agile llc has been approved for both a Direct MCA Buyout Loan offer and a Revolving ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: pmfus.com",
+          "Suspicious username pattern: ^eshaulov"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIabAAA=",
+      "receivedDateTime": "2026-02-18T23:12:23Z",
+      "subject": "New Stays + Spring Getaways Inside",
+      "sender_email": "marketing@curatorhotelsandresorts.com",
+      "sender_name": "Curator Hotel & Resort Collection",
+      "bodyPreview": "Be the first to see our newest stays and exclusive seasonal offers.\r\n͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: curatorhotelsandresorts.com",
+          "Suspicious username pattern: ^marketing$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIaGAAA=",
+      "receivedDateTime": "2026-02-18T17:36:44Z",
+      "subject": "Re: Dave Witkin X Nitish",
+      "sender_email": "nitish.r@boostchatturaiads.online",
+      "sender_name": "Nitish Kalra",
+      "bodyPreview": "You don't often get email from nitish.r@boostchatturaiads.online. Learn why this is important\r\nHey Dave, Just wanted to reshare this in case it got buried.\r\n\r\nHere’s the short AI-generated brand film ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: boostchatturaiads.online",
+          "Suspicious username pattern: ^nitish\\.r"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIaCAAA=",
+      "receivedDateTime": "2026-02-18T17:11:51Z",
+      "subject": "question Dave",
+      "sender_email": "marienne@growiqsparkhub.com",
+      "sender_name": "Marienne Rosendahl",
+      "bodyPreview": "[You don't often get email from marienne@growiqsparkhub.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nDave, i saw that you helped a client achieve a 64% produc",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: growiqsparkhub.com",
+          "Suspicious username pattern: ^marienne$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIZ2AAA=",
+      "receivedDateTime": "2026-02-18T15:12:11Z",
+      "subject": "Connect with Elite Military Veterans - March 12th, 2026",
+      "sender_email": "lmaxwell@cohen-partners.com",
+      "sender_name": "Laura Maxwell, Cohen Partners",
+      "bodyPreview": "You don't often get email from lmaxwell@cohen-partners.com. Learn why this is important\r\nSpots still available: Cohen Partners Military Virtual Hiring Conference - March 12th, 2026\r\n\r\n\r\nCOHEN PARTNERS",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: cohen-partners.com",
+          "Suspicious username pattern: ^lmaxwell"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYrAAA=",
+      "receivedDateTime": "2026-02-17T15:20:17Z",
+      "subject": "$10,000 Cash Allowance toward a 2026 Equinox EV is yours",
+      "sender_email": "chevrolet@autogearmasters.com",
+      "sender_name": "Chevrolet",
+      "bodyPreview": "You don't often get email from chevrolet@autogearmasters.com. Learn why this is important\r\n      \r\nTake advantage of this incredible offer today.\r\n͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌",
+      "classification": {
+        "action": "delete",
+        "reason": "Known junk domain",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: autogearmasters.com"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYoAAA=",
+      "receivedDateTime": "2026-02-17T14:43:45Z",
+      "subject": "Flexible analyst capacity for consulting teams",
+      "sender_email": "angelaberg@nexteam.jobs",
+      "sender_name": "Angela Berg",
+      "bodyPreview": "You don't often get email from angelaberg@nexteam.jobs. Learn why this is important\r\nHi Dave\r\nConsulting firms we speak with often need flexible modeling and research capacity — without committing to ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: nexteam.jobs",
+          "Suspicious username pattern: ^angelaberg"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYnAAA=",
+      "receivedDateTime": "2026-02-17T14:30:09Z",
+      "subject": "CMMC Level 2 & DLA RD004/RD005: Key Compliance Updates",
+      "sender_email": "vciso@adiit.com",
+      "sender_name": "Atlantic Digital",
+      "bodyPreview": "CMMC Level 2 and DLA clauses now determine award eligibility. Ensure your SPRS status is accurate to stay competitive.\r\n͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: adiit.com",
+          "Suspicious username pattern: ^vciso"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYIAAA=",
+      "receivedDateTime": "2026-02-16T20:53:02Z",
+      "subject": "Hi there DC private tailoring",
+      "sender_email": "scott@luxuryattireny.com",
+      "sender_name": "Scott (Label)",
+      "bodyPreview": "You don't often get email from scott@luxuryattireny.com. Learn why this is important\r\nHi there,\r\n\r\nYour LinkedIn profile stood out, it reflects a clear focus on excellence and attention to detail\r\n\r\nO",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: luxuryattireny.com",
+          "Suspicious username pattern: ^scott$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIXvAAA=",
+      "receivedDateTime": "2026-02-16T16:13:18Z",
+      "subject": "AI Outreach Tool",
+      "sender_email": "olivia@growoutreach.site",
+      "sender_name": "Olivia Brooks",
+      "bodyPreview": "[You don't often get email from olivia@growoutreach.site. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nGreetings Dave,\r\n\r\nNoticed you've been helping Public Sector",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: growoutreach.site",
+          "Suspicious username pattern: ^olivia$",
+          "Subject keyword: outreach"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIXtAAA=",
+      "receivedDateTime": "2026-02-16T16:07:36Z",
+      "subject": "Re: Quick question: want to be on our podcast?",
+      "sender_email": "devin@getleadtools.com",
+      "sender_name": "Devin Davis",
+      "bodyPreview": "You don't often get email from devin@getleadtools.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nJust wanted to follow up on my note below in case it got buried.\r\n\r\nHappy to share a bit more detail i",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: getleadtools.com",
+          "Suspicious username pattern: ^devin$",
+          "Subject keyword: quick question"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIXfAAA=",
+      "receivedDateTime": "2026-02-16T13:47:14Z",
+      "subject": "Re: Complete SEO action plan?",
+      "sender_email": "Iglaps_Tech_Solution@outlook.com",
+      "sender_name": "Jenny Smith",
+      "bodyPreview": "You don't often get email from iglaps_tech_solution@outlook.com. Learn why this is important\r\nHi,\r\nI was looking at your website and noticed that you aren’t at the top of Google search. I can fix that",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Suspicious username pattern: ^iglaps_tech_solution",
+          "Subject keyword: seo"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIXXAAA=",
+      "receivedDateTime": "2026-02-16T11:06:17Z",
+      "subject": "Podcast Invitation: The Hidden Cost of Staff Burnout in Hospital & Health Care",
+      "sender_email": "vivian@campaignexhq.com",
+      "sender_name": "Vivian Wenzel",
+      "bodyPreview": "You don't often get email from vivian@campaignexhq.com. Learn why this is important\r\nHi Dave, my colleague Haley found you on LinkedIn while looking for key voices in the Management Consulting space a",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: campaignexhq.com",
+          "Suspicious username pattern: ^vivian$",
+          "Subject keyword: podcast"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgSW4b4AAA=",
+      "receivedDateTime": "2026-02-15T05:44:39Z",
+      "subject": "秋吉農園のお問い合わせ",
+      "sender_email": "wordpress@akiyoshi-nouen.com",
+      "sender_name": "秋吉農園",
+      "bodyPreview": "[You don't often get email from wordpress@akiyoshi-nouen.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nお問い合わせが送信されました。\r\n\r\n差出人: I want you- https://nam12.safeli",
+      "classification": {
+        "action": "delete",
+        "reason": "Known junk domain",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: akiyoshi-nouen.com"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgSW4beAAA=",
+      "receivedDateTime": "2026-02-14T16:32:35Z",
+      "subject": "Fast & Flexible Funding — Apply in Minutes Inbox",
+      "sender_email": "hieu.nv@kiemdinh.vn",
+      "sender_name": "CENT",
+      "bodyPreview": "You don't often get email from hieu.nv@kiemdinh.vn. Learn why this is important\r\n\r\nLooking for fast, flexible funding?\r\n\r\nAt CENT Financial Solutions LLC, we provide financing solutions for:\r\n\r\nSmall ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: kiemdinh.vn",
+          "Suspicious username pattern: ^hieu\\.nv",
+          "Subject keyword: funding"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIIYAAA=",
+      "receivedDateTime": "2026-02-14T08:41:38Z",
+      "subject": "Hi Dave",
+      "sender_email": "iris@wisepitchagency.com",
+      "sender_name": "Iris Miller",
+      "bodyPreview": "You don't often get email from iris@wisepitchagency.com. Learn why this is important\r\nHi Dave,\r\n\r\nI came across your LinkedIn profile and it’s clear you’re doing serious work.\r\n\r\nThat’s why I wanted t",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: wisepitchagency.com",
+          "Suspicious username pattern: ^iris$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIITAAA=",
+      "receivedDateTime": "2026-02-13T23:21:47Z",
+      "subject": "Quick follow-up",
+      "sender_email": "alexa@lemonlightcast.co",
+      "sender_name": "Alexa",
+      "bodyPreview": "[You don't often get email from alexa@lemonlightcast.co. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHey Dave,\r\n\r\nQuick follow-up on my last email. The teams we w",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: lemonlightcast.co",
+          "Suspicious username pattern: ^alexa$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAfxyUP8AAA=",
+      "receivedDateTime": "2026-02-13T20:39:16Z",
+      "subject": "Introducing Exa Instant: Fastest search engine in the world",
+      "sender_email": "updates@product.exa.ai",
+      "sender_name": "Exa Product Updates",
+      "bodyPreview": "You don't often get email from updates@product.exa.ai. Learn why this is important\r\nYour preheader text goes here\r\n\r\nIntroducing Exa Instant!\r\n\r\nThe first sub-200ms search engine\r\n\r\n\r\n\r\nExa Instant is",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: product.exa.ai",
+          "Suspicious username pattern: ^updates$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIIDAAA=",
+      "receivedDateTime": "2026-02-13T18:04:35Z",
+      "subject": "We have received your support request",
+      "sender_email": "noreply@imanet.org",
+      "sender_name": "IMA Customer Support",
+      "bodyPreview": "You don't often get email from noreply@imanet.org. Learn why this is important\r\nThank you for contacting IMA, this is an automated message.\r\n\r\nCase number 00126206 has been created for you. If you hav",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: imanet.org",
+          "Suspicious username pattern: ^noreply$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIICAAA=",
+      "receivedDateTime": "2026-02-13T18:02:27Z",
+      "subject": "Dave, More",
+      "sender_email": "sarah@mavenupweb.com",
+      "sender_name": "Sarah",
+      "bodyPreview": "You don't often get email from sarah@mavenupweb.com. Learn why this is important\r\nHi Dave,\r\n\r\nMost websites look good but do not actively generate revenue.\r\n\r\nWe build AI enabled websites on any stack",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: mavenupweb.com",
+          "Suspicious username pattern: ^sarah$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIHsAAA=",
+      "receivedDateTime": "2026-02-13T14:26:31Z",
+      "subject": "is this you, Dave?",
+      "sender_email": "kristy.h@techverx-support.com",
+      "sender_name": "Kristy Hughes",
+      "bodyPreview": "[You don't often get email from kristy.h@techverx-support.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHello Dave,\r\n\r\nAre you still looking for trustworthy de",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: techverx-support.com",
+          "Suspicious username pattern: ^kristy\\.h"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIHpAAA=",
+      "receivedDateTime": "2026-02-13T13:46:22Z",
+      "subject": "RE: Dave",
+      "sender_email": "marian@itserve360.com",
+      "sender_name": "Marian Bailey",
+      "bodyPreview": "You don't often get email from marian@itserve360.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nChecking if Friday at 1 PM EST or next week Tuesday at 12 PM EST works for your schedule. Please let me",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: itserve360.com",
+          "Suspicious username pattern: ^marian$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcVBAAA=",
+      "receivedDateTime": "2026-02-13T04:07:08Z",
+      "subject": "Get Ready for MAS Refresh 31 & Mandatory TDR",
+      "sender_email": "notice@gsa-cs.com",
+      "sender_name": "notice",
+      "bodyPreview": "You don't often get email from notice@gsa-cs.com. Learn why this is important\r\n\r\n\r\nDear GSA Contractor,\r\n\r\nGSA’s upcoming MAS Refresh 31 brings a new major change: Transactional Data Reporting (TDR) w",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: gsa-cs.com",
+          "Suspicious username pattern: ^notice$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcU7AAA=",
+      "receivedDateTime": "2026-02-12T21:42:56Z",
+      "subject": "RE: Looking to sell?",
+      "sender_email": "Guillermo@findtworld.com",
+      "sender_name": "Guillermo Birmingham",
+      "bodyPreview": "You don't often get email from guillermo@findtworld.com. Learn why this is important\r\nHi Dave,\r\n\r\n I’m a Certified Mergers & Acquisition Advisor at Transworld Business Advisors RVA serving Maryland, V",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: findtworld.com",
+          "Suspicious username pattern: ^guillermo$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcUtAAA=",
+      "receivedDateTime": "2026-02-12T18:19:07Z",
+      "subject": "This SAFE Mistake Cost Founders 40% of Their Company",
+      "sender_email": "support@modelmywaterfall.com",
+      "sender_name": "Model My Exit",
+      "bodyPreview": "You don't often get email from support@modelmywaterfall.com. Learn why this is important\r\nThe stacking problem nobody warned you about. ‌ ‌ ‌ ‌\r\n\r\nFOUNDER ESSENTIALS\r\nThis SAFE Mistake Cost Founders 4",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: modelmywaterfall.com",
+          "Suspicious username pattern: ^support$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcUpAAA=",
+      "receivedDateTime": "2026-02-12T17:18:12Z",
+      "subject": "Cleaning",
+      "sender_email": "madeline@pureofficecare.com",
+      "sender_name": "Madeline Hartwin",
+      "bodyPreview": "[You don't often get email from madeline@pureofficecare.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHi Dave, we do commercial cleaning near Leesburg.\r\n\r\nWant",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: pureofficecare.com",
+          "Suspicious username pattern: ^madeline$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcUkAAA=",
+      "receivedDateTime": "2026-02-12T16:07:30Z",
+      "subject": "Re: Podcast Invitation: Project Scope Creep in Consulting",
+      "sender_email": "greta@coldhivego.co",
+      "sender_name": "Greta Williams",
+      "bodyPreview": "You don't often get email from greta@coldhivego.co. Learn why this is important\r\nHey Dave, just following up!\r\nOn Wed, January 21, 2026 10:57 PM, Greta Williams <greta@coldhivego.co> wrote:\r\n\r\nHi Dave",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: coldhivego.co",
+          "Suspicious username pattern: ^greta$",
+          "Subject keyword: podcast"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcUeAAA=",
+      "receivedDateTime": "2026-02-12T14:48:40Z",
+      "subject": "Invite for Dave",
+      "sender_email": "holly@getfutureflow.com",
+      "sender_name": "Holly Rich",
+      "bodyPreview": "You don't often get email from holly@getfutureflow.com. Learn why this is important\r\n\r\nHey Dave,\r\n\r\nWe've been interviewing a few consultancy leaders as we're creating a white paper. We already got in",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: getfutureflow.com",
+          "Suspicious username pattern: ^holly$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcTlAAA=",
+      "receivedDateTime": "2026-02-11T16:44:20Z",
+      "subject": "Dave - file closure alert - do you need capital help",
+      "sender_email": "spencermcneil@monerabusinesscashflow.xyz",
+      "sender_name": "Spencer McNeil",
+      "bodyPreview": "[You don't often get email from spencermcneil@monerabusinesscashflow.xyz. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHi Dave -\r\n\r\n\r\nThis is the final follow-up. ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: monerabusinesscashflow.xyz",
+          "Suspicious username pattern: ^spencermcneil"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcTkAAA=",
+      "receivedDateTime": "2026-02-11T16:32:19Z",
+      "subject": "Re: ZoomInfo Too Expensive? Try Cefer.io Free",
+      "sender_email": "clarab2bdatabase@gmail.com",
+      "sender_name": "Clara B2b",
+      "bodyPreview": "You don't often get email from clarab2bdatabase@gmail.com. Learn why this is important\r\n\r\nGood day,\r\n\r\nJust checking in to see if improving prospecting efficiency with verified contacts is a current g",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Suspicious username pattern: ^clarab[0-9]+bdatabase",
+          "Body phrase: prospect"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcTYAAA=",
+      "receivedDateTime": "2026-02-11T14:49:38Z",
+      "subject": "In need of a small business loan?",
+      "sender_email": "support@gwdciraq.com",
+      "sender_name": "CENT Financial",
+      "bodyPreview": "[You don't often get email from support@gwdciraq.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHello,\r\n\r\nNeed a little financial breathing room? Whether it’s f",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: gwdciraq.com",
+          "Suspicious username pattern: ^support$"
+        ]
+      }
+    }
+  ],
+  "review": [
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgdcUfSAAA=",
+      "receivedDateTime": "2026-03-03T07:27:58Z",
+      "subject": "Prices",
+      "sender_email": "tools.seoforums01@outlook.com",
+      "sender_name": "David Smith",
+      "bodyPreview": "You don't often get email from tools.seoforums01@outlook.com. Learn why this is important\r\nHi,\r\n\r\nAre you looking to upgrade, redesign, or build a new website?\r\n\r\nI offer custom web design and develop",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^tools\\.seo"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6erAAA=",
+      "receivedDateTime": "2026-02-25T13:35:47Z",
+      "subject": "Re: Review boost",
+      "sender_email": "BriceThomas1@hotmail.com",
+      "sender_name": "Brice Thomas",
+      "bodyPreview": "You don't often get email from bricethomas1@hotmail.com. Learn why this is important\r\nHello,\r\nFollowing up to see if this is still of interest. I appreciate your time.\r\nKind regards,\r\nBrice Thomas\r\n__",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^bricethomas[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6d2AAA=",
+      "receivedDateTime": "2026-02-24T15:33:06Z",
+      "subject": "Re: Growth Strategy 🚀",
+      "sender_email": "PollyBarnard45@hotmail.com",
+      "sender_name": "Trinidad Flatness",
+      "bodyPreview": "You don't often get email from pollybarnard45@hotmail.com. Learn why this is important\r\nHi,\r\n\r\nJust checking in — any update on this?\r\n\r\nThanks,\r\n\r\nSamuel\r\n________________________________\r\nFrom: Trin",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^pollybarnard[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6drAAA=",
+      "receivedDateTime": "2026-02-24T13:40:31Z",
+      "subject": "Re: Review boost",
+      "sender_email": "BriceThomas1@hotmail.com",
+      "sender_name": "Brice Thomas",
+      "bodyPreview": "You don't often get email from bricethomas1@hotmail.com. Learn why this is important\r\nHi,\r\nI came across a few minor issues on your website.\r\nCan I share screenshots?\r\nThanks,\r\nBrice Thomas",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^bricethomas[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6c0AAA=",
+      "receivedDateTime": "2026-02-23T16:19:46Z",
+      "subject": "Costs??",
+      "sender_email": "ujwqqyb2378@hotmail.com",
+      "sender_name": "Jay King",
+      "bodyPreview": "You don't often get email from ujwqqyb2378@hotmail.com. Learn why this is important\r\nHi,\r\nI found your details on Google, and I have looked at your website.\r\nI can help bring your website to the first",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^ujwqqyb[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6crAAA=",
+      "receivedDateTime": "2026-02-23T14:54:02Z",
+      "subject": "Growth Strategy 🚀",
+      "sender_email": "PollyBarnard45@hotmail.com",
+      "sender_name": "Trinidad Flatness",
+      "bodyPreview": "You don't often get email from pollybarnard45@hotmail.com. Learn why this is important\r\nHello,\r\n\r\nI’ve prepared a ranking report for your review.\r\n\r\nShall I send the detailed quote and price list?\r\n\r\n",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^pollybarnard[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6chAAA=",
+      "receivedDateTime": "2026-02-23T10:53:15Z",
+      "subject": "Re: Website Error Found ?",
+      "sender_email": "Aarohi.Sharma01@outlook.com",
+      "sender_name": "Aarohi Sharma",
+      "bodyPreview": "You don't often get email from aarohi.sharma01@outlook.com. Learn why this is important\r\nHello,\r\n\r\n\"Can I provide a screenshot showing the exact errors I'm facing?\"\r\n\r\n You can simply reply-“OK-SEND”\r",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^aarohi\\.sharma[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVcvCCAAA=",
+      "receivedDateTime": "2026-02-19T05:46:24Z",
+      "subject": "Re: Job Recruitment App !!",
+      "sender_email": "smallseoservice@hotmail.com",
+      "sender_name": "Simran Singh",
+      "bodyPreview": "You don't often get email from smallseoservice@hotmail.com. Learn why this is important\r\nHi, good morning\r\n\r\nI hope you’re doing well. I wanted to follow up to see if you’re ready to move forward with",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^smallseoservice"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIaIAAA=",
+      "receivedDateTime": "2026-02-18T17:51:36Z",
+      "subject": "Re: ZoomInfo Too Expensive? Try Cefer.io Free",
+      "sender_email": "clarab2bdatabase@gmail.com",
+      "sender_name": "Clara B2b",
+      "bodyPreview": "You don't often get email from clarab2bdatabase@gmail.com. Learn why this is important\r\n\r\nGood day,\r\n\r\n\r\n\r\nI wanted to reconnect and see if reducing time spent searching for accurate contacts is impor",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^clarab[0-9]+bdatabase"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIaEAAA=",
+      "receivedDateTime": "2026-02-18T17:06:35Z",
+      "subject": "Follow up",
+      "sender_email": "hosetmiles@gmail.com",
+      "sender_name": "Miles",
+      "bodyPreview": "You don't often get email from hosetmiles@gmail.com. Learn why this is important\r\nHi\r\n\r\nI’m following up to see if you had a chance to review my previous email. I’d be happy to discuss how we can prov",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^hosetmiles"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIZBAAA=",
+      "receivedDateTime": "2026-02-17T17:42:33Z",
+      "subject": "Your $2,000 Check from Trump Is Just the Start",
+      "sender_email": "daily@main.globalmarketsreview.com",
+      "sender_name": "Trump’s $2,000 Checks, GMR",
+      "bodyPreview": "You don't often get email from daily@main.globalmarketsreview.com. Learn why this is important\r\nTrump’s $2,000 checks are more than just payouts. They’re the first signal of a massive wealth restorati",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^daily$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIY0AAA=",
+      "receivedDateTime": "2026-02-17T16:12:29Z",
+      "subject": "Re: ZoomInfo Too Expensive? Try Cefer.io Free",
+      "sender_email": "clarab2bdatabase@gmail.com",
+      "sender_name": "Clara B2b",
+      "bodyPreview": "You don't often get email from clarab2bdatabase@gmail.com. Learn why this is important\r\n\r\nHello,\r\n\r\n\r\n\r\nI wanted to send a quick reminder regarding my previous email.\r\n\r\n\r\n\r\nCefer helps you connect wi",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^clarab[0-9]+bdatabase"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYyAAA=",
+      "receivedDateTime": "2026-02-17T14:58:47Z",
+      "subject": "Cost effective accounting solutions.",
+      "sender_email": "simrankaur42677@gmail.com",
+      "sender_name": "Simran Kaur",
+      "bodyPreview": "You don't often get email from simrankaur42677@gmail.com. Learn why this is important\r\nHi,\r\n\r\nHope you and your family are doing well.\r\n\r\nPlease, could you let me know whether you are interested to hi",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^simrankaur[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYdAAA=",
+      "receivedDateTime": "2026-02-17T10:42:11Z",
+      "subject": "Re: Issue Alert ?",
+      "sender_email": "Isabella.Miller.01@hotmail.com",
+      "sender_name": "Isabella Miller",
+      "bodyPreview": "You don't often get email from isabella.miller.01@hotmail.com. Learn why this is important\r\nHi,\r\n\r\n\r\n\r\nWould you like me to share the error screenshots?\r\n\r\n\r\n\r\n💬 Simply reply: Yes, OK, or Sure\r\n\r\n____",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^isabella\\.miller\\.[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYEAAA=",
+      "receivedDateTime": "2026-02-16T20:15:50Z",
+      "subject": "Errors Detected",
+      "sender_email": "CarolineAdkins18@outlook.com",
+      "sender_name": "Caroline Adkins",
+      "bodyPreview": "You don't often get email from carolineadkins18@outlook.com. Learn why this is important\r\n\r\nHey, info@packagedagile.com\r\n\r\nI trust you're having a good day.\r\n\r\nWe found multiple areas where SEO improv",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^carolineadkins[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIX0AAA=",
+      "receivedDateTime": "2026-02-16T17:09:11Z",
+      "subject": "Hi Dave, CSM and CSPO Certification Training",
+      "sender_email": "olivia.flynn@agile.agileglobalbook.com",
+      "sender_name": "Olivia Flynn",
+      "bodyPreview": "You don't often get email from olivia.flynn@agile.agileglobalbook.com. Learn why this is important\r\n\r\n\r\nHi Dave,\r\n\r\nHope you're doing well!\r\n\r\nI'm reaching out to share exciting opportunities for prof",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^olivia\\.flynn"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIXAAAA=",
+      "receivedDateTime": "2026-02-15T17:21:51Z",
+      "subject": "Dwitkin@wconsultingllc.com, All Cool People are Born in January Birthday T-Shirt",
+      "sender_email": "khanhly446688@gmail.com",
+      "sender_name": "khanhly446688@gmail.com",
+      "bodyPreview": "You don't often get email from khanhly446688@gmail.com. Learn why this is important\r\n\r\nAll Cool People are Born in January Birthday Christmas T-Shirt\r\n\r\nSHOP NOW\r\n\r\nOUR BEST OFFER\r\n\r\nThey say style is",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^khanhly[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgSW4bdAAA=",
+      "receivedDateTime": "2026-02-14T16:23:18Z",
+      "subject": "Re: price share",
+      "sender_email": "LeatriceSalwasser5355@hotmail.com",
+      "sender_name": "Louie Guzi",
+      "bodyPreview": "You don't often get email from leatricesalwasser5355@hotmail.com. Learn why this is important\r\nHello,\r\nI wanted to follow up on my last message when you have a moment.\r\nThank you,\r\nLouie Guzi\r\n_______",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^leatricesalwasser[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgSW4bUAAA=",
+      "receivedDateTime": "2026-02-14T14:19:31Z",
+      "subject": "HIRING (lucrative work from home)",
+      "sender_email": "daily@alpha.detroittraders.com",
+      "sender_name": "Positions Available | Detroit Traders",
+      "bodyPreview": "You don't often get email from daily@alpha.detroittraders.com. Learn why this is important\r\nCould you use some additional income working very part time?  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^daily$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIIZAAA=",
+      "receivedDateTime": "2026-02-14T08:54:49Z",
+      "subject": "Re: Package.. ",
+      "sender_email": "jullykumari987@hotmail.com",
+      "sender_name": "jully kumari",
+      "bodyPreview": "You don't often get email from jullykumari987@hotmail.com. Learn why this is important\r\nHi Sir,\r\n\r\nYour site looks good, but it’s not ranking.\r\nI can fix this and place it on Google’s 1st page.\r\nShall",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^jullykumari[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIHvAAA=",
+      "receivedDateTime": "2026-02-13T14:47:01Z",
+      "subject": "We do go now",
+      "sender_email": "jemescarlose@gmail.com",
+      "sender_name": "Jemes Carlose",
+      "bodyPreview": "You don't often get email from jemescarlose@gmail.com. Learn why this is important\r\nWe must fast",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^jemescarlose"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIHoAAA=",
+      "receivedDateTime": "2026-02-13T13:21:55Z",
+      "subject": "RE: Dedicated Remote Recruiters ",
+      "sender_email": "Denisejoanseo@outlook.in",
+      "sender_name": "Denise joan",
+      "bodyPreview": "You don't often get email from denisejoanseo@outlook.in. Learn why this is important\r\nHi,\r\n\r\njust following up my previous mail regarding Dedicated Remote Recruiter Services sent you some days ago.\r\n\r",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^denisejoanseo"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcVJAAA=",
+      "receivedDateTime": "2026-02-13T09:00:11Z",
+      "subject": "Your Domain www.packagedagile.com",
+      "sender_email": "jenningsmiller656@hotmail.com",
+      "sender_name": "Jennings Miller",
+      "bodyPreview": "You don't often get email from jenningsmiller656@hotmail.com. Learn why this is important\r\n\r\nHello,\r\n\r\n\r\nI found several small adjustments that could help improve your website’s visibility.\r\n\r\n\r\nI’d b",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^jenningsmiller[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcUlAAA=",
+      "receivedDateTime": "2026-02-12T16:29:01Z",
+      "subject": "Keyword Research",
+      "sender_email": "LeatriceSalwasser5355@hotmail.com",
+      "sender_name": "Louie Guzi",
+      "bodyPreview": "You don't often get email from leatricesalwasser5355@hotmail.com. Learn why this is important\r\nHello,\r\n\r\nI’m reaching out to share a competitive ranking audit for your review.\r\n\r\nKindly confirm if I m",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^leatricesalwasser[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcUJAAA=",
+      "receivedDateTime": "2026-02-12T11:20:08Z",
+      "subject": "Re: Send ?",
+      "sender_email": "Aaron.Wells74@outlook.com",
+      "sender_name": "Aaron Wells",
+      "bodyPreview": "You don't often get email from aaron.wells74@outlook.com. Learn why this is important\r\nHello,\r\n\r\n\r\n\r\nWant me to send a screenshot of the issue?\r\n\r\nSimply reply “OK-SEND” and I’ll share it.\r\n\r\n________",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^aaron\\.wells[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcTWAAA=",
+      "receivedDateTime": "2026-02-11T14:30:05Z",
+      "subject": "Re: Cost?",
+      "sender_email": "angelascott031@hotmail.com",
+      "sender_name": "Angela Scott",
+      "bodyPreview": "You don't often get email from angelascott031@hotmail.com. Learn why this is important\r\nHi,\r\n\r\nI’ve come across a few issues on your website that could be impacting your online presence and Google ran",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^angelascott[0-9]+"
+        ]
+      }
+    }
+  ],
+  "keep": [
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgksuuQAAA=",
+      "receivedDateTime": "2026-03-15T00:02:31Z",
+      "subject": "Rare Second Chance: $15 Stock → $150+ Target (Legend) ✨",
+      "sender_email": "ethan.caldwell@ddc.dividenddriveclub.com",
+      "sender_name": "#1 Pick for 2026 | Ethan Caldwell | DDC",
+      "bodyPreview": "You don't often get email from ethan.caldwell@ddc.dividenddriveclub.com. Learn why this is important\r\nIf You Missed NVIDIA's 4,000% Run – Read This\r\nUnderstanding the Role of Dividends in Corporatе Fі",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgksuuPAAA=",
+      "receivedDateTime": "2026-03-14T23:48:10Z",
+      "subject": "Caught on Camera: Shocking Appalachia Footage Just Dropped",
+      "sender_email": "team@now.libertyedgebrief.com",
+      "sender_name": "Shocking Appalachia Footage | Liberty Edge Brief",
+      "bodyPreview": "I just traveled deep into Appalachia To a town most people couldn’t find on a map.\r\n\r\nI just traveled deep into Appalachia\r\n\r\nTo a town most people couldn’t find on a map.\r\n\r\nWe brought the cameras. A",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgi5hSDAAA=",
+      "receivedDateTime": "2026-03-12T20:28:47Z",
+      "subject": "Packaged Agile vs competitors",
+      "sender_email": "nathan@apexiavelvet.com",
+      "sender_name": "Samuel Jong",
+      "bodyPreview": "[You don't often get email from nathan@apexiavelvet.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHey Dave,\r\n\r\nYour focus on scaled Agile for government projec",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgi5hR-AAA=",
+      "receivedDateTime": "2026-03-12T18:50:00Z",
+      "subject": "scaled daily scrum",
+      "sender_email": "freyamonroe@superblueinkgenio.com",
+      "sender_name": "Freya Monroe",
+      "bodyPreview": "[You don't often get email from freyamonroe@superblueinkgenio.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHello Dave,\r\n\r\nWe are currently experimenting with ",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgi5hRyAAA=",
+      "receivedDateTime": "2026-03-12T16:48:14Z",
+      "subject": "I Just Called!",
+      "sender_email": "qrankin@sweptcleandc.com",
+      "sender_name": "Quentin Rankin",
+      "bodyPreview": "You don't often get email from qrankin@sweptcleandc.com. Learn why this is important\r\n\r\nHey Dave,\r\n\r\n\r\nThis is Jacob with Swept Clean. I just tried to call you and wanted to follow up by email as well",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgi5hRaAAA=",
+      "receivedDateTime": "2026-03-12T06:57:35Z",
+      "subject": "Re-authenticate Google Accounts to Continue Syncing Data",
+      "sender_email": "zohoanalytics@notification.zohoannounces.com",
+      "sender_name": "Zoho Analytics",
+      "bodyPreview": "You don't often get email from zohoanalytics@notification.zohoannounces.com. Learn why this is important\r\n\r\n\r\nHi there,\r\n\r\nIn line with Google’s recent updates to how apps access files in Google Drive",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6Z0AAA=",
+      "receivedDateTime": "2026-02-20T01:41:37Z",
+      "subject": "Personal Information Notice (This is not an advertisement)",
+      "sender_email": "Lusha@a.lusha-notice.com",
+      "sender_name": "Lusha",
+      "bodyPreview": "You don't often get email from lusha@a.lusha-notice.com. Learn why this is important\r\n\r\nPersonal Information Notice\r\n\r\nEnglish French Italian Deutsch Spanish Dutch\r\n\r\nThis notice serves to provide you",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcULAAA=",
+      "receivedDateTime": "2026-02-12T11:47:21Z",
+      "subject": "What's New with Comparative Agility",
+      "sender_email": "news@comparativeagility.ai.fls453mail.net",
+      "sender_name": "Comparative Agility",
+      "bodyPreview": "You don't often get email from news@comparativeagility.ai.fls453mail.net. Learn why this is important\r\n\r\nView in a web browser\r\n\r\n\r\nStay informed with this month’s biggest\r\nupdates and highlights.\r\n\r\n",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    }
+  ],
+  "details": [
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgksuuQAAA=",
+      "receivedDateTime": "2026-03-15T00:02:31Z",
+      "subject": "Rare Second Chance: $15 Stock → $150+ Target (Legend) ✨",
+      "sender_email": "ethan.caldwell@ddc.dividenddriveclub.com",
+      "sender_name": "#1 Pick for 2026 | Ethan Caldwell | DDC",
+      "bodyPreview": "You don't often get email from ethan.caldwell@ddc.dividenddriveclub.com. Learn why this is important\r\nIf You Missed NVIDIA's 4,000% Run – Read This\r\nUnderstanding the Role of Dividends in Corporatе Fі",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgksuuPAAA=",
+      "receivedDateTime": "2026-03-14T23:48:10Z",
+      "subject": "Caught on Camera: Shocking Appalachia Footage Just Dropped",
+      "sender_email": "team@now.libertyedgebrief.com",
+      "sender_name": "Shocking Appalachia Footage | Liberty Edge Brief",
+      "bodyPreview": "I just traveled deep into Appalachia To a town most people couldn’t find on a map.\r\n\r\nI just traveled deep into Appalachia\r\n\r\nTo a town most people couldn’t find on a map.\r\n\r\nWe brought the cameras. A",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgi5hSDAAA=",
+      "receivedDateTime": "2026-03-12T20:28:47Z",
+      "subject": "Packaged Agile vs competitors",
+      "sender_email": "nathan@apexiavelvet.com",
+      "sender_name": "Samuel Jong",
+      "bodyPreview": "[You don't often get email from nathan@apexiavelvet.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHey Dave,\r\n\r\nYour focus on scaled Agile for government projec",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgi5hR-AAA=",
+      "receivedDateTime": "2026-03-12T18:50:00Z",
+      "subject": "scaled daily scrum",
+      "sender_email": "freyamonroe@superblueinkgenio.com",
+      "sender_name": "Freya Monroe",
+      "bodyPreview": "[You don't often get email from freyamonroe@superblueinkgenio.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHello Dave,\r\n\r\nWe are currently experimenting with ",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgi5hRyAAA=",
+      "receivedDateTime": "2026-03-12T16:48:14Z",
+      "subject": "I Just Called!",
+      "sender_email": "qrankin@sweptcleandc.com",
+      "sender_name": "Quentin Rankin",
+      "bodyPreview": "You don't often get email from qrankin@sweptcleandc.com. Learn why this is important\r\n\r\nHey Dave,\r\n\r\n\r\nThis is Jacob with Swept Clean. I just tried to call you and wanted to follow up by email as well",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgi5hRaAAA=",
+      "receivedDateTime": "2026-03-12T06:57:35Z",
+      "subject": "Re-authenticate Google Accounts to Continue Syncing Data",
+      "sender_email": "zohoanalytics@notification.zohoannounces.com",
+      "sender_name": "Zoho Analytics",
+      "bodyPreview": "You don't often get email from zohoanalytics@notification.zohoannounces.com. Learn why this is important\r\n\r\n\r\nHi there,\r\n\r\nIn line with Google’s recent updates to how apps access files in Google Drive",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgdcUfSAAA=",
+      "receivedDateTime": "2026-03-03T07:27:58Z",
+      "subject": "Prices",
+      "sender_email": "tools.seoforums01@outlook.com",
+      "sender_name": "David Smith",
+      "bodyPreview": "You don't often get email from tools.seoforums01@outlook.com. Learn why this is important\r\nHi,\r\n\r\nAre you looking to upgrade, redesign, or build a new website?\r\n\r\nI offer custom web design and develop",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^tools\\.seo"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6erAAA=",
+      "receivedDateTime": "2026-02-25T13:35:47Z",
+      "subject": "Re: Review boost",
+      "sender_email": "BriceThomas1@hotmail.com",
+      "sender_name": "Brice Thomas",
+      "bodyPreview": "You don't often get email from bricethomas1@hotmail.com. Learn why this is important\r\nHello,\r\nFollowing up to see if this is still of interest. I appreciate your time.\r\nKind regards,\r\nBrice Thomas\r\n__",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^bricethomas[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6enAAA=",
+      "receivedDateTime": "2026-02-25T11:43:44Z",
+      "subject": "agile outreach thoughts",
+      "sender_email": "dustinbowman@veritskybound.com",
+      "sender_name": "Dustin Bowman",
+      "bodyPreview": "[You don't often get email from dustinbowman@veritskybound.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHi Dave,\r\n\r\nPackaged Agile’s success in boosting gover",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: veritskybound.com",
+          "Suspicious username pattern: ^dustinbowman",
+          "Subject keyword: outreach"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6edAAA=",
+      "receivedDateTime": "2026-02-25T01:08:28Z",
+      "subject": "packagedagile",
+      "sender_email": "homer.lee@ygcn26.org.cn",
+      "sender_name": "Homer Lee(Mr.)",
+      "bodyPreview": "You don't often get email from homer.lee@ygcn26.org.cn. Learn why this is important\r\n\r\nDear Manager,\r\n\r\n\r\n(If you are not the person who is in charge of this, please forward this to your CEO, because ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: ygcn26.org.cn",
+          "Suspicious username pattern: ^homer\\.lee"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6eKAAA=",
+      "receivedDateTime": "2026-02-24T19:23:40Z",
+      "subject": "Outdated contact info blocking outreach? Our analysts can help",
+      "sender_email": "s_takale@bizkonnect.net",
+      "sender_name": "Sudeep Takale",
+      "bodyPreview": "You don't often get email from s_takale@bizkonnect.net. Learn why this is important\r\n40 hours pilot at $8 per hour\r\n\r\nHi Dave,\r\n\r\nMany consulting teams spend the first part of Q1:\r\n\r\n  *   Cleaning ou",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (4)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: bizkonnect.net",
+          "Suspicious username pattern: ^s_takale",
+          "Subject keyword: outreach",
+          "Body phrase: prospect"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAfxyUPfAAA=",
+      "receivedDateTime": "2026-02-24T17:42:20Z",
+      "subject": "Shadow AI to Secure AI + Countering AI Attacks",
+      "sender_email": "communications@zscaler.com",
+      "sender_name": "Zscaler Webinars",
+      "bodyPreview": "You don't often get email from communications@zscaler.com. Learn why this is important\r\nRegister Today\r\n                                                    ‍͏  ͏  ‍͏  ͏  ‍͏  ͏  ‍͏  ͏  ‍͏  ͏  ‍͏  ͏  ‍͏",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: zscaler.com",
+          "Suspicious username pattern: ^communications$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6d3AAA=",
+      "receivedDateTime": "2026-02-24T15:36:01Z",
+      "subject": "AI MVP Launch for Packaged Agile",
+      "sender_email": "aprillia.davis@partners.hal9.com",
+      "sender_name": "Aprillia Davis",
+      "bodyPreview": "You don't often get email from aprillia.davis@partners.hal9.com. Learn why this is important\r\nHi Dave,\r\n\r\nAre high setup costs and long timelines stalling your AI projects at Packaged Agile? Many star",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: partners.hal9.com",
+          "Suspicious username pattern: ^aprillia\\.davis"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6d2AAA=",
+      "receivedDateTime": "2026-02-24T15:33:06Z",
+      "subject": "Re: Growth Strategy 🚀",
+      "sender_email": "PollyBarnard45@hotmail.com",
+      "sender_name": "Trinidad Flatness",
+      "bodyPreview": "You don't often get email from pollybarnard45@hotmail.com. Learn why this is important\r\nHi,\r\n\r\nJust checking in — any update on this?\r\n\r\nThanks,\r\n\r\nSamuel\r\n________________________________\r\nFrom: Trin",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^pollybarnard[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6dvAAA=",
+      "receivedDateTime": "2026-02-24T14:37:25Z",
+      "subject": "Re: Costs??",
+      "sender_email": "ujwqqyb2378@hotmail.com",
+      "sender_name": "Jay King",
+      "bodyPreview": "You don't often get email from ujwqqyb2378@hotmail.com. Learn why this is important\r\nHi,\r\nI’m still waiting to hear from you. Please let me know if you’re interested in my service.\r\nThank you.\r\nSpence",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Suspicious username pattern: ^ujwqqyb[0-9]+",
+          "Body phrase: let me know if"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6drAAA=",
+      "receivedDateTime": "2026-02-24T13:40:31Z",
+      "subject": "Re: Review boost",
+      "sender_email": "BriceThomas1@hotmail.com",
+      "sender_name": "Brice Thomas",
+      "bodyPreview": "You don't often get email from bricethomas1@hotmail.com. Learn why this is important\r\nHi,\r\nI came across a few minor issues on your website.\r\nCan I share screenshots?\r\nThanks,\r\nBrice Thomas",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^bricethomas[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6dlAAA=",
+      "receivedDateTime": "2026-02-24T11:54:53Z",
+      "subject": "Argentina Shale Production 2026",
+      "sender_email": "Delegates=iq-hub.com@vrmailer3.com",
+      "sender_name": "Terry Tamayo",
+      "bodyPreview": "You don't often get email from delegates=iq-hub.com@vrmailer3.com. Learn why this is important\r\n\r\n\r\n\r\nThe Premier Forum for Shale Gas and Tight Oil Production for South American Unconventional Plays\r\n",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: vrmailer3.com",
+          "Suspicious username pattern: ^delegates=iq-hub\\.com"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6dkAAA=",
+      "receivedDateTime": "2026-02-24T11:14:38Z",
+      "subject": "Next-Gen Leadership: Skills Every First-Time Manager Needs to Succeed in 2026",
+      "sender_email": "m.clark@conferencetimex.com",
+      "sender_name": "Mandeline Clark",
+      "bodyPreview": "You don't often get email from m.clark@conferencetimex.com. Learn why this is important\r\nleadership for Gen Z managers\r\nNext-Gen Leadership: Skills Every First-Time Manager Needs to Succeed\r\n\r\nSpeaker",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: conferencetimex.com",
+          "Suspicious username pattern: ^m\\.clark"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6dYAAA=",
+      "receivedDateTime": "2026-02-23T23:42:09Z",
+      "subject": "You’re Invited: Three Whistles DC Grand Opening 🎉",
+      "sender_email": "info@cobot.me",
+      "sender_name": "CoworkCafe at Three Whistles (Clarendon)",
+      "bodyPreview": "You don't often get email from info@cobot.me. Learn why this is important\r\n\r\n\r\nHi CoworkCafe Community,\r\n\r\nBecause you’ve been such an important part of our story in Workspace in Clarendon, you’re the",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: cobot.me",
+          "Suspicious username pattern: ^info$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6c_AAA=",
+      "receivedDateTime": "2026-02-23T17:53:08Z",
+      "subject": "Step 3",
+      "sender_email": "sadie@tryedgestack.com",
+      "sender_name": "Sadie Taylor",
+      "bodyPreview": "You don't often get email from sadie@tryedgestack.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nI'll keep this super brief - just wanted to check one last time if you'd be interested in sharing your",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: tryedgestack.com",
+          "Suspicious username pattern: ^sadie$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6c5AAA=",
+      "receivedDateTime": "2026-02-23T17:25:25Z",
+      "subject": "Personal invite",
+      "sender_email": "sage@tryrefstack.com",
+      "sender_name": "Sage Meyer",
+      "bodyPreview": "You don't often get email from sage@tryrefstack.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nMy colleague, Stephen, found you on LinkedIn and thought you'd be a great fit to interview for our white",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: tryrefstack.com",
+          "Suspicious username pattern: ^sage$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6c0AAA=",
+      "receivedDateTime": "2026-02-23T16:19:46Z",
+      "subject": "Costs??",
+      "sender_email": "ujwqqyb2378@hotmail.com",
+      "sender_name": "Jay King",
+      "bodyPreview": "You don't often get email from ujwqqyb2378@hotmail.com. Learn why this is important\r\nHi,\r\nI found your details on Google, and I have looked at your website.\r\nI can help bring your website to the first",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^ujwqqyb[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6cwAAA=",
+      "receivedDateTime": "2026-02-23T15:51:13Z",
+      "subject": "40-hour, Deal of the Week",
+      "sender_email": "cara@codingcopssquad.com",
+      "sender_name": "Cara Mitchell",
+      "bodyPreview": "You don't often get email from cara@codingcopssquad.com. Learn why this is important\r\nHi Dave,\r\n\r\nI'm sure you're juggling a dozen priorities - so to be respectful of your time, I'll jump right in.\r\n\r",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: codingcopssquad.com",
+          "Suspicious username pattern: ^cara$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6cvAAA=",
+      "receivedDateTime": "2026-02-23T15:33:30Z",
+      "subject": "GSA Contract Support for PACKAGED AGILE LLC",
+      "sender_email": "tony.p@pricereporter.com",
+      "sender_name": "Tony Pularia",
+      "bodyPreview": "You don't often get email from tony.p@pricereporter.com. Learn why this is important\r\nHello Dave,\r\n\r\nI attempted to reach you by phone earlier but was unable to connect.\r\n\r\nI’ve reviewed your GSA cont",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: pricereporter.com",
+          "Suspicious username pattern: ^tony\\.p"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6crAAA=",
+      "receivedDateTime": "2026-02-23T14:54:02Z",
+      "subject": "Growth Strategy 🚀",
+      "sender_email": "PollyBarnard45@hotmail.com",
+      "sender_name": "Trinidad Flatness",
+      "bodyPreview": "You don't often get email from pollybarnard45@hotmail.com. Learn why this is important\r\nHello,\r\n\r\nI’ve prepared a ranking report for your review.\r\n\r\nShall I send the detailed quote and price list?\r\n\r\n",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^pollybarnard[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6chAAA=",
+      "receivedDateTime": "2026-02-23T10:53:15Z",
+      "subject": "Re: Website Error Found ?",
+      "sender_email": "Aarohi.Sharma01@outlook.com",
+      "sender_name": "Aarohi Sharma",
+      "bodyPreview": "You don't often get email from aarohi.sharma01@outlook.com. Learn why this is important\r\nHello,\r\n\r\n\"Can I provide a screenshot showing the exact errors I'm facing?\"\r\n\r\n You can simply reply-“OK-SEND”\r",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^aarohi\\.sharma[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6cXAAA=",
+      "receivedDateTime": "2026-02-23T00:42:52Z",
+      "subject": "Cursor + 2B tokens + Myuser",
+      "sender_email": "zach@himmyuser.com",
+      "sender_name": "Zach Slate",
+      "bodyPreview": "[You don't often get email from zach@himmyuser.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHey Dave,\r\n\r\nSaw you've burned through 2B tokens on Cursor since A",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: himmyuser.com",
+          "Suspicious username pattern: ^zach$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6cPAAA=",
+      "receivedDateTime": "2026-02-22T21:04:16Z",
+      "subject": "U.S. Treasury Debt Is Surging—Here’s What It Means for Income",
+      "sender_email": "investing@gt.greenety.com",
+      "sender_name": "U.S. Treasury Debt, Brian from Greenety",
+      "bodyPreview": "You don't often get email from investing@gt.greenety.com. Learn why this is important\r\n\r\nRecord Treasury Borrowing Is Changing Income Strategies\r\n\r\nThe U.S. Treasury is issuing debt at record levels.\r",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: gt.greenety.com",
+          "Suspicious username pattern: ^investing$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6cKAAA=",
+      "receivedDateTime": "2026-02-22T18:52:26Z",
+      "subject": "Fast & Flexible Funding — Apply in Minutes ",
+      "sender_email": "supports@wallstreetenglish.ar",
+      "sender_name": "CENT",
+      "bodyPreview": "You don't often get email from supports@wallstreetenglish.ar. Learn why this is important\r\n\r\nLooking for fast, flexible funding?\r\n\r\nAt CENT Financial Solutions LLC, we provide financing solutions for:",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: wallstreetenglish.ar",
+          "Suspicious username pattern: ^supports",
+          "Subject keyword: funding"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6bCAAA=",
+      "receivedDateTime": "2026-02-21T09:04:06Z",
+      "subject": "Welcome to Rail Technology Magazine",
+      "sender_email": "RailTechnologyMagazine@cognitivepublishing.co.uk",
+      "sender_name": "Rail Technology Magazine",
+      "bodyPreview": "A quick introduction!\r\n\r\nView in browser\r\n\r\n\r\n\r\nHi there!\r\n\r\nThank you for subscribing to Rail Technology Magazine, you’ve taken the first step towards gaining exclusive access to the best news and an",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: cognitivepublishing.co.uk",
+          "Suspicious username pattern: ^railtechnologymagazine"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6a0AAA=",
+      "receivedDateTime": "2026-02-20T21:57:08Z",
+      "subject": "RE: outbound strategy",
+      "sender_email": "matt@anevomarketingba.com",
+      "sender_name": "Matthew Lucero",
+      "bodyPreview": "You don't often get email from matt@anevomarketingba.com. Learn why this is important\r\nHey Dave,\r\n\r\nPicture this: instead of chasing cold leads, your team is spending time closing sales-ready conversa",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: anevomarketingba.com",
+          "Suspicious username pattern: ^matt$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6auAAA=",
+      "receivedDateTime": "2026-02-20T20:49:31Z",
+      "subject": "RFQ",
+      "sender_email": "ian@winaviations.com",
+      "sender_name": "Ian Blackie",
+      "bodyPreview": "You don't often get email from ian@winaviations.com. Learn why this is important\r\n\r\nHello,\r\n\r\n\r\n\r\nWe need a quote on the items in the attached RFQ.\r\n\r\n\r\n\r\nPlease revert at your earliest convenience.\r\n",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: winaviations.com",
+          "Suspicious username pattern: ^ian$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6anAAA=",
+      "receivedDateTime": "2026-02-20T18:42:57Z",
+      "subject": "Dave, got 15 seconds?",
+      "sender_email": "kate.clark@pltechhire.site",
+      "sender_name": "Kate Clark",
+      "bodyPreview": "You don't often get email from kate.clark@pltechhire.site. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nLet’s skip the “game-changing solution” pitch. You’ve probably read ten of those today.\r\n\r\nWe help",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: pltechhire.site",
+          "Suspicious username pattern: ^kate\\.clark"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6aiAAA=",
+      "receivedDateTime": "2026-02-20T17:59:22Z",
+      "subject": "An update on Tersa",
+      "sender_email": "hello@haydenbleasel.com",
+      "sender_name": "hello@haydenbleasel.com",
+      "bodyPreview": "You don't often get email from hello@haydenbleasel.com. Learn why this is important\r\n\r\nHi there,\r\n\r\nI wanted to share an update about Tersa.\r\n\r\n\r\nI’ve decided to shut down Tersa as a hosted product - ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: haydenbleasel.com",
+          "Suspicious username pattern: ^hello$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6aTAAA=",
+      "receivedDateTime": "2026-02-20T16:22:59Z",
+      "subject": "Need UX? Let’s Partner on Your Project & Proposal | Curtis Consulting",
+      "sender_email": "admin@yuricurtis.com",
+      "sender_name": "Curtis Consulting",
+      "bodyPreview": "You don't often get email from admin@yuricurtis.com. Learn why this is important\r\nUX design partner for enterprise and public-sector digital products. Team with Curtis Consulting.\r\n\r\nUX Design • Enter",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: yuricurtis.com",
+          "Suspicious username pattern: ^admin$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6aNAAA=",
+      "receivedDateTime": "2026-02-20T15:13:14Z",
+      "subject": "Two LP Intros for Your Fund",
+      "sender_email": "lyza.saluria@gotrademissions.digital",
+      "sender_name": "Lyza Saluria",
+      "bodyPreview": "[You don't often get email from lyza.saluria@gotrademissions.digital. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHello Dave,\r\n\r\nI have 2 LPs that I think would b",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: gotrademissions.digital",
+          "Suspicious username pattern: ^lyza\\.saluria"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6Z1AAA=",
+      "receivedDateTime": "2026-02-20T05:29:14Z",
+      "subject": "Virginia Tech - Packaged Agile Job Post Invitation",
+      "sender_email": "gregrw@supoll.com",
+      "sender_name": "gregrw@supoll.com",
+      "bodyPreview": "You don't often get email from gregrw@supoll.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nI would like to invite you to post Packaged Agile jobs on a community website for Virginia Tech:\r\n\r\nhttps:/",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: supoll.com",
+          "Suspicious username pattern: ^gregrw"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6Z0AAA=",
+      "receivedDateTime": "2026-02-20T01:41:37Z",
+      "subject": "Personal Information Notice (This is not an advertisement)",
+      "sender_email": "Lusha@a.lusha-notice.com",
+      "sender_name": "Lusha",
+      "bodyPreview": "You don't often get email from lusha@a.lusha-notice.com. Learn why this is important\r\n\r\nPersonal Information Notice\r\n\r\nEnglish French Italian Deutsch Spanish Dutch\r\n\r\nThis notice serves to provide you",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6ZqAAA=",
+      "receivedDateTime": "2026-02-19T20:54:25Z",
+      "subject": "[Webinar] HA Kubernetes Storage for Stateful Workloads",
+      "sender_email": "art@starwind.com",
+      "sender_name": "Artem Berman, VP of Sales Engineering",
+      "bodyPreview": "You don't often get email from art@starwind.com. Learn why this is important\r\n\r\nHey,\r\n\r\n\r\n\r\nThank you for using StarWind V2V Converter!\r\n\r\n\r\n\r\nAs you may know, StarWind is now part of the DataCore eco",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: starwind.com",
+          "Suspicious username pattern: ^art$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAfxyUPaAAA=",
+      "receivedDateTime": "2026-02-19T18:02:48Z",
+      "subject": "He got 578,106 impressions in 30 days…",
+      "sender_email": "lara@mail.kleo.so",
+      "sender_name": "Lara at Kleo",
+      "bodyPreview": "(and spent 2hrs a week doing so)\r\n\r\n͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ­͏​  ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: mail.kleo.so",
+          "Suspicious username pattern: ^lara$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6ZVAAA=",
+      "receivedDateTime": "2026-02-19T17:02:28Z",
+      "subject": "Dave, Unlock your 20hour?",
+      "sender_email": "jerry@softaimsapppoint.pro",
+      "sender_name": "Jerry Brown",
+      "bodyPreview": "You don't often get email from jerry@softaimsapppoint.pro. Learn why this is important\r\nHi Dave,\r\n\r\nIf AI, a web platform, or a mobile app isn’t something you’re considering this year, I’m happy to st",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: softaimsapppoint.pro",
+          "Suspicious username pattern: ^jerry$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6ZRAAA=",
+      "receivedDateTime": "2026-02-19T16:10:24Z",
+      "subject": "Guest spot - Podcast invite for Dave",
+      "sender_email": "eden@lovemythic.com",
+      "sender_name": "Eden Clayton",
+      "bodyPreview": "You don't often get email from eden@lovemythic.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nWe'd love to invite you as a guest on our podcast - Core Conversations: Leadership, Growth and the Future",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: lovemythic.com",
+          "Suspicious username pattern: ^eden$",
+          "Subject keyword: podcast"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6ZNAAA=",
+      "receivedDateTime": "2026-02-19T15:16:06Z",
+      "subject": "LinkedIn <> Vendor Testing Post",
+      "sender_email": "ambi.moorthy@gozendeepagent.com",
+      "sender_name": "Ambi Moorthy",
+      "bodyPreview": "[You don't often get email from ambi.moorthy@gozendeepagent.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHello Dave,\r\n\r\n\r\nReally enjoyed your recent post abou",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: gozendeepagent.com",
+          "Suspicious username pattern: ^ambi\\.moorthy"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6ZGAAA=",
+      "receivedDateTime": "2026-02-19T13:48:31Z",
+      "subject": "Quick revenue expansion idea",
+      "sender_email": "arden@tryechocloud.com",
+      "sender_name": "Arden James",
+      "bodyPreview": "You don't often get email from arden@tryechocloud.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nMany consulting firms I speak with are strong on strategy but don’t monetize backend automation infras",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: tryechocloud.com",
+          "Suspicious username pattern: ^arden$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVg6Y6AAA=",
+      "receivedDateTime": "2026-02-19T08:02:59Z",
+      "subject": "Supply Chain Alert: Scotland’s £4.8B Rail Overhaul Is Live",
+      "sender_email": "info@information.transcityrail.com",
+      "sender_name": "TransCityRail Scotland",
+      "bodyPreview": "You don't often get email from info@information.transcityrail.com. Learn why this is important\r\n\r\nThe £4.8 Billion Opportunity Every Supplier Needs to See\r\n\r\n\r\nCan't read this email properly?\r\n\r\nHi Da",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: information.transcityrail.com",
+          "Suspicious username pattern: ^info$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgVcvCCAAA=",
+      "receivedDateTime": "2026-02-19T05:46:24Z",
+      "subject": "Re: Job Recruitment App !!",
+      "sender_email": "smallseoservice@hotmail.com",
+      "sender_name": "Simran Singh",
+      "bodyPreview": "You don't often get email from smallseoservice@hotmail.com. Learn why this is important\r\nHi, good morning\r\n\r\nI hope you’re doing well. I wanted to follow up to see if you’re ready to move forward with",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^smallseoservice"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIajAAA=",
+      "receivedDateTime": "2026-02-19T01:47:07Z",
+      "subject": "Packaged agile llc is Approved – Let’s Finalize Your Dollar Amount!",
+      "sender_email": "eshaulov@pmfus.com",
+      "sender_name": "eshaulov@pmfus.com",
+      "bodyPreview": "You don't often get email from eshaulov@pmfus.com. Learn why this is important\r\n\r\nHi David\r\n\r\nGreat news — Packaged agile llc has been approved for both a Direct MCA Buyout Loan offer and a Revolving ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: pmfus.com",
+          "Suspicious username pattern: ^eshaulov"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIabAAA=",
+      "receivedDateTime": "2026-02-18T23:12:23Z",
+      "subject": "New Stays + Spring Getaways Inside",
+      "sender_email": "marketing@curatorhotelsandresorts.com",
+      "sender_name": "Curator Hotel & Resort Collection",
+      "bodyPreview": "Be the first to see our newest stays and exclusive seasonal offers.\r\n͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: curatorhotelsandresorts.com",
+          "Suspicious username pattern: ^marketing$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIaIAAA=",
+      "receivedDateTime": "2026-02-18T17:51:36Z",
+      "subject": "Re: ZoomInfo Too Expensive? Try Cefer.io Free",
+      "sender_email": "clarab2bdatabase@gmail.com",
+      "sender_name": "Clara B2b",
+      "bodyPreview": "You don't often get email from clarab2bdatabase@gmail.com. Learn why this is important\r\n\r\nGood day,\r\n\r\n\r\n\r\nI wanted to reconnect and see if reducing time spent searching for accurate contacts is impor",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^clarab[0-9]+bdatabase"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIaGAAA=",
+      "receivedDateTime": "2026-02-18T17:36:44Z",
+      "subject": "Re: Dave Witkin X Nitish",
+      "sender_email": "nitish.r@boostchatturaiads.online",
+      "sender_name": "Nitish Kalra",
+      "bodyPreview": "You don't often get email from nitish.r@boostchatturaiads.online. Learn why this is important\r\nHey Dave, Just wanted to reshare this in case it got buried.\r\n\r\nHere’s the short AI-generated brand film ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: boostchatturaiads.online",
+          "Suspicious username pattern: ^nitish\\.r"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIaCAAA=",
+      "receivedDateTime": "2026-02-18T17:11:51Z",
+      "subject": "question Dave",
+      "sender_email": "marienne@growiqsparkhub.com",
+      "sender_name": "Marienne Rosendahl",
+      "bodyPreview": "[You don't often get email from marienne@growiqsparkhub.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nDave, i saw that you helped a client achieve a 64% produc",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: growiqsparkhub.com",
+          "Suspicious username pattern: ^marienne$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIaEAAA=",
+      "receivedDateTime": "2026-02-18T17:06:35Z",
+      "subject": "Follow up",
+      "sender_email": "hosetmiles@gmail.com",
+      "sender_name": "Miles",
+      "bodyPreview": "You don't often get email from hosetmiles@gmail.com. Learn why this is important\r\nHi\r\n\r\nI’m following up to see if you had a chance to review my previous email. I’d be happy to discuss how we can prov",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^hosetmiles"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIZ2AAA=",
+      "receivedDateTime": "2026-02-18T15:12:11Z",
+      "subject": "Connect with Elite Military Veterans - March 12th, 2026",
+      "sender_email": "lmaxwell@cohen-partners.com",
+      "sender_name": "Laura Maxwell, Cohen Partners",
+      "bodyPreview": "You don't often get email from lmaxwell@cohen-partners.com. Learn why this is important\r\nSpots still available: Cohen Partners Military Virtual Hiring Conference - March 12th, 2026\r\n\r\n\r\nCOHEN PARTNERS",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: cohen-partners.com",
+          "Suspicious username pattern: ^lmaxwell"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIZBAAA=",
+      "receivedDateTime": "2026-02-17T17:42:33Z",
+      "subject": "Your $2,000 Check from Trump Is Just the Start",
+      "sender_email": "daily@main.globalmarketsreview.com",
+      "sender_name": "Trump’s $2,000 Checks, GMR",
+      "bodyPreview": "You don't often get email from daily@main.globalmarketsreview.com. Learn why this is important\r\nTrump’s $2,000 checks are more than just payouts. They’re the first signal of a massive wealth restorati",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^daily$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIY0AAA=",
+      "receivedDateTime": "2026-02-17T16:12:29Z",
+      "subject": "Re: ZoomInfo Too Expensive? Try Cefer.io Free",
+      "sender_email": "clarab2bdatabase@gmail.com",
+      "sender_name": "Clara B2b",
+      "bodyPreview": "You don't often get email from clarab2bdatabase@gmail.com. Learn why this is important\r\n\r\nHello,\r\n\r\n\r\n\r\nI wanted to send a quick reminder regarding my previous email.\r\n\r\n\r\n\r\nCefer helps you connect wi",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^clarab[0-9]+bdatabase"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYrAAA=",
+      "receivedDateTime": "2026-02-17T15:20:17Z",
+      "subject": "$10,000 Cash Allowance toward a 2026 Equinox EV is yours",
+      "sender_email": "chevrolet@autogearmasters.com",
+      "sender_name": "Chevrolet",
+      "bodyPreview": "You don't often get email from chevrolet@autogearmasters.com. Learn why this is important\r\n      \r\nTake advantage of this incredible offer today.\r\n͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌ ͏‌",
+      "classification": {
+        "action": "delete",
+        "reason": "Known junk domain",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: autogearmasters.com"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYyAAA=",
+      "receivedDateTime": "2026-02-17T14:58:47Z",
+      "subject": "Cost effective accounting solutions.",
+      "sender_email": "simrankaur42677@gmail.com",
+      "sender_name": "Simran Kaur",
+      "bodyPreview": "You don't often get email from simrankaur42677@gmail.com. Learn why this is important\r\nHi,\r\n\r\nHope you and your family are doing well.\r\n\r\nPlease, could you let me know whether you are interested to hi",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^simrankaur[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYoAAA=",
+      "receivedDateTime": "2026-02-17T14:43:45Z",
+      "subject": "Flexible analyst capacity for consulting teams",
+      "sender_email": "angelaberg@nexteam.jobs",
+      "sender_name": "Angela Berg",
+      "bodyPreview": "You don't often get email from angelaberg@nexteam.jobs. Learn why this is important\r\nHi Dave\r\nConsulting firms we speak with often need flexible modeling and research capacity — without committing to ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: nexteam.jobs",
+          "Suspicious username pattern: ^angelaberg"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYnAAA=",
+      "receivedDateTime": "2026-02-17T14:30:09Z",
+      "subject": "CMMC Level 2 & DLA RD004/RD005: Key Compliance Updates",
+      "sender_email": "vciso@adiit.com",
+      "sender_name": "Atlantic Digital",
+      "bodyPreview": "CMMC Level 2 and DLA clauses now determine award eligibility. Ensure your SPRS status is accurate to stay competitive.\r\n͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ͏ ‌     ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: adiit.com",
+          "Suspicious username pattern: ^vciso"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYdAAA=",
+      "receivedDateTime": "2026-02-17T10:42:11Z",
+      "subject": "Re: Issue Alert ?",
+      "sender_email": "Isabella.Miller.01@hotmail.com",
+      "sender_name": "Isabella Miller",
+      "bodyPreview": "You don't often get email from isabella.miller.01@hotmail.com. Learn why this is important\r\nHi,\r\n\r\n\r\n\r\nWould you like me to share the error screenshots?\r\n\r\n\r\n\r\n💬 Simply reply: Yes, OK, or Sure\r\n\r\n____",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^isabella\\.miller\\.[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYIAAA=",
+      "receivedDateTime": "2026-02-16T20:53:02Z",
+      "subject": "Hi there DC private tailoring",
+      "sender_email": "scott@luxuryattireny.com",
+      "sender_name": "Scott (Label)",
+      "bodyPreview": "You don't often get email from scott@luxuryattireny.com. Learn why this is important\r\nHi there,\r\n\r\nYour LinkedIn profile stood out, it reflects a clear focus on excellence and attention to detail\r\n\r\nO",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: luxuryattireny.com",
+          "Suspicious username pattern: ^scott$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIYEAAA=",
+      "receivedDateTime": "2026-02-16T20:15:50Z",
+      "subject": "Errors Detected",
+      "sender_email": "CarolineAdkins18@outlook.com",
+      "sender_name": "Caroline Adkins",
+      "bodyPreview": "You don't often get email from carolineadkins18@outlook.com. Learn why this is important\r\n\r\nHey, info@packagedagile.com\r\n\r\nI trust you're having a good day.\r\n\r\nWe found multiple areas where SEO improv",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^carolineadkins[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIX0AAA=",
+      "receivedDateTime": "2026-02-16T17:09:11Z",
+      "subject": "Hi Dave, CSM and CSPO Certification Training",
+      "sender_email": "olivia.flynn@agile.agileglobalbook.com",
+      "sender_name": "Olivia Flynn",
+      "bodyPreview": "You don't often get email from olivia.flynn@agile.agileglobalbook.com. Learn why this is important\r\n\r\n\r\nHi Dave,\r\n\r\nHope you're doing well!\r\n\r\nI'm reaching out to share exciting opportunities for prof",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^olivia\\.flynn"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIXvAAA=",
+      "receivedDateTime": "2026-02-16T16:13:18Z",
+      "subject": "AI Outreach Tool",
+      "sender_email": "olivia@growoutreach.site",
+      "sender_name": "Olivia Brooks",
+      "bodyPreview": "[You don't often get email from olivia@growoutreach.site. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nGreetings Dave,\r\n\r\nNoticed you've been helping Public Sector",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: growoutreach.site",
+          "Suspicious username pattern: ^olivia$",
+          "Subject keyword: outreach"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIXtAAA=",
+      "receivedDateTime": "2026-02-16T16:07:36Z",
+      "subject": "Re: Quick question: want to be on our podcast?",
+      "sender_email": "devin@getleadtools.com",
+      "sender_name": "Devin Davis",
+      "bodyPreview": "You don't often get email from devin@getleadtools.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nJust wanted to follow up on my note below in case it got buried.\r\n\r\nHappy to share a bit more detail i",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: getleadtools.com",
+          "Suspicious username pattern: ^devin$",
+          "Subject keyword: quick question"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIXfAAA=",
+      "receivedDateTime": "2026-02-16T13:47:14Z",
+      "subject": "Re: Complete SEO action plan?",
+      "sender_email": "Iglaps_Tech_Solution@outlook.com",
+      "sender_name": "Jenny Smith",
+      "bodyPreview": "You don't often get email from iglaps_tech_solution@outlook.com. Learn why this is important\r\nHi,\r\nI was looking at your website and noticed that you aren’t at the top of Google search. I can fix that",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Suspicious username pattern: ^iglaps_tech_solution",
+          "Subject keyword: seo"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIXXAAA=",
+      "receivedDateTime": "2026-02-16T11:06:17Z",
+      "subject": "Podcast Invitation: The Hidden Cost of Staff Burnout in Hospital & Health Care",
+      "sender_email": "vivian@campaignexhq.com",
+      "sender_name": "Vivian Wenzel",
+      "bodyPreview": "You don't often get email from vivian@campaignexhq.com. Learn why this is important\r\nHi Dave, my colleague Haley found you on LinkedIn while looking for key voices in the Management Consulting space a",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: campaignexhq.com",
+          "Suspicious username pattern: ^vivian$",
+          "Subject keyword: podcast"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgTAIXAAAA=",
+      "receivedDateTime": "2026-02-15T17:21:51Z",
+      "subject": "Dwitkin@wconsultingllc.com, All Cool People are Born in January Birthday T-Shirt",
+      "sender_email": "khanhly446688@gmail.com",
+      "sender_name": "khanhly446688@gmail.com",
+      "bodyPreview": "You don't often get email from khanhly446688@gmail.com. Learn why this is important\r\n\r\nAll Cool People are Born in January Birthday Christmas T-Shirt\r\n\r\nSHOP NOW\r\n\r\nOUR BEST OFFER\r\n\r\nThey say style is",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^khanhly[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgSW4b4AAA=",
+      "receivedDateTime": "2026-02-15T05:44:39Z",
+      "subject": "秋吉農園のお問い合わせ",
+      "sender_email": "wordpress@akiyoshi-nouen.com",
+      "sender_name": "秋吉農園",
+      "bodyPreview": "[You don't often get email from wordpress@akiyoshi-nouen.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nお問い合わせが送信されました。\r\n\r\n差出人: I want you- https://nam12.safeli",
+      "classification": {
+        "action": "delete",
+        "reason": "Known junk domain",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: akiyoshi-nouen.com"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgSW4beAAA=",
+      "receivedDateTime": "2026-02-14T16:32:35Z",
+      "subject": "Fast & Flexible Funding — Apply in Minutes Inbox",
+      "sender_email": "hieu.nv@kiemdinh.vn",
+      "sender_name": "CENT",
+      "bodyPreview": "You don't often get email from hieu.nv@kiemdinh.vn. Learn why this is important\r\n\r\nLooking for fast, flexible funding?\r\n\r\nAt CENT Financial Solutions LLC, we provide financing solutions for:\r\n\r\nSmall ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: kiemdinh.vn",
+          "Suspicious username pattern: ^hieu\\.nv",
+          "Subject keyword: funding"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgSW4bdAAA=",
+      "receivedDateTime": "2026-02-14T16:23:18Z",
+      "subject": "Re: price share",
+      "sender_email": "LeatriceSalwasser5355@hotmail.com",
+      "sender_name": "Louie Guzi",
+      "bodyPreview": "You don't often get email from leatricesalwasser5355@hotmail.com. Learn why this is important\r\nHello,\r\nI wanted to follow up on my last message when you have a moment.\r\nThank you,\r\nLouie Guzi\r\n_______",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^leatricesalwasser[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgSW4bUAAA=",
+      "receivedDateTime": "2026-02-14T14:19:31Z",
+      "subject": "HIRING (lucrative work from home)",
+      "sender_email": "daily@alpha.detroittraders.com",
+      "sender_name": "Positions Available | Detroit Traders",
+      "bodyPreview": "You don't often get email from daily@alpha.detroittraders.com. Learn why this is important\r\nCould you use some additional income working very part time?  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿ ͏  ﻿",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^daily$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIIZAAA=",
+      "receivedDateTime": "2026-02-14T08:54:49Z",
+      "subject": "Re: Package.. ",
+      "sender_email": "jullykumari987@hotmail.com",
+      "sender_name": "jully kumari",
+      "bodyPreview": "You don't often get email from jullykumari987@hotmail.com. Learn why this is important\r\nHi Sir,\r\n\r\nYour site looks good, but it’s not ranking.\r\nI can fix this and place it on Google’s 1st page.\r\nShall",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^jullykumari[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIIYAAA=",
+      "receivedDateTime": "2026-02-14T08:41:38Z",
+      "subject": "Hi Dave",
+      "sender_email": "iris@wisepitchagency.com",
+      "sender_name": "Iris Miller",
+      "bodyPreview": "You don't often get email from iris@wisepitchagency.com. Learn why this is important\r\nHi Dave,\r\n\r\nI came across your LinkedIn profile and it’s clear you’re doing serious work.\r\n\r\nThat’s why I wanted t",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: wisepitchagency.com",
+          "Suspicious username pattern: ^iris$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIITAAA=",
+      "receivedDateTime": "2026-02-13T23:21:47Z",
+      "subject": "Quick follow-up",
+      "sender_email": "alexa@lemonlightcast.co",
+      "sender_name": "Alexa",
+      "bodyPreview": "[You don't often get email from alexa@lemonlightcast.co. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHey Dave,\r\n\r\nQuick follow-up on my last email. The teams we w",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: lemonlightcast.co",
+          "Suspicious username pattern: ^alexa$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAfxyUP8AAA=",
+      "receivedDateTime": "2026-02-13T20:39:16Z",
+      "subject": "Introducing Exa Instant: Fastest search engine in the world",
+      "sender_email": "updates@product.exa.ai",
+      "sender_name": "Exa Product Updates",
+      "bodyPreview": "You don't often get email from updates@product.exa.ai. Learn why this is important\r\nYour preheader text goes here\r\n\r\nIntroducing Exa Instant!\r\n\r\nThe first sub-200ms search engine\r\n\r\n\r\n\r\nExa Instant is",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: product.exa.ai",
+          "Suspicious username pattern: ^updates$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIIDAAA=",
+      "receivedDateTime": "2026-02-13T18:04:35Z",
+      "subject": "We have received your support request",
+      "sender_email": "noreply@imanet.org",
+      "sender_name": "IMA Customer Support",
+      "bodyPreview": "You don't often get email from noreply@imanet.org. Learn why this is important\r\nThank you for contacting IMA, this is an automated message.\r\n\r\nCase number 00126206 has been created for you. If you hav",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: imanet.org",
+          "Suspicious username pattern: ^noreply$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIICAAA=",
+      "receivedDateTime": "2026-02-13T18:02:27Z",
+      "subject": "Dave, More",
+      "sender_email": "sarah@mavenupweb.com",
+      "sender_name": "Sarah",
+      "bodyPreview": "You don't often get email from sarah@mavenupweb.com. Learn why this is important\r\nHi Dave,\r\n\r\nMost websites look good but do not actively generate revenue.\r\n\r\nWe build AI enabled websites on any stack",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: mavenupweb.com",
+          "Suspicious username pattern: ^sarah$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIHvAAA=",
+      "receivedDateTime": "2026-02-13T14:47:01Z",
+      "subject": "We do go now",
+      "sender_email": "jemescarlose@gmail.com",
+      "sender_name": "Jemes Carlose",
+      "bodyPreview": "You don't often get email from jemescarlose@gmail.com. Learn why this is important\r\nWe must fast",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^jemescarlose"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIHsAAA=",
+      "receivedDateTime": "2026-02-13T14:26:31Z",
+      "subject": "is this you, Dave?",
+      "sender_email": "kristy.h@techverx-support.com",
+      "sender_name": "Kristy Hughes",
+      "bodyPreview": "[You don't often get email from kristy.h@techverx-support.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHello Dave,\r\n\r\nAre you still looking for trustworthy de",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: techverx-support.com",
+          "Suspicious username pattern: ^kristy\\.h"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIHpAAA=",
+      "receivedDateTime": "2026-02-13T13:46:22Z",
+      "subject": "RE: Dave",
+      "sender_email": "marian@itserve360.com",
+      "sender_name": "Marian Bailey",
+      "bodyPreview": "You don't often get email from marian@itserve360.com. Learn why this is important\r\n\r\nHi Dave,\r\n\r\nChecking if Friday at 1 PM EST or next week Tuesday at 12 PM EST works for your schedule. Please let me",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: itserve360.com",
+          "Suspicious username pattern: ^marian$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgRpIHoAAA=",
+      "receivedDateTime": "2026-02-13T13:21:55Z",
+      "subject": "RE: Dedicated Remote Recruiters ",
+      "sender_email": "Denisejoanseo@outlook.in",
+      "sender_name": "Denise joan",
+      "bodyPreview": "You don't often get email from denisejoanseo@outlook.in. Learn why this is important\r\nHi,\r\n\r\njust following up my previous mail regarding Dedicated Remote Recruiter Services sent you some days ago.\r\n\r",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^denisejoanseo"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcVJAAA=",
+      "receivedDateTime": "2026-02-13T09:00:11Z",
+      "subject": "Your Domain www.packagedagile.com",
+      "sender_email": "jenningsmiller656@hotmail.com",
+      "sender_name": "Jennings Miller",
+      "bodyPreview": "You don't often get email from jenningsmiller656@hotmail.com. Learn why this is important\r\n\r\nHello,\r\n\r\n\r\nI found several small adjustments that could help improve your website’s visibility.\r\n\r\n\r\nI’d b",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^jenningsmiller[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcVBAAA=",
+      "receivedDateTime": "2026-02-13T04:07:08Z",
+      "subject": "Get Ready for MAS Refresh 31 & Mandatory TDR",
+      "sender_email": "notice@gsa-cs.com",
+      "sender_name": "notice",
+      "bodyPreview": "You don't often get email from notice@gsa-cs.com. Learn why this is important\r\n\r\n\r\nDear GSA Contractor,\r\n\r\nGSA’s upcoming MAS Refresh 31 brings a new major change: Transactional Data Reporting (TDR) w",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: gsa-cs.com",
+          "Suspicious username pattern: ^notice$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcU7AAA=",
+      "receivedDateTime": "2026-02-12T21:42:56Z",
+      "subject": "RE: Looking to sell?",
+      "sender_email": "Guillermo@findtworld.com",
+      "sender_name": "Guillermo Birmingham",
+      "bodyPreview": "You don't often get email from guillermo@findtworld.com. Learn why this is important\r\nHi Dave,\r\n\r\n I’m a Certified Mergers & Acquisition Advisor at Transworld Business Advisors RVA serving Maryland, V",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: findtworld.com",
+          "Suspicious username pattern: ^guillermo$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcUtAAA=",
+      "receivedDateTime": "2026-02-12T18:19:07Z",
+      "subject": "This SAFE Mistake Cost Founders 40% of Their Company",
+      "sender_email": "support@modelmywaterfall.com",
+      "sender_name": "Model My Exit",
+      "bodyPreview": "You don't often get email from support@modelmywaterfall.com. Learn why this is important\r\nThe stacking problem nobody warned you about. ‌ ‌ ‌ ‌\r\n\r\nFOUNDER ESSENTIALS\r\nThis SAFE Mistake Cost Founders 4",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: modelmywaterfall.com",
+          "Suspicious username pattern: ^support$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcUpAAA=",
+      "receivedDateTime": "2026-02-12T17:18:12Z",
+      "subject": "Cleaning",
+      "sender_email": "madeline@pureofficecare.com",
+      "sender_name": "Madeline Hartwin",
+      "bodyPreview": "[You don't often get email from madeline@pureofficecare.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHi Dave, we do commercial cleaning near Leesburg.\r\n\r\nWant",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: pureofficecare.com",
+          "Suspicious username pattern: ^madeline$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcUlAAA=",
+      "receivedDateTime": "2026-02-12T16:29:01Z",
+      "subject": "Keyword Research",
+      "sender_email": "LeatriceSalwasser5355@hotmail.com",
+      "sender_name": "Louie Guzi",
+      "bodyPreview": "You don't often get email from leatricesalwasser5355@hotmail.com. Learn why this is important\r\nHello,\r\n\r\nI’m reaching out to share a competitive ranking audit for your review.\r\n\r\nKindly confirm if I m",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^leatricesalwasser[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcUkAAA=",
+      "receivedDateTime": "2026-02-12T16:07:30Z",
+      "subject": "Re: Podcast Invitation: Project Scope Creep in Consulting",
+      "sender_email": "greta@coldhivego.co",
+      "sender_name": "Greta Williams",
+      "bodyPreview": "You don't often get email from greta@coldhivego.co. Learn why this is important\r\nHey Dave, just following up!\r\nOn Wed, January 21, 2026 10:57 PM, Greta Williams <greta@coldhivego.co> wrote:\r\n\r\nHi Dave",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (3)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: coldhivego.co",
+          "Suspicious username pattern: ^greta$",
+          "Subject keyword: podcast"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcUeAAA=",
+      "receivedDateTime": "2026-02-12T14:48:40Z",
+      "subject": "Invite for Dave",
+      "sender_email": "holly@getfutureflow.com",
+      "sender_name": "Holly Rich",
+      "bodyPreview": "You don't often get email from holly@getfutureflow.com. Learn why this is important\r\n\r\nHey Dave,\r\n\r\nWe've been interviewing a few consultancy leaders as we're creating a white paper. We already got in",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: getfutureflow.com",
+          "Suspicious username pattern: ^holly$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcULAAA=",
+      "receivedDateTime": "2026-02-12T11:47:21Z",
+      "subject": "What's New with Comparative Agility",
+      "sender_email": "news@comparativeagility.ai.fls453mail.net",
+      "sender_name": "Comparative Agility",
+      "bodyPreview": "You don't often get email from news@comparativeagility.ai.fls453mail.net. Learn why this is important\r\n\r\nView in a web browser\r\n\r\n\r\nStay informed with this month’s biggest\r\nupdates and highlights.\r\n\r\n",
+      "classification": {
+        "action": "keep",
+        "reason": "No junk indicators detected",
+        "confidence": "high",
+        "indicators": []
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcUJAAA=",
+      "receivedDateTime": "2026-02-12T11:20:08Z",
+      "subject": "Re: Send ?",
+      "sender_email": "Aaron.Wells74@outlook.com",
+      "sender_name": "Aaron Wells",
+      "bodyPreview": "You don't often get email from aaron.wells74@outlook.com. Learn why this is important\r\nHello,\r\n\r\n\r\n\r\nWant me to send a screenshot of the issue?\r\n\r\nSimply reply “OK-SEND” and I’ll share it.\r\n\r\n________",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^aaron\\.wells[0-9]+"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcTlAAA=",
+      "receivedDateTime": "2026-02-11T16:44:20Z",
+      "subject": "Dave - file closure alert - do you need capital help",
+      "sender_email": "spencermcneil@monerabusinesscashflow.xyz",
+      "sender_name": "Spencer McNeil",
+      "bodyPreview": "[You don't often get email from spencermcneil@monerabusinesscashflow.xyz. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHi Dave -\r\n\r\n\r\nThis is the final follow-up. ",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: monerabusinesscashflow.xyz",
+          "Suspicious username pattern: ^spencermcneil"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcTkAAA=",
+      "receivedDateTime": "2026-02-11T16:32:19Z",
+      "subject": "Re: ZoomInfo Too Expensive? Try Cefer.io Free",
+      "sender_email": "clarab2bdatabase@gmail.com",
+      "sender_name": "Clara B2b",
+      "bodyPreview": "You don't often get email from clarab2bdatabase@gmail.com. Learn why this is important\r\n\r\nGood day,\r\n\r\nJust checking in to see if improving prospecting efficiency with verified contacts is a current g",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Suspicious username pattern: ^clarab[0-9]+bdatabase",
+          "Body phrase: prospect"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcTYAAA=",
+      "receivedDateTime": "2026-02-11T14:49:38Z",
+      "subject": "In need of a small business loan?",
+      "sender_email": "support@gwdciraq.com",
+      "sender_name": "CENT Financial",
+      "bodyPreview": "[You don't often get email from support@gwdciraq.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]\r\n\r\nHello,\r\n\r\nNeed a little financial breathing room? Whether it’s f",
+      "classification": {
+        "action": "delete",
+        "reason": "Multiple indicators detected (2)",
+        "confidence": "high",
+        "indicators": [
+          "Junk domain: gwdciraq.com",
+          "Suspicious username pattern: ^support$"
+        ]
+      }
+    },
+    {
+      "id": "AAMkAGU4NTQ1NTVkLThiZGUtNDYwMC05N2FjLWIzZmU1Y2I5MjVjZQBGAAAAAAA8K5fYAynyTot_fsDj7yapBwD9YgbCLDoDRqbmmlLG6VOsAAAASHvdAAD9YgbCLDoDRqbmmlLG6VOsAAgQQcTWAAA=",
+      "receivedDateTime": "2026-02-11T14:30:05Z",
+      "subject": "Re: Cost?",
+      "sender_email": "angelascott031@hotmail.com",
+      "sender_name": "Angela Scott",
+      "bodyPreview": "You don't often get email from angelascott031@hotmail.com. Learn why this is important\r\nHi,\r\n\r\nI’ve come across a few issues on your website that could be impacting your online presence and Google ran",
+      "classification": {
+        "action": "review",
+        "reason": "Single suspicious indicator",
+        "confidence": "medium",
+        "indicators": [
+          "Suspicious username pattern: ^angelascott[0-9]+"
+        ]
+      }
+    }
+  ]
+}

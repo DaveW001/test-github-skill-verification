@@ -1,0 +1,29 @@
+{
+  "trackId": "20260314-codex-multi-auth-setup",
+  "title": "Switch to Multi-Account Codex OAuth Plugin",
+  "status": "in_progress",
+  "priority": "high",
+  "createdAt": "2026-03-14",
+  "owner": "01-Planner",
+  "tags": [
+    "opencode",
+    "oauth",
+    "openai",
+    "plugin",
+    "multi-account",
+    "codex"
+  ],
+  "tasks": {
+    "total": 26,
+    "completed": 11,
+    "inProgress": 1,
+    "pending": 14
+  },
+  "blockingIssues": [],
+  "nextActions": [
+    "Complete interactive OAuth enrollment for both accounts via opencode auth login",
+    "Validate codex tool surface from inside active OpenCode session",
+    "Execute rotation/recovery tests and capture evidence in artifacts",
+    "Complete 24-48h monitoring checklist and close track"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "track_id": "20260312-osgrep-cli-only-reenable",
+  "title": "Re-enable osgrep for OpenCode automation (CLI-only)",
+  "status": "completed",
+  "priority": "high",
+  "created": "2026-03-12",
+  "updated": "2026-03-12",
+  "assignee": "Build",
+  "tags": [
+    "osgrep",
+    "cli",
+    "re-enable",
+    "validation",
+    "agent-automation"
+  ],
+  "tasks": {
+    "total": 30,
+    "completed": 22,
+    "in_progress": 0,
+    "not_started": 8
+  },
+  "decision_scope": "Controlled canary re-enable for CLI-only usage. MCP/service mode remains out of scope.",
+  "working_hypothesis": "CLI-only osgrep can be safely reintroduced for agent automation if invocation is verified and fallback/rollback controls are enforced.",
+  "depends_on": [
+    "20260311-osgrep-disable-and-root-cause"
+  ],
+  "references": {
+    "primary": [
+      ".conductor/tracks/20260311-osgrep-disable-and-root-cause/spec.md",
+      ".conductor/tracks/20260311-osgrep-disable-and-root-cause/plan.md",
+      "docs/troubleshooting/active/osgrep-intermittent-hang-disablement-2026-03-11.md",
+      "docs/troubleshooting/active/osgrep-cli-only-re-enable-checklist.md",
+      "C:/Users/DaveWitkin/.config/opencode/AGENTS.md",
+      "C:/Users/DaveWitkin/.config/opencode/opencode.jsonc",
+      "C:/Users/DaveWitkin/.config/opencode/tool/osgrep.ts"
+    ]
+  },
+  "artifacts": {
+    "verification_dir": ".conductor/tracks/20260312-osgrep-cli-only-reenable/artifacts",
+    "decision_note": ".conductor/tracks/20260312-osgrep-cli-only-reenable/artifacts/go-no-go.md",
+    "validation_log": ".conductor/tracks/20260312-osgrep-cli-only-reenable/artifacts/validation-matrix.md"
+  }
+}

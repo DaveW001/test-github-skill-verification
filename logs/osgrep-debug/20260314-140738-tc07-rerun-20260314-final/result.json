@@ -1,0 +1,26 @@
+{
+  "label": "tc07-rerun-20260314-final",
+  "started": "2026-03-14T18:07:38.681707+00:00",
+  "cwd": "C:/development/opencode/does-not-exist",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "auth token refresh"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "Working directory does not exist: C:/development/opencode/does-not-exist",
+  "timed_out": false,
+  "duration_seconds": 0,
+  "finished": "2026-03-14T18:07:39.023100+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search 'auth token refresh'"
+}

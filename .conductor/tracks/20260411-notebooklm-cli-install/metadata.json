@@ -1,0 +1,60 @@
+{
+  "trackId": "20260411-notebooklm-cli-install",
+  "title": "Install NotebookLM CLI & Official OpenCode Skill",
+  "status": "active",
+  "created": "2026-04-11",
+  "completed": null,
+  "estimatedHours": "0.5-1",
+  "assignedTo": "01-Planner",
+  "type": "chore",
+  "tags": ["installation", "cli", "notebooklm", "skill", "opencode"],
+  "progress": {
+    "totalTasks": 18,
+    "completedTasks": 15,
+    "percentage": 83
+  },
+  "summary": "Install the official notebooklm-mcp-cli package, verify both bundled executables and the actual OpenCode user skill path on this machine, then deploy the official skill with a safe rollback path from the legacy custom-built skill.",
+  "keyOutcomes": [
+    "nlm v0.5.22 and notebooklm-mcp executables installed and verified",
+    "Official OpenCode skill (nlm-skill) installed in skills/ directory at user level",
+    "Legacy custom skill preserved (notebooklm-legacy) with rollback path",
+    "nlm --ai reference captured (39KB)",
+    "Auth pending: user needs to run nlm login"
+  ],
+  "installedVersion": "0.5.22",
+  "executablePaths": {
+    "nlm": "C:\\Users\\DaveWitkin\\AppData\\Roaming\\Python\\Python313\\Scripts\\nlm.EXE",
+    "notebooklm-mcp": "C:\\Users\\DaveWitkin\\AppData\\Roaming\\Python\\Python313\\Scripts\\notebooklm-mcp.EXE"
+  },
+  "skillPaths": {
+    "official": "C:\\Users\\DaveWitkin\\.config\\opencode\\skills\\nlm-skill\\",
+    "legacy_archive": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\notebooklm-legacy\\"
+  },
+  "risks": [
+    "pip install may require --user flag or PATH troubleshooting",
+    "OpenCode may use a different skill discovery path than assumed",
+    "Old custom skill path may conflict with official skill placement",
+    "Authentication requires Chrome and user interaction"
+  ],
+  "dependencies": [
+    "Python 3.10+ (have 3.13.2)",
+    "pip package manager (available)",
+    "Google Chrome browser (for authentication)"
+  ],
+  "blocking": [],
+  "relatedTracks": [],
+  "deliverables": [
+    "Working nlm and notebooklm-mcp executables",
+    "Official OpenCode skill installed and verified at user level",
+    "Legacy skill archive and rollback note",
+    "User handoff documentation"
+  ],
+  "validationCriteria": [
+    "nlm --version returns version number",
+    "notebooklm-mcp executable is present",
+    "Exact version and executable paths are recorded",
+    "nlm doctor confirms installation health with expected pre-auth status documented",
+    "Official skill SKILL.md exists in the actual OpenCode user discovery directory",
+    "Old custom skill is archived only after successful official skill verification"
+  ]
+}

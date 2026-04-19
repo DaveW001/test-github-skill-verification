@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "query": "List the specific Microsoft Graph Application Permissions (not delegated) required for: 1. Searching all users OneDrive/SharePoint files. 2. Full Mail read/write/delete. 3. Full Calendar read/write/delete (including meetings and attendees). 4. Searching/Reading all user profiles in a tenant. Provide the exact permission names used in Azure Portal.",
+  "model": "perplexity/sonar-pro",
+  "answer": "### 1. Searching all users' OneDrive/SharePoint files\n**Files.Read.All**  \nThis application permission allows the app to read all files in all OneDrive and SharePoint sites across the tenant, including search capabilities via Microsoft Search API.[5]\n\n### 2. Full Mail read/write/delete\n**Mail.ReadWrite**  \nThis application permission provides full access to read, write, update, and delete all mailboxes in the tenant.[5]\n\n### 3. Full Calendar read/write/delete (including meetings and attendees)\n**Calendars.ReadWrite**  \nThis application permission enables reading, writing, updating, and deleting all calendars, events, and meetings (including attendee management) across all users in the tenant.[5]\n\n### 4. Searching/Reading all user profiles in a tenant\n**User.Read.All**  \nThis application permission allows reading all user profiles and searching users across the entire tenant.[2][5]\n\n**Notes**:  \n- These are the exact permission names as displayed in the Azure Portal under **API permissions > Microsoft Graph > Application permissions**. Admin consent is required for all.[2][5]  \n- For comprehensive directory-wide access (e.g., if needed alongside user profiles), **Directory.Read.All** may complement but is not strictly required for basic user profile search/read.[2]",
+  "usage": {
+    "prompt_tokens": 74,
+    "completion_tokens": 265,
+    "total_tokens": 339
+  }
+}

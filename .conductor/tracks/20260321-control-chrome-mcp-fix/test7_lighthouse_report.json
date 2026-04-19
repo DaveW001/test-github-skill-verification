@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-03-22T13:31:53.866803",
+  "url": "https://packagedagile.com",
+  "lighthouse": {
+    "scores": {
+      "performance": 99.0,
+      "accessibility": 94.0,
+      "best_practices": 100,
+      "seo": 100
+    },
+    "core_web_vitals": {
+      "lcp": "1.0\u00a0s",
+      "fid": "40\u00a0ms",
+      "cls": "0",
+      "fcp": "0.5\u00a0s",
+      "tti": "1.0\u00a0s"
+    }
+  },
+  "network": {
+    "total_requests": 47,
+    "resource_breakdown": {
+      "document": 2,
+      "image": 4,
+      "stylesheet": 2,
+      "script": 26,
+      "font": 6,
+      "fetch": 7
+    }
+  },
+  "console": {
+    "errors": 0,
+    "warnings": 2,
+    "total": 2
+  },
+  "screenshot": "C:/development/opencode/.conductor/tracks/20260321-control-chrome-mcp-fix/test7_lighthouse.png",
+  "critical_issues": []
+}

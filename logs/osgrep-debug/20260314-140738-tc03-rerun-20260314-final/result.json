@@ -1,0 +1,26 @@
+{
+  "label": "tc03-rerun-20260314-final",
+  "started": "2026-03-14T18:07:38.681924+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "refreshAccessToken"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": "osgrep path repro\\sample.ts:1 [Definition]\n  export function refreshAuthToken(token: string): string {\n    return `${token}-refreshed`;\n  }\n\n.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\contrast-guards.ts:29 [Definition]\n  function luminance({ r, g, b }: RGB): number {\n    const toLinear = (v: number) => {\n      const n = v / 255;\n      return n <= 0.03928 ? n / 12.92 : ((n + 0.055) / 1.055) ** 2.4;\n    };\n    return 0.2126 * toLinear(r) + 0.7152 * toLinear(g) + 0.0722 * toLinear(b);\n  }\n\n.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\contrast-guards.ts:9\n  type ContrastTarget = {\n    selector: string;\n    minRatio: number;\n    label: string;\n  };\n\n.conductor\\tracks\\webapp-visual-regression\\metadata.json:50\n  ternal\",\n        \"status\": \"available\",\n        \"notes\": \"Native snapshot assertions are core approach\"\n      },\n      {\n        \"name\": \"GitHub Actions\",\n        \"type\": \"external\",\n        \"status\": \"required-for-phase-3\",\n        \"notes\": \"Needed for PR gating and artifact publication\"\n      }\n    ],\n    \"blocking\": [],\n    \"relatedTracks\": [],\n    \"deliverables\": [\n      \"Updated webapp-testing skill docs with deterministic visual QA workflow\",\n  ... (+11 more lines)\n\nnotes\\slack_reminders\\notes_to_self.md:1\n  # Dave Witkin's Notes to Self (Slack Reminders)\n  **Source:** Slack Channel `D02UFD2NTUY`\n  **Extracted on:** 2026-03-12\n  This file contains items saved as reminders, to-dos, or things to remember from Dave's private Slack channel.\n  *(Note: Name corrected to Witkin)*\n  | Date | Description | Related Links |\n  | :--- | :--- | :--- |\n  | 2026-03-09 | **MCP Regression Test** | (None) |\n  | 2026-03-09 | **OpenCode MCP Smoke Test** | (None) |\n  | 2026-03-07 | **Idea for digital.ai Targeting** - Scrape Jira post likes/comments and cross-reference with government. Also LinkedIn member\u001b[2m ...\u001b[22m\n  | 2026-02-19 | **Visualizations for Client Concepts** - Finding visuals like \"Focus vs Multitasking\" to help clients understand key concepts\u001b[2m ...\u001b[22m\n  | 2026-01-19 | **Ente Auth Codes** | [F0A9S4UUVPE_ente-auth-codes.txt](attachments/F0A9S4UUVPE_ente-auth-codes.txt) |\n  | 2026-01-19 | **Ente Recovery Key** | [F0A97331AB1_ente-recovery-key.txt](attachments/F0A97331AB1_ente-recovery-key.txt) |\n  | 2025-12-26 | **Implementation Note** - Put this into practice. | [F0A5ST6V5L4_support-tools-process.pdf](attachments/F0A5ST6V5L4_support-t\u001b[2m ...\u001b[22m\n  ... (+4 more lines)\n\nosgrep results (5 matches across 4 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.217,
+  "finished": "2026-03-14T18:07:40.224005+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search refreshAccessToken"
+}

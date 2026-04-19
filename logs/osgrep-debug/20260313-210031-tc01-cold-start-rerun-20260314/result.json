@@ -1,0 +1,26 @@
+{
+  "label": "tc01-cold-start-rerun-20260314",
+  "started": "2026-03-14T01:00:31.785195+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "auth token refresh"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": "osgrep path repro\\sample.ts:1 [Definition]\n  export function refreshAuthToken(token: string): string {\n    return `${token}-refreshed`;\n  }\n\nlogs\\osgrep-debug\\20260312-155530-tc05-spaced-path-search\\result.json:1\n  {\n    \"label\": \"tc05-spaced-path-search\",\n    \"started\": \"2026-03-12T19:55:30.349865+00:00\",\n    \"cwd\": \"C:/development/opencode/osgrep path repro\",\n    \"command\": [\n      \"osgrep\",\n      \"--\",\n      \"search\",\n      \"refreshAuthToken\"\n    ],\n    \"timeout_seconds\": 30,\n    \"platform\": \"nt\",\n    \"cleanup\": {\n      \"attempted\": true,\n      \"killed\": false,\n  ... (+5 more lines)\n\nlogs\\osgrep-debug\\20260312-155447-tc01-code-path\\result.json:1\n  {\n    \"label\": \"tc01-code-path\",\n    \"started\": \"2026-03-12T19:54:47.297844+00:00\",\n    \"cwd\": \"C:/development/opencode\",\n    \"command\": [\n      \"osgrep\",\n      \"--\",\n      \"search\",\n      \"auth token refresh\"\n    ],\n    \"timeout_seconds\": 30,\n    \"platform\": \"nt\",\n    \"cleanup\": {\n      \"attempted\": true,\n      \"killed\": false,\n  ... (+11 more lines)\n\n.conductor\\tracks\\20260312-osgrep-cli-only-reenable\\artifacts\\prompt-suite.md:1\n  # Prompt Suite: Osgrep CLI-Only Canary\n  **Track ID**: 20260312-osgrep-cli-only-reenable\n  **Purpose**: Fixed prompts for repeatable CLI-only validation.\n  ## Core Usage Prompts\n  1. find code path for auth token refresh\n  2. find where feature flag X is read and written\n  3. locate all call sites of function Y and related interfaces\n  ## Reliability and Edge Prompts\n  4. in the opencode repo, find conductor track references related to osgrep\n  5. in the spaced-path test repo, find refreshAuthToken definition\n  ## Safety Prompts\n  6. run normal semantic discovery and verify no mcp workflow is used\n  7. force an osgrep failure and continue using grep/glob/read fallback\n  ## Extended Reliability Prompts\n  ... (+9 more lines)\n\nlogs\\osgrep-debug\\20260312-155552-tc07-forced-failure\\result.json:1\n  {\n    \"label\": \"tc07-forced-failure\",\n    \"started\": \"2026-03-12T19:55:52.300020+00:00\",\n    \"cwd\": \"C:/development/opencode/does-not-exist\",\n    \"command\": [\n      \"osgrep\",\n      \"--\",\n      \"search\",\n      \"auth token refresh\"\n    ],\n    \"timeout_seconds\": 30,\n    \"platform\": \"nt\",\n    \"cleanup\": {},\n    \"exit_code\": null,\n    \"stdout\": \"\",\n  ... (+6 more lines)\n\nosgrep results (5 matches across 5 files)\n",
+  "stderr": null,
+  "timed_out": false,
+  "duration_seconds": 1.97,
+  "finished": "2026-03-14T01:00:34.145619+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search 'auth token refresh'"
+}

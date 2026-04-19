@@ -1,0 +1,16 @@
+{
+  "track": "20260405-opencode-snippets-upgrade-1-8-0",
+  "status": "completed",
+  "created": "2026-04-05",
+  "completed": "2026-04-05",
+  "currentPhase": "Complete",
+  "sourceRepo": "https://github.com/JosXa/opencode-snippets",
+  "previousVersion": "1.7.0",
+  "currentVersion": "1.8.0",
+  "pluginPath": "C:\\Users\\DaveWitkin\\.config\\opencode\\node_modules\\opencode-snippets",
+  "configPath": "C:\\Users\\DaveWitkin\\.config\\opencode\\opencode.jsonc",
+  "packagePath": "C:\\Users\\DaveWitkin\\.config\\opencode\\package.json",
+  "snippetDir": "C:\\Users\\DaveWitkin\\.config\\opencode\\snippet",
+  "snippetCount": 19,
+  "validationResult": "all-pass"
+}

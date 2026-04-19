@@ -1,0 +1,25 @@
+{
+  "label": "tc09-index-active",
+  "started": "2026-03-12T19:56:34.714283+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "index"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "- Indexing...\n\u00e2\u0153\u201d Indexing complete(70 / 70) \u00e2\u20ac\u00a2 indexed 6 \n",
+  "timed_out": false,
+  "duration_seconds": 2.149,
+  "finished": "2026-03-12T19:56:37.134474+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- index"
+}

@@ -1,0 +1,26 @@
+{
+  "label": "tc11-rerun-20260314",
+  "started": "2026-03-14T01:00:31.768556+00:00",
+  "cwd": "C:/development/opencode/osgrep path repro",
+  "command": [
+    "osgrep",
+    "--",
+    "search",
+    "staleIndexSymbol"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {
+    "attempted": true,
+    "killed": false,
+    "details": "ERROR: The process \"osgrep-nodejs-helper.exe\" not found.",
+    "exit_code": 128
+  },
+  "exit_code": 0,
+  "stdout": "osgrep path repro\\osgrep path repro\\sample.ts:9 [Definition]\n  export function staleIndexSymbol(): string {\n    return \"stale-index-check\";\n  }\n\nosgrep path repro\\logs\\osgrep-debug\\20260312-155704-tc11-stale-index-search\\result.json:20\n  D' -- search osgrep\\\"\\n  }\\n\\nosgrep results (5 matches across 5 files)\\n\",\n    \"stderr\": \"\",\n    \"timed_out\": false,\n    \"duration_seconds\": 1.124,\n    \"finished\": \"2026-03-12T19:57:05.895303+00:00\",\n    \"command_text\": \"'C:\\\\Users\\\\DaveWitkin\\\\AppData\\\\Roaming\\\\npm\\\\osgrep.CMD' -- search staleIndexSymbol\"\n  }\n\nosgrep path repro\\logs\\osgrep-debug\\20260312-155704-tc11-stale-index-search\\result.json:1\n  {\n    \"label\": \"tc11-stale-index-search\",\n    \"started\": \"2026-03-12T19:57:04.483079+00:00\",\n    \"cwd\": \"C:/development/opencode/osgrep path repro\",\n    \"command\": [\n      \"osgrep\",\n      \"--\",\n      \"search\",\n      \"staleIndexSymbol\"\n    ],\n    \"timeout_seconds\": 30,\n    \"platform\": \"nt\",\n    \"cleanup\": {\n      \"attempted\": true,\n  ... (+10 more lines)\n\nosgrep path repro\\.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\deterministic.ts:19\n  type StableRenderOptions = {\n    imageReadySelectors?: string[];\n    settleMs?: number;\n  };\n\nosgrep path repro\\logs\\osgrep-debug\\20260312-155714-tc10-known-answer-search\\result.json:1\n  {\n    \"label\": \"tc10-known-answer-search\",\n    \"started\": \"2026-03-12T19:57:14.994656+00:00\",\n    \"cwd\": \"C:/development/opencode/osgrep path repro\",\n    \"command\": [\n      \"osgrep\",\n      \"--\",\n      \"search\",\n      \"staleIndexSymbol\"\n    ],\n    \"timeout_seconds\": 30,\n    \"platform\": \"nt\",\n    \"cleanup\": {\n      \"attempted\": true,\n  ... (+10 more lines)\n\nosgrep results (5 matches across 4 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.995,
+  "finished": "2026-03-14T01:00:34.158970+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- search staleIndexSymbol"
+}
