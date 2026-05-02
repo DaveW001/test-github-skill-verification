@@ -1,0 +1,367 @@
+PAE C2/CC2 Interview (Mr. Flood)
+
+PAE C2/CC2 Transformation Effort Interview with SCRUM Inc.
+
+Aptos
+
+Thu, 19 Mar 26 · nicholas.sengstaken@scruminc.com, Flood, Walter CIV USARMY ILSC (USA), Witkin, Dave
+
+Aptos
+
+Walter Flood’s Role and Challenges
+
+Aptos
+
+International Cooperation Official (ICO) - new office under PAE
+
+Aptos
+
+Direct report to Mr. Welch
+
+Aptos
+
+Enables CPEs on domestic programs for international exportability/interoperability
+
+Aptos
+
+Leverages buying power through bundled equipment sales
+
+Aptos
+
+International traditionally been an outlier to acquisition community
+
+Aptos
+
+“Question mark” that works independently
+
+Aptos
+
+At the table but “at end of the table” - not a flag officer
+
+Aptos
+
+GS-15 level position lacks authority compared to other PAE leadership
+
+Aptos
+
+Current administration prioritizing international mission space
+
+Aptos
+
+Executive orders and memos emphasizing international acquisition
+
+Aptos
+
+Ukraine and Taiwan examples of when international becomes critical
+
+Aptos
+
+Organizational Structure Issues
+
+Aptos
+
+All ICOs across PAEs are detailed positions, not permanent slots
+
+Aptos
+
+Creates “lame duck” situation for leading monumental change
+
+Aptos
+
+Workforce may “wait out” leadership knowing they’re temporary
+
+Aptos
+
+Lacks positional and legitimate power for execution
+
+Aptos
+
+Debate between ASA(ALT) and AMC on international space roles
+
+Aptos
+
+ASA(ALT) traditionally handles Foreign Military Sales execution
+
+Aptos
+
+AMC handles program development
+
+Aptos
+
+Custody battles over responsibilities continue
+
+Aptos
+
+Confusion on reporting structure
+
+Aptos
+
+ICO seen differently by various stakeholders
+
+Aptos
+
+ASA(ALT) views as direct support to PAE
+
+Aptos
+
+Mr. Welch sees as direct report
+
+Aptos
+
+T2COM sees ICO as their asset
+
+Aptos
+
+PAE Speed vs. Stability Concerns
+
+Aptos
+
+PAE moving at breakneck speed to accelerate acquisition
+
+Aptos
+
+Removing bureaucracy and redundant decision-making
+
+Aptos
+
+Centralizing authority to PAE level for faster capability delivery
+
+Aptos
+
+International benefits will pay off on back end
+
+Aptos
+
+Workforce struggling with rapid change
+
+Aptos
+
+Mass confusion at tactical level about direction
+
+Aptos
+
+People doing minimum work, “hanging on” until clarity emerges
+
+Aptos
+
+15-month hiring freeze creating fear of mass exodus
+
+Aptos
+
+Quality concerns due to workforce uncertainty
+
+Aptos
+
+Need for stability identified as top priority
+
+Aptos
+
+Lack of codified governance and implementation guidance
+
+Aptos
+
+No execution order (EXORD) or clear policy framework
+
+Aptos
+
+Positions need to be permanent for effective change leadership
+
+Aptos
+
+Battle Rhythm and Communication Gaps
+
+Aptos
+
+No apparent PAE staff call or regular cross-cutting meetings
+
+Aptos
+
+Only quarterly Capability Portfolio Reviews (CPRs) as regular rhythm
+
+Aptos
+
+International often excluded from key discussions
+
+Aptos
+
+Mr. Welch intentionally non-intrusive but creates isolation for non-priority areas
+
+Aptos
+
+Limited face time with PAE leadership
+
+Aptos
+
+Ad hoc basis only for international issues
+
+Aptos
+
+“Shiny objects” get attention while others “exist until it happens”
+
+Aptos
+
+Recommendations for improvement
+
+Aptos
+
+Definitive guidance and execution orders
+
+Aptos
+
+End hiring freeze or allow internal MDRs
+
+Aptos
+
+Stabilize positions and provide clear command structure
+
+Aptos
+
+Quick resolution needed for organizational effectiveness
+
+Aptos
+
+Chat with meeting transcript: https://notes.granola.ai/t/43fa3db5-b83e-4706-8dea-f06dddb7306f-00demib2
+
+Aptos
+
+Transcript
+
+Meeting Title: PAE C2/CC2 Transformation Effort Interview with SCRUM Inc.
+
+Date: Mar 19
+
+Meeting participants: Matthew Jacobs, nicholas.sengstaken@scruminc.com, Tim Johnson, PAE C2/CC2 HQ, Flood, Walter CIV USARMY ILSC (USA)
+
+ 
+
+Me:  All right. So can you tell me, were you in any of the initial meetings that we've had on what the Scruminc team is doing here?  
+
+Them: Sorry. I was trying to get my monitor to work, and I was trying to fumble through display settings. Actually, no. I think I was in a. Oh, I was in a senior leader meeting that I could not take the initial scrum. Over introduction.  
+
+Me: Fair enough, sir. Basically, the army has asked us to come in. The PAE is at ioc, basically. I mean, we're still new. We're stood up. We know things are messy. We know we're not. Necessarily achieving the full mission yet. So how do we get there? And this is one of the things that Scruminc. Does a lot of how do we get there in a way that is consistent with what the terms of reference, the focus of the organization is? And we focus on agility. A lot of the things that the orders say we're going to do are closely related to agility. So we're actually doing the same. Something similar at headquarters. Nick actually was over at headquarters before coming over to our team. So we're also trying to take lessons learned at quarters. And then how do we all work together effectively? So we are talking to OGs, I don't know, somewhere in the neighborhood of probably 25 people to start. And that includes both people we consider internal to the pae, where even if they're not adcon, they're not paid by the pae, they're operational, detailed. And then other people who I'll sometimes say the tentacles of the PA that touch. Right. So the requirements, organizations, the supporting functions, and all those folks as well. So we want you to be open as honest people have been very open, very honest. And as I say, we will roll things up. So please, as comfortable and as blunt as you want to be. Some people have been super blunt. Still respectful, obviously, but we know things are new and still evolving. And it's not the easiest time for a new organization. All right, with all that said, let me jump into the questions. Why don't we just start? If you could just tell us, well, a little bit about your role and how you interact with the pae.  
+
+Them: Okay? Great. So my role. So my title is the International Cooperation Official. It is a new office under the PAE and I don't want to. So I don't want to take you guys down rabbit holes. If you're already very familiar of the PAE construct. So. Are you very familiar with it?  
+
+Me: I would say the general broad strokes, but in terms of details especially that are specific to this pae, we're still actively learning.  
+
+Them: Okay? All right, so just a PAE construct in itself. You have the pae, and then I would tell you the focus group of the capability portfolio executives, which were the artist previously known as PEOs. Right. And then you have your FCD, you have your SCO, which is your contracting, you have your sustainment enabler. And then there's this weird box on all the org charts off to the right called International. Let's kind of blend it. And they're trying. It's International. But it's that important. But is it really important? Type of deal because it's culturally and traditionally been an outlier. To the acquisition community. And I'm using a lot of hyperbole, but I would tell you it's been that question mark. It does what it does. It does it on its own, it works. Don't look behind the curtain. And when it becomes important. It becomes important. I. E. Ukraine, for example. Or Taiwan, for example. But as I draw that back, the army just starting at the top throughout since the administration has come in, you've just seen executive orders and you've seen memos and we've seen guidance and policy all the way down through the secretary of the army that is stating, hey, we've got to really get at the International Mission Space. And from an acquisition standpoint, it needs to be tied in and made a priority. So therefore, you have the blended box off to the right. International cooperation official, which is now myself. So my role is to capture. Capture, if you will, the international space and be the touch point for the PAE. I'm a direct report to the to Mr. Welch. And I enable the CPEs in their space on domestic programs. To ensure that we're bridging international exportability and interoperability in their programs. And then on the back end, we're able to leverage that, the buying power, if you will, to bundle equipment sales and industry to give us better buying power for the domestic program. So domestic programs that are what the CPEs do. So I'll pause because I know I said a lot. Of a lot of jargon there, so I'll just pause to see if you got it.  
+
+Me: Yeah, I think so, sir. I actually didn't know much about anything about the International piece. Everything else you've talked about, I think, has come up in a number of the other interviews in terms of structure. So interesting, and it sounds like. So it's taking a heightened view in this administration of its importance. Is part of what I heard. Good. Let me jump into from your perspective. One of the things that the PAE should do. Is serve internal and external customers. And everybody has different needs. Is there one or two really big wins? That Pae could help deliver for the space that you operate in.  
+
+Them: So I'll speak specifically to the pae first. And I would just say that empowering and entrusting the ICO and Mr. Welch has done, I would say that from listening to my other counterparts as ICOs and the other. Paes. Mr. Welch has done a good job by empowering and entrusting that I am handling the international space. And I would tell you. That the ico. And we may get into this. And if we are, please forgive me for getting in front of the headlights. But my understanding is currently the ICO is a GS15. Six level grade position. And it's international, which means it's traditionally. You heard me say before traditionally. It has been not a pro work, not, not as highly prioritized as domestic programs that the CPEs and the engineers are graded upon. And so. You're almost at a loss coming in when you're at the. At the table, because you're at the. You're at the table, which is huge, but you're also at the end of the table. And you're not a. You're not a go. You're not a flag. You're not a s. You're not a flag, right? Mr. Welch does a good job of keeping us at the table. And I would say that if in other PAE's I've heard that is not the case, but I would say there's even more opportunity to ensure that. There's forcing functions. Being looked upon to. Empower and increase international. Place at the table. And then also. Giving us a voice to be able to. Ensure on the front end of things that international is on the front end of the acquisition, you know, in requirements and on the, you know, pre milestone B, so that it equals foreign military sales and domestic buying power and interoperability on the back end. And I say that because we're moving so fast. Especially in this particular pae. There's no time for it. And so when International has been an inhibitor in the past, And they're attempting to prioritize it. And again, we got a great pae. Is it really? Is there really a space to inject it, right? And again, I feel like I'm going around the neighborhood to get you back to the mailbox. But the bottom line is. Need Mr. Welch to continue to campaign and advocate, advocate, be an advocate for the international space, to remain at the table and have a solid voice and then also somehow find ways to make checks and balances of the CPEs as to whether they are building in exportability into their programs. Pre milestone B.  
+
+Me: Here, sir. So let me repeat back a little bit. Seat at the table is a big deal. Helpful. Well, let me actually ask it. Are you feeling like you have the opportunity to influence Mr. Welsh in terms of how international should be viewed and where you should be able to inject? You talked about injecting time right into the requirements so that you're not finding out about it after the fact and you can at least have some level of influence. Do you get that kind of FaceTime with him?  
+
+Them: As far as FaceTime, I would say no. We're more on an ad hoc basis. And again I would go into. I believe this is up and out of Mr. Welch. This is more in the ASO side of the house. There is a. There's really a. There's a debate, if you will, as to. Where AMC's role is in the international space. Where there's an organization called cmds. I don't want to get too deep into it, but there are the case developers and executional foreign military sales. The icos are the only. Folks, from my understanding in the PAEs that are not at the PAE level. That are not permanent position that are in permanent slots. We're all still detailed. And so as a detailee, someone trying to carry out. Monumental change. I've been in this 30 years. I've never seen change to this effect. You're almost a lame duck. And I use that word, politician, Right? Without the guide, without clear hard execution guidance and an exord. Implementation guidance. You know, you could be the best. You know, you could be the best leader in the world. And I've got some really good people attempting to, you know, get on board and follow. But it's just not as solid a unity. If you had the guidance and the position locked in the person locked in the position, that would not only would you have the positional power, you'd also have the legitimate power to execute what you're being told to do by the army.  
+
+Me: Yeah, understood.  
+
+Them: So, last example. I'm sorry, Dave. I don't mean to interrupt, but I'm. I'm getting older, and if I don't say it,  
+
+Me: Please.  
+
+Them: It'll Flood, away in, like, five seconds. All right, so, for example, when Mr. Welch does the org, when he gets up to do, hey, this is the pae. This is who we are. And when he goes to who we are and he gets to the last, you know, always save international for last. Right, because we're the best. It's like and Walter Flood, my acting or my interim I. Know, exclusive to, you know, C2/CC2 CC2. This is across the board.  
+
+Me: Yeah, copy that. We've heard similar things for lateral. Well, first you talked about the speed, and I want to get back to that because we've heard that quite a bit. Hey, look, the armies. There's always a little bit of change. But the speed, especially in this pae, sounds like it is probably outpacing some of the others. Which, look, I understand might be the goal. Most of the folks we've talked, we've talked about a balance between that speed and some normalcy. And I think I heard a little bit of that for you from you. But the detailed piece, not necessarily having everybody feel like you're here for the long term. Is understood. That certainly seems like it could come into play. And this is the case, you're saying for all the other folks like you and the other PAE's?  
+
+Them: In the international role. Yes. And I don't again, I've mentioned that I have really good. So there's probably about. So the intent is to bring all international resources and folks, if you will, Across the pae, within the cpe's under the ico structure. And then push them back out as direct support into the cpes, which allows you the flexibility to be able to say, hey, this program, I don't want to say dying down, but it's losing steam or kind of coming to a place where it's going to transition. So we, as the ico, I should be able to pull those assets and resources out and put them on another program that's growing, for example. Well, let's say that those people, right, they may mean good intent, and you'll have certain, you know, people that are definitely all on board and bought in. But in any sort of change initiative. You're just going to have a certain percentage that are not. You're going to have cave people, citizens against virtually everything. And if I'm not? If I'm not. And I'm using me as this example. But if the ICO is not permanent and have the authority, it's almost as if you've got to say, hey, I'm going to use Mr. Welch as my lever. And then now, from politically, you may be burning bridges across those geos that you're and or the workforce. Who may see you as like, hey, the person leading the change. Or you may end up being, hey, well, Walt's only there for, I don't know how long Walt's going to be there. We'll just wait them out a little bit because, you know, and then you get some obstruction or at least slow, slow rolling in your change initiative.  
+
+Me: Yeah, Understood, sir. Okay? Let me ask this. Why don't we go back to the pae's purpose? Everybody's got sort of a different view. And we know I'm gonna say different, you a different focus of the PAE's purpose. And so we're trying to get a broad view just to understand where there's alignment. And where, you know, if we look at during this phase, if we have to go out to people and do more training or talk about here's what this means and here's where the focus is. So give me an idea. If you were to, you know, just give a sentence or two on here's the primary thing we are trying to achieve as C2/CC2 C2/CC2  
+
+Them: So, walt. 's idea is that we have a directive from our. From the administration and from the senior leaders of the Department of War to accelerate acquisition. For multiple reasons, but they're all nested within the national security strategy. And the ndaa is directing our leaders. To, you know, former acquisition structure that, you know, assumes risk. In policy and. You know, it assumes the risk of where we've been heavy on policy and risk adverse. Which slows down speed. They're removing bureaucracy that is the many wickets and different parallel decision making and redundant decision making avenues upward. And they're powering that down to one centralized position. At least humbly, the pae. And then saying, now we're going to power that down and that person has oversight of that enclave or that portfolio, and they can make those trade offs internally to expedite the delivery of capability. And I say domestic programs, but in this case, it would also help us with the international community as well. But I go back to. We're going so fast. That I'm trying not to get in. There's a place where, you know, Walt doesn't want to speak up at the table because they're busy, and I don't want to get in front of the bus that's moved. Well, I'd say trained, because it's moving, really. Fast, right? So in the interim, I see the long term benefits of it. But for now. The speed at which it's moving is. I think it's showing dividends. And doing what it's supposed to do for our portfolio. But I think the international piece will pay off on the back end a little bit later.  
+
+Me: Yeah.  
+
+Them: I know that was more than two sentences, Dave. I apologize, but hopefully you can get two sentences out of it.  
+
+Me: That's all right. We cut off everything. Our ears just stopped listening after the first two. So that, you know, that's how we keep saying no. I think I'd have to go back and look at the themes that we've heard. Walt, but. One of the biggest, if not the biggest, is the speed at which we're moving. And people are pretty understanding. I just heard that from you. But at the same time, It is. It's breakneck. So let me ask this. You talked a good deal about risk. And look, the army is willing to take on more risk. And that is the trade off. Right. If you want to go fast, you're going to have to take more risk. Do you feel like you are seeing places? Where? The speed might be. Increasing the risk to a point not where quality is going to suffer a little bit. Right, because that's always going to happen, but where it is. Causing a ton of risk in other areas. Safety, quality. Cost even. Or are we, you know, doing a fairly good job of managing those things?  
+
+Them: So, Dave, I am. I came from the ground, right? I started. I started at the. At the tactical level. I still like to consider myself in the tactical level at times, although I sit at the more the strategic level. I would offer to you that, you know, you mentioned some things. I wouldn't say safety, because safety is always a priority in the Army. I would say that quality is likely an issue. Because I believe there's confusion at the tactical level. As to the direction at which we're going. And I think you know, from a strategic messaging, I get what is being messaged. But when you in practice, you see so much change. Whether it be through leadership, whether it be. The shifting of programs, the shifting of organizations and leaders that. No one knows what tomorrow is going to. Hold for us. And I believe right now you just see a bunch of the workforce hanging on. To wait to see what it's going to be. So you come to work and you do. What I'm seeing is some folks are doing the minimum. They're doing the minimum. If you don't, you know, if you don't check it. Twice. A priority doesn't always equate to a priority at the tactical level anymore. Because I think people are just holding out, and I would offer that. Once. The hiring freeze. We've been under a hiring freeze for. Probably about 15 months now, I am afraid. That we're going to see mass exodus for multiple reasons, but you're going to see mass exodus and movement, which is going to throw another large dynamic into the workforce and our ability to maintain the certain level of quality of outputs and products. Of our mission space.  
+
+Me: Yeah.  
+
+Them: So I'll just wrap it up to say. I think. The workforce is what I worry about the most. It's one thing to receive the strategic messaging as to where we're going and what we're doing, but the workforce, I don't know. That is hitting home with the workforce, and they feel they're in a safe place. So I believe what you have is just people just hanging on until life rafts come when the hiring freeze opens.  
+
+Me: Yes, sir. Makes sense. Part of what we've heard is, look, this is on top of the DRP and a lot of transition already. So we had seen with the DRP at other agencies as well. Other units, other services. How big of an impact that had on doing exactly what you just said. Which is people we talk about as an efficiency measure or that sort of thing. They don't see the inefficiency that happens when people are not willing to do more than the absolute minimum because they are scared and they don't know which way is up. Right. So this has been a recurring theme and it only makes sense. That this is just on top of that. So one of the things I think will have to do long term and will be part of the plan is how do we get those more tactical people engaged. Mr. Welsh had talked about this. His belief was in some of the other folks who were at the initial meeting with us talked about, hey, look. And clearly you understand the goals of the PA where we're trying to go, but outside of the strategic team, When you get more to the more tactical levels, there is a certainly a fear. That we're not where we want to be.  
+
+Them: Yeah. You know, again at. The chagrin of getting in front of senior leaders. When you don't have the how the army runs Xor and the Fragos to it and the implementation and guidance of how we're going to do it. Far be it from me to go tell 300 people that this is what we're gonna. This is what we're doing. And I don't have an order to fall back on. And then with all the. With all the turmoil we've had over the last recent days and months, It's just again. You stay in this space of. Which way are we rowing? Right, we're going down a highway. This is the analogy that me and a friend used yesterday is, hey, we're on a bus. We're going down the highway. We know the direction we're going, but we're all over the road, and we're in the middle of driving very fast and getting a reckless driving ticket. And, you know, it's all about who's driving the bus. So if you have faith in the person driving the bus, everybody's like, okay, we're going to hold on. But if the minute that kind of sort of changes, It's like, you know. Hair on fire, right? So I'll pause there. I'll stop there. But that's the analogy we kind of. We've been using lately.  
+
+Me: So this has come up as well. Let me ask it this way. If Mr. Welsh was not driving the bus, do you think the bus would be going off the road more?  
+
+Them: I would answer that by saying Mr. Welch is the right person. Undoubtedly the right person to do what the army is asking this pae to do. And even to the point where I was ecstatic when I. When I was tagged to do this job because of the leadership. He's the type of leader that you want to work for and you want to do things. You want to satisfy him just as much as the Army. Right. That piece. And technically, you know, and from a leadership standpoint, both technical and interpersonal, interpersonal skills, he's the right person to do it, hands down. And he has the confidence of senior leaders above him.  
+
+Me: Yes, sir.  
+
+Them: The question is, how long is he going to be here to do it?  
+
+Me: Yeah.  
+
+Them: That's the scary part.  
+
+Me: So position. Absolutely. And that's part of why we. So. So it's for the now. It's great. And it can work. But if there is a leadership change at the top, And this gets into policies and procedures and Enough stability where. Because the PAE can't be a cult of personality, can't be one person, right? Not for the long term.  
+
+Them: Right.  
+
+Me: So it does sound like. And I don't want to put words in your mouth, but what I'm hearing is we probably need a little bit more of that, those stabilizing forces for it to have longevity. Is that fair?  
+
+Them: Right. Yes, sir. Dave. I mean, you hit the nil on the head. I actually wrote down the word. I've written down three words that last word. I wrote down stability. I think that's the. That's the buzzword. We're moving so fast. If you were to ask, where are the. Where are the gaps? One of my number one. If I had to pick three, the argument of one and two would be the stability in all of this, at least in my world, from as far as again having codified governance and policy rooted to be able to execute and then also stabilizing the positions I think you know, outside of my world. It looks like some of those positions are stable. But not so much down and into my area in Mission space.  
+
+Me: Okay? Appreciate that. One of the questions we usually ask is about speed and friction. I don't want to again. Put too many words in your mouth. But it doesn't sound like there's a lot of friction slowing us down right now. Is there any.  
+
+Them: No, I think again, you have a core team leaders that are all in sync as far as I can tell. I haven't. You know, I'm a new guy at the table and I would tell you As a senior 15, I'm the lowest person at the table. But there's been no friction as far as from a cohesion standpoint, with leadership. From my observation. Again. I wouldn't tell you that there's any one. Any. I haven't seen obstruction or friction points. I would offer just. Again, there's just gaps, not necessarily friction.  
+
+Me: Well, you mentioned internal there, Walt. I'm even thinking, could it be something with the ASOLT Folks, headquarters, T2COM, any of those actions that you're seeing, or. I don't know how much you're involved in this.  
+
+Them: Yeah, well, again, I started earlier, and again it may be I mentioned the friction between the asalt and the AMC community. I'm a blended community. Right. So when you have, you have the assault side of the house that has traditionally done the execution of foreign military sales programs. But you have the AMC side of the house that has done development of the programs. Right. So now how we continue forward in a blended way, there's still debates and arguments about, you know, like, who's going to own what processes and command structure. And so, again, we're working through it in the opt the opt just hasn't wrapped up yet. But I go back to. We've been in this pause period since about November of 25. And next week is April of 26. And when you're the person that's supposed to be leading the international enterprise, no matter which pae you sit in and. You're a detail, e. And likely have another job back home somewhere. It gets into a pretty tough challenge of the quality of output. That your mission space is providing. Right again. People are hanging on, and you don't want to. You don't want to take too many risk because you don't know, you know. You don't have that final destination, so you just stay on the highway.  
+
+Me: I appreciate that.  
+
+Them: Be the bus analogy again.  
+
+Me: It introduces some consistency. Anyway, I can at least follow it, that's for sure. What about battle cadence? Battle rhythm, rather, are there things that you would expect to be in place for us as a pae and our touch points outside the pae that you have seen that we just don't have in place yet?  
+
+Them: So here's the. Here's. Here's the. So I'm not tracking a pae staff call. And it may be that I'm just not invited to it, or it may be that it's not happening. I don't know. But I'm also not tracking, really a PAE staff. And so I am aware that it's Mr. Welch's deputies and a couple of people in the front office to include the chief and his exo and his, his admin. And that's for someone, you know, for. To carry out that large of a mission at that level. For something to be there should be in, in my humble opinion, a form that is cross cutting across that top line of the structure that brings everybody together in some sort of frequency. Just to keep us all on the. On the same. On the same rail. And I. I don't know, maybe that happens, but because I'm international, I'm not included in that. 's. I don't. You know, it's almost like, hey, you know, Dave, I'll be very honest. I'm afraid to ask because if I don't want to be sucked into it and then it turns into. Something else that I'm doing that you know that I'm already. We're already running around at the speed of light. They're running at the speed of light. You don't want to jump in and cross the beam, so to speak.  
+
+Me: Yep.  
+
+Them: So from a battle rhythm standpoint, again. I would just say there's not much of a battle rhythm other than what I. What I'm aware of as the quarterly CPRs, which are the capability portfolio reviews. That I am involved in. That's not like an ad hoc visit or something to that effect, but battle rhythm events. I'm only tracking like one or maybe two, but I'm not tracking a frequent batt rhythm of it. That that is cross cutting of the top line leaders of the pae.  
+
+Me: Yeah. It does sound like from. From a lot of people's perspectives, there is a much more individualized focus rather than a what we would typically see in a more traditional battle rhythm. And I think, you know, it does sound like some of that is at least intentional. But this is where that balance comes in again between speed. And stability. So another recurring theme. Okay, let's see.  
+
+Them: So real quick. To your point, just really quick, I would say that I do believe it's intentional because I've heard Mr. Welch say that, you know, he's trying not to, he, you know, use the word. He doesn't want to be intrusive. He doesn't want to be disruptive. And if he needs to go into, you know, your. If he needs to get you, he'll get you, and he's really good at that. And otherwise, you know, a group of senior leaders. We should all be able to, you know, manage our own mission space. And if we need to, we need help from him or we need to put something on his plate, he's there, and that's great. And so, but there's, there's a balance to it. So if you're the shiny object, let's say CPE1 of the CPEs, you're going to get that attention and there's going to be that. There's going to be that. But if you're not a shiny object, And you're. You're kind of dull like me without Vaseline. Then you're just gonna. You're just gonna exist until. Until it happens. If you will.  
+
+Me: Okay? Let's see.  
+
+Them: Dave, if I can jump in here quickly.  
+
+Me: Please.  
+
+Them: Sir. Question. Question for you. And I love this idea of kind of, you're managing our mission space. You're also existing in a space where the PAE kind of is operating between two higher level groups, between T2COM and ASAL. And obviously that space, especially the national space. There's also a question. Of kind of who do we take direction from? Who's making the lead? Can you speak to kind of how you're managing your own mission space with those competing kind of priorities? An example, be like like DASA Deck at Asault hq. How is that relationship day to day? Is there friction between who I need to get like a mother, may I from? Or is there friction on who I'm getting reporting from? Can you speak to kind of what that looks like in practice? Yeah, nick. So again, we are. So, you know, traditionally, I come from a place where. There's been custody battles forever, right, for fms. So AMC owns Development, ASALT owns Execution. The dasa that gives you resources and policy and priorities, and then you're working for some sort of commander out there who doesn't have anything to do with any of it. But you're assigned to this commander, right? So now let's say you take that and you pick it up, you put it under the pae, and if you ask me who I answer to, it's the pae. I get my policy, my resources and my funding. From the dasa deck. If things go really bad, I'm likely going to end up in front of the asault. I need to help the pae and all these cpes to execute. International programs in the best interest of T2 Comm. In the forces in war fighting concepts. But yet it's hard to get in with the CPEs because the CPEs are focused on domestic programs. Especially in this portfolio. I mean. A lot of foreign military sales is based and founded upon what we can export to our partners, especially outside of Five Eyes. Well, guess what? We don't export a lot of our intelligence portfolio and our net, our network, because of, you know, we try to keep that. Really centric to our. To the. You know, to our joint force. I mean, our joint force is not combined forces. Right. So I know I'm giving you big picture, but I'm telling you where I am. So if you're a detail e from amc, But yet you're sitting in a slot with Asault to the pae Like I'm singing a song now. Right. To your point until we get stability. And, oh, by the way, Mr. Welch even sees me as a CCOM asset. They don't even announce. But CCOM sees the ico, so everyone sees the ico. Asadec will tell you where. Direct support to the PAE. Mr. Welch will tell you we're direct. Explains the ICO as a direct report to the pae. The PAE says we're direct support from somewhere. I don't Even know if Mr. Welch knows if we're direct support from the DASA deck or what. So there's. I think there's a disconnect there. Depending on where you sit or where you're from. That's a great question, A great observation that I believe you made. But, yeah, there's that. So again, I have a good relationship with Mr. Welch because we cross paths in the past. But the other ICOs, if you didn't come from that particular community. You may be faced with friction down and you may not even have. A solid launch of the PAE that you're accountable to. That's helpful. Thank you, sir. That's one thing we've heard across the board. We even heard in because I was at HQ before this. We heard that there too. Where it's this. This dual reporting makes sense on paper, but then in practice provide some really interesting kind of like who do I actually go to? And then everyone interprets. That a little bit differently. So I know we're at time very, very quickly. If there's one thing all three parties could do to improve this, what would it be? World's responsibilities. When you say all three parties. Help pa t2 com asault. And they're subsidiary. Subordinates that that are in your space. Yeah. I have a good appreciation for the administration's agenda. Right, right, wrong or different. You understand what we're doing? I live in an international space. And so, therefore, I understand the pillars of the National Security strategy, and this administration wants to ensure that we're focused on America first. We're doing what they want us to do and. And not what we shouldn't, you know, not what's outside of America. First, strategy. And they want us to go fast. Period. And, you know, basically, again, not be wrapped in policy. But it's more on the. The acquisition side of the house. Right. And make that go fast. How do you make it go fast? Right. So I have a good appreciation for what our leaders are being made told to do, and they're executing it. If there was anything that I believe that the senior leaders could do for, let's just call it my level and below. It would be to have definitive guidance. Xor. I'll use Dave's words. Stability. We need stability. Right? We need the ability to. Come out of this hiring freeze. Or at least give us the ability to MDR internal. Like, if you don't want to grow, at least be able to MDR internally. You know, this. This detail space that we're all in is crazy. And then having the guidance to say, slap the table, and this is what we're going to look like. Some. I would tell you CPEs have that, but not all the spaces have that. The quicker we can get that stability neck, the better. Thank you. And, Dave, I know I took up your last couple minutes there.  
+
+Me: I'm glad you did.  
+
+Them: I'm fine. I got it. I'm good. I got another. I will keep you guys. I'm just telling you, don't worry about me.  
+
+Me: Because. I appreciate that. You know, these interviews, frankly, are so interesting. It's very easy to get lost. So, Nick, I appreciate it. He's. He keeps me honest on. On time, which. Which we do to eat. So one of the things we'd ask is just in the future, we'll try not to abuse it. But if we could, you know, contact you with follow up questions, either electronically or ask for 15 minutes with you, we would appreciate that. And we've got a to do. We'll give you a copy of the recording and transcript. If you see anything. Right. So obviously in anything we quote, we wouldn't say the ico, you know, we would generalize. Higher level things like, we need a little stability, things like that. That are non attributable, but we're going to get it to you anyway. And if you see something where you say look. Just make sure you don't say anything about this. We will absolutely respect that.  
+
+Them: Yeah. No, I, you know. I think everything that I said today, I believe I would say it in front of the pae, and I don't think he would give me a lashing over it, right? So I'm fine, you know, But I. But I do appreciate running it by me because I also have a habit of saying things and then being. If I said that and yeah, I said it, just running it bought me, I'd appreciate it.  
+
+Me: Absolutely. Our pleasure. I mean, for us, too. It's a trust issue, right? People aren't going to tell us stuff if we can't be trusted to make good decisions about the information we get. And I think we all try to be good people. So I. I may be naive, you know, I know there's some bad actors out there, but most of the people I think try to be good, and we try to be some of those guys, so.  
+
+Them: Yeah, yeah. Yeah.  
+
+Me: Appreciate your time today, Walt. I will get better at calling you all. And where are you located? Walt, are you on apg?  
+
+Them: Yes. So have you been here? Have you been to Mr. Welch's office at all?  
+
+Me: Not yet. Next week we're hoping to be.  
+
+Them: Okay? Yeah, I'll be out. Unfortunately, I'll be out of town next week. But when you walk, I'm on the second Flood, just above Mr. Welch's office.  
+
+Me: We'll make a point of trying to get up to see you and at least waving and say hello when you get back.  
+
+Them: Yeah, please do. Please do.  
+
+Me: All right. Thank you, sir. Appreciate your time today.  
+
+Them: All right, thanks. See you later. Thank you.

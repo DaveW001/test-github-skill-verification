@@ -1,0 +1,14 @@
+{
+  "id": "20260501-skill-token-optimization",
+  "title": "Skill Token Optimization",
+  "description": "Reduce OpenCode skill system prompt overhead by migrating to a lazy-load architecture",
+  "status": "completed",
+  "phase": "complete",
+  "created_at": "2026-05-01T00:00:00Z",
+  "updated_at": "2026-05-01T15:30:00Z",
+  "tags": [
+    "performance",
+    "prompt-optimization",
+    "skills"
+  ]
+}

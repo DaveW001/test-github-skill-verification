@@ -1,0 +1,289 @@
+SCRUM / PAE HQ Interview (Mr. Chris Manning)
+
+Times New Roman
+
+Mon, 16 Mar 26 · matt.jacobs@scruminc.com, tim.johnson@scruminc.com, dave.witkin@scruminc.com, Manning, C P (Chris) SES USARMY HQDA ASA ALT (USA), PAE C2/CC2 HQ
+
+Times New Roman
+
+Background & Role Overview
+
+Times New Roman
+
+Chris Manning: Deputy PAE for C2/CC2, splits time between PAE (40%) and HQ R&D (60%)
+
+Times New Roman
+
+Acquisition background, 9 years active duty Army
+
+Times New Roman
+
+Focus on programming/money side vs other deputies who handle requirements
+
+Times New Roman
+
+Goal: Eventually transition fully to PAE role
+
+Times New Roman
+
+PAE structure: 3 deputy PAEs total
+
+Times New Roman
+
+Manning handles acquisition/programming
+
+Times New Roman
+
+Other two focus on requirements side
+
+Times New Roman
+
+Joe Welsh as PAE, Ryan Janevic as another deputy
+
+Times New Roman
+
+Dual Reporting Structure Challenges
+
+Times New Roman
+
+Major friction: PAE reports to both General Hodny and Secretary Ingraham
+
+Times New Roman
+
+CPEs must get approval from both T2COM and ASALT for same activities
+
+Times New Roman
+
+Example: Congressional engagement requires dual sign-offs with different processes
+
+Times New Roman
+
+Creates bureaucratic burden Manning calls “bullshit”
+
+Times New Roman
+
+Root cause: Chief wanted to retain requirements authority
+
+Times New Roman
+
+Originally designed to go through AAE only
+
+Times New Roman
+
+Military side insisted requirements go through Chief
+
+Times New Roman
+
+Manning’s assessment: Likely temporary structure to expose problems
+
+Times New Roman
+
+Hopes it’s “means to an end” rather than permanent solution
+
+Times New Roman
+
+Expects examples to accumulate showing dysfunction
+
+Times New Roman
+
+Organizational Culture & Speed Challenges
+
+Times New Roman
+
+Default mindset: “5-year acquisition program” for everything
+
+Times New Roman
+
+Even simple commercial purchases (Best Buy analogy)
+
+Times New Roman
+
+Qualcomm Snapdragon example: Why 2 years for existing chip?
+
+Times New Roman
+
+Cultural barriers to speed:
+
+Times New Roman
+
+Risk equation focused on program survival vs delivery speed
+
+Times New Roman
+
+Measurements emphasize baseline management, not acceleration
+
+Times New Roman
+
+“Entrenched middle” protecting existing power structures
+
+Times New Roman
+
+Manning’s priority: Create “culture of speed”
+
+Times New Roman
+
+Make it safe to take risks and go fast
+
+Times New Roman
+
+Shift from managing baselines to accelerating delivery
+
+Times New Roman
+
+Next Gen C2/CC2 Program Approach
+
+Times New Roman
+
+Revolutionary operational concept: iPhone-style interface replacing massive tent operations
+
+Times New Roman
+
+Old way: Hundreds of computers in giant division headquarters tent
+
+Times New Roman
+
+New way: Splash page with apps, streamlined operations
+
+Times New Roman
+
+DevOps at scale implementation:
+
+Times New Roman
+
+4th Infantry Division testing with one vendor approach
+
+Times New Roman
+
+25th Infantry Division testing with different vendor/approach
+
+Times New Roman
+
+Iterative development with soldiers providing real-time feedback
+
+Times New Roman
+
+Formal evaluation structure exists despite appearing informal
+
+Times New Roman
+
+ATEC test teams writing formal reports
+
+Times New Roman
+
+More structured than “Wild West” perception
+
+Times New Roman
+
+Building evidence base for scaling decisions
+
+Times New Roman
+
+Technical Architecture & Dependencies
+
+Times New Roman
+
+OSI model approach: Building layers that interconnect vs siloed systems
+
+Times New Roman
+
+Previous approach: Separate OSI models for each problem
+
+Times New Roman
+
+New approach: Unified layer architecture enabling integration
+
+Times New Roman
+
+Position, Navigation & Timing challenges:
+
+Times New Roman
+
+Currently make custom chips in small, expensive runs
+
+Times New Roman
+
+Exploring Qualcomm Snapdragon integration with secure algorithms
+
+Times New Roman
+
+Bureaucratic resistance to commercial chip adoption
+
+Times New Roman
+
+Cross-program dependencies required but culturally resisted
+
+Times New Roman
+
+Traditional culture: “Protect program at all costs, avoid dependencies”
+
+Times New Roman
+
+Portfolio approach requires interdependence
+
+Times New Roman
+
+Leadership & Decision Making
+
+Times New Roman
+
+Current state: Very informal, flat structure (4 people in front office)
+
+Times New Roman
+
+2 senior executives among 4 total staff
+
+Times New Roman
+
+“Two pizza rule” - keep headquarters to ~12 people maximum
+
+Times New Roman
+
+Time allocation problem: 80% up/out reporting vs 20% program management
+
+Times New Roman
+
+Should be 50/50 split maximum
+
+Times New Roman
+
+Secretary Ingraham driving data-based management through ASA ALT Live
+
+Times New Roman
+
+Forces CPEs to maintain accurate program data
+
+Times New Roman
+
+Decision authority: PAE can escalate directly to Chief when needed
+
+Times New Roman
+
+Bypasses traditional staff coordination processes
+
+Times New Roman
+
+Chief explicitly told staff this would make them unhappy
+
+Times New Roman
+
+Chat with meeting transcript: https://notes.granola.ai/t/cfe114ef-2a19-4682-b4f7-394ef3b933d0-00demib2
+
+Times New Roman
+
+Meeting Title: SCRUM / PAE HQ Interview (Mr. Chris Manning)
+
+Date: Mar 16
+
+Meeting participants: Matthew Jacobs, Tim Johnson, Dave Witkin, Manning, C P (Chris) SES USARMY HQDA ASA ALT (USA), PAE C2/CC2 HQ
+
+Transcript:
+
+ 
+
+Them: Right? And I go, no, it doesn't work that way. When we first launched our first kind of agile teams in the Royal Navy. Someone goes, this is great. We're now doing four times the work in twice the time. Interesting pun there, but yes. My apologies on Thursday. Last week, the calendar got away from me. Somewhere where I could let you guys know that quickly? Understand. And you are at apg. True. Sometimes. Okay? Yeah, I split my time. Do you at least live north of d.c. yeah, so my house is north of apg. But I do. So there's some more convenient than D.C. yes, because I was here for 10 years before I went spent four years in D.C. so I never moved. My house was here and I just got an apartment in D.C. during the week. Now I don't have an apartment in dc. And I am here and go down to dc192. Before we jump into the standard questions, (Chris) you brought this up. How do you decide if the conflict between the HQ work and the PAE work, which one you pick up? What is that? Mental model. If you have an important, relatively similar level of important meeting for the PAE and one for the hq, kind of what's the mental model of choosing which one you end up prioritizing? So I will wait the PAE model because this is where I ultimately want to be at some point in time. I plan to land in one job and this being it. So that's going to be the priority of. Hey, don't let. If I want that to happen, I need to do a good job in this job, so I'll take some risk in the R and D job. And this is a new thing for the army. New thing for Dow. So it's kind of like a time and energy to make the new thing successful is a little more important than maintaining effectiveness at something that's existed for a while. Is that why you're more interested in the PAE job in the long term over the HQ job? I want to excite you about this role over the other full time job I really enjoyed over my career, I've really enjoyed my time in the acquisition business. And I made a little bit of a detour into the lab business. Then I tried to come back into the acquisition business. And after you've been away for a while. It's really hard to get back in. Some of My personal career strategy of going to the Pentagon was to go work in Army C2/CC2 working on the EEpeg, if that means anything to you guys. As to the programming, the money for modernization and then bridge that to get over to asa. Headquarters and then build a relationship with the leadership at ASA headquarters such that they have trust in me to go, hey, you're an acquisition guy. Let's go put you in acquisition job. So I'm really interested in delivering kit to soldiers. That's really what I love to do. So it was great. My experience in the Pentagon of learning how the whole machine works and going, all right, that's going to help me better deliver a kit to soldier. What I want to do is PA Job was always my dream job. This is pretty close to it. Kind of been in my site Horizon since about 2004 of hey, what would be my dream job to go achieve in the army, so that's kind of a little bit my backstory. Of. Why am I interested in this? I know some people are like, when I took the SRT job, I was like, I'm thinking about my next job afterwards. And the previous desk is, yeah, I didn't think there was a job after that. I think you just stayed in that job until you retired. And I was like, I got different plans. Why don't we go ahead and sort of jump into some of the plan questions. You're a somewhat unique situation because you've been involved with this at HQ for some time. So there is a chance some of this will be. I don't think a whole lot of it will, but some of this. Will be repeat, just answer it the best you can. And we'll be asking you to put a PAE slant on things. So that might differentiate it. But part of what we're trying to do is run what we call a learning loop. Basically, we want to understand where things are. So that when we get to the point where things are running perfectly, Everybody in the PAE and all the tentacles of PAE has are running smoothly. People are getting what they need. We are at least exposing friction points and then working through them in a consistent way. Right. We don't expect things to be perfect, but we do expect that we'll be surfacing those issues and working them through. So that's really what we're focused on. A couple notes about privacy. Before we go any further, two things. One, do you have any issues if we record it just for the transcript so we make sure we get our notes right? We will do that. Then just turn that on. And then everything is anonymous. We do not. We're someone that's already. We don't share anything that we do here. We roll things up. So nothing is attributable to specific people, and we're pretty cautious about that. So we will be very cautious with doing that. We've got just. About, I think, 30 minutes less. So we will respect your time. There may be a couple cases where we just look, make sure I'm good till 11:30. So if we need more time, we're good. Perfect. Perfect. I may have gotten wrong what we had you down for, but that's fantastic. We had to 11:15, but I got a gap there, so I'm good since I was late. Whatever we need to cover. Fair enough. And if we do start going too long on any question, we want to get a lot of rich detail. But if we're spending too long, just bear with me. I may raise my hand and just say, hey. Thank you, sir. So why don't we just start softball? What do you do for the pae? What's your day to day look like? So I guess I'm one of three deputy PAE's, which is kind of interesting. I tend to focus. I kind of came into this job behind at least one of the other ones. And my whole focus is where do I provide value, what can I bring? What can I provide value I don't need? A duplicate duplicate things Joe is doing as the pae. I don't need to duplicate things Ryan Janevic's doing as deputy because both of them are kind of in place. Before I showed up, the gap I saw was programming money kind of skill set I have from my background, and so that's really. What I've been focused on is building the palm, tapping into what is Joe's intent, and then having the engagements with the building makes it a little more convenient to me being in the building, as I'm actually engaging people face to face on behalf of the PAE and building that. So I guess I'm a little more of the acquisition arm of deputy versus the other two deputies that tend to be more on the requirement side. I do see that Joe tends to bounce some things off of me to get kind of a little sanity check of, hey, we both come from the acquisition business. But most of the time I work out a spot on and how we think about things. My intent was to spend 60% of my time on this PAE thing and, like, 40% on DAS RT. It's flipped. I've been spending about 60% on R&T, about 40% on the deputy PAE. Not where I want to be, but I think the work I've been doing with the headquarters side of your guys mission is why that's tipped. And that's important to me because I care about where the headquarters lands, and there's not a lot of depth in dasa. That gives you a little background of what I do for the PAE still emerging. Fair enough, sir. And just real quick on the headquarters piece. This is something, frankly, we talk about internally. It's fantastic that you see both sides, right? Because that traceability through there, what's going on at HQ, down to all the PAE's, really, is going to be super useful. So having you to bridge that gap, I think is. I think we all think is great. My favorite chart from what you guys showed was the whole core circle thing, and then how you went a little small, and I was like, oh, this is such a great visual to convey that there's a lot of people that have spent their whole career working in the building. They have no idea. They've never worked in the command and they don't understand. It's just a small change as to how big that changed. To joke about this is that you're going to be a senior executive in the building. There should be a requirement that you worked in a command outside of the Pentagon that you just been a Pentagon person your whole career, because then you would understand one minor change and its impact. Yeah, copy that. So obviously this is new, right? It's still emerging. Tell me, when you first heard about the PAE structures, you started learning about it, what were the biggest questions and concerns you had about making it work? And then we'll get into, what are they now? But why don't we just start with what were the big concerns about? Will this work? How would it work? Yeah. So I was frankly a fan of the Speed act and Forged act as they were written in the catalyst to create this portfolio acquisition executive structure. When I first read those, I said, hey, look, one responsible individual to be able to make trades across these systems. We kind of view acquisition as these three circles of a process. Little A acquisition, big acquisition. Have you guys heard that? In our headquarter stuff. So we keep reforming the little A acquisition, the defense acquisition system, but we haven't reformed the PPPE programming process and we haven't reformed the requirements process. So for 30 years, we keep tackling one circle when all three circles need to be aligned in order for us to be successful. So I saw that as the four Jack to Speed act, we're moving to align those circles together and put one responsible person in charge of it. So I saw a huge opportunity there. Now, you didn't ask about the opportunity. It's about the concerns. My concerns were how we structure inside the army to be able to actually do that. I think still evolving is this dual, I think they like to call it dual supporting structure. As to we report to General Hodny and we report to the Honorable Ingraham. And I will tell you, I was in the room and both the acting under, which would have been the deuce. And now the previous vice identified that that's going to be a problem. They're like. And the original design, as it was, was everything went through the aae, but then the military side was like, no requirements. Authority doesn't go through the aae, needs to go through the Chief. So I think that's probably the biggest challenge of how do we overcome that? The consequence of this dual supporting structure I see now is down here, the CPEs are having to report to two different headquarters. So if we got to go to get a congressional approval, we got to ask T2 comm. Are we good for congressional engagement? And then we got to go ask asol, are we good with this congressional engagement? I was like, this bullshit. You guys need to figure you need to tag one headquarters and we go to the one headquarters and just tell us what mission sets it can alternate. And then you guys staff the across your headquarters because if that's what you want to do. So I think that's some of the concerns I'm seeing a little bit realized. I've raised them up to General Schneider to go, hey, we need to talk about this, but we've got a forum to bring them up. It's the PAE six plus one. So those things are starting to bubble up there. I get a little bit. My other concern kind of related to that is the entrenched middle and the army staff, maybe it's not. Even the middle of the entrance. Executives and geos as to hey, we didn't need a change. We were good. We were doing this for 30 years and so you still see some of that. Bubble up. As to people kind of protect their power base because this establishment of a PAE is a responsible executive. To do that upsets the whole power base in the building. As to, hey, you have to go through me to get to the chief. It's like, no, the PAE can talk directly to the chief. And so that kind of flat comms piece. Is kind of. Loose the right word. Antithecal. I know. I'm engineer, so it's anti our way we think in the army. Real quick question on the kind of dual reporting piece this was on my list of questions. To Ro Ingerham or Secretary Driscoll if we had a chance to ask a question. Do you think this is? A path to a future outcome. Where, due to some specific legal requirements, they had to go this way. And we agreed to do it to see where the pressure is with the path to unwind. Or do you think this was the agreed upon ideal state? Ask differently. Was this a means to an end because we couldn't do what we wanted to do and it's probably temporary in nature? Or is this the end state? I don't know. I'm hoping it's a means to the end. As to let's show how broken this is because this is what we can agree to for now. And we're going into Pathfinder phase and. But I don't know that my boss I think my boss on the acquisition side maybe use it that way. I don't know that General Hodna views. It that way, and I don't even know that Joe Welsh feels it that way. So a little bit of sensitivity of, hey, how do people view it differently? Because I thought the original, some of the original Designs of the PAE's were very clean and very streamlined and fully in line with what the FORGED act was kind of telling us to do. Kind of. We're getting some feedback from Congress, so if you didn't do what we told you to do, you did something different. And then we're playing this whole game. If this army implementation of your intent. And I was like, okay, we can get away with some of that, but we're not completely in line with the intent, particularly the three PAEs that are not acquisition people. Because if you read all the documentation, it's like, it. Was meant to bring that into acquisition, to be able to make those trades. Did that help? Yeah. No, that was more information that I was expecting, but this was a piece that's been bothering me. You look at this and you're like, You wouldn't do this on purpose. To an end. I need to see where it doesn't work. Yeah, I think the chief drove us there. And the secretary was willing. The chief wanted to retain the requirement. Legally, he is the requirements authority. But there are different ways you could do that review than having this dual reporting way. That would have been my preference. As to now I'm down at trenches and seeing the bird nets, putting on the CPEs. I was like, it's just a matter of time before there'll just be example after example of, hey, this is a bad idea. This is the second or third order. And then we'll tackle the symptom. We'll make the symptom a little bit better. But we won't get to the root cause until maybe October, when we kind of go, hey, before we codify this foc, maybe we make some changes. Task one Follow up question there on your example of two people need to sign off on something. Is there good conversations in progress for T2COM and ASALT expecting the same sign off form. So at least the CPE's are producing two things to get the same approval in two different ways. They're producing things. I don't know. I suspect they're completely different. I know. We're going to two different headquarters and our strike on people, my Congressional affairs people, I was like, hey, you got a speaking engagement. We got to go do this review. And it's like, hey, we need to do a legal review for people going to AUSA Huntsville and the T2Cums. Like, all right, we're going to do the legal Review for your T2COM people and your PAE, but not your acquisition people. It's like, why wouldn't we? If you're doing a legal review. Why wouldn't you just do a legal review of all of the people that are going. Instead of going, well, our lawyers don't cover this small subset. So these are all the. I mean, you could have predicted it work for two people. This is exactly how it's going to play out. But we'll just keep capturing those examples of hey, this is stupid. This is stupid. Why do we keep doing this. Dave's going to throw something at me in a minute. Is there an actual place when you say capture them? Like a centralized repository, is it? Capture them in our heads and then if someone asks us, we try to remember and dump it down. Yeah. So we tend to bring them up at the pae, six plus one meeting, or at a minimum, we have like a side meeting of the PAE's without the leadership there, just the PAEs. And so we're a little doing a little note comparison that is proving very helpful because it creates a mass of interest. Basically mass on target. So, hey, did you guys know that your money is spread across our money, spread across seven different panels and centralized programming? And they're like, oh, crap, I don't even know where my money is. And then some of them go look it up and they're like, wait a second. I've been talking to this panel lead and 60% of my money is with this penalty. And I never even talked to him. So it's shining a light on. Hey, there's some disconnects in this other process that was set up. Centralized programming that are not consistent with the acroform process. And then kind of establishing our authorization for people is also bubbling up as to hey, we built these out of hide. It's a zero sum rule. How are we building the TDAs? The authorizations for the slots? So those are the kind of the two forums and they codify exomes from the end of both of those meetings. So we probably get the more candid EXOME coming out of the side meeting and then the more polished EXOME with the two leaders at the six plus one formal meeting. Okay, thanks. So, Mr. Manning, or follow up on something you said, you talked about, said, hey, I asked you about where the questions are concerns were. You said you didn't ask me about the opportunity. So I'm going to come back to that and actually ask you about opportunities. What's exciting about this for you in terms of what we might be able to achieve, and then we can talk through where we are on that journey. Okay? Yeah. I came into this business. I spent nine years in active duty in the army. And at one point in my career, I showed up to Germany as an army captain, working in a Brigade 3 shop in a signal unit. I showed up and they say, hey. You got Electrical engineering degree? How about you work in our system integration branch? And I was like, what is the System Integration Managed? Ever heard of it? And they're like, hey, we're going to put you with five warrant officers, and you're going to build the kit that we need for our brigade. With our O and M dollars. I was like, all right, so we did that. And we built, basically, we called them data packages. And it was a multiplexer with routers, early Cisco routers, and telephone MRVC cards. And we plug it into a satellite. And of course, we've got this all designed. And it's in little green notebooks that the warrant officers write down is like, and I say, hey, how are we going to sustain this? And they're like, oh, we got warranties. I was like, well, those are good for, like, five years or we're going to make it. And we were building one and the brigade down the road in Mannheim, Germany. I was in Darmstadt, Germany. They were building one, and it was totally different than the one we were building. And we were building it all out of our money that we had to maintain our standard equipment. And so that kind of prompted me to go, hey, I want to (Chris) over. Let me go (Chris) in the acquisition. And then I jump into acquisition and I'm. Like, oh, my God, this isn't because Acquisition people aren't trying, is because all these processes, there's all this bureaucracy and obstacles of things to get after. So what I'm excited about is the ability of that PAE to put those obstacles on the table and then kill them. And not just a workaround, but kill it. We are never going to do this this way anymore. And so that's what I'm excited about. The PA This PAE structure is being empowered by Congress to go after forged and hacked by our army senior leaders as to, hey, you guys need to be bringing these things forward and is it policy, is it statute? We are ready to start. Cutting stuff out of the mix. While we've had opportunities to do that before, it's holistic about those three circles. We need to be the PBB process a little more challenging. It's more about, hey, we don't own that. Congress does to some degree. There's some things we can change in the army and osw. But it's more about, hey, how do you build what you submit in a way that's most flexible for you to be able to within the rules of the game? But the requirements process, we can totally blow that up. The acquisition process. I think the flexibility exists inside the acquisition process. To go fast again, we've reformed the hell out of it. All these authorities exist. We probably don't use them. Well, the culture has tended to be, I do what I know. And so people just default to, hey, the last program I had, I'm going to do it this way. It's like, well, does that make sense? Good. You talked about a number of big things that we need to tackle day to day. Are we at the point where we're attacking those in a methodical way yet, or is that still. We need to get there? We're just getting set up. I think there's pockets. Right? So you say about a methodical or I guess I would say disciplined way. A disciplined way. That would be. I'd say yes for the priority things. So next gen C2/CC2 we're all in very disciplined in getting after it. We're kind of in this. Hey, we just started in IOC in January, so we're not even completely staffed, but. Your guys example of NASA cutting their staff to 14, I was like, all right, that's kind of like what we're set up here in C2/CC2 counter C2s like four people in the front office, and two of them are senior executives. And then we're tapping on the subordinate organization, so that makes. Comms a lot flatter as versus this echo chamber up here. So I think we got pockets of where it's happening. And we're getting after position, navigation and timing. How do we do that For a lot less than this behemoth of a very expensive program that because it costs so much money and we're not going to get the army until 2067. It was like 30 years of buying something seems like a ridiculous way to do things. So, hey, our whole approach on the acquisition for that is wrong. We need to do something different. We're getting after. How do we do it in a disciplined way? But also fast. I think the hardest part right now is I just keep seeing people default to the culture. The answer is a five year acquisition program. You give me the question for you need something new? It's a five year acquisition program. I could go to Radioact. Bad example. I could go to Best Buy. That's what I got you. I got to start using Best Buy. I go to Best Buy and just buy a bunch of stuff and configure it. And you're going to tell me it's going to take five years to do that? That's ridiculous. But that is our mental model. Because when we have uncertainty, we know we can get away with the system of a five year program. That's like the default program. So getting people out of that mindset. On even a two year is to. Hey, if I want to use a Qualcomm Snapdragon. Why is it two years from now? I can get that. It's a Qualcomm Snapdragon. I was like, oh, well, we got to work on the software. Why does that need to be two years? So getting people to mentally shift into that. So I guess I took that on a little bit of tangent. So I think we're starting to get there in pockets. We got to build the processes to really make it a regular way of doing business. Who owns the process of identifying. The system. Things that would be driving you back to a five year program and removing those. We talked about the PA supposed to and that should there be an integrated process down from the headquarters down to all the CP's to suck these things up, should we let it at the individuals? Who owns that process and how do we. I think it should be at the PAE because that's the first place you have an integrated view across all those different silos of the army. And so you're going to be able to move faster on hey, what trades need to happen, what shifts need to happen there. Now, some of the hard part of establishing the PAE is you didn't just fall in on a staff that was wired to do that. We're kind of building our existing processes in the PAE to look after that, but I would hesitate to bring it up at the headquarters. Because it's just going to get bogged down. I mean, the chief said this in our capability portfolio review, which is kind of one of the multiple processes that the army has pivoted to to support this VAE construct. He's like, look, left our own devices, we just can't control ourselves. We're going to establish a council kernels. We're going to establish a one Star Gospel, establish a two Star Gosk. And it's going to create six months worth of process to get an answer. And he's like, hey Pae's, I want you to be. I know mymy staff guys. Are not going to be happy with this. But you have a problem. You can bring it right to me if it's above what we've delegated you to make trades on. One of the things that's complicated in organization like the PAE just getting stood up is customers. And you guys may have talked about this for the hq. Who do you view right now as your primary customer or customers for the output that you're going to deliver, for the changes that you're going to. Make. Yeah. I'll give you my opinion. I'm sure. My opinion is our customers are always soldiers and operational units. Another thing exciting about this PAE is in the next gen Command to Control. It's the first time I've seen us really wrap our arms around doing weird to scale DevOps in the army. And that is we've got 4th Infantry Division with a set of Dextens C2/CC2 equipment. It won't be what we buy, but it is. We're iterating with the companies there on the ground making changes, adjustments. Hey, let's figure out what it is that we need to be able to do then. And we also have the same thing going on in 25th ID with a different primary vendor and a different approach. And so it's like, all right, how do we figure out what we want, what the army wants? I don't believe the army knows what it wants until it sees it. And we keep this old requirements process. It's like, industrial age of let's go study the hell out of it and then predict the future and then write it down and say, go build me something that does this new future. And it's like, There's just so much uncertainty there. And then you look at the kit that our soldiers have, and it's like two generations old, right? It's like if you had that in your house, you'd have a rotary phone still in your house. You're like, this is ridiculous. So how do we kind of go faster. That's my view. Got it. There's a cost. There's a cost to do in business. My first sergeant, when I was company commander used to have this saying, hey, in some organizations, you do your job, it keeps people off your back. Another organizations. You got to keep people off your back so you can do your job. The army is usually the latter. And I was like, oh, my God. Whatever. 30 years old when I first heard that, and I'm like, All right, So I got to spend a little time with my customers above me and to the side of me. To keep them from interfering with me being able to get done when I need to get done. But I think My primary customers are 4 ID and 25th ID. My secondary customers are going, hey, who are the people that can interfere with me delivering to those primary customers and how do I piece them? Absolutely. So coming from hq or something. Right? Who are there? What do you need to show them so that they do give you the room to operate without being too helpful? In ways that are not super helpful. Yeah. So I went out to Fort Carson last week, and I kind of had a little aha moment because again, I've seen the next gen C2/CC2 PowerPoint, so I hadn't seen it on the ground. So I was going out and C4ID and I'm like, all right, how do I connect. And I came back and I told Joe, and I was like, you know what would be a really? You guys keep talking about all these layers. I don't know if you guys seen next C2/CC2 briefs. It's like, layers, and I'm like, layers. And I'm like. I go, this is basically you're talking to OSI model, but you're only talking some. You've simplified the OSI model. And you're talking about it. And I was like, how is that any different than what we've done before? And I was like, what we did before is we built an OSA model for to solve problem A, and we made it silo and we did another OSI model to solve problem B. But those models didn't, like, connect with each other. They were just siloed models. And now you're like, hey, we're going to build a layer so that it can all work. And so from a technical point of view, that resonates, but in the building, that doesn't resonate. Right? Or even. With congress. They're like, I don't understand what the hell you guys talking about. And I was like, when I went out to 4 ID and they were showing me stuff, they've got, like, a splash page that's basically like your iPhone page.  
+
+Me: Yeah, he just. His team froze. He's starting it.  
+
+Them: We can hear you. So they got a splash page. It's kind of like your iPhone menu. You click on the apps and that sort of thing. I go, what you should do is take a picture of an old division main headquarters, not that old, probably two years ago, and show what it looks like in this giant tent with hundreds of computers. And people working in it. And then put the different names of the systems over up and then show your little spatch page and go, we're going from this to this. And so it's how do you convey the operational value? Mr. Manning, to pick up on that. And I loved your expression. I don't think I've ever heard it quite articulated that way. But one thing I picked up both at the HQ and a bit in the PAE in the interviews. Is the point of both of these functions is to support downer in and create ecosystems and to make decisions. But 80% is a fairly arbitrary number. But a gut feel of the effort goes to up and out and reporting. Versus actually doing anything. What do you feel like that mix is today within the pae. What do you think it should be? So. I would say that the leadership of the PAE and the CPES, because I'll carry that, probably spends 80% of their time. Up and out and 20% of the time managing the programs. That would be Manning, guess. Now, Gannon, I'm only three months back in this business, so maybe Shane Taylor and Kevin Cheney and (Chris) Beler would tell you something different. But that's at least my perception. Outside looking. In. Where I think it should be is no more than 50. 50. As to. Hey, we need to be running our programs. The only way we deliver is by leadership. Digging into the details of the programs. But we focus our leadership on defending so that we can give our folks space to actually deliver on those things. But our folks may not have the full enterprise view that our leaders do. And if we're not allocating at least half of our time to focus on that, we're probably not doing the right thing. Now, the PAE level, that might be okay. Hey, the CPEs need to be down and executing. And I think that some of the construct was, hey, the PAE can be run in that interference while we give room and space for executive leadership at GEOs SES down in the CPES to actually run their programs. And maybe we'll get to that point as we get closer to full operating capability. But it's going to be a bit of a culture change to go. Wait a second. You're saying I don't have to do that anymore and I should be digging, spending more of my time digging in the programs? I think Mr. Ingram is driving people that way because he's looking at ASA alt live and the data is all wrong. But he's like, if something comes up on your program, the first thing he does is he goes and looks at ASA alt live, and then we find out the data is wrong, and then that. Changes people's behaviors because they're like, all right, well, why is the data wrong? Hey, you should be using this. And he'll reach out to the CPEs and the PAE and say, hey, this program, it's behind this thing came up, and their data is not even ready. How are you even. Managing this program if you don't have a view of this program based on data. So I think that his style, I appreciate it because he's trying to get to digital. How do we get to digital management of our programs? And the way we do this in the army is Council Cardinal creates some ridiculous framework that it's like people use what leaders check. And if the leaders are checking this, then people are going to use it. And if it's broken, then by leaders checking it'll force it to get right. But to say, hey, six months from now, give me a data system that's going to answer all the questions, whatever. It never happened. I love that about it. He's the first leader I've seen. It was my style down in trenches is that, hey, we're not going to use PowerPoint. We're going to use this system and it's going to be painful and it's going to be broken and we're going to make it better. And that's the only way to do that is but same concept iterate. Also reinforce that the system's the source of truth. We always recommend to leaders, at some point, you're going to have to walk in with information that you know that's wrong. Or make decisions on information that you know that wrong to drive people back to the system or people will spend more and more people will very quickly get the system right if that becomes a source of truth. Yeah, we did it when I was at Devcom, we got out of PowerPoint, made everybody submit their data into SharePoint database, and then we did roll up on that. And I told the lab director, there's eight of them, right? I was like, look, I'm going to get asked for a quick turn responses. I'm going to use this to answer Taskers. And number one, if I have time, I'll say this is what your data shows. Is this still right? But sometimes I won't have time, and I would just use it. It's like, so you should be vested, if you care about it being right, to make sure that you put your information in there. Right? Because we're going to use it. But knowing it's wrong. Yeah, I agree with you. You got to walk in and say, This is what we're using. Oh, my God. Don't use that. All right, well, then update the system. When I say that worked really well, you give them a heads up and I'm still going to pull it to the system. You can't update this sheet directly. Yeah, that was another thing when we did that, they wanted the PowerPoint, and I was like, well, I'm just going to generate the PowerPoint off the data. And we generated as a PDF. So they say, hey, you're not going to. It's a little harder to modify. We got smart people, they'd figure out how to do it. But, hey, that's the true source. But then what we found is they use those PowerPoints for other things. And so I was like, all right, all right, well, yeah, sure, we can make it so it generates PowerPoint so you can use for other things and modify it for. If they're pitching for external money, they're like, hey, there's a lot of programmatics in there that we could use, not have. To do double work, and it's like, okay, we can make it work for that, if that's what you're using it for. But we're not accepting PowerPoint charts after the fact. We will generate all the PowerPoint shots off the data for the review. Thanks for bearing with me, folks. I'm guessing there was no trouble. Teams froze up and had to reboot it, so these things unfortunately happen. Let me jump in. Based on related to what you're saying, there's probably a formal path. We're getting decisions going up and down. How's that path? Working right now. Does it work? Is there a single process? And if not, what do you do when things are moving too slow? I would say we're really in a very informal stage in the PAE right now. Makes a lot of people uncomfortable. I guess I'm a little bit. Rejuvenated by it because it's flat and it's fast. Again. There's four people up here. There's no staff's got a review with the cpe, is putting together and structure it. I think that's good to start. I think we're going to have to figure out what sort of minimum viable bureaucracy that we need at the PAE level. It's something more than we have right now. But I would not want to recreate anything on the army staff. Joe is with me. He's like, he was hesitant to bring on anybody. I think me and I talked to him. I gave him the two pizza rule. I go, I think we can do this. With two pizzas worth of people. It's like 12 people. We can do what we need to do. We go more than that. We can't bring them all in the room. That's too much. That's how we're going to your guys. NASA example. Just reinforce that. And I think it was. Down to 14, right? I guess what it was at I was like, you sent Amanda the moon with 14 people in your headquarters, we could do this job. But it's figuring out what are those things that we need that bureaucracy, minimum, viable bureaucracy for. And they're probably related to what evidence do we need to provide. Above to get support for the decisions either we're delegated to make or that we need to take up to hire. And understanding. Mr. Manning, this is still a very new organization. One of the big things that I think everybody wants to do is experiment more, try things, see if they work iterate. How is that going so far? Are you doing some of that already? And tell me how you're evaluating VR. How are you evaluating success? I assume it's very informal. You talk about it and say, this is working, let's keep it. It's not working, let's change. Yeah. I think depending on what we're talking about, there's more formality than probably you expect. So there's a lot of people that look at next gen C2/CC2 and I think it's just the Wild west, right? We're taking this stuff out and we're just talking to Division. Getting feedback from soldiers making modifications by. Sergeant Major Haney asked me that question. He's like, hey, how are you guys doing that? The congressional staffers asked me, hey, how are the testers involved? And guess what? We have an ATEC test team that's out there, and they're writing formal reports based on the results of the testing. It's not our traditional acquisition. There was an operational test that's very structured and we get after it. But there's more structure than just ad hoc getting after it. So next NC2 is pretty robust in documenting that, because what we want to be able to do is when we land on, hey, this is the kit to then go buy and take to scale for all the divisions that we have evidence or artifacts to show. Here is why we think that's the case, not just we interviewed a bunch of soldiers and, hey, this is General Ellis's favorite thing. Well, that's not really. Helpful to make an independent, logic based assessment of this is what the army needs and this is why. And then that then leads to what do we write in the requirements documents? What do we write inside the contract that we need to ask for based on what we're learning? Some things that are a little more ad hoc are in the position navigation and timing business. Wafer. As long as we've had gps, we have procured chip, we have made our own chips. For secure gps. Now, we don't make them inside the government, but we go to a trusted foundry, and then the runs we're making are so small. That basically are like, hey, you need to make them all. And then we put them on the Warehouse shelf forever. And they're very expensive to make based on what we're. So how do we shift that approach and say, can I just take a Qualcomm Snapdragon and put the secure algorithm in? There and then just buy whatever the latest snapdragon is when I need it and say, hey, just put a snapdragon in and here's the secure code to get the whole system to be comfortable with that. Is a little bit of a challenge. So some of that is, let's prove it out. Where everything is. The whole. The snapdragon becomes classified because we don't have the security approval to kind of force the system to go. We showed you this could be done. Now you need to get the bureaucracy to change a pivot to let us do something else. NextGen C2/CC2 is probably the most robust. And then as we're going, hey, this doesn't make sense, then we're doing the experiment of let's look at different angles. Of doing things differently and figure out how do we create the momentum. To then get it to work to where we're at with next CTSY2. Okay, well, and you mentioned in there that this is not maybe the final state. It's a prove that sort of the prototype or the initial thing can work, and then we look at doing it at scale. Right. What you talked about with the chips, the Snapdragon. Is there a formal way? We also talked about. I can't remember the name, sir, but somebody talked about. Look, we need data. We need data to say whether this is what we should be doing. When you're running these things, I understand you said you're doing documentation, but are there formal metrics? You guys. Are using for each thing you're doing. And then when you iterate in small cycles, you are updating those metrics and reviewing them. Or are we a little. We're not quite there yet. Yeah. So we are evaluating through our Army Test and Evaluation command that outputs of it. I don't know the metrics specifically of what we're evaluating just because I'm too new. But there's a structured path. You could argue whether it's good enough or not, I don't know. But for next gen C2/CC2 there's definitely some discipline and robustness to that evaluation. Effort. But our typical way to do that, the menu semantics, is people, what are the measures of performance? What are the measures of effectiveness? And then we're going to go back to the requirements laying folks as to, all right, what study did we do to figure out what's important? And so it's like, oh, crap. Stop. I don't want to go back there. I want to just take kit to soldiers and iterate. And as we iterate going, what are the things that move the needle that we should measure? Saying we shouldn't do a five year program to identify the metrics, to identify a system for the metrics and. No, for the metrics. I mean, people are like two years. We just got. Joe and I just get briefed. Two years. It's like two years. Hey, we're going to make this slide on thing that use the Qualcomm chip, that it's a sleeve that'll plug into Android phone. So you can have access to these other features. It's like, why would we do that? First of all, two years is too long, and second of all, why would we make it a sleeve? Why don't we just build it inside the thing? And it's like, oh, well, because we got to work at the manufacturers. And it's like, all right. That capability is not useful. Division commander online. He's like, look, I don't want no damn sleeve. I got it. If you got old stuff. It's the fastest way to add that feature would be a sleeve. But where we're at with next gen C2/CC2 is like, we haven't fielded yet, so we don't want to automatically start with a clunky approach. We want it clean. Do you have enough engineers on staff like a procurement. If you're in the private world and you're acquiring something like this, and really you're not doing acquisitions, you're doing product development at this point with outsourced capability development. The person who's on the buying side actually understands the architecture of the final product. Versus maybe you can't do everything but well versed in the end product. Do you have the right technical know how to be able to push a vendor like this? Or listen to when a vendor pushback's not a better solution. Be like, do you know what, you're right, we should do it that way. I think we do. Between the C5ISR center and the technical engineers there, as well as the engineers that exist in the CPEs, I think the challenge is to get to shift the culture. As to because our culture is create program, protect program at all costs. And then box people out to go. I don't need people infringing on my program. If I have dependencies on other people, that's bad. Because now I don't control my own destiny. And in this portfolio in particular. You have to depend on other people. We got to build it that way such that. Hey, I can't build everything by myself. Now, this is a little bit against your guys. Hey, dependencies on knowledge, but not dependencies on coordination. Dependencies. Yeah. So it's like. All right. You got me there, right? I'm like, all right, let's figure out, how do we structure that to be able to do. I've thought for a long time we've had position, navigation and timing in the cpe. Used to be iws. Now it's intel inspector warfare. But the primary user of position, navigation and timing are the C2/CC2 people. It is General Taylor. And it's like, why is. I know why. It's money and programs. It's like, hey, we drew a line and there's so much money over here, we don't really have a need for, so we're going to put it over there. Or maybe it just is. Where it started and it just never moved. But I'm like, the execution of that should be in C2/CC2 in formerly C3N. Because the primary user of position, navigation, timing information is the network. Are the network folks. All right, I got a few. Like, two minutes. What else did you want to add? You want me to? We usually ask what we call the magic wand question, which is just. Look, there's lots of issues. If you could fix one thing right now, you had a magic wand, you could just touch on it. Just one thing. What would you fix most immediately? Creating a culture of speed. I continue to see it. Joe is Scruminc it from the rooftops. The second war is every. I mean, you just watch. What planet are you on? It's like when you bring in the plan and you're like, you just are designing. Nothing has changed, and you're not trying to be creative and go faster. To me, that's the most important thing. If we're going to be successful, we're going to provide. Useful things for soldiers. How do we create a culture of speed and get the whole team bought in to go? Yes, we could go fast, and yes, it's okay to take some risk. Maybe this is a little bit of changing the risk equation for our team so that they're comfortable to make it safe to go. At speed. Have you defined what risk really means? Is there a universal. Everyone says we got a dispersed risk, but. What is risk? Is there a universal definition of what we mean about risks that you can play with first? Not. And even what risk means. I don't know that it's formally defined, but I guess my perception of being in this business for 25 years. Is my program continues or it doesn't. That tends to be the risk equation is to, hey, if you make a lot of sub optimal decisions, When you're like this is safe. To keep the program going. And it tends to be the acquisition folks are conditioned on cost, schedule performance. You create a baseline, manage within that baseline. Not go faster. It's manage the baseline. I want to stay within my left and right limits. So we not incentivizing the behavior we want by what we measure. And what we measure is are you spending your money on time? Are you on schedule? And are you on performance for the plan you built five years ago? We should be measuring is how are you accelerating to go faster? Is your current what you're delivering match the state of the art in the civilian world. I think if you did that measurement, you would be shocked at home. Much old stuff we're putting in the hands of soldiers. And it's the first time they've seen it. It's like that's already outdated and we're just now fielding and we're going to field it for another five to 10 years. That doesn't make any sense. Those are the things we should be measuring is to how is your performance compared to what is out there? And if your performance is not comparable to a commercial equivalent, then we need to kill your program. And that would motivate people to go, because if they're motivated to keep the program, It's like we're going to kill your program if you're not staying consistent with where commercial standards are at. If this system is in place and fully functioning, what percent of programs fail? Is it a higher amount of programs? So less amount of programs? What's your view on the entire concept that the goal should be to make the program survive potentially is also misguided. Yeah, so when I was doing my grad school program, whatever, 15 years ago. I got introduced to Real Options, which made me really excited. I was like, pursue a lot of things and then down select, and I was like, you could pursue more things. We typically draw this one n and we draw a line. This is what we can fund. That's the way we do portfolio management inside the government, not ideal. And I was like, I need to take this back to Acquisition. And then my professor, Ron Parentozzi at Penn, said, what was it around Peritoza? I think it was the Deborah guy, but in the finance side said, hey, if your organization is one of those organizations, once you start something, you can't stop. It, do not use real options, because you will. And that's fundamentally where we're at. And this is a little bit of the consequence of the PPP process, because the minute we start doing something and there is congressional district interest, then if we try to stop it, if you guys are following Army Transformation Initiative and how much friction that caused for the secretary and the chief as to we don't need any more damn helicopters. And they're like, nope, here's more money for helicopters Army. We're like, we don't want any more helicopters. Like, no, here's more money for a helicopter's army because Sikorsky and Connecticut delegation is like, we need. We got a complaint we need to pay for people you just don't realize yet you need more helicopters. I mean, we were even willing to go, hey, how about you work on something that we need and pivot that workforce to work on that kind of fell flat. So I think that percentage wise, the programs that fail only when they took too long and we lost congressional interest. And they're like, you guys are taking too damn long and you spent too much money. Or we get to that point of, hey, this is 20 year old technology. And you know what? We're stopped. You guys have done so that's the only time programs ever fail. But we should be changing things more. I think I got an ex meeting. We'll see you guys. Thank you. I'm happy to talk more if I didn't miss any, if you guys want to talk more. Welcome on site, and we'd love the opportunity to grab a little bit more of your time when we get there. Okay. All right, Sounds good. Thanks.  
+
+Me: Thank you.

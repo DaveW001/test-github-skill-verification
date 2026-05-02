@@ -1,0 +1,48 @@
+{
+  "trackId": "20260425-thinking-partner-skill-install",
+  "title": "Install Thinking Partner Skill with Multi-App Symlinks",
+  "status": "completed",
+  "created": "2026-04-25",
+  "completed": "2026-04-25",
+  "estimatedHours": "0.5-1",
+  "assignedTo": "Build Agent",
+  "type": "chore",
+  "tags": ["skills", "skill-writer", "opencode", "codex", "symlinks", "antigravity"],
+  "progress": {
+    "totalTasks": 25,
+    "completedTasks": 25,
+    "percentage": 100
+  },
+  "summary": "Install mattnowdev/thinking-partner skill into OpenCode after Skill Writer validation and create symlinks for Codex and .agents access",
+  "keyOutcomes": [
+    "thinking-partner skill available in OpenCode",
+    "Skill Writer validation completed — all checks pass",
+    "Junctions created for Codex and .agents (symlinks fell back to junctions due Windows permissions)",
+    "150+ mental models available for thinking sessions",
+    "Anti-Gravity has no native skills dir; .agents/skills junction provides shared agent surface"
+  ],
+  "risks": [
+    "Symlink creation requires Windows Developer Mode or elevated permissions — junctions used as fallback",
+    "OpenCode may require a new session/restart before skill appears in available_skills",
+    "Upstream skill may change — commit ce95b628 pinned in plan"
+  ],
+  "dependencies": [],
+  "blocking": [],
+  "relatedTracks": [],
+  "deliverables": [
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\thinking-partner\\SKILL.md (17833 bytes)",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\thinking-partner\\references\\model-catalog.md (47247 bytes)",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\thinking-partner\\references\\thinking-diagnostics.md (11949 bytes)",
+    "Junction: C:\\Users\\DaveWitkin\\.codex\\skills\\thinking-partner -> canonical",
+    "Junction: C:\\Users\\DaveWitkin\\.agents\\skills\\thinking-partner -> canonical",
+    "Upstream commit: ce95b6280660652d67bfc3fc36f8d7f941538f7f"
+  ],
+  "validationCriteria": [
+    "Skill Writer validation: PASS (all frontmatter, naming, description, reference checks pass)",
+    "SKILL.md exists with correct frontmatter: PASS",
+    "Reference files exist in references/ subdirectory: PASS",
+    "Codex junction resolves correctly: PASS",
+    ".agents junction resolves correctly: PASS",
+    "Anti-Gravity native skills location checked: PASS (no skills dir found)"
+  ]
+}

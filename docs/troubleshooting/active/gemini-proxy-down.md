@@ -3,7 +3,7 @@
 **Status:** Active troubleshooting guide  
 **Applies To:** OpenCode agents using Google Gemini models via local proxy  
 **Symptoms:** `fetch failed`, `ECONNREFUSED 127.0.0.1:8000`, `429 Too Many Requests`, proxy not responding  
-**Last Updated:** March 14, 2026
+**Last Updated:** April 20, 2026
 
 ---
 
@@ -16,6 +16,11 @@
 | Proxy runs but OpenCode can't connect | Wrong baseURL in config | Verify `opencode.jsonc` has `baseURL: http://127.0.0.1:8000/v1beta` |
 | Admin endpoints return 404 | Bug in route ordering | Fixed in main.py as of 2026-03-12; restart proxy if using old version |
 | High failure rate on specific key | API key issue | Remove problematic key from `api_keys.txt` and reload |
+| `403 Forbidden` + "API key was reported as leaked" | Key compromised/revoked by Google | Generate new key at [Google AI Studio](https://aistudio.google.com/app/apikey), replace in `api_keys.txt`, reload |
+| Models return errors or are unavailable | Google revoked Pro-tier model access | Only Gemini 2.5 Flash, 3.1 Flash Lite, and Gemma models are available (see [Model Restrictions](#google-gemini-api-model-restrictions-2026-04-20)) |
+| `WinError 10048` at startup, but proxy still responds | Scheduled startup collision (proxy already running on 8000) | Verify listener with `netstat -ano | findstr :8000`; treat as noisy restart attempt unless listener is missing |
+
+Related troubleshooting note: [`codex-refresh` not recognized + proxy 10048](file:///C:/development/opencode/docs/troubleshooting/active/codex-refresh-not-recognized-and-proxy-10048.md)
 
 ---
 
@@ -198,12 +203,14 @@ Start-Sleep 2
 
 ---
 
-### Issue 4: Invalid API Key (400 Errors)
+### Issue 4: Invalid or Leaked API Key (400/403 Errors)
 
 **Symptoms:**
-- Log shows: "Key ... failed with status 400"
+- Log shows: "Key ... failed with status 400" or "Key ... failed with status 403"
 - Specific key has high fail count
-- Error message mentions "API key not valid"
+- Error message mentions "API key not valid" or **"Your API key was reported as leaked"**
+
+**Cause:** Google may revoke keys if they detect them in public repositories, logs, or other exposed locations. This happened on 2026-04-20 when all 3 keys were flagged as leaked.
 
 **Solution:**
 ```powershell
@@ -403,6 +410,36 @@ git checkout README.md
 - [ ] **Keep keys rotated** - Add/remove keys as needed
 - [ ] **Update documentation** - Log any changes made
 - [ ] **Test after Windows updates** - Some updates may affect scheduled tasks
+
+---
+
+## Google Gemini API Model Restrictions (2026-04-20)
+
+**⚠️ Critical: Google has restricted Pro-tier model access per account/key.**
+
+As of April 2026, Google AI Studio has restricted model access **per account**, with significant differences:
+
+| Model                  | Dave (`AIzaSyCND2NS...`) | Raquel (`AIzaSyAIHoxs...`) | Tiberius (`AIzaSyDQJD_p...`) |
+| ---------------------- | ------------------------ | -------------------------- | ----------------------------- |
+| Gemini 3.1 Pro         | ✅ Available (limited)   | **BLOCKED (0 quota)**      | **BLOCKED (0 quota)**         |
+| Gemini 2.5 Pro         | ✅ Available (limited)   | **BLOCKED (0 quota)**      | **BLOCKED (0 quota)**         |
+| Gemini 2.5 Flash       | ✅ Available             | ✅ Available                | ✅ Available                  |
+| Gemini 3.1 Flash Lite  | ✅ Available             | ✅ Available                | ✅ Available                  |
+| Gemma (open-source)    | ✅ Available             | ✅ Available                | ✅ Available                  |
+
+**Key takeaway:** Only Dave's key (`davidawitkin@gmail.com`) retains Gemini 3.1 Pro access. Raquel's and Tiberius's keys are Flash-only. The reason for this account-level difference is unknown.
+
+**Proxy behavior impact:** Round-robin rotation means Pro-tier requests generate 2 failures (Raquel + Tiberius) before hitting Dave's key. This wastes quota and increases latency.
+
+**Symptoms you might see:**
+- Intermittent 403 errors on Gemini 3.1 Pro requests (2 of 3 keys will fail)
+- Higher-than-expected backoff times on Pro model requests
+- Flash models work reliably across all keys
+
+**Workaround:**
+1. Use Flash models when possible (all 3 keys work)
+2. Expect latency on Pro-tier requests due to round-robin failures
+3. Consider alternative providers for Pro-tier capability
 
 ---
 

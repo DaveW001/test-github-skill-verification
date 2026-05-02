@@ -1,0 +1,41 @@
+{
+  "trackId": "20260501-headless-scheduled-tasks",
+  "title": "Fix Visible Console Windows on OpenCode Scheduled Tasks",
+  "status": "completed",
+  "created": "2026-05-01",
+  "completed": "2026-05-01",
+  "estimatedHours": "1-2",
+  "assignedTo": "Dave Witkin",
+  "type": "bugfix",
+  "tags": ["windows", "scheduled-tasks", "powershell", "headless"],
+  "progress": {
+    "totalTasks": 8,
+    "completedTasks": 8,
+    "percentage": 100
+  },
+  "summary": "Set Settings.Hidden=True on all 7 OpenCode scheduled tasks that had Hidden=False. Updated Sync-SchedulerRegistry.ps1 to track Hidden flag. All 10 tasks now confirmed Hidden=True.",
+  "keyOutcomes": [
+    "All 10 OpenCode scheduled tasks now have Settings.Hidden=True",
+    "Set-TaskHidden.ps1 remediation script created for future use",
+    "Sync-SchedulerRegistry.ps1 updated with Hidden column reporting",
+    "scheduler-registry.md regenerated with current Hidden status"
+  ],
+  "risks": [
+    "skill-sync-monitor required XML workaround due to Vista compatibility mode"
+  ],
+  "dependencies": [],
+  "blocking": [],
+  "relatedTracks": ["opencode-headless-scheduled-jobs (02-Kx-to-process repo, completed 2026-04-29)"],
+  "deliverables": [
+    "Set-TaskHidden.ps1 remediation script",
+    "Updated Sync-SchedulerRegistry.ps1 with Hidden column",
+    "Updated scheduler-registry.md"
+  ],
+  "validationCriteria": [
+    "All 8 tasks have Settings.Hidden = True - PASSED",
+    "hourly-email-auto-sort already correct - PASSED",
+    "scheduler-registry.md reflects current state - PASSED",
+    "Force-run of knowledge-base-ingest succeeded (exit 0) - PASSED",
+    "No visible window on rerun observed by user - PASSED"
+  ]
+}

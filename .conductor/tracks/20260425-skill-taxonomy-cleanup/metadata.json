@@ -1,0 +1,46 @@
+{
+  "trackId": "20260425-skill-taxonomy-cleanup",
+  "title": "Skill Taxonomy Cleanup and Rename Plan",
+  "status": "completed",
+  "created": "2026-04-25",
+  "completed": "2026-04-25",
+  "estimatedHours": "2-4",
+  "actualHours": "1",
+  "assignedTo": "Build Agent",
+  "type": "maintenance",
+  "tags": ["skills", "skill-writer", "naming", "taxonomy", "opencode", "codex", "agents"],
+  "progress": {
+    "totalTasks": 25,
+    "completedTasks": 25,
+    "percentage": 100
+  },
+  "summary": "Completed conservative cleanup of duplicate and unclear OpenCode skills using renames, archiving, junction syncing, and cross-references.",
+  "keyOutcomes": [
+    "renamed: retro → session-retro",
+    "renamed: huashu-design → html-demo-design (physical target + junctions)",
+    "renamed: nlm-skill → notebooklm-cli",
+    "renamed: nlm-meta-prompt → notebooklm-meta-prompt",
+    "archived: notebooklm-legacy to _archived_skills/",
+    "added cross-references to 8 overlapping skills",
+    "all 6 modified skills pass skill-writer validation",
+    "all junctions verified in OpenCode, Codex, .agents"
+  ],
+  "risks": [
+    "Symlink creation fell back to junctions due Windows permissions",
+    "OpenCode needs restart/new session for discovery of renamed skills"
+  ],
+  "deliverables": [
+    "Backup: C:\\Users\\DaveWitkin\\.config\\opencode\\skill-backups\\20260425-cleanup\\",
+    "Archive: C:\\Users\\DaveWitkin\\.config\\opencode\\_archived_skills\\notebooklm-legacy\\",
+    "Renamed skills: session-retro, html-demo-design, notebooklm-cli, notebooklm-meta-prompt",
+    "Cross-references added to: email-auto-sorter, outlook-inbox-triage, email-draft-reply, image-generator, image-manifest-builder, thinking-partner, first-principles-mastery, snippet-writer"
+  ],
+  "validationResults": {
+    "session-retro": "PASS",
+    "html-demo-design": "PASS",
+    "notebooklm-cli": "PASS",
+    "notebooklm-meta-prompt": "PASS",
+    "thinking-partner": "PASS",
+    "first-principles-mastery": "PASS"
+  }
+}

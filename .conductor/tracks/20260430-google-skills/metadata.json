@@ -1,0 +1,41 @@
+{
+  "trackId": "20260430-google-skills",
+  "title": "Google Email, Calendar & Contacts Skills",
+  "status": "completed",
+  "created": "2026-04-29",
+  "completed": "2026-04-29",
+  "estimatedHours": "2-3",
+  "assignedTo": "Dave Witkin",
+  "type": "feature",
+  "tags": ["google", "gmail", "calendar", "contacts", "skills", "mcp"],
+  "progress": {
+    "totalTasks": 13,
+    "completedTasks": 13,
+    "percentage": 100
+  },
+  "summary": "Created 6 new skills (gmail-inbox-triage, gmail-draft-reply, google-calendar-today, google-calendar-schedule, unified-calendar-today, google-contacts) to close capability gaps from email/calendar audit.",
+  "keyOutcomes": [
+    "Gmail triage and reply drafting skills matching Outlook equivalents",
+    "Google Calendar today-view and scheduling skills",
+    "Unified cross-platform calendar view (Outlook + Google)",
+    "Google Contacts management skill",
+    "All 6 skills have reference.md files with complete MCP tool parameter docs"
+  ],
+  "risks": [],
+  "dependencies": [
+    "Track 20260429-email-calendar-mcp-audit (completed)"
+  ],
+  "blocking": [],
+  "relatedTracks": ["20260429-email-calendar-mcp-audit"],
+  "deliverables": [
+    "6 new SKILL.md files with valid frontmatter",
+    "6 reference.md files with tool mappings",
+    "Updated tracks-ledger.md"
+  ],
+  "validationCriteria": [
+    "All 6 skills loadable via skill() command",
+    "Frontmatter triggers match skill descriptions",
+    "reference.md files contain correct Google MCP tool names",
+    "Track closed in ledger with all tasks [x]"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "openai-parameter-fix",
+  "phase": "completed",
+  "status": "closed",
+  "risk": "high",
+  "change_type": "configuration",
+  "requires_detailed_validation": true,
+  "gates": {
+    "A_syntax": "passed",
+    "B_startup": "passed",
+    "C_provider_resolution": "passed",
+    "D_behavior": "passed",
+    "E_regression": "passed"
+  },
+  "completed_at": "2026-04-28T13:55:00Z"
+}

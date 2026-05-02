@@ -1,0 +1,31 @@
+{
+  "trackId": "20260425-skill-health-validator-job",
+  "title": "Skill Health Validator — Daily Scheduled Job",
+  "status": "completed",
+  "created": "2026-04-25",
+  "completed": "2026-04-25",
+  "estimatedHours": "1-2",
+  "actualHours": "1",
+  "assignedTo": "Build Agent",
+  "type": "feature",
+  "tags": ["scheduled-job", "opencode-scheduler", "skills", "validation", "auto-fix"],
+  "progress": {
+    "totalTasks": 18,
+    "completedTasks": 18,
+    "percentage": 100
+  },
+  "summary": "Created daily OpenCode scheduled job that validates skill taxonomy health. Manual test run found and fixed 47 missing junctions (mostly .agents surface) and flagged 1 frontmatter issue.",
+  "keyOutcomes": [
+    "Validator prompt created with 5 checks + auto-fix + flag logic",
+    "Scheduled job registered for daily 6 AM in development scope",
+    "Test run auto-fixed 47 missing junctions across Codex and .agents",
+    "1 frontmatter flag: clickup-cli name mismatch (needs manual fix)",
+    "Report + CSV log infrastructure created"
+  ],
+  "deliverables": [
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\scripts\\skill-health-validator.md",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\scheduler\\scopes\\development-88876ee600f5\\jobs\\development-skill-health-validator.json",
+    "C:\\development\\opencode\\docs\\reports\\skill-health-latest.md",
+    "C:\\development\\opencode\\docs\\reports\\skill-health-log.csv"
+  ]
+}

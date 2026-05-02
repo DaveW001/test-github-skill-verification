@@ -1,0 +1,277 @@
+
+Cross-notebook query: Identify key personnel, leaders, stakeholder groups, and 
+organizations mentioned in the Army/PAE/C2-CC2 context. Return a table with: 
+Person or group, role/title/org if known, relationship to the effort, concerns 
+or priorities, evidence/source title(s), quote/near-quote, confidence, 
+sensitivity, and whether this belongs in an internal stakeholder map only. Do 
+not invent roles.
+2/2 notebooks responded
+
+Γò¡ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ 5125c1f1-71b3-4dbe-afc5-d725d1a4db2c ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé | Person or group | Role/title/org if known | Relationship to the effort |   Γöé
+Γöé Concerns or priorities | Evidence/source title(s) | Quote/near-quote |       Γöé
+Γöé Confidence | Sensitivity | Internal stakeholder map only |                   Γöé
+Γöé | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |             Γöé
+Γöé | **Mr. Joe Welch** | Portfolio Acquisition Executive (PAE) for C2/CC2 [1] | Γöé
+Γöé The senior leader responsible and accountable for the C2/CC2 portfolio's     Γöé
+Γöé acquisition transformation and capability delivery [1, 2]. | Focused on      Γöé
+Γöé **workforce buy-in**, achieving rapid movement over rigid processes,         Γöé
+Γöé minimizing dependencies without being overly idealistic, and protecting      Γöé
+Γöé decision-makers from institutional blowback [3-5]. | "2026-02-17 Army C2/CC  Γöé
+Γöé Kickoff Meeting Notes" [3]; "Leadership Workshop Notes: Welch's Reactions"   Γöé
+Γöé [4, 6]; "March 31, 2026 ΓÇô Daily Sync Notes" [5] | "this only works if the    Γöé
+Γöé workforce actually buys in." [3] | High | Medium | No |                      Γöé
+Γöé | **Mia Nance ("Chief")** | Core Team Member / Chief of Staff, PAE C2/CC2    Γöé
+Γöé [1] | Primary coordinator for the PAE C2/CC2 transformation, handling daily  Γöé
+Γöé logistics, stakeholder schedules, and operational rhythm [1]. | Overwhelmed  Γöé
+Γöé by the **massive operational drag of Capability Portfolio Reviews (CPRs)**   Γöé
+Γöé and data discrepancies between official records and dashboards. Prioritizes  Γöé
+Γöé hardening Operational Control (OpCon) to speed up decisions [5, 7]. | "Army  Γöé
+Γöé organizations, staff, Acronyms" [1]; "March 31, 2026 ΓÇô Daily Sync Notes" [5, Γöé
+Γöé 7] | "Mia and team are feeling a lot of pressure around the Capability       Γöé
+Γöé Portfolio Review (CPR) and nagging data issues." [7] | High | Medium | Yes | Γöé
+Γöé | **Mr. Walter Flood** | International Cooperation Official (ICO), PAE       Γöé
+Γöé C2/CC2 [8] | Ensures international exportability and interoperability for    Γöé
+Γöé domestic programs to leverage buying power through bundled sales [8]. |      Γöé
+Γöé Deeply concerned about **lack of positional authority (GS-15 vs Flag         Γöé
+Γöé Officer)**, his status as a "detailee" rather than a permanent role,         Γöé
+Γöé workforce fears over a hiring freeze, and organizational isolation [8-11]. | Γöé
+Γöé "PAE C2CC2 Interview (Mr Flood).docx" [8-11] | "YouΓÇÖre almost at a loss      Γöé
+Γöé coming in when you're at the table... because you're not a flag ." [12] |    Γöé
+Γöé High | High | Yes |                                                          Γöé
+Γöé | **Ms. Danielle Moyer** | Senior Contracting Official (SCO), ACC-APG [13] | Γöé
+Γöé Provides embedded contracting support and exercises procurement authority    Γöé
+Γöé for the PAE [13, 14]. | Concerned that efforts to establish PAE-level        Γöé
+Γöé staff/TDA will create **unnecessary bureaucracy**; emphasizes that the PAE   Γöé
+Γöé should not be viewed as an entirely separate entity from parent commands     Γöé
+Γöé [15]. | "Risk from Danielle Moyer" [15]; "Army organizations, staff,         Γöé
+Γöé Acronyms" [13] | "asking for TDA/Staff at the PAE level is just adding more  Γöé
+Γöé bureaucracy which will slow things down" [15] | High | High | Yes |          Γöé
+Γöé | **Mr. Chris Manning** | Deputy PAE, APG [1] | Civilian Deputy PAE          Γöé
+Γöé providing strategic and operational management support [1, 16]. | Emphasizes Γöé
+Γöé that **identifying what "not" to do (stop-doing lists)** is extremely        Γöé
+Γöé difficult politically; cautions against abstract sticky-note exercises in    Γöé
+Γöé favor of tactical tabletops [6, 17]. | "Army organizations, staff, Acronyms" Γöé
+Γöé [1]; "Leadership Workshop Notes: Welch's Reactions" [6, 17] | (Welch         Γöé
+Γöé referencing Manning's prior warning): "identifying what *not* to do is one   Γöé
+Γöé of leadership's biggest practical hurdles." [6] | High | Medium | Yes |      Γöé
+Γöé | **BG Shane Taylor** | Category Portfolio Executive (CPE) for C3N [18] |    Γöé
+Γöé Responsible for the design, acquisition, and modernization of the Unified    Γöé
+Γöé Army Network and Next Generation C2 [18]. | Focused on network resilience,   Γöé
+Γöé zero trust architecture, and shifting funds appropriately; notes that        Γöé
+Γöé **funding/resourcing is the main hurdle** for PAE success compared to        Γöé
+Γöé requirements and authority [19, 20]. | "BG Shane Taylor" [18, 20]; "Army     Γöé
+Γöé organizations, staff, Acronyms" [19] | "The 'Three-Legged Stool' of material Γöé
+Γöé solutions consists of Requirements, Resourcing, and Acquisition Authority."  Γöé
+Γöé [19] | High | Low | No |                                                     Γöé
+Γöé | **COL Dave Bilin** | Main Requirements Integration Lead, Futures and       Γöé
+Γöé Concepts Center (FCC) / RPA [1] | Key integrator translating capability      Γöé
+Γöé requirements from FCC into actionable priorities for the PAE [1]. |          Γöé
+Γöé Prioritizes breaking down "stovepipes" between TAC, FCC, and CAC; wants to   Γöé
+Γöé ensure organizations have the **actual headcount** to execute assigned tasks Γöé
+Γöé [21]. | "2026-03-12 SCRUM Sync with PAE C2/CC2 Notes" [21]; "Army            Γöé
+Γöé organizations, staff, Acronyms" [1] | "we need to make sure weΓÇÖre asking if  Γöé
+Γöé these orgs actually have enough people to do what theyΓÇÖre assigned. ItΓÇÖs a   Γöé
+Γöé 'red thread'" [21] | High | Medium | Yes |                                   Γöé
+Γöé | **Hon. Brent G. Ingraham** | Army Acquisition Executive (AAE) / ASA(ALT)   Γöé
+Γöé [22] | The civilian leader with statutory authority over all Army            Γöé
+Γöé procurement and acquisition; superior to the PAE [22]. | Prioritizes         Γöé
+Γöé **accountability and explicit delegation of authority**; retains Milestone   Γöé
+Γöé Decision Authority (MDA) for new programs unless specifically delegated in   Γöé
+Γöé writing [23, 24]. | "Army organizations, staff, Acronyms" [22]; "Acquisition Γöé
+Γöé Authorities Under Portfolio Acquisition Executives .pdf" [23, 24] | "I       Γöé
+Γöé retain MDA or Decision Authority (DA) for all new acquisition programs...    Γöé
+Γöé unless delegated in writing" [23] | High | Low | No |                        Γöé
+Γöé | **Scrum Inc. Team (Matt Jacobs, Tim Johnson, Dave Witkin)** | Agile        Γöé
+Γöé Transformation Consultants [25, 26] | Embedded experts tasked with           Γöé
+Γöé baselining the current state and coaching PAE C2/CC2 through the Warfighting Γöé
+Γöé Acquisition System (WAS) agile transformation [26, 27]. | Focused on         Γöé
+Γöé creating an Agile Operating Model, hardening OpCon to stop fragmented        Γöé
+Γöé communication, defining a clear "North Star," and **minimizing decision      Γöé
+Γöé latency** [25, 28-30]. | "Scrum Inc-ASA(ALT) Industry Engagement_Dec         Γöé
+Γöé 2025.pdf" [25]; "2026-03-26 Dave and Tim Discuss Op Model Notes" [29, 30] |  Γöé
+Γöé "What is needed is an Operational Model that Embraces Outcomes over Process" Γöé
+Γöé [25] | High | Low | Yes |                                                    Γöé
+Γöé | **Ms. Beth Ferry** | Director, DEVCOM C5ISR Center (System Center) [31] |  Γöé
+Γöé Enabler leader responsible for research, development, and engineering;       Γöé
+Γöé manages the S&T portfolio [14, 31]. | Prioritizes horizontal collaboration   Γöé
+Γöé with other enablers (like ATEC) to ensure cohesive execution across          Γöé
+Γöé organizations [31]. | "Ms. Ferry" [31] | "She collaborates horizontally with Γöé
+Γöé other leaders in the PAE network... to ensure things are done effectively."  Γöé
+Γöé [31] | High | Low | No |                                                     Γöé
+Γöé                                                                              Γöé
+Γöé Sources: 92196e92-1cae-4bdb-abce-3ee3cc8ce573,                               Γöé
+Γöé 90a4c234-8781-49a9-852f-559d30d9dc0a, 6fa76e5c-aef2-4976-a562-2dd6ff0e9c88,  Γöé
+Γöé 0b94dacd-3800-4939-9dc8-67e561b75af5, f679434d-b726-4e87-adba-f8cf2724996a,  Γöé
+Γöé 42c3f956-02b2-44b2-9930-3a054f5050f3, 109cbda3-7997-4019-8e01-afcb78c54004,  Γöé
+Γöé dd06668d-5132-4513-905b-f93331a12667, bda0772f-edbb-4eb6-badf-4f8c61d0d72e,  Γöé
+Γöé 07beaeec-eb33-4938-b28b-75f3b7f3afda, 4d5577d5-a20d-44ea-aee8-e8fcd971f858,  Γöé
+Γöé c7995bd0-c68a-48b7-bbec-d161de4b4869, 6db2f065-453a-4617-99b8-ae73877dfb02,  Γöé
+Γöé 96f5d682-26c9-407e-b4dc-f988e2d0d747, 794d6ed1-b402-420d-ac77-c21ff752462c,  Γöé
+Γöé 84db1b99-211b-4233-a43b-8495c941113b, 88250b1f-d258-407b-9e1c-8203c827f697   Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»
+Γò¡ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ a6341a1d-e4d2-4cd1-8cb9-5dfcb0c4cfac ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé | Person or Group | Role/Title/Org | Relationship to the Effort | Concerns   Γöé
+Γöé or Priorities | Evidence/Source Title(s) | Quote/Near-quote | Confidence |   Γöé
+Γöé Sensitivity | Internal Stakeholder Map Only |                                Γöé
+Γöé | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |             Γöé
+Γöé | **Mr. Joe Welch** | SES Tier 3 / PAE C2/CC2 Lead [1]. | Primary executive  Γöé
+Γöé leading the Portfolio Architecture Executive (PAE) effort [1]. | Eliminating Γöé
+Γöé bureaucracy, accelerating Next Gen C2/CC2, and clearing systemic obstacles   Γöé
+Γöé [2]. | "Pasted Text", "SCRUM PAE HQ Interview (Mia Nance)" | "focused on     Γöé
+Γöé mission... doesn't give a crap about process" [3, 4]. | High | Low | No |    Γöé
+Γöé | **Mia Nance** | Chief of Staff, PAE C2/CC2 [5]. | Acts as the primary      Γöé
+Γöé headquarters staffer, handling daily taskers, coordination, and meeting prep Γöé
+Γöé [6]. | Severe lack of business processes, being a "one person show," and     Γöé
+Γöé needing to double the PAE staff size to function [6, 7]. | "SCRUM PAE HQ     Γöé
+Γöé Interview (Mia Nance)", Conversation History | "I'm barely floating now" /   Γöé
+Γöé "zero business processes" [8, 9]. | High | Medium | Yes |                    Γöé
+Γöé | **Kristina Reid** | Executive Assistant to PAE [10]. | Handles scheduling  Γöé
+Γöé and administrative support for Mr. Welch and Deputy Manning [10]. | The      Γöé
+Γöé hiring freeze prevents staffing solutions, and dual-hatted senior leaders    Γöé
+Γöé cause severe scheduling difficulties [11, 12]. | "SCRUM PAE HQ Interview     Γöé
+Γöé (Kristina Reid)", Conversation History | "Nobody's really a hundred percent  Γöé
+Γöé focused on... where their focus needs to be." [13] | High | Low | No |       Γöé
+Γöé | **LTC Marquessa Keith** | Executive Officer (EXO) to PAE [14]. | Acts as   Γöé
+Γöé the "quarterback" coordinating communication and decision-making support     Γöé
+Γöé [14]. | Heavy reliance on dual-hatted personnel creates choke points when    Γöé
+Γöé subject matter experts are split between duties [15]. | "SCRUM / PAE HQ      Γöé
+Γöé Interview (LTC Marquessa Keith)", Conversation History | "Creates choke      Γöé
+Γöé points when SMEs split between PAE and home organization duties" [15]. |     Γöé
+Γöé High | Low | No |                                                            Γöé
+Γöé | **MG Ryan Janovic** | Deputy PAE / CG Cyber CoE [16]. | Represents         Γöé
+Γöé Cyber/EW and serves as Mr. Welch's CoE connection [16]. | Wants to validate  Γöé
+Γöé if the PAE experiment actually delivers faster capabilities or is just a     Γöé
+Γöé structural experiment [17]. | "SCRUM / PAE HQ Interview (MG Janovic)",       Γöé
+Γöé "Pasted Text" | "If there is magic, I keep that magic alive" [16]. | High |  Γöé
+Γöé Medium | Yes |                                                               Γöé
+Γöé | **Mr. Chris Manning** | SES / Deputy PAE / DASA R&T [18]. | Handles        Γöé
+Γöé acquisition/programming for PAE while reporting to ASA(ALT) [18, 19]. |      Γöé
+Γöé Changing the "5-year acquisition program" default mindset, and the burden of Γöé
+Γöé dual reporting to T2COM and ASA(ALT) [19, 20]. | "PAE C2 HQ Interview (Mr.   Γöé
+Γöé Manning)" | "Creates bureaucratic burden Manning calls 'bullshit'" [19]. |   Γöé
+Γöé High | High | Yes |                                                          Γöé
+Γöé | **MG Richard Appelhans** | Deputy PAE / CG Intel CoE [21, 22]. |           Γöé
+Γöé Represents the intelligence portfolio and its interdependencies across all   Γöé
+Γöé warfighting functions [21, 22]. | Steep learning curve as a non-acquisition  Γöé
+Γöé professional, needing codified roles and authorities [23, 24]. | "SCRUM /    Γöé
+Γöé PAE HQ Interview (MG Appelhans)" | "roles and responsibilities and           Γöé
+Γöé authorities and approvals... are yet to be defined" [25]. | High | Medium |  Γöé
+Γöé Yes |                                                                        Γöé
+Γöé | **Beth Ferry** | SES / Executive Director, DEVCOM C5ISR / PAE System       Γöé
+Γöé Center Director [26]. | Oversees S&T investments supporting the PAE [26]. |  Γöé
+Γöé T2COM legacy reporting processes are incredibly burdensome compared to PAE,  Γöé
+Γöé and high performers are burning out from uncompensated dual-hatting [27-29]. Γöé
+Γöé | "PAE C2CC2 Interview (Ms Ferry)" | "We're asking a lot more of those folks Γöé
+Γöé to help support the PAE, and that's not funded" [30]. | High | High | Yes |  Γöé
+Γöé | **Danielle Moyer** | SES / Senior Contracting Official, ACC [31]. |        Γöé
+Γöé Handles all PAE C2/CC2 contracts [31]. | Duplicative "middleman" acquisition Γöé
+Γöé advisors without warrants slow things down and make actual contracting       Γöé
+Γöé officers lazy [32]. | "PAE C2CC2 Interview (Ms Moyer)" | "Rip the band-aid   Γöé
+Γöé off... eliminate all acquisition advisor positions" [33]. | High | High |    Γöé
+Γöé Yes |                                                                        Γöé
+Γöé | **BG Christine Beeler** | CPE C2IN / PEO STRI [34]. | Primary owner of     Γöé
+Γöé collective training capabilities [34]. | The lack of a defined PAE battle    Γöé
+Γöé rhythm and severe staffing cuts (30%) are leading to burnout [35, 36]. |     Γöé
+Γöé "PAE C2 Interview (BG Beeler)", Conversation History | "we've got to get     Γöé
+Γöé into some sort of battle rhythm, or we're going to burn ourselves out        Γöé
+Γöé completely" [37]. | High | Medium | Yes |                                    Γöé
+Γöé | **BG Kevin Chaney** | CPE for Counter C2/CC2 (PEO IEWS) [38]. | Handles    Γöé
+Γöé intel/space capability fielding [38]. | The PAE is currently functioning as  Γöé
+Γöé an additional bureaucratic layer, and there is extreme stress on dual-hatted Γöé
+Γöé organizations without a dedicated TDA [39, 40]. | "PAE C2 Interview (BG      Γöé
+Γöé Kevin Chaney)" | "Right now it is totally another layer of bureaucracy, and  Γöé
+Γöé that's because we're in the crawl stage" [41]. | High | Medium | Yes |       Γöé
+Γöé | **BG Shane Taylor** | CPE C2IN (formerly PEO C3T) [42]. | Material         Γöé
+Γöé solutions provider for NextGen C2/CC2 [42]. | Inflexible centralized         Γöé
+Γöé programming prevents rapidly moving funds, and he fears the PAE becoming a   Γöé
+Γöé "giant structure" that generates RFIs [43, 44]. | "PAE C2CC2 Interview (BG   Γöé
+Γöé Taylor)" | "If you build a giant structure around a three star... you're     Γöé
+Γöé just creating more RFIs" [45]. | High | Medium | Yes |                       Γöé
+Γöé | **Justine Ruggio** | Communications Advisor to PAE / CPE Role [46]. |      Γöé
+Γöé Handles strategic communications and congressional affairs [46]. | Mr. Welch Γöé
+Γöé needs actual decision authority rather than just influence, and the          Γöé
+Γöé requirement to ask permission from 4+ commands for engagements is            Γöé
+Γöé unsustainable [47]. | "SCRUM PAE HQ Interview (Justine Ruggio)" | "Authority Γöé
+Γöé is the issue. Welsh needs to not ask permission as a PAE 3 star." [48]. |    Γöé
+Γöé High | High | Yes |                                                          Γöé
+Γöé | **Walter Flood** | International Cooperation Official (ICO) [49]. |        Γöé
+Γöé Ensures international exportability and allied interoperability [49]. | ICOs Γöé
+Γöé are currently in temporary "detailed" positions, leaving them as "lame       Γöé
+Γöé ducks" whom the workforce can simply wait out [50]. | "PAE C2CC2 Interview   Γöé
+Γöé (Mr Flood)" | "As a detailee... you're almost a lame duck... Workforce may   Γöé
+Γöé 'wait out' leadership" [50, 51]. | High | High | Yes |                       Γöé
+Γöé | **COL Christian Haffey** | Cyber FCD, Fort Gordon [52]. | Leads capability Γöé
+Γöé development, experimentation, and requirements for the PAE [52]. | The lack  Γöé
+Γöé of dedicated PAE staff causes "react to contact" daily operations, and       Γöé
+Γöé leadership is too distracted by "shiny objects" [53, 54]. | "PAE C2 External Γöé
+Γöé Interview (COL Haffey)" | "Sometimes chasing all this innovation gets very   Γöé
+Γöé distracting... I feel like right now it's like react to contact every day"   Γöé
+Γöé [55, 56]. | High | Medium | Yes |                                            Γöé
+Γöé | **COL Philip Mundweil** | Combat Training Center Operations (CAC) [57]. |  Γöé
+Γöé Handles collective training and OPFOR modernization [58]. | Unclear          Γöé
+Γöé relationship between the PAE and central programming, and an inability to    Γöé
+Γöé dynamically reprioritize funds for emergent threats [59]. | "PAE C2          Γöé
+Γöé Interview (Colonel Mundweil)" | "I am not clear on what then does the PAE    Γöé
+Γöé have to do with that? ... Just some clarity in responsibilities would be     Γöé
+Γöé helpful." [60] | High | Medium | Yes |                                       Γöé
+Γöé | **COL John Shermer** | FCD Intel [61]. | Responsible for intelligence      Γöé
+Γöé requirements and mid-to-high altitude sensing [61, 62]. | Severe delays in   Γöé
+Γöé requirements approvals due to calendar-driven events; an asynchronous        Γöé
+Γöé decision model is needed [63]. | "PAE C2CC2 Interview (COL Shermer)" | "We   Γöé
+Γöé need a synchronous model that allows us to consider and approve things...    Γöé
+Γöé away from the calendar events." [64] | High | Medium | Yes |                 Γöé
+Γöé | **COL Dave Violand** | Division Chief, CCIV (formerly MC2ID) / FCC [65]. | Γöé
+Γöé Requirements synchronizer acting as a de facto senior Army officer for the   Γöé
+Γöé PAE [65, 66]. | Operating in uncharted territory without formal written      Γöé
+Γöé orders, and an extreme over-dependency on Mr. Welch's personal leadership    Γöé
+Γöé [67, 68]. | "PAE C2CC2 Interview (COL Violand)" | "If you removed Welch      Γöé
+Γöé tomorrow... the house of cards would fall" [69]. | High | High | Yes |       Γöé
+Γöé | **LTC Michael Krivensky** | ATEC [70]. | Independent evaluation and        Γöé
+Γöé testing [70]. | Action officers are stuck following 10-15 year old           Γöé
+Γöé regulations; need to enforce flattened communications [71, 72]. | "PAE C2    Γöé
+Γöé Transformation Effort Interview with Scrum Inc (LTC Krivensky)" | "The       Γöé
+Γöé challenge will continue to be breaking a lot of the institutional roadblocks Γöé
+Γöé that still exist." [73] | High | Low | No |                                  Γöé
+Γöé | **Jennifer Reed** | Matrixed Support from ILSC (CCOM) [74]. | Sustainment  Γöé
+Γöé enabler for modernization [74]. | The G8 centralized funding panel acts as a Γöé
+Γöé massive roadblock to Mr. Welch reallocating resources flexibly [75, 76]. |   Γöé
+Γöé "PAE C2 Transformation Effort Interview with SCRUM Inc (Jennifer Reed)" |    Γöé
+Γöé "The GA funding panel to me is gonna be its biggest roadblock." [77] | High  Γöé
+Γöé | Medium | Yes |                                                             Γöé
+Γöé | **Daniel Munley** | Deputy for MC2ID (FCC HQ) [78]. | Requirements         Γöé
+Γöé integration [78]. | The lack of a 1-to-n priority list means other programs  Γöé
+Γöé (like Intel) risk becoming "bill payers" to fund Next Gen C2 [79, 80]. |     Γöé
+Γöé "PAE C2 Transformation Effort Interview with SCRUM Inc (Daniel Munley)" |    Γöé
+Γöé "You're gonna wind up being a bill payer for the PAE's number one priority,  Γöé
+Γöé which is next gen C2" [81]. | High | High | Yes |                            Γöé
+Γöé | **USASOC Team (Daniel Moroney, Chris Reeves, Andy Gordon, COL Kale Sawyer, Γöé
+Γöé Mike Curry)** | USASOC [82]. | Special Operations integration with Army C2   Γöé
+Γöé [83]. | They are frequently left out of PAE communications and struggle with Γöé
+Γöé multiple chains of command [83, 84]. | "PAE C2 External Interview (Mr.       Γöé
+Γöé Maroney, Mr. Sawyer, Mar. Reeves, Mr. Gordon, Mr. Curry)" | "We found out    Γöé
+Γöé about  after the kickoff happened... I still don't feel like I know what's   Γöé
+Γöé going on at the PAE level." [85, 86] | High | Medium | Yes |                 Γöé
+Γöé | **T2COM and ASA(ALT)** | Higher Headquarters [87]. | Jointly oversee PAE   Γöé
+Γöé C2/CC2 [87]. | Their dual-reporting chains create massive bureaucratic       Γöé
+Γöé friction for the PAE [87]. | "Pasted Text", "PAE C2 HQ Interview (Mr.        Γöé
+Γöé Manning)" | "The PAE organization is established under the joint authority   Γöé
+Γöé of T2COM... and A-salt" [87]. | High | Low | No |                            Γöé
+Γöé | **Steve Smith & Leslie Gorman** | Cyber Center / Intelligence Center       Γöé
+Γöé Representatives | Tasked to build out a "minimum viable bureaucracy process" Γöé
+Γöé for requirements documents. | N/A | Conversation History / "PAE C2CC2        Γöé
+Γöé Interview (COL Violand)" [88] | N/A | High | Low | No |                      Γöé
+Γöé                                                                              Γöé
+Γöé Sources: e189da46-a523-4cf1-87d1-16053d3068f1,                               Γöé
+Γöé cb5bbbbf-b6c7-4f4c-bb07-59cd46ac3349, f0a1fbc5-96ac-4ac9-9461-5a88720dc7ec,  Γöé
+Γöé 2f755244-0724-4936-8bb7-c1a029f7cc81, 1797376b-e35b-4572-b542-c96e691035f3,  Γöé
+Γöé 551e5ba2-1127-49a9-b471-5918b7531152, ddac6e20-3c63-4397-821d-60b2fef25a9d,  Γöé
+Γöé 16af7de7-b34a-4dcd-847e-068a6cce3ba8, 9a638060-3ac2-45ef-bd72-e2c73f870f6e,  Γöé
+Γöé 6adb85f0-2097-4f81-b480-63613da5815e, f676d9e3-7b52-4d22-9013-a2c42a445b8b,  Γöé
+Γöé dc744095-1283-49ee-a49c-6ec19ea4310d, 34ee498d-29ab-4f44-baf3-442383dcfcf1,  Γöé
+Γöé 3d086ea3-78cc-4f19-bd56-47df9eaf7699, 02fd4c5a-ec0d-465b-8259-70bb3311af62,  Γöé
+Γöé a8ee3ee8-72bf-4a4a-a489-4f921e68757d, 0c5a5b4e-a698-437c-ba10-4bd41605dc4f,  Γöé
+Γöé cdd6f74f-fe2a-4a3f-b7fd-ccfdd6213e66, 727971c7-fe1a-4a7a-8fd1-a5f4766fe8d2,  Γöé
+Γöé a57cb336-f41d-4030-b9ea-d8baa6084d84, b831ef13-81f3-4347-9a1e-e5a55cee1a17,  Γöé
+Γöé d5f4c2a7-2ef2-4ffa-889a-ca89f16e4721                                         Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»

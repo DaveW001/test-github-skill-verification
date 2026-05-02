@@ -1,0 +1,15 @@
+{
+  "generated": "2026-04-25T17:35:49",
+  "root": "C:\\development\\opencode\\tmp-pdf",
+  "mode": "report",
+  "dry_run": false,
+  "entries": [
+    {
+      "source": "C:\\development\\opencode\\tmp-pdf\\First_Principles_Mastery_Guide.pdf",
+      "target": "C:\\development\\opencode\\tmp-pdf\\First - Principles - Mastery - Guide.md",
+      "status": "converted",
+      "converter": "markitdown",
+      "notes": ""
+    }
+  ]
+}

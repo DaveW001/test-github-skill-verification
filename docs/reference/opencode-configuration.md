@@ -1,6 +1,8 @@
 # OpenCode Configuration Reference
 
-**Last updated:** 2026-03-25 (consolidated from 3 files → 2 files)
+**Last updated:** 2026-04-25
+
+> **See also:** [Workflow: Update OpenCode Default Models](../workflows/opencode-model-update.md) — step-by-step guide for changing models.
 
 ## Config File Locations
 
@@ -25,19 +27,28 @@ OpenCode supports config in JSON or JSONC (JSON with Comments) format. Config fi
 
 ## Active Config Files
 
-### `opencode.jsonc` (Main — 565 lines)
+### `opencode.jsonc` (Main)
 **Path:** `C:\Users\DaveWitkin\.config\opencode\opencode.jsonc`
 
 This is the **only** config file. Contains everything:
-- **Plugins:** 6 plugins (snippets, multi-auth, ignore, mystatus, md-table-formatter, dcp)
+
+- **OpenCode version:** v1.14.25 (upgraded 2026-04-25, was v1.2.26)
+- **Plugins:** 7 plugins (snippets, multi-auth, ignore, mystatus, md-table-formatter, dcp, tool-search)
+  - `opencode-snippets@1.8.0` — Snippet management
+  - `oc-chatgpt-multi-auth@5.4.4` — Multi-provider auth
+  - `opencode-ignore@1.1.0` — File ignore patterns
+  - `opencode-mystatus` — AI quota status command
+  - `@franlol/opencode-md-table-formatter@0.0.3` — Markdown table formatting
+  - `@tarquinen/opencode-dcp@latest` — Dynamic Context Pruning (hooks `tool.execute.before`)
+  - `opencode-tool-search@0.4.3` — BM25 + regex tool search, defers non-core tool descriptions (hooks `tool.definition`) — [full reference](./opencode-tool-search.md)
 - **Permissions:** Explicit allow rules for tools, skills, bash, etc.
 - **Providers:**
   - `google` — Gemini models via local proxy (2.5-flash, 2.5-pro, 3-flash-preview, 3-pro-preview) + blacklist of unused models
   - `openai` — 12+ GPT model variants (5.2, 5.3 codex) with reasoning effort levels (none/low/medium/high/xhigh)
   - `moonshot` — Kimi K2.5 and Moonshot V1 models
 - **Default agent:** `01-Planner`
-- **Small model:** `google/gemini-2.5-flash`
-- **Default model:** `openai/gpt-5.3-codex`
+- **Small model:** `openai/gpt-5.4-mini`
+- **Default model:** `zai-coding-plan/glm-5.1`
 - **Autoupdate:** enabled
 - **Snapshot:** enabled
 - **Disabled providers:** openrouter, google-vertex, google-vertex-anthropic

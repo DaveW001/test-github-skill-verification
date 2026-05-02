@@ -1,0 +1,102 @@
+[
+  {
+    "TaskName": "opencode-job-development-88876ee600f5-development-conductor-weekly-report",
+    "State": 3,
+    "Hidden": true,
+    "LogonType": 3,
+    "RunAs": "DaveWitkin",
+    "Execute": "powershell.exe",
+    "Arguments": "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\development\\_shared-scripts\\opencode-run-safe.ps1 --command \"python C:\\development\\conductor-reporter\\src\\reporter.py\" --format default --title \"Conductor Weekly Report to Sl",
+    "WorkingDirectory": null
+  },
+  {
+    "TaskName": "opencode-job-development-88876ee600f5-development-offer-validation-round1-daily-rollup",
+    "State": 1,
+    "Hidden": true,
+    "LogonType": 3,
+    "RunAs": "DaveWitkin",
+    "Execute": "powershell.exe",
+    "Arguments": "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\development\\_shared-scripts\\opencode-run-safe.ps1 --command \"/offer-validation-daily\" --format default --title \"Offer Validation Round1 Daily Rollup\" --",
+    "WorkingDirectory": null
+  },
+  {
+    "TaskName": "opencode-job-development-88876ee600f5-development-osgrep-auto-indexer",
+    "State": 3,
+    "Hidden": true,
+    "LogonType": 3,
+    "RunAs": "DaveWitkin",
+    "Execute": "powershell.exe",
+    "Arguments": "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File \"C:\\Users\\DaveWitkin\\.opencode\\osgrep-indexer\\Update-OsgrepIndex.ps1\"",
+    "WorkingDirectory": "C:\\Users\\DaveWitkin\\.opencode\\osgrep-indexer"
+  },
+  {
+    "TaskName": "opencode-job-development-88876ee600f5-development-scheduler-registry-sync",
+    "State": 3,
+    "Hidden": true,
+    "LogonType": 3,
+    "RunAs": "DaveWitkin",
+    "Execute": "powershell.exe",
+    "Arguments": "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File \"C:\\development\\_shared-scripts\\Sync-SchedulerRegistry.ps1\"",
+    "WorkingDirectory": "C:\\development\\_shared-scripts"
+  },
+  {
+    "TaskName": "opencode-job-development-88876ee600f5-knowledge-base-ingest",
+    "State": 3,
+    "Hidden": true,
+    "LogonType": 3,
+    "RunAs": "DaveWitkin",
+    "Execute": "wscript.exe",
+    "Arguments": "//B \"C:\\development\\_shared-scripts\\launch-hidden.vbs\" \"powershell.exe\" \"-NoProfile\" \"-ExecutionPolicy\" \"Bypass\" \"-File\" \"C:\\development\\_shared-scripts\\kb-ingest-quiet.ps1\"",
+    "WorkingDirectory": null
+  },
+  {
+    "TaskName": "opencode-job-development-88876ee600f5-skill-health-validator",
+    "State": 3,
+    "Hidden": true,
+    "LogonType": 3,
+    "RunAs": "DaveWitkin",
+    "Execute": "powershell.exe",
+    "Arguments": "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\development\\_shared-scripts\\skill-health-validator-quiet.ps1",
+    "WorkingDirectory": null
+  },
+  {
+    "TaskName": "opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort",
+    "State": 3,
+    "Hidden": true,
+    "LogonType": 3,
+    "RunAs": "DaveWitkin",
+    "Execute": "powershell.exe",
+    "Arguments": "-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File \"C:\\development\\email-triage\\scripts\\hourly-email-auto-sort.ps1\"",
+    "WorkingDirectory": "C:\\development\\email-triage"
+  },
+  {
+    "TaskName": "opencode-job-marketing-1cd46ed3b6ad-skill-sync-monitor",
+    "State": 3,
+    "Hidden": true,
+    "LogonType": 3,
+    "RunAs": "DaveWitkin",
+    "Execute": "powershell.exe",
+    "Arguments": "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\development\\_shared-scripts\\opencode-run-safe.ps1 --command \"pwsh -File C:\\development\\marketing\\scripts\\skill-sync-monitor.ps1\" --title \"Monthly Shared Skills Sync Monitor\"",
+    "WorkingDirectory": null
+  },
+  {
+    "TaskName": "opencode-job-opencode-global-7a3f9c2e1b84-gemini-proxy-monitor",
+    "State": 3,
+    "Hidden": true,
+    "LogonType": 5,
+    "RunAs": "SYSTEM",
+    "Execute": "powershell.exe",
+    "Arguments": "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\Users\\DaveWitkin\\.local\\gemini-proxy\\monitor-proxy.ps1",
+    "WorkingDirectory": "C:\\Users\\DaveWitkin\\.local\\gemini-proxy"
+  },
+  {
+    "TaskName": "opencode-job-opencode-global-7a3f9c2e1b84-gemini-proxy-starter",
+    "State": 3,
+    "Hidden": true,
+    "LogonType": 3,
+    "RunAs": "DaveWitkin",
+    "Execute": "powershell.exe",
+    "Arguments": "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\Users\\DaveWitkin\\.local\\gemini-proxy\\start-proxy-quiet.ps1",
+    "WorkingDirectory": "C:\\Users\\DaveWitkin\\.local\\gemini-proxy"
+  }
+]

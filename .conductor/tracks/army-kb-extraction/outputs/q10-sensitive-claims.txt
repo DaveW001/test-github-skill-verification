@@ -1,0 +1,175 @@
+
+Cross-notebook query: Identify claims, details, or themes in these notebooks 
+that require caution before being stored or reused in a Packaged Agile knowledge
+base. Focus on sensitive Army/organizational information, named individuals, 
+security/logistics/CAC/facility details, unsupported claims, strategic risks, 
+and anything that should be internal-only or excluded. Return: Item, reason for 
+caution, source title(s), confidence, recommended sensitivity label, and 
+recommended action.
+2/2 notebooks responded
+
+Γò¡ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ 5125c1f1-71b3-4dbe-afc5-d725d1a4db2c ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé | Item | Reason for Caution | Source Title(s) | Confidence | Recommended     Γöé
+Γöé Sensitivity Label | Recommended Action |                                     Γöé
+Γöé | :--- | :--- | :--- | :--- | :--- | :--- |                                  Γöé
+Γöé | **Security Clearances, PII, & SMO Codes** | Contains instructions for      Γöé
+Γöé handling SSNs over the phone, direct cell/Teams phone numbers, NIPR/SIPR/IC  Γöé
+Γöé emails for the Command Security Manager (Matt Shea), and highly sensitive    Γöé
+Γöé SMO/SCI SMO codes for clearance processing [1-3]. | "Pasted Text",           Γöé
+Γöé "Operational Security Onboarding and Facility Access Protocol" | High | HIGH Γöé
+Γöé / OPSEC / PII | **Strictly Exclude.** Do not store SMO codes, SSN handling   Γöé
+Γöé procedures, or personal security officer contact info in any reusable        Γöé
+Γöé knowledge base. |                                                            Γöé
+Γöé | **Facility Access Protocols & Exact Locations** | Details exact physical   Γöé
+Γöé addresses, building numbers (e.g., Bldg 6010, 6008 Jayhawk Road), room       Γöé
+Γöé numbers, and specific instructions for bypassing standard CAC entry by       Γöé
+Γöé obtaining temporary badges from the security office [3-5]. | "C2 and CC2 APG Γöé
+Γöé Facility Directory", "Operational Security Onboarding and Facility Access    Γöé
+Γöé Protocol" | High | Medium / OPSEC | **Exclude.** Remove physical locations   Γöé
+Γöé and entry procedures from generalized materials. Restrict to active project  Γöé
+Γöé onboarding materials only. |                                                 Γöé
+Γöé | **Documents Marked CUI & FEDCON** | Several source documents contain       Γöé
+Γöé explicit "CUI" (Controlled Unclassified Information) and "FEDCON" (Federal   Γöé
+Γöé Employees and Contractors Only) distribution limits [6, 7]. They detail      Γöé
+Γöé official acquisition authorities, MDA/DA delegations, and CPR terms of       Γöé
+Γöé reference [8, 9]. | "Acquisition Authorities Under Portfolio Acquisition     Γöé
+Γöé Executives .pdf", "Metrics - CPR Terms of Reference.pdf" | High | HIGH / CUI Γöé
+Γöé / FEDCON | **Strictly Exclude.** Information from these documents must not   Γöé
+Γöé be stored in a general commercial knowledge base unless the system is        Γöé
+Γöé explicitly CUI-compliant. |                                                  Γöé
+Γöé | **Tactical Military Intelligence Capabilities (Maven/MSS)** | Outlines the Γöé
+Γöé transition of the Maven Smart System (MSS) AI targeting system to a Program  Γöé
+Γöé of Record, including operational uses, integration with LLMs, NGA oversight  Γöé
+Γöé transfers, and CJADC2 strategic capabilities [10-15]. | "DSW Memo ΓÇö MSS      Γöé
+Γöé Established as Program of Record.pdf", "Maven: The AI Backbone of Modern     Γöé
+Γöé Digital Warfare" | High | HIGH / OPSEC | **Exclude.** Do not store specifics Γöé
+Γöé about AI targeting workflows, unit deployments, or system capabilities       Γöé
+Γöé (e.g., identifying targets in real-time) in a generalized agile knowledge    Γöé
+Γöé base. |                                                                      Γöé
+Γöé | **Candid Internal Political Friction & Disparagement** | Contains highly   Γöé
+Γöé candid, politically sensitive remarks, including a Senior Contracting        Γöé
+Γöé Official calling the PAE a "small lean business LOL" and criticizing "career Γöé
+Γöé government burecrats" [16]. Also details "custody battles" between AMC and   Γöé
+Γöé ASA(ALT), an informal "bro network", and fears of a "mass exodus" [17-20]. | Γöé
+Γöé "Risk from Danielle Moyer", "PAE C2CC2 Interview (Mr Flood).docx",           Γöé
+Γöé "2026-03-12 SCRUM Sync with PAE C2/CC2 Notes" | High | HIGH / Internal       Γöé
+Γöé Confidential | **Anonymize & Abstract.** Strip all names and specific        Γöé
+Γöé quotes. Translate these themes into generalized organizational friction      Γöé
+Γöé patterns (e.g., "matrixed reporting challenges"). |                          Γöé
+Γöé | **Mass Personnel Rosters, Emails, & Digital Signatures** | Contains        Γöé
+Γöé extensive lists of named O6/SES leaders, civilian counterparts, their        Γöé
+Γöé specific email addresses, phone numbers, and detailed digital signature IDs  Γöé
+Γöé from contracting documents [21-26]. | "Cyber FCD-TID POCs-1.pdf", "O6 List   Γöé
+Γöé for C2-cC2 PAE Support Team.pdf", "CorDesignationLetter.pdf" | High | HIGH / Γöé
+Γöé PII | **Anonymize.** Remove all names, emails, and signature IDs. If         Γöé
+Γöé organizational structures are needed for the KB, replace names with generic  Γöé
+Γöé role titles (e.g., "Director, Cyber FCD"). |                                 Γöé
+Γöé | **Unvalidated "Initial Perceptions" of Blockers** | Identifies specific    Γöé
+Γöé blockers (e.g., Policy Ambiguity, Emergency Speed Paradox) but explicitly    Γöé
+Γöé warns that these are "categorized as initial perceptions" that "require      Γöé
+Γöé further evidence before being formalized as the 'current state'" [27-29]. |  Γöé
+Γöé "2026-04-09 Blockers C2CC2" | High | Low / Draft Data | **Tag as             Γöé
+Γöé Hypothesis.** Do not store these as definitive Army facts or validated       Γöé
+Γöé patterns. Label them as "Draft/Unvalidated Perceptions" requiring further    Γöé
+Γöé testing. |                                                                   Γöé
+Γöé                                                                              Γöé
+Γöé Sources: 1c008b6d-787e-4a35-83c4-e6ea2b2f0f26,                               Γöé
+Γöé 5d5f2241-7497-409f-9bef-f91c6124ca7d, e0131a84-044e-4cca-bf5d-1f8ac9556481,  Γöé
+Γöé 4d5577d5-a20d-44ea-aee8-e8fcd971f858, 4b51c5a1-b0fa-4ec0-b4d9-241565882431,  Γöé
+Γöé b4015bdb-3696-434c-be64-600d31b828ae, ec519137-fc8d-4116-852b-b565742b741d,  Γöé
+Γöé 109cbda3-7997-4019-8e01-afcb78c54004, 07beaeec-eb33-4938-b28b-75f3b7f3afda,  Γöé
+Γöé 42c3f956-02b2-44b2-9930-3a054f5050f3, 4e1fef84-de8d-4b94-a674-52b3d4eb9e47,  Γöé
+Γöé 1b989363-3625-491b-b59b-fac6ea0faf44, 697aed81-2369-4b02-bc69-1616c46a569d,  Γöé
+Γöé f485d840-97e1-4773-a1f9-9bbb365a9fe9                                         Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»
+Γò¡ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ a6341a1d-e4d2-4cd1-8cb9-5dfcb0c4cfac ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé Here is a breakdown of the claims, details, and themes across the source     Γöé
+Γöé materials that present significant risks if ingested directly into a shared  Γöé
+Γöé or reusable Packaged Agile knowledge base.                                   Γöé
+Γöé                                                                              Γöé
+Γöé Many of these items directly violate the anonymity and neutrality guardrails Γöé
+Γöé established in the **Welch Podcast Guide**, or pose severe OPSEC             Γöé
+Γöé (Operational Security) and CUI (Controlled Unclassified Information) risks.  Γöé
+Γöé                                                                              Γöé
+Γöé | Item | Reason for Caution | Source Title(s) | Confidence | Recommended     Γöé
+Γöé Sensitivity Label | Recommended Action |                                     Γöé
+Γöé | :--- | :--- | :--- | :--- | :--- | :--- |                                  Γöé
+Γöé | **Real-World Operations & Troop Movements** | Mentions a specific "$16M    Γöé
+Γöé 82nd Airborne JRTC rotation cancelled for Iran response," linking budget     Γöé
+Γöé shortfalls directly to specific, sensitive global operations. | "PAE C2      Γöé
+Γöé Interview (Colonel Mundweil)" [1, 2] | High | OPSEC / Highly Sensitive |     Γöé
+Γöé **Exclude entirely.** Redact specific unit names, dollar amounts, and        Γöé
+Γöé operational theater references (e.g., "Iran response") from any knowledge    Γöé
+Γöé base. |                                                                      Γöé
+Γöé | **Classified Programs & Intelligence Authorities** | Open discussion of    Γöé
+Γöé specific classified/restricted capability programs (Hermes mid-altitude      Γöé
+Γöé sensing, Helios high-altitude, 100K GPS problem set) and the use of Title 50 Γöé
+Γöé (Intelligence) vs. Title 10 (Armed Forces) authorities. Notes that Counter   Γöé
+Γöé C2/CC2 operates "behind classification barriers." | "PAE C2CC2 Interview     Γöé
+Γöé (COL Shermer)" [3, 4], "PAE C2 Interview (BG Kevin Chaney)" [5-9] | High |   Γöé
+Γöé CUI / Need-to-Know / Potential Spillage | **Exclude entirely.** Scrub        Γöé
+Γöé specific program codenames and legal authority mechanisms. Abstract to       Γöé
+Γöé "intelligence portfolio programs." |                                         Γöé
+Γöé | **Specific Adversary Training Alignments** | Explicitly details the        Γöé
+Γöé commanding general's directive to shift the Combat Training Center opposing  Γöé
+Γöé force (OP4) from an ambiguous threat to a specific "China/PLA focus,"        Γöé
+Γöé including the procurement of "Chinese-style drones" and vehicle              Γöé
+Γöé modifications. | "PAE C2 Interview (Colonel Mundweil)" [1, 10] | High |      Γöé
+Γöé OPSEC / FOUO | **Exclude entirely.** Generalize to "modernizing training     Γöé
+Γöé environments to match near-peer adversaries." |                              Γöé
+Γöé | **Severe Budget Deficits & Legal Risks** | Highlights a specific "$8B      Γöé
+Γöé unfunded requirement for Next Gen C2/CC2 on a $17B program." Also contains   Γöé
+Γöé explicit warnings about potential "Anti-Deficiency Act violations" related   Γöé
+Γöé to how the PAE moves portfolio money without Congressional approval. | "PAE  Γöé
+Γöé C2 Transformation Effort Interview with SCRUM Inc (Daniel Munley)" [11-13] | Γöé
+Γöé High | Internal Financial / Legal Risk | **Flag for Leadership.** Abstract   Γöé
+Γöé exact budget shortfalls (e.g., "significant unfunded requirements"). Do not  Γöé
+Γöé publicize legal risk theories without Army General Counsel review. |         Γöé
+Γöé | **Pre-Decisional General Officer Assignments** | Preemptively names        Γöé
+Γöé specific individuals slated for future leadership transitions (e.g., "Jimmy  Γöé
+Γöé Blasky from SOCOM" replacing retiring MG Rick Applehans, and "Mark Miles"    Γöé
+Γöé replacing MG Janovic). | "PAE C2CC2 Interview (COL Violand)" [14, 15] | High Γöé
+Γöé | Pre-Decisional / PII | **Exclude entirely.** Confine to internal           Γöé
+Γöé succession-planning maps. Do not ingest future personnel movements into      Γöé
+Γöé general Agile knowledge bases. |                                             Γöé
+Γöé | **Facility Security, Locations & Clearances** | Details the exact physical Γöé
+Γöé locations of senior leaders (e.g., Welch on 1st floor of Building 6010,      Γöé
+Γöé Ewing on 3rd floor, Flood on 2nd floor). Openly discusses ongoing Top Secret Γöé
+Γöé (Tier 5) security clearance adjudications and issues with securing CAC       Γöé
+Γöé (badge) access to the APG campus. | "PAE C2 External Interview (Ms. Ewing)"  Γöé
+Γöé [16], "PAE C2CC2 Interview (Ms Ferry)" [17], "SCRUM PAE HQ Interview (Mia    Γöé
+Γöé Nance)" [18, 19] | High | Physical Security / OPSEC | **Scrub completely.**  Γöé
+Γöé Remove all building numbers, floor layouts, campus access challenges, and    Γöé
+Γöé clearance status details. |                                                  Γöé
+Γöé | **Direct Attribution & Named Individuals** | The transcripts contain       Γöé
+Γöé dozens of named individuals linked to specific, often critical quotes. This  Γöé
+Γöé is a direct violation of the *Welch Podcast Guide* constraint: "Strict       Γöé
+Γöé Source Protection: Never mention that a specific person from any             Γöé
+Γöé organization said 'X'." | All Interview Transcripts, "Welch Podcast Guide"   Γöé
+Γöé [20, 21] | Very High | Confidential / PII | **Anonymize and Aggregate.** All Γöé
+Γöé insights must be stripped of names and attributed to broad personas (e.g.,   Γöé
+Γöé "a Deputy PAE" or "a contracting official") before entering the knowledge    Γöé
+Γöé base. |                                                                      Γöé
+Γöé | **Derogatory, Inflammatory, & "Toxic" Claims** | Contains highly           Γöé
+Γöé subjective, emotional, and potentially damaging quotes. Examples include     Γöé
+Γöé calling the dual-reporting structure "bullshit", describing                  Γöé
+Γöé middle-management as "lazy", citing a "nasty divorce" between Intel and EW,  Γöé
+Γöé noting staff are "toxic", and a participant calling themselves "hard to      Γöé
+Γöé manage" because a boss quit over their decisions. | "PAE C2 HQ Interview     Γöé
+Γöé (Mr. Manning)" [22, 23], "PAE C2CC2 Interview (Ms Moyer)" [24-26], "PAE C2   Γöé
+Γöé Interview (BG Kevin Chaney)" [27, 28], "PAE C2 Transformation Effort         Γöé
+Γöé Interview with Scrum Inc (LTC Krivensky)" [29, 30] | High | HR Risk /        Γöé
+Γöé Unprofessional Context | **Translate & Neutralize.** As per the *Welch       Γöé
+Γöé Podcast Guide* (which bans words like "brutal" or "systemic breakdown"       Γöé
+Γöé [31]), reframe these emotional statements into neutral, factual Agile        Γöé
+Γöé impediments (e.g., "cultural friction," "legacy process resistance," or      Γöé
+Γöé "alignment challenges"). |                                                   Γöé
+Γöé                                                                              Γöé
+Γöé Sources: a8ee3ee8-72bf-4a4a-a489-4f921e68757d,                               Γöé
+Γöé 0c5a5b4e-a698-437c-ba10-4bd41605dc4f, f676d9e3-7b52-4d22-9013-a2c42a445b8b,  Γöé
+Γöé b831ef13-81f3-4347-9a1e-e5a55cee1a17, cdd6f74f-fe2a-4a3f-b7fd-ccfdd6213e66,  Γöé
+Γöé 97245ff1-711d-4699-9c95-6fc72c9eaf51, 3d086ea3-78cc-4f19-bd56-47df9eaf7699,  Γöé
+Γöé cb5bbbbf-b6c7-4f4c-bb07-59cd46ac3349, 8e4cffcc-e600-4710-b1fa-231744b142b5,  Γöé
+Γöé 551e5ba2-1127-49a9-b471-5918b7531152, 9a638060-3ac2-45ef-bd72-e2c73f870f6e,  Γöé
+Γöé 727971c7-fe1a-4a7a-8fd1-a5f4766fe8d2                                         Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»

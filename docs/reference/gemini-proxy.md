@@ -3,7 +3,7 @@
 **Location:** `C:\Users\DaveWitkin\.local\gemini-proxy\`  
 **Port:** `127.0.0.1:8000`  
 **Purpose:** Load-balanced proxy for Google Gemini API with automatic key rotation  
-**Last Updated:** March 14, 2026
+**Last Updated:** April 20, 2026
 
 ---
 
@@ -118,15 +118,53 @@ C:\Users\DaveWitkin\.config\opencode\opencode.jsonc
 
 **File:** `C:\Users\DaveWitkin\.local\gemini-proxy\api_keys.txt`
 
-Current configuration: **3 active keys** (reduced from 4 for testing)
+Current configuration: **3 active keys**
 
 ```
-AIzaSyC40vaghThPpg86B2siZVWhCNUt6rF2AVA
-AIzaSyCqs5AFWOjpkt48qi-R_O-0pDEIy3UZgJM
-AIzaSyBX5g0ZGBc2RVd6WK14RzFERlKXNoyHfww
+AIzaSyCND2NSbn3Sjkp0fFJb4Rkt4RdmDNe1q3g    # Dave Personal for OC (replaced 2026-04-20)
+AIzaSyAIHoxsjwpCRS9vCw6hxWSMw2afsvrCxG4    # Raquel Personal for OC (replaced 2026-04-20)
+AIzaSyDQJD_pwtyIPAiJ_-clerkI1hgQRnhzh50    # Tiberius Personal for OC (replaced 2026-04-20)
 ```
 
 **Note:** API keys are rotated automatically. The proxy tracks success/failure per key and implements exponential backoff for failed keys.
+
+### Key Rotation History (2026-04-20)
+
+All 3 previous keys were flagged by Google as **leaked/compromised** (HTTP 403 "Your API key was reported as leaked"). They were replaced in-place:
+
+| Old Key (Compromised)                    | New Key (Active)                          | Owner    |
+| ---------------------------------------- | ----------------------------------------- | -------- |
+| `AIzaSyC40vaghThPpg86B2siZVWhCNUt6rF2AVA`  | `AIzaSyCND2NSbn3Sjkp0fFJb4Rkt4RdmDNe1q3g` | Dave     |
+| `AIzaSyCqs5AFWOjpkt48qi-R_O-0pDEIy3UZgJM`  | `AIzaSyAIHoxsjwpCRS9vCw6hxWSMw2afsvrCxG4` | Raquel   |
+| `AIzaSyBX5g0ZGBc2RVd6WK14RzFERlKXNoyHfww`  | `AIzaSyDQJD_pwtyIPAiJ_-clerkI1hgQRnhzh50` | Tiberius |
+
+---
+
+## Google Gemini API Model Restrictions (2026-04-20)
+
+**⚠️ Critical: Google has revoked access to Pro-tier models for most keys in this proxy.**
+
+As of April 2026, Google AI Studio has restricted model access **per account/key**, with significant differences between accounts:
+
+### Per-Key Model Availability
+
+| Model                  | Dave (`AIzaSyCND2NS...`) | Raquel (`AIzaSyAIHoxs...`) | Tiberius (`AIzaSyDQJD_p...`) |
+| ---------------------- | ------------------------ | -------------------------- | ----------------------------- |
+| Gemini 3.1 Pro         | ✅ Available (limited)   | **BLOCKED (0 quota)**      | **BLOCKED (0 quota)**         |
+| Gemini 2.5 Pro         | ✅ Available (limited)   | **BLOCKED (0 quota)**      | **BLOCKED (0 quota)**         |
+| Gemini 2.5 Flash       | ✅ Available             | ✅ Available                | ✅ Available                  |
+| Gemini 3.1 Flash Lite  | ✅ Available             | ✅ Available                | ✅ Available                  |
+| Gemma (open-source)    | ✅ Available             | ✅ Available                | ✅ Available                  |
+
+**Key takeaway:** Only Dave's key (`davidawitkin@gmail.com`) retains Gemini 3.1 Pro access. Raquel's and Tiberius's keys are restricted to Flash-tier and open-source models only. The reason for this account-level difference is unknown — it may relate to account age, usage history, or Google's internal policies.
+
+**Proxy behavior impact:** Since the proxy rotates keys round-robin, a request for Gemini 3.1 Pro has a 1-in-3 chance of hitting Dave's key (success) or hitting Raquel/Tiberius's key (403 failure → backoff). The proxy will retry on the next key, but this means Pro-tier requests generate 2 failures before each success, wasting quota and increasing latency.
+
+**Workaround:** If Pro-tier models are needed, consider:
+1. **Prioritize Dave's key for Pro requests** — currently not supported by the proxy (round-robin only)
+2. Using a different Google Cloud project with paid billing enabled
+3. Using alternative providers (OpenAI, Anthropic) for Pro-tier capability
+4. Optimizing prompts to work within Flash model constraints
 
 ---
 
@@ -360,6 +398,8 @@ All Google Gemini API endpoints are proxied:
 | 2026-03-14 | Added scheduler health checks | `monitor-proxy.ps1` now validates task existence, lag, and last result |
 | 2026-03-14 | Added one-shot health check | `health-check.ps1` reports operational state with exit codes |
 | 2026-03-14 | Added request forensics | `detailed_requests.log` records user-agent, headers, and body preview |
+| 2026-04-20 | **Emergency key rotation** | All 3 keys flagged as leaked by Google (403). Replaced all keys in `api_keys.txt` and `key_names.json`. Reloaded via `/reload-keys` (no restart needed). |
+| 2026-04-20 | **Model access revoked (per-key)** | Google removed Pro-tier access for Raquel and Tiberius keys (0 quota). Dave's key retains both Gemini 3.1 Pro and 2.5 Pro (limited). Only Flash models + Gemma universally available across all keys. |
 
 ---
 

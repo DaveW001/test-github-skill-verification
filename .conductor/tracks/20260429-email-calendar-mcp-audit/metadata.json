@@ -1,0 +1,54 @@
+{
+  "trackId": "20260429-email-calendar-mcp-audit",
+  "title": "Email & Calendar MCP Integration Audit & Repair",
+  "status": "completed",
+  "created": "2026-04-29",
+  "completed": "2026-04-29",
+  "estimatedHours": "3-5",
+  "assignedTo": "Dave Witkin",
+  "type": "maintenance",
+  "tags": ["mcp", "email", "calendar", "outlook", "google", "skills"],
+  "progress": {
+    "totalTasks": 20,
+    "completedTasks": 20,
+    "percentage": 100
+  },
+  "summary": "Transition Outlook email skills to use Microsoft Graph PowerShell, create proper skill reference files, install Google Gmail/Calendar MCP server, create Outlook calendar skills, and document test plan.",
+  "keyOutcomes": [
+    "All 5 Outlook email skills refactored to use Graph PowerShell cmdlets",
+    "Skill reference files created for all Outlook skills detailing PowerShell execution",
+    "Google Gmail/Calendar MCP server installed and authenticated",
+    "2 new Outlook calendar skills (calendar-today, calendar-schedule)",
+    "Comprehensive test plan for all email/calendar integrations"
+  ],
+  "risks": [
+    "Graph PowerShell may require manual device code auth if token is expired",
+    "Google OAuth2 requires manual browser interaction",
+    "Google MCP server may be unstable or abandoned"
+  ],
+  "dependencies": [
+    "Microsoft.Graph PowerShell modules v2+ installed",
+    "Node.js/npm for MCP server installation",
+    "Google Cloud project with Gmail/Calendar API enabled",
+    "Microsoft 365 account with Graph API permissions"
+  ],
+  "blocking": [],
+  "relatedTracks": [
+    "20260315-m365-mcp-cleanup-and-hardening",
+    "20260423-email-triage-interactive-auth-popups"
+  ],
+  "deliverables": [
+    "Updated Outlook email skills (5 files)",
+    "Google MCP server configuration in opencode.json",
+    "2 new calendar skills (calendar-today, calendar-schedule)",
+    "Test plan document (artifacts/test-plan.md)",
+    "Tool name mapping document (artifacts/tool-name-mapping.md)"
+  ],
+  "validationCriteria": [
+    "Each Outlook email skill successfully invokes ms365 tools",
+    "Google Gmail read + send works via MCP",
+    "Google Calendar list + create works via MCP",
+    "Calendar skills return real event data",
+    "Test plan covers all CRUD operations for both platforms"
+  ]
+}

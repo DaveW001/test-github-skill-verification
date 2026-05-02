@@ -1,0 +1,40 @@
+{
+  "trackId": "20260428-kb-ingest-troubleshoot",
+  "title": "Troubleshoot and Fix KB Ingest Scheduled Job",
+  "status": "completed",
+  "created": "2026-04-28",
+  "completed": "2026-04-28",
+  "estimatedHours": "1-2",
+  "actualHours": "2",
+  "assignedTo": "Dave Witkin",
+  "type": "bugfix",
+  "tags": ["scheduled-jobs", "opencode-cli", "knowledge-base"],
+  "progress": {
+    "totalTasks": 6,
+    "completedTasks": 6,
+    "percentage": 100
+  },
+  "summary": "Root cause: OPENCODE_SERVER_PASSWORD env var causes opencode run to fail with 'Session not found' (GitHub issue #24204). Fixed by creating opencode-run-safe.ps1 wrapper that unsets the env var before invoking opencode run. Updated all 3 affected scheduled tasks.",
+  "keyOutcomes": [
+    "Created C:\\development\\_shared-scripts\\opencode-run-safe.ps1 wrapper script",
+    "Updated 3 scheduled tasks: KB Ingest, Conductor Weekly Report, Marketing Skill Sync",
+    "Removed --agent general flag from KB Ingest task (no 'general' primary agent exists)",
+    "Confirmed fix: scheduled task now runs successfully instead of failing instantly",
+    "Related GitHub issue: anomalyco/opencode#24204"
+  ],
+  "risks": [],
+  "dependencies": [],
+  "blocking": [],
+  "relatedTracks": ["20260315-m365-mcp-cleanup-and-hardening"],
+  "deliverables": [
+    "Working KB ingest scheduled task",
+    "Cleaned global opencode.json (ms365 MCP removed)",
+    "Root cause documented"
+  ],
+  "validationCriteria": [
+    "`opencode run` succeeds with a test message",
+    "KB ingest task exit code 0",
+    "ingest-log.md shows successful extraction",
+    "ms365 MCP removed from global config"
+  ]
+}

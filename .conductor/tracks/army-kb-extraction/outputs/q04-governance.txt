@@ -1,0 +1,267 @@
+
+Cross-notebook query: Extract what these sources say about decision rights, 
+governance, acquisition authorities, portfolio authority, PAE/PEO relationships,
+approval bottlenecks, and accountability. Return: Claim, source title(s), 
+quote/near-quote, confidence, implication for Agile/product operating model, 
+sensitivity, and follow-up source pull needed.
+2/2 notebooks responded
+
+Γò¡ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ 5125c1f1-71b3-4dbe-afc5-d725d1a4db2c ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé **Claim:** Decision rights are frequently escalated upward due to the highly Γöé
+Γöé public and politically sensitive nature of the C2/CC2 portfolio, which       Γöé
+Γöé creates execution bottlenecks.                                               Γöé
+Γöé *   **Source Title(s):** "Leadership Workshop Notes: Welch's Reactions",     Γöé
+Γöé "2026-04-09 Blockers C2CC2"                                                  Γöé
+Γöé *   **Quote/Near-quote:** "Welch clarified why escalation happens: many      Γöé
+Γöé decisions in the PAE have a highly public nature and generate reactions that Γöé
+Γöé cause enterprise-wide issues. Therefore, they require senior-level air       Γöé
+Γöé cover" [1]. Additionally, there is a "tendency to push decisions upward      Γöé
+Γöé creates execution bottlenecks" [2].                                          Γöé
+Γöé *   **Confidence:** High                                                     Γöé
+Γöé *   **Implication for Agile/product operating model:** Agile requires        Γöé
+Γöé decentralized, "best view" decision-making [3, 4]. If leaders cannot push    Γöé
+Γöé authority down without exposing lower-level staff to institutional blowback, Γöé
+Γöé the speed promised by the Agile model will be compromised [1].               Γöé
+Γöé *   **Sensitivity:** Medium (Highlights risk aversion and political          Γöé
+Γöé sensitivities among senior leadership).                                      Γöé
+Γöé *   **Follow-up source pull needed:** Investigate strategies or frameworks   Γöé
+Γöé for providing "air cover" to lower-level decision-makers.                    Γöé
+Γöé                                                                              Γöé
+Γöé **Claim:** Despite the creation of PAEs to accelerate delivery, the Army     Γöé
+Γöé Acquisition Executive (AAE) officially retains Milestone Decision Authority  Γöé
+Γöé (MDA) and explicitly denies this authority to the PAEs.                      Γöé
+Γöé *   **Source Title(s):** "Acquisition Authorities Under Portfolio            Γöé
+Γöé Acquisition Executives .pdf"                                                 Γöé
+Γöé *   **Quote/Near-quote:** "I retain MDA or Decision Authority (DA) for all   Γöé
+Γöé new acquisition programs, investment activities... PAEs, regardless of       Γöé
+Γöé existing acquisition certifications, will not serve as the MDA/DA" [5, 6].   Γöé
+Γöé If delegation occurs, it goes to the Capability Portfolio Executives (CPEs)  Γöé
+Γöé [7].                                                                         Γöé
+Γöé *   **Confidence:** High                                                     Γöé
+Γöé *   **Implication for Agile/product operating model:** True Agile product    Γöé
+Γöé ownership requires the ability to make rapid funding and strategic pivots.   Γöé
+Γöé Having ultimate acquisition authority retained at the AAE levelΓÇöor bypassing Γöé
+Γöé the PAE to go directly to the CPEΓÇöcould undermine the PAE's ability to act   Γöé
+Γöé as the true "Executive MetaScrum" owner of the portfolio [8, 9].             Γöé
+Γöé *   **Sensitivity:** High (Directly contradicts the overarching narrative    Γöé
+Γöé that PAEs have full spectrum acquisition accountability [10]).               Γöé
+Γöé *   **Follow-up source pull needed:** Need to pull information on how PAEs   Γöé
+Γöé and CPEs currently navigate this split in official authority versus          Γöé
+Γöé operational expectations.                                                    Γöé
+Γöé                                                                              Γöé
+Γöé **Claim:** The legacy PEO structure has been replaced by PAEs and CPEs to    Γöé
+Γöé consolidate focus from isolated "programs" to integrated "capability         Γöé
+Γöé ecosystems," fundamentally shifting portfolio authority.                     Γöé
+Γöé *   **Source Title(s):** "Army Acquisition: PEOs to PAEs", "From Project to  Γöé
+Γöé Product_ The Warfighting Acquisition System (Reformatted).md"                Γöé
+Γöé *   **Quote/Near-quote:** "The Army consolidated 12 PEOs into just 6 PAEs.   Γöé
+Γöé Each PAE is led by a two-star general or civilian equivalent and manages a   Γöé
+Γöé broad capability area rather than a list of programs" [11]. "PAEs now own    Γöé
+Γöé the entire lifecycle: requirements, science and technology (S&T),            Γöé
+Γöé contracting, testing, programming, sustainment..." [12].                     Γöé
+Γöé *   **Confidence:** High                                                     Γöé
+Γöé *   **Implication for Agile/product operating model:** This structural shift Γöé
+Γöé enables Agile portfolio management (like Scrum@Scale) by allowing leaders to Γöé
+Γöé manage "trade space," shifting resources between related projects within a   Γöé
+Γöé capability bucket to optimize the overall value stream rather than rigid     Γöé
+Γöé programs [13, 14].                                                           Γöé
+Γöé *   **Sensitivity:** Low                                                     Γöé
+Γöé *   **Follow-up source pull needed:** None immediately required.             Γöé
+Γöé                                                                              Γöé
+Γöé **Claim:** To reduce governance friction and clarify reporting, the          Γöé
+Γöé operating model will leave Administrative Control (AdCon) with parent        Γöé
+Γöé organizations and focus entirely on consolidating Operational Control        Γöé
+Γöé (OpCon) under the PAE.                                                       Γöé
+Γöé *   **Source Title(s):** "≡ƒô¥ 2026-03-26 Dave and Tim Discuss Op Model        Γöé
+Γöé Notes", "2026-03-31 Operational Friction and the Capability Portfolio        Γöé
+Γöé Transition"                                                                  Γöé
+Γöé *   **Quote/Near-quote:** "Decision made: AdCon stays as-is and will not     Γöé
+Γöé change; all structural changes will target OpCon only, as a simplifying      Γöé
+Γöé assumption to avoid revisiting the question repeatedly" [15]. The goal is    Γöé
+Γöé "consolidating all OpCon communication within the portfolio box ΓÇö            Γöé
+Γöé requirements, tasking, prioritization... so orders come from one place only" Γöé
+Γöé [15].                                                                        Γöé
+Γöé *   **Confidence:** High                                                     Γöé
+Γöé *   **Implication for Agile/product operating model:** Agile                 Γöé
+Γöé cross-functional teams will be heavily matrixed. Success depends entirely on Γöé
+Γöé establishing a strict "OpCon in the box" rule where all tasking and          Γöé
+Γöé prioritization come exclusively from the PAE framework, preventing outside   Γöé
+Γöé AdCon chains from distracting team members [16, 17].                         Γöé
+Γöé *   **Sensitivity:** Medium                                                  Γöé
+Γöé *   **Follow-up source pull needed:** Identify instances where AdCon leaders Γöé
+Γöé are disrupting OpCon priorities.                                             Γöé
+Γöé                                                                              Γöé
+Γöé **Claim:** Manual reporting requirements and high-level approval boards,     Γöé
+Γöé specifically Capability Portfolio Reviews (CPRs), are causing massive        Γöé
+Γöé operational drag and serving as severe bottlenecks.                          Γöé
+Γöé *   **Source Title(s):** "March 31, 2026 ΓÇô Daily Sync Notes", "2026-03-31    Γöé
+Γöé Operational Friction and the Capability Portfolio Transition"                Γöé
+Γöé *   **Quote/Near-quote:** "The CPR process is a massive time-sink. ItΓÇÖs      Γöé
+Γöé taking two months of staff work for a single one-hour meeting" [18].         Γöé
+Γöé *   **Confidence:** High                                                     Γöé
+Γöé *   **Implication for Agile/product operating model:** Agile relies on       Γöé
+Γöé continuous flow and real-time telemetry [19]. Dedicating months of staff     Γöé
+Γöé time to static PowerPoint reporting completely stalls value delivery. The    Γöé
+Γöé organization must transition to automated "Flow Metrics" and live dashboards Γöé
+Γöé to replace episodic CPR preparation [20-22].                                 Γöé
+Γöé *   **Sensitivity:** Medium                                                  Γöé
+Γöé *   **Follow-up source pull needed:** Seek updates on the implementation of  Γöé
+Γöé the "Portfolio Command Center" and automated dashboards.                     Γöé
+Γöé                                                                              Γöé
+Γöé **Claim:** The organization suffers from a permission-based culture and      Γöé
+Γöé unclear roles, where personnel wait for explicit authorization rather than   Γöé
+Γöé taking accountability for execution.                                         Γöé
+Γöé *   **Source Title(s):** "2026-04-09 Blockers C2CC2", "2026-04-17 Leadership Γöé
+Γöé Workshop Out brief Notes"                                                    Γöé
+Γöé *   **Quote/Near-quote:** "Unclear Roles & Authorities: Decision rights and  Γöé
+Γöé responsibilities are poorly defined or inconsistently applied" [2].          Γöé
+Γöé Furthermore, there is a "permission-dependent culture preventing autonomous  Γöé
+Γöé action without explicit authorization" [23].                                 Γöé
+Γöé *   **Confidence:** High                                                     Γöé
+Γöé *   **Implication for Agile/product operating model:** Agile thrives on      Γöé
+Γöé empowered, self-organizing teams [3]. If the culture implicitly punishes     Γöé
+Γöé initiative, the Agile model will devolve into "Delivery Theatre" [24].       Γöé
+Γöé *   **Sensitivity:** Medium                                                  Γöé
+Γöé *   **Follow-up source pull needed:** Look for materials on the "Netflix     Γöé
+Γöé model" of sharing situation-action-result blurbs intended to normalize       Γöé
+Γöé autonomous behavior [23, 25].                                                Γöé
+Γöé                                                                              Γöé
+Γöé Sources: 0b94dacd-3800-4939-9dc8-67e561b75af5,                               Γöé
+Γöé f485d840-97e1-4773-a1f9-9bbb365a9fe9, f52d0053-2309-49cb-ab1f-29c7504c97f5,  Γöé
+Γöé c7995bd0-c68a-48b7-bbec-d161de4b4869, 4d5577d5-a20d-44ea-aee8-e8fcd971f858,  Γöé
+Γöé 13a29f76-8ce5-4557-a54c-0b557ba2cd30, 157c3884-4d7b-43a7-8db6-7cb505271384,  Γöé
+Γöé 2bccb224-f8e0-488e-96b0-11e529047c53, 84db1b99-211b-4233-a43b-8495c941113b,  Γöé
+Γöé f679434d-b726-4e87-adba-f8cf2724996a, bf3a4ddc-db10-44a5-bfc1-4e1f3f2af703   Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»
+Γò¡ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ a6341a1d-e4d2-4cd1-8cb9-5dfcb0c4cfac ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé **Claim:** The PAE suffers from a "dual reporting structure" that creates    Γöé
+Γöé conflicting decision rights and administrative bloat.                        Γöé
+Γöé **Source title(s):** "PAE C2 HQ Interview (Mr. Manning).docx", "PAE C2/CC2   Γöé
+Γöé Transformation Effort Interview with SCRUM Inc (Justine Ruggio).docx", "PAE  Γöé
+Γöé C2/CC2 Interview (Ms Ferry).docx", "PAE C2 Interview (BG Kevin Chaney).docx" Γöé
+Γöé **Quote/near-quote:** The PAE reports to both General Hodney (T2COM, for     Γöé
+Γöé requirements) and Secretary Ingraham (ASA(ALT), for acquisition) [1, 2].     Γöé
+Γöé This means "CPEs must get approval from both T2COM and ASALT for same        Γöé
+Γöé activities," creating a bureaucratic burden that Mr. Manning calls           Γöé
+Γöé "bullshit" [1]. To execute congressional engagement, PAE staff must ask      Γöé
+Γöé permission from four or more commands, requiring 6-8 action officers to      Γöé
+Γöé grant approval [3, 4].                                                       Γöé
+Γöé **Confidence:** High.                                                        Γöé
+Γöé **Implication for Agile/product operating model:** This directly violates    Γöé
+Γöé the Agile principle of single-threaded leadership and unified backlogs.      Γöé
+Γöé Having to satisfy two separate chains of command forces the organization to  Γöé
+Γöé prioritize status reporting and consensus-building over rapid product        Γöé
+Γöé delivery.                                                                    Γöé
+Γöé **Sensitivity:** High. This highlights a fundamental structural flaw rooted  Γöé
+Γöé in the Army Chief's desire to retain requirements authority [1, 5].          Γöé
+Γöé **Follow-up source pull needed:** Review existing Terms of Reference (TOR)   Γöé
+Γöé or execution orders (EXORD) to see if decision boundaries between T2COM and  Γöé
+Γöé ASA(ALT) are documented.                                                     Γöé
+Γöé                                                                              Γöé
+Γöé **Claim:** The PAE lacks actual portfolio financial authority, relying on    Γöé
+Γöé influence rather than statutory control over the budget.                     Γöé
+Γöé **Source title(s):** "PAE C2CC2 Interview (BG Taylor).docx", "PAE C2         Γöé
+Γöé Transformation Effort Interview with SCRUM Inc (Jennifer Reed).docx", "SCRUM Γöé
+Γöé PAE HQ Interview (Justine Ruggio).docx"                                      Γöé
+Γöé **Quote/near-quote:** The PAE does not have the ability to quickly move      Γöé
+Γöé resources between efforts; shifting funds takes 1-2 years [6, 7]. The PAE    Γöé
+Γöé "lacks authority over SSPEG dollars that go to AMC," preventing leaders from Γöé
+Γöé shifting sustainment dollars (OMA) into modernization/investment accounts    Γöé
+Γöé (OPA) [6, 8, 9]. The G8 funding panel is viewed as the "biggest roadblock to Γöé
+Γöé PAE success" because it makes recommendations contrary to Mr. Welch's        Γöé
+Γöé priorities [10-12]. Mr. Welch "needs actual authority, not just influence"   Γöé
+Γöé [3].                                                                         Γöé
+Γöé **Confidence:** High.                                                        Γöé
+Γöé **Implication for Agile/product operating model:** True Agile portfolio      Γöé
+Γöé management requires the decentralized ability to dynamically reallocate      Γöé
+Γöé funding to the highest-value value streams. Without "trade space authority," Γöé
+Γöé the PAE cannot effectively pivot resources to accelerate delivery.           Γöé
+Γöé **Sensitivity:** High. This exposes a major power struggle between the Army  Γöé
+Γöé G8/AMC (who control legacy funding) and the PAE.                             Γöé
+Γöé **Follow-up source pull needed:** Investigate the status of ASA(ALT)'s       Γöé
+Γöé proposed 20% consolidation of budget line items to grant the PAE more        Γöé
+Γöé flexibility [13, 14].                                                        Γöé
+Γöé                                                                              Γöé
+Γöé **Claim:** Legacy governance has merely been "rebranded" rather than         Γöé
+Γöé streamlined, resulting in severe approval bottlenecks.                       Γöé
+Γöé **Source title(s):** "PAE C2 External Interview (COL Haffey).docx", "PAE     Γöé
+Γöé C2CC2 Interview (COL Shermer).docx", "PAE C2 Interview (COL Mundweil).docx"  Γöé
+Γöé **Quote/near-quote:** The governance process appears "rebranded rather than  Γöé
+Γöé truly reformed," taking the old AROC process and simply replacing it with    Γöé
+Γöé new acronyms (R2B, ARCHIB, ARM, PPR, CPR) while keeping the same multi-star  Γöé
+Γöé approval progression [15, 16]. Requirements approval is severely delayed     Γöé
+Γöé because the process relies on calendar-driven events rather than             Γöé
+Γöé asynchronous models; missing a single touchpoint with Mr. Welch can result   Γöé
+Γöé in a "six-month delay" [17-19].                                              Γöé
+Γöé **Confidence:** High.                                                        Γöé
+Γöé **Implication for Agile/product operating model:** Calendar-driven,          Γöé
+Γöé stage-gate governance fundamentally breaks Agile flow. Agile relies on       Γöé
+Γöé continuous, decentralized decision-making, whereas this structure forces     Γöé
+Γöé batching and waiting for infrequent executive boards.                        Γöé
+Γöé **Sensitivity:** Medium.                                                     Γöé
+Γöé **Follow-up source pull needed:** Identify what efforts are underway to      Γöé
+Γöé establish a "minimum viable bureaucracy" for asynchronous requirements       Γöé
+Γöé approval.                                                                    Γöé
+Γöé                                                                              Γöé
+Γöé **Claim:** Consolidating requirements and acquisition approvals under the    Γöé
+Γöé CPE removes necessary checks and balances.                                   Γöé
+Γöé **Source title(s):** "PAE C2 Transformation Effort Interview with Scrum Inc  Γöé
+Γöé (Daniel Munley).docx"                                                        Γöé
+Γöé **Quote/near-quote:** The new taxonomy shows the CPE approving requirements  Γöé
+Γöé documents, which creates a "self-licking ice cream cone" because the same    Γöé
+Γöé entity generates, approves, and delivers the requirement [20, 21].           Γöé
+Γöé **Confidence:** Medium.                                                      Γöé
+Γöé **Implication for Agile/product operating model:** While Agile favors        Γöé
+Γöé cross-functional teams, product management (defining the "what" and "why")   Γöé
+Γöé and engineering/delivery (the "how") must maintain a healthy tension. Having Γöé
+Γöé the delivery arm approve its own requirements risks building capabilities    Γöé
+Γöé that are technically convenient but lack operational value.                  Γöé
+Γöé **Sensitivity:** High. This criticizes the core PAE/CPE taxonomy and warns   Γöé
+Γöé of anti-deficiency act violations [22].                                      Γöé
+Γöé **Follow-up source pull needed:** Find the documented approval matrix for    Γöé
+Γöé "Characteristics of Need" (CON) documents.                                   Γöé
+Γöé                                                                              Γöé
+Γöé **Claim:** A duplicative layer of un-warranted acquisition advisors creates  Γöé
+Γöé a massive contracting bottleneck.                                            Γöé
+Γöé **Source title(s):** "PAE C2CC2 Interview (Ms Moyer).docx"                   Γöé
+Γöé **Quote/near-quote:** CPEs have hired 75-100 "acquisition advisors"          Γöé
+Γöé (GS-14/15s) who do not possess contracting warrants [23-25]. These           Γöé
+Γöé individuals act as middlemen, creating a culture where packages must be      Γöé
+Γöé "100% complete" before engaging actual contracting officers, causing "delays Γöé
+Γöé and conflicts over contracting approach" and forcing actual contracting      Γöé
+Γöé officers to adopt a "rubber stamp mentality" [23, 26, 27].                   Γöé
+Γöé **Confidence:** High.                                                        Γöé
+Γöé **Implication for Agile/product operating model:** Middlemen who hold        Γöé
+Γöé advisory influence without execution authority destroy team velocity. Agile  Γöé
+Γöé contracting requires warranted contracting officers to be deeply embedded    Γöé
+Γöé with the product teams from day one.                                         Γöé
+Γöé **Sensitivity:** High. Ms. Moyer explicitly recommends "ripping the band-aid Γöé
+Γöé off" and eliminating all of these positions [24, 28].                        Γöé
+Γöé **Follow-up source pull needed:** Validate the exact headcount and formal    Γöé
+Γöé job descriptions of the embedded acquisition advisors within the CPEs.       Γöé
+Γöé                                                                              Γöé
+Γöé **Claim:** Formal acquisition authority bypasses the PAE entirely, flowing   Γöé
+Γöé directly to the CPEs.                                                        Γöé
+Γöé **Source title(s):** "SCRUM PAE HQ Interview (Justine Ruggio).docx", "SCRUM  Γöé
+Γöé / PAE HQ Interview (LTC Marquessa Keith)"                                    Γöé
+Γöé **Quote/near-quote:** Formal acquisition authorities "still reside with      Γöé
+Γöé CPEs," and the PAE only exercises "strong influence through relationships"   Γöé
+Γöé [29, 30]. Acquisition authority legally passes "from the AAE to the CPE. The Γöé
+Γöé PAE is not involved in that" [3, 31].                                        Γöé
+Γöé **Confidence:** High.                                                        Γöé
+Γöé **Implication for Agile/product operating model:** The PAE is functioning    Γöé
+Γöé more like a steering committee or advisory board rather than an empowered    Γöé
+Γöé Product Owner. Without direct statutory authority over the CPEs, the PAE     Γöé
+Γöé cannot enforce portfolio-level agile pivots if a CPE resists.                Γöé
+Γöé **Sensitivity:** High.                                                       Γöé
+Γöé **Follow-up source pull needed:** Investigate ASA(ALT) regulations regarding Γöé
+Γöé the legal delegation of Milestone Decision Authority (MDA) directly to the   Γöé
+Γöé PAE level [32].                                                              Γöé
+Γöé                                                                              Γöé
+Γöé Sources: 551e5ba2-1127-49a9-b471-5918b7531152,                               Γöé
+Γöé e189da46-a523-4cf1-87d1-16053d3068f1, 34ee498d-29ab-4f44-baf3-442383dcfcf1,  Γöé
+Γöé dc744095-1283-49ee-a49c-6ec19ea4310d, a57cb336-f41d-4030-b9ea-d8baa6084d84,  Γöé
+Γöé 29b52818-002e-4b98-be6c-2cc046f6402d, 02fd4c5a-ec0d-465b-8259-70bb3311af62,  Γöé
+Γöé 0c5a5b4e-a698-437c-ba10-4bd41605dc4f, b831ef13-81f3-4347-9a1e-e5a55cee1a17,  Γöé
+Γöé 9a638060-3ac2-45ef-bd72-e2c73f870f6e, 2f755244-0724-4936-8bb7-c1a029f7cc81   Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»

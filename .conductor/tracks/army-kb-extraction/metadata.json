@@ -1,0 +1,23 @@
+{
+  "id": "army-kb-extraction",
+  "name": "Army Knowledge Extraction for Packaged Agile",
+  "status": "review-ready",
+  "phase": "core-execution-complete",
+  "created_at": "2026-04-26T19:21:00Z",
+  "updated_at": "2026-04-26T20:10:00Z",
+  "target_notebooks": [
+    {
+      "title": "C2/CC2 Portfolio Engagement Kx",
+      "id": "5125c1f1-71b3-4dbe-afc5-d725d1a4db2c",
+      "primary_use": "Operating context, org structure, governance, transformation plan, workshops, blockers, risk, strategic docs"
+    },
+    {
+      "title": "Interview Notebook",
+      "id": "a6341a1d-e4d2-4cd1-8cb9-5dfcb0c4cfac",
+      "primary_use": "Stakeholder perspectives, pain points, incentives, contradictions, leadership concerns, interview-derived patterns"
+    }
+  ],
+  "execution_mode": "read-only-by-default",
+  "requires_user_approval_for_artifact_creation": true,
+  "optional_phase_8_status": "not_executed_no_user_approval"
+}

@@ -1,0 +1,45 @@
+{
+  "trackId": "20260425-tool-search-plugin",
+  "title": "Install and Validate opencode-tool-search Plugin",
+  "status": "completed",
+  "created": "2026-04-25",
+  "completed": "2026-04-25",
+  "estimatedHours": "1-2",
+  "assignedTo": "Build",
+  "type": "maintenance",
+  "tags": ["opencode", "plugin", "tool-search", "bm25", "token-optimization", "validation"],
+  "progress": {
+    "totalTasks": 13,
+    "completedTasks": 13,
+    "percentage": 100
+  },
+  "summary": "Plugin installed, OpenCode upgraded from v1.2.26 to v1.14.25, all functional tests passed. 20 tools deferred with [d] stubs, core tools (including compress) retain full descriptions.",
+  "keyOutcomes": [
+    "OpenCode upgraded from v1.2.26 to v1.14.25",
+    "opencode-tool-search@0.4.3 installed with alwaysLoad config (13 core tools including compress)",
+    "JSONC tuple format validated in opencode debug config",
+    "20 tools deferred: codex-*, osgrep, mystatus",
+    "Core tools + MCP tools retain full descriptions",
+    "Configuration reference doc updated (6 → 7 plugins)"
+  ],
+  "risks": [
+    "MCP-sourced tools not indexed by plugin's search (low impact — they keep full descriptions)"
+  ],
+  "dependencies": [],
+  "blocking": [],
+  "relatedTracks": ["20260314-dcp-install-validation"],
+  "deliverables": [
+    "Updated opencode.jsonc with plugin configuration",
+    "Validation log in artifacts/validation-log.md",
+    "Updated docs/reference/opencode-configuration.md",
+    "Backup of pre-install config in artifacts/opencode.jsonc.backup-pre-tool-search"
+  ],
+  "validationCriteria": [
+    "✅ opencode debug config parses successfully",
+    "✅ tool_search responds to BM25 query",
+    "✅ tool_search_regex responds to regex pattern (MCP gap noted)",
+    "✅ compress retains full description",
+    "✅ 20 non-core tools show [d] stubs",
+    "✅ Configuration reference doc lists new plugin"
+  ]
+}

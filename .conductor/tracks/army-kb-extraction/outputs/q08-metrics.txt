@@ -1,0 +1,184 @@
+
+Cross-notebook query: Extract all mentions of desired outcomes, metrics, 
+measures of success, value delivery, readiness, operational impact, or terms of 
+reference for measurement in the Army/PAE/C2-CC2 materials. Return: 
+Metric/outcome, why it matters, current issue, evidence/source title(s), 
+quote/near-quote, confidence, Packaged Agile KB relevance, sensitivity, and 
+follow-up source pull needed.
+2/2 notebooks responded
+
+Γò¡ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ 5125c1f1-71b3-4dbe-afc5-d725d1a4db2c ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé | Metric/outcome | Why it matters | Current issue | Evidence/source title(s) Γöé
+Γöé | Quote/near-quote | Confidence | Packaged Agile KB relevance | Sensitivity  Γöé
+Γöé | Follow-up source pull needed |                                             Γöé
+Γöé | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |             Γöé
+Γöé | **Flow Metrics (Velocity, Time, Efficiency, Load, Distribution)** |        Γöé
+Γöé Measures the actual movement of value through the delivery system, replacing Γöé
+Γöé subjective milestone tracking [1]. | Currently, staff spend months preparing Γöé
+Γöé manual PowerPoint updates for Capability Portfolio Reviews (CPRs) because    Γöé
+Γöé the official MRT system data is disconnected from leadership dashboards      Γöé
+Γöé [2-4]. | "From Project to Product_ The Warfighting Acquisition System        Γöé
+Γöé (Reformatted).md", "March 31, 2026 ΓÇô Daily Sync Notes", "2026-03-31          Γöé
+Γöé Operational Friction and the Capability Portfolio Transition" | "The goal of Γöé
+Γöé the Portfolio Command Center is to eliminate manual status reporting in      Γöé
+Γöé favor of a 'single source of truth'... Flow Efficiency is the ratio of       Γöé
+Γöé active work time to the total lead time" [1, 5]. | High | Implementation of  Γöé
+Γöé automated Agile metrics, CI/CD telemetry, and visualizing bottlenecks in     Γöé
+Γöé secure environments. | Medium | Investigate the "AI Flow" agentic platform   Γöé
+Γöé piloted by CECOM for automated reporting [6]. |                              Γöé
+Γöé | **Mission Impact & Operational Overmatch** | Shifts success criteria away  Γöé
+Γöé from simple process compliance/milestone adherence toward actual combat      Γöé
+Γöé lethality and survivability [7, 8]. | Legacy systems evaluated success on    Γöé
+Γöé contract compliance (PDR, CDR) rather than whether a system gave commanders  Γöé
+Γöé a decisive advantage or solved a tactical gap [7, 9]. | "Metrics - CPR Terms Γöé
+Γöé of Reference.pdf", "From Project to Product_ The Warfighting Acquisition     Γöé
+Γöé System (Reformatted).md" | "Quantifiable improvement in a unit's speed,      Γöé
+Γöé effectiveness or survivability measured by contrasting performance in a      Γöé
+Γöé field environment on standard METL tasks before/after new capability is      Γöé
+Γöé delivered" [10]. | High | Transitioning from output-based (features          Γöé
+Γöé delivered) to outcome-based (customer value realized) KPIs. | Medium | How   Γöé
+Γöé are METL (Mission Essential Task List) tasks being instrumented during "Ivy  Γöé
+Γöé Sting" exercises to capture this data? |                                     Γöé
+Γöé | **Speed of Delivery / Decision Latency** | Ensures the rate of fielding    Γöé
+Γöé outpaces adversaries and supports the "Decision Dominance" North Star [11,   Γöé
+Γöé 12]. | Highly centralized, risk-averse decision-making and the               Γöé
+Γöé "permission-based culture" create massive latency, resulting in technology   Γöé
+Γöé that is obsolete by the time it is fielded [7, 13, 14]. | "Metrics - CPR     Γöé
+Γöé Terms of Reference.pdf", "Workshop Synthesis for NotebookLM" | "The time     Γöé
+Γöé from identifying a capability gap to delivering capability to a TiC unit for Γöé
+Γöé experimentation... # solutions delivered to units in the last 6 months       Γöé
+Γöé (Delivered = Units Complete with NET/NEF)" [12]. | High | Tracking Cycle     Γöé
+Γöé Time, Lead Time, and establishing rapid MVP (Minimum Viable Product)         Γöé
+Γöé delivery cadences. | Low | Pull exact timelines comparing legacy delivery    Γöé
+Γöé versus the new "Ivy Sting/Lightning Surge" timelines [15]. |                 Γöé
+Γöé | **Divestment Potential (Trade Space & Resource Reallocation)** | Enables   Γöé
+Γöé the PAE to operate under the "Zero Growth Mandate" by identifying legacy     Γöé
+Γöé systems that can be cut to fund new, high-priority modernization [16, 17]. | Γöé
+Γöé Identifying waste or items to cut is politically difficult; leaders resist   Γöé
+Γöé identifying their own waste ("watermelon" reporting), and legacy funding     Γöé
+Γöé lines create "hand-off" friction [16, 18]. | "Metrics - CPR Terms of         Γöé
+Γöé Reference.pdf", "Leadership Workshop Notes: Welch's Reactions" | "Divestment Γöé
+Γöé Potential: How many legacy systems can we get rid of if we adopt this        Γöé
+Γöé technology? (CORA)" [17, 19]. | High | Portfolio rationalization, managing   Γöé
+Γöé the "Stop Doing" list, and Agile portfolio funding (funding value streams,   Γöé
+Γöé not projects). | High (Directly targets program cancellation and budget      Γöé
+Γöé reallocation) | Check status of Ms. Jenn Reed's work on developing an        Γöé
+Γöé authoritative process for equipment divestiture [20]. |                      Γöé
+Γöé | **North Star Alignment (Workforce Understanding)** | Measures whether the  Γöé
+Γöé cultural and strategic transformation has actually penetrated the            Γöé
+Γöé rank-and-file, ensuring the workforce is rowing in the same direction [21].  Γöé
+Γöé | The tactical workforce is suffering from "mass confusion" and doing        Γöé
+Γöé minimum work out of fear due to an ongoing 15-month hiring freeze and        Γöé
+Γöé constant changes [22, 23]. | "2026-02-17 Army C2/CC Kickoff Meeting Notes",  Γöé
+Γöé "PAE C2CC2 Interview (Mr Flood).docx" | "Success: A janitor or a junior      Γöé
+Γöé staffer can tell you exactly what the North Star is and how they help reach  Γöé
+Γöé it." [21]. | High | Change management metrics, OKR vertical alignment, and   Γöé
+Γöé assessing organizational Agility maturity. | Medium | What are the specific  Γöé
+Γöé survey questions being used in the 360-degree assessment to measure this     Γöé
+Γöé baseline? |                                                                  Γöé
+Γöé | **Technology Development & Industrial Base Maximization** | Tracks the     Γöé
+Γöé Army's ability to leverage commercial innovation ("Commercial-First"         Γöé
+Γöé strategy) to avoid bespoke, decades-long R&D cycles [24, 25]. | The legacy   Γöé
+Γöé system defaults to proprietary, single-vendor hardware lock-in, which        Γöé
+Γöé hinders continuous CI/CD updates and rapid tech refreshes [25, 26]. |        Γöé
+Γöé "Metrics - CPR Terms of Reference.pdf", "C2 CC2 PORTFOLIO - STRATEGIC LOGIC  Γöé
+Γöé AIMPOINTS 031000MAR2026.pdf" | "% COTS/GOTS for Hardware vs. tailormade      Γöé
+Γöé Hardware solutions" and "Government owned architecture to spiral in industry Γöé
+Γöé innovation ΓÇô MOSA" [12, 25]. | High | Vendor management in Agile, leveraging Γöé
+Γöé modular architectures, and establishing "Two-to-Production" competitive      Γöé
+Γöé ecosystems. | Low | Look for case studies on how Commercial Solutions        Γöé
+Γöé Openings (CSOs) and OTAs are actively changing these percentages [27]. |     Γöé
+Γöé                                                                              Γöé
+Γöé Sources: 13a29f76-8ce5-4557-a54c-0b557ba2cd30,                               Γöé
+Γöé 08ee04b0-729f-4105-ba21-39ec8ff63b1e, f679434d-b726-4e87-adba-f8cf2724996a,  Γöé
+Γöé 4b51c5a1-b0fa-4ec0-b4d9-241565882431, 0b94dacd-3800-4939-9dc8-67e561b75af5,  Γöé
+Γöé 794d6ed1-b402-420d-ac77-c21ff752462c, 92196e92-1cae-4bdb-abce-3ee3cc8ce573,  Γöé
+Γöé 6fa76e5c-aef2-4976-a562-2dd6ff0e9c88, 42c3f956-02b2-44b2-9930-3a054f5050f3,  Γöé
+Γöé a3be28e0-f10f-42ff-81b4-789f86e183a5                                         Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»
+Γò¡ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ a6341a1d-e4d2-4cd1-8cb9-5dfcb0c4cfac ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé Here is an extraction of the desired outcomes, metrics, measures of success, Γöé
+Γöé and value delivery components discussed across the Army/PAE/C2-CC2           Γöé
+Γöé materials.                                                                   Γöé
+Γöé                                                                              Γöé
+Γöé | Metric / Outcome | Why it matters | Current Issue | Evidence / Source      Γöé
+Γöé Title(s) | Quote / Near-Quote | Confidence | Packaged Agile KB Relevance |   Γöé
+Γöé Sensitivity | Follow-up Source Pull Needed |                                 Γöé
+Γöé | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |             Γöé
+Γöé | **Speed of Delivery ("Time from need to hand of soldier")** | It tracks    Γöé
+Γöé end-to-end capability delivery and is the ultimate reason the PAE exists     Γöé
+Γöé (breaking legacy acquisition cycle delays) [1, 2]. | Teams currently measure Γöé
+Γöé process compliance (solicitation to award time, cost, schedule, performance) Γöé
+Γöé and are incentivized to protect program baselines rather than accelerate     Γöé
+Γöé actual delivery [1, 3]. | "PAE C2CC2 Interview (Ms Moyer).docx", "PAE C2 HQ  Γöé
+Γöé Interview (Mr. Manning).docx", "Pasted Text" | "Time from need to hand of    Γöé
+Γöé soldier. Who gives a  about solicitation to award?" [4] / "How are you       Γöé
+Γöé accelerating to go faster?" [5] | High | **Delivery Frequency /              Γöé
+Γöé Time-to-Market:** Shifts measurement from intermediate output milestones to  Γöé
+Γöé actual end-user value delivery. | Medium | Identify which data systems       Γöé
+Γöé (e.g., Vantage, ASA ALT Live) can track end-to-end lifecycle timing across   Γöé
+Γöé the silos. |                                                                 Γöé
+Γöé | **Technology Parity / State of the Art Supremacy** | Success requires      Γöé
+Γöé fielding relevant technology against near-peer adversaries, not just         Γöé
+Γöé delivering a system that meets an outdated requirement [6, 7]. | Programs    Γöé
+Γöé currently survive even if they field 10-20 year old technology; the system   Γöé
+Γöé does not automatically kill programs that fall behind commercial/adversary   Γöé
+Γöé state-of-the-art standards [5, 8, 9]. | "SCRUM PAE HQ Interview (MG          Γöé
+Γöé Janovic)", "PAE C2 HQ Interview (Mr. Manning).docx" | "Is our force on the   Γöé
+Γöé leading edge or trailing edge of technology?... what's the new delta in      Γöé
+Γöé technology as compared to our adversary" [7]. / "Is your current what you're Γöé
+Γöé delivering match the state of the art in the civilian world... we need to    Γöé
+Γöé kill your program" [5]. | High | **Product Quality / Market Relevance:**     Γöé
+Γöé Focuses on delivering competitive value (outcomes) rather than adhering to   Γöé
+Γöé rigid legacy scope (outputs). | High (Directly threatens the funding and     Γöé
+Γöé survival of legacy programs). | Assessment of testing lab capabilities to    Γöé
+Γöé measure military hardware against current COTS equivalents. |                Γöé
+Γöé | **Mission Impact / Decision Dominance** | The overarching goal of the      Γöé
+Γöé entire C2/CC2 portfolio is to allow commanders to sense, understand, and     Γöé
+Γöé decide faster than the enemy [7, 10]. | There is currently a "missing link"  Γöé
+Γöé in connecting specific PAE decisions and budget trade-offs to measurable     Γöé
+Γöé impacts on capability gaps for commanders [6]. | "Pasted Text", "SCRUM PAE   Γöé
+Γöé HQ Interview (MG Janovic)", "PAE C2CC2 Interview (BG Taylor).docx" |         Γöé
+Γöé "Quantifiable improvements in unit speed, effectiveness, or survivability"   Γöé
+Γöé [2]. / "Enable commanders to make decisions faster" [11]. | High |           Γöé
+Γöé **Customer Value Delivered:** Re-anchors all prioritization metrics to the   Γöé
+Γöé end-user's operational capability. | Low | None. |                           Γöé
+Γöé | **Reliability Growth / MVP Acceptance** | Getting a "minimum viable        Γöé
+Γöé product" into the field quickly enables Test-Fix-Test iterative feedback     Γöé
+Γöé loops with real soldiers [2, 12, 13]. | The traditional Army acquisition     Γöé
+Γöé culture demands 100% complete requirements and a fully refined product       Γöé
+Γöé before fielding, which takes years [12, 14]. | "Pasted Text", "PAE C2CC2     Γöé
+Γöé Interview (BG Taylor).docx" | "Delivering 30% capability vs waiting 2 years  Γöé
+Γöé for 100%" [13]. / "Acceptance of a 'lower than 100% solution' to get         Γöé
+Γöé capabilities into the field faster for experimentation" [2]. | High |        Γöé
+Γöé **Iterative Delivery / MVP:** Defines "Done" as delivering a testable        Γöé
+Γöé increment to gather empirical evidence, rather than a final polished         Γöé
+Γöé product. | Medium | Identify specific ATEC testing thresholds or safety      Γöé
+Γöé release policies that conflict with partial capability fielding. |           Γöé
+Γöé | **Clear Definition of Efficacy / Success** | Action officers and CPEs need Γöé
+Γöé to understand what specific operational outcome they are trying to achieve   Γöé
+Γöé to know when they are done [15, 16]. | Staff feel there is a massive push    Γöé
+Γöé for "efficiency" (speed, cutting red tape) but ambiguity around              Γöé
+Γöé "effectiveness" (what actually defines a successful operational delivery)    Γöé
+Γöé [15, 16]. | "PAE C2 Interview (BG Beeler).docx", "PAE C2 External Interview  Γöé
+Γöé (Ms. Ewing).docx" | "If I field the division next gen C2 and it works. Not   Γöé
+Γöé saying how good it works, but it works. Is that success? Or is success       Γöé
+Γöé something else?" [15]. | High | **Outcome-based OKRs:** Without clear        Γöé
+Γöé acceptance criteria for portfolio-level success, teams will default to       Γöé
+Γöé checking boxes. | Low | Locate the official C2/CC2 "Characteristics of Need" Γöé
+Γöé (CON) documents to see how acceptance criteria are currently written. |      Γöé
+Γöé | **Contract Strategy Innovation ("Wow" Factor)** | Agile procurement        Γöé
+Γöé requires active market research and rapid COTS bailment agreements, rather   Γöé
+Γöé than rubber-stamping old templates [17, 18]. | Currently, contracting        Γöé
+Γöé advisors tell officers what to do, resulting in "lazy" contracting behaviors Γöé
+Γöé and template-driven awards [19, 20]. | "PAE C2CC2 Interview (Ms Moyer).docx" Γöé
+Γöé | "If 50 of them that come to me, I walk out with, wow... I will feel like I Γöé
+Γöé am successful. Right now. That's like 10." [21]. | High | **Agile            Γöé
+Γöé Contracting:** Evaluates whether the acquisition mechanism itself is         Γöé
+Γöé adapting to enable rapid delivery sprints. | Medium | None. |                Γöé
+Γöé                                                                              Γöé
+Γöé Sources: 9a638060-3ac2-45ef-bd72-e2c73f870f6e,                               Γöé
+Γöé e189da46-a523-4cf1-87d1-16053d3068f1, 551e5ba2-1127-49a9-b471-5918b7531152,  Γöé
+Γöé 1797376b-e35b-4572-b542-c96e691035f3, dc744095-1283-49ee-a49c-6ec19ea4310d,  Γöé
+Γöé 97245ff1-711d-4699-9c95-6fc72c9eaf51, 6adb85f0-2097-4f81-b480-63613da5815e   Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»

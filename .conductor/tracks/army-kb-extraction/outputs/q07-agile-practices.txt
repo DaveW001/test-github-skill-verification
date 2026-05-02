@@ -1,0 +1,211 @@
+
+Cross-notebook query: What do the materials reveal about Agile, Scrum, product 
+management, cadence, metrics, workshops, or operating model practices being 
+used, misunderstood, resisted, or needed? Return: Practice or concept, current 
+state, challenge, evidence/source title(s), quote/near-quote, confidence, 
+Packaged Agile pattern or intervention, sensitivity, and follow-up source pull 
+needed.
+2/2 notebooks responded
+
+Γò¡ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ 5125c1f1-71b3-4dbe-afc5-d725d1a4db2c ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé | Practice or concept | Current state | Challenge | Evidence/source title(s) Γöé
+Γöé | Quote/near-quote | Confidence | Packaged Agile pattern or intervention |   Γöé
+Γöé Sensitivity | Follow-up source pull needed |                                 Γöé
+Γöé | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |             Γöé
+Γöé | **"Project to Product" / Product Management** | Transitioning from the     Γöé
+Γöé legacy Defense Acquisition System (DAS) compliance model to outcome-driven   Γöé
+Γöé Warfighting Acquisition System (WAS) value streams [1, 2]. | **Terminology   Γöé
+Γöé confusion.** The word "product" means something different in the DoD than in Γöé
+Γöé commercial tech [3]. There is a risk that Agile becomes a series of          Γöé
+Γöé bureaucratic processes nobody understands rather than shipping real value    Γöé
+Γöé [4, 5]. | "2026-02-17 Army C2/CC Kickoff Meeting Notes", "From Project to    Γöé
+Γöé Product_ The Warfighting Acquisition System (Reformatted).md" | "That phrase Γöé
+Γöé means different things in the DOD than it does in tech, so we need clear     Γöé
+Γöé 'From-to' statements so people don't get lost in the jargon." [3] | High |   Γöé
+Γöé **Define clear "From-To" states**; implement outcome-based metrics to track  Γöé
+Γöé combat effectiveness rather than project milestones [6, 7]. | Medium |       Γöé
+Γöé Review how the transition to "capability buckets" affects legacy funding and Γöé
+Γöé actual product definitions. |                                                Γöé
+Γöé | **Scrum@Scale (EMS & EAT)** | Establishing a Dual Operating System where   Γöé
+Γöé an Executive MetaScrum (EMS) aligns priorities and an Executive Action Team  Γöé
+Γöé (EAT) removes systemic blockers [8, 9]. | **Pushback on Agile idealism.**    Γöé
+Γöé PAE Leadership (Mr. Welch) actively pushed back on the Agile principle of    Γöé
+Γöé "minimizing dependencies," noting that in the C2/CC2 environment,            Γöé
+Γöé dependencies are inevitable and must be managed, not eliminated [10]. |      Γöé
+Γöé "From Project to Product_ The Warfighting Acquisition System                 Γöé
+Γöé (Reformatted).md", "Leadership Workshop Notes: Welch's Reactions" | "...in   Γöé
+Γöé an environment as complex as C2/CC2, you will always have dependencies at    Γöé
+Γöé some point. The goal is managing and minimizing them, rather than expecting  Γöé
+Γöé to eliminate them entirely" [10]. | High | **Establish Dual Operating System Γöé
+Γöé / Stable Interfaces** to deliberately manage cross-team dependencies and     Γöé
+Γöé escalate structural blockers [11, 12]. | Medium | Identify specific          Γöé
+Γöé individuals slated to sit on the C2/CC2 Executive Action Team (EAT). |       Γöé
+Γöé | **Sprints & Cadence** | The Secretary of the Army mandated 2-week sprints  Γöé
+Γöé for C2 programs [13]. The PAE aims to establish weekly 45-minute portfolio   Γöé
+Γöé updates [14]. | **Massive operational drag.** Sprints are disrupted by       Γöé
+Γöé manual, legacy reporting. Preparing for a one-hour Capability Portfolio      Γöé
+Γöé Review (CPR) takes up to two months of staff work, killing agility [15, 16]. Γöé
+Γöé | "The Driscoll Doctrine: Strategic Scrum Implementation", "March 31, 2026 ΓÇô Γöé
+Γöé Daily Sync Notes", "BG Shane Taylor" | "We are now institutionalizing Scrum  Γöé
+Γöé across every software factory... If your program isn't operating within a    Γöé
+Γöé Scrum framework... it's going to be defunded." [13] | High | **Standardize   Γöé
+Γöé the PAE Battle Rhythm** to emphasize live feedback loops and CI/CD           Γöé
+Γöé integration rather than episodic, slide-based reporting [17, 18]. | Medium | Γöé
+Γöé Detail the exact automated dashboard system intended to replace CPR slide    Γöé
+Γöé decks. |                                                                     Γöé
+Γöé | **Automated Flow Metrics & OKRs** | Implementing a "Portfolio Command      Γöé
+Γöé Center" using real-time Flow Metrics (Velocity, Time, Efficiency, Load) to   Γöé
+Γöé track value delivery [17, 19]. | **Disconnected data systems.** A major      Γöé
+Γöé disconnect exists between the official system of record (MRT) and the visual Γöé
+Γöé dashboard preferred by leadership, leading to inaccurate data across the     Γöé
+Γöé portfolio [15]. | "From Project to Product_ The Warfighting Acquisition      Γöé
+Γöé System (Reformatted).md", "March 31, 2026 ΓÇô Daily Sync Notes" | "ThereΓÇÖs a   Γöé
+Γöé big disconnect between the MRT system (the official system of record for     Γöé
+Γöé cost/schedule) and the [SYSTEM NAME] Dashboard that leadership likes for     Γöé
+Γöé visuals." [15] | High | **Portfolio Command Center**: Implement automated    Γöé
+Γöé Flow Metrics to establish a single source of truth and bypass "optimism      Γöé
+Γöé bias" [18, 20]. | Medium | Check data integration capabilities between the   Γöé
+Γöé MRT system and the new visual Leadership Dashboard. |                        Γöé
+Γöé | **Workshops & "From-To" Design Exercises** | Using interactive exercises   Γöé
+Γöé to define "From-To" shifts and align leadership on a "North Star" [21, 22].  Γöé
+Γöé | **Executive resistance to abstract consulting.** Senior leadership (Mr.    Γöé
+Γöé Welch) actively resists abstract "sticky-note exercises" and views simple    Γöé
+Γöé Agile concepts (like asking subordinates to identify 30% waste) as           Γöé
+Γöé politically naive for military realities [23, 24]. | "Leadership Workshop    Γöé
+Γöé Notes: Welch's Reactions" | "Welch gave a visibly negative reaction ('not    Γöé
+Γöé great face') during this exercise. ...tactical, scenario-based tabletops...  Γöé
+Γöé will likely land better with Welch than abstract organizational design       Γöé
+Γöé exercises." [24] | High | **Tactical Tabletops**: Avoid abstract Agile       Γöé
+Γöé design ceremonies for defense executives. Use concrete, scenario-based       Γöé
+Γöé tabletops to solve specific constraints [24]. | High | Adjust upcoming       Γöé
+Γöé workshop agendas to feature concrete tabletop scenarios for C2 capabilities  Γöé
+Γöé rather than abstract exercises. |                                            Γöé
+Γöé | **"OpCon in the Box" (Operating Model)** | Reorganizing to harden          Γöé
+Γöé Operational Control (OpCon) so all requirements, tasking, and battle rhythms Γöé
+Γöé come directly from the PAE [25, 26]. | **Matrixed friction.** Attempting to  Γöé
+Γöé change Administrative Control (AdCon) causes massive bureaucratic warfare    Γöé
+Γöé and distracts from actual delivery, requiring the model to accept AdCon as a Γöé
+Γöé fixed constraint [16, 27]. | "≡ƒô¥ 2026-03-26 Dave and Tim Discuss Op Model    Γöé
+Γöé Notes", "March 31, 2026 ΓÇô Daily Sync Notes" | "Decision made: AdCon stays    Γöé
+Γöé as-is and will not change; all structural changes will target OpCon only, as Γöé
+Γöé a simplifying assumption to avoid revisiting the question repeatedly." [25]  Γöé
+Γöé | High | **Harden OpCon, Accept AdCon**: Consolidate all tasking under OpCon Γöé
+Γöé (inside the PAE "box"), while treating AdCon as an unchangeable constraint   Γöé
+Γöé [25, 27]. | Medium | Detail the 5 specific AdCon exceptions that require     Γöé
+Γöé Secretary-level support to resolve [25, 28]. |                               Γöé
+Γöé                                                                              Γöé
+Γöé Sources: 13a29f76-8ce5-4557-a54c-0b557ba2cd30,                               Γöé
+Γöé 6fa76e5c-aef2-4976-a562-2dd6ff0e9c88, 0b94dacd-3800-4939-9dc8-67e561b75af5,  Γöé
+Γöé 7e95dd29-be33-4f74-9cb0-e8e4d9f3b377, bda0772f-edbb-4eb6-badf-4f8c61d0d72e,  Γöé
+Γöé f679434d-b726-4e87-adba-f8cf2724996a, 96f5d682-26c9-407e-b4dc-f988e2d0d747,  Γöé
+Γöé 07dc32a5-ab4d-403b-8e16-9ea7b10a111b, 84db1b99-211b-4233-a43b-8495c941113b   Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»
+Γò¡ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ a6341a1d-e4d2-4cd1-8cb9-5dfcb0c4cfac ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé | Practice or Concept | Current State | Challenge | Evidence / Source        Γöé
+Γöé Title(s) | Quote / Near-Quote | Confidence | Packaged Agile Pattern /        Γöé
+Γöé Intervention | Sensitivity | Follow-up Source Pull Needed |                  Γöé
+Γöé | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |             Γöé
+Γöé | **Cadence & Battle Rhythms** | Highly ad-hoc and reactive. PAE leadership  Γöé
+Γöé eschews standard meetings to maximize execution time, but the lack of        Γöé
+Γöé predictable rhythms causes chaos and exhaustion at lower levels. | Missing a Γöé
+Γöé single, un-scheduled executive touchpoint can stall a requirement for six    Γöé
+Γöé months. Staff are burned out trying to prepare for "frenetic" pop-up         Γöé
+Γöé meetings without backward-planning predictability. | "PAE C2 Interview (BG   Γöé
+Γöé Beeler).docx", "PAE C2CC2 Interview (COL Shermer).docx", "SCRUM PAE HQ       Γöé
+Γöé Interview (Kristina Reid).docx" | **"We got to get in the... into some sort  Γöé
+Γöé of battle rhythm, or we're going to burn ourselves out completely"** [1].    Γöé
+Γöé "One day after that event, if our products are one day late, it's a six      Γöé
+Γöé month bogey" [2]. | High | **Agile Events / Sprint Rhythms:** Establish      Γöé
+Γöé lightweight, recurring events (like Sprint Reviews and Planning) to provide  Γöé
+Γöé predictable asynchronous decision-making without adding "meetings for the    Γöé
+Γöé sake of meetings." | Medium | Review existing calendar schedules to see      Γöé
+Γöé which legacy governance boards can be eliminated and replaced with Agile     Γöé
+Γöé rhythms. |                                                                   Γöé
+Γöé | **Product Management & 1-to-N Prioritization** | Next Gen C2 is the        Γöé
+Γöé undisputed priority, but there is no written 1-to-N backlog for the rest of  Γöé
+Γöé the massive portfolio. Mr. Welch avoids documenting static priorities to     Γöé
+Γöé retain pivot flexibility. | Without a forced-ranked backlog, non-NGC2        Γöé
+Γöé programs (Intel, EW) operate in limbo. Action officers waste time writing    Γöé
+Γöé requirements that die on the vine, and teams fear becoming "bill payers" for Γöé
+Γöé NGC2. | "PAE C2 Transformation Effort Interview with SCRUM Inc (Daniel       Γöé
+Γöé Munley).docx", "SCRUM PAE HQ Interview (Mia Nance).docx", "PAE C2CC2         Γöé
+Γöé Interview (COL Shermer).docx" | **"Lack of clear 1-to-n priority list...     Γöé
+Γöé Over 60 documents in limbo"** [3, 4]. **"He would much rather get stuff done Γöé
+Γöé quickly... and not get bogged down with writing the process"** [5]. | High | Γöé
+Γöé **Ordered Product Backlog / Portfolio Kanban:** Create a highly visible,     Γöé
+Γöé continuously ordered backlog that gives lower-level action officers          Γöé
+Γöé transparency into exactly where their program ranks in the trade-space. |    Γöé
+Γöé High (Directly touches on existential fears for Intel and EW program         Γöé
+Γöé funding). | Check status of the 60+ paused Characteristics of Need (CON)     Γöé
+Γöé documents. |                                                                 Γöé
+Γöé | **Iterative Delivery & MVPs (Test-Fix-Test)** | The PAE is actively        Γöé
+Γöé pioneering DevOps-at-scale, using real-world prototype fieldings (4ID, 25th  Γöé
+Γöé ID) to gather immediate feedback and iterate on solutions. | The entrenched  Γöé
+Γöé acquisition culture resists this, defaulting to massive 5-year programs.     Γöé
+Γöé Stakeholders are deeply uncomfortable delivering partial solutions or        Γöé
+Γöé fielding different equipment to different divisions. | "PAE C2CC2 Interview  Γöé
+Γöé (BG Taylor).docx", "PAE C2 HQ Interview (Mr. Manning).docx" | **"Delivering  Γöé
+Γöé 30% capability vs waiting 2 years for 100%"** [6]. **"I just keep seeing     Γöé
+Γöé people default to the culture. The answer is a five year acquisition         Γöé
+Γöé program"** [7]. | High | **Definition of Done / MVP Scoping:** Normalize     Γöé
+Γöé iterative fielding by proving how 30% solutions accelerate the OODA loop     Γöé
+Γöé against adversaries, replacing "Big Bang" Waterfall deliveries. | Medium |   Γöé
+Γöé ATEC (Testing) safety release and evaluation policies for iterative          Γöé
+Γöé software/hardware fielding. |                                                Γöé
+Γöé | **Value & Outcome-Based Metrics** | Current metrics focus heavily on       Γöé
+Γöé process compliance (cost, schedule, spending rates, solicitation-to-award    Γöé
+Γöé time) rather than whether the delivered product actually works or is         Γöé
+Γöé technologically relevant. | Programs are incentivized to protect their       Γöé
+Γöé baseline rather than innovate. Measuring spend rates and checklist           Γöé
+Γöé compliance creates "bad behavior" and prevents teams from rapidly shifting   Γöé
+Γöé to better commercial technology. | "PAE C2 HQ Interview (Mr. Manning).docx", Γöé
+Γöé "PAE C2CC2 Interview (Ms Moyer).docx", "SCRUM PAE HQ Interview (MG Janovic)" Γöé
+Γöé | **"What is missing? Time from a need to hand and soldier. Who gives a      Γöé
+Γöé about solicitation to award?"** [8]. **"Is our force on the leading edge or  Γöé
+Γöé the trailing edge of technology?"** [9]. | High | **Agile OKRs / Delivery    Γöé
+Γöé Metrics:** Pivot organizational measurement away from compliance to          Γöé
+Γöé value-delivery metrics like Delivery Frequency, Time-to-Market, and          Γöé
+Γöé technological delta against adversaries. | High (Threatens legacy programs   Γöé
+Γöé that are "on schedule" but technologically obsolete). | Investigate whether  Γöé
+Γöé the ASA ALT Live or Vantage dashboards can be configured to track            Γöé
+Γöé Time-to-Market. |                                                            Γöé
+Γöé | **Cross-Functional Teams & Embedded Enablers** | Legacy "chain of custody" Γöé
+Γöé practices isolate enablers (like Contracting and Testing). Large groups of   Γöé
+Γöé un-warranted "middlemen" advisors demand perfect requirement documents       Γöé
+Γöé before letting teams talk to actual execution officials. | Handoffs between  Γöé
+Γöé silos cause massive delays. Warranted contracting officers are excluded from Γöé
+Γöé industry days and town halls, fostering a passive "rubber stamp" mentality   Γöé
+Γöé when requirements are finally tossed over the wall. | "PAE C2CC2 Interview   Γöé
+Γöé (Ms Moyer).docx", "PAE C2 Transformation Effort Interview with Scrum Inc     Γöé
+Γöé (LTC Krivensky).docx" | **"Rip the band-aid off all of you, all acquisition  Γöé
+Γöé people are gone... my people  should be embedded with them"** [10, 11]. |    Γöé
+Γöé High | **Cross-Functional Teams:** Eliminate advisory handoffs by embedding  Γöé
+Γöé actual execution authorities (warranted KOs, ATEC testers) directly onto the Γöé
+Γöé Scrum/Agile delivery teams from Day 1. | Very High (Directly targets 75-100  Γöé
+Γöé existing GS-14/15 advisor jobs for elimination). | Review current army       Γöé
+Γöé policies restricting Contracting Officers from participating in early        Γöé
+Γöé requirement drafting. |                                                      Γöé
+Γöé | **Agile Governance (Minimum Viable Bureaucracy)** | The Army is attempting Γöé
+Γöé to streamline boards, but the governance process often feels "rebranded"     Γöé
+Γöé rather than reformed. Old signature chains mutated from "chain of custody"   Γöé
+Γöé into redundant "approval chains." | Mid-level leaders demand an 80/20        Γöé
+Γöé reporting trap (80% reporting up, 20% execution) because they are afraid of  Γöé
+Γöé risk. Moving to Agile requires shifting from strict process checklists to    Γöé
+Γöé "Principle-Driven Policy." | "SI Team Interview Results Sync - 2026/03/13    Γöé
+Γöé 11:57 EDT - Notes by Gemini", "PAE C2 External Interview (COL Haffey).docx"  Γöé
+Γöé | **"Governance process appears rebranded rather than truly reformed"**      Γöé
+Γöé [12]. **"Replacing all your policies that define process with here's the     Γöé
+Γöé outcome that you're supposed to get to. Here's five principles to follow"**  Γöé
+Γöé [13, 14]. | High | **Lean Portfolio Management / Principle-Driven Policy:**  Γöé
+Γöé Strip away step-by-step checklists. Define the clear outcome and the core    Γöé
+Γöé guardrails (principles), empowering teams to define the "how" of their       Γöé
+Γöé execution. | Medium | Compare legacy AROC board documentation requirements   Γöé
+Γöé against the new CPR/ARCHIB board requirements. |                             Γöé
+Γöé                                                                              Γöé
+Γöé Sources: 6adb85f0-2097-4f81-b480-63613da5815e,                               Γöé
+Γöé 0c5a5b4e-a698-437c-ba10-4bd41605dc4f, b831ef13-81f3-4347-9a1e-e5a55cee1a17,  Γöé
+Γöé cb5bbbbf-b6c7-4f4c-bb07-59cd46ac3349, dc744095-1283-49ee-a49c-6ec19ea4310d,  Γöé
+Γöé 551e5ba2-1127-49a9-b471-5918b7531152, 9a638060-3ac2-45ef-bd72-e2c73f870f6e,  Γöé
+Γöé 1797376b-e35b-4572-b542-c96e691035f3, 02fd4c5a-ec0d-465b-8259-70bb3311af62,  Γöé
+Γöé 29b52818-002e-4b98-be6c-2cc046f6402d                                         Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»

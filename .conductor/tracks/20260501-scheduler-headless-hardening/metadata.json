@@ -1,0 +1,46 @@
+{
+  "trackId": "20260501-scheduler-headless-hardening",
+  "title": "Standardize Headless-Safe Scheduled Task Actions",
+  "status": "completed",
+  "created": "2026-05-01",
+  "completed": "2026-05-01",
+  "estimatedHours": "1-3",
+  "assignedTo": "Dave Witkin",
+  "type": "maintenance",
+  "tags": ["windows", "scheduler", "headless", "ops", "skill"],
+  "progress": {
+    "totalTasks": 7,
+    "completedTasks": 7,
+    "percentage": 100
+  },
+  "summary": "Inventory and harden scheduled task launch actions using a wscript/VBS hidden-launch pattern where console popups can occur, then codify defaults in scheduler skill docs.",
+  "keyOutcomes": [
+    "4 tasks migrated to wscript/VBS headless pattern (conductor-weekly-report, offer-validation-round1-daily-rollup, skill-health-validator, skill-sync-monitor)",
+    "All 10 OpenCode tasks have Settings.Hidden=True",
+    "User-validated: no visible popup on force-run",
+    "Created scheduler-headless-runbook.md with migration procedure and error recovery",
+    "Updated windows-task-scheduler SKILL.md v2.1.0 with headless-by-default policy"
+  ],
+  "risks": [
+    "Task argument reformatting errors can break schedules",
+    "Older task compatibility modes may require XML-level updates"
+  ],
+  "dependencies": [],
+  "blocking": [],
+  "relatedTracks": [
+    "20260501-headless-scheduled-tasks"
+  ],
+  "deliverables": [
+    "Task inventory matrix",
+    "Updated task actions (4 migrated)",
+    "scheduler-headless-runbook.md",
+    "Updated windows-task-scheduler SKILL.md v2.1.0",
+    "Execution log with before/after table",
+    "4 rollback XML backups"
+  ],
+  "validationCriteria": [
+    "All applicable tasks use wscript/VBS hidden launcher - PASSED",
+    "OpenCode tasks remain Hidden=True - PASSED",
+    "Representative runs complete without visible popup - PASSED (user confirmed)"
+  ]
+}

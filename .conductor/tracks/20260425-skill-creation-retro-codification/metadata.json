@@ -1,0 +1,50 @@
+{
+  "trackId": "20260425-skill-creation-retro-codification",
+  "title": "Skill Creation Retro Codification",
+  "status": "completed",
+  "created": "2026-04-25",
+  "completed": "2026-04-25",
+  "estimatedHours": "1-2",
+  "actualHours": "0.5",
+  "assignedTo": "Dave Witkin",
+  "type": "retro",
+  "tags": ["skills", "templates", "retro", "codification", "snippets"],
+  "progress": {
+    "totalTasks": 9,
+    "completedTasks": 9,
+    "percentage": 100
+  },
+  "summary": "Codify retro findings from nlm-meta-prompt skill creation into reusable templates, checklists, and snippets for future AI and human use.",
+  "keyOutcomes": [
+    "Skill Creation Runbook template",
+    "Retro Delivery Checklist for skill work",
+    "Verbatim Preservation snippet",
+    "Global Skill Index in repo docs"
+  ],
+  "risks": [
+    "Snippet placement may require snippet-writer skill validation",
+    "Global skill index could become stale if skills are added/removed without updating"
+  ],
+  "dependencies": [
+    "snippet-writer skill (for Phase 3 snippet frontmatter standards)",
+    "skill-writer skill (for Phase 1 runbook alignment)"
+  ],
+  "blocking": [],
+  "relatedTracks": [
+    "20260425-thinking-partner-skill-install",
+    "20260411-notebooklm-cli-install"
+  ],
+  "deliverables": [
+    "~/.config/opencode/templates/skill-creation-runbook.md",
+    "~/.config/opencode/templates/retro-skill-delivery-checklist.md",
+    "~/.config/opencode/snippet/verbatim-preservation.md",
+    "docs/reference/global-skills-index.md"
+  ],
+  "validationCriteria": [
+    "All 4 deliverables exist at target paths",
+    "Runbook covers all retro-identified improvement areas",
+    "Retro checklist maps to 6 mandatory questions",
+    "Snippet follows snippet-writer frontmatter standards",
+    "Index note lists actual global skills with descriptions"
+  ]
+}

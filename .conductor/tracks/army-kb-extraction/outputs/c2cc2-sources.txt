@@ -1,0 +1,344 @@
+[
+  {
+    "id": "6fa76e5c-aef2-4976-a562-2dd6ff0e9c88",
+    "title": "2026-02-17 Army C2/CC Kickoff Meeting Notes",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "c39c311e-ca29-4473-bd60-b2a705b4f038",
+    "title": "2026-02-18 Scrum Inc Working Session Notes",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "3cd3f905-2629-4988-8af1-c3c840c56bbe",
+    "title": "2026-02-20 Scrum Sync Meeting Notes",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "f4018910-ea4a-4dd8-8026-3bed83e4d5dc",
+    "title": "2026-02-23 Scrum Sync with PAE C2/CC2 Notes",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "6a5fc51c-e55f-4ab3-b06a-8fef3857620e",
+    "title": "2026-02-25 PAE C2/CC2 Sync: Workshop Planning",
+    "type": "pasted_text",
+    "url": null
+  },
+  {
+    "id": "735938ea-5da2-4969-a726-e97076bce844",
+    "title": "2026-03-05 Army CAC Appointment and Office Locator",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "2919ac6c-0d5c-4b6f-820d-2e7da0d288dc",
+    "title": "2026-03-05 Logistics Emails (several)",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "1c008b6d-787e-4a35-83c4-e6ea2b2f0f26",
+    "title": "2026-03-05 Matt Shea, Security",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "b4acdbb0-92d6-4f36-8b04-373e65fc72cd",
+    "title": "2026-03-05 Onboarding and Security Clearances",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "07beaeec-eb33-4938-b28b-75f3b7f3afda",
+    "title": "2026-03-12 SCRUM Sync with PAE C2/CC2 Notes",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "84db1b99-211b-4233-a43b-8495c941113b",
+    "title": "2026-03-26 Dave and Tim Discuss Op Model Notes",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "08ee04b0-729f-4105-ba21-39ec8ff63b1e",
+    "title": "2026-03-31 Operational Friction and the Capability Portfolio Transition",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "f679434d-b726-4e87-adba-f8cf2724996a",
+    "title": "2026-03-31 ΓÇô Daily Sync Notes",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "f485d840-97e1-4773-a1f9-9bbb365a9fe9",
+    "title": "2026-04-09 Blockers C2CC2",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "bf3a4ddc-db10-44a5-bfc1-4e1f3f2af703",
+    "title": "2026-04-17 Leadership Workshop Out brief Notes",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "0bf1c9c0-6af5-4297-80af-6b1c8472f969",
+    "title": "2026-04-17 Scrum Sync",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "157c3884-4d7b-43a7-8db6-7cb505271384",
+    "title": "300126 Welch PAE C2_CC2 TEM Slides_FINAL.pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "f52d0053-2309-49cb-ab1f-29c7504c97f5",
+    "title": "ASA (ALT) Transformation Planning Workshop.pdf",
+    "type": "pdf",
+    "url": null
+  },
+  {
+    "id": "4d5577d5-a20d-44ea-aee8-e8fcd971f858",
+    "title": "Acquisition Authorities Under Portfolio Acquisition Executives .pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "2bccb224-f8e0-488e-96b0-11e529047c53",
+    "title": "Army Acquisition: PEOs to PAEs",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "92196e92-1cae-4bdb-abce-3ee3cc8ce573",
+    "title": "Army organizations, staff, Acronyms",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "bda0772f-edbb-4eb6-badf-4f8c61d0d72e",
+    "title": "BG Shane Taylor",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "3935b843-105d-4e46-b2f4-b77a9aacae5c",
+    "title": "Basis of Issue and Acquisition Framework",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "a3be28e0-f10f-42ff-81b4-789f86e183a5",
+    "title": "C2 CC2 PORTFOLIO - STRATEGIC LOGIC AIMPOINTS  031000MAR2026.pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "e0131a84-044e-4cca-bf5d-1f8ac9556481",
+    "title": "C2 and CC2 APG Facility Directory",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "96afc1d0-d110-45ed-bce8-7ca5672e98a4",
+    "title": "C2-CC2 PAE Stakeholder Workshop #2 Agenda & Notes.docx",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "4c666f10-1781-40a4-95ab-5c4b75ba0f8d",
+    "title": "CPE ISW",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "4e1fef84-de8d-4b94-a674-52b3d4eb9e47",
+    "title": "CorDesignationLetter.pdf",
+    "type": "pdf",
+    "url": null
+  },
+  {
+    "id": "1b989363-3625-491b-b59b-fac6ea0faf44",
+    "title": "Cyber FCD-TID POCs-1.pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "b4015bdb-3696-434c-be64-600d31b828ae",
+    "title": "DSW Memo ΓÇö MSS Established as Program of Record.pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "ad00491a-d31d-4f65-9a5e-dfa4d84ee433",
+    "title": "Final_20260112_Army_Task_Org 1.pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "13a29f76-8ce5-4557-a54c-0b557ba2cd30",
+    "title": "From Project to Product_ The Warfighting Acquisition System (Reformatted).md",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "0b94dacd-3800-4939-9dc8-67e561b75af5",
+    "title": "Leadership Workshop Notes: Welch's Reactions",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "ec519137-fc8d-4116-852b-b565742b741d",
+    "title": "Maven: The AI Backbone of Modern Digital Warfare",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "4b51c5a1-b0fa-4ec0-b4d9-241565882431",
+    "title": "Metrics - CPR Terms of Reference.pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "88250b1f-d258-407b-9e1c-8203c827f697",
+    "title": "Ms. Ferry",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "697aed81-2369-4b02-bc69-1616c46a569d",
+    "title": "O6 List for C2-cC2 PAE Support Team.pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "5d5f2241-7497-409f-9bef-f91c6124ca7d",
+    "title": "Operational Security Onboarding and Facility Access Protocol",
+    "type": "pasted_text",
+    "url": null
+  },
+  {
+    "id": "a1c70b36-04f8-45d7-b885-1dd0b79e08c0",
+    "title": "PAE C2-CC2 Org 2026-02-18.png",
+    "type": "image",
+    "url": null
+  },
+  {
+    "id": "42c3f956-02b2-44b2-9930-3a054f5050f3",
+    "title": "PAE C2CC2┬áInterview (Mr Flood).docx",
+    "type": "uploaded_file",
+    "url": null
+  },
+  {
+    "id": "96f5d682-26c9-407e-b4dc-f988e2d0d747",
+    "title": "PAE C2_CC2 Transformation Approach + Release 1 Plan.docx",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "cc07faf9-7ef1-4191-a0b1-f78e4919e30c",
+    "title": "PAE HQ org chart working.pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "dd06668d-5132-4513-905b-f93331a12667",
+    "title": "PAE Org Chart as of 26FEB2026.pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "32f0753c-07f8-42c2-9513-038bafa8aeb8",
+    "title": "PAE Proposed Battle Rhythm Events_16DEC25.pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "07dc32a5-ab4d-403b-8e16-9ea7b10a111b",
+    "title": "Product Mapping Workshop Summary",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "d023b627-1e49-40da-8fbe-86debccad534",
+    "title": "Release 1 Outcomes Deliverable and Activities.docx",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "109cbda3-7997-4019-8e01-afcb78c54004",
+    "title": "Risk from Danielle Moyer",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "c7995bd0-c68a-48b7-bbec-d161de4b4869",
+    "title": "Scrum Inc-ASA(ALT) Industry Engagement_Dec 2025.pdf",
+    "type": "pdf",
+    "url": null
+  },
+  {
+    "id": "25bc9982-708b-459a-b8b4-ff66fbd7865a",
+    "title": "Slides for SCRUM Team.pptx.pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "90a4c234-8781-49a9-852f-559d30d9dc0a",
+    "title": "Terms of Reference for Portfolio Acquisition Executive Organization Dual Signed 27NOV25.pdf",
+    "type": "word_doc",
+    "url": null
+  },
+  {
+    "id": "7e95dd29-be33-4f74-9cb0-e8e4d9f3b377",
+    "title": "The Driscoll Doctrine: Strategic Scrum Implementation",
+    "type": "generated_text",
+    "url": null
+  },
+  {
+    "id": "6db2f065-453a-4617-99b8-ae73877dfb02",
+    "title": "US Army Solution Brief SoW_10 Feb 2026_PAE C2_CC2 - MJ Comment (1).docx",
+    "type": "uploaded_file",
+    "url": null
+  },
+  {
+    "id": "794d6ed1-b402-420d-ac77-c21ff752462c",
+    "title": "Workshop Synthesis for NotebookLM",
+    "type": "google_docs",
+    "url": null
+  },
+  {
+    "id": "cb1805bf-1354-4978-9975-c395a2e9f7ae",
+    "title": "miro-01.png",
+    "type": "image",
+    "url": null
+  },
+  {
+    "id": "d2ebef86-834e-4150-9a04-5364b93609dd",
+    "title": "miro-02.png",
+    "type": "image",
+    "url": null
+  },
+  {
+    "id": "fa2b1281-6962-4a0e-aab2-da85a60c9ff5",
+    "title": "miro-03.png",
+    "type": "image",
+    "url": null
+  },
+  {
+    "id": "28cf19a5-2452-4814-a20a-c52c2e8f9091",
+    "title": "miro-04.png",
+    "type": "image",
+    "url": null
+  }
+]

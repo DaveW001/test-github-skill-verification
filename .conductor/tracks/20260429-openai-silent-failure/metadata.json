@@ -1,0 +1,56 @@
+{
+  "trackId": "20260429-openai-silent-failure",
+  "title": "OpenAI Silent Failure Diagnosis & Fix",
+  "status": "validation_pending",
+  "created": "2026-04-29",
+  "completed": null,
+  "estimatedHours": "1-2",
+  "assignedTo": "Dave Witkin",
+  "type": "bugfix",
+  "tags": [
+    "openai",
+    "plugin",
+    "sse",
+    "streaming",
+    "debugging"
+  ],
+  "progress": {
+    "totalTasks": 28,
+    "completedTasks": 24,
+    "percentage": 86.0
+  },
+  "summary": "Fix silent failures when OpenAI models (gpt-5.3-codex, gpt-5.4-mini) respond through oc-chatgpt-multi-auth plugin. Three root cause candidates: SSE fallback returning raw text, 45s stream stall timeout, and gpt-5.4-mini model name being stripped.",
+  "keyOutcomes": [
+    "Confirmed the SSE fallback issue: missing terminal response events previously returned raw SSE text with HTTP 200.",
+    "Patched response-handler.js so missing response.done returns parseable JSON error with HTTP 502.",
+    "Increased default stream stall timeout to 120000 ms while preserving CODEX_AUTH_STREAM_STALL_TIMEOUT_MS override.",
+    "Added explicit gpt-5.4-mini model-map entries so mini is preserved instead of normalized to gpt-5.4.",
+    "Added DEBUG_CHATGPT_PROXY diagnostics for request summaries and SSE conversion events.",
+    "Module-level validation passed for syntax, timeout default, model preservation, JSON error response, and debug logging.",
+    "Follow-up live validation found a broader missing arguments case: tool_search_call items in native transform mode also require arguments.",
+    "Patched fetch-helpers.js with a last-mile call-like input sanitizer and removed an ESM-unsafe debug_body writer."
+  ],
+  "risks": [
+    "Plugin modifications may be overwritten on npm update (same risk as previous arguments fix)",
+    "Live OpenCode Desktop validation is still required to prove no silent fallback occurs in the real authenticated model path"
+  ],
+  "dependencies": [
+    "openai-parameter-fix (completed)"
+  ],
+  "blocking": [],
+  "relatedTracks": [
+    "openai-parameter-fix"
+  ],
+  "deliverables": [
+    "Patched response-handler.js (SSE fallback fix)",
+    "Patched model-map.js (gpt-5.4-mini entry)",
+    "Patched response-handler.js (timeout increase)",
+    "Diagnostic logging in request-transformer.js and response-handler.js"
+  ],
+  "validationCriteria": [
+    "At least one OpenAI model completes a full agent loop without fallback",
+    "Errors are visible in OpenCode logs when failures occur",
+    "gpt-5.4-mini model name preserved in requests",
+    "Stream stall timeout >= 120 seconds"
+  ]
+}

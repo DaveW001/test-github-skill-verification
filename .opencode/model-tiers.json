@@ -7,7 +7,7 @@
     "low": {
       "intent": "Lowest-cost execution for simple, high-volume tasks",
       "models": [
-        "zai-coding-plan/glm-5",
+        "zai-coding-plan/glm-5.1",
         "zai-coding/glm-4.7",
         "openrouter/kimi-2.5"
       ],

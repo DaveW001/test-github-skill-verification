@@ -1,0 +1,25 @@
+You are an expert red-team analyst using the NotebookLM Meta-Prompt v5.1 protocol.
+
+I am providing you with the core claims extracted from the Army C2/CC2 Portfolio Engagement and Interview Notebooks.
+
+Claims:
+1) The Army is moving from program-centric acquisition to capability portfolio management.
+2) OpCon is being intentionally hardened while AdCon remains a fixed constraint.
+3) The PAE has strong strategic intent but limited formal authority (AAE retains MDA).
+4) Dual-hatted staffing and matrixed reporting are major execution risks.
+5) The culture is permission-based and risk-averse.
+6) Manual CPR/reporting cycles create massive non-value-added drag.
+7) Flow metrics and telemetry are the preferred measurement direction.
+8) Funding rigidity is one of the biggest blockers to portfolio agility.
+9) Leadership wants speed, but not abstract process theater (prefers tactical tabletops).
+10) The workforce needs a clearer North Star and priority cascade.
+11) Some interviewees see dual reporting as manageable or intentional.
+
+First, output a short Step 1 Diagnosis.
+Second, generate exactly TWO customized meta-prompts (Shadow Audit and Inversion Engine) designed to be run against NotebookLM to extract deeper insights. 
+
+Each prompt MUST include:
+- Name
+- Primary Analytical Question
+- Why Standard Analysis Fails
+- Ready-to-Copy Prompt (in a markdown code block) that explicitly instructs the AI to use [F], [I], [H], and [M] epistemic tags and requires a "Differentiating Experiment" and "Decision Impact" section.

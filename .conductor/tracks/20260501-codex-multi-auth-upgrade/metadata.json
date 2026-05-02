@@ -1,0 +1,49 @@
+{
+  "trackId": "20260501-codex-multi-auth-upgrade",
+  "title": "Upgrade oc-chatgpt-multi-auth@5.4.4 → oc-codex-multi-auth@6.1.8",
+  "status": "active",
+  "created": "2026-05-01",
+  "completed": null,
+  "estimatedHours": "0.5",
+  "assignedTo": "Build Agent",
+  "type": "maintenance",
+  "tags": ["opencode", "plugin", "codex", "multi-auth", "upgrade"],
+  "progress": {
+    "totalTasks": 20,
+    "completedTasks": 8,
+    "percentage": 40
+  },
+  "summary": "Upgrade the deprecated oc-chatgpt-multi-auth plugin to the renamed oc-codex-multi-auth, reconciling 5 local patches against upstream v6.1.8, configuring stream stall timeout, and validating OAuth accounts.",
+  "keyOutcomes": [
+    "oc-codex-multi-auth@6.1.8 loaded and functional",
+    "All OAuth accounts preserved",
+    "Stream stall timeout set to 120s via User environment variable",
+    "Debug artifacts discarded"
+  ],
+  "risks": [
+    "OpenCode may not auto-install the new package name if registry lookup fails",
+    "All-call-types arguments fix not in upstream — could cause errors on rare call types",
+    "SSE raw-text fallback not in upstream — could cause silent failures on truncated streams"
+  ],
+  "dependencies": [
+    "User must restart OpenCode for plugin swap to take effect"
+  ],
+  "blocking": [],
+  "relatedTracks": [
+    "20260429-openai-silent-failure",
+    "openai-parameter-fix"
+  ],
+  "deliverables": [
+    "Verified opencode.json uses oc-codex-multi-auth plugin",
+    "Stream stall timeout configured at 120s via User environment variable",
+    "Validated OAuth account list",
+    "Updated tracks-ledger.md"
+  ],
+  "validationCriteria": [
+    "codex-list shows all OAuth accounts",
+    "codex-status shows healthy accounts",
+    "CODEX_AUTH_STREAM_STALL_TIMEOUT_MS User environment variable is 120000",
+    "No debug writeFileSync calls in new plugin source",
+    "opencode.json references oc-codex-multi-auth"
+  ]
+}

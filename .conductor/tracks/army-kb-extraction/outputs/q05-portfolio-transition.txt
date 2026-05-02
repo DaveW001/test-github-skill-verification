@@ -1,0 +1,170 @@
+
+Cross-notebook query: What do the notebooks reveal about the transition from 
+project/program-centric acquisition to portfolio/product-oriented ways of 
+working? Identify tensions, structural barriers, desired outcomes, and reusable 
+lessons. Return: Claim, source title(s), quote/near-quote, confidence, Packaged 
+Agile reuse value, sensitivity, and follow-up source pull needed.
+2/2 notebooks responded
+
+Γò¡ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ 5125c1f1-71b3-4dbe-afc5-d725d1a4db2c ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé | Claim | Source title(s) | Quote/near-quote | Confidence | Packaged Agile   Γöé
+Γöé reuse value | Sensitivity | Follow-up source pull needed |                   Γöé
+Γöé | :--- | :--- | :--- | :--- | :--- | :--- | :--- |                           Γöé
+Γöé | **Desired Outcome: Paradigm Shift to Capability Portfolios** <br>The shift Γöé
+Γöé from DAS/PEO to WAS/PAE reorients the organization from managing isolated,   Γöé
+Γöé compliance-driven programs to managing integrated capability portfolios      Γöé
+Γöé focused on lethality and delivery speed. | "From Project to Product_ The     Γöé
+Γöé Warfighting Acquisition System (Reformatted).md", "Army Acquisition: PEOs to Γöé
+Γöé PAEs" | "By replacing rigid, milestone-based compliance with outcome-driven  Γöé
+Γöé value streams and real-time telemetry, the Army aims to field                Γöé
+Γöé combat-effective capabilities at the speed of relevance" [1]. "PAEs manage   Γöé
+Γöé portfolios: They can shift resources between related projects within their   Γöé
+Γöé portfolio to meet the CommanderΓÇÖs intent" [2]. | High | Implement            Γöé
+Γöé Scrum@Scale (Executive MetaScrum/EAT) to treat the portfolio as a holistic   Γöé
+Γöé value stream. Frame "success" as warfighter outcomes rather than milestone   Γöé
+Γöé completion. | Low | Gather examples of newly formed "Capability Trade        Γöé
+Γöé Councils" successfully executing trade space decisions. |                    Γöé
+Γöé | **Desired Outcome: Continuous Delivery & Commercial First** <br>The Army   Γöé
+Γöé is replacing "Big Bang" multi-year development with continuous sprints and a Γöé
+Γöé "Commercial-First" strategy that integrates live Soldier feedback directly   Γöé
+Γöé into the process. | "The Driscoll Doctrine: Strategic Scrum Implementation", Γöé
+Γöé "C2 CC2 PORTFOLIO - STRATEGIC LOGIC AIMPOINTS 031000MAR2026.pdf" | "If your  Γöé
+Γöé program isn't operating within a Scrum framework with a live feedback loop   Γöé
+Γöé from the end-user, it's going to be defunded" [3]. "Instead of decades-long  Γöé
+Γöé fielding windows, the PAE utilizes agile software development and rapid      Γöé
+Γöé prototyping to continuously deliver capabilities..." [4]. | High | Leverage  Γöé
+Γöé the explicit "Driscoll Doctrine" mandate to enforce DevSecOps and 2-week     Γöé
+Γöé sprints across vendors, aggressively pushing back against "Delivery          Γöé
+Γöé Theatre." | Low | Extract hard metrics from 4th ID "Ivy Stings" exercises    Γöé
+Γöé validating these 48-hour rapid fixes. |                                      Γöé
+Γöé | **Tension: Manual Reporting vs. Automated Telemetry** <br>Shifting to a    Γöé
+Γöé product mindset requires real-time telemetry (Flow Metrics), but the         Γöé
+Γöé organization remains paralyzed by legacy, manual reporting (CPRs) that       Γöé
+Γöé drains capacity. | "From Project to Product_ The Warfighting Acquisition     Γöé
+Γöé System (Reformatted).md", "March 31, 2026 ΓÇô Daily Sync Notes", "Workshop     Γöé
+Γöé Synthesis for NotebookLM" | "The CPR process is a massive time-sink. ItΓÇÖs    Γöé
+Γöé taking two months of staff work for a single one-hour meeting" [5]. "The     Γöé
+Γöé goal of the Portfolio Command Center is to eliminate manual status reporting Γöé
+Γöé in favor of a 'single source of truth'..." [6]. | High | Replace subjective  Γöé
+Γöé PowerPoint updates with a "Portfolio Command Center" tracking Flow Time,     Γöé
+Γöé Velocity, and Efficiency to visualize true bottlenecks and technical debt. | Γöé
+Γöé Medium | Map the technical architecture required to automatically sync the   Γöé
+Γöé official MRT system with the preferred Leadership Dashboard. |               Γöé
+Γöé | **Structural Barrier: Funding Rigidities & Trade Space**                   Γöé
+Γöé <br>Portfolio-oriented "trade space" is blocked by legacy funding silos and  Γöé
+Γöé "Zero Growth" mandates, forcing leaders to struggle with reallocating funds  Γöé
+Γöé to modern technologies. | "Workshop Synthesis for NotebookLM", "Army         Γöé
+Γöé organizations, staff, Acronyms", "Leadership Workshop Notes: Welch's         Γöé
+Γöé Reactions" | "Funding is 'binned' and 'POMΓÇÖd' 2+ years in advance, leaving   Γöé
+Γöé leaders with 'limited or no ability to legally flex to different tech'..."   Γöé
+Γöé [7]. "AMC (as Funding Controller) currently retains control over SSPEG       Γöé
+Γöé dollars, which creates a 'hand-off' friction..." [8]. | High | Frame agile   Γöé
+Γöé coaching around identifying waste via a "Divestment Advocacy Team" and       Γöé
+Γöé establishing "Capability LINs" to pool fragmented programmatic funds into    Γöé
+Γöé unified buckets. | High (Involves breaking legacy Army Materiel Command      Γöé
+Γöé controls and Congressional POM structures) | Investigate how to legally      Γöé
+Γöé transition from programmatic funding to capability-based buckets in the 2026 Γöé
+Γöé transition year. |                                                           Γöé
+Γöé | **Structural Barrier: Matrixed AdCon vs. OpCon** <br>The highly matrixed   Γöé
+Γöé structure fragments mission focus because personnel are detailed to the PAE  Γöé
+Γöé for mission work (OpCon) but still owned by legacy parent commands (AdCon),  Γöé
+Γöé causing confusion. | "≡ƒô¥ 2026-03-26 Dave and Tim Discuss Op Model Notes",    Γöé
+Γöé "PAE C2/CC2 Sync: Workshop Planning and Document Finalization", "2026-04-17  Γöé
+Γöé Leadership Workshop Out brief Notes" | "Personnel effectively receive OpCon  Γöé
+Γöé from two sources... which fragments mission focus" [9]. "Decision made:      Γöé
+Γöé AdCon stays as-is and will not change; all structural changes will target    Γöé
+Γöé OpCon only..." [9]. | High | Design the Agile Operating Model exclusively    Γöé
+Γöé around "hardening OpCon in the box," accepting AdCon as a fixed constraint   Γöé
+Γöé to prevent teams from fighting unwinnable bureaucratic battles. | Medium |   Γöé
+Γöé Identify the short list of approximately 5 AdCon exceptions that will        Γöé
+Γöé require Secretary-level support to resolve. |                                Γöé
+Γöé | **Tension: Retained vs. Delegated Authority** <br>Despite the overarching  Γöé
+Γöé WAS narrative empowering PAEs to make rapid decisions, the Army Acquisition  Γöé
+Γöé Executive (AAE) explicitly retains Milestone Decision Authority (MDA) for    Γöé
+Γöé new programs, limiting true portfolio autonomy. | "Acquisition Authorities   Γöé
+Γöé Under Portfolio Acquisition Executives .pdf", "2026-04-09 Blockers C2CC2" |  Γöé
+Γöé "PAEs, regardless of existing acquisition certifications, will not serve as  Γöé
+Γöé the MDA/DA" [10]. "I retain MDA or Decision Authority (DA) for all new       Γöé
+Γöé acquisition programs... unless delegated in writing..." [11]. | High |       Γöé
+Γöé Acknowledge the boundaries of the Executive MetaScrum (EMS). The PAE cannot  Γöé
+Γöé unilaterally approve new programs, requiring the Executive Action Team (EAT) Γöé
+Γöé to carefully navigate ASA(ALT) escalations. | High (Directly contradicts the Γöé
+Γöé messaging that PAEs possess full-spectrum capability management). | How are  Γöé
+Γöé current PAEs effectively bridging the gap between their operational          Γöé
+Γöé responsibilities and their lack of official MDA? |                           Γöé
+Γöé                                                                              Γöé
+Γöé Sources: 13a29f76-8ce5-4557-a54c-0b557ba2cd30,                               Γöé
+Γöé 2bccb224-f8e0-488e-96b0-11e529047c53, 7e95dd29-be33-4f74-9cb0-e8e4d9f3b377,  Γöé
+Γöé a3be28e0-f10f-42ff-81b4-789f86e183a5, f679434d-b726-4e87-adba-f8cf2724996a,  Γöé
+Γöé 794d6ed1-b402-420d-ac77-c21ff752462c, 92196e92-1cae-4bdb-abce-3ee3cc8ce573,  Γöé
+Γöé 84db1b99-211b-4233-a43b-8495c941113b, 4d5577d5-a20d-44ea-aee8-e8fcd971f858   Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»
+Γò¡ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ a6341a1d-e4d2-4cd1-8cb9-5dfcb0c4cfac ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé | Claim | Source Title(s) | Quote / Near-Quote | Confidence | Packaged Agile Γöé
+Γöé Reuse Value | Sensitivity | Follow-Up Source Pull Needed |                   Γöé
+Γöé | :--- | :--- | :--- | :--- | :--- | :--- | :--- |                           Γöé
+Γöé | **Shift from Rigid Programs to Fluid Portfolios is Blocked by Legacy       Γöé
+Γöé Budgeting** | "Pasted Text"; "PAE C2CC2 Interview (BG Taylor).docx"; "PAE C2 Γöé
+Γöé Transformation Effort Interview with SCRUM Inc (Daniel Munley).docx" | "A    Γöé
+Γöé fundamental shift from managing rigid 'Programs of Record' to managing fluid Γöé
+Γöé 'Capability Portfolios'" [1]. "Current structure prevents moving dollars     Γöé
+Γöé between efforts quickly (takes 1-2 years)" [2]. Congress rejected budget     Γöé
+Γöé binning proposals, stating "There are budget lines for a reason" [3]. | High Γöé
+Γöé | **Lean Portfolio Management (LPM):** Agile requires dynamic reallocation   Γöé
+Γöé of funds across value streams, but rigid Budget Line Items (BLIs) force the  Γöé
+Γöé PAE to operate like a traditional PMO rather than an empowered portfolio     Γöé
+Γöé owner. | High (Identifies Congressional limits and Anti-Deficiency Act       Γöé
+Γöé violation risks if funds are moved fluidly) | Review the current status of   Γöé
+Γöé ASA(ALT)'s push for a 20% consolidation in Budget Line Items. |              Γöé
+Γöé | **Waterfall "5-Year Program" Culture Resists Iterative, Capability-Based   Γöé
+Γöé Execution** | "PAE C2 HQ Interview (Mr. Manning).docx"; "PAE C2CC2 Interview Γöé
+Γöé (Ms Moyer).docx" | "I just keep seeing people default to the culture. The    Γöé
+Γöé answer is a five year acquisition program... I could go to Best Buy... and   Γöé
+Γöé you're going to tell me it's going to take five years to do that?" [4, 5].   Γöé
+Γöé "Current culture: 'Don't talk to me until you have complete requirements'"   Γöé
+Γöé [6]. | High | **Iterative Delivery & Agile Contracting:** Contracting and    Γöé
+Γöé requirements must shift from "complete package" documentation to embedding   Γöé
+Γöé warranted contracting officers with delivery teams to enable iterative,      Γöé
+Γöé commercial-first buys. | Medium (Highlights entrenched mid-level bureaucracy Γöé
+Γöé resisting rapid fielding) | Investigate policies allowing "bailment          Γöé
+Γöé agreements" to accelerate testing of commercial products. |                  Γöé
+Γöé | **Cross-Portfolio Prioritization Creates Fierce Internal Competition and   Γöé
+Γöé "Bill Payer" Fears** | "PAE C2CC2 Interview (COL Shermer).docx"; "PAE C2     Γöé
+Γöé Transformation Effort Interview with SCRUM Inc (Daniel Munley).docx" | It is Γöé
+Γöé like choosing between "platypus, hippo, and pit viper - completely different Γöé
+Γöé value propositions" [7, 8]. Other programs fear becoming a "bill payer for   Γöé
+Γöé the PAE's number one priority, which is next gen C2" [9, 10]. | High |       Γöé
+Γöé **Unified Portfolio Backlog:** The transformation lacks an ordered 1-to-N    Γöé
+Γöé backlog that maps diverse warfighting functions (Intel, Cyber, EW) to a      Γöé
+Γöé single portfolio value metric, causing anxiety for non-priority teams. |     Γöé
+Γöé High (Existential threat to non-NGC2 programs and exposes raw friction       Γöé
+Γöé between deputies) | Map the currently "paused" requirement documents (CONs)  Γöé
+Γöé to their associated warfighting functions to track delays. |                 Γöé
+Γöé | **Portfolio Synergies are Undermined by Legacy "Individual Line"           Γöé
+Γöé Governance** | "PAE C2 External Interview (Ms. Ewing).docx"; "PAE C2 HQ      Γöé
+Γöé Interview (Mr. Manning).docx" | "We are operating on a full stack            Γöé
+Γöé capability... they're still operating under the old process and looking at   Γöé
+Γöé each individual line as a capability and not looking at holistically what    Γöé
+Γöé the portfolio is trying to deliver" [11, 12]. "Create program, protect       Γöé
+Γöé program at all costs... If I have dependencies on other people, that's bad"  Γöé
+Γöé [13, 14]. | High | **Value Stream Mapping & Dependency Management:**         Γöé
+Γöé Transitioning to a portfolio model requires teams to be incentivized for     Γöé
+Γöé cross-program synergy rather than protecting siloed program baselines. |     Γöé
+Γöé Medium (Exposes how middle-management reporting requests actively break the  Γöé
+Γöé PAE's holistic stack approach) | None. |                                     Γöé
+Γöé | **Desired Outcome: Decision Dominance via Accelerated Tech Refresh over    Γöé
+Γöé Long-Term Sustainment** | "Pasted Text"; "PAE C2CC2 Interview (BG            Γöé
+Γöé Taylor).docx"; "PAE C2 Interview (BG Kevin Chaney).docx" | "The primary      Γöé
+Γöé objective of the PAE C2/CC2 is to achieve Decision Dominance" [15].          Γöé
+Γöé "Modernize or sustain through modernization. Instead of spending a lot of    Γöé
+Γöé money sustaining something for 10 years, I'd rather replace it with a new    Γöé
+Γöé capability in two years" [16]. | High | **Outcome-Based Metrics:** Success   Γöé
+Γöé criteria must pivot from cost/schedule/performance against a static baseline Γöé
+Γöé to "speed of delivery" and the delta between US technology and adversary     Γöé
+Γöé capabilities. | Low | None. |                                                Γöé
+Γöé                                                                              Γöé
+Γöé Sources: e189da46-a523-4cf1-87d1-16053d3068f1,                               Γöé
+Γöé dc744095-1283-49ee-a49c-6ec19ea4310d, b831ef13-81f3-4347-9a1e-e5a55cee1a17,  Γöé
+Γöé 551e5ba2-1127-49a9-b471-5918b7531152, 9a638060-3ac2-45ef-bd72-e2c73f870f6e,  Γöé
+Γöé 0c5a5b4e-a698-437c-ba10-4bd41605dc4f, 97245ff1-711d-4699-9c95-6fc72c9eaf51   Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»

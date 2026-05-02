@@ -1,0 +1,76 @@
+{
+  "trackId": "20260423-email-triage-interactive-auth-popups",
+  "title": "Eliminate Email Triage Interactive Auth Popups",
+  "status": "completed",
+  "created": "2026-04-23",
+  "completed": "2026-04-25",
+  "estimatedHours": "4-8",
+  "actualHours": "2",
+  "assignedTo": "Build Agent",
+  "type": "maintenance",
+  "tags": [
+    "windows",
+    "scheduled-task",
+    "microsoft-graph",
+    "authentication",
+    "email-triage",
+    "automation",
+    "app-only",
+    "certificate"
+  ],
+  "progress": {
+    "totalTasks": 24,
+    "completedTasks": 24,
+    "percentage": 100
+  },
+  "summary": "Migrated hourly email triage scheduled task from delegated interactive Graph auth to app-only certificate-based auth using the existing 'daily-priority-briefing-graph' Entra app registration. Eliminated Windows Terminal and Microsoft account picker popups.",
+  "keyOutcomes": [
+    "Root cause identified: delegated Connect-MgGraph in hourly scheduled task triggered interactive auth UI",
+    "Reused existing 'daily-priority-briefing-graph' app (already had Mail.ReadWrite app permissions + cert credential)",
+    "Script refactored to app-only certificate auth with categorized exit codes (0/10/20/30/40/50/99)",
+    "Scheduled task hardened: Hidden=true, -WindowStyle Hidden, auth type guard",
+    "Dry-run verified: AppOnly auth succeeds, exit code 0, no interactive prompts",
+    "Runbook created with verification commands, cert rotation, incident triage, and rollback procedures"
+  ],
+  "risks": [
+    "Certificate expires March 2029 — rotation needed before then",
+    "Task runs under InteractiveToken principal — requires user to be logged in for cert store access",
+    "If certificate removed from user cert store, task fails with exit code 10"
+  ],
+  "dependencies": [
+    "Entra ID app registration access",
+    "Graph admin consent capability",
+    "Mailbox API compatibility validation for app permissions"
+  ],
+  "blocking": [],
+  "relatedTracks": [
+    "20260315-ms365-mcp-to-cli-migration",
+    "20260315-m365-mcp-cleanup-and-hardening"
+  ],
+  "deliverables": [
+    "spec.md",
+    "plan.md",
+    "metadata.json",
+    "implementation-checklist.md",
+    "artifacts/runbook.md",
+    "artifacts/task-backup-20260425-130122.xml",
+    "artifacts/hourly-email-auto-sort-backup-20260425-130134.ps1"
+  ],
+  "validationCriteria": [
+    "No popup windows during multi-run validation window",
+    "Scheduled task returns successful run results",
+    "Email routing behavior remains correct",
+    "Operations and rollback documentation complete"
+  ],
+  "validationResults": {
+    "dryRun": {
+      "timestamp": "2026-04-25T13:08:09",
+      "exitCode": 0,
+      "authType": "AppOnly",
+      "appName": "daily-priority-briefing-graph",
+      "status": "success"
+    },
+    "scheduledTaskLastResult": 0,
+    "nextScheduledValidation": "Monitor 2PM and 3PM runs on 2026-04-25 for continued AppOnly confirmation"
+  }
+}
