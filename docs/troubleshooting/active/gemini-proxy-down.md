@@ -3,7 +3,7 @@
 **Status:** Active troubleshooting guide  
 **Applies To:** OpenCode agents using Google Gemini models via local proxy  
 **Symptoms:** `fetch failed`, `ECONNREFUSED 127.0.0.1:8000`, `429 Too Many Requests`, proxy not responding  
-**Last Updated:** April 20, 2026
+**Last Updated:** May 2, 2026
 
 ---
 
@@ -413,33 +413,32 @@ git checkout README.md
 
 ---
 
-## Google Gemini API Model Restrictions (2026-04-20)
+## Google Gemini API Model Restrictions (2026-04-20, updated 2026-05-02)
 
-**⚠️ Critical: Google has restricted Pro-tier model access per account/key.**
+**⚠️ Critical: Google has restricted API access to the primary family plan account only.**
 
-As of April 2026, Google AI Studio has restricted model access **per account**, with significant differences:
+As of April 2026, Google AI Studio restricted Pro-tier model access per account/key. As of May 2, 2026, Google further changed the family plan so that **only the primary account holder** (`davidawitkin@gmail.com`) can use the Gemini API at all. Raquel's and Tiberius's keys were removed from the proxy (0 successes, 11 failures each at time of removal).
 
-| Model                  | Dave (`AIzaSyCND2NS...`) | Raquel (`AIzaSyAIHoxs...`) | Tiberius (`AIzaSyDQJD_p...`) |
-| ---------------------- | ------------------------ | -------------------------- | ----------------------------- |
-| Gemini 3.1 Pro         | ✅ Available (limited)   | **BLOCKED (0 quota)**      | **BLOCKED (0 quota)**         |
-| Gemini 2.5 Pro         | ✅ Available (limited)   | **BLOCKED (0 quota)**      | **BLOCKED (0 quota)**         |
-| Gemini 2.5 Flash       | ✅ Available             | ✅ Available                | ✅ Available                  |
-| Gemini 3.1 Flash Lite  | ✅ Available             | ✅ Available                | ✅ Available                  |
-| Gemma (open-source)    | ✅ Available             | ✅ Available                | ✅ Available                  |
+### Per-Key Model Availability (single key — Dave only)
 
-**Key takeaway:** Only Dave's key (`davidawitkin@gmail.com`) retains Gemini 3.1 Pro access. Raquel's and Tiberius's keys are Flash-only. The reason for this account-level difference is unknown.
+| Model                  | Dave (`AIzaSyCND2NS...`) |
+| ---------------------- | ------------------------ |
+| Gemini 3.1 Pro         | ✅ Available (limited)   |
+| Gemini 2.5 Pro         | ✅ Available (limited)   |
+| Gemini 2.5 Flash       | ✅ Available             |
+| Gemini 3.1 Flash Lite  | ✅ Available             |
+| Gemma (open-source)    | ✅ Available             |
 
-**Proxy behavior impact:** Round-robin rotation means Pro-tier requests generate 2 failures (Raquel + Tiberius) before hitting Dave's key. This wastes quota and increases latency.
+**Key takeaway:** Proxy runs on a single key. No round-robin rotation. Rate limits will be hit sooner under heavy use.
 
 **Symptoms you might see:**
-- Intermittent 403 errors on Gemini 3.1 Pro requests (2 of 3 keys will fail)
-- Higher-than-expected backoff times on Pro model requests
-- Flash models work reliably across all keys
+- More frequent 429 rate-limit errors (only 1 key instead of 3)
+- Flash models work reliably; Pro models have limited quota
 
 **Workaround:**
-1. Use Flash models when possible (all 3 keys work)
-2. Expect latency on Pro-tier requests due to round-robin failures
-3. Consider alternative providers for Pro-tier capability
+1. Use Flash models when possible (lower quota consumption)
+2. Expect potential rate-limiting under heavy use
+3. Consider alternative providers for additional capacity
 
 ---
 
@@ -479,4 +478,4 @@ Invoke-RestMethod -Uri "http://127.0.0.1:8000/reload-keys" `
 
 **Document Version:** 1.0  
 **Created:** March 12, 2026  
-**Last Verified:** Proxy running with 3 keys, opencode-scheduler tasks active, health-check exit 0
+**Last Verified:** Proxy running with 1 key (Dave primary), family plan keys removed 2026-05-02

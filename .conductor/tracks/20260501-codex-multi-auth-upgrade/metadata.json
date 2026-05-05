@@ -1,17 +1,17 @@
 {
   "trackId": "20260501-codex-multi-auth-upgrade",
   "title": "Upgrade oc-chatgpt-multi-auth@5.4.4 → oc-codex-multi-auth@6.1.8",
-  "status": "active",
+  "status": "completed",
   "created": "2026-05-01",
-  "completed": null,
+  "completed": "2026-05-01",
   "estimatedHours": "0.5",
   "assignedTo": "Build Agent",
   "type": "maintenance",
   "tags": ["opencode", "plugin", "codex", "multi-auth", "upgrade"],
   "progress": {
     "totalTasks": 20,
-    "completedTasks": 8,
-    "percentage": 40
+    "completedTasks": 20,
+    "percentage": 100
   },
   "summary": "Upgrade the deprecated oc-chatgpt-multi-auth plugin to the renamed oc-codex-multi-auth, reconciling 5 local patches against upstream v6.1.8, configuring stream stall timeout, and validating OAuth accounts.",
   "keyOutcomes": [

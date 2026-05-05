@@ -51,3 +51,7 @@ Fix silent failures when OpenCode routes requests to OpenAI models (gpt-5.3-code
 - [ ] Stream stall timeout ≥120 seconds
 - [ ] At least one OpenAI model completes a full agent loop (user message → tool calls → final response) without fallback
 - [ ] All tasks in plan.md marked [x]
+
+## Supersession Note
+
+Superseded on 2026-05-01 by track 20260501-codex-multi-auth-upgrade. The local runtime patches documented here were reconciled against upstream oc-codex-multi-auth@6.1.8. The stream stall timeout is now preserved via CODEX_AUTH_STREAM_STALL_TIMEOUT_MS=120000 rather than source patching.

@@ -1,0 +1,56 @@
+{
+  "trackId": "20260502-skill-junction-unification",
+  "title": "Skill Junction Unification — Single Source of Truth",
+  "status": "active",
+  "phase": "planning",
+  "priority": "high",
+  "created_at": "2026-05-02",
+  "updated_at": "2026-05-02T13:11:00Z",
+  "completed": null,
+  "estimatedHours": "0.5-1",
+  "assignedTo": "Build Agent",
+  "type": "maintenance",
+  "tags": ["skills", "junctions", "codex", "agents", "lazy-vault"],
+  "progress": {
+    "totalTasks": 27,
+    "completedTasks": 0,
+    "percentage": 0
+  },
+  "summary": "Repair 49 broken Codex junctions and establish lazy vault as single source of truth for all 54 skills. Bridge 4 always-on skills into vault via junctions, replace individual skill-level junctions with parent-level directory junctions in Codex and .agents, and add skill/ to plugin basePaths.",
+  "keyOutcomes": [
+    "All 54 skills discoverable via skill_find/skill_use",
+    "Codex sees all 54 skills through single parent junction",
+    ".agents sees all 54 skills through single parent junction",
+    "Zero broken junctions",
+    "Adding new skills to vault requires zero junction maintenance"
+  ],
+  "risks": [
+    "Name collision if always-on skills already exist in vault (mitigated by Phase 0 pre-check)",
+    "Directory locked by running Codex process during junction replacement (mitigated by close-first instruction)",
+    "Plugin basePaths change causes duplicate skill entries (mitigated by rollback procedure)"
+  ],
+  "dependencies": [
+    "Track 20260501-skill-token-optimization (completed) — established lazy vault architecture",
+    "Track 20260502-lazy-skill-discovery-regression (Phases 0-3 complete) — confirmed plugin health"
+  ],
+  "blocking": [],
+  "relatedTracks": [
+    "20260502-lazy-skill-discovery-regression",
+    "20260501-skill-token-optimization"
+  ],
+  "deliverables": [
+    "4 bridge junctions in lazy vault pointing to always-on skills",
+    "Updated .opencode-skillful.json with dual basePaths",
+    "Single parent junction: ~/.codex/skills/ → ~/.opencode-lazy-vault/",
+    "Single parent junction: ~/.agents/skills/ → ~/.opencode-lazy-vault/",
+    "Zero broken junctions across all skill directories"
+  ],
+  "validationCriteria": [
+    "skill_find \"*\" returns 54 skills after restart",
+    "Codex sees 54 skills through ~/.codex/skills/",
+    ".agents sees 54 skills through ~/.agents/skills/",
+    "Zero broken junctions in Codex or .agents",
+    "Always-on skills still physically in ~/.config/opencode/skill/",
+    "Plugin config has 2 basePaths and valid JSON"
+  ]
+}

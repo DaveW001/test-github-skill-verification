@@ -1,0 +1,57 @@
+{
+  "trackId": "20260502-disable-md-table-formatter-plugin",
+  "title": "Disable OpenCode Markdown Table Formatter Plugin",
+  "status": "completed",
+  "phase": "complete",
+  "priority": "medium",
+  "created_at": "2026-05-02",
+  "updated_at": "2026-05-02T17:25:00Z",
+  "completed": "2026-05-02",
+  "estimatedHours": "0.25-0.5",
+  "assignedTo": "Build Agent",
+  "type": "configuration-maintenance",
+  "tags": [
+    "opencode",
+    "configuration",
+    "plugin",
+    "maintenance"
+  ],
+  "progress": {
+    "totalTasks": 17,
+    "completedTasks": 17,
+    "percentage": 100
+  },
+  "summary": "Safely disable @franlol/opencode-md-table-formatter@0.0.3 from the active global OpenCode plugin array, validate config parsing, update reference docs, and preserve rollback.",
+  "keyOutcomes": [
+    "Markdown table formatter plugin no longer loads at OpenCode startup",
+    "Global opencode.jsonc backup exists before the edit",
+    "OpenCode config parses after the edit",
+    "Reference documentation reflects six active plugins"
+  ],
+  "risks": [
+    "JSONC syntax corruption during manual edit",
+    "Higher-precedence project config unexpectedly exists",
+    "OpenCode CLI unavailable for validation"
+  ],
+  "dependencies": [
+    "docs/reference/opencode-configuration.md current config location guidance",
+    "C:/Users/DaveWitkin/.config/opencode/opencode.jsonc active global config"
+  ],
+  "blocking": [],
+  "relatedTracks": [
+    "20260501-skill-token-optimization",
+    "20260502-lazy-skill-discovery-regression"
+  ],
+  "deliverables": [
+    "Updated C:/Users/DaveWitkin/.config/opencode/opencode.jsonc with plugin entry removed",
+    "Timestamped rollback backup in C:/Users/DaveWitkin/.config/opencode/",
+    "Updated docs/reference/opencode-configuration.md plugin count/list",
+    "Execution handover with rollback command"
+  ],
+  "validationCriteria": [
+    "Target plugin string absent from active opencode.jsonc",
+    "opencode debug config returns no parse errors",
+    "docs/reference/opencode-configuration.md no longer lists md-table-formatter as active",
+    "Rollback backup exists and contains original plugin string"
+  ]
+}

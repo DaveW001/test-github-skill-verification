@@ -1,0 +1,33 @@
+{
+  "track_id": "20260502-lazy-skill-discovery-regression",
+  "title": "Lazy skill discovery regression (Outlook/email)",
+  "status": "completed",
+  "phase": "validation",
+  "priority": "high",
+  "created_at": "2026-05-02",
+  "completed_at": "2026-05-02T23:00:00Z",
+  "updated_at": "2026-05-02T23:00:00Z",
+  "owner_agent": "01-Planner",
+  "summary": "Investigate why skill_find/skill_use expose only 4 native skills and fail to load lazy Outlook/email skills despite populated lazy vault and configured plugin.",
+  "dependencies": [
+    "@zenobius/opencode-skillful plugin",
+    "C:\\Users\\DaveWitkin\\.config\\opencode-skillful\\.opencode-skillful.json",
+    "C:\\Users\\DaveWitkin\\.opencode-lazy-vault"
+  ],
+  "acceptance_criteria": [
+    "skill_find \"outlook\" returns Outlook skills",
+    "skill_find \"email\" returns email skills",
+    "skill_use \"outlook_email_search\" succeeds",
+    "skill_use \"outlook_inbox_triage\" succeeds",
+    "No regression of low-token skill architecture"
+  ],
+  "notes": [
+    "Plan rewritten 2026-05-02 for Build-agent executability: all skill_find/skill_use calls removed from executable phases; replaced with filesystem checks + explicit PowerShell commands",
+    "Phase 4 validation (skill_find/skill_use smoke tests) reserved for Planner/Human post-restart",
+    "Path discrepancy documented: lazy-loaded-skills.md cites old lazy-skills path; actual vault is .opencode-lazy-vault",
+    "EXECUTED 2026-05-02T22:15Z: Phases 0-3 complete. Plugin reinstalled @1.2.5. 5 stale doc refs fixed. microsoft-graph skill moved from native dirs to lazy vault (was leaking into system prompt). npm doctor: minor version lag only (not critical). 12 false-positive frontmatter flags (tool_context appears before name).",
+    "ROOT CAUSE 2026-05-02T22:45Z: Config was at ~/.config/opencode/.opencode-skillful.json but plugin searches ~/.config/opencode-skillful/, ~/.config/ directly, and ~/ — NOT ~/.config/opencode/. Fixed by moving to C:\\Users\\DaveWitkin\\.config\\opencode-skillful\\.opencode-skillful.json",
+    "SMOKE TESTS PASSED 2026-05-02T23:00Z: skill_find '*' returns 48 skills (was 4). skill_use with underscores works. Token guardrail confirmed. microsoft-graph frontmatter fixed (pending next restart).",
+    "IMPORTANT: skill names in skill_use use underscores (outlook_email_search) not hyphens, matching the plugin's name normalization from YAML frontmatter."
+  ]
+}

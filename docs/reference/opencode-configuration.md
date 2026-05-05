@@ -33,14 +33,13 @@ OpenCode supports config in JSON or JSONC (JSON with Comments) format. Config fi
 This is the **only** config file. Contains everything:
 
 - **OpenCode version:** v1.14.25 (upgraded 2026-04-25, was v1.2.26)
-- **Plugins:** 7 plugins (snippets, multi-auth, ignore, mystatus, md-table-formatter, dcp, tool-search)
+- **Plugins:** 6 plugins (snippets, skillful, codex-multi-auth, ignore, mystatus, dcp)
   - `opencode-snippets@1.8.0` — Snippet management
-  - `oc-chatgpt-multi-auth@5.4.4` — Multi-provider auth
+  - `@zenobius/opencode-skillful` — Lazy skill discovery and on-demand loading
+  - `oc-codex-multi-auth` — Multi-provider auth (successor to oc-chatgpt-multi-auth)
   - `opencode-ignore@1.1.0` — File ignore patterns
   - `opencode-mystatus` — AI quota status command
-  - `@franlol/opencode-md-table-formatter@0.0.3` — Markdown table formatting
   - `@tarquinen/opencode-dcp@latest` — Dynamic Context Pruning (hooks `tool.execute.before`)
-  - `opencode-tool-search@0.4.3` — BM25 + regex tool search, defers non-core tool descriptions (hooks `tool.definition`) — [full reference](./opencode-tool-search.md)
 - **Permissions:** Explicit allow rules for tools, skills, bash, etc.
 - **Providers:**
   - `google` — Gemini models via local proxy (2.5-flash, 2.5-pro, 3-flash-preview, 3-pro-preview) + blacklist of unused models

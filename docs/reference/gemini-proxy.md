@@ -3,7 +3,7 @@
 **Location:** `C:\Users\DaveWitkin\.local\gemini-proxy\`  
 **Port:** `127.0.0.1:8000`  
 **Purpose:** Load-balanced proxy for Google Gemini API with automatic key rotation  
-**Last Updated:** April 20, 2026
+**Last Updated:** May 2, 2026
 
 ---
 
@@ -118,13 +118,13 @@ C:\Users\DaveWitkin\.config\opencode\opencode.jsonc
 
 **File:** `C:\Users\DaveWitkin\.local\gemini-proxy\api_keys.txt`
 
-Current configuration: **3 active keys**
+Current configuration: **1 active key**
 
 ```
-AIzaSyCND2NSbn3Sjkp0fFJb4Rkt4RdmDNe1q3g    # Dave Personal for OC (replaced 2026-04-20)
-AIzaSyAIHoxsjwpCRS9vCw6hxWSMw2afsvrCxG4    # Raquel Personal for OC (replaced 2026-04-20)
-AIzaSyDQJD_pwtyIPAiJ_-clerkI1hgQRnhzh50    # Tiberius Personal for OC (replaced 2026-04-20)
+AIzaSyCND2NSbn3Sjkp0fFJb4Rkt4RdmDNe1q3g    # Dave Personal for OC (davidawitkin@gmail.com) — replaced 2026-04-20
 ```
+
+**Removed keys (2026-05-02):** Raquel and Tiberius keys removed — Google changed the family plan, no longer allowing API usage except for the primary account holder (`davidawitkin@gmail.com`). Both keys showed 0 successes and 11 failures.
 
 **Note:** API keys are rotated automatically. The proxy tracks success/failure per key and implements exponential backoff for failed keys.
 
@@ -140,31 +140,28 @@ All 3 previous keys were flagged by Google as **leaked/compromised** (HTTP 403 "
 
 ---
 
-## Google Gemini API Model Restrictions (2026-04-20)
+## Google Gemini API Model Restrictions (2026-04-20, updated 2026-05-02)
 
-**⚠️ Critical: Google has revoked access to Pro-tier models for most keys in this proxy.**
+**⚠️ Critical: Google has revoked access to Pro-tier models for non-primary family plan accounts.**
 
-As of April 2026, Google AI Studio has restricted model access **per account/key**, with significant differences between accounts:
+As of April 2026, Google AI Studio has restricted model access **per account/key**, with significant differences between accounts. As of May 2, 2026, Google further changed the family plan so that **only the primary account holder** (`davidawitkin@gmail.com`) can use the API at all — family member accounts (Raquel, Tiberius) are no longer authorized.
 
 ### Per-Key Model Availability
 
-| Model                  | Dave (`AIzaSyCND2NS...`) | Raquel (`AIzaSyAIHoxs...`) | Tiberius (`AIzaSyDQJD_p...`) |
-| ---------------------- | ------------------------ | -------------------------- | ----------------------------- |
-| Gemini 3.1 Pro         | ✅ Available (limited)   | **BLOCKED (0 quota)**      | **BLOCKED (0 quota)**         |
-| Gemini 2.5 Pro         | ✅ Available (limited)   | **BLOCKED (0 quota)**      | **BLOCKED (0 quota)**         |
-| Gemini 2.5 Flash       | ✅ Available             | ✅ Available                | ✅ Available                  |
-| Gemini 3.1 Flash Lite  | ✅ Available             | ✅ Available                | ✅ Available                  |
-| Gemma (open-source)    | ✅ Available             | ✅ Available                | ✅ Available                  |
+| Model                  | Dave (`AIzaSyCND2NS...`) |
+| ---------------------- | ------------------------ |
+| Gemini 3.1 Pro         | ✅ Available (limited)   |
+| Gemini 2.5 Pro         | ✅ Available (limited)   |
+| Gemini 2.5 Flash       | ✅ Available             |
+| Gemini 3.1 Flash Lite  | ✅ Available             |
+| Gemma (open-source)    | ✅ Available             |
 
-**Key takeaway:** Only Dave's key (`davidawitkin@gmail.com`) retains Gemini 3.1 Pro access. Raquel's and Tiberius's keys are restricted to Flash-tier and open-source models only. The reason for this account-level difference is unknown — it may relate to account age, usage history, or Google's internal policies.
+**Key takeaway:** Only Dave's key (`davidawitkin@gmail.com`) is active in the proxy. Raquel's and Tiberius's keys were removed on 2026-05-02 after Google changed the family plan to restrict API access to the primary account only. Both keys had 0 successes and 11 failures at time of removal.
 
-**Proxy behavior impact:** Since the proxy rotates keys round-robin, a request for Gemini 3.1 Pro has a 1-in-3 chance of hitting Dave's key (success) or hitting Raquel/Tiberius's key (403 failure → backoff). The proxy will retry on the next key, but this means Pro-tier requests generate 2 failures before each success, wasting quota and increasing latency.
-
-**Workaround:** If Pro-tier models are needed, consider:
-1. **Prioritize Dave's key for Pro requests** — currently not supported by the proxy (round-robin only)
-2. Using a different Google Cloud project with paid billing enabled
-3. Using alternative providers (OpenAI, Anthropic) for Pro-tier capability
-4. Optimizing prompts to work within Flash model constraints
+**Proxy behavior impact:** Single-key operation means no round-robin rotation. All requests go through Dave's key. Rate limits will be hit sooner under heavy use. If additional quota is needed, consider:
+1. Using a different Google Cloud project with paid billing enabled
+2. Using alternative providers (OpenAI, Anthropic) for additional capacity
+3. Optimizing prompts to stay within single-key quota
 
 ---
 
@@ -400,6 +397,7 @@ All Google Gemini API endpoints are proxied:
 | 2026-03-14 | Added request forensics | `detailed_requests.log` records user-agent, headers, and body preview |
 | 2026-04-20 | **Emergency key rotation** | All 3 keys flagged as leaked by Google (403). Replaced all keys in `api_keys.txt` and `key_names.json`. Reloaded via `/reload-keys` (no restart needed). |
 | 2026-04-20 | **Model access revoked (per-key)** | Google removed Pro-tier access for Raquel and Tiberius keys (0 quota). Dave's key retains both Gemini 3.1 Pro and 2.5 Pro (limited). Only Flash models + Gemma universally available across all keys. |
+| 2026-05-02 | **Family plan keys removed** | Google changed the family plan — only the primary account (`davidawitkin@gmail.com`) can use the API. Removed Raquel and Tiberius keys from `api_keys.txt` (both had 0 successes, 11 failures). Proxy now running single-key. Reloaded via `/reload-keys`. Updated docs. |
 
 ---
 

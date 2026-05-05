@@ -27,7 +27,7 @@ We have decided to decommission the M365 MCP server and switch to a CLI-first ap
 
 ## Implementation Details
 
-- **Auth**: App-only certificate authentication using `Connect-MgGraph`.
+- **Auth**: App-only authentication using `connect-graph-no-wam.ps1` to avoid MSAL/WAM account-picker popups. Direct `Connect-MgGraph -CertificateThumbprint` was deprecated because it triggered interactive account selection even in app-only mode. See [microsoft-graph-wam-account-picker.md](../troubleshooting/active/microsoft-graph-wam-account-picker.md) for full history.
 - **Primary Tools**: `Get-MgUserMailFolder`, `Get-MgUserMessage`, `Move-MgUserMessage`.
 - **Config**: M365 block removed from `opencode.json`.
 

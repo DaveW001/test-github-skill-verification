@@ -15,6 +15,7 @@
     "test:visual:stability-log": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Update-CrossBrowserStabilityLog.ps1"
   },
   "dependencies": {
+    "@zenobius/opencode-skillful": "^1.2.5",
     "openwork-orchestrator": "^0.11.126"
   },
   "devDependencies": {

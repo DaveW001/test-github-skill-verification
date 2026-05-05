@@ -1,61 +1,60 @@
-# Skill Health Report — 2026-05-01
+# Skill Health Report — 2026-05-05
 
-**Date**: 2026-05-01
-**Total skills checked**: 51
-**Issues found**: 17
+**Date**: 2026-05-05
+**Total skills checked**: 5
+**Issues found**: 36
 
 ## Auto-Fixes Applied
 
-**Junctions Created (26):**
-- `JUNCTION_CREATED|calendar-schedule|codex`
-- `JUNCTION_CREATED|calendar-schedule|agents`
-- `JUNCTION_CREATED|calendar-today|codex`
-- `JUNCTION_CREATED|calendar-today|agents`
-- `JUNCTION_CREATED|email-routing-config|codex`
-- `JUNCTION_CREATED|email-routing-config|agents`
-- `JUNCTION_CREATED|gmail-draft-reply|codex`
-- `JUNCTION_CREATED|gmail-draft-reply|agents`
-- `JUNCTION_CREATED|gmail-inbox-triage|codex`
-- `JUNCTION_CREATED|gmail-inbox-triage|agents`
-- `JUNCTION_CREATED|google-calendar-schedule|codex`
-- `JUNCTION_CREATED|google-calendar-schedule|agents`
-- `JUNCTION_CREATED|google-calendar-today|codex`
-- `JUNCTION_CREATED|google-calendar-today|agents`
-- `JUNCTION_CREATED|google-contacts|codex`
-- `JUNCTION_CREATED|google-contacts|agents`
-- `JUNCTION_CREATED|huashu-design|codex`
-- `JUNCTION_CREATED|huashu-design|agents`
-- `JUNCTION_CREATED|image-to-html-reconstruction|codex`
-- `JUNCTION_CREATED|image-to-html-reconstruction|agents`
-- `JUNCTION_CREATED|knowledge-graph-builder|codex`
-- `JUNCTION_CREATED|knowledge-graph-builder|agents`
-- `JUNCTION_CREATED|outlook-email-search|codex`
-- `JUNCTION_CREATED|outlook-email-search|agents`
-- `JUNCTION_CREATED|unified-calendar-today|codex`
-- `JUNCTION_CREATED|unified-calendar-today|agents`
+- `JUNCTION_CREATED` | `pptx-to-pdf-converter` | agents — missing junction created → `C:\Users\DaveWitkin\.config\opencode\skill\pptx-to-pdf-converter`
 
 ## Flags (Manual Review Needed)
 
-**Index Missing (12):**
-- `INDEX_MISSING|calendar-schedule`
-- `INDEX_MISSING|calendar-today`
-- `INDEX_MISSING|email-routing-config`
-- `INDEX_MISSING|gmail-draft-reply`
-- `INDEX_MISSING|gmail-inbox-triage`
-- `INDEX_MISSING|google-calendar-schedule`
-- `INDEX_MISSING|google-calendar-today`
-- `INDEX_MISSING|google-contacts`
-- `INDEX_MISSING|image-to-html-reconstruction`
-- `INDEX_MISSING|knowledge-graph-builder`
-- `INDEX_MISSING|outlook-email-search`
-- `INDEX_MISSING|unified-calendar-today`
+The following 35 skills are listed in the global skills index but have no matching canonical directory at `C:\Users\DaveWitkin\.config\opencode\skill\`. All exist as lazy-loaded skills in `C:\Users\DaveWitkin\.codex\skills\`.
 
-**Index Stale (2 real):**
-- `INDEX_STALE|terminal-aliases` — directory no longer exists in canonical skills
-- `INDEX_STALE|youtube-shorts` — directory no longer exists in canonical skills
+| # | Flag | Skill | Reason |
+|---|------|-------|--------|
+| 1 | INDEX_STALE | `content-trend-researcher` | No canonical directory |
+| 2 | INDEX_STALE | `image-generator` | No canonical directory |
+| 3 | INDEX_STALE | `image-manifest-builder` | No canonical directory |
+| 4 | INDEX_STALE | `youtube-shorts` | No canonical directory |
+| 5 | INDEX_STALE | `design-system-extractor` | No canonical directory |
+| 6 | INDEX_STALE | `frontend-design` | No canonical directory |
+| 7 | INDEX_STALE | `html-demo-design` | No canonical directory |
+| 8 | INDEX_STALE | `pa-ui-design` | No canonical directory |
+| 9 | INDEX_STALE | `notebooklm-cli` | No canonical directory |
+| 10 | INDEX_STALE | `notebooklm-meta-prompt` | No canonical directory (duplicate index entry — lines 32 and 92) |
+| 11 | INDEX_STALE | `firebase-deployment-specialist` | No canonical directory |
+| 12 | INDEX_STALE | `github-create-repo` | No canonical directory |
+| 13 | INDEX_STALE | `github-management` | No canonical directory |
+| 14 | INDEX_STALE | `powershell-master` | No canonical directory |
+| 15 | INDEX_STALE | `webapp-testing` | No canonical directory |
+| 16 | INDEX_STALE | `doc-to-markdown` | No canonical directory |
+| 17 | INDEX_STALE | `markdown-pdf-publisher` | No canonical directory |
+| 18 | INDEX_STALE | `markdown-render` | No canonical directory |
+| 19 | INDEX_STALE | `clickup` | No canonical directory |
+| 20 | INDEX_STALE | `clickup-cli` | No canonical directory |
+| 21 | INDEX_STALE | `session-retro` | No canonical directory |
+| 22 | INDEX_STALE | `scheduled-job-best-practices` | No canonical directory |
+| 23 | INDEX_STALE | `terminal-aliases` | No canonical directory |
+| 24 | INDEX_STALE | `windows-task-scheduler` | No canonical directory |
+| 25 | INDEX_STALE | `email-auto-sorter` | No canonical directory |
+| 26 | INDEX_STALE | `email-draft-reply` | No canonical directory |
+| 27 | INDEX_STALE | `email-to-clickup` | No canonical directory |
+| 28 | INDEX_STALE | `outlook-inbox-triage` | No canonical directory |
+| 29 | INDEX_STALE | `first-principles-mastery` | No canonical directory |
+| 30 | INDEX_STALE | `thinking-partner` | No canonical directory |
+| 31 | INDEX_STALE | `agent-writer` | No canonical directory |
+| 32 | INDEX_STALE | `command-writer` | No canonical directory |
+| 33 | INDEX_STALE | `skill-writer` | No canonical directory |
+| 34 | INDEX_STALE | `snippet-writer` | No canonical directory |
+| 35 | INDEX_STALE | `gemini-proxy` | No canonical directory |
 
-> Note: `cup`, `nlm`, and `SKILL.md` were false positives from backtick matches in the index (CLI tool names and file references, not skill names).
+## Observations
+
+- **Duplicate index entry**: `notebooklm-meta-prompt` appears in both "NotebookLM & Research" (line 32) and "AI & Agent Tooling" (line 92). Consider deduplicating.
+- **Architecture note**: The canonical directory (`opencode\skill\`) contains only 5 always-on native skills. The global index lists 40 skills, with 35 served as lazy-loaded skills from `codex\skills\`. Consider updating the index description to document this multi-location architecture and avoid false INDEX_STALE signals in future runs.
 
 ## Summary
 
-51 skills checked. 26 auto-fixes applied (junctions created). 14 flags for manual review (12 missing from index, 2 stale in index).
+5 canonical skills checked. 1 auto-fix applied (junction for pptx-to-pdf-converter in agents). 35 flags for manual review — all INDEX_STALE entries exist as lazy-loaded skills in codex-skills/ and may reflect an outdated index scope rather than genuine staleness.

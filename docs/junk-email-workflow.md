@@ -84,12 +84,16 @@ python process_junk_emails.py
 This is the standard, low-overhead path for mailbox operations.
 
 ```powershell
-# 1. Connect using App-Only Certificate Auth
-Connect-MgGraph `
-  -ClientId $env:DPB_GRAPH_CLIENT_ID `
-  -TenantId $env:DPB_GRAPH_TENANT_ID `
-  -CertificateThumbprint $env:DPB_GRAPH_CERT_THUMBPRINT `
-  -NoWelcome
+# 1. Connect using no-WAM App-Only Auth (avoids MSAL/WAM account-picker popups)
+. "C:\Users\DaveWitkin\.opencode-lazy-vault\microsoft-graph\scripts\connect-graph-no-wam.ps1"
+Connect-GraphNoWam -ClientId $env:DPB_GRAPH_CLIENT_ID -TenantId $env:DPB_GRAPH_TENANT_ID -CertThumbprint $env:DPB_GRAPH_CERT_THUMBPRINT
+
+# Deprecated/problematic: Direct certificate auth that triggered WAM popups:
+# Connect-MgGraph `
+#   -ClientId $env:DPB_GRAPH_CLIENT_ID `
+#   -TenantId $env:DPB_GRAPH_TENANT_ID `
+#   -CertificateThumbprint $env:DPB_GRAPH_CERT_THUMBPRINT `
+#   -NoWelcome
 
 # 2. Move message
 $userId = "58dba6be-24ef-4a75-b968-c64f75b504b1" # Dave Witkin

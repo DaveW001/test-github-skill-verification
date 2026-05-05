@@ -70,7 +70,7 @@ Checkbox states:
   Success criteria: user confirms OpenCode has been restarted.
   Failure recovery: if the user cannot restart immediately, pause this track before Phase 4. Do not mark validation complete before restart.
 
-- [ ] After OpenCode restart, verify the new plugin package cache exists.
+- [x] After OpenCode restart, verify the new plugin package cache exists.
   Command:
   ```powershell
   pwsh -NoProfile -Command 'Get-ChildItem "C:\Users\DaveWitkin\.cache\opencode\packages" -Directory | Where-Object { $_.Name -like "oc-codex-multi-auth@*" } | Select-Object -ExpandProperty FullName'
@@ -82,7 +82,7 @@ Checkbox states:
   ```
   Then report the npm output and stop.
 
-- [ ] Verify no debug body dump remains in the new plugin source.
+- [x] Verify no debug body dump remains in the new plugin source.
   Command:
   ```powershell
   pwsh -NoProfile -Command '$dirs = Get-ChildItem "C:\Users\DaveWitkin\.cache\opencode\packages" -Directory | Where-Object { $_.Name -like "oc-codex-multi-auth@*" }; foreach ($d in $dirs) { Get-ChildItem $d.FullName -Recurse -File | Select-String -Pattern "writeFileSync" -SimpleMatch }'
@@ -92,19 +92,19 @@ Checkbox states:
 
 ## Phase 4 — Validate Codex Tools and Models
 
-- [ ] Use the OpenCode Codex account tool `codex-list` with no tag filter.
+- [x] Use the OpenCode Codex account tool `codex-list` with no tag filter.
   Success criteria: all previously configured OAuth accounts are listed and no tool error is returned.
   Failure recovery: if the tool is unavailable, confirm OpenCode was restarted and that `C:\Users\DaveWitkin\.config\opencode\opencode.json` references `oc-codex-multi-auth`.
 
-- [ ] Use the OpenCode Codex account tool `codex-status`.
+- [x] Use the OpenCode Codex account tool `codex-status`.
   Success criteria: account status is returned without errors; no account shows an unrecoverable auth failure.
   Failure recovery: if refresh/auth errors appear, run `codex-health` next and report exact failing account labels.
 
-- [ ] Use the OpenCode Codex account tool `codex-health`.
+- [x] Use the OpenCode Codex account tool `codex-health`.
   Success criteria: refresh tokens validate successfully for configured accounts.
   Failure recovery: if any account fails, do not delete it; report the failing account index/label and ask the user whether to re-authenticate.
 
-- [ ] Verify `C:\Users\DaveWitkin\.config\opencode\opencode.json` contains the required model keys.
+- [x] Verify `C:\Users\DaveWitkin\.config\opencode\opencode.json` contains the required model keys.
   Command:
   ```powershell
   pwsh -NoProfile -Command '$models = (Get-Content "C:\Users\DaveWitkin\.config\opencode\opencode.json" -Raw | ConvertFrom-Json).provider.openai.models.PSObject.Properties.Name; $required = @("gpt-5.4-pro","gpt-5.4-mini","gpt-5.4-nano","gpt-5.5","gpt-5.5-fast","gpt-5.1-codex","gpt-5.1-codex-max","gpt-5.1-codex-mini","gpt-5-codex","gpt-5.1"); $missing = $required | Where-Object { $_ -notin $models }; if ($missing) { "MISSING: " + ($missing -join ", ") } else { "OK: all required models present" }'
@@ -112,7 +112,7 @@ Checkbox states:
   Success criteria: output is `OK: all required models present`.
   Failure recovery: if output starts with `MISSING:`, report the missing model keys and stop before marking the upgrade complete.
 
-- [ ] Verify the timeout setting that new OpenCode sessions inherit is `120000`.
+- [x] Verify the timeout setting that new OpenCode sessions inherit is `120000`.
   Command:
   ```powershell
   pwsh -NoProfile -Command "[Environment]::GetEnvironmentVariable('CODEX_AUTH_STREAM_STALL_TIMEOUT_MS','User')"
@@ -122,7 +122,7 @@ Checkbox states:
 
 ## Phase 5 — Cleanup and Documentation
 
-- [ ] Verify rollback cache remains present and do not delete it.
+- [x] Verify rollback cache remains present and do not delete it.
   Command:
   ```powershell
   pwsh -NoProfile -Command "Test-Path 'C:\Users\DaveWitkin\.cache\opencode\packages\oc-chatgpt-multi-auth@5.4.4'"
@@ -130,7 +130,7 @@ Checkbox states:
   Success criteria: output is `True`.
   Failure recovery: if output is `False`, warn the user rollback to the old cached patched plugin may not be available.
 
-- [ ] Verify local patch backup directories remain present and do not delete them.
+- [x] Verify local patch backup directories remain present and do not delete them.
   Command:
   ```powershell
   pwsh -NoProfile -Command 'Get-ChildItem "C:\Users\DaveWitkin\.cache\opencode\packages\oc-chatgpt-multi-auth@5.4.4" -Directory | Where-Object { $_.Name -like "codex-*-backup-*" } | Select-Object -ExpandProperty Name'
@@ -138,7 +138,7 @@ Checkbox states:
   Success criteria: output includes both `codex-silent-failure-backup-20260429-124515` and `codex-arguments-calllike-backup-20260429-145809`.
   Failure recovery: if either name is missing, warn the user that patch history is incomplete, but do not recreate or delete directories.
 
-- [ ] Add a supersession note to `C:\development\opencode\.conductor\tracks\20260429-openai-silent-failure\spec.md` after Phase 4 validation passes.
+- [x] Add a supersession note to `C:\development\opencode\.conductor\tracks\20260429-openai-silent-failure\spec.md` after Phase 4 validation passes.
   Append this exact section at the end of the file:
   ```md
   ## Supersession Note
@@ -152,7 +152,7 @@ Checkbox states:
   Success criteria: one matching line is printed.
   Failure recovery: if no matching line is printed, append the section once. Do not duplicate it if it already exists.
 
-- [ ] Update `C:\development\opencode\.conductor\tracks\20260501-codex-multi-auth-upgrade\metadata.json` after all validation tasks pass.
+- [x] Update `C:\development\opencode\.conductor\tracks\20260501-codex-multi-auth-upgrade\metadata.json` after all validation tasks pass.
   Required changes:
   - Set `"status": "completed"`
   - Set `"completed": "2026-05-01"`
@@ -164,7 +164,7 @@ Checkbox states:
   ```
   Success criteria: outputs `completed`, `2026-05-01`, and `100`.
 
-- [ ] Update `C:\development\opencode\.conductor\tracks-ledger.md` after all validation tasks pass.
+- [x] Update `C:\development\opencode\.conductor\tracks-ledger.md` after all validation tasks pass.
   Required change: move `20260501-codex-multi-auth-upgrade` from `## Active Tracks` to `## Completed Tracks` and include `(Completed: 2026-05-01)`.
   Verification command:
   ```powershell
