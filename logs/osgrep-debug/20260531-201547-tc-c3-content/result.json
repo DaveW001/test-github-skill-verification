@@ -1,0 +1,23 @@
+{
+  "label": "tc-c3-content",
+  "started": "2026-06-01T00:15:47.057584+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "search",
+    "auth token refresh",
+    "--content",
+    "--max-count",
+    "2"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "osgrep path repro\\sample.ts:1 [Definition]\n  export function refreshAuthToken(token: string): string {\n    return `${token}-refreshed`;\n  }\n\nlogs\\osgrep-debug\\20260313-210037-tc05-rerun-20260314-search\\result.json:20\n  pts for repeatable CLI-only validation.\\\\n  ## Core Usage Prompts\\\\n  1. find code path for auth token refresh\\\\n  2. find where feature fl\\\u001b[2m ...\u001b[22m\n    \"stderr\": \"\",\n    \"timed_out\": false,\n    \"duration_seconds\": 1.266,\n    \"finished\": \"2026-03-14T01:00:38.800167+00:00\",\n    \"command_text\": \"'C:\\\\Users\\\\DaveWitkin\\\\AppData\\\\Roaming\\\\npm\\\\osgrep.CMD' -- search refreshAuthToken\"\n  }\n\ndocs\\troubleshooting\\active\\codex-multi-auth-refresh-token-reused.md:1\n  # Troubleshooting: Codex Multi-Auth `refresh_token_reused` / Disabled Account\n  **Status:** Active troubleshooting note\n  **Plugin:** `oc-codex-multi-auth` v6.1.8 (ndycode, third-party)\n  **Date Captured:** May 25, 2026\n  ## Incident Summary\n  User observed Codex model requests failing with:\n  ```\n  All 1 account(s) failed (server errors or auth issues).\n  ```\n  `codex-health` reported `0 healthy, 1 unhealthy` with `refresh_token_reused` error. The actual root cause was **not** an expired token \u2014 it \u001b[2m ...\u001b[22m\n  ## Architecture Context\n  OpenCode's auth storage has **three layers** that can create confusion:\n  ... (+12 more lines)\n\nlogs\\osgrep-debug\\20260313-210037-tc05-rerun-20260314-search\\result.json:1\n  {\n    \"label\": \"tc05-rerun-20260314-search\",\n    \"started\": \"2026-03-14T01:00:37.108286+00:00\",\n    \"cwd\": \"C:/development/opencode/osgrep path repro\",\n    \"command\": [\n      \"osgrep\",\n      \"--\",\n      \"search\",\n      \"refreshAuthToken\"\n    ],\n    \"timeout_seconds\": 30,\n    \"platform\": \"nt\",\n    \"cleanup\": {\n      \"attempted\": true,\n  ... (+10 more lines)\n\nlogs\\osgrep-debug\\20260313-210031-tc01-cold-start-rerun-20260314\\result.json:20\n  prompts for repeatable CLI-only validation.\\n  ## Core Usage Prompts\\n  1. find code path for auth token refresh\\n  2. find where feature fl\u001b[2m ...\u001b[22m\n    \"stderr\": null,\n    \"timed_out\": false,\n    \"duration_seconds\": 1.97,\n    \"finished\": \"2026-03-14T01:00:34.145619+00:00\",\n    \"command_text\": \"'C:\\\\Users\\\\DaveWitkin\\\\AppData\\\\Roaming\\\\npm\\\\osgrep.CMD' -- search 'auth token refresh'\"\n  }\n\nosgrep results (5 matches across 4 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 2.34,
+  "finished": "2026-06-01T00:15:49.401622+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search 'auth token refresh' --content --max-count 2"
+}

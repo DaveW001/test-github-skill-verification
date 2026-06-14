@@ -1,0 +1,8 @@
+
+scopeId  : email-triage-0fff020d966c
+slug     : email-triage-hourly-email-auto-sort
+name     : hourly-email-auto-sort
+schedule : 0 */1 * * *
+source   : email-triage
+workdir  : C:\development\email-triage
+

@@ -1,0 +1,54 @@
+name: Website Regression Guardrails
+
+on:
+  schedule:
+    - cron: '0 14 * * 1'
+  pull_request:
+    branches: [main, master]
+    paths:
+      - '.github/workflows/visual-regression.yml'
+      - '.conductor/tracks/webapp-visual-regression/artifacts/starter/**'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch:
+
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run link checker
+        run: npm run test:links
+
+      - name: Run accessibility smoke tests
+        run: npm run test:a11y
+
+      - name: Run page health checks
+        run: npm run test:health
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Run P0 visual tests
+        continue-on-error: ${{ github.event_name == 'schedule' }}
+        run: npm run test:visual:p0
+
+      - name: Upload Playwright report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-playwright-report
+          path: .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright-report/
+          retention-days: 14

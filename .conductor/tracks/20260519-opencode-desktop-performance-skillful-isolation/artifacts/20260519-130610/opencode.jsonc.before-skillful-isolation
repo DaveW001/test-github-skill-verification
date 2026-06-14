@@ -1,0 +1,591 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "@zenobius/opencode-skillful",
+    "oc-codex-multi-auth",
+    "opencode-ignore@1.1.0",
+    "opencode-mystatus",
+    "@tarquinen/opencode-dcp@latest"
+  ],
+  "permission": {
+    "external_directory": "allow",
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "bash": "allow",
+    "task": "allow",
+    "skill": {
+      "osgrep": "allow",
+      "Retro": "allow",
+      "retro": "allow",
+      "Conductor": "allow",
+      "conductor": "allow",
+      "*": "allow"
+    },
+    "lsp": "allow",
+    "webfetch": "allow",
+    "google_search": "allow",
+    "websearch": "allow"
+  },
+  "command": {
+    "mystatus": {
+      "description": "Query quota usage for all AI accounts",
+      "template": "Use the mystatus tool to query quota usage. Return the result as-is without modification."
+    }
+  },
+  "provider": {
+    "google": {
+      "blacklist": [
+        "gemini-1.5-flash",
+        "gemini-1.5-flash-8b",
+        "gemini-1.5-pro",
+        "gemini-2.0-flash",
+        "gemini-2.0-flash-001",
+        "gemini-2.0-flash-lite",
+        "antigravity-claude-opus-4-5-thinking-high",
+        "antigravity-claude-opus-4-5-thinking-low",
+        "antigravity-claude-opus-4-5-thinking-medium",
+        "antigravity-claude-opus-4-5-thinking",
+        "antigravity-claude-sonnet-4-5",
+        "antigravity-claude-sonnet-4-5-thinking-high",
+        "antigravity-claude-sonnet-4-5-thinking-low",
+        "antigravity-claude-sonnet-4-5-thinking-medium",
+        "antigravity-claude-sonnet-4-5-thinking",
+        "antigravity-gemini-3-flash",
+        "antigravity-gemini-3-pro",
+        "antigravity-gemini-3-pro-high",
+        "antigravity-gemini-3-pro-low"
+      ],
+      "models": {
+        "gemini-2.5-flash": {
+          "name": "Gemini 2.5 Flash (CLI)",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "gemini-2.5-pro": {
+          "name": "Gemini 2.5 Pro (CLI)",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "gemini-3-flash-preview": {
+          "name": "Gemini 3 Flash Preview (CLI)",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        },
+        "gemini-3-pro-preview": {
+          "name": "Gemini 3 Pro Preview (CLI)",
+          "limit": {
+            "context": 1048576,
+            "output": 65535
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        }
+      },
+      "options": {
+        "baseURL": "http://127.0.0.1:8000/v1beta",
+        "apiKey": "proxy-will-replace-this"
+      }
+    },
+    "openai": {
+      "npm": "@ai-sdk/openai",
+      "options": {
+        "reasoningEffort": "medium",
+        "reasoningSummary": "auto",
+        "textVerbosity": "medium",
+        "include": [
+          "reasoning.encrypted_content"
+        ],
+        "store": false
+      },
+      "models": {
+        "gpt-5.2-none": {
+          "name": "GPT 5.2 None (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "none",
+            "reasoningSummary": "auto",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        },
+        "gpt-5.2-low": {
+          "name": "GPT 5.2 Low (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "low",
+            "reasoningSummary": "auto",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        },
+        "gpt-5.2-medium": {
+          "name": "GPT 5.2 Medium (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "medium",
+            "reasoningSummary": "auto",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        },
+        "gpt-5.2-high": {
+          "name": "GPT 5.2 High (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "high",
+            "reasoningSummary": "detailed",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        },
+        "gpt-5.2-xhigh": {
+          "name": "GPT 5.2 Extra High (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "xhigh",
+            "reasoningSummary": "detailed",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        },
+        "gpt-5.2-codex-low": {
+          "name": "GPT 5.2 Codex Low (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "low",
+            "reasoningSummary": "auto",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        },
+        "gpt-5.2-codex-medium": {
+          "name": "GPT 5.2 Codex Medium (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "medium",
+            "reasoningSummary": "auto",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        },
+        "gpt-5.2-codex-high": {
+          "name": "GPT 5.2 Codex High (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "high",
+            "reasoningSummary": "detailed",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        },
+        "gpt-5.2-codex-xhigh": {
+          "name": "GPT 5.2 Codex Extra High (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "xhigh",
+            "reasoningSummary": "detailed",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        },
+        "gpt-5.1-codex-max-low": {
+          "name": "GPT 5.1 Codex Max Low (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "low",
+            "reasoningSummary": "detailed",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        },
+        "gpt-5.1-codex-max-medium": {
+          "name": "GPT 5.1 Codex Max Medium (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "medium",
+            "reasoningSummary": "detailed",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        },
+        "gpt-5.1-codex-max-high": {
+          "name": "GPT 5.1 Codex Max High (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "high",
+            "reasoningSummary": "detailed",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        },
+        "gpt-5.1-codex-max-xhigh": {
+          "name": "GPT 5.1 Codex Max Extra High (OAuth)",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "options": {
+            "reasoningEffort": "xhigh",
+            "reasoningSummary": "detailed",
+            "textVerbosity": "medium",
+            "include": [
+              "reasoning.encrypted_content"
+            ],
+            "store": false
+          }
+        }
+      }
+    },
+    "moonshot": {
+      "models": {
+        "kimi-k2.5": {
+          "reasoning": true,
+          "temperature": false,
+          "name": "Kimi K2.5",
+          "interleaved": {
+            "field": "reasoning_content"
+          },
+          "id": "kimi-k2.5"
+        },
+        "moonshot-v1-128k": {
+          "reasoning": false,
+          "name": "Moonshot V1 128K",
+          "id": "moonshot-v1-128k"
+        },
+        "moonshot-v1-8k": {
+          "reasoning": false,
+          "name": "Moonshot V1 8K",
+          "id": "moonshot-v1-8k"
+        },
+        "moonshot-v1-32k": {
+          "reasoning": false,
+          "name": "Moonshot V1 32K",
+          "id": "moonshot-v1-32k"
+        },
+        "kimi-k1.5": {
+          "reasoning": false,
+          "name": "Kimi K1.5",
+          "id": "kimi-k1.5"
+        }
+      },
+      "name": "Moonshot AI",
+      "options": {
+        "baseURL": "https://api.moonshot.ai/v1"
+      },
+      "npm": "@ai-sdk/openai-compatible"
+    },
+    "openrouter": {
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "https://openrouter.ai/api/v1",
+        "apiKey": "{env:OPENROUTER_API_KEY}",
+        "headers": {
+          "HTTP-Referer": "https://opencode.ai",
+          "X-OpenRouter-Title": "OpenCode Desktop"
+        }
+      }
+    },
+    "go-dave": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OpenCode Go (Dave)",
+      "options": {
+        "baseURL": "https://opencode.ai/zen/go/v1",
+        "apiKey": "{env:OPENCODE_GO_DAVE_API_KEY}"
+      }
+    },
+    "go-tiberius": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OpenCode Go (Tiberius)",
+      "options": {
+        "baseURL": "https://opencode.ai/zen/go/v1",
+        "apiKey": "{env:OPENCODE_GO_TIBERIUS_API_KEY}"
+      }
+    }
+  },
+  "model": "zai-coding-plan/glm-5.1",
+  "agent": {
+    "plan": {
+      "model": "openai/gpt-5.3-codex"
+    }
+  },
+  "autoupdate": true,
+  "disabled_providers": [
+    "google-vertex",
+    "google-vertex-anthropic",
+    "moonshot"
+  ],
+  "default_agent": "01-Planner",
+  "small_model": "openai/gpt-5.4-mini",
+  "snapshot": true,
+  "username": "davew",
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": false
+    },
+    "control-chrome": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--no-usage-statistics"
+      ],
+      "enabled": false
+    },
+    "slack": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "slack-mcp-server@latest",
+        "-transport",
+        "stdio"
+      ],
+      "environment": {
+        "SLACK_MCP_XOXP_TOKEN": "***REDACTED-SLACK-TOKEN***",
+        "SLACK_MCP_ENABLED_TOOLS": "channels_list,conversations_history,conversations_search_messages,conversations_add_message,attachment_get_data,conversations_replies"
+      },
+      "enabled": false
+    }
+  }
+}

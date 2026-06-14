@@ -1,0 +1,12 @@
+{
+  "session:ses_2e3bdc4f5ffeC75W51SpTU4737:comments": "{\"comments\":{}}",
+  "session:ses_2ee0ea291ffee0g3iCSEjyQnbp:prompt": "{\"prompt\":[{\"type\":\"text\",\"content\":\"\",\"start\":0,\"end\":0}],\"context\":{\"items\":[]},\"cursor\":0}",
+  "session:ses_2ee0ea291ffee0g3iCSEjyQnbp:comments": "{\"comments\":{}}",
+  "workspace:comments": "{\"comments\":{}}",
+  "session:ses_2ee03f698ffep78h2RC41pGQQ0:comments": "{\"comments\":{}}",
+  "session:ses_254c2a991ffe5uiN1p8z1UAkUA:comments": "{\"comments\":{}}",
+  "session:ses_2edc818ffffeyJft2pmxgH3w5H:comments": "{\"comments\":{}}",
+  "session:ses_2ee03f698ffep78h2RC41pGQQ0:prompt": "{\"prompt\":[{\"type\":\"text\",\"content\":\"\",\"start\":0,\"end\":0}],\"context\":{\"items\":[]},\"cursor\":0}",
+  "workspace:prompt": "{\"prompt\":[{\"type\":\"text\",\"content\":\"\",\"start\":0,\"end\":0}],\"cursor\":0,\"context\":{\"items\":[]}}",
+  "workspace:terminal": "{\"all\":[{\"id\":\"pty_dab3c383e001Ia47MNWogLdFrv\",\"title\":\"Terminal 1\",\"titleNumber\":1,\"rows\":10,\"cols\":103,\"buffer\":\"\\u001b[38;2;253;253;253;48;2;7;7;7mPowerShell 7.5.5\\r\\n\\r\\n  \\u001b[7m A new PowerShell stable release is available: v7.6.0 \\u001b[27m\\r\\n  \\u001b[7m Upgrade now, or check out the release page at:       \\u001b[27m\\r\\n  \\u001b[7m   https://aka.ms/PowerShell-Release?tag=v7.6.0       \\u001b[27m\\r\\n\\r\\nPS>\\u001b[7;5H\",\"cursor\":2324,\"scrollY\":0}],\"active\":\"pty_dab3c383e001Ia47MNWogLdFrv\"}"
+}

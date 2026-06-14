@@ -1,0 +1,20 @@
+{
+  "label": "tc-e5-nonexistent-cwd",
+  "started": "2026-06-01T00:18:46.404763+00:00",
+  "cwd": "C:/development/opencode/does-not-exist-qwerty",
+  "command": [
+    "osgrep",
+    "search",
+    "test"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "Working directory does not exist: C:/development/opencode/does-not-exist-qwerty",
+  "timed_out": false,
+  "duration_seconds": 0,
+  "finished": "2026-06-01T00:18:46.409205+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search test"
+}

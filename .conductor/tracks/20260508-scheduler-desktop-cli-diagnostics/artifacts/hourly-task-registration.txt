@@ -1,0 +1,5 @@
+
+TaskPath : \OpenCode\
+TaskName : opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort
+State    : Ready
+

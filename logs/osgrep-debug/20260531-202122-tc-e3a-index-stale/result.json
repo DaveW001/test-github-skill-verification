@@ -1,0 +1,20 @@
+{
+  "label": "tc-e3a-index-stale",
+  "started": "2026-06-01T00:21:22.522741+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "index",
+    "--sync"
+  ],
+  "timeout_seconds": 120,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "error: unknown option '--sync'\n",
+  "timed_out": false,
+  "duration_seconds": 0.52,
+  "finished": "2026-06-01T00:21:23.045427+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' index --sync"
+}

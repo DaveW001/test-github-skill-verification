@@ -1,6 +1,6 @@
 # Workflow: Update OpenCode Default Models
 
-**Last updated:** 2026-04-25
+**Last updated:** 2026-05-31
 **Owner:** Dave Witkin
 
 ## Overview
@@ -21,7 +21,7 @@ This workflow covers changing the default build model, plan agent model, and/or 
 | Key in `opencode.jsonc`   | What it controls                                   | Example                          |
 | ------------------------- | -------------------------------------------------- | -------------------------------- |
 | `"model"`                 | Default build model (Build mode)                   | `"zai-coding-plan/glm-5.1"`      |
-| `"small_model"`           | Lightweight tasks (titles, summaries)              | `"openai/gpt-5.4-mini"`          |
+| `"small_model"`           | Lightweight tasks (titles, summaries)              | `"zai-coding-plan/glm-5.1"`      |
 | `"agent"."plan"."model"`  | Plan agent model (Plan mode)                       | `"openai/gpt-5.3-codex"`         |
 | `"agent".<name>."model"`  | Any custom agent override                          | `"zai-coding/glm-4.7"`           |
 
@@ -148,12 +148,12 @@ Copy-Item $latest.FullName "$env:USERPROFILE\.config\opencode\opencode.jsonc" -F
 
 ## Current Model Configuration
 
-*Last updated: 2026-04-25*
+*Last updated: 2026-05-31*
 
 | Role            | Model ID                     | Provider              | Auth Method  |
 | --------------- | ---------------------------- | --------------------- | ------------ |
 | Default Build   | `zai-coding-plan/glm-5.1`    | Z.AI Coding Plan      | API Key      |
 | Plan Agent      | `openai/gpt-5.3-codex`       | OpenAI (ChatGPT Team) | OAuth        |
-| Small Model     | `openai/gpt-5.4-mini`        | OpenAI (ChatGPT Team) | OAuth        |
+| Small Model     | `zai-coding-plan/glm-5.1`    | Z.AI Coding Plan      | API Key      |
 | CoVe Verifier   | `zai-coding/glm-4.7`         | Z.AI Coding           | API Key      |
 | CoVe Orchestrator | `openai/gpt-5.3-codex`     | OpenAI (ChatGPT Team) | OAuth        |

@@ -1,0 +1,22 @@
+{
+  "label": "tc-e2-index-bg",
+  "started": "2026-06-01T00:19:01.681449+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "index",
+    "--path",
+    "C:/development/opencode/scripts",
+    "--reset"
+  ],
+  "timeout_seconds": 120,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": null,
+  "stdout": "Resetting index at C:\\development\\opencode\\.osgrep...\n",
+  "stderr": "- Indexing...\n\u221a Indexing complete(536 / 536) \u2022 indexed 532 \n",
+  "timed_out": true,
+  "duration_seconds": 126.606,
+  "finished": "2026-06-01T00:21:08.290636+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' index --path C:/development/opencode/scripts --reset"
+}

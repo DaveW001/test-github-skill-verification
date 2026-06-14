@@ -1,0 +1,1 @@
+No scheduler references found in Desktop directories

@@ -1,0 +1,37 @@
+{
+  "id": "20260519-opencode-desktop-config-troubleshoot",
+  "title": "OpenCode Desktop Config Troubleshooting",
+  "status": "active",
+  "phase": "validation-complete",
+  "created": "2026-05-19",
+  "updated": "2026-05-19",
+  "tags": [
+    "opencode",
+    "desktop",
+    "config",
+    "skillful",
+    "plugins",
+    "troubleshooting",
+    "go-dual-subscription",
+    "environment-variables"
+  ],
+  "paths": [
+    "C:\\development\\opencode",
+    "C:\\Users\\DaveWitkin\\.config\\opencode",
+    "C:\\Users\\DaveWitkin\\.opencode",
+    "C:\\Users\\DaveWitkin\\AppData\\Roaming\\ai.opencode.desktop",
+    "C:\\Users\\DaveWitkin\\AppData\\Local\\ai.opencode.desktop"
+  ],
+  "relatedTracks": [
+    "20260502-skill-junction-unification",
+    "20260508-scheduler-desktop-cli-diagnostics",
+    "20260501-codex-multi-auth-upgrade",
+    "20260429-openai-silent-failure",
+    "20260517-opencode-go-dual-sub-config"
+  ],
+  "nextActions": [
+    "Document root cause and close out the track",
+    "Optionally clean up stale desktop session state if the white-window resume path should be prevented",
+    "Keep the Windows user-level Go API keys in place for Desktop"
+  ]
+}

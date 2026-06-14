@@ -1,0 +1,22 @@
+{
+  "label": "tc-e3c-search-after-delete",
+  "started": "2026-06-01T00:21:25.075785+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "search",
+    "UNIQUE_STALE_TEST_MARKER_1283447083",
+    "--max-count",
+    "3"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "osgrep path repro\\sample.ts:9 [Definition]\n  export function staleIndexSymbol(): string {\n    return \"stale-index-check\";\n  }\n\n.conductor\\tracks\\20260311-osgrep-disable-and-root-cause\\PHASE4-5-RESULTS-2026-03-12.md:1\n  # Phase 4/5 Results (2026-03-12)\n  ## Test Matrix Additions\n  ### A) Stale worker cleanup before launch\n  - Command: `python scripts/utils/osgrep_debug_wrapper.py --label phase4-small-index --cleanup-stale --cwd C:/development/opencode/tmp/osgrep\u001b[2m ...\u001b[22m\n  - Log: `logs/osgrep-debug/20260312-112251-phase4-small-index/result.json`\n  - Result:\n    - stale cleanup path executed\n    - no stale `osgrep-nodejs-helper.exe` found on that run\n    - indexed successfully with exit code 0\n  ### B) Quoted-path and spaced-path handling\n  - Command: `python scripts/utils/osgrep_debug_wrapper.py --label phase4-spaced-search --cwd C:/development/opencode/tmp/osgrep path repro --\u001b[2m ...\u001b[22m\n  - Log: `logs/osgrep-debug/20260312-112252-phase4-spaced-search/result.json`\n  - Result:\n    - command completed with exit code 0\n  ... (+11 more lines)\n\nlogs\\osgrep-debug\\20260312-155704-tc11-stale-index-search\\result.json:20\n  D' -- search osgrep\\\"\\n  }\\n\\nosgrep results (5 matches across 5 files)\\n\",\n    \"stderr\": \"\",\n    \"timed_out\": false,\n    \"duration_seconds\": 1.124,\n    \"finished\": \"2026-03-12T19:57:05.895303+00:00\",\n    \"command_text\": \"'C:\\\\Users\\\\DaveWitkin\\\\AppData\\\\Roaming\\\\npm\\\\osgrep.CMD' -- search staleIndexSymbol\"\n  }\n\nlogs\\osgrep-debug\\20260312-155704-tc11-stale-index-search\\result.json:1\n  {\n    \"label\": \"tc11-stale-index-search\",\n    \"started\": \"2026-03-12T19:57:04.483079+00:00\",\n    \"cwd\": \"C:/development/opencode/osgrep path repro\",\n    \"command\": [\n      \"osgrep\",\n      \"--\",\n      \"search\",\n      \"staleIndexSymbol\"\n    ],\n    \"timeout_seconds\": 30,\n    \"platform\": \"nt\",\n    \"cleanup\": {\n      \"attempted\": true,\n  ... (+10 more lines)\n\nlogs\\osgrep-debug\\20260312-112344-phase4-stale-cleanup\\result.json:1\n  {\n    \"label\": \"phase4-stale-cleanup\",\n    \"started\": \"2026-03-12T15:23:44.899535+00:00\",\n    \"cwd\": \"C:/development/opencode/tmp/osgrep-small-repro\",\n    \"command\": [\n      \"osgrep\",\n      \"--\",\n      \"--help\"\n    ],\n    \"timeout_seconds\": 20,\n    \"platform\": \"nt\",\n    \"cleanup\": {\n      \"attempted\": true,\n      \"killed\": false,\n  ... (+15 more lines)\n\nosgrep results (5 matches across 4 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.85,
+  "finished": "2026-06-01T00:21:26.928944+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search UNIQUE_STALE_TEST_MARKER_1283447083 --max-count 3"
+}

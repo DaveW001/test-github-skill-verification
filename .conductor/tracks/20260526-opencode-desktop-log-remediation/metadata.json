@@ -1,0 +1,36 @@
+{
+  "id": "20260526-opencode-desktop-log-remediation",
+  "title": "OpenCode Desktop Log Remediation",
+  "status": "completed",
+  "phase": "done",
+  "created": "2026-05-26",
+  "updated": "2026-05-26T19:05:00",
+  "tags": [
+    "opencode",
+    "desktop",
+    "plugins",
+    "git",
+    "skills",
+    "troubleshooting"
+  ],
+  "paths": [
+    "C:\\development\\opencode",
+    "C:\\development\\marketing",
+    "C:\\Users\\DaveWitkin\\.local\\share\\opencode\\log",
+    "C:\\Users\\DaveWitkin\\.cache\\opencode\\packages",
+    "C:\\Users\\DaveWitkin\\.config\\opencode",
+    "C:\\Users\\DaveWitkin\\.agents\\skills"
+  ],
+  "relatedTracks": [
+    "20260519-opencode-desktop-config-troubleshoot",
+    "20260519-opencode-desktop-performance-skillful-isolation",
+    "20260502-skill-junction-unification",
+    "20260508-scheduler-desktop-cli-diagnostics"
+  ],
+  "nextActions": [
+    "Monitor @zenobius/opencode-skillful upstream for ESM fix - re-enable when available",
+    "Restore opencode-mystatus only if needed later and only after confirming an upstream packaging fix",
+    "Consider disabling ~/.config/opencode/skill root to reduce remaining 93 duplicate warnings",
+    "Review plugin-status-and-remediation.md for rollback procedures if needed"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "label": "tc-b3-index-path",
+  "started": "2026-06-01T00:11:56.810377+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "index",
+    "--path",
+    "C:/development/opencode/scripts"
+  ],
+  "timeout_seconds": 120,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "- Indexing...\n\u221a Indexing complete(504 / 504) \u2022 indexed 1 \n",
+  "timed_out": false,
+  "duration_seconds": 1.864,
+  "finished": "2026-06-01T00:11:58.677537+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' index --path C:/development/opencode/scripts"
+}

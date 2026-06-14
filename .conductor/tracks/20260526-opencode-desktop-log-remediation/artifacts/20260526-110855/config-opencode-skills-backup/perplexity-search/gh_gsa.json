@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "query": "site:guidehouse.com GSA Guidehouse",
+  "model": "perplexity/sonar-pro",
+  "answer": "**Guidehouse holds multiple GSA contracts, including Alliant 2 (a premier GWAC for integrated IT services), OASIS, OASIS+, and others like HCATS, enabling federal agencies to access IT, professional services, management advisory, engineering, and facilities support.** [1][2][3][4][6][7]\n\n### Key GSA Contracts with Guidehouse\n- **Alliant 2 (GS02Q16DCR0064)**: Provides flexible IT solutions with a $75 billion ceiling, covering service delivery, infrastructure, integration, automation, analytics, and security for government-wide use. Benefits include long-term planning, all contract types, streamlined procedures, and Top Secret clearances. Guidehouse Digital LLC meets G.25 environmental goals via ISO 14001 certification, energy-efficient practices, and recycling.[1][7]\n- **OASIS**: A 10-year IDIQ for professional services across federal agencies, including engineering (NAICS 541330), management consulting (541611), HR (541612), and more. Supports financial management, governance/risk/compliance, program management, and enterprise effectiveness with no ceiling and flexible pricing.[2]\n- **OASIS+**: Covers non-IT services in domains like Management & Advisory, Technical & Engineering, Intelligence, Environmental, and Facilities (e.g., building maintenance, utilities). Uses GSA eBuy for task orders to simplify procurement.[3]\n- **Other GSA Vehicles**: Includes HCATS (contact: GSA_HCATS@guidehouse.com) and support contracts like fleet electrification and Advanced Fleet Platform modernization.[5][6][8][9]\n\nGuidehouse, based at 1676 International Dr Ste 800, McLean, VA 22102, is a top BGOV200 contractor offering rapid access to these vehicles for efficient federal procurement.[4][6][7][8]",
+  "usage": {
+    "prompt_tokens": 10,
+    "completion_tokens": 389,
+    "total_tokens": 399
+  }
+}

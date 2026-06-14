@@ -1,0 +1,59 @@
+{
+  "trackId": "20260614-image-ocr-skill",
+  "title": "Image-to-Markdown OCR Skill",
+  "status": "completed",
+  "created": "2026-06-14",
+  "completed": "2026-06-14",
+  "estimatedHours": "3-5",
+  "assignedTo": "Build Agent",
+  "type": "feature",
+  "tags": [
+    "skill",
+    "ocr",
+    "image-processing",
+    "gemini",
+    "tesseract"
+  ],
+  "progress": {
+    "totalTasks": 43,
+    "completedTasks": 43,
+    "percentage": 100
+  },
+  "summary": "Create a new OpenCode skill (image-ocr) that extracts plain text from images and outputs clean Markdown. Two-tier architecture: Gemini 2.5 Flash primary (best quality, free tier) with Tesseract offline fallback (zero setup). Mirrors visual-ocr Gemini API patterns and doc-to-markdown batch/output patterns.",
+  "keyOutcomes": [
+    "New skill at ~/.opencode-lazy-vault/image-ocr/ with SKILL.md",
+    "Python script ocr_extract.py supporting Gemini + Tesseract",
+    "Batch processing with manifest output",
+    "Clean Markdown output with YAML frontmatter",
+    "Actionable error messages for missing dependencies"
+  ],
+  "risks": [
+    "Gemini free tier rate limits (mitigated by Tesseract fallback)",
+    "Tesseract binary not installed on target system (graceful degradation)",
+    "Large images exceeding 20MB limit (enforced with warning)"
+  ],
+  "dependencies": [
+    "Python packages: httpx, pytesseract, Pillow",
+    "System binary: Tesseract OCR (fallback tier only)",
+    "API key: Gemini API key (primary tier only, free tier sufficient)",
+    "Pattern reuse from visual-ocr (Gemini API integration)",
+    "Pattern reuse from doc-to-markdown (batch/manifest/output)"
+  ],
+  "blocking": [],
+  "relatedTracks": [],
+  "deliverables": [
+    "~/.opencode-lazy-vault/image-ocr/SKILL.md",
+    "~/.opencode-lazy-vault/image-ocr/scripts/ocr_extract.py",
+    "~/.opencode-lazy-vault/image-ocr/reference.md (optional)"
+  ],
+  "validationCriteria": [
+    "SKILL.md frontmatter valid (name, description fields)",
+    "skill_find OCR discovers image-ocr skill",
+    "ocr_extract.py runs with Gemini on test image",
+    "Tesseract fallback works when Gemini key absent",
+    "Batch mode processes directory and produces manifest",
+    "Output Markdown is clean with YAML frontmatter",
+    "Error messages are actionable",
+    "All plan.md tasks marked [x]"
+  ]
+}

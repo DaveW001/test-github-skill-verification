@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "query": "Slack clickable file:// links local files mrkdwn format 2024",
+  "model": "perplexity/sonar-pro",
+  "answer": "**Slack does not support clickable `file://` links to local files in mrkdwn format, as its linking syntax is designed for web URLs (`http://`, `https://`, `mailto:`), channels, and users, with no mention of local file protocols in official documentation.** [1][2][3]\n\n### mrkdwn Link Syntax\nSlack's mrkdwn automatically converts plain web URLs into clickable links (e.g., `http://example.com` becomes `<http://example.com/>`), or use explicit format `<URL|display text>` for custom labels. [1][2]\n- Examples:\n  - `<https://example.com|View file>` renders as clickable \"View file\" linking to the site. [1][3]\n  - `<mailto:user@example.com|Email>` opens email clients. [2][3]\n- Local `file://` paths (e.g., `file:///C:/path/to/file.pdf`) are not processed this way; they appear as plain text or fail to link due to security restrictions in browsers and Slack clients. [1][2]\n\n### Limitations and Alternatives\n- **Security reasons**: Browsers block or warn on `file://` links from web apps like Slack to prevent unauthorized local file access. No 2024+ updates enable this in mrkdwn docs. [1][2]\n- **Workarounds**:\n  - Upload files directly to Slack for sharing (via drag-and-drop or API).\n  - Use web-based file sharing (e.g., Google Drive, Dropbox) with `<https://share.link|File>` links. [3]\n  - For internal tools, share via Slack channels or pinned messages.\n\nNo search results indicate support for local files; all focus on web/external links. [1][2][3][4]",
+  "usage": {
+    "prompt_tokens": 16,
+    "completion_tokens": 374,
+    "total_tokens": 390
+  }
+}

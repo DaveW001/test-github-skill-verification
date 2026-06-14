@@ -1,0 +1,5 @@
+{
+  "workspace:followup": "{\"items\":{},\"failed\":{},\"paused\":{\"ses_1d3f73f7affelG0A9OiHjezXku\":true},\"edit\":{}}",
+  "workspace:vcs": "{\"value\":{\"branch\":\"master\",\"default_branch\":\"master\"}}",
+  "workspace:model-selection": "{\"session\":{\"ses_1d3f73f7affelG0A9OiHjezXku\":{\"agent\":\"build\",\"model\":{\"modelID\":\"kimi-k2.6\",\"providerID\":\"opencode-go\"},\"variant\":null},\"ses_1d3332fedffeIes3pskhXgA0bK\":{\"agent\":\"01-Planner\",\"model\":{\"providerID\":\"zai-coding-plan\",\"modelID\":\"glm-5.1\"}}}}"
+}

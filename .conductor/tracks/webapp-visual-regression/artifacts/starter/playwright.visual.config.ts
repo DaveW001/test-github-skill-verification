@@ -25,7 +25,7 @@ if (crossBrowser) {
 }
 
 export default defineConfig({
-  testDir: "tests/visual",
+  testDir: "tests",
   outputDir,
   snapshotPathTemplate: "snapshots/{projectName}/{testFilePath}/{arg}{ext}",
   workers: process.env.CI ? 2 : 1,

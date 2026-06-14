@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "query": "site:guidehouse.com \"Department of Agriculture\" Guidehouse public sector",
+  "model": "perplexity/sonar-pro",
+  "answer": "**Guidehouse has secured contracts with the U.S. Department of Agriculture (USDA) for information support services, including a 2021 consultant agreement valued at $122,533.61 awarded to Guidehouse Digital and another 2021 contract listed on USAspending.gov.[1][4]**\n\nThese contracts focus on **SUPPORT DEPARTMENT OF AGRICULTURE INFORMATION** needs, as detailed in subcontract records from HigherGov and USAspending summaries.[1][4] No direct matches appear on guidehouse.com for \"Department of Agriculture,\" but Guidehouse's public sector work includes federal advisory, technology, and managed services relevant to government clients like USDA.[9][10]\n\nOther search results highlight Guidehouse's broader public sector engagements, such as a $10M DOT contract (not USDA-related)[2] and USDA Working Capital Fund investments in IT modernization (no Guidehouse mention).[5] Guidehouse supports federal operations under vehicles like GSA MAS and emphasizes compliance with USDA biobased product standards in some contracts.[2][6] For Guidehouse's public sector overview, their site describes services for government sectors without specific USDA case studies in these results.[8][9]",
+  "usage": {
+    "prompt_tokens": 15,
+    "completion_tokens": 241,
+    "total_tokens": 256
+  }
+}

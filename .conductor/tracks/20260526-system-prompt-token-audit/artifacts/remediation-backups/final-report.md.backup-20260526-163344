@@ -1,0 +1,72 @@
+# Final Report: System Prompt Token Audit & Reduction
+
+## Token Comparison
+
+| Measure | Baseline | Post-Reduction | Delta |
+|---|---:|---:|---:|
+| System tokens | 27,280 | PENDING (fresh session required) | PENDING |
+| AGENTS.md | 2,875 | 950 | -1,925 |
+| Skill descriptions | ~2,151 | ~1,541 | ~-610 |
+
+## Component Changes
+
+### AGENTS.md (2,875 → 950 tokens, -1,925)
+- Compressed: Knowledge Graph Entity Lookup, Chrome DevTools MCP, Reference Index sections
+- Removed: State Management section, When to Use Each Tool table, Clickable Local File Links reference
+- Backup: C:\Users\DaveWitkin\.config\opencode\AGENTS.md.backup-20260526-152545
+
+### Skill Descriptions (~2,151 → ~1,541 tokens, ~-610)
+- Shortened descriptions for 14 skills:
+  - clickup-cli, google-drive, first-principles-mastery, gemini-proxy, gmail-workspace
+  - image-to-html-reconstruction, frontend-design, find-info, slack-messaging
+  - knowledge-graph-builder, knowledge-graph-maintainer
+  - notebooklm-cli, notebooklm-meta-prompt, nlm-skill
+- Backups: .backup-20260526-* sibling files for each SKILL.md
+
+### Subagent Definitions (BLOCKED)
+- Cannot be edited locally — definitions appear to be compiled into the OpenCode binary
+- Estimated unrealized savings: ~200 tokens
+
+### MCP Tool Schemas (SKIPPED)
+- Codex MCP deferred — actively used for OAuth management
+- Estimated unrealized savings: ~2,750 tokens
+
+## Skill Validation
+
+**Requires fresh OpenCode session to validate.** Run these commands in a new session:
+1. skill_find "calendar" — expect calendar-today or calendar-schedule
+2. skill_use "calendar_today" — expect successful load
+3. skill_find "email" — expect at least one email skill
+
+## Tool Validation
+
+**Requires fresh OpenCode session to validate.** Run these commands in a new session:
+1. ash with Write-Output "hello" — expect "hello"
+2. glob against C:\development\opencode with **/*.md — expect results
+3. grep for "Conductor Tracks" in C:\development\opencode\.conductor — expect results
+4. ead on C:\development\opencode\.conductor\tracks.md — expect file content
+
+## AGENTS.md Rule Validation
+
+**Requires fresh OpenCode session to validate.** Check:
+1. Agent prefers skill_find before manually searching skill folders
+2. Agent uses absolute paths for file tools
+3. Agent prefers osgrep first for semantic search or states fallback explicitly
+
+## Conclusion
+
+**Validation incomplete.** Phase 4 requires a fresh OpenCode session to:
+1. Capture post-reduction tokenscope measurement
+2. Validate skill discovery and loading
+3. Validate core tool execution
+4. Validate AGENTS.md behavioral rules
+
+**Key finding:** The local target of ≤15,000 tokens is **NOT achievable with local configuration alone.** The non-local components (Agent Base Prompt ~11,142 tokens, Native Tool Schemas ~2,350 tokens, Skill tool boilerplate ~3,561 tokens) total ~17,053 tokens — already exceeding the 15,000 target before any configurable content is added.
+
+**Estimated post-reduction system tokens:** ~24,745 (27,280 - 1,925 - 610 = 24,745)
+**Remaining gap to 15,000:** ~9,745 tokens require upstream OpenCode changes.
+
+**Recommended next actions:**
+1. Validate in fresh session (Phase 4)
+2. File upstream issue requesting: (a) configurable agent base prompt, (b) compressed skill listing format, (c) optional native tool documentation
+3. Consider disabling Codex MCP for further savings (~2,750 tokens) when account management is not needed

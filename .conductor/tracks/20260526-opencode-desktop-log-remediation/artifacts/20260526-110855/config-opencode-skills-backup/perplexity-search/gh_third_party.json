@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "query": "Find credible third-party pages summarizing Guidehouse as a federal contractor/consulting firm (e.g., Washington Technology Top 100, Bloomberg Government BGOV200, KLAS). Return the exact URLs and 1-sentence description from each.",
+  "model": "perplexity/sonar-pro",
+  "answer": "**Washington Technology Top 100 (2025):**  \n- https://www.washingtontechnology.com/rankings/top-100/2025/ - Guidehouse LLP ranks #35 on the 2025 Washington Technology Top 100 with $1,139,924,000 in government contract revenue.[5]  \n- https://www.washingtontechnology.com/rankings/company/81/top-100/2025/ - Guidehouse LLP ranks #35 on the 2025 Top 100 with $1,139,924,000 total revenue, including $120,516,000 defense and $1,019,408,000 civilian revenue, serving major customers like DHS, FBI, Navy, and HHS.[3]  \n- https://asmartplace.com/wp-content/uploads/2026/01/2025-Washington-Technology-Top-100.pdf - Guidehouse LLP ranks #35 on the 2025 Washington Technology Top 100 Government Contractors list with $1,139,924,000 in prime contract obligations.[2]  \n\n**Washington Technology Top 100 (2022):**  \n- https://www.prnewswire.com/news-releases/guidehouse-ranks-28-on-2022-washington-technology-top-100-301592697.html - Guidehouse ranks #28 on the 2022 Washington Technology Top 100 list of largest government contractors based on prime contract obligations in IT, systems integration, and professional services.[1]  \n\nNo credible third-party pages from Bloomberg Government BGOV200 or KLAS summarizing Guidehouse were found in the results.",
+  "usage": {
+    "prompt_tokens": 51,
+    "completion_tokens": 329,
+    "total_tokens": 380
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "label": "tc-e6-empty-pattern",
+  "started": "2026-06-01T00:18:46.411245+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "search",
+    ""
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": ".conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\zenobius-opencode-skillful-backup-20260526\\package.json:1\n  {\n    \"dependencies\": {\n      \"@zenobius/opencode-skillful\": \"1.2.5\"\n    }\n  }\n\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\@zenobius-backup\\opencode-skillful@latest\\package.json:1\n  {\n    \"dependencies\": {\n      \"@zenobius/opencode-skillful\": \"1.2.5\"\n    }\n  }\n\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\@tarquinen-backup\\opencode-dcp@latest\\package.json:1\n  {\n    \"dependencies\": {\n      \"@tarquinen/opencode-dcp\": \"3.1.12\"\n    }\n  }\n\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skill-backup\\conductor\\references\\templates\\product.template.md:1\n  # Product\n  ## Vision\n  [What is this product? Who is it for? What problem does it solve?]\n  ## Goals\n  - [ ] Goal 1\n  - [ ] Goal 2\n  - [ ] Goal 3\n\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skills-backup\\conductor\\references\\templates\\product.template.md:1\n  # Product\n  ## Vision\n  [What is this product? Who is it for? What problem does it solve?]\n  ## Goals\n  - [ ] Goal 1\n  - [ ] Goal 2\n  - [ ] Goal 3\n\nosgrep results (5 matches across 5 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 2.264,
+  "finished": "2026-06-01T00:18:48.678013+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search ''"
+}

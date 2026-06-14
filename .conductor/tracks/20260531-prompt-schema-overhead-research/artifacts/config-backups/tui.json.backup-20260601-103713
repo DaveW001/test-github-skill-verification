@@ -1,0 +1,11 @@
+{
+  "$schema": "https://opencode.ai/tui.json",
+  "theme": "opencode",
+  "keybinds": {
+    "leader": "ctrl+o",
+    "tool_details": "<leader>d"
+  },
+  "plugin": [
+    "oc-codex-multi-auth@6.1.8"
+  ]
+}

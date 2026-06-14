@@ -1,0 +1,11 @@
+
+FullName
+--------
+C:\Users\DaveWitkin\AppData\Roaming\ai.opencode.desktop
+C:\Users\DaveWitkin\AppData\Roaming\opencode
+C:\Users\DaveWitkin\AppData\Roaming\opencode-skillful
+C:\Users\DaveWitkin\AppData\Local\@opencode-aidesktop-updater
+C:\Users\DaveWitkin\AppData\Local\ai.opencode.desktop
+C:\Users\DaveWitkin\AppData\Local\OpenCode
+C:\Users\DaveWitkin\AppData\Local\opencode-evaluator
+

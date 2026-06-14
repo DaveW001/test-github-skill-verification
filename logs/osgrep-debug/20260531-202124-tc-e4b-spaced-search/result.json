@@ -1,0 +1,20 @@
+{
+  "label": "tc-e4b-spaced-search",
+  "started": "2026-06-01T00:21:24.668794+00:00",
+  "cwd": "C:\\development\\opencode\\osgrep path repro",
+  "command": [
+    "osgrep",
+    "search",
+    "spaces_test_function"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "osgrep path repro\\.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\layout-guards.ts:143 [Definition]\n  ue;\n        }\n        for (const gap of gaps) {\n          const tooLarge = gap - baselineGap > 24 && gap > baselineGap * 2.2;\n          const tooSmall = baselineGap - gap > 24 && gap < baselineGap * 0.3;\n          if (tooLarge || tooSmall) {\n            findings.push({\n              kind: \"spacing-outlier\",\n              severity: \"info\",\n              selector,\n              message: `Spacing outlier in ${selector}: gap=${Math.round(gap)} baseline=${Math.round(baselineGap)}`,\n            });\n            break;\n          }\n  ... (+1 more lines)\n\nosgrep path repro\\scripts\\tests\\osgrep_test_suite.py:172 [Definition]\n  // scripts\\tests\\osgrep_test_suite.py\n  import argparse\n  import json\n  import sys\n   {total_fail} |\")\n      lines.append(f\"| Timed Out | {total_timeout} |\")\n      lines.append(f\"| Skipped | {total_skip} |\")\n      lines.append(f\"| **GO / NO-GO** | **{go_nogo}** |\")\n      lines.append(\"\")\n      lines.append(\"## Blocking Tests\")\n      lines.append(\"\")\n      lines.append(\"| Label | Status | Exit Code | Duration (s) | Notes |\")\n      lines.append(\"|-------|--------|-----------|--------------|-------|\")\n      for e in blocking:\n  ... (+14 more lines)\n\nosgrep path repro\\scripts\\tests\\osgrep_test_suite.py:118 [Definition]\n  // scripts\\tests\\osgrep_test_suite.py\n  import argparse\n  import json\n  import sys\n  def _generate_report(results: list) -> str:\n      blocking = []\n      non_blocking = []\n      critical_findings = []\n      total_pass = 0\n      total_fail = 0\n      total_timeout = 0\n      total_skip = 0\n      for r in results:\n  ... (+53 more lines)\n\nosgrep path repro\\scripts\\tests\\osgrep_test_suite.py:228 [Definition]\n  // scripts\\tests\\osgrep_test_suite.py\n  import argparse\n  import json\n  import sys\n  def cmd_list(results: list) -> int:\n      if not results:\n          print(f\"No result.json files found in {DEBUG_DIR}\")\n          return 1\n      print(f\"Found {len(results)} result.json file(s) in {DEBUG_DIR}\\n\")\n      for r in results:\n          label = r.get(\"label\", r.get(\"_dir\", \"unknown\"))\n          status = _evaluate_result(r, label)\n          blocking = \"BLOCKING\" if _is_blocking(label) else \"non-blocking\"\n          duration = r.get(\"duration_seconds\", \"?\")\n  ... (+6 more lines)\n\nosgrep path repro\\.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\contrast-guards.ts:29 [Definition]\n  function luminance({ r, g, b }: RGB): number {\n    const toLinear = (v: number) => {\n      const n = v / 255;\n      return n <= 0.03928 ? n / 12.92 : ((n + 0.055) / 1.055) ** 2.4;\n    };\n    return 0.2126 * toLinear(r) + 0.7152 * toLinear(g) + 0.0722 * toLinear(b);\n  }\n\nosgrep results (5 matches across 3 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.86,
+  "finished": "2026-06-01T00:21:26.531733+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search spaces_test_function"
+}

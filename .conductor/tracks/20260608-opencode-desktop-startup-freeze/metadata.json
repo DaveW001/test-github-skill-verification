@@ -1,0 +1,48 @@
+{
+  "trackId": "20260608-opencode-desktop-startup-freeze",
+  "title": "OpenCode Desktop Startup Freeze Incident",
+  "status": "active",
+  "created": "2026-06-08",
+  "completed": null,
+  "estimatedHours": "1-3",
+  "assignedTo": "Dave Witkin",
+  "type": "incident-response",
+  "tags": [
+    "opencode-desktop",
+    "startup",
+    "renderer",
+    "sqlite",
+    "session-history",
+    "github-research"
+  ],
+  "progress": {
+    "totalTasks": 22,
+    "completedTasks": 11,
+    "percentage": 50
+  },
+  "summary": "OpenCode Desktop 1.16.0 starts its sidecar successfully but the renderer becomes unresponsive while loading the last active session in C:\\development\\02-Kx-to-process. Evidence points to persisted session/message data with very large diff payloads rather than a port, spawn, or raw SQLite integrity failure. The plan now includes upstream GitHub issue/release/commit research before local state or database mutation.",
+  "keyEvidence": [
+    "Debug bundle: C:\\Users\\DaveWitkin\\Downloads\\opencode-debug-20260608T124539.zip",
+    "Current Desktop run: 20260608T124511",
+    "main.log shows sidecar ready at http://127.0.0.1:53109",
+    "window.log shows renderer unresponsive in constructMessageRows after loadMessages",
+    "opencode.global.dat lastProject is C:\\development\\02-Kx-to-process and last session is ses_158d41ed8ffeZTg8Fa0jZwqAJG",
+    "The last session has a 25 MB user message containing summary diffs and a 2.3 MB patch part",
+    "SQLite integrity_check returned ok for C:\\Users\\DaveWitkin\\.local\\share\\opencode\\opencode.db",
+    "Server logs also show repeated NOT NULL constraint failed: session_message.seq during scheduled run prompts on OpenCode 1.15.10 earlier on 2026-06-08"
+  ],
+  "risks": [
+    "Direct database edits could lose session history if performed without backup",
+    "The 1.16.2 updater is pending and may change behavior after install",
+    "Scheduled OpenCode jobs may continue to add bad or large session records while Desktop recovery is underway",
+    "Upstream issue search may reveal a safer workaround than local database archiving, so GitHub research must happen before heavier local changes"
+  ],
+  "validationCriteria": [
+    "Upstream GitHub findings are documented with issue/release/commit URLs or an explicit no-match result",
+    "OpenCode Desktop opens without renderer unresponsive events for at least 60 seconds",
+    "A safe project can be opened and a new session can be created",
+    "The problematic 02-Kx session is either archived/avoided or confirmed fixed",
+    "Hourly scheduled OpenCode jobs no longer emit session_message.seq errors",
+    "Any state/database mutation has a timestamped backup and rollback command"
+  ]
+}

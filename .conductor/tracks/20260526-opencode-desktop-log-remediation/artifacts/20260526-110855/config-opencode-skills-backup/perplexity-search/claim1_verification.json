@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "query": "When was the Eiffel Tower built? Include the exact construction dates and year.",
+  "model": "perplexity/sonar-pro",
+  "answer": "**The Eiffel Tower's construction began with the first digging work on January 26, 1887, and the main structural work was completed on March 31, 1889, taking 2 years, 2 months, and 5 days.**[1][3][5][6]\n\nKey construction milestones include:\n- Foundations completed by June 30, 1887.[2]\n- Start of pillars/supports mounting on July 1, 1887.[1][2]\n- First floor achieved on April 1, 1888 (official site) or March 20, 1888 (Wikipedia).[1][2]\n- Second floor achieved on August 14, 1888 (official site) or August 21, 1888 (Wikipedia).[1][2]\n- Top assembly completed on March 31, 1889.[1][2][3]\n\nSlight discrepancies exist in dates across sources (e.g., Wikipedia lists foundations starting January 28, 1887[2]), but the official Eiffel Tower site consistently reports January 26, 1887, to March 31, 1889.[1][6] The tower opened to the public later, on May 15, 1889 (or May 6 with stairs only).[2][4] It was built for the 1889 Exposition Universelle celebrating the French Revolution's centenary.[1][4][6][7]",
+  "usage": {
+    "prompt_tokens": 18,
+    "completion_tokens": 299,
+    "total_tokens": 317
+  }
+}

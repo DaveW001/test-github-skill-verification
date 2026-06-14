@@ -1,0 +1,21 @@
+{
+  "label": "tc-d1-symbols",
+  "started": "2026-06-01T00:17:52.443166+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "symbols",
+    "--limit",
+    "10"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "\u001b[1mProject\u001b[22m: \u001b[32mC:\\development\\opencode\u001b[39m\n\u001b[1mSymbol                 \u001b[22m  \u001b[1mCount\u001b[22m  \u001b[1mPath:Line\u001b[22m\n-----------------------  -----  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------\nmain                        43  .conductor\\tracks\\20260321-control-chrome-mcp-fix\\test_case_2_visual_regression.py:8\nrun_performance_audit       10  .conductor\\tracks\\20260321-control-chrome-mcp-fix\\test1_performance_audit.py:12\ntest_lighthouse_audit       10  .conductor\\tracks\\20260321-control-chrome-mcp-fix\\test7_lighthouse_audit.py:47\nbatch_convert_directory      6  .conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skill-backup\\pptx-to-pdf-converter\\scripts\\convert_pptx_to_pdf.py:110\nconvert_pptx_to_pdf          6  .conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skill-backup\\pptx-to-pdf-converter\\scripts\\convert_pptx_to_pdf.py:24\nsearch_with_perplexity       6  .conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skill-backup\\perplexity-search\\scripts\\perplexity_search.py:74\ntest_network_monitoring      6  .conductor\\tracks\\20260321-control-chrome-mcp-fix\\test4_network_monitoring.py:11\nbuild_kg_prep                5  scripts\\export_opencode_sessions.py:395\nexport_sessions              5  scripts\\export_opencode_sessions.py:152\nrunLayoutGuards              5  .conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\tests\\visual\\helpers\\layout-guards.ts:19\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 0.935,
+  "finished": "2026-06-01T00:17:53.381803+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' symbols --limit 10"
+}

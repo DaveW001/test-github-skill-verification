@@ -1,0 +1,59 @@
+{
+  "trackId": "20260613-dcp-token-savings-analysis",
+  "title": "DCP Token-Savings Analysis (Last 100 Sessions)",
+  "summary": "Quantify Dynamic Context Pruning (DCP) token + USD savings across the last 100 OpenCode sessions via a single self-contained HTML report, with overall totals, per-model breakdown (tokens saved + DCP call counts), and a total-savings headline. Reads authoritative DCP state files and opencode storage; Python 3 stdlib only; offline.",
+  "type": "analysis",
+  "status": "complete",
+  "created": "2026-06-13",
+  "assignedTo": "build-agent",
+  "estimatedHours": "2-3",
+  "tags": [
+    "tokens",
+    "dcp",
+    "analysis",
+    "reporting",
+    "opencode"
+  ],
+  "relatedTracks": [
+    "20260526-system-prompt-token-audit",
+    "20260531-prompt-schema-overhead-research"
+  ],
+  "dependencies": [
+    "Python 3.13 reachable as `python`",
+    "opencode storage at C:\\Users\\DaveWitkin\\.local\\share\\opencode\\storage",
+    "DCP plugin state at storage\\plugin\\dcp"
+  ],
+  "deliverables": [
+    "artifacts/dcp-savings-report.html",
+    "artifacts/aggregate.json",
+    "scripts/generate_report.py",
+    "execution-logs/<YYYYMMDD-HHMM>.md"
+  ],
+  "progress": {
+    "totalTasks": 26,
+    "completedTasks": 26,
+    "percentage": 100
+  },
+  "risks": [
+    "Model attribution ambiguity (sessions span >1 model) -> per-block then majority fallback",
+    "Schema drift / missing fields crash mid-run -> try/except skip + --verify surfacing",
+    "Non-deterministic output (sort tie-breaks) -> stable sort keys + reproducibility check"
+  ],
+  "validationCriteria": [
+    "HTML contains all 3 sections; totals internally consistent",
+    "session_count == 100 (or logged deviation)",
+    "min_block_saved >= 0; tokens_saved == sum(per_model.saved)",
+    "tokens_saved <= stats.totalPruneTokens cross-check",
+    "Reproducible on re-run; no destructive writes to storage"
+  ],
+  "keyOutcomes": [
+    "HTML report at artifacts/dcp-savings-report.html (25,683 bytes, self-contained, compound savings analysis)",
+    "aggregate.json at artifacts/aggregate.json (85,302 bytes)",
+    "100 sessions analyzed (empty sessions excluded): 194.9M tokens used, 2.09M one-time saved (1.07%), 64.6M compound saved (33.15%) with 30.9x multiplier",
+    "11 models tracked; top saver: zai-coding-plan/glm-5.2 (22.8M compound tokens, 35.31%); 6 models with DCP calls, 5 with zero",
+    "Compound effect: DCP compresses context once, savings cascade across ~40 subsequent requests per session",
+    "Data source: SQLite opencode.db (sessions/messages/parts) + DCP JSON files (savings); empty sessions filtered via SQL",
+    "All 8 acceptance criteria PASS (A1-A8); --verify exit code 0 (7 checks including multiplier validation)"
+  ],
+  "completed": "2026-06-13"
+}

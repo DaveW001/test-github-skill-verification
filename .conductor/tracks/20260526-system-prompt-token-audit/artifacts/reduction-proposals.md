@@ -1,0 +1,261 @@
+# Reduction Proposals
+
+## AGENTS.md
+
+Current: ~2,875 tokens. Target: reduce by ~1,500 tokens to ~1,375.
+
+- Section: Knowledge Graph Entity Lookup (full decision tree + key commands + limitations)
+  - Action: compress
+  - Rationale: Detailed decision tree (7 steps + commands + limitations) is verbose. Compress to a 3-line summary: use query-graph.py for lookups, search.py for broad topics, Read for full content. Move the full decision tree to a skill or separate reference doc.
+  - Estimated tokens saved: 400
+  - Rollback: restore from AGENTS.md backup
+
+- Section: ClickUp Quick References
+  - Action: compress
+  - Rationale: Two ClickUp list IDs with full path descriptions. Compress to single-line reference with just IDs.
+  - Estimated tokens saved: 50
+  - Rollback: restore from AGENTS.md backup
+
+- Section: Chrome DevTools MCP (Browser Automation)
+  - Action: compress
+  - Rationale: 7 bullet points of MCP configuration details. Compress to 2-line rule: use control-chrome_* tools for browser tasks; never use Playwright/Puppeteer/Selenium.
+  - Estimated tokens saved: 150
+  - Rollback: restore from AGENTS.md backup
+
+- Section: When to Use Each Tool (table)
+  - Action: remove
+  - Rationale: Redundant with Semantic-First Navigation and File Reading Strategy sections above it. The table duplicates guidance already covered by "use osgrep first, then grep/glob/read" rules.
+  - Estimated tokens saved: 100
+  - Rollback: restore from AGENTS.md backup
+
+- Section: Reference Index > Microsoft 365 / Outlook / Email / Calendar
+  - Action: compress
+  - Rationale: Lists 9 skill names that are already available via skill discovery. Compress to: "For Outlook/email/calendar tasks, use skill_find to locate and load the appropriate skill."
+  - Estimated tokens saved: 120
+  - Rollback: restore from AGENTS.md backup
+
+- Section: Reference Index > Skill Discovery Preflight
+  - Action: compress
+  - Rationale: Detailed skill discovery workflow (5 steps + example). Compress to: "Use skill_find before manually searching. Lazy-vault at ~/.opencode-lazy-vault. Always-available: conductor, osgrep, git-push, perplexity-search."
+  - Estimated tokens saved: 150
+  - Rollback: restore from AGENTS.md backup
+
+- Section: Reference Index > Firebase Deploy Requests
+  - Action: move to skill
+  - Rationale: Rarely triggered; the firebase-deployment-specialist skill already contains this information.
+  - Estimated tokens saved: 80
+  - Rollback: restore from AGENTS.md backup
+
+- Section: Reference Index > Clickable Local File Links
+  - Action: remove
+  - Rationale: One-liner reference to external doc; already covered by "Fully Qualified File Paths" rule.
+  - Estimated tokens saved: 30
+  - Rollback: restore from AGENTS.md backup
+
+- Section: Reference Index > Public-Safe Redaction for Sharing
+  - Action: compress
+  - Rationale: Detailed redaction rules can be compressed to a single rule: "Redact internal paths, IDs, and tokens when sharing outside local contexts."
+  - Estimated tokens saved: 80
+  - Rollback: restore from AGENTS.md backup
+
+- Section: File Tool Path Format (primary path rules)
+  - Action: compress
+  - Rationale: 5 bullet points + Quick Rule can be compressed to 2 lines.
+  - Estimated tokens saved: 100
+  - Rollback: restore from AGENTS.md backup
+
+- Section: File Reading Strategy
+  - Action: compress
+  - Rationale: 3 rules can be compressed to 2 lines.
+  - Estimated tokens saved: 40
+  - Rollback: restore from AGENTS.md backup
+
+- Section: State Management
+  - Action: remove
+  - Rationale: Redundant with Semantic-First Navigation above.
+  - Estimated tokens saved: 60
+  - Rollback: restore from AGENTS.md backup
+
+- Section: Reference Index > Admin Elevation via Gsudo
+  - Action: move to skill
+  - Rationale: Rarely triggered reference. Move to a troubleshooting skill.
+  - Estimated tokens saved: 30
+  - Rollback: restore from AGENTS.md backup
+
+- Section: Reference Index > Gemini Proxy Infrastructure
+  - Action: move to skill
+  - Rationale: Rarely triggered; already covered by gemini-proxy skill.
+  - Estimated tokens saved: 30
+  - Rollback: restore from AGENTS.md backup
+
+- Section: Reference Index > Developer Guidelines
+  - Action: compress
+  - Rationale: 3 file references can be a single line.
+  - Estimated tokens saved: 40
+  - Rollback: restore from AGENTS.md backup
+
+**Total AGENTS.md estimated savings: ~1,480 tokens**
+
+## Skill Tool Metadata
+
+Current: ~5,712 tokens (full skill tool description). Target: reduce by ~1,500 tokens.
+
+The skill tool description includes both the skill list (available_skills XML) and the tool description boilerplate. The ~5,712 tokens include ~2,151 tokens of individual skill descriptions and ~3,561 tokens of tool boilerplate/schema.
+
+The skill descriptions are the configurable part. Analysis of longest descriptions:
+
+- Section: C:\Users\DaveWitkin\.agents\skills\clickup-cli\SKILL.md
+  - Current description style: Long multi-sentence description listing 20+ specific trigger phrases
+  - Proposed shorter description: "Manage ClickUp tasks, sprints, and comments via the cup CLI tool."
+  - Estimated tokens saved: 50
+
+- Section: C:\Users\DaveWitkin\.agents\skills\google-drive\SKILL.md
+  - Current description style: Lists 5 capabilities + explicit exclusion note + tool references
+  - Proposed shorter description: "List, search, download, upload, and read Google Drive/Docs files via gws CLI."
+  - Estimated tokens saved: 40
+
+- Section: C:\Users\DaveWitkin\.agents\skills\customize-opencode\SKILL.md
+  - Current description style: Explicit "Use ONLY when" restriction + 2 exclusion sentences
+  - Proposed shorter description: "Configure opencode itself: opencode.json, .opencode/, agents, skills, MCP servers, plugins."
+  - Estimated tokens saved: 30
+
+- Section: C:\Users\DaveWitkin\.agents\skills\first-principles-mastery\SKILL.md
+  - Current description style: Long trigger phrase list with 10+ synonyms
+  - Proposed shorter description: "Apply first principles thinking to deconstruct problems and rebuild from fundamentals."
+  - Estimated tokens saved: 40
+
+- Section: C:\Users\DaveWitkin\.agents\skills\gemini-proxy\SKILL.md
+  - Current description style: Detailed proxy management description + 3 trigger scenarios
+  - Proposed shorter description: "Manage local Gemini API Key Rotator Proxy: status, restart, key rotation, monitoring."
+  - Estimated tokens saved: 30
+
+- Section: C:\Users\DaveWitkin\.agents\skills\gmail-workspace\SKILL.md
+  - Current description style: Lists 6 capabilities + "when the user wants" clauses + tool coverage
+  - Proposed shorter description: "Export, triage, and process Gmail via Python and Google Apps Script."
+  - Estimated tokens saved: 30
+
+- Section: C:\Users\DaveWitkin\.agents\skills\image-to-html-reconstruction\SKILL.md
+  - Current description style: Very long — lists 12+ capabilities, 10+ trigger phrases, and 8 feature bullet points
+  - Proposed shorter description: "Convert images/slides to pixel-locked HTML mockups and PPTX. Supports CSS Grid, SVG, Playwright, animations."
+  - Estimated tokens saved: 80
+
+- Section: C:\Users\DaveWitkin\.agents\skills\frontend-design\SKILL.md
+  - Current description style: Lists capabilities + multiple trigger phrase variants
+  - Proposed shorter description: "Create production-grade frontend interfaces with high design quality."
+  - Estimated tokens saved: 30
+
+- Section: C:\Users\DaveWitkin\.agents\skills\find-info\SKILL.md
+  - Current description style: Lists 6 search targets + routing detail
+  - Proposed shorter description: "Find information across email, Slack, knowledge base, ClickUp, and OneDrive/SharePoint."
+  - Estimated tokens saved: 20
+
+- Section: C:\Users\DaveWitkin\.agents\skills\knowledge-graph-builder\SKILL.md
+  - Current description style: Multi-step process + 7 trigger phrases
+  - Proposed shorter description: "Ingest source material into the local markdown knowledge graph: extract entities, deduplicate, validate."
+  - Estimated tokens saved: 30
+
+- Section: C:\Users\DaveWitkin\.agents\skills\knowledge-graph-maintainer\SKILL.md
+  - Current description style: Lists 6 audit activities
+  - Proposed shorter description: "Audit and maintain the local markdown knowledge graph: health, gaps, review queues."
+  - Estimated tokens saved: 20
+
+- Section: C:\Users\DaveWitkin\.agents\skills\notebooklm-cli\SKILL.md
+  - Current description style: Same pattern as nlm-skill — long capability list + 10+ trigger words
+  - Proposed shorter description: "Interact with Google NotebookLM programmatically: create notebooks, add sources, generate content."
+  - Estimated tokens saved: 50
+
+- Section: C:\Users\DaveWitkin\.agents\skills\notebooklm-meta-prompt\SKILL.md
+  - Current description style: Long trigger phrase list + detailed capability description
+  - Proposed shorter description: "Extract deeper insights from NotebookLM sources using meta-prompt analysis and blind-spot detection."
+  - Estimated tokens saved: 30
+
+- Section: C:\Users\DaveWitkin\.agents\skills\nlm-skill\SKILL.md
+  - Current description style: Nearly identical to notebooklm-cli description (duplicate)
+  - Proposed shorter description: "NotebookLM CLI and MCP server interface for programmatic automation."
+  - Estimated tokens saved: 50
+
+- Section: C:\Users\DaveWitkin\.agents\skills\slack-messaging\SKILL.md
+  - Current description style: Lists 9 trigger phrases
+  - Proposed shorter description: "Send, search, and read Slack messages via Slack MCP server."
+  - Estimated tokens saved: 30
+
+**Total Skill description estimated savings: ~610 tokens**
+
+Note: The tool boilerplate (~3,561 tokens) is NOT locally reducible — it is generated by the OpenCode runtime from the tool schema definition.
+
+## Subagent Definitions
+
+Current: ~901 tokens (full task tool description). Target: reduce by ~200 tokens.
+
+Subagent definitions are embedded in the task tool schema. The config file location needs identification.
+
+- Section: OpenCode config (likely C:\Users\DaveWitkin\.config\opencode\opencode.jsonc or internal agent definitions)
+  - Affected subagent names: All 8 (explore, cove-verifier, peer-review, general, cove-orchestrator, seo-auditor, brand-voice-validator, gen-headlines)
+  - Proposed rewrite style: Compress each description to 1 concise sentence (max 15 words) instead of the current multi-sentence format
+  - Estimated total savings: ~200
+  - Config location: C:\Users\DaveWitkin\.config\opencode\opencode.jsonc or .opencode/ agent definition files — NEEDS CONFIRMATION
+
+**Blocker: Exact subagent config file paths not yet confirmed. Blocking Phase 3 implementation for subagents until confirmed.**
+
+## MCP Tool Schemas
+
+Current: ~4,300 tokens (estimated midpoint). Target: reduce by ~2,000-3,000 tokens.
+
+- Section: Codex MCP (20 tools, ~2,000-3,500 tokens)
+  - Config file: C:\Users\DaveWitkin\.config\opencode\opencode.jsonc (MCP servers section)
+  - Reason safe to disable: Codex OAuth account manager is a utility rarely needed during coding sessions. Can be re-enabled via config when needed.
+  - Estimated savings: ~2,750 (midpoint of range)
+  - Rollback: re-add the MCP server entry in opencode.jsonc
+
+- Section: Chrome DevTools MCP (~500-1,500 tokens)
+  - Config file: C:\Users\DaveWitkin\.config\opencode\opencode.jsonc
+  - Reason safe to disable: Browser automation is task-specific, not needed for every session. The skill and AGENTS.md reference remain as triggers.
+  - Estimated savings: ~1,000 (midpoint)
+  - Rollback: re-add the MCP server entry in opencode.jsonc
+
+- Section: Slack MCP (~300-800 tokens)
+  - Config file: C:\Users\DaveWitkin\.config\opencode\opencode.jsonc
+  - Reason safe to disable: Slack messaging is task-specific. The slack-messaging skill remains as a trigger to re-enable.
+  - Estimated savings: ~550 (midpoint)
+  - Rollback: re-add the MCP server entry in opencode.jsonc
+
+**Total MCP estimated savings: ~4,300 tokens (full removal of all 3 MCP families)**
+
+CAUTION: Disabling all 3 MCP servers removes significant capability. Consider disabling only Codex (highest token cost, least frequently used in coding sessions) for a savings of ~2,750 tokens.
+
+## Not Locally Reducible
+
+- Component: Agent Base Prompt / Environment Remainder (~11,142 tokens)
+  - Evidence: This 40.8% bucket includes the OpenCode core agent identity prompt, behavioral rules, environment block, and the available_skills XML listing format. These are generated by the OpenCode runtime and cannot be edited via local config.
+  - Recommended next action: escalate upstream — request that OpenCode provide config hooks for agent base prompt customization and skill listing format optimization.
+
+- Component: Skill tool description boilerplate (~3,561 tokens)
+  - Evidence: The skill tool schema includes instructions, available skill listing format, and usage notes that are generated by the OpenCode runtime, not from editable skill files.
+  - Recommended next action: escalate upstream — request that OpenCode allow the skill tool description template to be customized or compressed.
+
+- Component: Native Tool Schemas (~2,350 tokens)
+  - Evidence: The 15 native tool schemas (bash, read, edit, write, glob, grep, etc.) are defined by the OpenCode runtime and include extensive inline documentation and examples.
+  - Recommended next action: leave as-is — these are core tools and should not be modified.
+
+- Component: Subagent task tool boilerplate (~538 tokens)
+  - Evidence: The difference between full task tool description (~901) and subagent descriptions (~363) is boilerplate generated by OpenCode.
+  - Recommended next action: escalate upstream
+
+## Consolidated Reduction Budget
+
+| Component | Current Tokens | Proposed Tokens | Estimated Savings | Confidence |
+|---|---:|---:|---:|---|
+| AGENTS.md | 2,875 | 1,395 | 1,480 | High |
+| Skill descriptions | 2,151 | 1,541 | 610 | High |
+| MCP Tool Schemas (Codex only) | 4,300 | 1,550 | 2,750 | Medium |
+| Subagent Definitions | 901 | 701 | 200 | Low (blocked on config location) |
+| **Projected post-reduction system tokens** | | | | |
+| Baseline: 27,280 | | | | |
+| Total estimated savings: 5,040 | | | | |
+| **Projected: ~22,240 tokens** | | | | |
+
+**Local target of <=15,000 NOT achievable with current evidence.**
+
+The non-local components (Agent Base Prompt ~11,142, Native Tool Schemas ~2,350, Skill tool boilerplate ~3,561) total ~17,053 tokens alone — already exceeding the 15,000 target before any configurable content is added. Even removing ALL MCP servers, compressing ALL skills, and removing ALL of AGENTS.md would only reach ~17,053 + remaining skill descriptions (~1,541) + remaining subagent descriptions (~701) = ~19,295 tokens.
+
+**To reach 15,000 tokens, upstream changes to OpenCode core are required to compress the base agent prompt, skill listing format, and native tool schemas.**

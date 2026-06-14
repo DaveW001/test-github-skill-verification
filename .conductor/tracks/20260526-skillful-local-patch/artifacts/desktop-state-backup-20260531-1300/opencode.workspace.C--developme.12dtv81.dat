@@ -1,0 +1,4 @@
+{
+	"workspace:vcs": "{\"value\":{\"branch\":\"main\",\"default_branch\":\"main\"}}",
+	"workspace:model-selection": "{\"session\":{\"ses_1bdef24a5ffe5WctdKsuhZ11M1\":{\"agent\":\"openwork\",\"model\":{\"modelID\":\"kimi-k2.6\",\"providerID\":\"opencode-go\"},\"variant\":\"high\"},\"ses_1b97fb997ffeHFLy5rmbwL91LB\":{\"agent\":\"build\",\"model\":{\"modelID\":\"qwen3.6-plus-free\",\"providerID\":\"opencode\"}}}}"
+}

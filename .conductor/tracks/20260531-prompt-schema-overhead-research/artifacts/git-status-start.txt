@@ -1,0 +1,72 @@
+ M .conductor/tracks-ledger.md
+ M docs/reference/global-skills-index.md
+ M docs/reference/lazy-loaded-skills.md
+ M docs/reference/opencode-configuration.md
+ M docs/reports/skill-health-latest.md
+ M docs/reports/skill-health-log.csv
+ M docs/troubleshooting/active/opencode-desktop-white-window-startup.md
+ M docs/workflows/opencode-model-update.md
+ M scripts/utils/osgrep_debug_wrapper.py
+?? .conductor/tracks.md
+?? .conductor/tracks/20260526-opencode-desktop-log-remediation/
+?? .conductor/tracks/20260526-skillful-local-patch/
+?? .conductor/tracks/20260526-system-prompt-token-audit/
+?? .conductor/tracks/20260530-global-skills-index-regen/
+?? .conductor/tracks/20260531-osgrep-comprehensive-test-suite/
+?? .conductor/tracks/20260531-prompt-schema-overhead-research/
+?? "docs/OpenCode Lazy Skills MCP Discovery.md"
+?? docs/handovers/
+?? docs/reference/gemini-proxy-source-of-truth.md
+?? docs/troubleshooting/active/plugin-status-and-remediation.md
+?? docs/troubleshooting/active/skillful-desktop-cache-patch-log.md
+?? docs/workflows/opencode-session-kg-ingest-plan.md
+?? logs/osgrep-debug/20260531-200123-tc-a1-version-check/
+?? logs/osgrep-debug/20260531-200123-tc-a2-doctor-check/
+?? logs/osgrep-debug/20260531-200711-tc-b1-index-dry-run/
+?? logs/osgrep-debug/20260531-200936-tc-b2-index-verbose/
+?? logs/osgrep-debug/20260531-201156-tc-b3-index-path/
+?? logs/osgrep-debug/20260531-201216-tc-b4-index-reset/
+?? logs/osgrep-debug/20260531-201451-tc-b5-search-sync/
+?? logs/osgrep-debug/20260531-201504-tc-b6-list/
+?? logs/osgrep-debug/20260531-201547-tc-c1-known-answer/
+?? logs/osgrep-debug/20260531-201547-tc-c2-max-count/
+?? logs/osgrep-debug/20260531-201547-tc-c3-content/
+?? logs/osgrep-debug/20260531-201547-tc-c4-scores/
+?? logs/osgrep-debug/20260531-201657-tc-c10-dry-run/
+?? logs/osgrep-debug/20260531-201657-tc-c11-subdir/
+?? logs/osgrep-debug/20260531-201657-tc-c12-sync/
+?? logs/osgrep-debug/20260531-201657-tc-c5-min-score/
+?? logs/osgrep-debug/20260531-201657-tc-c6-compact/
+?? logs/osgrep-debug/20260531-201657-tc-c7-plain/
+?? logs/osgrep-debug/20260531-201657-tc-c8-skeleton/
+?? logs/osgrep-debug/20260531-201657-tc-c9-per-file/
+?? logs/osgrep-debug/20260531-201752-tc-d1-symbols/
+?? logs/osgrep-debug/20260531-201752-tc-d2-symbols-filter/
+?? logs/osgrep-debug/20260531-201752-tc-d3-symbols-limit/
+?? logs/osgrep-debug/20260531-201752-tc-d4-symbols-path/
+?? logs/osgrep-debug/20260531-201752-tc-d5-skeleton-file/
+?? logs/osgrep-debug/20260531-201752-tc-d6-skeleton-symbol/
+?? logs/osgrep-debug/20260531-201752-tc-d7-skeleton-json/
+?? logs/osgrep-debug/20260531-201752-tc-d8-trace/
+?? logs/osgrep-debug/20260531-201846-tc-e1-concurrent-a/
+?? logs/osgrep-debug/20260531-201846-tc-e5-nonexistent-cwd/
+?? logs/osgrep-debug/20260531-201846-tc-e6-empty-pattern/
+?? logs/osgrep-debug/20260531-201846-tc-e7-long-pattern/
+?? logs/osgrep-debug/20260531-201846-tc-e8-timing/
+?? logs/osgrep-debug/20260531-201847-tc-e9-cold-start/
+?? logs/osgrep-debug/20260531-201848-tc-e1-concurrent-b/
+?? logs/osgrep-debug/20260531-201901-tc-e2-index-bg/
+?? logs/osgrep-debug/20260531-201903-tc-e2-query-during-index/
+?? logs/osgrep-debug/20260531-202122-tc-e3a-index-stale/
+?? logs/osgrep-debug/20260531-202122-tc-e4a-spaced-index/
+?? logs/osgrep-debug/20260531-202123-tc-e3b-search-fresh/
+?? logs/osgrep-debug/20260531-202124-tc-e4b-spaced-search/
+?? logs/osgrep-debug/20260531-202125-tc-e3c-search-after-delete/
+?? logs/osgrep-debug/20260531-202205-tc-f1-mcp-guardrail/
+?? logs/osgrep-debug/20260531-202205-tc-f3-forced-failure/
+?? logs/osgrep-debug/20260531-202205-tc-g1-wrapper-baseline/
+?? logs/osgrep-test-suite/
+?? scripts/Invoke-OpenCodeDesktopSafeRecovery.ps1
+?? scripts/Repair-SkillfulDesktopCache.ps1
+?? scripts/export_opencode_sessions.py
+?? scripts/tests/

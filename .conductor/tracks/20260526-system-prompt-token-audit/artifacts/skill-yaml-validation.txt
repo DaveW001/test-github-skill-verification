@@ -1,0 +1,14 @@
+OK C:\Users\DaveWitkin\.agents\skills\clickup-cli\SKILL.md
+OK C:\Users\DaveWitkin\.agents\skills\google-drive\SKILL.md
+OK C:\Users\DaveWitkin\.agents\skills\first-principles-mastery\SKILL.md
+OK C:\Users\DaveWitkin\.agents\skills\gemini-proxy\SKILL.md
+OK C:\Users\DaveWitkin\.agents\skills\gmail-workspace\SKILL.md
+OK C:\Users\DaveWitkin\.agents\skills\image-to-html-reconstruction\SKILL.md
+OK C:\Users\DaveWitkin\.agents\skills\frontend-design\SKILL.md
+OK C:\Users\DaveWitkin\.agents\skills\find-info\SKILL.md
+OK C:\Users\DaveWitkin\.agents\skills\knowledge-graph-builder\SKILL.md
+OK C:\Users\DaveWitkin\.agents\skills\knowledge-graph-maintainer\SKILL.md
+OK C:\Users\DaveWitkin\.agents\skills\notebooklm-cli\SKILL.md
+OK C:\Users\DaveWitkin\.agents\skills\notebooklm-meta-prompt\SKILL.md
+OK C:\Users\DaveWitkin\.config\opencode\skill\nlm-skill\SKILL.md
+OK C:\Users\DaveWitkin\.agents\skills\slack-messaging\SKILL.md

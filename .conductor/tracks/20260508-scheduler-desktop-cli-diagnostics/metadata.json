@@ -1,0 +1,31 @@
+{
+  "id": "20260508-scheduler-desktop-cli-diagnostics",
+  "title": "Diagnose OpenCode Scheduler Desktop/CLI State Divergence",
+  "status": "completed",
+  "phase": "done",
+  "createdAt": "2026-05-08T20:49:00-04:00",
+  "updatedAt": "2026-05-08T21:15:00-04:00",
+  "owner": "01-Planner",
+  "scope": {
+    "opencodeRepo": "C:\\development\\opencode",
+    "globalConfig": "C:\\Users\\DaveWitkin\\.config\\opencode\\opencode.jsonc",
+    "standardPluginCache": "C:\\Users\\DaveWitkin\\.cache\\opencode\\node_modules",
+    "schedulerScopes": "C:\\Users\\DaveWitkin\\.config\\opencode\\scheduler\\scopes",
+    "emailTriageRepo": "C:\\development\\email-triage"
+  },
+  "artifacts": {
+    "spec": ".conductor/tracks/20260508-scheduler-desktop-cli-diagnostics/spec.md",
+    "plan": ".conductor/tracks/20260508-scheduler-desktop-cli-diagnostics/plan.md",
+    "diagnosticReport": ".conductor/tracks/20260508-scheduler-desktop-cli-diagnostics/diagnostic-report.md",
+    "handover": ".conductor/tracks/20260508-scheduler-desktop-cli-diagnostics/handover.md"
+  },
+  "relatedTracks": [
+    ".conductor/tracks/20260508-restore-opencode-scheduler-plugin"
+  ],
+  "nonGoals": [
+    "Modify OpenCode config",
+    "Install or remove plugins",
+    "Change Windows scheduled tasks",
+    "Edit email-triage production code"
+  ]
+}

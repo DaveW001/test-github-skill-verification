@@ -1,0 +1,18 @@
+
+Count Name
+----- ----
+    2 conductor
+    2 content-trend-researcher
+    2 git-push
+    2 image-generator
+    2 image-manifest-builder
+    2 imagegen
+    2 nlm-skill
+    2 osgrep
+    2 perplexity-search
+    2 plugin-creator
+    2 pptx-to-pdf-converter
+    2 skill-creator
+    2 skill-discovery
+    2 youtube-shorts
+

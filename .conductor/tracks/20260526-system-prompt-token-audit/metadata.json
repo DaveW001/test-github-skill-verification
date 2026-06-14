@@ -1,0 +1,55 @@
+{
+  "dependencies": [
+    "tokenscope bun fix must be in place",
+    "New OpenCode session needed for accurate post-reduction validation"
+  ],
+  "trackId": "20260526-system-prompt-token-audit",
+  "assignedTo": "build-agent",
+  "progress": {
+    "completedTasks": 33,
+    "percentage": 100,
+    "totalTasks": 33
+  },
+  "keyOutcomes": [
+    "Complete per-component token breakdown of the system prompt",
+    "Local reductions applied: ~2,535 tokens saved (AGENTS.md + skills)",
+    "All skill YAML repaired, corruption removed, triggers metadata restored",
+    "Target <=15,000 not locally achievable - requires upstream OpenCode changes"
+  ],
+  "deliverables": [
+    "artifacts/baseline-tokenscope.txt",
+    "artifacts/token-breakdown.md",
+    "artifacts/reduction-proposals.md",
+    "artifacts/post-reduction-tokenscope.txt",
+    "artifacts/final-report.md",
+    "artifacts/skill-yaml-validation.txt",
+    "change-log.md"
+  ],
+  "created": "2026-05-26",
+  "tags": [
+    "tokens",
+    "optimization",
+    "system-prompt",
+    "performance"
+  ],
+  "summary": "Audit and reduce the OpenCode system prompt from ~29,001 tokens to <=15,000 tokens by decomposing into discrete components, measuring each, and applying targeted reductions to AGENTS.md, skill descriptions, subagent definitions, and MCP tool schemas.",
+  "estimatedHours": "3-5",
+  "title": "System Prompt Token Audit & Reduction",
+  "relatedTracks": [
+    "20260501-skill-token-optimization",
+    "20260502-skill-junction-unification"
+  ],
+  "risks": [
+    "Base agent prompt may be non-configurable",
+    "Compressed AGENTS.md may cause behavior regression",
+    "Token estimation is approximate (no model-specific tokenizer)"
+  ],
+  "validationCriteria": [
+    "Post-reduction system prompt <=15,000 tokens",
+    "All smoke tests pass",
+    "All config files valid"
+  ],
+  "type": "maintenance",
+  "status": "completed",
+  "completed": "2026-05-26"
+}

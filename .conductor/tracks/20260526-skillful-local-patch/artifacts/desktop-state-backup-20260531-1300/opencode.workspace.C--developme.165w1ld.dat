@@ -1,0 +1,6 @@
+{
+  "workspace:followup": "{\"items\":{},\"failed\":{},\"paused\":{\"ses_29cfc5694ffep5bnQ4BdL0M1Ht\":true,\"ses_29ce7ba8effeLnIW0L48DWC3Fr\":true},\"edit\":{}}",
+  "workspace:project": "{\"value\":{\"icon\":{\"color\":\"cyan\"}}}",
+  "workspace:model-selection": "{\"session\":{\"ses_29cfc5694ffep5bnQ4BdL0M1Ht\":{\"agent\":\"build\",\"model\":{\"providerID\":\"openai\",\"modelID\":\"gpt-5.3-codex\"},\"variant\":null},\"ses_29ce7ba8effeLnIW0L48DWC3Fr\":{\"agent\":\"01-Planner\",\"model\":{\"providerID\":\"openai\",\"modelID\":\"gpt-5.3-codex\"}},\"ses_29c90c523ffeGOUfEd5sc6n6Yq\":{\"agent\":\"01-Planner\",\"model\":{\"modelID\":\"qwen3.6-plus-free\",\"providerID\":\"opencode\"},\"variant\":null},\"ses_29c67344affeKDzFYyeJpw2WqW\":{\"agent\":\"openwork\",\"model\":{\"modelID\":\"qwen/qwen3.6-plus:free\",\"providerID\":\"openrouter\"},\"variant\":null},\"ses_29c35551fffe3ZiT9A6huaMfw9\":{\"agent\":\"openwork\",\"model\":{\"providerID\":\"openrouter\",\"modelID\":\"qwen/qwen3.6-plus:free\"},\"variant\":null},\"ses_29be128baffef42XqsWVF0iweR\":{\"agent\":\"openwork\",\"model\":{\"providerID\":\"openrouter\",\"modelID\":\"qwen/qwen3.6-plus:free\"},\"variant\":null}}}",
+  "workspace:vcs": "{\"value\":{}}"
+}

@@ -1,0 +1,142 @@
+═══════════════════════════════════════════════════════════════════════════
+Token Analysis: Session ses_17c625601ffeiLBoKrMrcG2UDR
+Model: deepseek-v4-flash
+═══════════════════════════════════════════════════════════════════════════
+
+WARNINGS
+───────────────────────────────────────────────────
+- Pricing for 'opencode-go/deepseek-v4-flash' was not found in models.json. Cost estimates use the default fallback rates ($1/M input, $3/M output, no cache pricing).
+- OpenCode export failed for session ses_17c625601ffeiLBoKrMrcG2UDR. Context sections were skipped: Cannot find package 'bun' imported from C:\Users\DaveWitkin\.cache\opencode\packages\@ramtinj95\opencode-tokenscope@latest\node_modules\@ramtinj95\opencode-tokenscope\dist\tokenscope-lib\context.js
+
+TOKEN BREAKDOWN BY CATEGORY
+─────────────────────────────────────────────────────────────────────────
+Estimated using tokenizer analysis of message content:
+
+Input Categories:
+  SYSTEM    ████████████████░░░░░░░░░░░░░░    52.3% (17,377)
+  USER      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░        1.0% (338)
+  TOOLS     ██████████████░░░░░░░░░░░░░░░░    46.7% (15,496)
+
+  Subtotal: 33,211 estimated input tokens
+  Note: inferred system/overhead values are heuristic estimates from API telemetry.
+
+Output Categories:
+  ASSISTANT ████░░░░░░░░░░░░░░░░░░░░░░░░░░       12.6% (159)
+  REASONING ██████████████████████████░░░░     87.4% (1,105)
+
+  Subtotal: 1,264 estimated output tokens
+
+Local Total: 34,475 tokens (estimated)
+
+TOOL USAGE BREAKDOWN
+─────────────────────────────────────────────────────────────────────────
+bash                 █████████████████████████████░    95.6% (14,810)    8x
+todowrite            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░        4.4% (686)    2x
+
+TOP CONTRIBUTORS
+─────────────────────────────────────────────────────────────────────────
+• System (inferred from API telemetry) 17,377 tokens (50.4%)
+• bash                         14,810 tokens (43.0%)
+• todowrite                    686 tokens (2.0%)
+• Reasoning#7                  371 tokens (1.1%)
+• User#1                       338 tokens (1.0%)
+
+═══════════════════════════════════════════════════════════════════════════
+MOST RECENT API CALL
+─────────────────────────────────────────────────────────────────────────
+
+Raw telemetry from last API response:
+  Input (fresh):             59 tokens
+  Cache read:            33,152 tokens
+  Output:                   310 tokens
+  Reasoning:                157 tokens
+  Provider total:        33,678 tokens
+  Cost:              $0.0002
+  ─────────────────────────────────────
+  Total:                 33,678 tokens
+
+═══════════════════════════════════════════════════════════════════════════
+SESSION TOTALS (All 10 API calls)
+─────────────────────────────────────────────────────────────────────────
+
+Assistant messages observed: 11 (structural count)
+
+Total tokens processed across the entire session (for cost calculation):
+
+  Input tokens:          31,595 (fresh tokens across all calls)
+  Cache read:           250,880 (cached tokens across all calls)
+  Cache write:                0 (tokens written to cache)
+  Output tokens:          2,624 (all model responses)
+  Reasoning tokens:         919 (thinking/reasoning)
+  ─────────────────────────────────────
+  Session Total:        286,018 tokens (for billing)
+  Cache read calls:           9 / 10
+  Cache write calls:          0 / 10
+
+═══════════════════════════════════════════════════════════════════════════
+SESSION COST
+─────────────────────────────────────────────────────────────────────────
+
+Token usage breakdown:
+  Input tokens:          31,595
+  Output tokens:          2,624
+  Reasoning tokens:         919
+  Cache read:           250,880
+
+─────────────────────────────────────────────────────────────────────────
+ACTUAL COST (from API):  $0.0061
+Estimated cost:          $0.0422 (+590.2% diff)
+
+Note: Actual cost from OpenCode includes provider-specific pricing
+and 200K+ context adjustments.
+
+══════════════════════════════════════════════════════════════════════════
+AVAILABLE SKILLS (always-available context)
+─────────────────────────────────────────────────────────────────────────
+
+These skills were recovered from the skill tool metadata available to this session.
+
+  Skill                  Description                                   Tokens
+  ───────────────────────────────────────────────────────────────────────
+  customize-opencode     Use ONLY when the user is editing or creatin…     ~95
+  perplexity-search      Perform web-grounded research with Perplexit…     ~73
+  pptx-to-pdf-converter  Convert PowerPoint presentations (.pptx, .pp…     ~56
+  skill-discovery        Use when finding, editing, loading, or troub…     ~50
+  conductor              Manage Context-Driven Development using the …     ~40
+  osgrep                 Semantic code search skill in CLI-only canar…     ~23
+  git-push               Standardized, low-token git stage+commit+pus…     ~22
+  nlm-skill              NotebookLM CLI and MCP server interface for …     ~20
+  ───────────────────────────────────────────────────────────────────────
+  Total: ~379 tokens (8 skills available)
+
+  Note: Full skill tool description is ~583 tokens (includes boilerplate).
+
+═══════════════════════════════════════════════════════════════════════════
+AVAILABLE SUBAGENTS (in task tool definition)
+─────────────────────────────────────────────────────────────────────────
+
+These subagents are embedded in the task tool description and consume tokens on every API call.
+
+  Subagent               Description                                        Tokens
+  ───────────────────────────────────────────────────────────────────────
+  explore                Fast agent specialized for exploring codebases. U…    ~105
+  cove-verifier          Blind fact-checking subagent for CoVe verificatio…     ~41
+  cove-orchestrator      Chain-of-Verification orchestrator with tier-awar…     ~33
+  seo-auditor            Analyzes content for 2025 SEO standards (E-E-A-T,…     ~33
+  general                General-purpose agent for researching complex que…     ~28
+  peer-review            Performs comprehensive peer reviews of work from …     ~26
+  gen-headlines          Generates 10 high-CTR social media headlines alig…     ~20
+  brand-voice-validator  Validates content against Company or Dave Witkin …     ~19
+  ───────────────────────────────────────────────────────────────────────
+  Total: ~305 tokens (8 subagents available)
+
+  Note: Full task tool description is ~790 tokens (includes instructions/examples).
+
+═══════════════════════════════════════════════════════════════════════════
+SUMMARY
+─────────────────────────────────────────────────────────────────────────
+
+                          Cost        Tokens          API Calls
+  Session:           $    0.0061       286,018            10
+
+═══════════════════════════════════════════════════════════════════════════

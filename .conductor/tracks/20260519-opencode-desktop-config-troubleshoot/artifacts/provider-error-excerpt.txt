@@ -1,0 +1,4 @@
+Observed provider error in Desktop log:
+service=llm providerID=opencode-go modelID=kimi-k2.6
+Error from provider: Extra inputs are not permitted, field: 'permissions'
+

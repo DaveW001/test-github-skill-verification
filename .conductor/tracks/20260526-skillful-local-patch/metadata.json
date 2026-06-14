@@ -1,0 +1,54 @@
+{
+  "trackId": "20260526-skillful-local-patch",
+  "title": "Patch skillful __require crash with createRequire polyfill",
+  "status": "completed",
+  "created": "2026-05-26",
+  "completed": "2026-05-26",
+  "estimatedHours": "1-2",
+  "assignedTo": "Dave Witkin",
+  "type": "bugfix",
+  "tags": [
+    "opencode",
+    "plugin",
+    "skillful",
+    "lazy-loading"
+  ],
+  "progress": {
+    "totalTasks": 17,
+    "completedTasks": 17,
+    "percentage": 100
+  },
+  "summary": "Apply a one-line polyfill to @zenobius/opencode-skillful@1.2.5 dist/index.js to fix TypeError: __require is not a function. Replaces Bun-specific import.meta.require with Node.js createRequire(import.meta.url).",
+  "keyOutcomes": [
+    "OpenCode Desktop loads skillful without crash",
+    "skill_find/skill_use workflow restored",
+    "Zero changes to AGENTS.md or skill directories"
+  ],
+  "risks": [
+    "npm update overwrites patch",
+    "Bundled file import structure may conflict with polyfill"
+  ],
+  "dependencies": [],
+  "blocking": [],
+  "relatedTracks": [
+    "20260519-opencode-desktop-performance-skillful-isolation",
+    "20260502-lazy-skill-discovery-regression"
+  ],
+  "deliverables": [
+    "Patched dist/index.js",
+    "Backup of original dist/index.js",
+    "Re-application instructions"
+  ],
+  "validationCriteria": [
+    "OpenCode Desktop starts without __require error",
+    "skill_find returns skills from lazy vault",
+    "skill_use loads skill body successfully",
+    "Original file backed up and recoverable",
+    "Patch diff documented for future re-application"
+  ],
+  "closeoutNotes": [
+    "Deterministic patch validation completed on 2026-05-26: backup, exact replacement, zero remaining import.meta.require, 3-line diff, Node import/syntax OK, metadata/ledger/index synchronized.",
+    "CLI smoke test completed on 2026-05-26: skillful plugin loaded under opencode CLI, discovered lazy-vault base path, registered 59 skills without the __require crash.",
+    "Live Desktop smoke test completed on 2026-05-26: Desktop started without __require crash, 60+ lazy-vault skills visible in session, skill_use loaded thinking-partner from lazy vault successfully. All validation criteria confirmed."
+  ]
+}

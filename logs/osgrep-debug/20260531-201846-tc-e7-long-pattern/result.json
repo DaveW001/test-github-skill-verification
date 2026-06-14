@@ -1,0 +1,22 @@
+{
+  "label": "tc-e7-long-pattern",
+  "started": "2026-06-01T00:18:46.406745+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "search",
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "--max-count",
+    "3"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": ".conductor\\tracks\\20260321-control-chrome-mcp-fix\\test2_dom_snapshot.html:80\n  px-6\\\",\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"className\\\":\\\"flex flex-col space-y-6\\\",\\\"children\\\":[[\\\"$\\\",\\\"div\\\",null,{\\\"className\\\":\\\"flex f\u001b[2m ...\u001b[22m\n\n.conductor\\tracks\\20260321-control-chrome-mcp-fix\\test2_dom_snapshot.html:80\n  alt=\"USDA Logo\" title=\"US Department of Agriculture\" loading=\"lazy\" width=\"86.625\" height=\"34.65\" decoding=\"async\" data-nimg=\"1\" class=\"gray\u001b[2m ...\u001b[22m\n\n.conductor\\tracks\\20260321-control-chrome-mcp-fix\\test2_dom_snapshot.html:80\n  ding=\"async\" data-nimg=\"1\" class=\"grayscale hover:grayscale-0 transition-all duration-300 object-contain\" src=\"/logos/nestle.png\" style=\"col\u001b[2m ...\u001b[22m\n\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skill-backup\\conductor\\references\\templates\\product.template.md:1\n  # Product\n  ## Vision\n  [What is this product? Who is it for? What problem does it solve?]\n  ## Goals\n  - [ ] Goal 1\n  - [ ] Goal 2\n  - [ ] Goal 3\n\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skills-backup\\conductor\\references\\templates\\product.template.md:1\n  # Product\n  ## Vision\n  [What is this product? Who is it for? What problem does it solve?]\n  ## Goals\n  - [ ] Goal 1\n  - [ ] Goal 2\n  - [ ] Goal 3\n\nosgrep results (5 matches across 3 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 2.431,
+  "finished": "2026-06-01T00:18:48.842081+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa --max-count 3"
+}

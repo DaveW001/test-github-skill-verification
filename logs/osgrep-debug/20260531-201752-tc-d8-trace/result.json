@@ -1,0 +1,20 @@
+{
+  "label": "tc-d8-trace",
+  "started": "2026-06-01T00:17:52.521590+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "trace",
+    "main"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "No known callers.\n\n\u25b6 main\n  Defined in .conductor\\tracks\\20260321-control-chrome-mcp-fix\\test_case_2_visual_regression.py:7\n  Role: DEFINITION\n\nCallees (What does this call?):\n  \u2193 makedirs\n  \u2193 sync_playwright\n  \u2193 launch\n  \u2193 new_context\n  \u2193 new_page\n  \u2193 set_default_navigation_timeout\n  \u2193 set_default_timeout\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 goto\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 title\n  \u2193 print\n  \u2193 close\n  \u2193 print\n  \u2193 set_viewport_size\n  \u2193 wait_for_timeout\n  \u2193 print\n  \u2193 print\n  \u2193 join\n  \u2193 screenshot\n  \u2193 getsize\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 set_viewport_size\n  \u2193 wait_for_timeout\n  \u2193 print\n  \u2193 print\n  \u2193 join\n  \u2193 screenshot\n  \u2193 getsize\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 evaluate\n  \u2193 content\n  \u2193 join\n  \u2193 open\n  \u2193 write\n  \u2193 getsize\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 print\n  \u2193 close\n  \u2193 print\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 0.883,
+  "finished": "2026-06-01T00:17:53.408926+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' trace main"
+}

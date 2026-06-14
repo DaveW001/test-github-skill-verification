@@ -1,0 +1,10 @@
+{
+  "workspace:prompt": "{\"prompt\":[{\"type\":\"text\",\"content\":\"\",\"start\":0,\"end\":0}],\"cursor\":0,\"context\":{\"items\":[]}}",
+  "session:ses_2debefd54ffe7HkeePRODVcGMK:prompt": "{\"prompt\":[{\"type\":\"text\",\"content\":\"\",\"start\":0,\"end\":0}],\"context\":{\"items\":[]},\"cursor\":0}",
+  "session:ses_23a6dcb6affeoou7j0scde6Vn7:prompt": "{\"prompt\":[{\"type\":\"text\",\"content\":\"\",\"start\":0,\"end\":0}],\"context\":{\"items\":[]},\"cursor\":0}",
+  "session:ses_2debefd54ffe7HkeePRODVcGMK:comments": "{\"comments\":{}}",
+  "session:ses_2e2c1fb49ffeffpgqjk3qcOfBF:comments": "{\"comments\":{}}",
+  "workspace:comments": "{\"comments\":{}}",
+  "session:ses_2e2c1fb49ffeffpgqjk3qcOfBF:prompt": "{\"prompt\":[{\"type\":\"text\",\"content\":\"\",\"start\":0,\"end\":0}],\"context\":{\"items\":[]},\"cursor\":0}",
+  "session:ses_23a6dcb6affeoou7j0scde6Vn7:comments": "{\"comments\":{}}"
+}

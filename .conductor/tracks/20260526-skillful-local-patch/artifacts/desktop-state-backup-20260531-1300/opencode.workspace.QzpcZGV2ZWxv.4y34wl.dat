@@ -1,0 +1,9 @@
+{
+	"workspace:prompt": "{\"prompt\":[{\"type\":\"text\",\"content\":\"\",\"start\":0,\"end\":0}],\"context\":{\"items\":[]},\"cursor\":0}",
+	"workspace:comments": "{\"comments\":{}}",
+	"session:ses_1bdef24a5ffe5WctdKsuhZ11M1:prompt": "{\"prompt\":[{\"type\":\"text\",\"content\":\"\",\"start\":0,\"end\":0}],\"context\":{\"items\":[]},\"cursor\":0}",
+	"session:ses_1bdef24a5ffe5WctdKsuhZ11M1:comments": "{\"comments\":{}}",
+	"workspace:terminal": "{\"all\":[]}",
+	"session:ses_1b97fb997ffeHFLy5rmbwL91LB:prompt": "{\"prompt\":[{\"type\":\"text\",\"content\":\"\",\"start\":0,\"end\":0}],\"context\":{\"items\":[]},\"cursor\":0}",
+	"session:ses_1b97fb997ffeHFLy5rmbwL91LB:comments": "{\"comments\":{}}"
+}

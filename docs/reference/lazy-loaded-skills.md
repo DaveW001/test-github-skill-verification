@@ -14,26 +14,26 @@ The setup relies on the `@zenobius/opencode-skillful` plugin to provide on-deman
 ### Key Directories
 * **Native Vault (`C:\Users\DaveWitkin\.config\opencode\skill\`):**
   Only the most foundational skills live here. They are injected natively.
-  * *Current Native Skills:* `conductor`, `git-push`, `osgrep`, `perplexity-search`. (Note: `snippets` is also injected natively via its own npm package).
+  * *Current Native Skills after 2026-05-31 cleanup:* `conductor`, `git-push`, `nlm-skill`, `osgrep`, `perplexity-search`, `pptx-to-pdf-converter`, `skill-discovery`.
 * **Lazy Vault (`C:\Users\DaveWitkin\.opencode-lazy-vault\`):**
-  The storage directory for all other skills (e.g., email, calendar, ClickUp, UI design). OpenCode does not scan this natively.
+  The storage directory for all other skills (e.g., email, calendar, ClickUp, UI design). OpenCode must not scan this natively.
 * **Mirrors & Symlinks:**
-  `C:\Users\DaveWitkin\.config\opencode\skills\` and `C:\Users\DaveWitkin\.agents\skills\` must only contain entries for the native skills. If lazy skills are placed here, OpenCode will inject them into the prompt and defeat the optimization.
+  `C:\Users\DaveWitkin\.agents\skills\` must be a real empty directory, not a junction to the lazy vault. `C:\Users\DaveWitkin\.config\opencode\skills\` should stay absent unless there is a specific reason to recreate it. If lazy skills are placed in either scanned path, OpenCode can inject them into the prompt and defeat the optimization.
 
 ### Configuration Files
 * **Plugin Registration (`C:\Users\DaveWitkin\.config\opencode\opencode.jsonc`):**
   Contains `"@zenobius/opencode-skillful"` in the `plugin` array.
-* **Skillful Config (`C:\Users\DaveWitkin\.config\opencode-skillful\.opencode-skillful.json`):**
+* **Skillful Config (`C:\Users\DaveWitkin\.config\opencode-skillful\opencode-skillful.config.mjs`):**
   Tells the plugin where to find the lazy skills.
-  ```json
-  {
-    "debug": false,
-    "basePaths": ["C:/Users/DaveWitkin/.opencode-lazy-vault"],
-    "promptRenderer": "xml",
-    "modelRenderers": {}
-  }
+  ```js
+  export default {
+    debug: false,
+    basePaths: ["C:/Users/DaveWitkin/.opencode-lazy-vault"],
+    promptRenderer: "xml",
+    modelRenderers: {}
+  };
   ```
-  > **⚠️ Config Path Critical:** The plugin's bunfig loader searches `~/.config/opencode-skillful/`, `~/.config/` directly, and `~/` — NOT `~/.config/opencode/`. The config MUST be at `~/.config/opencode-skillful/.opencode-skillful.json` or the plugin will silently fail to discover lazy skills.
+  > **Config Path Critical:** The archived plugin README documents `%APPDATA%\opencode-skillful\config.json`, but the bundled code in the active Desktop cache searches `C:\Users\DaveWitkin\.config\opencode-skillful`, `C:\Users\DaveWitkin\.config`, and `C:\Users\DaveWitkin`. Use `.mjs` so Electron/Node can dynamic-import the config without JSON import assertions.
 
 ## 3. Agent Workflow: Using Lazy Skills
 
@@ -61,13 +61,15 @@ If you are an agent troubleshooting skill issues, check the following:
 | Symptom | Diagnosis & Fix |
 | :--- | :--- |
 | **System prompt is huge again** | Another agent likely created new skills in `~\.config\opencode\skill\` instead of the `.opencode-lazy-vault` vault. Move them to the lazy vault. |
-| **`skill_find` returns nothing** | Check `~/.config/opencode-skillful/.opencode-skillful.json` (NOT `~/.config/opencode/`). Ensure the `basePaths` array points exactly to the absolute path for `.opencode-lazy-vault`. Forward slashes work (`C:/Users/...`). |
+| **`skill_find` returns nothing** | Check `C:\Users\DaveWitkin\.config\opencode-skillful\opencode-skillful.config.mjs`. Ensure the `basePaths` array points exactly to `C:/Users/DaveWitkin/.opencode-lazy-vault`. |
 | **`skill_use` returns "skill not found"** | Verify you are using **underscores** (e.g., `email_draft_reply`), matching the `name:` field in the skill's YAML frontmatter. Check if the skill directory actually exists in the lazy vault and has valid frontmatter with `name:` and `description:` fields. |
 | **Skill tools are completely missing** | Check `opencode.jsonc` to ensure `@zenobius/opencode-skillful` is still in the `plugin` array. Ensure the plugin didn't crash on startup. |
+| **Desktop logs show `__require is not a function`** | Run `C:\development\opencode\scripts\Repair-SkillfulDesktopCache.ps1`. Desktop loads from `C:\Users\DaveWitkin\.cache\opencode\packages\...`, so patching only the global npm install is insufficient. |
+| **Duplicate skill-name warnings return** | Verify `C:\Users\DaveWitkin\.agents\skills` is not a junction and is empty. Verify native and lazy vault names do not overlap. See `docs\troubleshooting\active\skillful-desktop-cache-patch-log.md`. |
 
 ### Rollback Procedure
 If the plugin critically fails and must be removed:
-1. Delete `~/.config/opencode-skillful/.opencode-skillful.json`.
+1. Move `~/.config/opencode-skillful/opencode-skillful.config.mjs` aside.
 2. Remove the plugin from `opencode.jsonc`.
 3. Move all folders from `.opencode-lazy-vault/` back to `skill/`.
 4. Recreate symlinks in `~/.agents/skills/` if necessary.

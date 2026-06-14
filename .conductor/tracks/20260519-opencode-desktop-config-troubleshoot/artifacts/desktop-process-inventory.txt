@@ -1,0 +1,8 @@
+OpenCode desktop process restarted on 2026-05-19 after promoting user-level env vars.
+Current process IDs observed:
+- 12876
+- 28296
+- 30016
+- 45828
+- 66424
+

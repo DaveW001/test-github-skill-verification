@@ -12,13 +12,18 @@
     "test:visual:update:cross": "set PW_CROSS_BROWSER=1&& playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts --update-snapshots",
     "test:visual:update:full": "playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts --update-snapshots",
     "test:visual:report": "playwright show-report .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright-report",
-    "test:visual:stability-log": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Update-CrossBrowserStabilityLog.ps1"
+    "test:visual:stability-log": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Update-CrossBrowserStabilityLog.ps1",
+    "test:links": "linkinator https://www.packagedagile.com --recurse --skip mailto: --skip tel: --skip \"https?://(www\\.)?linkedin\\.com\" --skip \"feed\\.xml$\" --skip \"twitter-card\\.png$\" --skip \"brad-hunter\\.webp$\" --skip \"https?://(www\\.)?gao\\.gov\" --skip \"https?://18f\\.gsa\\.gov\" --skip \"https?://hbr\\.org\" --verbosity error",
+    "test:a11y": "playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts .conductor/tracks/webapp-visual-regression/artifacts/starter/tests/accessibility/p0.accessibility.spec.ts",
+    "test:health": "playwright test -c .conductor/tracks/webapp-visual-regression/artifacts/starter/playwright.visual.config.ts .conductor/tracks/webapp-visual-regression/artifacts/starter/tests/health/p0.health.spec.ts"
   },
   "dependencies": {
     "@zenobius/opencode-skillful": "^1.2.5",
     "openwork-orchestrator": "^0.11.126"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.2"
+    "@axe-core/playwright": "^4.11.3",
+    "@playwright/test": "^1.58.2",
+    "linkinator": "^7.6.1"
   }
 }

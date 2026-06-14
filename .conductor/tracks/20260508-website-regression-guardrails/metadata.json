@@ -1,0 +1,24 @@
+{
+  "trackId": "20260508-website-regression-guardrails",
+  "title": "Website Regression Guardrails",
+  "status": "validation-complete",
+  "created": "2026-05-08",
+  "completed": "2026-05-08",
+  "type": "quality-hardening",
+  "tags": [
+    "visual-regression",
+    "github-actions",
+    "playwright",
+    "website-quality",
+    "content-site"
+  ],
+  "summary": "Tuned the website visual regression workflow into a lower-noise quality guardrail. Weekly schedule, PR path filters, non-blocking scheduled runs, reduced P0 routes to home+contact, added link/accessibility/health checks, documented failure triage and known issues.",
+  "relatedTracks": [
+    "webapp-visual-regression"
+  ],
+  "progress": {
+    "totalTasks": 35,
+    "completedTasks": 35,
+    "percentage": 100
+  }
+}

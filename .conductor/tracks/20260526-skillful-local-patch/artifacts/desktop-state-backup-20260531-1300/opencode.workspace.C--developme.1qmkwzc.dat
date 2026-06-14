@@ -1,0 +1,5 @@
+{
+	"workspace:followup": "{\"items\":{},\"failed\":{},\"paused\":{\"ses_215c94305ffesjlBU1Bw2us3QB\":true,\"ses_215b1f08bffeFJQdr2OLtdCds5\":true,\"ses_215ae7317ffeyiwg3GlMXGsPgA\":true,\"ses_215bbe272ffeZSSoaELfPKbT32\":true,\"ses_210104e28ffeF7J14xGK6uSntX\":true},\"edit\":{}}",
+	"workspace:model-selection": "{\"session\":{\"ses_1f6f2625affeUHDTq7bB28xLXG\":{\"agent\":\"build\",\"model\":{\"modelID\":\"kimi-k2.6\",\"providerID\":\"opencode-go\"},\"variant\":null},\"ses_1f2494b9effeYEMXR9J61WV0Qw\":{\"agent\":\"01-Planner\",\"model\":{\"modelID\":\"kimi-k2.6\",\"providerID\":\"opencode-go\"}},\"ses_1f23ad67affeDSZONequsTHcIo\":{\"agent\":\"build\",\"model\":{\"modelID\":\"kimi-k2.6\",\"providerID\":\"opencode-go\"}},\"ses_1d909d4b8ffefrBzL58lhTLvQG\":{\"agent\":\"01-Planner\",\"model\":{\"modelID\":\"gpt-5.5\",\"providerID\":\"openai\"},\"variant\":\"low\"},\"ses_1c8edc6f0ffeLV7ZcHaTe130oR\":{\"agent\":\"build\",\"model\":{\"modelID\":\"qwen3.6-plus\",\"providerID\":\"opencode-go\"}}}}",
+	"workspace:vcs": "{\"value\":{\"branch\":\"main\",\"default_branch\":\"main\"}}"
+}

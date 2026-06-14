@@ -1,0 +1,23 @@
+{
+  "label": "tc-c12-sync",
+  "started": "2026-06-01T00:16:57.753971+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "search",
+    "conductor",
+    "--sync",
+    "--max-count",
+    "5"
+  ],
+  "timeout_seconds": 120,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": ".conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skills-backup\\conductor\\SKILL.md:1\n  name: conductor\n  description: Manage Context-Driven Development using the Conductor protocol. Use when user mentions conductor, tracks, specs, plans, status,\u001b[2m ...\u001b[22m\n  triggers:\n    intent:\n      - planning\n      - conductor track management\n      - project context scaffolding\n    user_phrases:\n      - create a conductor plan\n      - start a track\n      - show track status\n    file_context:\n      extensions: [md, json]\n  ... (+20 more lines)\n\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skill-backup\\conductor\\SKILL.md:1\n  name: conductor\n  description: Manage Context-Driven Development using the Conductor protocol. Use when user mentions conductor, tracks, specs, plans, status,\u001b[2m ...\u001b[22m\n  triggers:\n    intent:\n      - planning\n      - conductor track management\n      - project context scaffolding\n    user_phrases:\n      - create a conductor plan\n      - start a track\n      - show track status\n    file_context:\n      extensions: [md, json]\n  ... (+20 more lines)\n\nlogs\\osgrep-debug\\20260531-201657-tc-c7-plain\\result.json:1\n  {\n    \"label\": \"tc-c7-plain\",\n    \"started\": \"2026-06-01T00:16:57.664791+00:00\",\n    \"cwd\": \"C:/development/opencode\",\n    \"command\": [\n      \"osgrep\",\n      \"search\",\n      \"conductor track\",\n      \"--plain\",\n      \"--max-count\",\n      \"3\"\n    ],\n    \"timeout_seconds\": 60,\n    \"platform\": \"nt\",\n    \"cleanup\": {},\n  ... (+2 more lines)\n\nlogs\\osgrep-debug\\20260531-201657-tc-c6-compact\\result.json:1\n  {\n    \"label\": \"tc-c6-compact\",\n    \"started\": \"2026-06-01T00:16:57.653373+00:00\",\n    \"cwd\": \"C:/development/opencode\",\n    \"command\": [\n      \"osgrep\",\n      \"search\",\n      \"conductor track\",\n      \"--compact\",\n      \"--max-count\",\n      \"3\"\n    ],\n    \"timeout_seconds\": 60,\n    \"platform\": \"nt\",\n    \"cleanup\": {},\n  ... (+8 more lines)\n\n.conductor\\tracks\\20260526-skillful-local-patch\\artifacts\\session-export-90d-20260531-182211\\sessions_90d_stats.json:196\n  },\n        {\n          \"db_path\": \"C:\\\\development\\\\opencode\\\\.conductor\\\\tracks\\\\20260526-skillful-local-patch\\\\artifacts\\\\desktop-state-backup-20260531-1\u001b[2m ...\u001b[22m\n          \"sessions_scanned\": 1873,\n          \"messages_scanned\": 60553\n        }\n      ],\n      \"cutoff_iso_utc\": \"2026-03-02T22:22:11.172000+00:00\"\n    },\n    \"output_files\": {\n      \"sessions_jsonl\": \"C:\\\\development\\\\opencode\\\\.conductor\\\\tracks\\\\20260526-skillful-local-patch\\\\artifacts\\\\session-export-90d-20260531-\u001b[2m ...\u001b[22m\n      \"sessions_missing_from_active_jsonl\": \"C:\\\\development\\\\opencode\\\\.conductor\\\\tracks\\\\20260526-skillful-local-patch\\\\artifacts\\\\session-\u001b[2m ...\u001b[22m\n      \"summary_markdown\": \"C:\\\\development\\\\opencode\\\\.conductor\\\\tracks\\\\20260526-skillful-local-patch\\\\artifacts\\\\session-export-90d-2026053\u001b[2m ...\u001b[22m\n      \"stats_json\": \"C:\\\\development\\\\opencode\\\\.conductor\\\\tracks\\\\20260526-skillful-local-patch\\\\artifacts\\\\session-export-90d-20260531-1822\u001b[2m ...\u001b[22m\n    },\n  ... (+2 more lines)\n\nosgrep results (5 matches across 5 files)\n",
+  "stderr": "- Indexing...\n\u221a Indexing complete (519/519) \u2022 indexed 15\n",
+  "timed_out": false,
+  "duration_seconds": 14.21,
+  "finished": "2026-06-01T00:17:11.968251+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search conductor --sync --max-count 5"
+}

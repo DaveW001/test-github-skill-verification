@@ -1,0 +1,22 @@
+{
+  "label": "tc-d2-symbols-filter",
+  "started": "2026-06-01T00:17:52.431283+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "symbols",
+    "osgrep",
+    "--limit",
+    "10"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "\u001b[1mProject\u001b[22m: \u001b[32mC:\\development\\opencode\u001b[39m\nNo symbols found. Run `osgrep index` to build the index.\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 0.946,
+  "finished": "2026-06-01T00:17:53.382258+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' symbols osgrep --limit 10"
+}

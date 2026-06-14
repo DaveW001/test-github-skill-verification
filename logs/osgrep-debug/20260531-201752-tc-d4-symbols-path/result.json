@@ -1,0 +1,23 @@
+{
+  "label": "tc-d4-symbols-path",
+  "started": "2026-06-01T00:17:52.438709+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "symbols",
+    "--path",
+    "scripts",
+    "--limit",
+    "10"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "\u001b[1mProject\u001b[22m: \u001b[32mC:\\development\\opencode\u001b[39m\n\u001b[1mSymbol               \u001b[22m  \u001b[1mCount\u001b[22m  \u001b[1mPath:Line\u001b[22m\n---------------------  -----  ---------------------------------------\nmain                       7  scripts\\skill_sync_huashu.py:118\nbuild_kg_prep              5  scripts\\export_opencode_sessions.py:395\nexport_sessions            5  scripts\\export_opencode_sessions.py:152\n_generate_report           3  scripts\\tests\\osgrep_test_suite.py:118\nwrite_kg_inbox_packet      3  scripts\\export_opencode_sessions.py:614\nwrite_outputs              3  scripts\\export_opencode_sessions.py:301\n_evaluate_result           1  scripts\\tests\\osgrep_test_suite.py:69\n_extract_text_excerpt      1  scripts\\export_opencode_sessions.py:95\n_is_blocking               1  scripts\\tests\\osgrep_test_suite.py:63\n_is_expected_failure       1  scripts\\tests\\osgrep_test_suite.py:66\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 0.939,
+  "finished": "2026-06-01T00:17:53.381494+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' symbols --path scripts --limit 10"
+}

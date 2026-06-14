@@ -1,0 +1,106 @@
+{
+  "trackId": "20260531-osgrep-comprehensive-test-suite",
+  "title": "OsGrep Comprehensive Test Suite",
+  "status": "completed",
+  "created": "2026-05-31",
+  "completed": "2026-05-31T20:24:35Z",
+  "estimatedHours": "1-2",
+  "assignedTo": "Build agent",
+  "type": "maintenance",
+  "tags": [
+    "osgrep",
+    "testing",
+    "validation",
+    "quality-assurance",
+    "cli-only",
+    "canary"
+  ],
+  "parentTrackId": "20260313-osgrep-stabilization",
+  "owner": "01-Planner / Build",
+  "tasks": {
+    "total": 52,
+    "completed": 52,
+    "inProgress": 0,
+    "pending": 0
+  },
+  "phases": {
+    "phase0": {
+      "name": "Setup and Preconditions",
+      "status": "completed",
+      "progress": "100%"
+    },
+    "phase1": {
+      "name": "Health and Readiness",
+      "status": "completed",
+      "progress": "100%"
+    },
+    "phase2": {
+      "name": "Index Operations",
+      "status": "completed",
+      "progress": "100%"
+    },
+    "phase3": {
+      "name": "Core Search",
+      "status": "completed",
+      "progress": "100%"
+    },
+    "phase4": {
+      "name": "Search Flags",
+      "status": "completed",
+      "progress": "100%"
+    },
+    "phase5": {
+      "name": "Symbols, Skeleton, and Trace",
+      "status": "completed",
+      "progress": "100%"
+    },
+    "phase6": {
+      "name": "Reliability and Edge Cases",
+      "status": "completed",
+      "progress": "100%"
+    },
+    "phase7": {
+      "name": "Guardrails and Tool-Path",
+      "status": "completed",
+      "progress": "100% (skipped TC-F2)"
+    },
+    "phase8": {
+      "name": "Tooling Validation",
+      "status": "completed",
+      "progress": "100%"
+    },
+    "phase9": {
+      "name": "Results Aggregation and Report",
+      "status": "completed",
+      "progress": "100%"
+    },
+    "phase10": {
+      "name": "Validation and Handover",
+      "status": "completed",
+      "progress": "100%"
+    }
+  },
+  "blockingIssues": [],
+  "successCriteria": [
+    "All 16 blocking tests pass (Health + Index + Core Search + Guardrails)",
+    "Aggregate report generated at logs/osgrep-test-suite/report.md",
+    "All failures documented with root cause or linked to known issues",
+    "Test suite is fully repeatable via python scripts/tests/osgrep_test_suite.py",
+    "No MCP path invoked during any test run"
+  ],
+  "nextActions": [
+    "Execute Phase 0: create test runner script and verify prerequisites",
+    "Run through all test phases in order",
+    "Aggregate results and generate report",
+    "Update metadata with pass/fail counts"
+  ],
+  "testSummary": {
+    "totalTests": 44,
+    "blockingTests": 16,
+    "nonBlockingTests": 28,
+    "passed": 45,
+    "failed": 0,
+    "timedOut": 1,
+    "skipped": 1
+  }
+}

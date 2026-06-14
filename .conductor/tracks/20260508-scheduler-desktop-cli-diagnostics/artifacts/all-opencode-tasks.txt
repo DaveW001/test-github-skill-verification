@@ -1,0 +1,14 @@
+
+TaskName                                                                                  State
+--------                                                                                  -----
+opencode-job-development-88876ee600f5-development-conductor-weekly-report                 Ready
+opencode-job-development-88876ee600f5-development-offer-validation-round1-daily-rollup Disabled
+opencode-job-development-88876ee600f5-development-osgrep-auto-indexer                     Ready
+opencode-job-development-88876ee600f5-development-scheduler-registry-sync                 Ready
+opencode-job-development-88876ee600f5-knowledge-base-ingest                               Ready
+opencode-job-development-88876ee600f5-skill-health-validator                              Ready
+opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort                Ready
+opencode-job-marketing-1cd46ed3b6ad-skill-sync-monitor                                    Ready
+opencode-job-opencode-global-7a3f9c2e1b84-gemini-proxy-monitor                            Ready
+opencode-job-opencode-global-7a3f9c2e1b84-gemini-proxy-starter                            Ready
+

@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "query": "When was the Eiffel Tower completed? What year?",
+  "model": "perplexity/sonar-pro",
+  "answer": "**The Eiffel Tower was completed on March 31, 1889.**[1][2][3][5][6]\n\nThis date marks the end of the main structural work, finished in a record **2 years, 2 months, and 5 days** after construction began on January 26-28, 1887.[1][2][3][5] Gustave Eiffel celebrated by leading officials to the top that day, though elevators were incomplete and the public opening occurred later on May 6 or 15, 1889.[2][4] All sources, including the official Eiffel Tower site and Wikipedia, consistently confirm 1889 as the completion year.[1][2][3][4][5][6]",
+  "usage": {
+    "prompt_tokens": 13,
+    "completion_tokens": 157,
+    "total_tokens": 170
+  }
+}

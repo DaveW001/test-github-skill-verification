@@ -33,20 +33,19 @@ OpenCode supports config in JSON or JSONC (JSON with Comments) format. Config fi
 This is the **only** config file. Contains everything:
 
 - **OpenCode version:** v1.14.25 (upgraded 2026-04-25, was v1.2.26)
-- **Plugins:** 6 plugins (snippets, skillful, codex-multi-auth, ignore, mystatus, dcp)
-  - `opencode-snippets@1.8.0` — Snippet management
-  - `@zenobius/opencode-skillful` — Lazy skill discovery and on-demand loading
-  - `oc-codex-multi-auth` — Multi-provider auth (successor to oc-chatgpt-multi-auth)
-  - `opencode-ignore@1.1.0` — File ignore patterns
-  - `opencode-mystatus` — AI quota status command
-  - `@tarquinen/opencode-dcp@latest` — Dynamic Context Pruning (hooks `tool.execute.before`)
+- **Plugins:** 5 plugins (snippets, skillful, codex-multi-auth, ignore, dcp)
+  - `opencode-snippets@1.8.0` - Snippet management
+  - `@zenobius/opencode-skillful` - Lazy skill discovery and on-demand loading
+  - `oc-codex-multi-auth` - Multi-provider auth (successor to oc-chatgpt-multi-auth)
+  - `opencode-ignore@1.1.0` - File ignore patterns
+  - `@tarquinen/opencode-dcp@latest` - Dynamic Context Pruning (hooks `tool.execute.before`)
 - **Permissions:** Explicit allow rules for tools, skills, bash, etc.
 - **Providers:**
   - `google` — Gemini models via local proxy (2.5-flash, 2.5-pro, 3-flash-preview, 3-pro-preview) + blacklist of unused models
   - `openai` — 12+ GPT model variants (5.2, 5.3 codex) with reasoning effort levels (none/low/medium/high/xhigh)
   - `moonshot` — Kimi K2.5 and Moonshot V1 models
 - **Default agent:** `01-Planner`
-- **Small model:** `openai/gpt-5.4-mini`
+- **Small model:** `zai-coding-plan/glm-5.1`
 - **Default model:** `zai-coding-plan/glm-5.1`
 - **Autoupdate:** enabled
 - **Snapshot:** enabled
@@ -55,7 +54,6 @@ This is the **only** config file. Contains everything:
   - Playwright (disabled)
   - Chrome DevTools (enabled)
   - **Slack** (enabled) — channels_list, conversations_history, conversations_search_messages, conversations_add_message, attachment_get_data, conversations_replies
-- **Commands:** `mystatus` command
 
 ### `tui.json` (TUI Settings — 8 lines)
 **Path:** `C:\Users\DaveWitkin\.config\opencode\tui.json`

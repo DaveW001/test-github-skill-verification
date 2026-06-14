@@ -1,0 +1,5 @@
+{
+  "workspace:vcs": "{\"value\":{}}",
+  "workspace:project": "{\"value\":{\"icon\":{\"color\":\"orange\"}}}",
+  "workspace:model-selection": "{\"session\":{\"ses_24a54b470ffeYRhczc0dEUIbcX\":{\"agent\":\"build\",\"model\":{\"modelID\":\"glm-5.1\",\"providerID\":\"zai-coding-plan\"},\"variant\":null}}}"
+}

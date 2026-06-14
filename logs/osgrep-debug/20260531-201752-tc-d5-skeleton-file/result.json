@@ -1,0 +1,20 @@
+{
+  "label": "tc-d5-skeleton-file",
+  "started": "2026-06-01T00:17:52.474043+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "skeleton",
+    "scripts/utils/osgrep_debug_wrapper.py"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "# scripts\\utils\\osgrep_debug_wrapper.py (skeleton, ~211 tokens)\n#!/usr/bin/env python3\n\"\"\"Run osgrep with structured logging and optional stale-process cleanup.\"\"\"\n\nfrom __future__ import annotations\n\nimport argparse\nimport json\nimport os\nimport shlex\nimport shutil\nimport subprocess\nimport sys\nimport time\nfrom datetime import datetime, timezone\nfrom pathlib import Path\n\n\ndef now_iso() -> str:\n\n    # \u2192 isoformat, now\n    ...\n\n\ndef run_cmd(command: list[str], timeout: int | None = None) -> tuple[int, str, str]:\n\n    # \u2192 run\n    ...\n\n\ndef cleanup_stale_windows() -> dict[str, object]:\n\n    # \u2192 run_cmd, strip | C:2\n    ...\n\n\ndef snapshot_windows(label: str, output_dir: Path, cwd: str) -> None:\n\n    # \u2192 Path, exists, run, str | C:3\n    ...\n\n\ndef main() -> int:\n\n    # \u2192 ArgumentParser, add_argument, getcwd, parse_args, ... | C:7 | ORCH\n    ...\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 0.903,
+  "finished": "2026-06-01T00:17:53.381365+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' skeleton scripts/utils/osgrep_debug_wrapper.py"
+}

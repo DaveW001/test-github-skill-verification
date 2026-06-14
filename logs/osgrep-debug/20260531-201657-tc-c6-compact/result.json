@@ -1,0 +1,23 @@
+{
+  "label": "tc-c6-compact",
+  "started": "2026-06-01T00:16:57.653373+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "search",
+    "conductor track",
+    "--compact",
+    "--max-count",
+    "3"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "osgrep hits\tquery=conductor track\tcount=5\npath\tlines\tscore\trole\tconf\tdefined\n.conductor\\tracks.md\t1-10\t1\tUNK\tH\t\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skills-backup\\conductor\\SKILL.md\t1-34\t.803\tUNK\tH\t\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skills-backup\\conductor\\references\\templates\\track-metadata.template.json\t1-28\t.789\tUNK\tM\t\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skill-backup\\conductor\\SKILL.md\t1-34\t.787\tUNK\tM\t\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skill-backup\\conductor\\references\\templates\\track-metadata.template.json\t1-28\t.786\tUNK\tM\t\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 4.1,
+  "finished": "2026-06-01T00:17:01.758841+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search 'conductor track' --compact --max-count 3"
+}

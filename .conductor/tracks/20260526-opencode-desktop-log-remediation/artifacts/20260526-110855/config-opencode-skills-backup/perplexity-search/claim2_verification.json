@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "query": "What is the exact height of the Eiffel Tower in meters? Include current height with and without antenna.",
+  "model": "perplexity/sonar-pro",
+  "answer": "**The Eiffel Tower's current height is 330 meters with its antenna and 324 meters without it.**\n\nThe official Eiffel Tower website states the current height as 330 meters (1,083 feet), reached on March 15, 2022, after adding a 6-meter digital terrestrial radio (DAB+) antenna by helicopter.[1][2] Without this antenna (and prior ones), the height was 324 meters (1,063 feet) following a 2000 UHF antenna addition for digital TV.[2][3] Wikipedia confirms these figures in its height change table: 324 m from 2000\u20132022 and 330 m since 2022.[3] The architectural structure alone (excluding antennas) aligns with the 324 m pinnacle before the latest addition, though early heights were around 300\u2013312 m.[2][3][4] These measurements account for historical antenna changes but exclude minor thermal expansion (up to 15\u201318 cm in summer).[4]",
+  "usage": {
+    "prompt_tokens": 23,
+    "completion_tokens": 207,
+    "total_tokens": 230
+  }
+}

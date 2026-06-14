@@ -1,0 +1,22 @@
+{
+  "label": "tc-c1-known-answer",
+  "started": "2026-06-01T00:15:47.053649+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "search",
+    "osgrep_debug_wrapper",
+    "--max-count",
+    "10"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "scripts\\utils\\osgrep_debug_wrapper.py:69 [Definition]\n  // scripts\\utils\\osgrep_debug_wrapper.py\n  import argparse\n  import json\n  import os\n  import shlex\n  import shutil\n  import subprocess\n  import sys\n  import time\n  def main() -> int:\n      parser = argparse.ArgumentParser(description=\"Run osgrep with reproducible logs.\")\n      parser.add_argument(\"--cwd\", default=os.getcwd(), help=\"Working directory to run osgrep from\")\n      parser.add_argument(\"--label\", default=\"run\", help=\"Label for output folder\")\n      parser.add_argument(\"--timeout\", type=int, default=20, help=\"Timeout in seconds\")\n  ... (+41 more lines)\n\nscripts\\utils\\osgrep_debug_wrapper.py:110 [Definition]\n  // scripts\\utils\\osgrep_debug_wrapper.py\n  import argparse\n  import json\n  import os\n  import shlex\n  import shutil\n  import subprocess\n  import sys\n  import time\n  = False\n          record[\"duration_seconds\"] = 0\n          record[\"finished\"] = now_iso()\n          record[\"command_text\"] = shlex.join([osgrep_exe, *command_args])\n          out_path = out_dir / \"result.json\"\n  ... (+29 more lines)\n\nscripts\\utils\\osgrep_debug_wrapper.py:134 [Definition]\n  // scripts\\utils\\osgrep_debug_wrapper.py\n  import argparse\n  import json\n  import os\n  import shlex\n  import shutil\n  import subprocess\n  import sys\n  import time\n      except subprocess.TimeoutExpired as exc:\n          record[\"exit_code\"] = None\n          record[\"stdout\"] = exc.stdout or \"\"\n          record[\"stderr\"] = exc.stderr or \"\"\n          record[\"timed_out\"] = True\n  ... (+16 more lines)\n\nscripts\\tests\\osgrep_test_suite.py:1\n  // scripts\\tests\\osgrep_test_suite.py\n  import argparse\n  import json\n  import sys\n  #!/usr/bin/env python3\n  \"\"\"Aggregate osgrep debug-wrapper result.json files into a pass/fail report.\n  Usage:\n      python scripts/tests/osgrep_test_suite.py --report\n          Scan logs/osgrep-debug/ for result.json and generate report.md.\n      python scripts/tests/osgrep_test_suite.py --list\n          List all available result.json files with status.\n  \"\"\"\n  ... (+50 more lines)\n\ndocs\\reference\\osgrep-configuration.md:1\n  # Osgrep Configuration Reference\n  ## Current Policy\n  - Osgrep is disabled-by-default for normal OpenCode workflows while reliability work remains active.\n  - Prefer `grep`, `glob`, and targeted `Read` for routine navigation.\n  - Use osgrep only for controlled debugging and reproduction work.\n  ## CLI Health Commands\n  ```bash\n  osgrep --help\n  osgrep doctor\n  ```\n  ## Debug Wrapper\n  Use the local wrapper when capturing reproducible logs:\n  ```bash\n  python scripts/utils/osgrep_debug_wrapper.py --label help-check -- -- --help\n  ... (+15 more lines)\n\nosgrep results (5 matches across 3 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 2.347,
+  "finished": "2026-06-01T00:15:49.403514+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search osgrep_debug_wrapper --max-count 10"
+}

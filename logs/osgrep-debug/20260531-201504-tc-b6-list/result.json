@@ -1,0 +1,19 @@
+{
+  "label": "tc-b6-list",
+  "started": "2026-06-01T00:15:04.044605+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "list"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "\n\u001b[1mProject\u001b[22m: \u001b[32mC:\\development\\opencode\u001b[39m\n\u001b[2mData directory\u001b[22m: C:\\development\\opencode\\.osgrep\n\nLanceDB: \u001b[32m87.8 MB\u001b[39m \u001b[2m(updated 2m ago)\u001b[22m\nCache: \u001b[32m263.9 KB\u001b[39m \u001b[2m(updated 2m ago)\u001b[22m\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 0.546,
+  "finished": "2026-06-01T00:15:04.593631+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' list"
+}

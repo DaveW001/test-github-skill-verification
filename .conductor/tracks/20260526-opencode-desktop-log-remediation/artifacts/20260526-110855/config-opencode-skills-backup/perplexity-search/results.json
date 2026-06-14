@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "query": "JavaScript Node.js DOCX manipulation libraries docx npm",
+  "model": "perplexity/sonar-pro",
+  "answer": "**The primary Node.js library for comprehensive DOCX manipulation (generating, modifying, and parsing .docx files) is `docx` from npm, which works in both Node.js and browser environments.**[3][4]\n\n### Key Libraries for DOCX Manipulation\nUse these npm packages based on your needs:\n\n- **`docx`**: Full-featured for creating and editing .docx files programmatically, including paragraphs, tables, images, bullet points, and advanced formatting. Supports Node.js (with demos on RunKit) and browser frameworks like React, Angular, Vue. Detailed API docs and playground available.[3][4]\n- **`docx-merger`**: Specialized for merging multiple .docx files while preserving text, tables, styles, headers, footers, and images by combining XML structures.[2]\n- **`docxml`**: TypeScript library for building .docx from scratch or templates (DOCX/DOTX), also supports parsing. Works in Node.js and Deno.[5]\n- **`html-docx-js`**: Converts HTML to .docx, useful after parsing .docx to HTML (e.g., via `mammoth`) for editing and re-exporting.[2]\n\n### Parsing-Focused Libraries (Reading/Extracting from DOCX)\nFor extraction rather than editing:\n- `officeparser`: Parses DOCX (plus PPTX, XLSX, PDF, etc.) to structured data in Node.js/browser.[6]\n- `mammoth`: Converts .docx to HTML (handles images as Base64), ideal for client-side manipulation before converting back.[2]\n\nInstall via `npm install <package>`. For `docx`, start with their docs at docx.js.org for examples like generating tables or adding images.[3][4] Other libraries in search results (e.g., text extractors) focus on parsing only, not full manipulation.[1]",
+  "usage": {
+    "prompt_tokens": 10,
+    "completion_tokens": 395,
+    "total_tokens": 405
+  }
+}

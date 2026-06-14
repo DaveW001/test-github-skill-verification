@@ -1,0 +1,20 @@
+{
+  "label": "tc-f3-forced-failure",
+  "started": "2026-06-01T00:22:05.316093+00:00",
+  "cwd": "C:/development/opencode/xyznonexistent987",
+  "command": [
+    "osgrep",
+    "search",
+    "test"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "Working directory does not exist: C:/development/opencode/xyznonexistent987",
+  "timed_out": false,
+  "duration_seconds": 0,
+  "finished": "2026-06-01T00:22:05.320906+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search test"
+}

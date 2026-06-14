@@ -1,0 +1,162 @@
+═══════════════════════════════════════════════════════════════════════════
+Token Analysis: Session ses_19a46e8fdffe34ymzb5GdPD2eT
+Model: approx
+═══════════════════════════════════════════════════════════════════════════
+
+WARNINGS
+───────────────────────────────────────────────────
+- Model 'zai-coding-plan/glm-5.1' is not currently supported by a model-specific tokenizer. Token counts use an approximate character-based fallback.
+- OpenCode export failed for session ses_19a46e8fdffe34ymzb5GdPD2eT. Context sections were skipped: Cannot find package 'C:\Users\DaveWitkin\.cache\opencode\packages\@ramtinj95\opencode-tokenscope@latest\node_modules\bun\index.js' imported from C:\Users\DaveWitkin\.cache\opencode\packages\@ramtinj95\opencode-tokenscope@latest\node_modules\@ramtinj95\opencode-tokenscope\dist\tokenscope-lib\context.js
+
+TOKEN BREAKDOWN BY CATEGORY
+─────────────────────────────────────────────────────────────────────────
+Estimated using tokenizer analysis of message content:
+
+Input Categories:
+  SYSTEM    ██████████████████████░░░░░░░░    74.4% (27,280)
+  USER      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░        1.1% (392)
+  TOOLS     ███████░░░░░░░░░░░░░░░░░░░░░░░     24.5% (8,976)
+
+  Subtotal: 36,648 estimated input tokens
+  Note: inferred system/overhead values are heuristic estimates from API telemetry.
+
+Output Categories:
+  ASSISTANT ████████████████████████░░░░░░        81.6% (84)
+  REASONING ██████░░░░░░░░░░░░░░░░░░░░░░░░        18.4% (19)
+
+  Subtotal: 103 estimated output tokens
+
+Local Total: 36,751 tokens (estimated)
+
+TOOL USAGE BREAKDOWN
+─────────────────────────────────────────────────────────────────────────
+bash                 █████████████████████████████░     97.9% (8,784)    5x
+todowrite            █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░        2.1% (192)    1x
+
+TOP CONTRIBUTORS
+─────────────────────────────────────────────────────────────────────────
+• System (inferred from API telemetry) 27,280 tokens (74.2%)
+• bash                         8,784 tokens (23.9%)
+• User#1                       392 tokens (1.1%)
+• todowrite                    192 tokens (0.5%)
+• Assistant#1                  54 tokens (0.1%)
+
+═══════════════════════════════════════════════════════════════════════════
+MOST RECENT API CALL
+─────────────────────────────────────────────────────────────────────────
+
+Raw telemetry from last API response:
+  Input (fresh):            104 tokens
+  Cache read:            36,544 tokens
+  Output:                    88 tokens
+  Provider total:        36,736 tokens
+  ─────────────────────────────────────
+  Total:                 36,736 tokens
+
+═══════════════════════════════════════════════════════════════════════════
+SESSION TOTALS (All 6 API calls)
+─────────────────────────────────────────────────────────────────────────
+
+Assistant messages observed: 7 (structural count)
+
+Total tokens processed across the entire session (for cost calculation):
+
+  Input tokens:           9,963 (fresh tokens across all calls)
+  Cache read:           190,016 (cached tokens across all calls)
+  Cache write:                0 (tokens written to cache)
+  Output tokens:            664 (all model responses)
+  Reasoning tokens:          15 (thinking/reasoning)
+  ─────────────────────────────────────
+  Session Total:        200,658 tokens (for billing)
+  Cache read calls:           6 / 6
+  Cache write calls:          0 / 6
+
+═══════════════════════════════════════════════════════════════════════════
+ESTIMATED SESSION COST (API Key Pricing)
+─────────────────────────────────────────────────────────────────────────
+
+You appear to be on a subscription plan (API cost is $0).
+Here's what this session would cost with direct API access:
+
+  Input tokens:           9,963 × $0.00/M  = $0.0000
+  Output tokens:            679 × $0.00/M  = $0.0000
+─────────────────────────────────────────────────────────────────────────
+ESTIMATED TOTAL: $0.0000
+
+Note: This estimate uses standard API pricing from models.json.
+Actual API costs may vary based on provider and context size.
+
+══════════════════════════════════════════════════════════════════════════
+AVAILABLE SKILLS (always-available context)
+─────────────────────────────────────────────────────────────────────────
+
+These skills were recovered from the skill tool metadata available to this session.
+
+  Skill                  Description                                   Tokens
+  ───────────────────────────────────────────────────────────────────────
+  clickup-cli            Use when managing ClickUp tasks, sprints, or…    ~150
+  google-drive           List, search, download, upload, and read fil…    ~113
+  customize-opencode     Use ONLY when the user is editing or creatin…    ~103
+  first-principles-mast… Use first principles thinking to deconstruct…    ~103
+  gemini-proxy           Manage the local Gemini API Key Rotator Prox…     ~94
+  gmail-workspace        Export, triage, and process Gmail messages u…     ~91
+  frontend-design        Create distinctive, production-grade fronten…     ~76
+  find-info              Use when the user asks to find information, …     ~74
+  email-draft-reply      Draft human-sounding email replies in Dave W…     ~73
+  doc-to-markdown        Convert PDF and HTML source files to structu…     ~71
+  email-auto-sorter      Headless/automated skill to keep the inbox c…     ~71
+  gmail-draft-reply      Draft human-sounding email replies in Dave W…     ~71
+  gmail-inbox-triage     Triage Gmail inbox messages and help decide …     ~68
+  google-calendar-sched… Schedule, update, and cancel Google Calendar…     ~66
+  html-demo-design       Compatibility alias for the renamed image re…     ~65
+  content-trend-researc… Research content and topic trends across web…     ~62
+  design-system-extract… Extract design tokens and system elements fr…     ~62
+  email-routing-config   Manage email routing configuration — overrid…     ~62
+  calendar-today         Show today's Outlook calendar schedule with …     ~61
+  command-writer         Create and improve OpenCode/Claude slash com…     ~60
+  clickup                Create, update, search, and prioritize Click…     ~58
+  doc                    Use when the task involves reading, creating…     ~56
+  calendar-schedule      Schedule, update, and cancel Outlook calenda…     ~55
+  google-calendar-today  Show today's Google Calendar schedule with t…     ~55
+  google-contacts        Search, lookup, create, and update Google Co…     ~51
+  conductor              Manage Context-Driven Development using the …     ~50
+  github-create-repo     Create a GitHub repository for the current p…     ~50
+  email-to-clickup       Converts an email into an actionable ClickUp…     ~47
+  agent-writer           Create and update OpenCode agents. Use when …     ~43
+  github-management      Handles GitHub workflow automation including…     ~38
+  firebase-deployment-s… Handles Firebase deployment for a Next.js pr…     ~31
+  git-push               Standardized, low-token git stage+commit+pus…     ~21
+  ───────────────────────────────────────────────────────────────────────
+  Total: ~2,151 tokens (32 skills available)
+
+  Note: Full skill tool description is ~5,712 tokens (includes boilerplate).
+
+═══════════════════════════════════════════════════════════════════════════
+AVAILABLE SUBAGENTS (in task tool definition)
+─────────────────────────────────────────────────────────────────────────
+
+These subagents are embedded in the task tool description and consume tokens on every API call.
+
+  Subagent               Description                                        Tokens
+  ───────────────────────────────────────────────────────────────────────
+  explore                Fast agent specialized for exploring codebases. U…    ~124
+  cove-verifier          Blind fact-checking subagent for CoVe verificatio…     ~46
+  peer-review            Performs comprehensive peer reviews of work from …     ~43
+  general                General-purpose agent for researching complex que…     ~40
+  cove-orchestrator      Chain-of-Verification orchestrator with tier-awar…     ~38
+  seo-auditor            Analyzes content for 2025 SEO standards (E-E-A-T,…     ~28
+  brand-voice-validator  Validates content against Company or Dave Witkin …     ~22
+  gen-headlines          Generates 10 high-CTR social media headlines alig…     ~22
+  ───────────────────────────────────────────────────────────────────────
+  Total: ~363 tokens (8 subagents available)
+
+  Note: Full task tool description is ~901 tokens (includes instructions/examples).
+
+═══════════════════════════════════════════════════════════════════════════
+SUMMARY
+─────────────────────────────────────────────────────────────────────────
+
+                          Cost        Tokens          API Calls
+  Session:           $    0.0000       200,658             6
+
+═══════════════════════════════════════════════════════════════════════════

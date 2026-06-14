@@ -1,0 +1,22 @@
+{
+  "label": "tc-g1-wrapper-baseline",
+  "started": "2026-06-01T00:22:05.339841+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "search",
+    "test",
+    "--max-count",
+    "1"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": ".conductor\\tracks\\20260321-control-chrome-mcp-fix\\test_chrome_devtools_mcp.py:370 [Definition]\n  // .conductor\\tracks\\20260321-control-chrome-mcp-fix\\test_chrome_devtools_mcp.py\n  import subprocess\n  import sys\n  import time\n  def main():\n      \"\"\"Run all test cases\"\"\"\n      print(\"=\"*60)\n      print(\"CHROME DEVTOOLS MCP TEST SUITE\")\n      print(\"=\"*60)\n      print(f\"Started: {datetime.now().isoformat()}\")\n      print(f\"Target Website: https://packagedagile.com\")\n      print(\"=\"*60)\n      results = []\n  ... (+14 more lines)\n\n.conductor\\tracks\\20260321-control-chrome-mcp-fix\\test_chrome_devtools_mcp.py:255 [Definition]\n  // .conductor\\tracks\\20260321-control-chrome-mcp-fix\\test_chrome_devtools_mcp.py\n  import subprocess\n  import sys\n  import time\n  def test_multi_page_navigation():\n      \"\"\"Test Case 7: Multi-Page Navigation\"\"\"\n      print(\"\\n\" + \"=\"*60)\n      print(\"TEST CASE 7: Multi-Page Navigation\")\n      print(\"=\"*60)\n      print(\"Targets: Homepage, Services, About, Contact\")\n      test_steps = [\n          \"1. Navigate to homepage\",\n          \"2. List all pages (list_pages)\",\n  ... (+24 more lines)\n\n.conductor\\tracks\\20260321-control-chrome-mcp-fix\\test_chrome_devtools_mcp.py:290 [Definition]\n  // .conductor\\tracks\\20260321-control-chrome-mcp-fix\\test_chrome_devtools_mcp.py\n  import subprocess\n  import sys\n  import time\n  def test_memory_analysis():\n      \"\"\"Test Case 8: Memory Snapshot Analysis\"\"\"\n      print(\"\\n\" + \"=\"*60)\n      print(\"TEST CASE 8: Memory Snapshot Analysis\")\n      print(\"=\"*60)\n      print(\"Target: https://packagedagile.com\")\n      test_steps = [\n          \"1. Navigate to https://packagedagile.com\",\n          \"2. Take initial memory snapshot\",\n  ... (+21 more lines)\n\n.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\playwright-report\\index.html:78\n  33);--vscode-terminalOverviewRuler-findMatchForeground: rgba(209, 134, 22, .49);--vscode-terminal-dropBackground: rgba(83, 89, 93, .5);--vsc\u001b[2m ...\u001b[22m\n\n.conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\playwright-report\\index.html:78\n  adding:4px}.step-attachment-link:hover{background-color:var(--color-neutral-muted)}.step-attachment-link .octicon{margin-right:0}.step-durat\u001b[2m ...\u001b[22m\n\nosgrep results (5 matches across 2 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.936,
+  "finished": "2026-06-01T00:22:07.279638+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search test --max-count 1"
+}

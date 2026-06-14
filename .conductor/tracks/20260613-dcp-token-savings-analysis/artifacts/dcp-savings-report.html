@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>DCP Token Savings Report</title>
+<style>
+  :root{--bg:#0f172a;--card:#1e293b;--card2:#334155;--accent:#4f46e5;--accent2:#818cf8;--green:#22c55e;--blue:#3b82f6;--orange:#f59e0b;--red:#ef4444;--amber:#fbbf24;--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--border:#475569}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:20px;max-width:1100px;margin:0 auto}
+  h1{font-size:1.8rem;font-weight:700;margin-bottom:4px}
+  h2{font-size:1.3rem;font-weight:600;color:var(--accent2);margin-top:32px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+  h3{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:8px}
+  .subtitle{color:var(--text2);font-size:.9rem;margin-bottom:24px}
+  .note{color:var(--text3);font-size:.85rem}
+  .hero{background:linear-gradient(135deg,#1e293b 0%,#312e81 100%);border-radius:16px;padding:36px;text-align:center;margin-bottom:28px;border:1px solid var(--border)}
+  .hero-num{font-size:3.5rem;font-weight:800;color:var(--green);letter-spacing:-1px}
+  .hero-label{font-size:1.1rem;color:var(--text2);margin-top:8px}
+  .hero-sub{margin-top:16px;font-size:1rem;color:var(--text)}
+  .hero-sub strong{color:var(--accent2)}
+  .hero-badges{display:flex;gap:16px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+  .badge{background:rgba(79,70,229,.2);border:1px solid var(--accent);border-radius:8px;padding:8px 16px;font-size:.95rem}
+  .badge strong{color:var(--green)}
+  .explain-box{background:var(--card);border-radius:12px;padding:20px 24px;border:1px solid var(--border);border-left:4px solid var(--accent2);margin:0 0 28px}
+  .explain-box h3{color:var(--accent2);margin-bottom:10px}
+  .explain-box p{font-size:.88rem;color:var(--text);margin:6px 0;line-height:1.65}
+  .explain-box .example{background:var(--bg);border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.82rem;color:var(--text2);border:1px solid var(--border)}
+  .explain-box .example strong{color:var(--green)}
+  .ot-comp-banner{background:rgba(79,70,229,.1);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin:0 0 16px;font-size:.85rem;color:var(--text2);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .ot-comp-banner strong{color:var(--text)}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 24px}
+  .compare-card{background:var(--card);border-radius:12px;padding:24px;border:1px solid var(--border);text-align:center}
+  .compare-card.alt{border-color:var(--accent)}
+  .compare-card .label{color:var(--text2);font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
+  .compare-card .num{font-size:2.2rem;font-weight:700;margin:8px 0}
+  .compare-card .num.green{color:var(--green)}.compare-card .num.blue{color:var(--accent2)}
+  .compare-card .desc{font-size:.82rem;color:var(--text3)}
+  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin:20px 0}
+  .stat-box{background:var(--card);border-radius:10px;padding:14px 12px;border:1px solid var(--border);text-align:center}
+  .stat-box .stat-label{color:var(--text2);font-size:.75rem;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;gap:2px}
+  .stat-box .stat-value{font-size:1.5rem;font-weight:700;margin-top:4px}
+  .stat-box .stat-value.green{color:var(--green)}.stat-box .stat-value.blue{color:var(--accent2)}.stat-box .stat-value.orange{color:var(--orange)}
+  .chart-container{background:var(--card);border-radius:12px;padding:20px;border:1px solid var(--border);margin:16px 0}
+  .chart-title{font-size:.95rem;font-weight:600;margin-bottom:12px;color:var(--text)}
+  .bar-row{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:.85rem}
+  .bar-label{width:100px;text-align:right;color:var(--text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:0}
+  .bar-track{flex:1;height:22px;background:var(--bg);border-radius:4px;overflow:hidden;display:flex}
+  .bar-fill-ot{height:100%;background:#c7d2fe;border-radius:4px 0 0 4px}
+  .bar-fill-comp{height:100%;background:var(--accent);border-radius:0 4px 4px 0}
+  .bar-value{width:70px;text-align:right;font-weight:600;color:var(--green);flex-shrink:0}
+  .bar-meta{width:200px;font-size:.72rem;color:var(--text3);flex-shrink:0}
+  .elig-flag{font-size:.7rem;padding:1px 5px;border-radius:3px;margin-left:4px}
+  .elig-flag.missed{background:rgba(239,68,68,.15);color:var(--red)}
+  .elig-flag.short{background:rgba(100,116,139,.2);color:var(--text3)}
+  .missed-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.85rem}
+  .missed-table th{color:var(--text2);font-size:.75rem;text-transform:uppercase;letter-spacing:.5px;padding:8px 12px;border-bottom:1px solid var(--border);text-align:left}
+  .missed-table td{padding:8px 12px;border-bottom:1px solid var(--border)}
+  .missed-table td:nth-child(4),.missed-table td:nth-child(5){text-align:right}
+  .missed-info{background:rgba(245,158,11,.08);border:1px solid var(--border);border-left:4px solid var(--orange);border-radius:8px;padding:12px 16px;margin:12px 0;font-size:.82rem;color:var(--text2)}
+  .missed-info strong{color:var(--orange)}
+  .legend{display:flex;gap:20px;margin:8px 0 16px;font-size:.8rem;color:var(--text2);flex-wrap:wrap}
+  .legend-item{display:flex;align-items:center;gap:6px}
+  .legend-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+  table{width:100%;border-collapse:collapse;margin:12px 0}
+  th,td{padding:10px 16px;text-align:left;border-bottom:1px solid var(--border)}
+  th{color:var(--text2);font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
+  td{font-size:.95rem}
+  td:last-child{text-align:right;font-weight:600;color:var(--green)}
+  .insights{background:var(--card);border-radius:12px;padding:20px;border:1px solid var(--border);border-left:4px solid var(--accent);margin:16px 0}
+  .insights ul{padding-left:20px}
+  .insights li{margin:10px 0;font-size:.9rem;line-height:1.6}
+  .insights strong{color:var(--accent2)}
+  .reddit-card{background:linear-gradient(135deg,#1e293b,#0c4a6e);border-radius:12px;padding:24px;margin:24px 0;border:2px solid var(--blue)}
+  .reddit-header{font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--blue);font-weight:700;margin-bottom:12px}
+  .reddit-body{font-size:.95rem;line-height:1.7}
+  .reddit-body p{margin:8px 0}
+  .reddit-body strong{color:var(--accent2)}
+  .reddit-body ul{padding-left:20px;margin:8px 0}
+  .donut-container{display:flex;align-items:center;justify-content:center;gap:32px;margin:20px 0;flex-wrap:wrap}
+  .donut{width:160px;height:160px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
+  .donut-hole{width:110px;height:110px;border-radius:50%;background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .donut-hole .pct{font-size:2rem;font-weight:800;color:var(--green)}
+  .donut-hole .lbl{font-size:.75rem;color:var(--text2)}
+  .donut-legend{font-size:.9rem;line-height:2}
+  .donut-legend strong{color:var(--accent2)}
+  .footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--border);color:var(--text3);font-size:.8rem;text-align:center}
+  .tip-wrap{position:relative;display:inline-flex;align-items:center;cursor:help}
+  .tip-i{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:var(--card2);color:var(--text2);font-size:.6rem;font-weight:700;margin-left:3px;flex-shrink:0}
+  .tip-body{visibility:hidden;opacity:0;position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:#0c0a1e;color:#e2e8f0;padding:10px 14px;border-radius:8px;font-size:.76rem;white-space:normal;width:250px;z-index:300;line-height:1.5;transition:opacity .15s;box-shadow:0 4px 12px rgba(0,0,0,.5);border:1px solid var(--border);text-align:left;pointer-events:none}
+  .tip-body::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#0c0a1e}
+  .tip-wrap:hover .tip-body{visibility:visible;opacity:1}
+  @media(max-width:700px){.bar-meta{width:120px;font-size:.68rem}.bar-label{width:70px}.compare-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<h1>DCP Token Savings Report</h1>
+<p class="subtitle">Dynamic Context Pruning &mdash; compound savings analysis across 250 sessions</p>
+
+<div class="hero">
+  <div class="hero-num">179.5M</div>
+  <div class="hero-label">tokens saved via compound DCP effect</div>
+  <div class="hero-sub">Without DCP you would have used <strong>641.3M</strong> tokens instead of <strong>461.8M</strong>.</div>
+  <div class="hero-badges">
+    <div class="badge"><strong>38.9%</strong> saved &middot; $538.37 at $3/M</div>
+    <div class="badge"><strong>35.1x</strong> compound multiplier <span class="tip-wrap"><span class="tip-i">i</span><span class="tip-body">The multiplier shows how much compound savings exceeds one-time compression. A 31.9x multiplier means each compressed token saves ~32 tokens total across all subsequent requests in that session.</span></span></div>
+    <div class="badge"><strong>160/250</strong> sessions had DCP</div>
+  </div>
+</div>
+
+<div class="explain-box">
+  <h3>Understanding This Report</h3>
+  <p><strong>One-Time Savings</strong> measures tokens removed during each compression event &mdash; counted once.
+  If DCP compresses 40K tokens into a 1.5K summary, that's 38.5K tokens saved in that single event.</p>
+  <p><strong>Compound Savings</strong> recognizes those 38.5K tokens are <em>never re-sent</em> on subsequent
+  requests. In a session that continues for 149 more turns, the real savings is 38.5K &times; 149 = <strong>5.7M tokens</strong>.</p>
+  <div class="example"><strong>Example:</strong> Session A has 164 requests. DCP compresses 173K tokens into summaries
+  across 6 blocks, starting around turn 15. Those 173K tokens are never re-sent on the remaining ~149 requests.
+  One-time savings: <strong>173K</strong>. Compound savings: <strong>14.9M</strong> (86x multiplier).</div>
+  <p>The <strong>Multiplier</strong> (35.1x) means that on average, each compressed token saves ~35
+  tokens across all future requests in that session.</p>
+</div>
+
+<h2>One-Time vs Compound Savings</h2>
+<div class="ot-comp-banner">
+  <span class="legend-dot" style="background:#c7d2fe"></span>
+  <strong>One-Time</strong> = tokens removed during compression (counted once per event)
+  &nbsp;&middot;&nbsp;
+  <span class="legend-dot" style="background:#4f46e5"></span>
+  <strong>Compound</strong> = same tokens &times; every subsequent request that benefits
+</div>
+<div class="compare-grid">
+  <div class="compare-card">
+    <div class="label">One-Time Compression <span class="tip-wrap"><span class="tip-i">i</span><span class="tip-body">Sum of (compressedTokens - summaryTokens) across ALL compression events in ALL sessions. This is the traditional metric that only counts tokens removed once.</span></span></div>
+    <div class="num blue">5.1M</div>
+    <div class="desc">Tokens removed during compression events &mdash; counted once.</div>
+  </div>
+  <div class="compare-card alt">
+    <div class="label">Compound Savings (Real) <span class="tip-wrap"><span class="tip-i">i</span><span class="tip-body">One-time savings multiplied by the number of subsequent requests that benefit from each compression. This reflects the actual reduction in API token consumption.</span></span></div>
+    <div class="num green">179.5M</div>
+    <div class="desc">Tokens saved across ALL subsequent requests in each session.</div>
+  </div>
+</div>
+
+<h2>Key Metrics</h2>
+<div class="stat-grid">
+  <div class="stat-box"><div class="stat-label"><span class="tip-wrap">Tokens Used<span class="tip-i">i</span><span class="tip-body">Total tokens (input + output + reasoning) consumed across all 250 sessions. This is what was actually sent/received after DCP compression.</span></span></div><div class="stat-value blue">461.8M</div></div>
+  <div class="stat-box"><div class="stat-label"><span class="tip-wrap">Tokens Saved<span class="tip-i">i</span><span class="tip-body">Compound savings: one-time compressed tokens multiplied by subsequent requests that benefit. This is the real reduction in API consumption.</span></span></div><div class="stat-value green">179.5M</div></div>
+  <div class="stat-box"><div class="stat-label"><span class="tip-wrap">Savings Rate<span class="tip-i">i</span><span class="tip-body">Compound tokens saved divided by tokens used. Without DCP, you would have used 641.3M tokens total.</span></span></div><div class="stat-value green">38.9%</div></div>
+  <div class="stat-box"><div class="stat-label"><span class="tip-wrap">USD Saved ($3/M)<span class="tip-i">i</span><span class="tip-body">Estimated cost savings at a blended rate of $3.00 per million input tokens. See sensitivity table below for other rates.</span></span></div><div class="stat-value green">$538.37</div></div>
+  <div class="stat-box"><div class="stat-label"><span class="tip-wrap">Total Requests<span class="tip-i">i</span><span class="tip-body">Number of model inference calls (step-finish events) across all sessions. Each request benefits from prior DCP compressions.</span></span></div><div class="stat-value orange">9691</div></div>
+  <div class="stat-box"><div class="stat-label"><span class="tip-wrap">DCP Blocks<span class="tip-i">i</span><span class="tip-body">Total compression events across all sessions. Each block compresses a range of conversation messages into a summary.</span></span></div><div class="stat-value orange">144</div></div>
+  <div class="stat-box"><div class="stat-label"><span class="tip-wrap">Multiplier<span class="tip-i">i</span><span class="tip-body">Compound savings divided by one-time savings. A 35.1x multiplier means each compressed token saves ~35 tokens on average across all subsequent requests.</span></span></div><div class="stat-value blue">35.1x</div></div>
+  <div class="stat-box"><div class="stat-label"><span class="tip-wrap">Sessions w/ DCP<span class="tip-i">i</span><span class="tip-body">160 of 250 sessions have DCP state files. Of the remaining 90: 67 were too short for DCP, 23 had enough activity (≥10 requests + ≥10.0K peak context) that DCP should have triggered but didn’t. DCP activates via a hard limit at 100.0K tokens or a soft nudge every 5 turns after turn 15.</span></span></div><div class="stat-value blue">160/250</div></div>
+</div>
+
+<h2>Savings Rate</h2>
+<div class="donut-container">
+  <div class="donut" style="background:conic-gradient(var(--green) 0deg 139deg, var(--card2) 139deg 360deg)">
+    <div class="donut-hole"><div class="pct">38.9%</div><div class="lbl">SAVED</div></div>
+  </div>
+  <div class="donut-legend">
+    <p><strong style="color:var(--green)">&bull;</strong> 179.5M tokens saved by DCP (38.9%)</p>
+    <p><strong style="color:var(--card2)">&bull;</strong> 461.8M tokens actually used (61.1%)</p>
+    <p style="margin-top:8px;color:var(--text2)">Without DCP, total would be <strong>641.3M</strong></p>
+  </div>
+</div>
+
+<h2>Top Sessions by Compound Savings</h2>
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#c7d2fe"></div>One-time savings</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#4f46e5"></div>Compound savings</div>
+  <div class="legend-item" style="color:var(--text3)">Multiplier = compound &divide; one-time for that session</div>
+</div>
+<div class="chart-container">
+  <div class="chart-title">Sessions ranked by compound token savings</div>
+  <div class="bar-row"><div class="bar-label">#1</div><div class="bar-track"><div class="bar-fill-ot" style="width:1%"></div><div class="bar-fill-comp" style="width:100%"></div></div><div class="bar-value">14.9M</div><div class="bar-meta">164 req / 6 blk / 85.8x</div></div><div class="bar-row"><div class="bar-label">#2</div><div class="bar-track"><div class="bar-fill-ot" style="width:1%"></div><div class="bar-fill-comp" style="width:97%"></div></div><div class="bar-value">14.6M</div><div class="bar-meta">246 req / 2 blk / 51.5x</div></div><div class="bar-row"><div class="bar-label">#3</div><div class="bar-track"><div class="bar-fill-ot" style="width:1%"></div><div class="bar-fill-comp" style="width:96%"></div></div><div class="bar-value">14.3M</div><div class="bar-meta">194 req / 5 blk / 77.9x</div></div><div class="bar-row"><div class="bar-label">#4</div><div class="bar-track"><div class="bar-fill-ot" style="width:1%"></div><div class="bar-fill-comp" style="width:82%"></div></div><div class="bar-value">12.2M</div><div class="bar-meta">132 req / 5 blk / 54.7x</div></div><div class="bar-row"><div class="bar-label">#5</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%"></div><div class="bar-fill-comp" style="width:71%"></div></div><div class="bar-value">10.6M</div><div class="bar-meta">105 req / 4 blk / 75.0x</div></div><div class="bar-row"><div class="bar-label">#6</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%"></div><div class="bar-fill-comp" style="width:62%"></div></div><div class="bar-value">9.4M</div><div class="bar-meta">101 req / 1 blk / 74.0x</div></div><div class="bar-row"><div class="bar-label">#7</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%"></div><div class="bar-fill-comp" style="width:59%"></div></div><div class="bar-value">8.8M</div><div class="bar-meta">164 req / 3 blk / 95.7x</div></div><div class="bar-row"><div class="bar-label">#8</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%"></div><div class="bar-fill-comp" style="width:54%"></div></div><div class="bar-value">8.2M</div><div class="bar-meta">98 req / 3 blk / 59.6x</div></div><div class="bar-row"><div class="bar-label">#9</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%"></div><div class="bar-fill-comp" style="width:51%"></div></div><div class="bar-value">7.7M</div><div class="bar-meta">97 req / 3 blk / 60.2x</div></div><div class="bar-row"><div class="bar-label">#10</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%"></div><div class="bar-fill-comp" style="width:33%"></div></div><div class="bar-value">4.9M</div><div class="bar-meta">220 req / 4 blk / 46.9x</div></div><div class="bar-row"><div class="bar-label">#11</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%"></div><div class="bar-fill-comp" style="width:32%"></div></div><div class="bar-value">4.8M</div><div class="bar-meta">105 req / 3 blk / 71.6x</div></div><div class="bar-row"><div class="bar-label">#12</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%"></div><div class="bar-fill-comp" style="width:29%"></div></div><div class="bar-value">4.4M</div><div class="bar-meta">74 req / 2 blk / 61.8x</div></div><div class="bar-row"><div class="bar-label">#13</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%"></div><div class="bar-fill-comp" style="width:28%"></div></div><div class="bar-value">4.2M</div><div class="bar-meta">145 req / 3 blk / 43.3x</div></div><div class="bar-row"><div class="bar-label">#14</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%"></div><div class="bar-fill-comp" style="width:21%"></div></div><div class="bar-value">3.2M</div><div class="bar-meta">81 req / 2 blk / 46.3x</div></div><div class="bar-row"><div class="bar-label">#15</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%"></div><div class="bar-fill-comp" style="width:21%"></div></div><div class="bar-value">3.2M</div><div class="bar-meta">131 req / 2 blk / 39.4x</div></div>
+</div>
+
+<h2>Per-Model Breakdown</h2>
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#c7d2fe"></div>One-time</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#4f46e5"></div>Compound</div>
+  <div class="legend-item"><span class="elig-flag missed"> ⚠ missed</span> = ≥10 requests + ≥10K peak, no DCP</div>
+  <div class="legend-item"><span class="elig-flag short"> no DCP needed</span> = all sessions short</div>
+</div>
+<div class="chart-container">
+  <div class="chart-title">Models ranked by compound savings &middot; bar meta shows DCP calls, session coverage, and peak context size</div>
+  <div class="bar-row"><div class="bar-label">glm-5.1</div><div class="bar-track"><div class="bar-fill-ot" style="width:3%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:100%;background:#4f46e5"></div></div><div class="bar-value">66.5M</div><div class="bar-meta">62 calls | 57/114 sess | max 81.4K<span class="elig-flag missed"> ⚠ 13 missed</span></div></div><div class="bar-row"><div class="bar-label">qwen3.7-plus</div><div class="bar-track"><div class="bar-fill-ot" style="width:1%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:46%;background:#4f46e5"></div></div><div class="bar-value">31.0M</div><div class="bar-meta">30 calls | 24/30 sess | max 107.2K</div></div><div class="bar-row"><div class="bar-label">glm-5.2</div><div class="bar-track"><div class="bar-fill-ot" style="width:1%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:46%;background:#4f46e5"></div></div><div class="bar-value">30.9M</div><div class="bar-meta">28 calls | 22/25 sess | max 70.8K<span class="elig-flag missed"> ⚠ 2 missed</span></div></div><div class="bar-row"><div class="bar-label">qwen3.6-plus</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:28%;background:#4f46e5"></div></div><div class="bar-value">18.7M</div><div class="bar-meta">7 calls | 14/20 sess | max 58.9K</div></div><div class="bar-row"><div class="bar-label">gemini-3.5-flash</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:21%;background:#4f46e5"></div></div><div class="bar-value">14.6M</div><div class="bar-meta">2 calls | 4/4 sess | max 131.1K</div></div><div class="bar-row"><div class="bar-label">minimax-m3</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:14%;background:#4f46e5"></div></div><div class="bar-value">9.4M</div><div class="bar-meta">1 calls | 4/6 sess | max 98.2K<span class="elig-flag missed"> ⚠ 1 missed</span></div></div><div class="bar-row"><div class="bar-label">deepseek-v4-flash</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:4%;background:#4f46e5"></div></div><div class="bar-value">3.0M</div><div class="bar-meta">3 calls | 12/12 sess | max 87.4K</div></div><div class="bar-row"><div class="bar-label">minimax-m3-free</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:2%;background:#4f46e5"></div></div><div class="bar-value">2.0M</div><div class="bar-meta">1 calls | 2/2 sess | max 15.4K</div></div><div class="bar-row"><div class="bar-label">kimi-k2.7-code</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:1%;background:#4f46e5"></div></div><div class="bar-value">1.2M</div><div class="bar-meta">4 calls | 2/2 sess | max 99.8K</div></div><div class="bar-row"><div class="bar-label">gpt-5.4-mini</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:1%;background:#4f46e5"></div></div><div class="bar-value">1.2M</div><div class="bar-meta">2 calls | 4/5 sess | max 75.2K<span class="elig-flag missed"> ⚠ 1 missed</span></div></div><div class="bar-row"><div class="bar-label">deepseek-v4-pro</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:1%;background:#4f46e5"></div></div><div class="bar-value">909.2K</div><div class="bar-meta">1 calls | 1/6 sess | max 64.3K<span class="elig-flag missed"> ⚠ 2 missed</span></div></div><div class="bar-row"><div class="bar-label">gpt-5.5</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:0%;background:#4f46e5"></div></div><div class="bar-value">88.0K</div><div class="bar-meta">2 calls | 10/15 sess | max 71.7K<span class="elig-flag missed"> ⚠ 3 missed</span></div></div><div class="bar-row"><div class="bar-label">mimo-v2.5-pro</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#c7d2fe"></div><div class="bar-fill-comp" style="width:0%;background:#4f46e5"></div></div><div class="bar-value">37.3K</div><div class="bar-meta">1 calls | 1/1 sess | max 25.2K</div></div><div class="bar-row"><div class="bar-label">antigravity-claude-sonnet-4-5-thinking</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#f3f4f6"></div><div class="bar-fill-comp" style="width:0%;background:#e5e7eb"></div></div><div class="bar-value">0</div><div class="bar-meta">0 calls | 0/1 sess | max 14.4K<span class="elig-flag short"> no DCP needed</span></div></div><div class="bar-row"><div class="bar-label">antigravity-claude-sonnet-4-5-thinking-high</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#f3f4f6"></div><div class="bar-fill-comp" style="width:0%;background:#e5e7eb"></div></div><div class="bar-value">0</div><div class="bar-meta">0 calls | 0/1 sess | max 14.4K<span class="elig-flag short"> no DCP needed</span></div></div><div class="bar-row"><div class="bar-label">gpt-5.3-codex</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#f3f4f6"></div><div class="bar-fill-comp" style="width:0%;background:#e5e7eb"></div></div><div class="bar-value">0</div><div class="bar-meta">0 calls | 0/1 sess | max 73.2K<span class="elig-flag missed"> ⚠ 1 missed</span></div></div><div class="bar-row"><div class="bar-label">deepseek-v4-flash-free</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#f3f4f6"></div><div class="bar-fill-comp" style="width:0%;background:#e5e7eb"></div></div><div class="bar-value">0</div><div class="bar-meta">0 calls | 1/1 sess | max 89.9K</div></div><div class="bar-row"><div class="bar-label">north-mini-code-free</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#f3f4f6"></div><div class="bar-fill-comp" style="width:0%;background:#e5e7eb"></div></div><div class="bar-value">0</div><div class="bar-meta">0 calls | 1/1 sess | max 172.5K</div></div><div class="bar-row"><div class="bar-label">nex-n2-pro:free</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#f3f4f6"></div><div class="bar-fill-comp" style="width:0%;background:#e5e7eb"></div></div><div class="bar-value">0</div><div class="bar-meta">0 calls | 1/1 sess | max 19.0K</div></div><div class="bar-row"><div class="bar-label">unknown</div><div class="bar-track"><div class="bar-fill-ot" style="width:0%;background:#f3f4f6"></div><div class="bar-fill-comp" style="width:0%;background:#e5e7eb"></div></div><div class="bar-value">0</div><div class="bar-meta">0 calls | 0/2 sess | max 0<span class="elig-flag short"> no DCP needed</span></div></div>
+</div>
+
+<h2>USD Savings Sensitivity</h2>
+<table>
+  <thead><tr><th>Rate</th><th>Estimated USD Saved (Compound)</th></tr></thead>
+  <tbody><tr><td>$2/M</td><td>$358.91</td></tr><tr><td>$3/M</td><td>$538.37</td></tr><tr><td>$5/M</td><td>$897.29</td></tr></tbody>
+</table>
+<p class="note">Blended input-token pricing from fungies.io, awesomeagents.ai, pecollective.com, stochasticsandbox.com, tldl.io (2026).</p>
+
+<h2>Missed DCP Opportunities</h2>
+<div class="missed-info"><strong>23 sessions</strong> had enough activity for DCP (≥10 requests + ≥10.0K peak context) but DCP didn’t trigger. These sessions used <strong>13.4M tokens</strong> collectively. DCP was installed (files date to March 2026) but its soft nudge system (every 5 turns after turn 15) didn’t prompt compression — likely because context stayed under the 100.0K hard limit.</div>
+<table class="missed-table">
+<thead><tr><th>Session</th><th>Model</th><th>Requests</th><th>Peak Context</th><th>Tokens Used</th></tr></thead>
+<tbody><tr><td>ses_158d41ed8ffeZTg8Fa0j...</td><td>glm-5.1</td><td>47</td><td>20.3K</td><td>1.9M</td></tr><tr><td>ses_160bf2913ffe5sJSVB8S...</td><td>deepseek-v4-pro</td><td>23</td><td>20.7K</td><td>1.4M</td></tr><tr><td>ses_138b4a6e6ffems9VY22j...</td><td>glm-5.2</td><td>21</td><td>12.5K</td><td>1.1M</td></tr><tr><td>ses_13ccfadedffe1qWO8Mwq...</td><td>glm-5.1</td><td>22</td><td>25.5K</td><td>971.9K</td></tr><tr><td>ses_14dcb2ab7ffepT2FuK4f...</td><td>glm-5.1</td><td>36</td><td>15.3K</td><td>919.8K</td></tr><tr><td>ses_14db006e1ffeclQALCSy...</td><td>glm-5.1</td><td>32</td><td>12.8K</td><td>773.1K</td></tr><tr><td>ses_146ac49acffepgQO1CA9...</td><td>glm-5.1</td><td>21</td><td>15.9K</td><td>723.2K</td></tr><tr><td>ses_17bf9b1f4ffeZ37hZZCR...</td><td>gpt-5.5</td><td>22</td><td>30.9K</td><td>704.4K</td></tr><tr><td>ses_13cd10d76ffe8vX2oexK...</td><td>glm-5.1</td><td>18</td><td>12.6K</td><td>678.5K</td></tr><tr><td>ses_17fb3802cffeeOW1T4sj...</td><td>deepseek-v4-pro</td><td>15</td><td>16.4K</td><td>649.2K</td></tr><tr><td>ses_14db10caeffeqkdOpW71...</td><td>minimax-m3</td><td>15</td><td>29.8K</td><td>516.7K</td></tr><tr><td>ses_143fe55a8ffeCicrkfWM...</td><td>gpt-5.4-mini</td><td>18</td><td>17.3K</td><td>475.9K</td></tr><tr><td>ses_13cd0336affeEhNmlmXN...</td><td>glm-5.1</td><td>17</td><td>13.3K</td><td>408.2K</td></tr><tr><td>ses_13869eb34ffege92Ugw2...</td><td>glm-5.2</td><td>14</td><td>14.2K</td><td>389.4K</td></tr><tr><td>ses_17d5f6f40ffeX0wMI0n1...</td><td>glm-5.1</td><td>13</td><td>14.5K</td><td>346.5K</td></tr></tbody>
+</table>
+<h2>Insights</h2>
+<div class="insights"><ul><li><strong>23 session(s) missed DCP</strong> (≥10 requests and ≥10.0K peak context, but no compression triggered): 13.4M tokens consumed across these sessions. DCP was installed but its nudge system didn’t fire — likely because context stayed under the 100.0K hard limit and the soft nudge (every 5 turns after turn 15) didn’t prompt the model to compress.</li><li><strong>7 model(s) never triggered DCP:</strong> antigravity-claude-sonnet-4-5-thinking, antigravity-claude-sonnet-4-5-thinking-high, gpt-5.3-codex, deepseek-v4-flash-free, north-mini-code-free. These were used only on short sessions with small context windows.</li><li><strong>Best compound multiplier:</strong> Session with 164 requests achieved <strong>95.7x</strong> — 92.5K one-time compression amplified to 8.8M compound savings.</li><li><strong>DCP activation:</strong> 160 of 250 sessions (64%) have DCP data. 157 sessions were too short to need it.</li><li><strong>Compound effect is the story:</strong> One-time compression removed 5.1M tokens. Real API savings: <strong>179.5M (35.1x more)</strong>.</li><li><strong>Average DCP blocks per active session:</strong> 0.9 blocks across 160 sessions.</li></ul></div>
+
+<div class="reddit-card"><div class="reddit-header">Post-Ready Summary</div><div class="reddit-body"><p><strong>DCP saved 179.5M tokens across 250 sessions</strong> — 38.9% of total usage, or <strong>$538.37 in API costs</strong> at $3/M.</p><p>Without DCP, total cost would be <strong>641.3M tokens</strong> instead of 461.8M. Compound effect amplifies one-time compression by <strong>35.1x</strong>.</p><ul><li>64% session DCP activation (160/250 sessions); 67 too short, 23 missed (13.4M tokens at risk)</li><li>20 models tracked, 7 never triggered DCP</li><li>Top session: 14.9M compound on 7.6M used (85.8x)</li></ul></div></div>
+
+<div class="footer">Generated 2026-06-14 15:26:31 &middot; DCP v3 compound model &middot; Python 3 stdlib only &middot; Read-only analysis</div>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+
+FullName
+--------                                                                                                                
+C:\Users\DaveWitkin\.cache\opencode\packages\opencode-scheduler@latest\node_modules\opencode-scheduler                  
+C:\Users\DaveWitkin\.cache\opencode-cache-backup-20260428-094635\node_modules\opencode-scheduler                        
+C:\Users\DaveWitkin\.cache\opencode-cache-backup-20260428-094635\packages\opencode-scheduler@latest\node_modules\openco…
+

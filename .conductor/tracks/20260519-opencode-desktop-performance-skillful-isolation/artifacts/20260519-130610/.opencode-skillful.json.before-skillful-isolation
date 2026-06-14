@@ -1,0 +1,8 @@
+{
+  "debug": false,
+  "basePaths": [
+    "C:\\Users\\DaveWitkin\\.opencode-lazy-vault"
+  ],
+  "promptRenderer": "xml",
+  "modelRenderers": {}
+}

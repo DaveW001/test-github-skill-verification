@@ -1,0 +1,6 @@
+{
+  "workspace:followup": "{\"items\":{\"ses_2bc506489ffe1Mozg19fkL5tAi\":[]},\"failed\":{},\"paused\":{\"ses_2c0a0a555ffeRvW6NKA120YJ6i\":true,\"ses_2bc506489ffe1Mozg19fkL5tAi\":true},\"edit\":{}}",
+  "workspace:project": "{\"value\":{\"icon\":{\"color\":\"mint\"}}}",
+  "workspace:vcs": "{\"value\":{}}",
+  "workspace:model-selection": "{\"session\":{\"ses_2c0a0a555ffeRvW6NKA120YJ6i\":{\"agent\":\"01-Planner\",\"model\":{\"providerID\":\"openai\",\"modelID\":\"gpt-5.3-codex\"},\"variant\":null},\"ses_2bc506489ffe1Mozg19fkL5tAi\":{\"agent\":\"build\",\"model\":{\"providerID\":\"openai\",\"modelID\":\"gpt-5.3-codex\"},\"variant\":\"high\"},\"ses_2ba31a100ffeRIQldhDnMaKFcK\":{\"agent\":\"general\",\"model\":{\"providerID\":\"zai-coding-plan\",\"modelID\":\"glm-5.1\"},\"variant\":null},\"ses_2b7330fdaffeXzyElYi992CQ6h\":{\"agent\":\"general\",\"model\":{\"providerID\":\"zai-coding-plan\",\"modelID\":\"glm-5.1\"},\"variant\":null},\"ses_2b6755b9effe8SYB0EHnFSbZkS\":{\"agent\":\"general\",\"model\":{\"providerID\":\"zai-coding-plan\",\"modelID\":\"glm-5.1\"},\"variant\":null}}}"
+}

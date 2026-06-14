@@ -1,0 +1,20 @@
+{
+  "label": "tc-a1-version-check",
+  "started": "2026-06-01T00:01:23.111648+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "--version"
+  ],
+  "timeout_seconds": 30,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": ".conductor\\tracks\\webapp-visual-regression\\artifacts\\starter\\playwright-report\\index.html:18\n  .avail_in=F,b.total_in+=Z-b.next_in_index,b.next_in_index=Z,c.write=j,c.inflate_flush(b,p);F--,R|=(b.read_byte(Z++)&255)<<U,U+=8}if(x=O[(A[0\u001b[2m ...\u001b[22m\n\n.conductor\\tracks\\20260411-notebooklm-cli-install\\metadata.json:37\n  user interaction\"\n    ],\n    \"dependencies\": [\n      \"Python 3.10+ (have 3.13.2)\",\n      \"pip package manager (available)\",\n      \"Google Chrome browser (for authentication)\"\n    ],\n    \"blocking\": [],\n    \"relatedTracks\": [],\n    \"deliverables\": [\n      \"Working nlm and notebooklm-mcp executables\",\n      \"Official OpenCode skill installed and verified at user level\",\n      \"Legacy skill archive and rollback note\",\n      \"User handoff documentation\"\n    ],\n  ... (+10 more lines)\n\n.conductor\\tracks\\20260411-notebooklm-cli-install\\execution-log.md:1\n  # Execution & Change Log\n  ## Track: 20260411-notebooklm-cli-install\n  ### Deviations from Plan\n  | # | Deviation | Impact | Resolution |\n  |---|-----------|--------|------------|\n  | 1 | Package version upgraded from v0.5.22 to v0.6.5 during validation | `metadata.json` version field stale | Updated metadata.json to ref\u001b[2m ...\u001b[22m\n  | 2 | Executable installed to global Python Scripts dir, not `--user` location | Paths in metadata.json incorrect | Updated paths to `AppDat\u001b[2m ...\u001b[22m\n  | 3 | Official skill install succeeded initially but was lost (likely during 20260425-cleanup operation) | Skill directory missing, `nlm ski\u001b[2m ...\u001b[22m\n  | 4 | Legacy custom skill was already archived in `skill-backups/20260425-cleanup/notebooklm-legacy` rather than renamed in-place | Original\u001b[2m ...\u001b[22m\n  | 5 | `nlm doctor` hit Windows Unicode bug (Rich library `\u2192` char on cp1252 console) | Cosmetic only, not a functional failure | Noted as kn\u001b[2m ...\u001b[22m\n  ### Skipped Items\n  None. All planned tasks completed.\n  ... (+2 more lines)\n\n.conductor\\tracks\\20260425-tool-search-plugin\\artifacts\\validation-log.md:1\n  # Validation Log - 2026-04-25\n  ## Environment\n  - OpenCode workspace: `C:\\development\\opencode`\n  - OpenCode version (before): v1.2.26\n  - OpenCode version (after): **v1.14.25**\n  - Config file: `C:\\Users\\DaveWitkin\\.config\\opencode\\opencode.jsonc`\n  ## Commands and Outcomes\n  ### 1. Version Check\n  ```bash\n  opencode --version\n  ```\n  - **Before**: v1.2.26 (\u274c below v1.4.10 minimum for `tool.definition` hook)\n  - **After**: v1.14.25 \u2705\n  ### 2. OpenCode Upgrade (Unplanned \u2014 Required)\n  ... (+20 more lines)\n\n.conductor\\tracks\\20260314-codex-multi-auth-setup\\plan.md:1\n  # Plan: Switch to Multi-Account Codex OAuth Plugin\n  **Track ID**: 20260314-codex-multi-auth-setup\n  **Spec**: [spec.md](./spec.md)\n  **Created**: 2026-03-14\n  **Status**: In Progress\n  ## Phase 1: Preflight and Backup\n  - [x] Export current OpenCode config backup from `C:\\Users\\DaveWitkin\\.config\\opencode\\opencode.jsonc`.\n  - [x] Capture current auth plugin state and OpenCode version (`opencode --version`, `opencode debug config`).\n  - [x] Decide package/version policy:\n    - Preferred: `oc-chatgpt-multi-auth@5.4.4` (pinned)\n    - Alternative: `oc-chatgpt-multi-auth@latest`\n  - [x] Run dependency compatibility check for pinned plugin (`npm view oc-chatgpt-multi-auth@5.4.4 peerDependencies dependencies`) and record\u001b[2m ...\u001b[22m\n  ## Phase 2: Configuration Change\n  ... (+8 more lines)\n\nosgrep results (5 matches across 5 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.739,
+  "finished": "2026-06-01T00:01:24.856008+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- --version"
+}

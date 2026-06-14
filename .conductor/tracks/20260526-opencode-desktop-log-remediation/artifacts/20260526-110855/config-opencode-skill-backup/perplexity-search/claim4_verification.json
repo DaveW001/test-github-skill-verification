@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "query": "Was the Eiffel Tower built for the 1889 World's Fair? What was the official name and purpose of this event?",
+  "model": "perplexity/sonar-pro",
+  "answer": "**Yes, the Eiffel Tower was built specifically for the 1889 World's Fair.**[1][3][5]\n\nThe official name of the event was the **Exposition Universelle de 1889** (in English, the 1889 Paris Exposition or World's Fair), held in Paris from May 6 (or 15) to October 31 (or November 6), 1889.[1][3][5] Its primary purpose was to commemorate the 100th anniversary of the French Revolution, while celebrating art, science, industry, technical progress (especially iron and steel), and France's position among world powers; it attracted over 32 million visitors and featured the Eiffel Tower as its centerpiece and tallest structure.[1][2][3][5] A design competition in 1886 was won by Gustave Eiffel's firm, with construction completed in record time by March 31, 1889.[1][5]",
+  "usage": {
+    "prompt_tokens": 28,
+    "completion_tokens": 200,
+    "total_tokens": 228
+  }
+}

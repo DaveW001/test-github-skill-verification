@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "query": "Find Guidehouse.com pages that mention USDA (U.S. Department of Agriculture). Provide exact quoted language and URLs. Avoid specific contract numbers.",
+  "model": "perplexity/sonar-pro",
+  "answer": "**Guidehouse.com pages mentioning USDA:**\n\n- **https://guidehouse.com/-/media/new-library/corporate/government-contract-vehicles/contract-documents/2025/47qtckck18d0024---guidehouse-po0022-far-cd16-mod-fully-exe.pdf**  \n  \"Biobased product means a product determined by the **U.S. Department of Agriculture (USDA)** to be a commercial product or industrial product ...\"[2]  \n  \"(xvii) 52.223-1, Biobased Product Certification. This provision applies to solicitations that require the delivery or specify the use of biobased products in **USDA**-designated product categories ...\"[2]\n\n- **https://guidehouse.com/-/media/www/site/insights/healthcare/2020/guidehouse-navigant-2020-rural-analysis.pdf**  \n  \"This year, we refined our designations using the **U.S. Department of Agriculture's (USDA's)** Rural-Urban Continuum Codes to define each hospitals' home ZIP ...\"[5]  \n  \"The **USDA**\u2019s definition relies on commuting patterns and rates each ZIP code across the country on a scale of 1-10 ...\"[5]  \n  \"Rural-urban commuting area (RUCA) codes: The **USDA** ratings for each ZIP code across the country were used ...\"[5]\n\n- **https://guidehouse.com/-/media/www/site/insights/state-and-local-government/2020/strategic-opportunities-for-state-and-local.pdf**  \n  \"2020 (FFCRA) gives the **U.S. Department of Agriculture (USDA)** authority to grant physical presence waivers to states. ...\"[8]\n\nNo other Guidehouse.com pages in the results mention USDA.",
+  "usage": {
+    "prompt_tokens": 29,
+    "completion_tokens": 383,
+    "total_tokens": 412
+  }
+}

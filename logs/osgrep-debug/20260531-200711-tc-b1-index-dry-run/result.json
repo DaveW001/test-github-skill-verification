@@ -1,0 +1,20 @@
+{
+  "label": "tc-b1-index-dry-run",
+  "started": "2026-06-01T00:07:11.513268+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "index",
+    "--dry-run"
+  ],
+  "timeout_seconds": 300,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "Dry run: would have indexed 502 files in total, would have indexed 498 changed or new files\n",
+  "stderr": "- Indexing...\n\u221a Dry run complete(502 / 502) \u2022 would have indexed 498 \n",
+  "timed_out": false,
+  "duration_seconds": 124.602,
+  "finished": "2026-06-01T00:09:16.118277+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' index --dry-run"
+}

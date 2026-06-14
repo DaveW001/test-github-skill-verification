@@ -24,7 +24,7 @@
 ## Phase 4 - Validate & Document
 - [x] Run `nlm --ai` and capture output to a reference file in the track
 - [x] Run `nlm login --check` to confirm auth status (expected: not authenticated yet)
-- [~] Document the complete setup summary for the user including:
+- [x] Document the complete setup summary for the user including:
   - What was installed and where
   - Exact installed version and executable locations
   - First-time authentication steps (`nlm login`)
@@ -34,9 +34,9 @@
   - Important notes (session lifetime, rate limits, re-auth)
 
 ## Phase 5 - User Handoff
-- [ ] Present clear summary to user
-- [ ] Explain what they need to do manually (authentication)
-- [ ] Explain how to use the skill in OpenCode sessions
+- [x] Present clear summary to user
+- [x] Explain what they need to do manually (authentication)
+- [x] Explain how to use the skill in OpenCode sessions
 
 Checkbox states:
 - [ ] Pending (not started)

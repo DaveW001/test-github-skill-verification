@@ -1,0 +1,33 @@
+{
+  "id": "20260519-opencode-desktop-performance-skillful-isolation",
+  "title": "OpenCode Desktop Performance Skillful Isolation",
+  "status": "active",
+  "phase": "phase5-handover",
+  "created": "2026-05-19",
+  "updated": "2026-05-19",
+  "tags": [
+    "opencode",
+    "desktop",
+    "performance",
+    "skillful",
+    "mcp",
+    "troubleshooting"
+  ],
+  "paths": [
+    "C:\\development\\opencode",
+    "C:\\Users\\DaveWitkin\\.config\\opencode",
+    "C:\\Users\\DaveWitkin\\.opencode-lazy-vault",
+    "C:\\Users\\DaveWitkin\\AppData\\Local\\ai.opencode.desktop"
+  ],
+  "relatedTracks": [
+    "20260519-opencode-desktop-config-troubleshoot",
+    "20260502-lazy-skill-discovery-regression",
+    "20260502-skill-junction-unification",
+    "20260501-skill-token-optimization"
+  ],
+  "nextActions": [
+    "Decide whether to clean up duplicate skill roots",
+    "Keep Skillful enabled unless performance regresses again",
+    "Revisit the disable-or-reinstall branch only if slowdown returns"
+  ]
+}

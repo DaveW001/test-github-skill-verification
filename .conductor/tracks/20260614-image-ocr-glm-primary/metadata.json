@@ -1,0 +1,62 @@
+{
+  "trackId": "20260614-image-ocr-glm-primary",
+  "title": "Image-OCR GLM-OCR Primary Integration",
+  "status": "blocked-pending-restart",
+  "created": "2026-06-14",
+  "completed": null,
+  "estimatedHours": "1-2",
+  "assignedTo": "Build Agent",
+  "type": "enhancement",
+  "tags": [
+    "skill",
+    "ocr",
+    "image-processing",
+    "glm-ocr",
+    "z-ai",
+    "gemini",
+    "tesseract"
+  ],
+  "progress": {
+    "totalTasks": 33,
+    "completedTasks": 31,
+    "percentage": 93.9
+  },
+  "summary": "Invert the existing image-ocr skill engine priority so GLM-OCR (Z.AI dedicated OCR model) becomes the primary engine, demoting Gemini 2.5 Flash to secondary and keeping Tesseract as offline last resort. Additive change to ocr_extract.py: new extract_glmocr()/run_glmocr() via raw httpx, Pillow format conversion + downscale for non-native/oversized inputs, reordered auto cascade. Resolves the Gemini monthly-cap outage documented in track 20260614-image-ocr-skill. ZAI_API_KEY already placed in ~/.config/opencode/.env.",
+  "keyOutcomes": [
+    "GLM-OCR as Tier 1 primary in ocr_extract.py (raw httpx, Bearer auth, md_results parsing)",
+    "Pillow auto-conversion of GIF/WEBP/BMP/TIFF to PNG + LANCZOS downscale for >10MB images",
+    "Reordered auto cascade: GLM-OCR -> Gemini -> Tesseract",
+    "--engine accepts glmocr explicitly; --no-fallback stops after primary",
+    "SKILL.md and reference.md updated to document the 3-tier cascade and ZAI_API_KEY",
+    "No regression to existing Gemini/Tesseract tiers"
+  ],
+  "risks": [
+    "ZAI_API_KEY not in process env until opencode restart (live test gated on restart; shape/encode tests run without key)",
+    "Edit-tool Bun-is-not-defined in build env (mitigated with PowerShell Select-String + literal [string]::Replace fallback per task)",
+    "Python indentation break on insertion (mitigated with ast.parse syntax checks and --help smoke test)"
+  ],
+  "dependencies": [
+    "Python packages: httpx (>=0.28), Pillow (>=10) -- both already installed",
+    "ZAI_API_KEY env var, loaded from ~/.config/opencode/.env (already placed)",
+    "Existing ocr_extract.py from track 20260614-image-ocr-skill (completed)"
+  ],
+  "blocking": [
+    "Live GLM-OCR validation tasks 4.4 and 4.5 deferred: requires opencode restart to load ZAI_API_KEY into the process env. After restart, re-run: python ~/.opencode-lazy-vault/image-ocr/scripts/ocr_extract.py <test_image> --engine glmocr --output-dir <dir>"
+  ],
+  "relatedTracks": [
+    "20260614-image-ocr-skill (completed -- built the skill being modified here)"
+  ],
+  "deliverables": [
+    "~/.opencode-lazy-vault/image-ocr/scripts/ocr_extract.py (modified -- additive)",
+    "~/.opencode-lazy-vault/image-ocr/SKILL.md (updated)",
+    "~/.opencode-lazy-vault/image-ocr/reference.md (updated)"
+  ],
+  "validationCriteria": [
+    "python ocr_extract.py --help shows glmocr in --engine choices",
+    "encode_for_glmocr produces valid data:image URIs for PNG and GIF inputs",
+    "Live GLM-OCR test (post-restart) produces .md with engine: glm-ocr in frontmatter",
+    "Explicit --engine gemini and --engine tesseract still run without Python traceback",
+    "SKILL.md and reference.md document the 3-tier cascade and ZAI_API_KEY",
+    "All plan.md tasks marked [x]"
+  ]
+}

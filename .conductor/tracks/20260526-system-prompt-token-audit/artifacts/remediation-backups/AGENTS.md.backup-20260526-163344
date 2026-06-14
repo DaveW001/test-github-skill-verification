@@ -1,0 +1,86 @@
+# OpenCode Agent Instructions
+
+**Docs:** https://opencode.ai/docs | **Repo:** https://github.com/anomalyco/opencode
+
+---
+
+## Always-On Rules
+
+### Osgrep CLI-Only (Canary)
+**Use osgrep for semantic code search in CLI-only mode.** Use first for discovery; fall back to `grep`/`glob`/`Read` on timeout/failure. Do not use `osgrep mcp`.
+
+### Knowledge Graph Entity Lookup
+**For Army C2/CC2 entities, check the knowledge graph first.** Primary: `C:\development\02-Kx-to-process\knowledge-base\`
+- Lookup: `python scripts/query-graph.py lookup --name "Name" --type Person --top 5`
+- Broad search: `python scripts/search.py "topic" --top 5`
+- Fallback: `grep`/`glob`/`Read` when scripts fail
+- Skills: `knowledge-graph-builder` (extraction), `knowledge-graph-maintainer` (audits)
+
+### ClickUp Quick References
+- Army C2: list `901113158142` | Personal inbox: list `3984798`
+- Use directly when task clearly belongs; ask when uncertain.
+
+### Chrome DevTools MCP
+**Use `control-chrome_*` tools for browser automation.** Never use Playwright/Puppeteer/Selenium. MCP config name: `control-chrome`.
+
+### Semantic-First Navigation
+Use search tools before broad reads: osgrep → grep/glob → targeted Read. Only read full files when small or complete context needed.
+
+### File Tool Path Format
+**All paths must be absolute.** Prefer `skills\` path over legacy `skill\`. If both exist, ask user. For HTML deliverables, use fully qualified Windows backslash paths.
+
+### File Reading Strategy
+Files >50 lines: grep/glob first. Files >200 lines: targeted reads only. Stop before reading >2 files simultaneously.
+
+---
+
+## Reference Index (Open only when triggered)
+
+### Microsoft 365 / Outlook / Email / Calendar
+**Trigger:** Outlook, email, inbox, calendar, Microsoft 365, Exchange, Graph.
+**Action:** Use `skill_find` to locate and load the appropriate skill.
+
+### Skill Discovery Preflight
+**Trigger:** Finding, editing, or using skills.
+**Action:** Use `skill_find "<keyword>"` first. Lazy-vault: `~/.opencode-lazy-vault`. Always-available: conductor, osgrep, git-push, perplexity-search. Load with `skill_use "<name>"` (underscores, not hyphens).
+
+### File Tool Path Format Errors
+**Trigger:** "Invalid path format" error
+**Reference:** `docs\troubleshooting\active\file-tool-path-format-errors.md`
+
+### ClickUp Meeting Notes
+**Trigger:** "create meeting notes", "add notes to ClickUp"
+**Reference:** `docs\workflows\clickup-meeting-notes.md`
+
+### Git Commits & Pull Requests
+**Trigger:** "push to GitHub", "create a commit", "make a PR"
+**Action:** Use /git-push command or `docs\workflows\git-pr.md`
+
+### Firebase Deploy Requests
+**Trigger:** deploy, ship, release, go live
+**Action:** Load `firebase-deployment-specialist` skill first. Set `GOOGLE_APPLICATION_CREDENTIALS` and verify with `firebase projects:list`.
+
+### Developer Guidelines
+**Trigger:** Creating/modifying agents, commands, or skills
+**Reference:** `~/.config/opencode/agent-development-standards.md`, `command-development-standards.md`, `skill-writer/SKILL.md`
+
+### Skill Listing Format
+**Trigger:** "what skills do you have?"
+**Format:** Categorized list with emojis (Content Creation, Visuals, Development, Productivity, Research)
+
+### Fully Qualified File Paths for User Review
+**Always provide fully qualified absolute Windows paths** when asking user to review files.
+
+### Public-Safe Redaction for Sharing
+**Redact internal paths, IDs, and tokens** when sharing outside local contexts.
+
+### Research Tool Fallback
+**If google_search fails, fall back to** `perplexity-search` skill.
+
+### Admin Elevation
+**Trigger:** `Access is denied`, `0x80070005`
+**See:** `references/admin-elevation-gsudo.md`
+
+### Gemini Proxy Infrastructure
+**Trigger:** `ECONNREFUSED 127.0.0.1:8000`, 429 errors
+**See:** `references/gemini-proxy-infrastructure.md`

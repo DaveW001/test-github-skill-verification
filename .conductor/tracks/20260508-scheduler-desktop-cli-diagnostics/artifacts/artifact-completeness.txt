@@ -1,0 +1,23 @@
+
+Artifact                             Exists
+--------                             ------
+global-config-plugin-block.txt         True
+global-config-scheduler-count.txt      True
+standard-cache-scheduler-exists.txt    True
+standard-cache-scheduler-package.txt   True
+config-dir-scheduler-references.txt    True
+desktop-candidate-dirs.txt             True
+desktop-scheduler-references.txt       True
+scheduler-package-directories.txt      True
+opencode-env-vars.txt                  True
+scheduler-scope-json-files.txt         True
+hourly-job-summary.txt                 True
+hourly-job-command.txt                 True
+hourly-script-exists.txt               True
+hourly-task-registration.txt           True
+hourly-task-info.txt                   True
+hourly-task.xml                        True
+all-opencode-tasks.txt                 True
+hourly-task-events.txt                 True
+recent-email-triage-logs.txt           True
+

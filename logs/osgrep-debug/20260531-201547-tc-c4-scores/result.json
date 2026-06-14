@@ -1,0 +1,23 @@
+{
+  "label": "tc-c4-scores",
+  "started": "2026-06-01T00:15:47.078065+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "search",
+    "conductor track",
+    "--scores",
+    "--max-count",
+    "3"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": ".conductor\\tracks.md:1 \u001b[2m(score: 1.000)\u001b[22m\n  \ufeff# Conductor Tracks\n  | Track ID | Title | Status | Completed | Path |\n  |---|---|---|---|---|\n  | 20260526-skillful-local-patch | Patch skillful __require crash with createRequire polyfill | completed | 2026-05-26 | C:\\development\\openc\u001b[2m ...\u001b[22m\n  | 20260526-system-prompt-token-audit | System Prompt Token Audit & Reduction | completed | 2026-05-26 | C:\\development\\opencode\\.conductor\\t\u001b[2m ...\u001b[22m\n  | 20260531-osgrep-comprehensive-test-suite | OsGrep Comprehensive Test Suite | active | | C:\\development\\opencode\\.conductor\\tracks\\20260531\u001b[2m ...\u001b[22m\n  | 20260531-prompt-schema-overhead-research | Prompt Schema Overhead Research | active | | C:\\development\\opencode\\.conductor\\tracks\\20260531\u001b[2m ...\u001b[22m\n\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skills-backup\\conductor\\SKILL.md:1 \u001b[2m(score: 0.803)\u001b[22m\n  name: conductor\n  description: Manage Context-Driven Development using the Conductor protocol. Use when user mentions conductor, tracks, specs, plans, status,\u001b[2m ...\u001b[22m\n  triggers:\n    intent:\n      - planning\n      - conductor track management\n      - project context scaffolding\n    user_phrases:\n      - create a conductor plan\n      - start a track\n      - show track status\n    file_context:\n      extensions: [md, json]\n  ... (+20 more lines)\n\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skills-backup\\conductor\\references\\templates\\track-metadata.template.json:1 \u001b[2m(score: 0.789)\u001b[22m\n  {\n    \"trackId\": \"20260110-example\",\n    \"title\": \"Example Track Title\",\n    \"status\": \"active\",\n    \"created\": \"2026-01-10\",\n    \"completed\": null,\n    \"estimatedHours\": \"2-4\",\n    \"assignedTo\": \"Dave Witkin\",\n    \"type\": \"feature|bugfix|retro|maintenance|chore\",\n    \"tags\": [\"frontend\", \"testing\"],\n    \"progress\": {\n      \"totalTasks\": 10,\n      \"completedTasks\": 5,\n      \"percentage\": 50\n  ... (+18 more lines)\n\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skill-backup\\conductor\\SKILL.md:1 \u001b[2m(score: 0.787)\u001b[22m\n  name: conductor\n  description: Manage Context-Driven Development using the Conductor protocol. Use when user mentions conductor, tracks, specs, plans, status,\u001b[2m ...\u001b[22m\n  triggers:\n    intent:\n      - planning\n      - conductor track management\n      - project context scaffolding\n    user_phrases:\n      - create a conductor plan\n      - start a track\n      - show track status\n    file_context:\n      extensions: [md, json]\n  ... (+20 more lines)\n\n.conductor\\tracks\\20260526-opencode-desktop-log-remediation\\artifacts\\20260526-110855\\config-opencode-skill-backup\\conductor\\references\\templates\\track-metadata.template.json:1 \u001b[2m(score: 0.786)\u001b[22m\n  {\n    \"trackId\": \"20260110-example\",\n    \"title\": \"Example Track Title\",\n    \"status\": \"active\",\n    \"created\": \"2026-01-10\",\n    \"completed\": null,\n    \"estimatedHours\": \"2-4\",\n    \"assignedTo\": \"Dave Witkin\",\n    \"type\": \"feature|bugfix|retro|maintenance|chore\",\n    \"tags\": [\"frontend\", \"testing\"],\n    \"progress\": {\n      \"totalTasks\": 10,\n      \"completedTasks\": 5,\n      \"percentage\": 50\n  ... (+18 more lines)\n\nosgrep results (5 matches across 5 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 2.287,
+  "finished": "2026-06-01T00:15:49.368497+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search 'conductor track' --scores --max-count 3"
+}

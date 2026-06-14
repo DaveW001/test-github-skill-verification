@@ -1,0 +1,22 @@
+{
+  "label": "tc-e2-query-during-index",
+  "started": "2026-06-01T00:19:03.622287+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "search",
+    "conductor",
+    "--max-count",
+    "5"
+  ],
+  "timeout_seconds": 120,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "\u26a0\ufe0f  Warning: Indexing in progress... search results may be incomplete.\n- Indexing repository (first run)...\n\u00d7 Indexing failed\nSearch failed: .osgrep lock already held (77172 @ 2026-06-01T00:19:02.195Z). Another indexing process is running or the lock must be cleared.\n",
+  "timed_out": false,
+  "duration_seconds": 10.691,
+  "finished": "2026-06-01T00:19:14.316483+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search conductor --max-count 5"
+}

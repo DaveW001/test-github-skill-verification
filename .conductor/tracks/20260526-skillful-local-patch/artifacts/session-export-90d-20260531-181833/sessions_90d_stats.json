@@ -1,0 +1,212 @@
+{
+  "label": "desktop-recovery-90d-kg-handoff",
+  "window_days": 90,
+  "generated_at_utc": "2026-05-31T22:18:37.669328+00:00",
+  "session_count": 1881,
+  "project_count": 11,
+  "top_projects": [
+    [
+      "/",
+      682
+    ],
+    [
+      "C:\\development\\email-triage",
+      404
+    ],
+    [
+      "C:\\development\\opencode",
+      266
+    ],
+    [
+      "C:\\development\\02-Kx-to-process",
+      249
+    ],
+    [
+      "C:\\development\\playground",
+      143
+    ],
+    [
+      "C:\\development\\marketing",
+      98
+    ],
+    [
+      "C:\\development\\2025-pa-website",
+      12
+    ],
+    [
+      "C:\\development\\army-c2cc2",
+      9
+    ],
+    [
+      "C:\\development\\cursor-clickup-mcp",
+      8
+    ],
+    [
+      "C:\\development\\slides",
+      5
+    ],
+    [
+      "C:\\development\\daily-priority-briefing",
+      5
+    ]
+  ],
+  "top_models": [
+    [
+      "unknown",
+      1638
+    ],
+    [
+      "{\"id\":\"glm-5.1\",\"providerID\":\"zai-coding-plan\",\"variant\":\"default\"}",
+      167
+    ],
+    [
+      "{\"id\":\"qwen3.6-plus\",\"providerID\":\"opencode-go\",\"variant\":\"default\"}",
+      32
+    ],
+    [
+      "{\"id\":\"kimi-k2.6\",\"providerID\":\"opencode-go\",\"variant\":\"default\"}",
+      10
+    ],
+    [
+      "{\"id\":\"gpt-5.5\",\"providerID\":\"openai\",\"variant\":\"low\"}",
+      7
+    ],
+    [
+      "{\"id\":\"qwen3.6-plus-free\",\"providerID\":\"opencode\",\"variant\":\"default\"}",
+      7
+    ],
+    [
+      "{\"id\":\"deepseek-v4-flash\",\"providerID\":\"opencode-go\",\"variant\":\"high\"}",
+      3
+    ],
+    [
+      "{\"id\":\"deepseek-v4-pro\",\"providerID\":\"opencode-go\",\"variant\":\"high\"}",
+      3
+    ],
+    [
+      "{\"id\":\"deepseek-v4-pro\",\"providerID\":\"opencode-go\",\"variant\":\"default\"}",
+      2
+    ],
+    [
+      "{\"id\":\"gpt-5.4-none\",\"providerID\":\"openai\",\"variant\":\"default\"}",
+      2
+    ],
+    [
+      "{\"id\":\"deepseek-v4-flash\",\"providerID\":\"opencode-go\",\"variant\":\"medium\"}",
+      2
+    ],
+    [
+      "{\"id\":\"gpt-5.4-mini\",\"providerID\":\"openai\",\"variant\":\"default\"}",
+      2
+    ],
+    [
+      "{\"id\":\"glm-5.1\",\"providerID\":\"opencode-go\",\"variant\":\"default\"}",
+      1
+    ],
+    [
+      "{\"id\":\"gpt-5.3-codex\",\"providerID\":\"openai\",\"variant\":\"low\"}",
+      1
+    ],
+    [
+      "{\"id\":\"deepseek-v4-pro\",\"providerID\":\"opencode-go\",\"variant\":\"medium\"}",
+      1
+    ],
+    [
+      "{\"id\":\"glm-4.7\",\"providerID\":\"zai-coding\",\"variant\":\"default\"}",
+      1
+    ],
+    [
+      "{\"id\":\"gemini-3.5-flash\",\"providerID\":\"google\",\"variant\":\"medium\"}",
+      1
+    ],
+    [
+      "{\"id\":\"deepseek-v4-flash\",\"providerID\":\"opencode-go\",\"variant\":\"default\"}",
+      1
+    ]
+  ],
+  "top_message_providers": [
+    [
+      "zai-coding-plan",
+      20502
+    ],
+    [
+      "openai",
+      12899
+    ],
+    [
+      "google",
+      8917
+    ],
+    [
+      "opencode-go",
+      6599
+    ],
+    [
+      "opencode",
+      3207
+    ],
+    [
+      "kimi-for-coding",
+      1328
+    ],
+    [
+      "google-antigravity",
+      911
+    ],
+    [
+      "openrouter",
+      221
+    ],
+    [
+      "go-tiberius",
+      49
+    ],
+    [
+      "go-dave",
+      38
+    ],
+    [
+      "moonshot",
+      11
+    ]
+  ],
+  "token_totals_from_messages": {
+    "input": 390311840,
+    "output": 20380302,
+    "reasoning": 4779568,
+    "cache_read": 3382869326,
+    "cache_write": 31298384
+  },
+  "scan": {
+    "db_files": [
+      "C:\\Users\\DaveWitkin\\.local\\share\\opencode\\opencode.db",
+      "C:\\development\\opencode\\.conductor\\tracks\\20260526-skillful-local-patch\\artifacts\\desktop-recovery-20260531-181148\\opencode.db",
+      "C:\\development\\opencode\\.conductor\\tracks\\20260526-skillful-local-patch\\artifacts\\desktop-state-backup-20260531-1738\\opencode.db"
+    ],
+    "db_scan_results": [
+      {
+        "db_path": "C:\\Users\\DaveWitkin\\.local\\share\\opencode\\opencode.db",
+        "sessions_scanned": 54,
+        "messages_scanned": 2403
+      },
+      {
+        "db_path": "C:\\development\\opencode\\.conductor\\tracks\\20260526-skillful-local-patch\\artifacts\\desktop-recovery-20260531-181148\\opencode.db",
+        "sessions_scanned": 57,
+        "messages_scanned": 2445
+      },
+      {
+        "db_path": "C:\\development\\opencode\\.conductor\\tracks\\20260526-skillful-local-patch\\artifacts\\desktop-state-backup-20260531-1738\\opencode.db",
+        "sessions_scanned": 1873,
+        "messages_scanned": 60553
+      }
+    ],
+    "cutoff_iso_utc": "2026-03-02T22:18:33.936000+00:00"
+  },
+  "output_files": {
+    "sessions_jsonl": "C:\\development\\opencode\\.conductor\\tracks\\20260526-skillful-local-patch\\artifacts\\session-export-90d-20260531-181833\\sessions_90d.jsonl",
+    "sessions_missing_from_active_jsonl": "C:\\development\\opencode\\.conductor\\tracks\\20260526-skillful-local-patch\\artifacts\\session-export-90d-20260531-181833\\sessions_missing_from_active_90d.jsonl",
+    "summary_markdown": "C:\\development\\opencode\\.conductor\\tracks\\20260526-skillful-local-patch\\artifacts\\session-export-90d-20260531-181833\\sessions_90d_summary.md",
+    "stats_json": "C:\\development\\opencode\\.conductor\\tracks\\20260526-skillful-local-patch\\artifacts\\session-export-90d-20260531-181833\\sessions_90d_stats.json"
+  },
+  "missing_from_active_count": 1827
+}

@@ -1,0 +1,28 @@
+{
+  "trackId": "20260110-example",
+  "title": "Example Track Title",
+  "status": "active",
+  "created": "2026-01-10",
+  "completed": null,
+  "estimatedHours": "2-4",
+  "assignedTo": "Dave Witkin",
+  "type": "feature|bugfix|retro|maintenance|chore",
+  "tags": ["frontend", "testing"],
+  "progress": {
+    "totalTasks": 10,
+    "completedTasks": 5,
+    "percentage": 50
+  },
+  "summary": "Brief description of work",
+  "keyOutcomes": ["Outcome 1", "Outcome 2"],
+  "risks": ["Risk 1", "Risk 2"],
+  "dependencies": [],
+  "blocking": [],
+  "relatedTracks": [],
+  "deliverables": ["Deliverable 1", "Deliverable 2"],
+  "validationCriteria": [
+    "Build passes",
+    "Tests pass",
+    "Documentation complete"
+  ]
+}

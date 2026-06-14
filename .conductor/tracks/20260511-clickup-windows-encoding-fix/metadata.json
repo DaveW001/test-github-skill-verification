@@ -1,0 +1,117 @@
+{
+  "trackId": "20260511-clickup-windows-encoding-fix",
+  "title": "ClickUp Skill Windows UTF-8 Encoding Fix",
+  "status": "completed",
+  "created": "2026-05-11",
+  "completed": "2026-05-11",
+  "estimatedHours": "1",
+  "assignedTo": "Dave Witkin",
+  "type": "fix",
+  "tags": [
+    "clickup",
+    "windows",
+    "encoding",
+    "utf-8",
+    "skill-improvement"
+  ],
+  "progress": {
+    "totalTasks": 14,
+    "completedTasks": 14,
+    "percentage": 100
+  },
+  "summary": "Fix UnicodeEncodeError on Windows when ClickUp skill scripts output emojis or special characters by adding UTF-8 encoding configuration to the shared common.py module.",
+  "keyOutcomes": [
+    "All ClickUp skill scripts handle Unicode output correctly on Windows",
+    "Single-point fix in common.py — no per-script changes needed",
+    "Troubleshooting documentation updated for future self-diagnosis"
+  ],
+  "risks": [
+    {
+      "risk": "sys.stdout.reconfigure() fails on redirected/piped output",
+      "impact": "medium",
+      "mitigation": "Wrapped in try/except; fallback env var documented"
+    },
+    {
+      "risk": "Edit to common.py introduces syntax error breaking all scripts",
+      "impact": "high",
+      "mitigation": "Preflight runs first; py_compile check as fallback"
+    },
+    {
+      "risk": "Skill root path differs between host apps",
+      "impact": "low",
+      "mitigation": "Fallback search command included in Phase 0"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "ClickUp skill scripts",
+      "type": "internal",
+      "status": "available",
+      "notes": "Located at C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup\\scripts\\"
+    },
+    {
+      "name": "Python 3.7+",
+      "type": "external",
+      "status": "available",
+      "notes": "sys.stdout.reconfigure() requires Python 3.7+"
+    }
+  ],
+  "blocking": [],
+  "relatedTracks": [],
+  "deliverables": [
+    "Updated common.py with Windows UTF-8 encoding configuration",
+    "Updated references/08-troubleshooting.md with encoding issue documentation",
+    "Verified smoke test with emoji task name"
+  ],
+  "validationCriteria": [
+    "create_task.py succeeds with emoji in task name",
+    "preflight.py passes without errors",
+    "Troubleshooting doc contains encoding issue section"
+  ],
+  "phases": [
+    {
+      "name": "Phase 0: Setup & Preconditions",
+      "status": "completed",
+      "completion": 100,
+      "tasks": 4,
+      "completedTasks": 4,
+      "focus": "Verify environment, locate files, confirm Python version"
+    },
+    {
+      "name": "Phase 1: Implement Encoding Fix",
+      "status": "completed",
+      "completion": 100,
+      "tasks": 3,
+      "completedTasks": 3,
+      "focus": "Add UTF-8 reconfigure block to common.py"
+    },
+    {
+      "name": "Phase 2: Smoke Test",
+      "status": "completed",
+      "completion": 100,
+      "tasks": 4,
+      "completedTasks": 4,
+      "focus": "Verify fix works with emoji task names"
+    },
+    {
+      "name": "Phase 3: Update Documentation",
+      "status": "completed",
+      "completion": 100,
+      "tasks": 3,
+      "completedTasks": 3,
+      "focus": "Add encoding issue to troubleshooting reference"
+    },
+    {
+      "name": "Final Phase: Validation & Handover",
+      "status": "completed",
+      "completion": 100,
+      "tasks": 4,
+      "completedTasks": 4,
+      "focus": "Final validation and metadata update"
+    }
+  ],
+  "priority": "medium",
+  "estimatedWeeks": 0.25,
+  "startDate": "2026-05-11",
+  "targetCompletion": "2026-05-11"
+}

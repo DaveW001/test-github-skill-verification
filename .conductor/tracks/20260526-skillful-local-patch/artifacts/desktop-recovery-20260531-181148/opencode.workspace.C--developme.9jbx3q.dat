@@ -1,0 +1,4 @@
+{
+	"workspace:vcs": "{\"value\":{\"branch\":\"master\",\"default_branch\":\"master\"}}",
+	"workspace:model-selection": "{\"session\":{\"ses_3b65ed8c9ffeiXKwn0o3QRH6dj\":{\"agent\":\"01-Planner\",\"model\":{\"providerID\":\"google-antigravity\",\"modelID\":\"antigravity-claude-opus-4-6-thinking\"},\"variant\":null}}}"
+}

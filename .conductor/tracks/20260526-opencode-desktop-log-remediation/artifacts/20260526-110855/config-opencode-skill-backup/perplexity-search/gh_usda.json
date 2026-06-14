@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "query": "site:guidehouse.com USDA Guidehouse federal",
+  "model": "perplexity/sonar-pro",
+  "answer": "**Guidehouse holds multiple federal contracts with the USDA, primarily through its Office of the Chief Information Officer (OCIO) and other offices, focusing on IT support, program management, and data systems.**\n\nKey contracts include:\n\n- **EAS Support Services Bridge Contract (12314421C0035)**: Awarded May 2021 to Guidehouse Digital by USDA OCIO for up to $27M (fully obligated) over 10 months, ending March 2022; sole-source fixed-price deal for EAS services in Fort Collins, CO, with undisclosed subcontractors like Creative Systems, Apex Systems, and TEKsystems.[1]\n- **FEMA Pivot System Support (12314425F0347)**: $135M, 5-year task order awarded September 2025 to Guidehouse Digital by USDA OCIO under STRATUS BOA for data aggregation, validation, processing, modeling, and reporting; beat 5 other bidders with $13.5M initial obligation.[2][5]\n- **Program Management Support for Office of Customer Experience (OCX) (12314424C0035)**: $4M, 5-year contract awarded to Summome Native Ventures (Guidehouse joint venture with PCI Government Services) by USDA Office of Communication; sole bidder with $757K initial obligation.[3]\n\nGuidehouse leverages broader federal vehicles like GSA Alliant 2 (47QTCK18D0024) for USDA-related task orders, incorporating sustainability, subcontracting, and biobased product clauses.[4][7] Additional USDA IT support includes a BPA call (12760420F0680).[6] These align with USDA's Working Capital Fund for centralized services like research and IT.[8]",
+  "usage": {
+    "prompt_tokens": 10,
+    "completion_tokens": 353,
+    "total_tokens": 363
+  }
+}

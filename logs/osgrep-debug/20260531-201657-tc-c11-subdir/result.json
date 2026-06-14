@@ -1,0 +1,21 @@
+{
+  "label": "tc-c11-subdir",
+  "started": "2026-06-01T00:16:57.751770+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "search",
+    "osgrep",
+    "C:/development/opencode/scripts"
+  ],
+  "timeout_seconds": 60,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "scripts\\utils\\osgrep_debug_wrapper.py:110 [Definition]\n  // scripts\\utils\\osgrep_debug_wrapper.py\n  import argparse\n  import json\n  import os\n  import shlex\n  import shutil\n  import subprocess\n  import sys\n  import time\n  = False\n          record[\"duration_seconds\"] = 0\n          record[\"finished\"] = now_iso()\n          record[\"command_text\"] = shlex.join([osgrep_exe, *command_args])\n          out_path = out_dir / \"result.json\"\n  ... (+29 more lines)\n\nscripts\\utils\\osgrep_debug_wrapper.py:69 [Definition]\n  // scripts\\utils\\osgrep_debug_wrapper.py\n  import argparse\n  import json\n  import os\n  import shlex\n  import shutil\n  import subprocess\n  import sys\n  import time\n  def main() -> int:\n      parser = argparse.ArgumentParser(description=\"Run osgrep with reproducible logs.\")\n      parser.add_argument(\"--cwd\", default=os.getcwd(), help=\"Working directory to run osgrep from\")\n      parser.add_argument(\"--label\", default=\"run\", help=\"Label for output folder\")\n      parser.add_argument(\"--timeout\", type=int, default=20, help=\"Timeout in seconds\")\n  ... (+41 more lines)\n\nscripts\\tests\\osgrep_test_suite.py:172 [Definition]\n  // scripts\\tests\\osgrep_test_suite.py\n  import argparse\n  import json\n  import sys\n   {total_fail} |\")\n      lines.append(f\"| Timed Out | {total_timeout} |\")\n      lines.append(f\"| Skipped | {total_skip} |\")\n      lines.append(f\"| **GO / NO-GO** | **{go_nogo}** |\")\n      lines.append(\"\")\n      lines.append(\"## Blocking Tests\")\n      lines.append(\"\")\n      lines.append(\"| Label | Status | Exit Code | Duration (s) | Notes |\")\n      lines.append(\"|-------|--------|-----------|--------------|-------|\")\n      for e in blocking:\n  ... (+14 more lines)\n\nscripts\\tests\\osgrep_test_suite.py:86 [Definition]\n  // scripts\\tests\\osgrep_test_suite.py\n  import argparse\n  import json\n  import sys\n  def _load_results() -> list:\n      results = []\n      if not DEBUG_DIR.exists():\n          return results\n      for entry in sorted(DEBUG_DIR.iterdir()):\n          if not entry.is_dir():\n              continue\n          result_file = entry / \"result.json\"\n          if not result_file.exists():\n              continue\n  ... (+17 more lines)\n\nscripts\\tests\\osgrep_test_suite.py:60 [Definition]\n  // scripts\\tests\\osgrep_test_suite.py\n  import argparse\n  import json\n  import sys\n  def _now_iso() -> str:\n      return datetime.now(timezone.utc).isoformat()\n  # ---------------------------------------------------------------------------\n  # Helpers\n  # ---------------------------------------------------------------------------\n\nosgrep results (5 matches across 2 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 3.389,
+  "finished": "2026-06-01T00:17:01.145975+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search osgrep C:/development/opencode/scripts"
+}

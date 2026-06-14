@@ -94,9 +94,9 @@ Get-Content C:\Users\DaveWitkin\.local\gemini-proxy\logs\proxy.log -Tail 50
 Get-Content C:\Users\DaveWitkin\.local\gemini-proxy\api_keys.txt
 
 # Should show one key per line, like:
-# AIzaSyC40vaghThPpg86B2siZVWhCNUt6rF2AVA
-# AIzaSyCqs5AFWOjpkt48qi-R_O-0pDEIy3UZgJM
-# AIzaSyBX5g0ZGBc2RVd6WK14RzFERlKXNoyHfww
+# AIzaSy***REDACTED-DAVE-OLD***
+# AIzaSy***REDACTED-RAQUEL-1***
+# AIzaSy***REDACTED-TIBERIUS-1***
 ```
 
 **If file is empty or missing:**

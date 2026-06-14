@@ -21,7 +21,7 @@
 |-------|-------------|
 | `design-system-extractor` | Extract design tokens and system elements from URLs or graphic files |
 | `frontend-design` | Create distinctive, production-grade frontend interfaces with high design quality |
-| `html-demo-design` | HTML Demo Design System — high-fidelity demos, mockups, prototypes, video capture (formerly huashu-design) |
+| `image-to-html-reconstruction` | Convert images/slides to pixel-locked HTML mockups and PPTX with CSS Grid, SVG, Playwright, animations |
 | `pa-ui-design` | Packaged Agile UI design system for React/Next.js using Tailwind and shadcn/ui |
 
 ## NotebookLM & Research
@@ -87,7 +87,6 @@
 | `agent-writer` | Create and update OpenCode agents |
 | `command-writer` | Create and improve OpenCode slash commands |
 | `skill-writer` | Create and update OpenCode skills with valid frontmatter |
-| `snippet-writer` | Create and manage OpenCode snippets |
 | `gemini-proxy` | Manage local Gemini API Key Rotator Proxy |
 | `notebooklm-meta-prompt` | NotebookLM Meta-Prompt v5.1 insight extraction |
 

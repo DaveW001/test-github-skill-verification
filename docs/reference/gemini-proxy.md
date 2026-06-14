@@ -121,7 +121,7 @@ C:\Users\DaveWitkin\.config\opencode\opencode.jsonc
 Current configuration: **1 active key**
 
 ```
-AIzaSyCND2NSbn3Sjkp0fFJb4Rkt4RdmDNe1q3g    # Dave Personal for OC (davidawitkin@gmail.com) — replaced 2026-04-20
+AIzaSy***REDACTED-DAVE-PERSONAL***    # Dave Personal for OC (davidawitkin@gmail.com) — replaced 2026-04-20
 ```
 
 **Removed keys (2026-05-02):** Raquel and Tiberius keys removed — Google changed the family plan, no longer allowing API usage except for the primary account holder (`davidawitkin@gmail.com`). Both keys showed 0 successes and 11 failures.
@@ -134,9 +134,9 @@ All 3 previous keys were flagged by Google as **leaked/compromised** (HTTP 403 "
 
 | Old Key (Compromised)                    | New Key (Active)                          | Owner    |
 | ---------------------------------------- | ----------------------------------------- | -------- |
-| `AIzaSyC40vaghThPpg86B2siZVWhCNUt6rF2AVA`  | `AIzaSyCND2NSbn3Sjkp0fFJb4Rkt4RdmDNe1q3g` | Dave     |
-| `AIzaSyCqs5AFWOjpkt48qi-R_O-0pDEIy3UZgJM`  | `AIzaSyAIHoxsjwpCRS9vCw6hxWSMw2afsvrCxG4` | Raquel   |
-| `AIzaSyBX5g0ZGBc2RVd6WK14RzFERlKXNoyHfww`  | `AIzaSyDQJD_pwtyIPAiJ_-clerkI1hgQRnhzh50` | Tiberius |
+| `AIzaSy***REDACTED-DAVE-OLD***`  | `AIzaSy***REDACTED-DAVE-PERSONAL***` | Dave     |
+| `AIzaSy***REDACTED-RAQUEL-1***`  | `AIzaSy***REDACTED-RAQUEL-2***` | Raquel   |
+| `AIzaSy***REDACTED-TIBERIUS-1***`  | `AIzaSy***REDACTED-TIBERIUS-2***` | Tiberius |
 
 ---
 

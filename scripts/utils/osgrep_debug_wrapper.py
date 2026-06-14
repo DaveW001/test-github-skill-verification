@@ -20,7 +20,7 @@ def now_iso() -> str:
 
 
 def run_cmd(command: list[str], timeout: int | None = None) -> tuple[int, str, str]:
-    proc = subprocess.run(command, capture_output=True, text=True, timeout=timeout)
+    proc = subprocess.run(command, capture_output=True, text=True, timeout=timeout, encoding="utf-8", errors="replace")
     return proc.returncode, proc.stdout, proc.stderr
 
 
@@ -61,6 +61,8 @@ def snapshot_windows(label: str, output_dir: Path, cwd: str) -> None:
         ],
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
     )
 
 
@@ -75,7 +77,7 @@ def main() -> int:
     args = parser.parse_args()
 
     command_args = args.command
-    if command_args and command_args[0] == "--":
+    while command_args and command_args[0] == "--":
         command_args = command_args[1:]
 
     if not command_args:
@@ -122,6 +124,8 @@ def main() -> int:
             capture_output=True,
             text=True,
             timeout=args.timeout,
+            encoding="utf-8",
+            errors="replace",
         )
         record["exit_code"] = proc.returncode
         record["stdout"] = proc.stdout

@@ -1,0 +1,3 @@
+Latest inspected Desktop log remained on the earlier startup session and did not emit a new error after the restart window.
+Earlier May 19 failure signature was `SQLiteError: database is locked` during `PRAGMA journal_mode = WAL`, caused by parallel validation commands.
+

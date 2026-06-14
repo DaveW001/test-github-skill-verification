@@ -1,0 +1,91 @@
+# OpenCode Sessions (Last 90 Days)
+
+- Label: `desktop-recovery-90d-kg-handoff`
+- Generated (UTC): `2026-05-31T22:22:14.302358+00:00`
+- Sessions: `1881`
+- Projects: `11`
+
+## Top Projects
+- `/`: 682 sessions
+- `C:\development\email-triage`: 404 sessions
+- `C:\development\opencode`: 266 sessions
+- `C:\development\02-Kx-to-process`: 249 sessions
+- `C:\development\playground`: 143 sessions
+- `C:\development\marketing`: 98 sessions
+- `C:\development\2025-pa-website`: 12 sessions
+- `C:\development\army-c2cc2`: 9 sessions
+- `C:\development\cursor-clickup-mcp`: 8 sessions
+- `C:\development\slides`: 5 sessions
+- `C:\development\daily-priority-briefing`: 5 sessions
+
+## Top Models
+- `unknown`: 1638 sessions
+- `{"id":"glm-5.1","providerID":"zai-coding-plan","variant":"default"}`: 167 sessions
+- `{"id":"qwen3.6-plus","providerID":"opencode-go","variant":"default"}`: 32 sessions
+- `{"id":"kimi-k2.6","providerID":"opencode-go","variant":"default"}`: 10 sessions
+- `{"id":"gpt-5.5","providerID":"openai","variant":"low"}`: 7 sessions
+- `{"id":"qwen3.6-plus-free","providerID":"opencode","variant":"default"}`: 7 sessions
+- `{"id":"deepseek-v4-flash","providerID":"opencode-go","variant":"high"}`: 3 sessions
+- `{"id":"deepseek-v4-pro","providerID":"opencode-go","variant":"high"}`: 3 sessions
+- `{"id":"deepseek-v4-pro","providerID":"opencode-go","variant":"default"}`: 2 sessions
+- `{"id":"gpt-5.4-none","providerID":"openai","variant":"default"}`: 2 sessions
+- `{"id":"deepseek-v4-flash","providerID":"opencode-go","variant":"medium"}`: 2 sessions
+- `{"id":"gpt-5.4-mini","providerID":"openai","variant":"default"}`: 2 sessions
+- `{"id":"glm-5.1","providerID":"opencode-go","variant":"default"}`: 1 sessions
+- `{"id":"gpt-5.3-codex","providerID":"openai","variant":"low"}`: 1 sessions
+- `{"id":"deepseek-v4-pro","providerID":"opencode-go","variant":"medium"}`: 1 sessions
+- `{"id":"glm-4.7","providerID":"zai-coding","variant":"default"}`: 1 sessions
+- `{"id":"gemini-3.5-flash","providerID":"google","variant":"medium"}`: 1 sessions
+- `{"id":"deepseek-v4-flash","providerID":"opencode-go","variant":"default"}`: 1 sessions
+
+## Recent Sessions
+- `2026-05-31T22:13:49.319000+00:00` | `ses_43848728dffetIJ13BMoD5D6yl` | New session - 2026-01-16T16:50:53.938Z | repo `C:\development\playground` | messages `43`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_4382d8871ffeMYodiZcy7hFG89` | New session - 2026-01-16T17:20:17.806Z | repo `C:\development\playground` | messages `36`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_437abd876ffe1i9L8OFK2iI6uJ` | New session - 2026-01-16T19:41:57.001Z | repo `C:\development\playground` | messages `122`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_4376f3221ffeyd9E3JLO25poL9` | New session - 2026-01-16T20:48:11.743Z | repo `C:\development\playground` | messages `21`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_436734a9bffeHPbYMPj3roc3p8` | New session - 2026-01-17T01:23:20.549Z | repo `C:\development\playground` | messages `182`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_436647699ffe4ohttDtwqf8Z2k` | New session - 2026-01-17T01:39:32.327Z | repo `C:\development\playground` | messages `22`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_432a8b9a3ffebE8GPKrrdNZ4cd` | New session - 2026-01-17T19:03:27.581Z | repo `C:\development\playground` | messages `4`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_4327ac00cffenzi3YQ53bHqJlS` | New session - 2026-01-17T19:53:40.596Z | repo `C:\development\playground` | messages `50`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_43277a3a3ffej0ho3CfmFBK1f8` | New session - 2026-01-17T19:57:04.476Z | repo `C:\development\playground` | messages `149`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_430e6e59dffeVX9k921VdgAgZZ` | Refactor github-repo skill (@general subagent) | repo `C:\development\playground` | messages `4`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_430e6da60ffeDJ3YgeicQvdhCM` | Refactor conductor skill (@general subagent) | repo `C:\development\playground` | messages `7`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_430e6ce79ffeVfSEgh7Lil06qp` | Refactor windows-task-scheduler (@general subagent) | repo `C:\development\playground` | messages `7`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_430e6c5bfffeUup3uk092UXMaN` | Refactor youtube-shorts (@general subagent) | repo `C:\development\playground` | messages `15`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_430e6bcd3ffepW4xUgGsJ0mneX` | Refactor retro (@general subagent) | repo `C:\development\playground` | messages `4`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_430e6b380ffeMOzRNs4VUWDmNs` | Refactor firebase deployment skill (@general subagent) | repo `C:\development\playground` | messages `6`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_430e11235ffe4E6JOG5tSb4RNd` | Refactor windows refs minimal (@general subagent) | repo `C:\development\playground` | messages `22`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_430e10473ffeOlv5BvOqiRhMZK` | Refactor conductor final (@general subagent) | repo `C:\development\playground` | messages `4`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_430b78a79ffeZJVVHJuH502eOL` | New session - 2026-01-18T04:06:31.046Z | repo `C:\development\playground` | messages `120`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42d116797ffel9AD617fcRk1Ln` | New session - 2026-01-18T21:06:50.601Z | repo `C:\development\playground` | messages `34`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cecdcdaffe3ubGG4DON6ultU` | New session - 2026-01-18T21:46:45.413Z | repo `C:\development\playground` | messages `88`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cd80036ffekZ1q5GezCqrKpO` | New session - 2026-01-18T22:09:32.617Z | repo `C:\development\playground` | messages `54`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cd4880fffeJdpWOnUSzjjbpZ` | New session - 2026-01-18T22:13:19.984Z | repo `C:\development\playground` | messages `1`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cd45161ffenTE18S4Tgxkut1` | New session - 2026-01-18T22:13:33.982Z | repo `C:\development\playground` | messages `0`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cd1821bffeGL2x16qzXJcQB4` | New session - 2026-01-18T22:16:38.116Z | repo `C:\development\playground` | messages `2`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cd16f96ffeuoPA9oIkaOFFkG` | New session - 2026-01-18T22:16:42.858Z | repo `C:\development\playground` | messages `2`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cd0f4baffe3AZvvjiXIF3zzA` | New session - 2026-01-18T22:17:14.309Z | repo `C:\development\playground` | messages `2`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42ccfa2f3ffeXv3Kx00Li5K5YN` | New session - 2026-01-18T22:18:40.780Z | repo `C:\development\playground` | messages `2`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cc76c18ffexsQsYmoYbaaS2u` | New session - 2026-01-18T22:27:39.111Z | repo `C:\development\playground` | messages `3`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cc5ad6dffeA8t9Q7RfdsH8BX` | New session - 2026-01-18T22:29:33.458Z | repo `C:\development\playground` | messages `3`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cba99b1ffeVI15gmHsSPsyGn` | New session - 2026-01-18T22:41:39.406Z | repo `C:\development\playground` | messages `40`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cb53d50ffeY9YlzNi43VSnSR` | New session - 2026-01-18T22:47:30.735Z | repo `C:\development\playground` | messages `22`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cb4ad4effeGimZUWFYfhJiKm` | New session - 2026-01-18T22:48:07.601Z | repo `C:\development\playground` | messages `30`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42cb4ad1fffez26IcqTk3xE74u` | Generate ClickUp prioritization report and optionally send to Slack (@01-Planner subagent) | repo `C:\development\playground` | messages `3`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_428cabf11ffeuTYAzwzbTG3y5m` | New session - 2026-01-19T17:02:30.127Z | repo `C:\development\playground` | messages `107`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_428bd0130ffeyuHQlw4JF2yz8Z` | New session - 2026-01-19T17:17:30.703Z | repo `C:\development\playground` | messages `170`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_428b43d32ffehiwgslD06FecW3` | New session - 2026-01-19T17:27:05.165Z | repo `C:\development\playground` | messages `47`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42897cf3effe5W1qXRFAHES6HT` | New session - 2026-01-19T17:58:08.322Z | repo `C:\development\playground` | messages `4`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_42897ced4ffeep7EDWL5mlJh1J` | Generate ClickUp prioritization report and optionally send to Slack (@build subagent) | repo `C:\development\playground` | messages `4`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_4287c0ac2ffelCMWqUQIEZCqtd` | New session - 2026-01-19T18:28:28.093Z | repo `C:\development\playground` | messages `3`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_4287818a7ffe24wG908TCM3hpr` | New session - 2026-01-19T18:32:46.681Z | repo `C:\development\playground` | messages `77`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_4285b0ac8ffeRYdAhlZwZqlLzv` | New session - 2026-01-19T19:04:30.775Z | repo `C:\development\playground` | messages `18`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_427d43a17ffeyuZdabKZYrnsrL` | Music Tagging | repo `C:\development\playground` | messages `96`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_3bbf384aaffedPqpylG8LsQbcp` | handover-fy26-goals.md context review | repo `C:\development\playground` | messages `111`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_3b7541369ffexFY6QW3JxLmZOJ` | Searching c:\development for OpenRouter API key | repo `C:\development\playground` | messages `16`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_3b66381b4ffeYlkK7hl6RtJ4N7` | OpenCode model availability investigation | repo `C:\development\playground` | messages `59`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_3b661f8bbffeYfWSvlBn1Z78af` | New session - 2026-02-10T22:13:39.268Z | repo `C:\development\playground` | messages `2`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_3b661f8a2ffeURay4WnGnzp964` | Confirmation test | repo `C:\development\playground` | messages `565`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_3b65f135effedDGj3jFyfM5eGn` | Confirmation request | repo `C:\development\playground` | messages `2`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_3b65f135affez4tyOvTga2T3zw` | Simple request | repo `C:\development\playground` | messages `2`
+- `2026-05-31T22:13:49.319000+00:00` | `ses_3b65eeb9bffe411AET4DX9ggH5` | New session - 2026-02-10T22:16:59.236Z | repo `C:\development\playground` | messages `1`

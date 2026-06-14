@@ -1,0 +1,3 @@
+OPENCODE_GO_DAVE_API_KEY: present in Windows User env
+OPENCODE_GO_TIBERIUS_API_KEY: present in Windows User env
+

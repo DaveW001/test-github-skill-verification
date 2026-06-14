@@ -1,0 +1,22 @@
+{
+  "label": "tc-e1-concurrent-b",
+  "started": "2026-06-01T00:18:48.802491+00:00",
+  "cwd": "C:/development/opencode",
+  "command": [
+    "osgrep",
+    "search",
+    "auth token",
+    "--max-count",
+    "5"
+  ],
+  "timeout_seconds": 90,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": ".conductor\\tracks\\openai-parameter-fix\\debug_body.json:24\n  ing meaningful, even if the input is minimal.\\n- If the user message is short or conversational (e.g. \\\"hello\\\", \\\"lol\\\", \\\"what's up\\\", \\\"h\u001b[2m ...\u001b[22m\n    \"include\": [\n      \"reasoning.encrypted_content\"\n    ],\n    \"reasoning\": {\n      \"effort\": \"low\"\n    },\n    \"stream\": true\n  }\n\nlogs\\osgrep-debug\\20260531-201451-tc-b5-search-sync\\result.json:1\n  {\n    \"label\": \"tc-b5-search-sync\",\n    \"started\": \"2026-06-01T00:14:51.328684+00:00\",\n    \"cwd\": \"C:/development/opencode\",\n    \"command\": [\n      \"osgrep\",\n      \"search\",\n      \"auth token refresh\",\n      \"--sync\"\n    ],\n    \"timeout_seconds\": 120,\n    \"platform\": \"nt\",\n    \"cleanup\": {},\n    \"exit_code\": 0,\n    \"stdout\": \"osgrep path repro\\\\sample.ts:1 [Definition]\\n  export function refreshAuthToken(token: string): string {\\n    return `${token}-\u001b[2m ...\u001b[22m\n\nlogs\\osgrep-debug\\20260313-210037-tc05-rerun-20260314-search\\result.json:1\n  {\n    \"label\": \"tc05-rerun-20260314-search\",\n    \"started\": \"2026-03-14T01:00:37.108286+00:00\",\n    \"cwd\": \"C:/development/opencode/osgrep path repro\",\n    \"command\": [\n      \"osgrep\",\n      \"--\",\n      \"search\",\n      \"refreshAuthToken\"\n    ],\n    \"timeout_seconds\": 30,\n    \"platform\": \"nt\",\n    \"cleanup\": {\n      \"attempted\": true,\n  ... (+10 more lines)\n\nlogs\\osgrep-debug\\20260313-210037-tc05-rerun-20260314-search\\result.json:20\n  pts for repeatable CLI-only validation.\\\\n  ## Core Usage Prompts\\\\n  1. find code path for auth token refresh\\\\n  2. find where feature fl\\\u001b[2m ...\u001b[22m\n    \"stderr\": \"\",\n    \"timed_out\": false,\n    \"duration_seconds\": 1.266,\n    \"finished\": \"2026-03-14T01:00:38.800167+00:00\",\n    \"command_text\": \"'C:\\\\Users\\\\DaveWitkin\\\\AppData\\\\Roaming\\\\npm\\\\osgrep.CMD' -- search refreshAuthToken\"\n  }\n\nlogs\\osgrep-debug\\20260313-203249-tc01-post-fix-20260314\\result.json:20\n  for repeatable CLI-only validation.\\n  ## Core Usage Prompts\\n  1. find code path for auth token refresh\\n  2. find where feature flag X is \u001b[2m ...\u001b[22m\n    \"stderr\": \"\",\n    \"timed_out\": false,\n    \"duration_seconds\": 1.515,\n    \"finished\": \"2026-03-14T00:32:51.522554+00:00\",\n    \"command_text\": \"'C:\\\\Users\\\\DaveWitkin\\\\AppData\\\\Roaming\\\\npm\\\\osgrep.CMD' -- search 'auth token refresh'\"\n  }\n\nosgrep results (5 matches across 4 files)\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 1.855,
+  "finished": "2026-06-01T00:18:50.661681+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' search 'auth token' --max-count 5"
+}

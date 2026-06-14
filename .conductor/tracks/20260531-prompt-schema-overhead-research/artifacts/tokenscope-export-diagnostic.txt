@@ -1,0 +1,28 @@
+# Tokenscope Export Diagnostic
+
+## Tokenscope session info
+Session: ses_17c625601ffeiLBoKrMrcG2UDR
+Timestamp: 2026-06-01T14:37:47.871Z
+
+## Export status
+Status: FAILED
+Error: Cannot find package 'bun' imported from ...dist/tokenscope-lib/context.js
+
+## System tokens (inferred from API telemetry)
+Value: 17,377 tokens (50.4%)
+
+## Baseline artifact
+Path: artifacts/baseline-tokenscope.txt
+
+
+## Bun package path checks
+
+C:\Users\DaveWitkin\.cache\opencode\packages\@ramtinj95\opencode-tokenscope@latest\node_modules\bun\index.js exists: False
+C:\Users\DaveWitkin\.cache\opencode\packages\@ramtinj95\opencode-tokenscope@latest\node_modules\@ramtinj95\opencode-tokenscope\dist\tokenscope-lib\context.js exists: True
+
+## Decision
+- context.js found but 'bun' import is a bun-runtime built-in, not a Node.js package.
+- Bun is globally installed at WinGet location but 'import \"bun\"' only works under bun runtime.
+- Tokenscope export cannot be repaired without upstream Node.js compatibility fix.
+- Proceeding with fallback: A/B telemetry deltas and schema text extraction.
+

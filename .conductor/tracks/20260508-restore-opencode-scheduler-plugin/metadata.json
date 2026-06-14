@@ -1,0 +1,25 @@
+{
+  "id": "20260508-restore-opencode-scheduler-plugin",
+  "title": "Restore OpenCode Scheduler Plugin and Validate Scheduled Jobs",
+  "status": "planning",
+  "phase": "ready-for-execution",
+  "createdAt": "2026-05-08T20:39:00-04:00",
+  "updatedAt": "2026-05-08T20:39:00-04:00",
+  "owner": "01-Planner",
+  "scope": {
+    "primaryConfig": "C:\\Users\\DaveWitkin\\.config\\opencode\\opencode.jsonc",
+    "schedulerScopeRoot": "C:\\Users\\DaveWitkin\\.config\\opencode\\scheduler\\scopes",
+    "emailTriageRepo": "C:\\development\\email-triage",
+    "opencodeRepo": "C:\\development\\opencode"
+  },
+  "artifacts": {
+    "spec": ".conductor/tracks/20260508-restore-opencode-scheduler-plugin/spec.md",
+    "plan": ".conductor/tracks/20260508-restore-opencode-scheduler-plugin/plan.md",
+    "handover": ".conductor/tracks/20260508-restore-opencode-scheduler-plugin/handover.md"
+  },
+  "nonGoals": [
+    "Redesign scheduler architecture",
+    "Delete or recreate scheduled tasks without approval",
+    "Modify email-triage production code unless validation proves it is required"
+  ]
+}

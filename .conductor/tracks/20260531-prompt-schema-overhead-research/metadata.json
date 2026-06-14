@@ -1,0 +1,65 @@
+{
+  "trackId": "20260531-prompt-schema-overhead-research",
+  "title": "Prompt Schema Overhead Research",
+  "summary": "Research remaining OpenCode system prompt overhead from Codex/account tooling, MCP/plugin tool schemas, native tool schemas, task/subagent definitions, and runtime scaffolding to determine whether the 15,000-token target is reachable.",
+  "type": "research",
+  "status": "active",
+  "phase": "validation-complete",
+  "assignedTo": "build-agent",
+  "created": "2026-05-31",
+  "progress": {
+    "completedTasks": 30,
+    "totalTasks": 37,
+    "percentage": 81,
+    "deferredTasks": [
+      "4.2: Codex A/B config edit",
+      "4.3: Codex-disabled measurement",
+      "4.4: Restore config",
+      "4.5: Record A/B delta"
+    ]
+  },
+  "tags": [
+    "tokens",
+    "system-prompt",
+    "mcp",
+    "codex",
+    "tool-schemas",
+    "performance"
+  ],
+  "dependencies": [
+    "Fresh OpenCode sessions required for accurate A/B measurements",
+    "Tokenscope or fallback telemetry measurement must be available",
+    "Config backups required before any A/B toggle"
+  ],
+  "relatedTracks": [
+    "20260526-system-prompt-token-audit",
+    "20260501-codex-multi-auth-upgrade",
+    "20260501-skill-token-optimization"
+  ],
+  "keyQuestions": [
+    "Does Codex Authenticator / account-management tooling add 2,000-3,500 system tokens?",
+    "How many tokens are currently consumed by MCP/plugin tool schemas?",
+    "How many tokens are consumed by native tool schemas?",
+    "Can safe or aggressive reversible local toggles reach 15,000 system tokens?"
+  ],
+  "deliverables": [
+    "artifacts/baseline-tokenscope.txt",
+    "artifacts/effective-config-inventory.md",
+    "artifacts/tool-surface-inventory.md",
+    "artifacts/codex-tool-origin-analysis.md",
+    "artifacts/schema-token-estimates.md",
+    "artifacts/ab-test-results.md",
+    "artifacts/final-report.md"
+  ],
+  "risks": [
+    "Codex tooling origin may not be obvious from config",
+    "Tokenscope context export may remain broken",
+    "Temporary config toggles may break OpenCode startup until restored"
+  ],
+  "validationCriteria": [
+    "Config restored after A/B tests",
+    "No unredacted secrets in artifacts",
+    "Final report contains measured or bounded token estimates and a clear 15,000-token conclusion"
+  ],
+  "notes": "Codex A/B test deferred per user request - user has other running OpenCode sessions. Final report and all other artifacts complete. Ready for A/B test when user can start a fresh session."
+}

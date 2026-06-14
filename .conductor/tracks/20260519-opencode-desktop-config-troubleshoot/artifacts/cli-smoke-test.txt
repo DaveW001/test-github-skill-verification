@@ -1,0 +1,9 @@
+Command:
+opencode run -m opencode-go/glm-5.1 "Reply with exactly: CLI smoke test passed"
+
+Result:
+CLI smoke test passed
+
+Exit code:
+0
+

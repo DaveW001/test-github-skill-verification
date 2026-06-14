@@ -1,0 +1,13 @@
+{
+  "track_id": "20260530-global-skills-index-regen",
+  "created": "2026-05-30",
+  "status": "pending",
+  "phase": "planning",
+  "priority": "high",
+  "source": "skill-health-validator-run",
+  "artifacts": {
+    "spec": "spec.md",
+    "plan": "plan.md"
+  },
+  "tags": ["skills", "index", "documentation", "maintenance"]
+}

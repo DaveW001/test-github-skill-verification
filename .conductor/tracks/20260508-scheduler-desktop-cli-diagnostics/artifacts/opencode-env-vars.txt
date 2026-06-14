@@ -1,0 +1,17 @@
+
+Name                                 Value
+----                                 -----
+APPDATA                              C:\Users\DaveWitkin\AppData\Roaming
+LOCALAPPDATA                         C:\Users\DaveWitkin\AppData\Local
+OPENCODE                             1
+OPENCODE_CLIENT                      desktop
+OPENCODE_ENABLE_EXA                  1
+OPENCODE_EXPERIMENTAL_FILEWATCHER    true
+OPENCODE_EXPERIMENTAL_ICON_DISCOVERY true
+OPENCODE_PID                         22028
+OPENCODE_PROCESS_ROLE                main
+OPENCODE_RUN_ID                      5ebb4c2d-d35a-4050-a64c-b8b36c254ce0
+OPENCODE_SERVER_PASSWORD             bbe77a54-3a47-42bb-a3ee-9b8f133f8e16
+OPENCODE_SERVER_USERNAME             opencode
+XDG_STATE_HOME                       C:\Users\DaveWitkin\AppData\Local\ai.opencode.desktop\
+
