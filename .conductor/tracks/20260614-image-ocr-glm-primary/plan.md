@@ -663,7 +663,7 @@
   **Verify:** Prints `Encode OK`; both URIs start with `data:image/png;base64,` (the GIF was converted).
   **Error recovery:** If GIF assertion fails, the `_downscale_to_png` path has a bug -- verify `Image.open(path)` and the `.convert("RGB")` call.
 
-- [ ] **4.4 Live GLM-OCR test (requires opencode restart to load `ZAI_API_KEY`)**
+- [x] **4.4 Live GLM-OCR test (requires opencode restart to load `ZAI_API_KEY`)**
 
   > **Gate:** This task can only pass AFTER an OpenCode restart (so `ZAI_API_KEY` loads into the process env). Pre-restart check:
   > ```powershell
@@ -680,7 +680,7 @@
   - `HTTP 401` -> key invalid/expired. Re-issue at https://z.ai/manage-apikey/apikey-list.
   - `HTTP 429` -> Z.AI quota; wait and retry, or test Gemini tier via `--engine gemini`.
 
-- [ ] **4.5 Verify `--engine auto` cascades to GLM-OCR (post-restart)**
+- [x] **4.5 Verify `--engine auto` cascades to GLM-OCR (post-restart)**
 
   ```powershell
   python "$env:USERPROFILE\.opencode-lazy-vault\image-ocr\scripts\ocr_extract.py" "$env:USERPROFILE\.opencode-lazy-vault\image-ocr\glm_test.png" --output-dir "$env:TEMP\glm-test-out"

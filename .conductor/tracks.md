@@ -10,6 +10,9 @@
 | 20260531-prompt-schema-overhead-research | Prompt Schema Overhead Research | active | | C:\development\opencode\.conductor\tracks\20260531-prompt-schema-overhead-research |
 | 20260608-opencode-desktop-startup-freeze | OpenCode Desktop Startup Freeze Incident | active | | C:\development\opencode\.conductor\tracks\20260608-opencode-desktop-startup-freeze |
 | 20260614-image-ocr-skill | Image-to-Markdown OCR Skill | completed | 2026-06-14 | C:\development\opencode\.conductor\tracks\20260614-image-ocr-skill |
+| 20260614-image-ocr-glm-primary | Image-OCR GLM-OCR Primary Integration | completed | 2026-06-15 | C:\development\opencode\.conductor\tracks\20260614-image-ocr-glm-primary |
+
+
 
 
 

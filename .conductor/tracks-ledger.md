@@ -6,6 +6,7 @@ This ledger tracks all active, completed, and archived tracks in this repository
 
 
 
+- [20260615-glm-52-model-migration](./tracks/20260615-glm-52-model-migration/spec.md): Migrate all OpenCode agent models from GLM 5.1/4.7 to GLM 5.2. Two-layer architecture: primary agents inherit global default (overridable per-session), subagents pinned with explicit model for cost isolation from expensive orchestrators like GPT-5.5. (Phase: ready-for-build)
 - [20260608-opencode-desktop-startup-freeze](./tracks/20260608-opencode-desktop-startup-freeze/spec.md): Diagnose and recover OpenCode Desktop 1.16.0 startup freeze caused by renderer message timeline load of an oversized persisted session, with separate follow-up for scheduled-run `session_message.seq` database write errors. (Phase: incident plan ready)
 - [20260526-opencode-desktop-log-remediation](./tracks/20260526-opencode-desktop-log-remediation/spec.md): Remediate May 26 Desktop startup issues by clearing broken plugin caches, resolving Git snapshot GC blockage, and handling duplicate skill-root warnings only if still needed after primary fixes. (Phase: completed)
 - [20260519-opencode-desktop-performance-skillful-isolation](./tracks/20260519-opencode-desktop-performance-skillful-isolation/spec.md): Isolate OpenCode Desktop slowdown by validating MCP disablement, inspecting lazy Skillful discovery, and A/B testing Desktop with `@zenobius/opencode-skillful` disabled before considering reinstall. (Phase: phase5-handover)
@@ -25,7 +26,7 @@ This ledger tracks all active, completed, and archived tracks in this repository
 
 - [20260531-prompt-schema-overhead-research](./tracks/20260531-prompt-schema-overhead-research/spec.md): Research remaining OpenCode system prompt overhead from Codex/account tooling, MCP/plugin tool schemas, native tool schemas, task/subagent definitions, and runtime scaffolding to determine whether the 15,000-token target is reachable through safe config changes, aggressive reversible toggles, or upstream OpenCode changes. (Phase: validation-complete)
 - [20260614-image-ocr-skill](./tracks/20260614-image-ocr-skill/spec.md): Create a new OpenCode skill (image-ocr) that extracts plain text from images and outputs clean Markdown. Two-tier architecture: Gemini 2.5 Flash primary (best quality, free tier) with Tesseract offline fallback (zero setup). Mirrors visual-ocr Gemini API patterns and doc-to-markdown batch/output patterns. (Phase: planning-complete-ready-for-build)
-- [20260614-image-ocr-glm-primary](./tracks/20260614-image-ocr-glm-primary/spec.md): Invert image-ocr engine priority to make GLM-OCR (Z.AI dedicated OCR model) the primary tier, demoting Gemini to secondary and keeping Tesseract as offline fallback. Additive change to ocr_extract.py: new extract_glmocr()/run_glmocr() via raw httpx, Pillow format conversion + downscale, reordered auto cascade. Resolves the Gemini monthly-cap outage from track 20260614-image-ocr-skill. (Phase: build-complete-blocked-pending-restart-for-live-test)
+
 
 ## Completed Tracks
 - [20260613-dcp-token-savings-analysis](./tracks/20260613-dcp-token-savings-analysis/spec.md): Quantify Dynamic Context Pruning (DCP) token + USD savings across the last 100 OpenCode sessions into one self-contained HTML report with overall totals, per-model breakdown (tokens saved + DCP call counts), and a total-savings headline. Python 3 stdlib only; reads DCP state + opencode storage; offline. (Completed: 2026-06-13)
@@ -47,9 +48,12 @@ This ledger tracks all active, completed, and archived tracks in this repository
 - [20260501-scheduler-headless-hardening](./tracks/20260501-scheduler-headless-hardening/spec.md): Migrated 4 OpenCode scheduled tasks to wscript/VBS headless launcher pattern, created runbook, updated scheduler skill v2.1.0. All validation passed. (Completed: 2026-05-01)
 
 - [20260502-skill-junction-unification](./tracks/20260502-skill-junction-unification/spec.md): Established lazy vault as single source of truth for all 63 skills (56 OpenCode + 7 built-in Codex). Bridged 6 always-on skills into vault via junctions, deduplicated pptx-to-pdf-converter, preserved 7 built-in Codex skills, replaced individual junctions with single parent-level junctions in Codex and .agents. Plugin configured with single basePath. (Completed: 2026-05-05)
+- [20260614-image-ocr-glm-primary](./tracks/20260614-image-ocr-glm-primary/spec.md): Inverted image-ocr engine priority: GLM-OCR (Z.AI dedicated OCR model) is now Tier 1 primary, Gemini 2.5 Flash demoted to Tier 2 secondary, Tesseract stays Tier 3 offline fallback. Raw httpx integration with Pillow format conversion + downscale. Live-validated 2026-06-15: 4-line test image OCR'd perfectly via both --engine glmocr and --engine auto (frontmatter confirms engine: glm-ocr). (Completed: 2026-06-15)
+
 ## Archived Tracks
 
 *(None yet)*
+
 
 
 

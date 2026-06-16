@@ -19,3 +19,13 @@ opencode.db
 
 # Environment files with secrets - never commit
 .env
+
+# ---- Files containing secrets - never commit ----
+# Google OAuth client ID/secret (mystatus quota-check one-liner)
+docs/reference/mystatus-quota-check.md
+# Gemini API keys (multiple people's keys documented here)
+docs/reference/gemini-proxy.md
+docs/troubleshooting/active/gemini-proxy-down.md
+# Config backups containing Slack tokens and other live credentials
+**/opencode.jsonc.before-*
+**/opencode.jsonc.backup-*

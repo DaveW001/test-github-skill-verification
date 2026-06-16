@@ -1,0 +1,63 @@
+{
+  "trackId": "20260615-glm-52-model-migration",
+  "title": "GLM 5.2 Model Migration",
+  "status": "completed",
+  "created": "2026-06-15",
+  "completed": "2026-06-15",
+  "estimatedHours": "0.5-1",
+  "assignedTo": "Build Agent",
+  "type": "enhancement",
+  "tags": [
+    "config",
+    "agents",
+    "model-routing",
+    "glm-5.2",
+    "cost-isolation"
+  ],
+  "progress": {
+    "totalTasks": 21,
+    "completedTasks": 21,
+    "percentage": 100.0
+  },
+  "summary": "Migrate all OpenCode agent model configurations from GLM 5.1/4.7 to GLM 5.2. Two-layer architecture: primary agents inherit global default (overridable per-session), subagents pinned with explicit GLM 5.2 model (cost isolation from expensive orchestrators). Updates opencode.jsonc global defaults + agent block, removes model from 3 primary agents, adds/updates model on 6 subagents. No permission changes.",
+  "keyOutcomes": [
+    "Global model and small_model set to zai-coding-plan/glm-5.2",
+    "Built-in subagents (general, explore, scout) pinned to GLM 5.2 via config agent block",
+    "Primary agents (01-Planner, Boost, Build) have no explicit model -- inherit global default",
+    "All 6 custom subagents have explicit model: zai-coding-plan/glm-5.2",
+    "cove-verifier updated from zai-coding/glm-4.7 to zai-coding-plan/glm-5.2",
+    "No permission blocks, prompts, or tools modified"
+  ],
+  "risks": [
+    "JSONC comments may break ConvertFrom-Json validation (mitigated with raw string search fallback in task 4.2)",
+    "Bun-is-not-defined tool failure in build env (mitigated with PowerShell fallback instructions per task)",
+    "cove-verifier model line is at END of frontmatter, not after mode: (handled with targeted replacement in task 3.3)"
+  ],
+  "dependencies": [
+    "opencode.jsonc at C:\\Users\\DaveWitkin\\.config\\opencode\\",
+    "9 agent .md files at C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\"
+  ],
+  "blocking": [],
+  "relatedTracks": [],
+  "deliverables": [
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\opencode.jsonc (model, small_model, agent block modified)",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\01-planner.md (model line removed)",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\boost.md (model line removed)",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md (model line removed)",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\brand-voice-validator.md (model line added)",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\cove-orchestrator.md (model line added)",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\cove-verifier.md (model value updated)",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\gen-headlines.md (model line added)",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\peer-review.md (model line added)",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\seo-auditor.md (model line added)"
+  ],
+  "validationCriteria": [
+    "No agent file contains glm-5.1 or glm-4.7",
+    "Config model and small_model are both zai-coding-plan/glm-5.2",
+    "Config agent block includes general, explore, scout with glm-5.2 pins",
+    "Primary agents (01-planner, boost, build) have no model: frontmatter key",
+    "All 6 subagents have model: zai-coding-plan/glm-5.2",
+    "Permission blocks unchanged in all agent files",
+    "OpenCode restart required to load changes (documented, not executed)"
+  ]
+}

@@ -1,9 +1,9 @@
 {
   "trackId": "20260614-image-ocr-glm-primary",
   "title": "Image-OCR GLM-OCR Primary Integration",
-  "status": "blocked-pending-restart",
+  "status": "completed",
   "created": "2026-06-14",
-  "completed": null,
+  "completed": "2026-06-15",
   "estimatedHours": "1-2",
   "assignedTo": "Build Agent",
   "type": "enhancement",
@@ -17,9 +17,9 @@
     "tesseract"
   ],
   "progress": {
-    "totalTasks": 33,
-    "completedTasks": 31,
-    "percentage": 93.9
+    "totalTasks": 32,
+    "completedTasks": 32,
+    "percentage": 100.0
   },
   "summary": "Invert the existing image-ocr skill engine priority so GLM-OCR (Z.AI dedicated OCR model) becomes the primary engine, demoting Gemini 2.5 Flash to secondary and keeping Tesseract as offline last resort. Additive change to ocr_extract.py: new extract_glmocr()/run_glmocr() via raw httpx, Pillow format conversion + downscale for non-native/oversized inputs, reordered auto cascade. Resolves the Gemini monthly-cap outage documented in track 20260614-image-ocr-skill. ZAI_API_KEY already placed in ~/.config/opencode/.env.",
   "keyOutcomes": [
@@ -40,9 +40,7 @@
     "ZAI_API_KEY env var, loaded from ~/.config/opencode/.env (already placed)",
     "Existing ocr_extract.py from track 20260614-image-ocr-skill (completed)"
   ],
-  "blocking": [
-    "Live GLM-OCR validation tasks 4.4 and 4.5 deferred: requires opencode restart to load ZAI_API_KEY into the process env. After restart, re-run: python ~/.opencode-lazy-vault/image-ocr/scripts/ocr_extract.py <test_image> --engine glmocr --output-dir <dir>"
-  ],
+  "blocking": [],
   "relatedTracks": [
     "20260614-image-ocr-skill (completed -- built the skill being modified here)"
   ],
@@ -60,3 +58,4 @@
     "All plan.md tasks marked [x]"
   ]
 }
+
