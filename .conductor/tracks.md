@@ -1,6 +1,7 @@
 # Conductor Tracks
 
 | Track ID | Title | Status | Completed | Path |
+| 20260623-api-key-centralization-index | API Key Centralization Index | complete | 2026-06-24 | C:\development\opencode\.conductor\tracks\20260623-api-key-centralization-index |
 | 20260613-dcp-token-savings-analysis | DCP Token-Savings Analysis (Last 100 Sessions) | complete | 2026-06-13 | C:\development\opencode\.conductor\tracks\20260613-dcp-token-savings-analysis |
 | 20260526-skillful-local-patch | Patch skillful __require crash with createRequire polyfill | completed | 2026-05-26 | C:\development\opencode\.conductor\tracks\20260526-skillful-local-patch |
 | 20260526-system-prompt-token-audit | System Prompt Token Audit & Reduction | completed | 2026-05-26 | C:\development\opencode\.conductor\tracks\20260526-system-prompt-token-audit |
@@ -15,4 +16,7 @@
 
 
 
+
+
+| 20260622-glm-52-non-thinking-variant | GLM 5.2 Non-Thinking Variant | complete | 2026-06-22 | C:\development\opencode\.conductor\tracks\20260622-glm-52-non-thinking-variant |
 

@@ -1,0 +1,25 @@
+{
+  "track_id": "20260622-openai-multi-auth-doc-fixup",
+  "name": "OpenAI Multi-Auth Doc Fixup",
+  "type": "documentation",
+  "status": "completed",
+  "created": "2026-06-22",
+  "completed": "2026-06-22",
+  "scope": "documentation",
+  "files_modified": [
+    "docs/troubleshooting/active/codex-multi-auth-refresh-token-reused.md"
+  ],
+  "files_created": [
+    "docs/troubleshooting/active/openai-codex-multi-auth-guide.md"
+  ],
+  "no_code_changes": true,
+  "related_tracks": [
+    "20260314-codex-multi-auth-setup",
+    "20260501-codex-multi-auth-upgrade",
+    "openai-parameter-fix",
+    "20260429-openai-silent-failure"
+  ],
+  "user_issue": "All 1 account(s) failed (server errors or auth issues) when using OpenAI models",
+  "root_cause": "Burned refresh token in global auth fallback (Layer 1). Plugin multi-account storage (Layer 2) was empty. User had reauthorized 3 accounts via repeated `opencode auth login` calls, each of which rotated the refresh token, burning earlier ones. Only the last login's token survived in the single-entry global auth.json.",
+  "resolution": "Re-authorized all 3 accounts through the plugin's multi-account flow. All accounts now stored in plugin storage with rotation, health-aware failover, and per-account cooldowns active."
+}

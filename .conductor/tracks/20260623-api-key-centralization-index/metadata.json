@@ -1,0 +1,14 @@
+{
+  "track_id": "20260623-api-key-centralization-index",
+  "title": "API Key Centralization Index",
+  "status": "validation-complete",
+  "phase": "validation-complete",
+  "created": "2026-06-23",
+  "updated": "2026-06-24",
+  "owner": "01-Planner",
+  "summary": "Create a metadata-only secrets index, add an AGENTS.md lookup rule, fix conductor-reporter .env gitignore coverage, and clean handover encoding artifacts without moving or exposing secret values.",
+  "paths": {
+    "spec": "C:\\development\\opencode\\.conductor\\tracks\\20260623-api-key-centralization-index\\spec.md",
+    "plan": "C:\\development\\opencode\\.conductor\\tracks\\20260623-api-key-centralization-index\\plan.md"
+  }
+}

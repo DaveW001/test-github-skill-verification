@@ -1,0 +1,49 @@
+{
+  "trackId": "20260622-glm-52-non-thinking-variant",
+  "title": "GLM 5.2 Non-Thinking Variant",
+  "status": "complete",
+  "created": "2026-06-22",
+  "completed": "2026-06-22",
+  "estimatedHours": "0.25",
+  "assignedTo": "Build Agent",
+  "type": "enhancement",
+  "tags": ["config", "glm-5.2", "reasoning", "cost-optimization", "opencode-jsonc"],
+  "progress": {
+    "totalTasks": 17,
+    "completedTasks": 17,
+    "percentage": 100
+  },
+  "summary": "Add a 'none' reasoning variant to GLM 5.2 in opencode.jsonc so thinking can be toggled off via Ctrl+T. Config variants merge with the built-in {high, max} computed variants, yielding {high, max, none}. The variant overrides OpenCode's hardcoded forced thinking at request time (highest merge precedence). Single model, no alias.",
+  "keyOutcomes": [
+    "GLM-5.2 gains a 'none' variant selectable via Ctrl+T",
+    "Thinking is disabled at the API level when 'none' is selected",
+    "Built-in {high, max} variants are preserved alongside 'none'",
+    "No separate model alias created - single model zai-coding-plan/glm-5.2"
+  ],
+  "risks": [
+    "Z.ai API may reject or ignore thinking:{type:'disabled'} payload - unknown without live test (user-verified post-restart; fallback to clear_thinking:true or custom providerID escape hatch documented in spec.md)",
+    "Bun-is-not-defined tool failure in build env (mitigated: PowerShell [System.IO.File]::WriteAllText fallback for all file ops, documented in plan.md Phase 2.1)",
+    "JSONC comments must survive editing - use raw string replacement, not ConvertFrom-Json round-trip (mitigated: custom Test-JsonC parser in plan.md Phase 3.1)"
+  ],
+  "dependencies": [
+    "opencode.jsonc at C:\\Users\\DaveWitkin\\.config\\opencode\\opencode.jsonc"
+  ],
+  "blocking": [],
+  "relatedTracks": ["20260615-glm-52-model-migration"],
+  "deliverables": [
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\opencode.jsonc (zai-coding-plan provider block with none variant added)",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\opencode.jsonc.backup-YYYYMMDD-HHMMSS (timestamped backup)",
+    "C:\\development\\opencode\\.conductor\\tracks\\20260622-glm-52-non-thinking-variant\\execution-log-2026-06-22.md (execution log)"
+  ],
+  "validationCriteria": [
+    "Test-JsonC (custom JSONC parser) returns True for the new opencode.jsonc",
+    "provider.zai-coding-plan.models.glm-5.2.variants.none exists with thinking:{type:disabled}",
+    "All 6 built-in provider blocks (google, openai, moonshot, openrouter, go-dave, go-tiberius) are byte-identical to backup",
+    "Global model and small_model remain zai-coding-plan/glm-5.2",
+    "Compare-Object diff against backup shows ONLY the inserted zai-coding-plan block + a trailing comma on go-tiberius close line",
+    "Timestamped backup file exists with byte-identical content to pre-edit source",
+    "metadata.json status=complete, progress.percentage=100, totalTasks=17, completedTasks=17",
+    "tracks.md row for this track shows complete and 2026-06-22 in Completed column",
+    "tracks-ledger.md entry moved from Active to Completed with (Completed: 2026-06-22) tag"
+  ]
+}
