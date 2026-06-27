@@ -202,7 +202,7 @@ Objective: make the existing handover readable for future agents without changin
   File path: `C:\Users\DaveWitkin\.config\opencode\docs\handovers\api-key-centralization-handover-20260623.md`  
   Command:
   ```powershell
-  $path = "C:\Users\DaveWitkin\.config\opencode\docs\handovers\api-key-centralization-handover-20260623.md"; $text = Get-Content -Raw -LiteralPath $path; $text = $text.Replace([char]0x15, 'section ').Replace([char]0x1A, '->'); Set-Content -Encoding utf8 -LiteralPath $path -Value $text; "updated"
+  $path = "C:\Users\DaveWitkin\.config\opencode\docs\handovers\api-key-centralization-handover-20260623.md"; $text = Get-Content -Raw -LiteralPath $path; $text = $text.Replace([string][char]0x15, 'section ').Replace([string][char]0x1A, '->'); Set-Content -Encoding utf8 -LiteralPath $path -Value $text; "updated"
   ```
   Expected output: `updated`  
   Error recovery: if the file is missing, skip this phase and document the skip in Final Phase.

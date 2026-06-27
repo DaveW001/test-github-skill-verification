@@ -6,7 +6,6 @@ This ledger tracks all active, completed, and archived tracks in this repository
 
 
 
-- [20260623-api-key-centralization-index](./tracks/20260623-api-key-centralization-index/spec.md): Create a metadata-only API key discovery index, add an AGENTS.md lookup rule, fix conductor-reporter .env gitignore coverage, and clean handover encoding artifacts without moving or exposing secret values. (Phase: planning-complete-ready-for-build)
 
 - [20260615-glm-52-model-migration](./tracks/20260615-glm-52-model-migration/spec.md): Migrate all OpenCode agent models from GLM 5.1/4.7 to GLM 5.2. Two-layer architecture: primary agents inherit global default (overridable per-session), subagents pinned with explicit model for cost isolation from expensive orchestrators like GPT-5.5. (Phase: ready-for-build)
 - [20260608-opencode-desktop-startup-freeze](./tracks/20260608-opencode-desktop-startup-freeze/spec.md): Diagnose and recover OpenCode Desktop 1.16.0 startup freeze caused by renderer message timeline load of an oversized persisted session, with separate follow-up for scheduled-run `session_message.seq` database write errors. (Phase: incident plan ready)
@@ -31,7 +30,8 @@ This ledger tracks all active, completed, and archived tracks in this repository
 
 
 ## Completed Tracks
-- [20260613-dcp-token-savings-analysis](./tracks/20260613-dcp-token-savings-analysis/spec.md): Quantify Dynamic Context Pruning (DCP) token + USD savings across the last 100 OpenCode sessions into one self-contained HTML report with overall totals, per-model breakdown (tokens saved + DCP call counts), and a total-savings headline. Python 3 stdlib only; reads DCP state + opencode storage; offline. (Completed: 2026-06-13)
+
+- [20260623-api-key-centralization-index](./tracks/20260623-api-key-centralization-index/spec.md): Create a metadata-only API key discovery index, add an AGENTS.md lookup rule, fix conductor-reporter .env gitignore coverage, and clean handover encoding artifacts without moving or exposing secret values. (Completed: 2026-06-24)- [20260613-dcp-token-savings-analysis](./tracks/20260613-dcp-token-savings-analysis/spec.md): Quantify Dynamic Context Pruning (DCP) token + USD savings across the last 100 OpenCode sessions into one self-contained HTML report with overall totals, per-model breakdown (tokens saved + DCP call counts), and a total-savings headline. Python 3 stdlib only; reads DCP state + opencode storage; offline. (Completed: 2026-06-13)
 - [20260622-glm-52-non-thinking-variant](./tracks/20260622-glm-52-non-thinking-variant/spec.md): Add a 'none' reasoning variant to GLM 5.2 so thinking can be toggled off via Ctrl+T. Config variants merge with built-in {high, max}, yielding {high, max, none}. Variant overrides hardcoded forced thinking at request time (highest merge precedence). Single model, no alias. (Completed: 2026-06-22)
 
 - [20260531-osgrep-comprehensive-test-suite](./tracks/20260531-osgrep-comprehensive-test-suite/spec.md): Executed comprehensive 47-test suite for OsGrep CLI-only canary mode. All 14 blocking tests passed, 31 non-blocking tests verified. Produced unified report, process snapshots, and resolved debug wrapper Windows UTF-8/args bugs. (Completed: 2026-05-31)
