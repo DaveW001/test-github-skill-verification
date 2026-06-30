@@ -1,0 +1,14 @@
+{
+  "track_id": "20260630-conductor-pipeline-run-retro",
+  "title": "Retrospective on Conductor Pipeline retro-improvements run",
+  "status": "executed",
+  "created": "2026-06-30",
+  "target_files": [
+    "C:\\development\\opencode\\.conductor\\docs\\conductor-pipeline-run-retro-2026-06-30.md",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\threshold-policy.md"
+  ],
+  "track_directory": "C:\\development\\opencode\\.conductor\\tracks\\20260630-conductor-pipeline-run-retro",
+  "progress": { "phase": "executed", "completed_tasks": 18, "total_tasks": 18 },
+  "executed_at": "2026-06-30",
+  "notes": "Documentation/config-only retro updates approved by user; no production/runtime code changed."
+}

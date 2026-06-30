@@ -1,4 +1,4 @@
-﻿# Workflow: Publish a Static HTML Page to a Public URL (Vercel CLI)
+# Workflow: Publish a Static HTML Page to a Public URL (Vercel CLI)
 
 **Purpose:** Publish any self-contained HTML file to a neutral, shareable public URL in under 60 seconds.
 **Created:** 2026-06-22
@@ -119,6 +119,8 @@ Append a new row each time a page is published or updated.
 |---|---|---|---|---|---|---|
 | 2026-06-14 | `dcp-savings-2026` | DCP token-savings analysis report (100 sessions) | `.conductor/tracks/20260613-dcp-token-savings-analysis/artifacts/dcp-savings-report.html` | https://dcp-savings-2026.vercel.app | Build agent | Live |
 | 2026-06-22 | `govpulse-status-2026` | GovPulse project status overview (Phase 1 gate passed) | `C:\development\govpulse\GOVPULSE-STATUS.html` | https://govpulse-status-2026.vercel.app | Build agent | Live |
+| 2026-06-28 | govpulse-status-2026 | GovPulse status dashboard REDEPLOY - updated metrics (7 feeds, 62/64 tests, 94 articles, $0.63, all phases done) | C:\development\govpulse\GOVPULSE-STATUS.html | https://govpulse-status-2026.vercel.app | Planner agent | Live |
+
 
 ## Known deployments (detailed)
 

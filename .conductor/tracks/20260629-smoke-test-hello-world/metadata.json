@@ -1,0 +1,15 @@
+{
+  "track_id": "20260629-smoke-test-hello-world",
+  "title": "Append Hello World smoke-test section",
+  "status": "executed",
+  "created": "2026-06-29",
+  "target_file_path": "C:\\development\\opencode\\.conductor\\smoke-test\\hello-world.md",
+  "track_directory": "C:\\development\\opencode\\.conductor\\tracks\\20260629-smoke-test-hello-world",
+  "progress": {
+    "phase": "executed",
+    "completed_tasks": 12,
+    "total_tasks": 12
+  },
+  "executed_at": "2026-06-29",
+  "executor_model": "zai-coding-plan/glm-5.2"
+}

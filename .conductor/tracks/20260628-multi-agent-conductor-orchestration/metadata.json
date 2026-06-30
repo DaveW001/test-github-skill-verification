@@ -1,0 +1,81 @@
+{
+  "trackId": "20260628-multi-agent-conductor-orchestration",
+  "title": "Multi-Agent Conductor Orchestration Workflow",
+  "status": "build-complete-runtime-pending",
+  "created": "2026-06-28",
+  "completed": null,
+  "approved": "2026-06-28",
+  "built": "2026-06-28",
+  "estimatedHours": "2-4 for final config after approval",
+  "assignedTo": "Dave Witkin",
+  "type": "architecture",
+  "tags": [
+    "opencode",
+    "conductor",
+    "multi-agent",
+    "workflow",
+    "orchestration"
+  ],
+  "progress": {
+    "totalTasks": 31,
+    "completedTasks": 25,
+    "percentage": 81
+  },
+  "summary": "OpenCode-native six-stage Conductor pipeline. Design approved 2026-06-28 and implemented the same day: command + orchestrator + 6 model-pinned stage subagents + skill reference pack. Statically verified (agents load, models resolve). Runtime dry-run/gate/failure-sim checks pending an OpenCode restart.",
+  "approval": {
+    "date": "2026-06-28",
+    "autonomy": "full-auto-through-validation",
+    "reReviewTrigger": "B+C hybrid",
+    "reValidationTrigger": "A+C hybrid",
+    "layout": "command + skill reference pack",
+    "openFollowup": "gpt-5.5-fast emergency fallback deferred to future tuning"
+  },
+  "buildFiles": {
+    "command": "C:\\Users\\DaveWitkin\\.config\\opencode\\commands\\conductor-pipeline.md",
+    "orchestrator": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-pipeline-orchestrator.md",
+    "subagents": [
+      "agent\\conductor-plan-creator.md (openai/gpt-5.5 low)",
+      "agent\\conductor-plan-reviewer.md (opencode-go/minimax-m3)",
+      "agent\\conductor-plan-reviewer-alt.md (openai/gpt-5.5 low)",
+      "agent\\conductor-track-executor.md (zai-coding-plan/glm-5.2)",
+      "agent\\conductor-track-validator.md (opencode-go/minimax-m3)",
+      "agent\\conductor-track-validator-alt.md (openai/gpt-5.5 low)"
+    ],
+    "skill": "skill\\conductor-pipeline\\ (SKILL.md + references\\stage-prompts.md + references\\threshold-policy.md + README.md)"
+  },
+  "keyOutcomes": [
+    "Mapped standard Espanso snippets to all six pipeline stages",
+    "Recommended command + orchestrator agent + stage subagent architecture",
+    "Defined threshold options, handoff artifacts, and fallback paths",
+    "Secured Dave approval of architecture, autonomy, and threshold defaults (2026-06-28)",
+    "Implemented and statically verified all command/agent/skill files (2026-06-28)"
+  ],
+  "risks": [
+    "Final agent syntax must express GPT-5.5 Low as model openai/gpt-5.5 plus variant low (mitigated: variant field is a first-class frontmatter field)",
+    "OpenCode commands do not provide native declarative branching, so the orchestrator prompt enforces conditions",
+    "Write-enabled subagents are narrowly permissioned (executor edit/bash allow; others .conductor-only or read-only)",
+    "Full-auto autonomy removes the pre-execution human checkpoint; safety relies on the execution-failure stop rule and iteration caps",
+    "Files placed in agent\\ and skill\\ (singular), not agents\\ and skills\\ (plural) as the plan text wrote, to match the live scanned config"
+  ],
+  "dependencies": [
+    "Dave approval (MET 2026-06-28)",
+    "Live smoke test that the runtime accepts the model pins (statically MET via opencode models; runtime pending dry-run)"
+  ],
+  "blocking": [
+    "OpenCode restart required, then live dry-run + runtime gate/diversity/failure-sim verification (Phase 3 item 7, Phase 4 items 3-7)"
+  ],
+  "relatedTracks": [],
+  "deliverables": [
+    "spec.md architecture proposal (approved)",
+    "plan.md (Phase 0-3 done; Phase 3.7 + Phase 4.3-7 runtime verification pending restart)",
+    "metadata.json track state",
+    "command + orchestrator + 6 subagents + skill pack + README (implemented)"
+  ],
+  "validationCriteria": [
+    "All six stages map to exact standard prompts",
+    "Diversity rules are specified and enforceable",
+    "Conditional gates use measurable thresholds",
+    "Context handoffs are explicit",
+    "Fallback and rollback paths are documented"
+  ]
+}

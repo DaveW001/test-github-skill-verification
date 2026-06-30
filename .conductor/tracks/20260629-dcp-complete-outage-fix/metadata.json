@@ -1,0 +1,54 @@
+{
+  "trackId": "20260629-dcp-complete-outage-fix",
+  "title": "DCP Plugin Complete Outage Fix (missing @anthropic-ai/tokenizer)",
+  "status": "completed",
+  "created": "2026-06-29",
+  "completed": "2026-06-30",
+  "estimatedHours": "0.5-1",
+  "assignedTo": "Build agent",
+  "type": "bugfix",
+  "tags": [
+    "opencode",
+    "dcp",
+    "plugin",
+    "incident",
+    "context-pruning"
+  ],
+  "progress": {
+    "totalTasks": 21,
+    "completedTasks": 21,
+    "percentage": 100
+  },
+  "summary": "Restore the @tarquinen/opencode-dcp plugin to a loading state. It fails on EVERY opencode launch with `Cannot find module '@anthropic-ai/tokenizer'` because the cached 3.1.13 install never hoisted that transitive dep (it IS declared in the plugin's package.json). Fix: clear the stale cache and clean-install 3.1.14 (durable), or manually install @anthropic-ai/tokenizer@0.0.4 into the cache node_modules (fallback). Scope is DCP-ONLY: does NOT touch the runtime, SQLite DB, scheduler, or opencode.jsonc. The separate session_message.seq FATAL (runtime 1.15.10) remains out of scope and tracked by 20260628-opencode-session-message-seq-fatal.",
+  "keyOutcomes": [
+    "Root-caused the outage: DCP 3.1.13 cache install missing @anthropic-ai/tokenizer (declared dep, never hoisted) -> import at dist/index.js:1601 throws -> plugin fails to load.",
+    "Confirmed live on 2026-06-29 (log 2026-06-29T150002.log) - identical to the 2026-06-28 finding; the June 28 seq-fatal track never executed (aborted Phase 0.1), so DCP was never fixed.",
+    "Plan is DCP-only and low-risk: only edits files under the plugin cache dir; verification ignores the unrelated seq crash."
+  ],
+  "risks": [
+    "npm install may reproduce the incomplete-hoist bug -> Phase 2 manually installs the tokenizer.",
+    "Verifying via opencode run hits the unrelated seq FATAL (non-zero exit) -> Phase 3 ignores exit code and gates only on DCP-load lines.",
+    "Future cache re-resolve could drop a Phase-2 manual fix -> Phase 1 clean 3.1.14 install is the durable path."
+  ],
+  "dependencies": [],
+  "blocking": [],
+  "relatedTracks": [
+    "20260628-opencode-session-message-seq-fatal",
+    "20260613-dcp-token-savings-analysis"
+  ],
+  "deliverables": [
+    "spec.md",
+    "plan.md",
+    "metadata.json",
+    "execution-log.md"
+  ],
+  "validationCriteria": [
+    "AC-1: @anthropic-ai/tokenizer package.json exists in the plugin cache node_modules.",
+    "AC-2: newest launch log has a service=plugin path=@tarquinen/opencode-dcp line and NO failed-to-load / tokenizer error.",
+    "AC-3: pre-fix cache backup dir exists and is non-empty.",
+    "AC-4: dcp.jsonc parses; active model zai-coding-plan/glm-5.2 cap = 150000.",
+    "AC-5: metadata.json completed/100%; tracks.md row=complete; execution-log has Execution Complete entry."
+  ],
+  "executed_at": "2026-06-30",
+  "executor_model": "zai-coding-plan/glm-5.2"
+}

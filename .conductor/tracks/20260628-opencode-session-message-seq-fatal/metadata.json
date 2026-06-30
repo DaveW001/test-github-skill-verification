@@ -1,0 +1,55 @@
+{
+  "trackId": "20260628-opencode-session-message-seq-fatal",
+  "title": "OpenCode session_message.seq FATAL + DCP tokenizer plugin fix",
+  "status": "active",
+  "created": "2026-06-28",
+  "completed": null,
+  "estimatedHours": "1-2",
+  "assignedTo": "Dave Witkin",
+  "type": "bugfix",
+  "tags": [
+    "opencode",
+    "sqlite",
+    "incident",
+    "scheduled-jobs",
+    "dcp",
+    "version-skew"
+  ],
+  "progress": {
+    "totalTasks": 27,
+    "completedTasks": 0,
+    "percentage": 0
+  },
+  "summary": "Resolve FATAL NOT NULL constraint failed session_message.seq (blocks all scheduled opencode run jobs on agent/model switch) caused by version skew: installed opencode-ai@1.15.10 predates upstream fix 8bc501b (2026-06-08). DB is healthy (integrity ok, source-of-truth intact) so the fix is a runtime upgrade to v1.17.11, not a DB wipe. Also fix secondary non-fatal DCP plugin load failure (missing @anthropic-ai/tokenizer) by re-resolving the plugin cache to 3.1.14. Plan rewritten by 01-Planner (peer review) for maximum executability: 27 atomic CLI-verified tasks across 7 phases (0=preflight, 1=baseline, 2=upgrade, 3=seq-validate, 4=dcp-fix, 5=harden, 6=close).",
+  "keyOutcomes": [
+    "Root-caused the FATAL as upstream issue #31204 (session.next.agent.switched -> appendMessage omits seq) on a pre-fix runtime (1.15.10).",
+    "Proved the DB is not corrupt (integrity_check ok) and source-of-truth tables are intact -> upgrade-only recovery, no data loss.",
+    "Identified secondary DCP plugin error as a stale cache pin (3.1.13) missing @anthropic-ai/tokenizer; fixable by cache re-resolve to 3.1.14."
+  ],
+  "risks": [
+    "Upgrading the runtime while a live opencode session/scheduler holds the DB can cause WAL/SHM contention or partial migration.",
+    "Both an npm-global and a standalone opencode copy exist; leaving them on divergent versions can re-introduce skew.",
+    "DCP 3.1.14 may still not bundle @anthropic-ai/tokenizer (manifest bug); fallback is a manual npm install of the tokenizer into the plugin node_modules."
+  ],
+  "dependencies": [],
+  "blocking": [],
+  "relatedTracks": [
+    "20260608-opencode-desktop-startup-freeze"
+  ],
+  "deliverables": [
+    "spec.md (root-cause + DB evidence)",
+    "plan.md (phased PowerShell remediation)",
+    "upstream-github-findings.md (issues #31204/#31412/#31413/#31606/#31072, fix commit 8bc501b, schema)",
+    "execution-log.md (research log; execution to follow)"
+  ],
+  "validationCriteria": [
+    "AC-1: opencode --version reports 1.17.x and matches npm ls -g + standalone copy (seq-fix-precheck-20260628.txt as evidence)",
+    "AC-2: A fresh 'opencode run --agent plan' probe returns exit 0 with PING in output (seq-fix-probe-20260628.json)",
+    "AC-3: New session_message rows from the probe have non-null seq (python sqlite3 probe in Phase 3.3)",
+    "AC-4: Post-fix log scan finds zero 'session_message.seq' or '@anthropic-ai/tokenizer' matches (seq-fix-final-validated.txt)",
+    "AC-5: DCP plugin loads (Test-Path for tokenizer in node_modules is True) and no 'failed to load plugin' in latest log",
+    "AC-6: opencode.db backup exists with SHA256 + size proof; post-upgrade PRAGMA integrity_check = ok",
+    "AC-7: Scheduled task 'opencode-job-development-88876ee600f5-knowledge-base-ingest' returns State = Ready",
+    "AC-8: metadata.json status=completed, progress.percentage=100; tracks.md row=complete; execution-log.md has 'Execution Complete' section"
+  ]
+}

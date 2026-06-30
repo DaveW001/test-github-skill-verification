@@ -1,6 +1,6 @@
 # Plugin Status & Remediation Record
 
-**Last updated:** 2026-05-31
+**Last updated:** 2026-06-30
 **Author:** build-agent (Conductor track `20260526-opencode-desktop-log-remediation`)
 
 ## Overview
@@ -11,7 +11,7 @@ This document records the status of OpenCode Desktop plugins, known issues, reme
 
 | Plugin | Status | Errors | Action Taken | Reason |
 |--------|--------|--------|--------------|--------|
-| `@tarquinen/opencode-dcp` | Active | 0 | Cache cleared & redownloaded | Was missing `dist\lib\config`; resolved by cache purge |
+| `@tarquinen/opencode-dcp` | Active | 0 (post-fix 2026-06-30) | Cache cleared & clean-installed 3.1.14 | Two incidents: (1) 2026-05-26 missing `dist\lib\config` -> cache purge; (2) 2026-06-28..30 `@anthropic-ai/tokenizer` missing -> clean 3.1.14 reinstall. See track `20260629-dcp-complete-outage-fix` |
 | `@zenobius/opencode-skillful` | Active with local Desktop cache patch | Recurred 2026-05-31 | Patched Desktop cache bundle with `createRequire` and Node `fs` traversal; global npm patch alone was insufficient | Upstream Bun-targeted bundle bug; archived package |
 | `opencode-mystatus` | Removed | ~~13~~ -> 0 | Disabled first, then removed from config, package.json, and cache | Upstream dependency bug (missing ``@opencode-ai/plugin/dist/tool``); fully removed on 2026-05-26 |
 | Slack MCP | Benign | 8 | None | `prompts not supported` is expected for Slack's MCP implementation |
@@ -58,11 +58,19 @@ powershell -ExecutionPolicy Bypass -File C:\development\opencode\scripts\Repair-
 
 ### `@tarquinen/opencode-dcp` (ACTIVE)
 
-**What it does:** DCP plugin (OpenCode feature plugin).
+**What it does:** Dynamic Context Pruning (DCP) plugin. Provides token-aware context pruning via `/dcp` in interactive sessions; reads `~/.config/opencode/dcp.jsonc` for per-model context caps.
 
-**Previous error:** `Cannot find module 'dist\lib\config'`
+**Incident history (two cache-corruption events):**
 
-**Resolution:** Cache was corrupted. Cleared cache directory and Desktop redownloaded a clean copy on restart. Now loads without errors.
+1. **2026-05-26** - `Cannot find module 'dist\lib\config'`. Cache was corrupted; cleared the cache directory and Desktop redownloaded a clean copy on restart. Resolved.
+2. **2026-06-28 .. 2026-06-30 (complete outage)** - `Cannot find module '@anthropic-ai/tokenizer'`. The cached `@tarquinen/opencode-dcp` **3.1.13** install never hoisted the declared transitive dependency `@anthropic-ai/tokenizer@^0.0.4` into `node_modules`, so the plugin failed to load on EVERY launch (interactive TUI and every scheduled `opencode run` job). Token-aware pruning was fully offline for ~2 days.
+
+   **Root cause:** incomplete npm hoist on the 3.1.13 install; the package was declared in the plugin's `package.json` but never materialized in the cache `node_modules`.
+   **Durable fix (2026-06-30):** cleared the stale 3.1.13 cache, recreated the installer shim pinning **3.1.14**, and ran a clean `npm install` which hoisted `@anthropic-ai/tokenizer@0.0.4` correctly. Verified DCP loads cleanly in launch log `2026-06-30T164204.log` (1 load line, 0 failures, 0 tokenizer-missing errors).
+   **Fallback (not needed):** manually `npm install @anthropic-ai/tokenizer@0.0.4 --prefix <cacheDir>`.
+   **Track:** `20260629-dcp-complete-outage-fix` (validated, Ready to close). Pre-fix cache backup: `C:\Users\DaveWitkin\.cache\opencode\packages\@tarquinen\opencode-dcp@latest.bak-20260630-124022\`.
+
+**Current state:** Active, loads without errors on every launch (verified 2026-06-30).
 
 ## Cache Location
 
@@ -121,8 +129,15 @@ Remove-Item -LiteralPath "C:\Users\DaveWitkin\.cache\opencode\packages\*" -Recur
 
 ### Symptom: `Cannot find module 'dist\lib\config'`
 - **Plugin:** `@tarquinen/opencode-dcp`
-- **Cause:** Corrupted cache
+- **Cause:** Corrupted cache (2026-05-26 incident)
 - **Fix:** Clear cache and restart Desktop
+
+### Symptom: `Cannot find module '@anthropic-ai/tokenizer'`
+- **Plugin:** `@tarquinen/opencode-dcp`
+- **Cause:** Incomplete npm hoist of the declared transitive dep `@anthropic-ai/tokenizer@^0.0.4` on the cached 3.1.13 install (2026-06-28..30 outage).
+- **Fix (durable):** Delete `C:\Users\DaveWitkin\.cache\opencode\packages\@tarquinen\opencode-dcp@latest`, recreate the installer shim pinning 3.1.14, and `npm install --prefix <dir>`. The 3.1.14 manifest declares the tokenizer and hoists it cleanly.
+- **Fix (fallback):** `npm install --prefix <dir> @anthropic-ai/tokenizer@0.0.4` directly into the cache node_modules.
+- **Track:** `20260629-dcp-complete-outage-fix`.
 
 ### Symptom: `prompts not supported` from Slack MCP
 - **Plugin:** Slack MCP server
@@ -142,6 +157,8 @@ Remove-Item -LiteralPath "C:\Users\DaveWitkin\.cache\opencode\packages\*" -Recur
 | 2026-05-26 | Cache cleared + disabled | `opencode-mystatus` -- temporary mitigation before full removal |
 | 2026-05-26 | Fully removed from config | `opencode-mystatus` -- removed from opencode.jsonc, package.json, AGENTS.md, node_modules, and cache |
 | 2026-05-26 | Documented | Created this plugin status record |
+| 2026-06-30 | Cache cleared & clean-installed 3.1.14 | `@tarquinen/opencode-dcp` -- resolved `@anthropic-ai/tokenizer` complete outage (2026-06-28..30). Cleared stale 3.1.13 cache, recreated 3.1.14 shim, clean `npm install` hoisted `@anthropic-ai/tokenizer@0.0.4`. Verified loads cleanly in `2026-06-30T164204.log`. Track `20260629-dcp-complete-outage-fix` |
+| 2026-06-30 | Documented | Updated this record with the tokenizer-outage incident history, Quick Reference symptom, and cross-link to `20260629-dcp-complete-outage-fix` |
 
 ## Chronology Note
 
@@ -156,3 +173,5 @@ Remove-Item -LiteralPath "C:\Users\DaveWitkin\.cache\opencode\packages\*" -Recur
 - Execution log: `C:\development\opencode\.conductor\tracks\20260526-opencode-desktop-log-remediation\execution-log-2026-05-26.md`
 - `/mystatus` reference: `C:\development\opencode\docs\reference\mystatus-quota-check.md`
 - Skillful cache patch log: `C:\development\opencode\docs\troubleshooting\active\skillful-desktop-cache-patch-log.md`
+- DCP tokenizer outage track: `C:\development\opencode\.conductor\tracks\20260629-dcp-complete-outage-fix\` (validated 2026-06-30; validation report `validation-report-2026-06-30-125046.md`)
+- DCP install validation (original): `C:\development\opencode\.conductor\tracks\20260314-dcp-install-validation\`

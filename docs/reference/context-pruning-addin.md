@@ -44,6 +44,15 @@ Note:
 - `opencode run "/dcp"` returned `Session not found` in non-interactive mode; this is expected for that invocation style.
 - Final smoke test should be done in an interactive session after restart by running `/dcp`.
 
+## Incident history
+
+This plugin has had two cache-corruption incidents, both resolved:
+
+1. **2026-05-26** - `Cannot find module 'dist\lib\config'` (corrupted cache; cleared and reinstalled). See `docs\troubleshooting\active\plugin-status-and-remediation.md`.
+2. **2026-06-28 .. 2026-06-30 (complete outage)** - `Cannot find module '@anthropic-ai/tokenizer'`. The cached 3.1.13 install never hoisted the declared `@anthropic-ai/tokenizer@^0.0.4` dependency, so the plugin failed to load on every launch for ~2 days. Resolved by clean-installing **3.1.14** (which hoists the tokenizer correctly). See track `20260629-dcp-complete-outage-fix` (validated).
+
+**Current state (2026-06-30):** loads cleanly on every launch; verified in launch log `2026-06-30T164204.log`.
+
 ## Where the supporting documentation is
 
 - This file: `C:\development\opencode\docs\reference\context-pruning-addin.md`

@@ -1,10 +1,9 @@
 # Conductor Tracks
 
 | Track ID | Title | Status | Completed | Path |
-| 20260630-conductor-pipeline-run-retro | Retrospective on Conductor Pipeline retro-improvements run | executed | 2026-06-30 | C:\development\opencode\.conductor\tracks\20260630-conductor-pipeline-run-retro |
-| 20260629-conductor-pipeline-retro-improvements | Codify Conductor Pipeline retrospective improvements | executed | 2026-06-29 | C:\development\opencode\.conductor\tracks\20260629-conductor-pipeline-retro-improvements |
+| 20260629-conductor-pipeline-retro-improvements | Codify Conductor Pipeline retrospective improvements | planning |  | C:\development\opencode\.conductor\tracks\20260629-conductor-pipeline-retro-improvements |
 | 20260628-multi-agent-conductor-orchestration | Multi-Agent Conductor Orchestration Workflow | build-complete-runtime-pending | 2026-06-28 | C:\development\opencode\.conductor\tracks\20260628-multi-agent-conductor-orchestration |
-| 20260629-dcp-complete-outage-fix | DCP Plugin Complete Outage Fix (missing @anthropic-ai/tokenizer) | complete | 2026-06-30 | C:\development\opencode\.conductor\tracks\20260629-dcp-complete-outage-fix |
+| 20260629-dcp-complete-outage-fix | DCP Plugin Complete Outage Fix (missing @anthropic-ai/tokenizer) | active |  | C:\development\opencode\.conductor\tracks\20260629-dcp-complete-outage-fix |
 | 20260629-smoke-test-hello-world | Append Hello World smoke-test section | executed | 2026-06-29 | C:\development\opencode\.conductor\tracks\20260629-smoke-test-hello-world |
 | 20260628-opencode-session-message-seq-fatal | OpenCode session_message.seq FATAL + DCP tokenizer fix | active |  | C:\development\opencode\.conductor\tracks\20260628-opencode-session-message-seq-fatal |
 | 20260623-api-key-centralization-index | API Key Centralization Index | complete | 2026-06-24 | C:\development\opencode\.conductor\tracks\20260623-api-key-centralization-index |
