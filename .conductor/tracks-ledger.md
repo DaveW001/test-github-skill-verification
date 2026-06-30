@@ -5,6 +5,8 @@ This ledger tracks all active, completed, and archived tracks in this repository
 ## Active Tracks
 
 
+- [20260630-conductor-skill-hardening](./tracks/20260630-conductor-skill-hardening/spec.md): Harden the global conductor-pipeline skill with the remaining retro recommendations: Stage 1 plan-authoring hardening (one authoritative acceptance check, diagnostic separation, body-content verification, literal matching), Stage 2 reviewer dry-run enforcement, metadata schema cleanup (task_count/readiness_check_count/total_checkbox_count/completed_tasks), a new powershell-pitfalls.md reference, and a new global-skill-versioning.md reference. All 5 scoped body checks pass. (Phase: executed 2026-06-30)
+
 - [20260630-conductor-pipeline-run-retro](./tracks/20260630-conductor-pipeline-run-retro/spec.md): Retrospective on the successful Conductor Pipeline retro-improvements run, focusing on plan quality, reviewer regression prevention, metadata/checklist semantics, and environment/tool preflight propagation. (Phase: executed 2026-06-30)
 
 

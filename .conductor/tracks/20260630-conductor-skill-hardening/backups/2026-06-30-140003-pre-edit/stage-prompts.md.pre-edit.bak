@@ -1,0 +1,135 @@
+# Stage Prompts (Conductor Pipeline)
+
+### Tool preflight
+
+Every stage handoff must propagate the host tool/environment preflight so child sessions do not rediscover it:
+
+- **file-tool status** - state whether the native Read/Edit/Write/glob/grep tools are working or whether the session is shell-first.
+- **fallback shell** - if native tools fail, name the fallback shell and the cmdlet mapping (e.g. PowerShell-first via the `bash` tool).
+- **path quoting** - require `-LiteralPath` and double-quoted paths on Windows to avoid tokenization errors.
+- **Bun is not defined** - if that error is active, switch the whole session shell-first immediately and do not retry the failing native tool per-call.
+
+The exact standard prompt text for each pipeline stage. The orchestrator passes the relevant prompt (plus absolute artifact paths) to each stage subagent. Source: Espanso `migrated_snippets.yml`, mapped 2026-06-28.
+
+### Target file-state decision tree
+
+Before running any path-scoped verification, classify the target file's git state. Living inside a git repo does not prove a file is tracked by git.
+
+- If the target is **tracked by git**, the path-scoped command `git diff -- <path>` is sufficient to confirm only intended lines changed.
+- If the target is **untracked** (newly created, gitignored, or never staged), path-scoped `git diff -- <path>` is insufficient because git has no tracked baseline to diff against. The authoritative remediation is to compare the pre-edit backup against the target with a comparator that ignores git tracking state:
+
+  ```
+  git diff --no-index <backup> <target>
+  ```
+
+`git diff --no-index` works for untracked and non-repo files alike, so it is the default comparator for append-only verification of untracked targets.
+
+## Structural idempotency
+
+Idempotency and "exactly once" checks must match semantic structure, not loose substrings. Prefer line-anchored patterns that pin the entire line. For a heading assertion, use a line-anchored full-line regex such as:
+
+```
+^##\s+Hello World\s*$
+```
+
+Loose-substring matching is a trap: searching for the bare `## Hello World` would also match the same text appearing inside backticks, inside a comment, or embedded in a longer line, so it cannot prove the heading exists as its own structural element. Use line-anchored, full-line patterns for structural assertions and reserve substring matching for genuine content checks.
+
+## Stage 1 - Plan Creation (conductor-plan-creator)
+
+Triggers: #createplan, #createtrack, #newplan, #newtrack
+
+```text
+Create a brand-new conductor track (spec.md and plan.md) that can be immediately executed by a less capable AI build agent. Do not output all of the information that you go through below to the user's screen.
+
+Before writing tasks, briefly restate:
+- the goal/outcome,
+- the constraints/non-goals,
+- and the definition of done.
+
+Then produce a phased implementation plan with checkbox tasks, and enforce these standards for every task:
+
+1. Atomic tasks - One clear action per checkbox.
+2. Exact file paths - Name precise files to create/modify (full repo-relative paths).
+3. Explicit commands - Write terminal commands verbatim.
+4. Clear ordering - Strict execution order with prerequisites first.
+5. Verification per step - Each task includes a concrete, deterministic command to confirm it worked.
+6. No assumed context - Write so an unfamiliar agent can execute without extra exploration.
+7. Concrete examples - Include inline templates/snippets where format matters.
+8. Error recovery - Add fallback instructions for common failures.
+
+Required plan structure: Phase 0 Setup & Preconditions; Phase 1+ Implementation; Final Phase Validation & Handover. Each phase has an objective, ordered checklist, and exit criteria. End with an execution-readiness checklist, top 3 risks + mitigations, and the first task to execute.
+
+If there is an active conductor track that is a good fit, update it; otherwise create one. Write spec.md and plan.md into the active Conductor track. Do not execute the plan. Then tell the user the track is ready, how many steps/lines, and give a fully qualified path to the plan document.
+```
+
+## Stage 2 / 3 - Plan Review / Conditional Re-review (conductor-plan-reviewer / -alt)
+
+Triggers: #planrev, #reviewplan, #reviewtrack, #revplan
+
+```text
+Review the conductor plan documents (spec.md and plan.md) in the active track. This plan will be executed by a less capable AI agent. Evaluate it for maximum executability, absolute verification rigor, and return specific, actionable improvements.
+
+CRITICAL ANTI-LAZINESS MANDATE: Do not accept passive or shallow verification steps. If a task can be verified using a CLI tool, a test script, an API call, or an automated test suite, you MUST rewrite the task to include that explicit command.
+
+Evaluate every plan task against: atomic tasks, exact file paths, explicit commands, clear ordering, rigorous verification (REJECT shallow checks; insist on active verification), no assumed context, concrete examples, error recovery, and intent/behavioral testing.
+
+Output format: list each plan task by name and phase; rate each Ready / Needs work / Blocking; provide exact rewritten task text for any Needs work / Blocking; end with an overall readiness score and top 3 priorities.
+
+For items you have high confidence in, make the updates to the conductor track. For uncertain changes, present them to the user. Give a fully qualified path to the plan document.
+```
+
+Reviewer-added verification commands must be dry-run exactly as written against the real target or a temp copy. If a verification command cannot be dry-run during review, mark it untested and deduct at least 5 percentage points from the readiness score, then flag it as a top priority for the executor to validate.
+
+Plan tasks must separate authoritative acceptance checks (the single check that proves the task succeeded) from convenience / diagnostic checks (supporting signals that are helpful but not conclusive). Every task should name its authoritative check explicitly and must not rely on a diagnostic check as the sole proof of completion.
+
+## Stage 4 - Execution (conductor-track-executor)
+
+Triggers: #runplan, #runtrack, #trackrun
+
+```text
+You are a Conductor track execution specialist.
+
+Run or continue executing the relevant Conductor track. Use the track's plan.md as the source of truth. Execute only non-deferred pending items, in plan order, unless explicitly reprioritized. Check off each completed item immediately. Keep metadata.json and Conductor artifacts synchronized.
+
+If a task is unclear and you cannot confidently infer the right action, stop and notify before proceeding. Do not silently guess. Do not execute deferred/out-of-scope items.
+
+After execution, validate using the checks in the plan or the closest deterministic checks. Create execution-log-YYYY-MM-DD.md documenting failures, access/API issues, skipped items, ambiguity, or note if there were no issues.
+
+Report: track name and final status; items completed this run; items remaining; validation performed and result; any issues/skipped items; fully qualified Windows paths to the log, updated plan.md, and other updated files.
+```
+
+### Executor closeout synchronization checklist
+
+Before declaring a track executed, synchronize every Conductor bookkeeping artifact. For the active track, confirm each of the following is updated in place (no duplicates):
+
+- plan.md - all completed non-deferred tasks are checked off.
+- metadata.json - status, progress phase, completed/total counts, executed_at, and executor_model reflect the run.
+- tracks.md - the single track row shows the final status and completed date.
+- tracks-ledger.md - the single track entry shows the final phase.
+- execution-log-<date>.md - records changed files, validation commands, deviations, and handover notes.
+
+Upsert rows in tracks.md and tracks-ledger.md; do not create duplicates.
+
+## Stage 5 / 6 - Validation / Conditional Re-validation (conductor-track-validator / -alt)
+
+Triggers: #validaterun, #validatetrack
+
+```text
+Validate this Conductor track is done before declaring completion. Does anything need to be fixed? Was the work done as expected?
+
+Required checks:
+1. plan.md: all non-deferred tasks are [x] and ordering/dependencies are respected.
+2. metadata.json: status/progress/date fields match actual completion state.
+3. .conductor/tracks.md: track row status and completed date match metadata.
+4. Logs: execution/change log exists and records deviations, skipped items, ambiguities, and validation performed.
+5. Artifact verification: every claimed modified/created file exists and contains required acceptance strings.
+
+Output format:
+- Closeout Verdict (Ready to close / Close with minor follow-ups / Not ready to close)
+- Evidence Checked (exact files/paths inspected)
+- Mismatches Found (artifact -> expected -> actual; or "No mismatches found.")
+- Required Fixes Before Close (numbered; or "No fixes required.")
+- Final Recommendation (one concise sentence)
+```
+
+When the deliverable itself is correct but the Conductor bookkeeping (metadata, indexes, logs) is out of sync, classify it as a correct deliverable but stale Conductor bookkeeping situation. This is a minor follow-up (not a blocker for the deliverable), and ownership to reconcile the bookkeeping belongs to the orchestrator / Stage 6 rather than forcing a re-execution of the deliverable.

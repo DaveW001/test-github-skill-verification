@@ -1,0 +1,14 @@
+--- stage-prompts.md ---
+7	0	"C:\\development\\opencode\\.conductor\\tracks\\20260630-conductor-skill-hardening\\backups\\2026-06-30-140003-pre-edit\\stage-prompts.md.pre-edit.bak" => "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\stage-prompts.md"
+warning: in the working copy of 'C:\development\opencode\.conductor\tracks\20260630-conductor-skill-hardening\backups\2026-06-30-140003-pre-edit\stage-prompts.md.pre-edit.bak', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'C:\Users\DaveWitkin\.config\opencode\skill\conductor-pipeline\references\stage-prompts.md', LF will be replaced by CRLF the next time Git touches it
+--- threshold-policy.md ---
+warning: in the working copy of 'C:\development\opencode\.conductor\tracks\20260630-conductor-skill-hardening\backups\2026-06-30-140003-pre-edit\threshold-policy.md.pre-edit.bak', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'C:\Users\DaveWitkin\.config\opencode\skill\conductor-pipeline\references\threshold-policy.md', LF will be replaced by CRLF the next time Git touches it
+11	0	"C:\\development\\opencode\\.conductor\\tracks\\20260630-conductor-skill-hardening\\backups\\2026-06-30-140003-pre-edit\\threshold-policy.md.pre-edit.bak" => "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\threshold-policy.md"
+--- powershell-pitfalls.md ---
+warning: in the working copy of 'C:\Users\DaveWitkin\.config\opencode\skill\conductor-pipeline\references\powershell-pitfalls.md', LF will be replaced by CRLF the next time Git touches it
+18	1	"C:\\development\\opencode\\.conductor\\tracks\\20260630-conductor-skill-hardening\\backups\\2026-06-30-140003-pre-edit\\powershell-pitfalls.md.pre-edit.bak" => "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\powershell-pitfalls.md"
+--- global-skill-versioning.md ---
+warning: in the working copy of 'C:\Users\DaveWitkin\.config\opencode\skill\conductor-pipeline\references\global-skill-versioning.md', LF will be replaced by CRLF the next time Git touches it
+23	1	"C:\\development\\opencode\\.conductor\\tracks\\20260630-conductor-skill-hardening\\backups\\2026-06-30-140003-pre-edit\\global-skill-versioning.md.pre-edit.bak" => "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\global-skill-versioning.md"

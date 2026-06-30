@@ -1,0 +1,25 @@
+{
+  "track_id": "20260630-conductor-skill-hardening",
+  "title": "Conductor Skill Hardening (retro improvements round 2)",
+  "status": "executed",
+  "progress_phase": "executed",
+  "task_count": 11,
+  "readiness_check_count": 6,
+  "total_checkbox_count": 17,
+  "completed_tasks": 11,
+  "executed_at": "2026-06-30",
+  "executor_model": "zai-coding-plan/glm-5.2",
+  "definition_of_done_met": true,
+  "validation": {
+    "body_checks_total": 5,
+    "body_checks_passed": 5,
+    "all_targets_pass": true,
+    "validation_artifact": "backup-vs-target-numstat.txt"
+  },
+  "changed_files": [
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\stage-prompts.md",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\threshold-policy.md",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\powershell-pitfalls.md",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\global-skill-versioning.md"
+  ]
+}

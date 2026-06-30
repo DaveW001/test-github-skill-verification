@@ -1,6 +1,7 @@
 # Conductor Tracks
 
 | Track ID | Title | Status | Completed | Path |
+| 20260630-conductor-skill-hardening | Conductor Skill Hardening (retro improvements round 2) | executed | 2026-06-30 | C:\development\opencode\.conductor\tracks\20260630-conductor-skill-hardening |
 | 20260630-conductor-pipeline-run-retro | Retrospective on Conductor Pipeline retro-improvements run | executed | 2026-06-30 | C:\development\opencode\.conductor\tracks\20260630-conductor-pipeline-run-retro |
 | 20260629-conductor-pipeline-retro-improvements | Codify Conductor Pipeline retrospective improvements | executed | 2026-06-29 | C:\development\opencode\.conductor\tracks\20260629-conductor-pipeline-retro-improvements |
 | 20260628-multi-agent-conductor-orchestration | Multi-Agent Conductor Orchestration Workflow | build-complete-runtime-pending | 2026-06-28 | C:\development\opencode\.conductor\tracks\20260628-multi-agent-conductor-orchestration |
