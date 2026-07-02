@@ -1,0 +1,39 @@
+{
+  "track_id": "20260701-dcp-runtime-hooks-fix",
+  "title": "DCP runtime hook failure follow-up",
+  "status": "complete",
+  "created_at": "2026-07-01",
+  "updated_at": "2026-07-01",
+  "creator_model": "openai/gpt-5.5",
+  "stage": "stage-5-validation",
+  "reviewer_model": "opencode-go/minimax-m3",
+  "last_reviewed_at": "2026-07-01",
+  "executor_model": "zai-coding-plan/glm-5.2",
+  "executed_at": "2026-07-01",
+  "workspace_root": "C:\\development\\opencode",
+  "artifacts": {
+    "spec": "C:\\development\\opencode\\.conductor\\tracks\\20260701-dcp-runtime-hooks-fix\\spec.md",
+    "plan": "C:\\development\\opencode\\.conductor\\tracks\\20260701-dcp-runtime-hooks-fix\\plan.md",
+    "metadata": "C:\\development\\opencode\\.conductor\\tracks\\20260701-dcp-runtime-hooks-fix\\metadata.json",
+    "source_handover": "C:\\development\\opencode\\.conductor\\tracks\\20260629-dcp-complete-outage-fix\\handover.md"
+  },
+  "tool_preflight": {
+    "native_file_tools": "failed with Bun is not defined",
+    "fallback_shell": "PowerShell via bash tool",
+    "path_rule": "use quoted absolute Windows paths and -LiteralPath"
+  },
+  "progress": {
+    "completed_tasks": 12,
+    "total_tasks": 16,
+    "current_phase": "validated functionally complete (DCP runtime restored; minor follow-ups only: optional interactive /dcp help check and V.3 metric redesign)",
+    "runtime_status": "DCP runtime hooks restored and validated after 2026-07-01 restart. Genuine compress permission at 2026-07-01T18:14:28.169Z, new prune-state ses_0e1ecc970ffe2fYOlczHfTfws4 at 18:14:29Z, and end-to-end compression with one_time_saved=33080/compound_saved=66160 independently verified in validation-report-2026-07-01-143503.md. Phase 4 not required; V.3 strict rolling-window count is a metric caveat."
+  },
+  "acceptance_focus": [
+    "permission=compress or compress tool registration",
+    "DCP debug logs or prune-state creation",
+    "/dcp command availability",
+    "report-based has_dcp=True for eligible session when available"
+  ],
+  "validator_model": "opencode-go/minimax-m3",
+  "validated_at": "2026-07-01"
+}

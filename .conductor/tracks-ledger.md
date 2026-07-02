@@ -4,6 +4,8 @@ This ledger tracks all active, completed, and archived tracks in this repository
 
 ## Active Tracks
 
+- [glm-fallback-chain](./tracks/glm-fallback-chain/spec.md): Add a procedural three-tier model fallback chain for Conductor pipeline GLM-5.2 failures. Tier 1 zai-coding-plan/glm-5.2 -> Tier 2 zai-coding-plan/glm-5.1 -> Tier 3 opencode-go/qwen3.7-plus. Implemented via provider timeout options (freeze/overload detection), two hidden fallback executor subagents, orchestrator Stage 4 routing + permissions, the primary executor model-unavailable self-report, and doc updates (SKILL.md, README.md, threshold-policy.md). Orchestrator itself stays pinned to glm-5.2 (documented self-swap limitation). (Phase: executed 2026-07-01)
+
 
 - [20260630-conductor-skill-hardening](./tracks/20260630-conductor-skill-hardening/spec.md): Harden the global conductor-pipeline skill with the remaining retro recommendations: Stage 1 plan-authoring hardening (one authoritative acceptance check, diagnostic separation, body-content verification, literal matching), Stage 2 reviewer dry-run enforcement, metadata schema cleanup (task_count/readiness_check_count/total_checkbox_count/completed_tasks), a new powershell-pitfalls.md reference, and a new global-skill-versioning.md reference. All 5 scoped body checks pass. (Phase: executed 2026-06-30)
 
@@ -43,6 +45,7 @@ This ledger tracks all active, completed, and archived tracks in this repository
 
 ## Completed Tracks
 
+- [20260701-dcp-runtime-hooks-fix](./tracks/20260701-dcp-runtime-hooks-fix/spec.md): DCP runtime hook failure follow-up. Functionally complete: post-restart runtime registration restored and validated. Genuine compress permission at 2026-07-01T18:14:28.169Z, new prune-state ses_0e1ecc970ffe2fYOlczHfTfws4 at 18:14:29Z, and end-to-end eligible-session compression proven (one_time_saved=33080, compound_saved=66160). Minor follow-ups only: optional interactive /dcp help check and V.3 rolling-window metric redesign. (Completed: 2026-07-01)
 - [20260629-dcp-complete-outage-fix](./tracks/20260629-dcp-complete-outage-fix/spec.md): Restore @tarquinen/opencode-dcp plugin to a loading state by replacing the incomplete 3.1.13 cache install (missing @anthropic-ai/tokenizer) with a clean 3.1.14 install. DCP-only scope; did not touch runtime/SQLite/scheduler/opencode.jsonc. (Completed: 2026-06-30)
 - [20260623-api-key-centralization-index](./tracks/20260623-api-key-centralization-index/spec.md): Create a metadata-only API key discovery index, add an AGENTS.md lookup rule, fix conductor-reporter .env gitignore coverage, and clean handover encoding artifacts without moving or exposing secret values. (Completed: 2026-06-24)- [20260613-dcp-token-savings-analysis](./tracks/20260613-dcp-token-savings-analysis/spec.md): Quantify Dynamic Context Pruning (DCP) token + USD savings across the last 100 OpenCode sessions into one self-contained HTML report with overall totals, per-model breakdown (tokens saved + DCP call counts), and a total-savings headline. Python 3 stdlib only; reads DCP state + opencode storage; offline. (Completed: 2026-06-13)
 - [20260622-glm-52-non-thinking-variant](./tracks/20260622-glm-52-non-thinking-variant/spec.md): Add a 'none' reasoning variant to GLM 5.2 so thinking can be toggled off via Ctrl+T. Config variants merge with built-in {high, max}, yielding {high, max, none}. Variant overrides hardcoded forced thinking at request time (highest merge precedence). Single model, no alias. (Completed: 2026-06-22)
@@ -69,6 +72,8 @@ This ledger tracks all active, completed, and archived tracks in this repository
 ## Archived Tracks
 
 *(None yet)*
+
+
 
 
 

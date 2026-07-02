@@ -1,6 +1,8 @@
 # Conductor Tracks
 
 | Track ID | Title | Status | Completed | Path |
+| 20260701-dcp-runtime-hooks-fix | DCP runtime hook failure follow-up | complete | 2026-07-01 | C:\development\opencode\.conductor\tracks\20260701-dcp-runtime-hooks-fix |
+| glm-fallback-chain | GLM-5.2 three-tier model fallback chain | executed | 2026-07-01 | C:\development\opencode\.conductor\tracks\glm-fallback-chain |
 | 20260630-conductor-skill-hardening | Conductor Skill Hardening (retro improvements round 2) | executed | 2026-06-30 | C:\development\opencode\.conductor\tracks\20260630-conductor-skill-hardening |
 | 20260630-conductor-pipeline-run-retro | Retrospective on Conductor Pipeline retro-improvements run | executed | 2026-06-30 | C:\development\opencode\.conductor\tracks\20260630-conductor-pipeline-run-retro |
 | 20260629-conductor-pipeline-retro-improvements | Codify Conductor Pipeline retrospective improvements | executed | 2026-06-29 | C:\development\opencode\.conductor\tracks\20260629-conductor-pipeline-retro-improvements |
@@ -28,3 +30,5 @@
 | 20260622-glm-52-non-thinking-variant | GLM 5.2 Non-Thinking Variant | complete | 2026-06-22 | C:\development\opencode\.conductor\tracks\20260622-glm-52-non-thinking-variant |
 
 | 20260628-readme-hello-world-section | Add Hello World section to conductor-pipeline README | completed | 2026-06-28 | C:\development\opencode\.conductor\tracks\readme-hello-world-section |
+
+

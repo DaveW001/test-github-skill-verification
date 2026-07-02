@@ -49,13 +49,15 @@ Note:
 This plugin has had two cache-corruption incidents, both resolved:
 
 1. **2026-05-26** - `Cannot find module 'dist\lib\config'` (corrupted cache; cleared and reinstalled). See `docs\troubleshooting\active\plugin-status-and-remediation.md`.
-2. **2026-06-28 .. 2026-06-30 (complete outage)** - `Cannot find module '@anthropic-ai/tokenizer'`. The cached 3.1.13 install never hoisted the declared `@anthropic-ai/tokenizer@^0.0.4` dependency, so the plugin failed to load on every launch for ~2 days. Resolved by clean-installing **3.1.14** (which hoists the tokenizer correctly). See track `20260629-dcp-complete-outage-fix` (validated).
+2. **2026-06-28 .. 2026-06-30 (module-load outage)** - `Cannot find module '@anthropic-ai/tokenizer'`. The cached 3.1.13 install never hoisted the declared `@anthropic-ai/tokenizer@^0.0.4` dependency, so the plugin failed to load on every launch for ~2 days. Resolved by clean-installing **3.1.14** (which hoists the tokenizer correctly). See track `20260629-dcp-complete-outage-fix` (validated).
+3. **2026-06-30 .. 2026-07-01 (runtime hooks not firing)** - After the 3.1.14 reinstall the plugin *loaded* but its hooks/tools never registered: zero compressions after 2026-06-25, no new prune-state files, and no genuine `permission=compress` evaluations. Root cause: runtime registration did not complete until DCP debug logging and a full OpenCode restart were performed. Resolved by enabling "debug": true in ~/.config/opencode/dcp.jsonc and restarting OpenCode (2026-07-01). Runtime restoration validated: genuine `permission=compress` at 2026-07-01T18:14:28Z, new prune-state ses_0e1ecc970ffe2fYOlczHfTfws4.json at 18:14:29Z, and end-to-end compression (one_time_saved=33080, compound_saved=66160). Note: 3.1.14 fixed only module loading, not runtime hook registration. See track `20260701-dcp-runtime-hooks-fix` (validated).
 
-**Current state (2026-06-30):** loads cleanly on every launch; verified in launch log `2026-06-30T164204.log`.
+**Current state (2026-07-01):** loads cleanly AND runtime hooks fire on every launch; compression verified end-to-end post-restart.
 
 ## Where the supporting documentation is
 
 - This file: `C:\development\opencode\docs\reference\context-pruning-addin.md`
+- DCP runtime-hooks restoration track: `C:\development\opencode\.conductor\tracks\20260701-dcp-runtime-hooks-fix\` (validated 2026-07-01; validation report `validation-report-2026-07-01-143503.md`)
 - Conductor track root: `C:\development\opencode\.conductor\tracks\20260314-dcp-install-validation`
 - Conductor validation log: `C:\development\opencode\.conductor\tracks\20260314-dcp-install-validation\artifacts\validation-log.md`
 

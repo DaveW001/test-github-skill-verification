@@ -1,0 +1,123 @@
+# Threshold Policy (Conductor Pipeline)
+
+Approved thresholds, diversity rules, iteration caps, and failure/rollback behavior. Decisions recorded 2026-06-28.
+
+## Stage 3 re-review trigger - B+C hybrid
+Run ONE additional re-review (conductor-plan-reviewer-alt) when ANY of these is true:
+- Structural change is large: acceptance-criteria count changed by >=2, OR phase count changed, OR task count changed by >=20%, OR
+- Readiness score < 90%, OR
+- Any task rated Blocking remains unresolved.
+
+Else skip re-review.
+
+## Stage 6 re-validation trigger - A+C hybrid
+Run ONE additional re-validation (conductor-track-validator-alt) after fixes when ANY of these is true:
+- Closeout verdict is "Not ready to close", OR a required fix touches production files, OR
+- Any acceptance criterion is unmet, OR
+- metadata.json progress differs from actual checklist completion by > 5 percentage points.
+
+Else skip re-validation.
+
+Metadata/checklist comparison rule:
+- Compare `metadata.json` task progress to the plan's executable task checkboxes, not to separate readiness or quality checklist items unless metadata explicitly counts those items.
+- If a plan contains both executable tasks and readiness/quality checkboxes, validators should report both counts separately (for example, `29/29 tasks` and `8/8 readiness checks`) and explain the mapping.
+- A mismatch is material only when metadata claims a task-progress state that the executable task checklist does not support.
+
+## Metadata schema guidance
+
+Use distinct metadata fields when a plan mixes executable tasks with readiness or quality checklists:
+
+- `task_count` - count executable implementation task checkboxes only.
+- `readiness_check_count` - count readiness, quality, or handover checklist items that are not executable implementation tasks.
+- `total_checkbox_count` - count all markdown checkboxes in the plan; this should equal `task_count + readiness_check_count` when those are the only checkbox categories.
+- `completed_tasks` - map this value to completed executable tasks out of `task_count`, not to `total_checkbox_count`.
+
+Validators must not compare `completed_tasks` to readiness or quality checklist counts unless metadata explicitly defines a separate completed-readiness field. Report separate units such as `29/29 executable tasks`, `8/8 readiness checks`, and `37/37 total checkboxes`.
+
+## Diversity rules (log each at the gate)
+- Stage 2 reviewer model != Stage 1 creator model.
+- Stage 5 validator model != Stage 4 executor model.
+- Stage 3 re-review model != immediately preceding reviewer model; and must not equal the creator model if Stage 2 fell back to the creator model.
+- Stage 6 re-validation model != execution model; preferably != Stage 5 model.
+
+Default route (all resolve in `opencode models`):
+- Creation/Re-review/Re-validation: openai/gpt-5.5 (variant low)
+- Review/Validation: opencode-go/minimax-m3
+- Execution: zai-coding-plan/glm-5.2
+
+## Iteration caps
+- Conditional re-review: max 1 extra pass. After cap: pause, ask user to approve manual plan correction or proceed with known risks.
+- Conditional re-validation: max 1 extra pass after fixes. After cap: write validation-blockers-<ts>.md and ask user whether to run another execution/fix cycle.
+
+Advanced flag (future): /conductor-pipeline --max-review-passes N --max-validation-passes N. Defaults stay conservative.
+
+## Failure / rollback paths
+Model unavailable:
+1. Orchestrator logs model-unavailable with attempted model ID + stage.
+2. Select fallback from the model table while preserving diversity rules.
+3. If no fallback preserves diversity, pause and ask user to allow same-provider-different-variant, same-family-different-account, or stop.
+
+Plan creation/review fails:
+1. Do not proceed to execution.
+2. Save partial artifacts.
+3. Produce a plain-language question with exact missing context.
+
+Execution fails mid-way:
+1. Executor stops on unclear/destructive/blocked tasks.
+2. Update plan.md only for completed tasks; leave incomplete tasks unchecked.
+3. Write execution-log-<date>.md with completed tasks, failed command/tool call, files changed before failure, suggested rollback/resume point.
+4. Orchestrator runs validation only if there is enough evidence; otherwise pauses.
+5. Rollback: prefer OpenCode /undo or snapshots when failure is in the same session; use Git only as inspection unless user approves reset/revert; never auto-delete untracked files without confirmation.
+
+Validation finds major issues:
+1. If fixable in scope, route back to execution once, with the validator report as input.
+2. After one fix/re-validation loop, stop and ask user before more cycles.
+3. If issues reveal a flawed plan, route back to plan review instead of re-executing.
+
+## Artifact names (per track)
+- review-report-<YYYY-MM-DD-HHMMSS>.md
+- review-diff-summary-<YYYY-MM-DD-HHMMSS>.md
+- execution-log-<YYYY-MM-DD>.md
+- validation-report-<YYYY-MM-DD-HHMMSS>.md
+- validation-blockers-<YYYY-MM-DD-HHMMSS>.md (only when blocked)
+- issues-and-deviations-<YYYY-MM-DD>.md (optional; use when non-blocking process lessons, tool workarounds, or reviewer/executor deviations are substantial enough that burying them in the execution log would reduce reuse)
+
+The optional issues/deviations artifact is not required for clean runs. It is an observability aid, not a closeout blocker, unless a separate stop rule requires a blocker artifact such as `validation-blockers-<YYYY-MM-DD-HHMMSS>.md`.
+
+## Autonomy
+Full-auto through validation (approved). No human checkpoint between stages. The stop rules above and iteration caps still apply.
+
+## Mid-Run Authorization
+
+Conductor execution is full-auto through validation, but executors still encounter small, well-justified deviations mid-run (a clearly-correct fix that unblocks the goal, a slight wording ambiguity, a format question). Rather than stopping the human for every micro-decision, executors classify the deviation into a tier and act accordingly. The default is to proceed with documented reasoning.
+
+### Tier 0 (default) - Proceed with documented reasoning
+
+For low-risk, well-justified deviations with a clear root cause and low blast radius (typical for doc, skill, and reference work): apply the fix, document the reasoning in the execution log, and continue. Do NOT stop the human for this class.
+
+Examples of Tier 0: correcting a single literal in a verification snippet, fixing an indentation bleed, choosing between two equivalent phrasings, normalizing line endings to match the target file, or capturing the run date once instead of recomputing it.
+
+### Tier 1 - Stop and surface
+
+Only for genuinely high-stakes, irreversible, destructive, or ambiguous decisions with no clear recommended path: stop and surface to the human before proceeding. Examples: deleting data, changing scheduler cadence, modifying alert routing, anything touching secrets, or any edit whose blast radius you cannot bound.
+
+Tier-1 stop handoff format: when stopping, emit (1) the track id and current task id, (2) the exact deviation encountered, (3) the options you considered and their blast radius, (4) your recommended option with reasoning, and (5) the precise decision you need from the human. Do not silently guess; do not proceed until the human authorizes.
+### Tier 2 - Rare human checkpoint
+
+Reserved for decisions that are both high-stakes and structurally irreversible (e.g., force-pushing shared history, dropping a production table). These almost never occur in pipeline bookkeeping or doc/skill/reference tracks. When they do, stop and escalate exactly as Tier 1, but flag the irreversibility explicitly.
+
+### Effect on Stage 6 (A+C re-validation)
+
+An authorized Tier-0 or Tier-1 fix that touches production files counts toward the Stage 6 A+C re-validation threshold. Bookkeeping-only edits (plan.md, metadata.json, ledgers, logs) do not. When in doubt about whether an edit is deliverable/application scope vs pipeline bookkeeping scope, treat it as deliverable scope and count it.
+
+### Resume vs restart
+
+After an authorized mid-run edit or a stop/resume, prefer to resume by task id rather than restarting the plan from Phase 0. Check off only the tasks actually completed; leave incomplete tasks unchecked. Record the resume point and any state carried over (captured run date, baseline artifacts, partial outputs) in the execution log so a fresh session can continue deterministically.
+
+### Arbitrator extension hook (reserved)
+
+A future `conductor-arbitrator` subagent may be inserted between Tier 0 and Tier 1. It would adjudicate borderline deviations automatically. This is a reserved extension point only; do not build the arbitrator in this track. The current model is: executor decides tier, documents reasoning, and stops only at Tier 1 or above.
+
+### Canonical lesson
+
+The `kg-run-job.ps1:138` regex fix on 2026-06-29 should have been Tier 0. It was a clearly-correct, low-blast-radius fix that unblocked the goal, yet execution paused for authorization. Capture that class of decision as Tier 0 to keep full-auto throughput.

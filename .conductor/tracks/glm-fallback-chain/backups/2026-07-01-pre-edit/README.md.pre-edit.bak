@@ -1,0 +1,75 @@
+# Conductor Pipeline
+
+A six-stage OpenCode-native workflow that moves a request from idea to validated result, with model diversity and auditable handoffs at every gate.
+
+## Invocation
+```
+/conductor-pipeline <your request>
+```
+Runs under the `conductor-pipeline-orchestrator` agent. Autonomy is **full-auto through validation** (no human checkpoint between stages). The pipeline still stops on unclear/destructive/blocked tasks and respects iteration caps.
+
+## The six stages
+| # | Stage | Subagent | Model | Writes |
+|---|---|---|---|---|
+| 1 | Plan creation | conductor-plan-creator | openai/gpt-5.5 (low) | spec.md, plan.md |
+| 2 | Plan review | conductor-plan-reviewer | opencode-go/minimax-m3 | review-report, review-diff-summary |
+| 3 | Conditional re-review | conductor-plan-reviewer-alt | openai/gpt-5.5 (low) | review-report (2nd pass) |
+| 4 | Execution | conductor-track-executor | zai-coding-plan/glm-5.2 | implementation + execution-log |
+| 5 | Validation | conductor-track-validator | opencode-go/minimax-m3 | validation-report |
+| 6 | Conditional re-validation | conductor-track-validator-alt | openai/gpt-5.5 (low) | validation-report (2nd pass) |
+
+Conductor tracks are the source of truth: `.conductor/tracks/<track-id>/`.
+
+## Model diversity (non-negotiable gates)
+- Reviewer model != creator model.
+- Validator model != executor model.
+- Re-review differs from the preceding reviewer; re-validation differs from the executor.
+- Three independent families are used: OpenAI GPT-5.5 Low, MiniMax M3 (OpenCode Go), Z.ai GLM 5.2.
+
+## Thresholds
+- Re-review (Stage 3): **B+C hybrid** - structural change is large, OR readiness <90%, OR a Blocking item remains. Max 1 extra pass.
+- Re-validation (Stage 6): **A+C hybrid** - verdict not-ready/prod-fix, OR an acceptance criterion is unmet, OR Conductor progress is inconsistent. Max 1 extra pass after fixes.
+
+Full text: `references/threshold-policy.md`. Stage prompts: `references/stage-prompts.md`.
+
+## Fallbacks / rollback
+- Model unavailable: log it, pick a diversity-preserving fallback, else pause.
+- Execution failure: stop, log, leave incomplete tasks unchecked; prefer OpenCode /undo or snapshots; never auto-delete untracked files.
+- Validation blockers: route back to execution once, then stop and ask.
+
+## Files created by this track
+- Command: `~/.config/opencode/commands/conductor-pipeline.md`
+- Orchestrator: `~/.config/opencode/agent/conductor-pipeline-orchestrator.md`
+- Subagents: `~/.config/opencode/agent/conductor-{plan-creator,plan-reviewer,plan-reviewer-alt,track-executor,track-validator,track-validator-alt}.md`
+- Skill: `~/.config/opencode/skill/conductor-pipeline/SKILL.md` + `references/` + this README
+
+## After editing any of these files
+OpenCode does not hot-reload config. **Quit and restart OpenCode** before testing. Verify with `opencode agent list` and `opencode models`.
+
+
+## Permissions at a glance
+
+| Agent | bash | edit | task |
+|---|---|---|---|
+| conductor-pipeline-orchestrator | allow | allow | 6 stage subagents only |
+| conductor-plan-creator | allow | allow | deny |
+| conductor-plan-reviewer | allow | allow | deny |
+| conductor-plan-reviewer-alt | allow | allow | deny |
+| conductor-track-executor | allow (destructive commands ask) | allow | deny |
+| conductor-track-validator | allow | deny | deny |
+| conductor-track-validator-alt | allow | deny | deny |
+
+If a conductor agent starts prompting you for approvals, see `C:\Users\DaveWitkin\.config\opencode\docs\troubleshooting\active\opencode-permission-issues.md`.
+
+
+## Hello World
+
+This hello-world section is a small toy documentation example for the Conductor Pipeline README. It exists as a sanity check that the pipeline can plan, execute, and validate a minimal documentation-only change without touching code or tooling. The paragraph is intentionally simple and self-contained so reviewers can confirm the change quickly. It was created by the Conductor pipeline as a smoke test of the track workflow.
+
+## Smoke-Test Lessons Learned
+
+- Inside a git repo does not guarantee tracked by git. A file can be untracked, gitignored, or newly created, so path-scoped git diff may have no baseline.
+- For untracked targets, use `git diff --no-index <backup> <target>`.
+- Idempotency checks must match structure (line-anchored, not loose substring).
+- Append-only edits should prove byte-prefix preservation and additions-only diff behavior.
+- Executor closeout must synchronize metadata, plan, indexes, and logs.
