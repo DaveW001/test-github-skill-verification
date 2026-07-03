@@ -1,0 +1,21 @@
+{
+  "id": "20260702-skill-vault-migration",
+  "title": "Skill Vault Migration",
+  "status": "blocked",
+  "phase": "executed-partial",
+  "created_at": "2026-07-02",
+  "executed_at": "2026-07-02",
+  "executor_model": "zai-coding-plan/glm-5.2",
+  "completed_tasks": "10",
+  "total_tasks": "17",
+  "task_count": "17",
+  "migrated_skills": "knowledge-graph-query, enrich-meeting-notes, retrospective",
+  "blocked_skills": "nlm-skill, pptx-to-pdf-converter (rolled back to native; active vault interference)",
+  "native_folder_count": 8,
+  "summary": "PARTIAL: 3/5 skills migrated to vault and validated. nlm-skill + pptx-to-pdf-converter rolled back to native due to active external interference destroying their pre-existing vault folders. No data lost; all backups intact.",
+  "plan": "C:\\development\\opencode\\.conductor\\tracks\\20260702-skill-vault-migration\\plan.md",
+  "spec": "C:\\development\\opencode\\.conductor\\tracks\\20260702-skill-vault-migration\\spec.md",
+  "execution_log": "C:\\development\\opencode\\.conductor\\tracks\\20260702-skill-vault-migration\\execution-log-2026-07-02.md",
+  "rolled_back_tasks": "6 (2.2, 2.3, 3.1, 3.2, 4.1, 4.2)",
+  "open_tasks": "1 (5.1)"
+}

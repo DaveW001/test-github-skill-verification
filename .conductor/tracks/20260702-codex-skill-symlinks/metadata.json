@@ -1,0 +1,39 @@
+{
+  "trackId": "20260702-codex-skill-symlinks",
+  "title": "Codex Skill Junction Reconciliation (convert duplicates to junctions, weekly reconcile job)",
+  "status": "blocked",
+  "priority": "medium",
+  "createdAt": "2026-07-02",
+  "updatedAt": "2026-07-03",
+  "executed_at": "2026-07-03",
+  "executor_model": "zai-coding-plan/glm-5.2",
+  "progress_phase": "Phase M (blocked - external interference; rolled back)",
+  "tasks": {
+    "total": 43,
+    "completed": 2,
+    "in_progress": 0,
+    "not_started": 41
+  },
+  "completed_tasks": ["M.1", "M.2"],
+  "blockingIssues": [
+    {
+      "tier": 0,
+      "kind": "environmental",
+      "summary": "Running OpenCode desktop host (OpenCode.exe) actively reconciles .opencode-lazy-vault and .codex\\skills, corrupting Phase M state (self-referential vault junction; codex junction materialized/deleted in real time).",
+      "resolution_requires_user_action": true,
+      "same_root_cause_as": "20260702-skill-vault-migration"
+    }
+  ],
+  "related_tracks": ["20260702-skill-vault-migration"],
+  "artifacts": {
+    "spec": ".conductor/tracks/20260702-codex-skill-symlinks/spec.md",
+    "plan": ".conductor/tracks/20260702-codex-skill-symlinks/plan.md",
+    "execution_log": ".conductor/tracks/20260702-codex-skill-symlinks/execution-log-2026-07-03.md",
+    "phase_m_backup_marker": ".conductor/tracks/20260702-codex-skill-symlinks/phase-m-backup-dir.txt"
+  },
+  "nextActions": [
+    "Fully quit the OpenCode desktop app (all OpenCode.exe) before retrying Phase M.",
+    "Investigate why opencode-skillful destroys nlm-skill and pptx-to-pdf-converter vault entries specifically.",
+    "After host is quit, re-run Phase M (M.3-M.16) in plan order."
+  ]
+}

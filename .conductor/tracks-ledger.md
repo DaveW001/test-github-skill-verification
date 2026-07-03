@@ -4,6 +4,11 @@ This ledger tracks all active, completed, and archived tracks in this repository
 
 ## Active Tracks
 
+- [20260703-skill-creation-functional-testing](./tracks/20260703-skill-creation-functional-testing/spec.md): Build a first-class skill-test-harness, mandatory functional smoke-test convention, and Conductor/skill-writer integration. (Phase: planned 2026-07-03, 0/17 tasks)
+- [20260702-codex-skill-symlinks](./tracks/20260702-codex-skill-symlinks/spec.md): Convert codex skill duplicate folders to junctions, create missing codex junctions, and add a weekly reconciliation script plus scheduler job. BLOCKED at Phase M: while the OpenCode desktop host (OpenCode.exe) is running it actively reconciles .opencode-lazy-vault and .codex\skills and corrupted the nlm-skill migration - it created a self-referential vault junction (target = itself, unresolvable) and materialized/deleted the codex junction in real time. This is the SAME root cause already documented by prior track 20260702-skill-vault-migration. Rolled back nlm-skill to the original stable topology (codex and vault both junction -> native); pptx-to-pdf-converter left untouched; native intact; no data loss; backups retained. M.1-M.2 prep retained; M.3-M.8 executed then reverted in plan.md. Requires fully quitting the OpenCode desktop app before retrying Phase M. See execution-log-2026-07-03.md. (Phase: blocked 2026-07-03)
+
+- [20260702-skill-vault-migration](./tracks/20260702-skill-vault-migration/spec.md): Migrate five non-core skills to the lazy vault, fix required frontmatter, validate lazy-vault resolvability inputs, and preserve six native always-on skills. PARTIAL: 3/5 migrated to vault and validated (knowledge-graph-query, enrich-meeting-notes, retrospective; 2 renamed underscore->hyphen to satisfy quick_validate.py). nlm-skill and pptx-to-pdf-converter ROLLED BACK to native due to active external interference destroying their pre-existing vault folders. No data lost; all backups intact. See execution-log-2026-07-02.md. (Phase: executed-partial 2026-07-02)
+
 - [glm-fallback-chain](./tracks/glm-fallback-chain/spec.md): Add a procedural three-tier model fallback chain for Conductor pipeline GLM-5.2 failures. Tier 1 zai-coding-plan/glm-5.2 -> Tier 2 zai-coding-plan/glm-5.1 -> Tier 3 opencode-go/qwen3.7-plus. Implemented via provider timeout options (freeze/overload detection), two hidden fallback executor subagents, orchestrator Stage 4 routing + permissions, the primary executor model-unavailable self-report, and doc updates (SKILL.md, README.md, threshold-policy.md). Orchestrator itself stays pinned to glm-5.2 (documented self-swap limitation). (Phase: executed 2026-07-01)
 
 
@@ -45,6 +50,9 @@ This ledger tracks all active, completed, and archived tracks in this repository
 
 ## Completed Tracks
 
+- [20260703-write-permission-fix](./tracks/20260703-write-permission-fix/spec.md): Eliminate mid-run permission prompts by adding write: allow to the global opencode.jsonc permission block and all 9 conductor subagent frontmatters, while keeping validators' dit: deny. Add a bounded, append-only JSONL anomaly log at .conductor/logs/pipeline-anomalies.jsonl (5000-line FIFO archive), wire it into the conductor-pipeline stage prompts and SKILL.md, document the schema in eferences/anomaly-logging.md, and codify a two-layer permission baseline in gent-development-standards.md. All 28 executable tasks and 9 validation tasks complete; 3 anomalies logged for this track. (Phase: validated 2026-07-03)
+
+- [20260702-slack-skill-validation](./tracks/20260702-slack-skill-validation/spec.md): Validate slack-send-message skill quality and add Slack documentation cross-references. (Completed: 2026-07-02)
 - [20260701-dcp-runtime-hooks-fix](./tracks/20260701-dcp-runtime-hooks-fix/spec.md): DCP runtime hook failure follow-up. Functionally complete: post-restart runtime registration restored and validated. Genuine compress permission at 2026-07-01T18:14:28.169Z, new prune-state ses_0e1ecc970ffe2fYOlczHfTfws4 at 18:14:29Z, and end-to-end eligible-session compression proven (one_time_saved=33080, compound_saved=66160). Minor follow-ups only: optional interactive /dcp help check and V.3 rolling-window metric redesign. (Completed: 2026-07-01)
 - [20260629-dcp-complete-outage-fix](./tracks/20260629-dcp-complete-outage-fix/spec.md): Restore @tarquinen/opencode-dcp plugin to a loading state by replacing the incomplete 3.1.13 cache install (missing @anthropic-ai/tokenizer) with a clean 3.1.14 install. DCP-only scope; did not touch runtime/SQLite/scheduler/opencode.jsonc. (Completed: 2026-06-30)
 - [20260623-api-key-centralization-index](./tracks/20260623-api-key-centralization-index/spec.md): Create a metadata-only API key discovery index, add an AGENTS.md lookup rule, fix conductor-reporter .env gitignore coverage, and clean handover encoding artifacts without moving or exposing secret values. (Completed: 2026-06-24)- [20260613-dcp-token-savings-analysis](./tracks/20260613-dcp-token-savings-analysis/spec.md): Quantify Dynamic Context Pruning (DCP) token + USD savings across the last 100 OpenCode sessions into one self-contained HTML report with overall totals, per-model breakdown (tokens saved + DCP call counts), and a total-savings headline. Python 3 stdlib only; reads DCP state + opencode storage; offline. (Completed: 2026-06-13)
@@ -72,6 +80,7 @@ This ledger tracks all active, completed, and archived tracks in this repository
 ## Archived Tracks
 
 *(None yet)*
+
 
 
 

@@ -1,0 +1,62 @@
+# Plan
+
+## Phase 1 - Setup
+- [x] Initialize project
+- [x] Install dependencies
+
+## Phase 2 - Implementation
+- [ ] Build feature A
+- [ ] Build feature B
+
+## Phase 3 - Verification
+- [ ] Test feature A
+- [ ] Update documentation
+
+## Phase 4 - Completion Validation
+- [ ] Verify all non-deferred plan tasks are checked `[x]`
+- [ ] Verify `metadata.json` status/progress values are synchronized with plan completion
+- [ ] Verify `.conductor/tracks.md` row status and completed date match metadata
+- [ ] Create or update execution/change log with deviations, skipped items, and validation summary
+- [ ] Re-open all modified/created artifacts and confirm required acceptance strings exist
+
+Checkbox states:
+- [ ] Pending (not started)
+- [~] In Progress (currently working on)
+- [x] Completed (finished)
+
+Important: plan.md is the authoritative source of truth for task progress.
+
+## Task Safety Rules
+
+### Collision Guard (Required for Any Rename/Move Task)
+
+When a task involves renaming or moving files, include a pre-execution check in the task instructions:
+
+```markdown
+#### Pre-execution check
+- Before executing, verify the target path does NOT already exist.
+- If target exists: stop and report the collision. Do NOT overwrite.
+- Resolve by either: (a) asking user to choose, (b) merging content, or
+  (c) deleting the duplicate if confirmed redundant.
+```
+
+### Edit Safety for Structured Files (Required for Bulk Edits)
+
+When editing files with 3+ items sharing identical structural patterns (review queues,
+ledgers, audit reports), prefer rewriting the entire file over individual `oldString`
+edits. See `knowledge-graph-maintainer` skill reference:
+`references/edit-safety-for-structured-files.md`.
+## Task Authoring Standards
+
+When creating or updating a Conductor track plan, every executable task should be written for a less capable agent and must follow these standards:
+
+- **Atomic tasks** - one clear action per checkbox; do not combine unrelated edits, validation, and bookkeeping into one task.
+- **Exact file paths** - name precise files to create or modify using repo-relative paths or fully qualified Windows paths when outside the repo.
+- **Explicit commands** - include terminal commands verbatim when a task can be verified or executed by CLI.
+- **One authoritative acceptance check** - each executable task must include exactly one line labeled `Authoritative acceptance check:` that proves the task succeeded.
+- **Diagnostic checks separated** - supporting commands belong under `Diagnostic checks:` and must not be the sole proof of success.
+- **Error recovery** - include what to do if the command fails, the expected anchor is missing, or the target file format differs.
+- **Body-content verification** - verification must inspect intended body content, not just headings or isolated phrases.
+- **Idempotency** - prefer upsert/update-in-place wording for ledgers and indexes; avoid duplicate rows or duplicate sections.
+
+These standards intentionally mirror the Conductor Pipeline Stage 1 plan-creation quality bar so manually created tracks do not fall below pipeline-created tracks.

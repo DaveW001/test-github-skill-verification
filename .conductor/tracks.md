@@ -1,6 +1,10 @@
 # Conductor Tracks
 
 | Track ID | Title | Status | Completed | Path |
+| 20260702-codex-skill-symlinks | Codex Skill Junction Reconciliation | blocked |  | C:\development\opencode\.conductor\tracks\20260702-codex-skill-symlinks |
+| 20260703-skill-creation-functional-testing | Skill Creation Functional Testing Harness | planned |  | C:\development\opencode\.conductor\tracks\20260703-skill-creation-functional-testing |
+| 20260703-write-permission-fix | Conductor write permission fix + anomaly logging | validated | 2026-07-03 | C:\development\opencode\.conductor\tracks\20260703-write-permission-fix |
+| 20260702-skill-vault-migration | Skill Vault Migration | executed-partial | 2026-07-02 | C:\development\opencode\.conductor\tracks\20260702-skill-vault-migration |
 | 20260701-dcp-runtime-hooks-fix | DCP runtime hook failure follow-up | complete | 2026-07-01 | C:\development\opencode\.conductor\tracks\20260701-dcp-runtime-hooks-fix |
 | glm-fallback-chain | GLM-5.2 three-tier model fallback chain | executed | 2026-07-01 | C:\development\opencode\.conductor\tracks\glm-fallback-chain |
 | 20260630-conductor-skill-hardening | Conductor Skill Hardening (retro improvements round 2) | executed | 2026-06-30 | C:\development\opencode\.conductor\tracks\20260630-conductor-skill-hardening |
@@ -30,5 +34,5 @@
 | 20260622-glm-52-non-thinking-variant | GLM 5.2 Non-Thinking Variant | complete | 2026-06-22 | C:\development\opencode\.conductor\tracks\20260622-glm-52-non-thinking-variant |
 
 | 20260628-readme-hello-world-section | Add Hello World section to conductor-pipeline README | completed | 2026-06-28 | C:\development\opencode\.conductor\tracks\readme-hello-world-section |
-
+| 20260702-slack-skill-validation | Slack Skill Validation and Doc Updates | completed | 15/15 | C:\development\opencode\.conductor\tracks\20260702-slack-skill-validation |
 

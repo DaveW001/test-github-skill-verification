@@ -1,0 +1,26 @@
+{
+  "track_id": "20260703-skill-creation-functional-testing",
+  "title": "Skill Creation Functional Testing Harness",
+  "status": "planned",
+  "created_at": "2026-07-03",
+  "completed_at": null,
+  "progress_phase": "plan-created-ready-for-review",
+  "task_count": 17,
+  "readiness_check_count": 6,
+  "total_checkbox_count": 23,
+  "completed_tasks": 0,
+  "executor_model": null,
+  "validator_model": null,
+  "summary": "Create a first-class skill-test-harness skill, mandatory functional test convention, skill-writer integration, Conductor pipeline reference, and base Conductor task-authoring template updates.",
+  "deliverables": [
+    "skill-test-harness skill",
+    "PowerShell smoke-test harness",
+    "functional test-case template",
+    "skill-writer Step 10 integration",
+    "Conductor pipeline skill-creation-testing reference",
+    "Conductor track-plan task-authoring standards"
+  ],
+  "related_tracks": [
+    "20260702-slack-skill-validation"
+  ]
+}

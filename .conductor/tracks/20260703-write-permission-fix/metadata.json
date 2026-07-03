@@ -1,0 +1,14 @@
+{
+  "track_id": "20260703-write-permission-fix",
+  "validator_model": "opencode-go/minimax-m3",
+  "status": "validated",
+  "completed_tasks": 28,
+  "task_count": 28,
+  "progress_phase": "validated",
+  "source_retro": "conductor-pipeline-write-permission-retro-2026-07-02.md",
+  "executed_at": "2026-07-03T13:43:12Z",
+  "executor_model": "zai-coding-plan/glm-5.2",
+  "validated_at": "2026-07-03T14:06:41Z",
+  "scope": "write-permission-fix + anomaly-logging",
+  "created_at": "2026-07-03"
+}
