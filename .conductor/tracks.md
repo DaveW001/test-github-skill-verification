@@ -2,7 +2,7 @@
 
 | Track ID | Title | Status | Completed | Path |
 | 20260702-codex-skill-symlinks | Codex Skill Junction Reconciliation | blocked |  | C:\development\opencode\.conductor\tracks\20260702-codex-skill-symlinks |
-| 20260703-skill-creation-functional-testing | Skill Creation Functional Testing Harness | planned |  | C:\development\opencode\.conductor\tracks\20260703-skill-creation-functional-testing |
+| 20260703-skill-creation-functional-testing | Skill Creation Functional Testing Harness | validated | 2026-07-03 | C:\development\opencode\.conductor\tracks\20260703-skill-creation-functional-testing |
 | 20260703-write-permission-fix | Conductor write permission fix + anomaly logging | validated | 2026-07-03 | C:\development\opencode\.conductor\tracks\20260703-write-permission-fix |
 | 20260702-skill-vault-migration | Skill Vault Migration | executed-partial | 2026-07-02 | C:\development\opencode\.conductor\tracks\20260702-skill-vault-migration |
 | 20260701-dcp-runtime-hooks-fix | DCP runtime hook failure follow-up | complete | 2026-07-01 | C:\development\opencode\.conductor\tracks\20260701-dcp-runtime-hooks-fix |
@@ -35,4 +35,5 @@
 
 | 20260628-readme-hello-world-section | Add Hello World section to conductor-pipeline README | completed | 2026-06-28 | C:\development\opencode\.conductor\tracks\readme-hello-world-section |
 | 20260702-slack-skill-validation | Slack Skill Validation and Doc Updates | completed | 15/15 | C:\development\opencode\.conductor\tracks\20260702-slack-skill-validation |
+| skillshare-adoption | SkillShare Adoption Prototype | validated | 2026-07-03 | C:\development\opencode\.conductor\tracks\skillshare-adoption |
 

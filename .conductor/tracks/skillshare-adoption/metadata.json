@@ -1,0 +1,12 @@
+{
+  "track_id": "skillshare-adoption",
+  "status": "validated",
+  "progress": "15/15",
+  "task_count": 15,
+  "readiness_check_count": 5,
+  "total_checkbox_count": 20,
+  "completed_tasks": 15,
+  "executed_at": "2026-07-03T22:55:47Z",
+  "updated_at": "2026-07-03T22:55:47Z",
+  "executor_model": "zai-coding-plan/glm-5.2"
+}

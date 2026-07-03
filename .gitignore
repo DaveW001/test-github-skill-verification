@@ -29,3 +29,6 @@ docs/troubleshooting/active/gemini-proxy-down.md
 # Config backups containing Slack tokens and other live credentials
 **/opencode.jsonc.before-*
 **/opencode.jsonc.backup-*
+
+# SkillShare local sync proof target (runtime artifact, do not commit)
+.conductor/tracks/skillshare-adoption/local-sync-target/

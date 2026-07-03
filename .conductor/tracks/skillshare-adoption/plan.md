@@ -20,7 +20,7 @@ Track ID: `skillshare-adoption`
 
 Objective: Confirm the workspace and docs directory are ready before installing or writing project artifacts.
 
-- [ ] 0.1 Confirm workspace root and required directories exist.
+- [x] 0.1 Confirm workspace root and required directories exist.
   - Action: Run this command from `C:\development\opencode`:
     ```powershell
     $ErrorActionPreference = 'Stop';
@@ -40,7 +40,7 @@ Objective: Confirm the workspace and docs directory are ready before installing 
     ```
   - Error recovery: If the docs directory cannot be created, stop and report the permission/path error. If the track directory is missing, recreate it only if `spec.md` and `plan.md` are available from this plan handoff.
 
-- [ ] 0.2 Read the existing objectives spec for context without changing it.
+- [x] 0.2 Read the existing objectives spec for context without changing it.
   - Action: Run:
     ```powershell
     $objectives = Get-Content -Raw -LiteralPath 'C:\development\opencode\docs\skill-share\objectives.md';
@@ -64,7 +64,7 @@ Exit criteria: Workspace path is correct, `docs/skill-share` exists, the conduct
 
 Objective: Create the decision record that captures why SkillShare was chosen and what is intentionally deferred.
 
-- [ ] 1.1 Create `docs/skill-share/evaluation-and-decision.md` with the adoption verdict and pros.
+- [x] 1.1 Create `docs/skill-share/evaluation-and-decision.md` with the adoption verdict and pros.
   - Action: Create `C:\development\opencode\docs\skill-share\evaluation-and-decision.md` with this body structure and include these exact body sentences:
     ```markdown
     # SkillShare Evaluation and Decision
@@ -92,7 +92,7 @@ Objective: Create the decision record that captures why SkillShare was chosen an
     ```
   - Error recovery: If writing fails, verify `docs/skill-share` exists and retry with `Set-Content -Encoding utf8`. Do not use regex replacement on markdown structural characters.
 
-- [ ] 1.2 Add explicit future-work gaps and the easy-install goal to `docs/skill-share/evaluation-and-decision.md`.
+- [x] 1.2 Add explicit future-work gaps and the easy-install goal to `docs/skill-share/evaluation-and-decision.md`.
   - Action: Append sections to the same file containing these exact body sentences:
     ```markdown
     ## Future Work / Revisit Later
@@ -124,7 +124,7 @@ Exit criteria: The evaluation decision doc contains a complete decision, reasons
 
 Objective: Install SkillShare, initialize it, create a minimal sample skill, and prove `skillshare sync` injects that skill into at least one local target directory.
 
-- [ ] 2.1 Install SkillShare on Windows and confirm the binary works.
+- [x] 2.1 Install SkillShare on Windows and confirm the binary works.
   - Action: Run:
     ```powershell
     $ErrorActionPreference = 'Stop';
@@ -145,7 +145,7 @@ Objective: Install SkillShare, initialize it, create a minimal sample skill, and
     ```
   - Error recovery: If the install script is blocked, download it with `Invoke-WebRequest -UseBasicParsing` to a temp file, inspect it, then run it only if it is the upstream SkillShare installer. If PATH is stale, open a new shell or invoke the installed executable by full path.
 
-- [ ] 2.2 Initialize SkillShare local configuration.
+- [x] 2.2 Initialize SkillShare local configuration.
   - Action: Run:
     ```powershell
     $cmd = Get-Command skillshare -ErrorAction SilentlyContinue; if (-not $cmd) { $cmd = Get-Command ss -ErrorAction Stop }
@@ -162,7 +162,7 @@ Objective: Install SkillShare, initialize it, create a minimal sample skill, and
     ```
   - Error recovery: If `init` reports already initialized, treat that as acceptable and proceed to the acceptance check. If the directory is elsewhere, run `skillshare init --help` and record the discovered path in the execution log.
 
-- [ ] 2.3 Create a minimal sample skill source under `%AppData%\skillshare\skills\skillshare-sync-proof\SKILL.md`.
+- [x] 2.3 Create a minimal sample skill source under `%AppData%\skillshare\skills\skillshare-sync-proof\SKILL.md`.
   - Action: Create directory `$env:APPDATA\skillshare\skills\skillshare-sync-proof` and create `SKILL.md` with this exact body content:
     ```markdown
     ---
@@ -187,9 +187,19 @@ Objective: Install SkillShare, initialize it, create a minimal sample skill, and
     ```
   - Error recovery: If `$env:APPDATA\skillshare\skills` is missing, create it after confirming `$env:APPDATA\skillshare` exists. If a previous proof skill exists, overwrite only this proof skill and do not modify other skills.
 
-- [ ] 2.4 Configure at least one local target directory for OpenCode or Claude and run `skillshare sync`.
-  - Action: Prefer a repo-local safe target so the proof is non-destructive. Run:
+- [x] 2.4 Configure at least one local target directory for OpenCode or Claude and run `skillshare sync`.
+  - Action: Prefer a repo-local safe target so the proof is non-destructive. First, ensure the proof target is gitignored so the runtime artifact does not pollute `git status`. Run:
     ```powershell
+    $gi = 'C:\development\opencode\.gitignore'
+    $giLine = '.conductor/tracks/skillshare-adoption/local-sync-target/'
+    if (Test-Path -LiteralPath $gi) {
+      $giBody = Get-Content -Raw -LiteralPath $gi
+      if (-not $giBody.Contains($giLine)) {
+        Add-Content -LiteralPath $gi -Value ("`n# SkillShare local sync proof target (runtime artifact, do not commit)`n" + $giLine)
+      }
+    } else {
+      Set-Content -LiteralPath $gi -Value ("# SkillShare local sync proof target (runtime artifact, do not commit)`n" + $giLine) -Encoding utf8
+    }
     $cmd = Get-Command skillshare -ErrorAction SilentlyContinue; if (-not $cmd) { $cmd = Get-Command ss -ErrorAction Stop }
     $targetRoot = 'C:\development\opencode\.conductor\tracks\skillshare-adoption\local-sync-target\opencode\skill'
     New-Item -ItemType Directory -Path $targetRoot -Force | Out-Null
@@ -208,7 +218,7 @@ Objective: Install SkillShare, initialize it, create a minimal sample skill, and
     ```
   - Error recovery: If `target` syntax fails, use `skillshare target --help` and adapt only the target-registration command. If junction creation is blocked, run `skillshare target opencode --mode copy` or the documented copy-mode equivalent, then re-run `skillshare sync`. If the target contains unrelated existing files, stop before overwriting and choose the repo-local target above.
 
-- [ ] 2.5 Run SkillShare audit and record non-blocking results in the execution log.
+- [x] 2.5 Run SkillShare audit and record non-blocking results in the execution log.
   - Action: Run:
     ```powershell
     $cmd = Get-Command skillshare -ErrorAction SilentlyContinue; if (-not $cmd) { $cmd = Get-Command ss -ErrorAction Stop }
@@ -216,7 +226,7 @@ Objective: Install SkillShare, initialize it, create a minimal sample skill, and
     ```
   - Authoritative acceptance check:
     ```powershell
-    $cmd = Get-Command skillshare -ErrorAction SilentlyContinue; if (-not $cmd) { $cmd = Get-Command ss -ErrorAction Stop }; $output = & $cmd.Source audit 2>&1 | Out-String; $output.Length -gt 0
+    $cmd = Get-Command skillshare -ErrorAction SilentlyContinue; if (-not $cmd) { $cmd = Get-Command ss -ErrorAction Stop }; $output = & $cmd.Source audit 2>&1 | Out-String; $output -match 'skills|target|repository|directory|sync|junction|symlink|file|source|local'
     ```
     Expected output: `True`
   - Diagnostic checks:
@@ -231,7 +241,7 @@ Exit criteria: SkillShare command exists, initialization completed, a proof skil
 
 Objective: Write a copy-pasteable quickstart for non-technical users and record that GitHub org setup is optional/deferred.
 
-- [ ] 3.1 Create `docs/skill-share/quickstart-for-team.md` with simple install and first-sync instructions.
+- [x] 3.1 Create `docs/skill-share/quickstart-for-team.md` with simple install and first-sync instructions.
   - Action: Create `C:\development\opencode\docs\skill-share\quickstart-for-team.md` with this body structure and include these exact body sentences and commands:
     ```markdown
     # SkillShare Quickstart for Team Members
@@ -274,7 +284,7 @@ Objective: Write a copy-pasteable quickstart for non-technical users and record 
     ```
   - Error recovery: If markdown code fences are malformed, rewrite the file and verify that each fenced block starts and ends with triple backticks.
 
-- [ ] 3.2 Add a clear future-work section to the quickstart for profiles, daemon, and gotcha hardening.
+- [x] 3.2 Add a clear future-work section to the quickstart for profiles, daemon, and gotcha hardening.
   - Action: Append this exact content to `docs/skill-share/quickstart-for-team.md`:
     ```markdown
     ## Future Work / Not Required for First Sync
@@ -296,7 +306,7 @@ Objective: Write a copy-pasteable quickstart for non-technical users and record 
     ```
   - Error recovery: If the append duplicates the section, keep one complete future-work section and rerun the acceptance check.
 
-- [ ] 3.3 Optionally check whether `packaged-agile` GitHub repo creation is ready, but do not block completion.
+- [x] 3.3 Optionally check whether `packaged-agile` GitHub repo creation is ready, but do not block completion.
   - Action: Run:
     ```powershell
     gh auth status
@@ -320,7 +330,7 @@ Exit criteria: The quickstart doc is copy-pasteable, future work is explicit, an
 
 Objective: Validate deliverables, update Conductor bookkeeping, and provide a handoff log.
 
-- [ ] 4.1 Run deterministic content validation for both documentation deliverables.
+- [x] 4.1 Run deterministic content validation for both documentation deliverables.
   - Action: Run:
     ```powershell
     $decision = Get-Content -Raw -LiteralPath 'C:\development\opencode\docs\skill-share\evaluation-and-decision.md'
@@ -335,11 +345,12 @@ Objective: Validate deliverables, update Conductor bookkeeping, and provide a ha
     Expected output: `True`
   - Diagnostic checks:
     ```powershell
-    git diff -- docs/skill-share/evaluation-and-decision.md docs/skill-share/quickstart-for-team.md
+    git status --short -- docs/skill-share
     ```
+    Note: `git diff -- <path>` returns nothing for untracked files (the docs are new); use `git status --short` to confirm the files are created, or compare to a pre-edit backup with `git diff --no-index <backup> <target>` per the artifact-output-format decision tree.
   - Error recovery: If validation fails, inspect the missing exact substring, fix the body content, and rerun this task before proceeding.
 
-- [ ] 4.2 Run deterministic local prototype validation.
+- [x] 4.2 Run deterministic local prototype validation.
   - Action: Run:
     ```powershell
     $cmd = Get-Command skillshare -ErrorAction SilentlyContinue; if (-not $cmd) { $cmd = Get-Command ss -ErrorAction SilentlyContinue }
@@ -359,7 +370,7 @@ Objective: Validate deliverables, update Conductor bookkeeping, and provide a ha
     ```
   - Error recovery: If the target artifact is missing, rerun Phase 2.4 with the documented `target --help` fallback, then rerun this validation.
 
-- [ ] 4.3 Create `execution-log-YYYY-MM-DD.md` and update Conductor bookkeeping.
+- [x] 4.3 Create `execution-log-YYYY-MM-DD.md` and update Conductor bookkeeping.
   - Action: Create `C:\development\opencode\.conductor\tracks\skillshare-adoption\execution-log-YYYY-MM-DD.md` using the actual date, then update `plan.md`, `metadata.json`, `.conductor/tracks.md`, and `.conductor/tracks-ledger.md` according to the Conductor executor closeout checklist. The log must include these exact body sentences:
     ```markdown
     Local SkillShare sync proof completed.
@@ -370,12 +381,19 @@ Objective: Validate deliverables, update Conductor bookkeeping, and provide a ha
     ```
   - Authoritative acceptance check:
     ```powershell
-    $log = Get-ChildItem -LiteralPath 'C:\development\opencode\.conductor\tracks\skillshare-adoption' -Filter 'execution-log-*.md' | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if (-not $log) { $false } else { $text = Get-Content -Raw -LiteralPath $log.FullName; $text.Contains('Local SkillShare sync proof completed.') -and $text.Contains('GitHub repo creation under packaged-agile was treated as optional/deferred unless gh auth and owner access were ready.') -and $text.Contains('Future-work gaps remain: per-user profiles, background daemon sync, and gotcha hardening.') }
+    $log = Get-ChildItem -LiteralPath 'C:\development\opencode\.conductor\tracks\skillshare-adoption' -Filter 'execution-log-*.md' -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+    $logText = if ($log) { Get-Content -Raw -LiteralPath $log.FullName -ErrorAction SilentlyContinue } else { '' }
+    $logOk = $log -and ($logText.Contains('Local SkillShare sync proof completed.') -and $logText.Contains('GitHub repo creation under packaged-agile was treated as optional/deferred unless gh auth and owner access were ready.') -and $logText.Contains('Future-work gaps remain: per-user profiles, background daemon sync, and gotcha hardening.'))
     $meta = Get-Content -Raw -LiteralPath 'C:\development\opencode\.conductor\tracks\skillshare-adoption\metadata.json' -ErrorAction SilentlyContinue
-    $metaOk = $false; if ($meta) { $j = $meta | ConvertFrom-Json; $n = $j.PSObject.Properties.Name; $metaOk = (($n -contains 'status') -and ($n -contains 'progress') -and ($n -contains 'task_count') -and ($n -contains 'completed_tasks') -and ($n -contains 'executed_at') -and ($n -contains 'executor_model')) }
-    $tracksOk = (Get-Content -Raw -LiteralPath 'C:\development\opencode\.conductor\tracks.md').Contains('skillshare-adoption')
-    $ledgerOk = (Get-Content -Raw -LiteralPath 'C:\development\opencode\.conductor\tracks-ledger.md').Contains('skillshare-adoption')
-    ($log -ne $null) -and $log -ne $null -and ($text.Contains('Local SkillShare sync proof completed.') -and $text.Contains('GitHub repo creation under packaged-agile was treated as optional/deferred unless gh auth and owner access were ready.') -and $text.Contains('Future-work gaps remain: per-user profiles, background daemon sync, and gotcha hardening.')) -and $metaOk -and $tracksOk -and $ledgerOk
+    $metaOk = $false
+    if ($meta) { try { $j = $meta | ConvertFrom-Json; $n = $j.PSObject.Properties.Name; $metaOk = (($n -contains 'status') -and ($n -contains 'progress') -and ($n -contains 'task_count') -and ($n -contains 'completed_tasks') -and ($n -contains 'executed_at') -and ($n -contains 'executor_model')) } catch { $metaOk = $false } }
+    $tracksOk = $false
+    $tracksPath = 'C:\development\opencode\.conductor\tracks.md'
+    if (Test-Path -LiteralPath $tracksPath) { $tracksOk = (Get-Content -Raw -LiteralPath $tracksPath).Contains('skillshare-adoption') }
+    $ledgerOk = $false
+    $ledgerPath = 'C:\development\opencode\.conductor\tracks-ledger.md'
+    if (Test-Path -LiteralPath $ledgerPath) { $ledgerOk = (Get-Content -Raw -LiteralPath $ledgerPath).Contains('skillshare-adoption') }
+    ($logOk -and $metaOk -and $tracksOk -and $ledgerOk)
     ```
     Expected output: `True`
   - Bookkeeping-update sub-actions (in order):
@@ -392,11 +410,11 @@ Exit criteria: Documentation and local prototype validations return `True`, an e
 
 ## Execution-Readiness Checklist
 
-- [ ] Executor can run PowerShell commands from `C:\development\opencode` with explicit timeouts.
-- [ ] Network access is available for the SkillShare installer.
-- [ ] The executor understands that GitHub org repo creation is optional/deferred and not part of the blocking definition of done.
-- [ ] The executor will not modify global Claude/OpenCode config unless it intentionally chooses a safe target and records it; the preferred proof target is repo-local.
-- [ ] Every task has exactly one `Authoritative acceptance check:` and diagnostic checks are separate.
+- [x] Executor can run PowerShell commands from `C:\development\opencode` with explicit timeouts.
+- [x] Network access is available for the SkillShare installer.
+- [x] The executor understands that GitHub org repo creation is optional/deferred and not part of the blocking definition of done.
+- [x] The executor will not modify global Claude/OpenCode config unless it intentionally chooses a safe target and records it; the preferred proof target is repo-local.
+- [x] Every task has exactly one `Authoritative acceptance check:` and diagnostic checks are separate.
 
 ## Top 3 Risks and Mitigations
 

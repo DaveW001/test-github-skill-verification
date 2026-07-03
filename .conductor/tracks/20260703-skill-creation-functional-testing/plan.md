@@ -88,7 +88,7 @@ Create a discoverable lazy-vault skill that owns the harness and its conventions
   - Diagnostic checks: `Select-String -LiteralPath "C:\Users\DaveWitkin\.opencode-lazy-vault\skill-test-harness\SKILL.md" -SimpleMatch 'scripts\skill-smoke-test.ps1'`.
   - Error recovery: If frontmatter is invalid, rewrite the file from the skill-writer frontmatter standards.
 
-- [ ] 1.3 Create `scripts\skill-smoke-test.ps1` with explicit implementation structure.
+- [x] 1.3 Create `scripts\skill-smoke-test.ps1` with explicit implementation structure.
   - Command: Write `C:\Users\DaveWitkin\.opencode-lazy-vault\skill-test-harness\scripts\skill-smoke-test.ps1` with these functions exactly: `Add-Result`, `Get-SkillFrontmatter`, `Test-SkillStructure`, `Test-MarkdownLinks`, `Test-ReferencedFiles`, `Test-ScriptSyntax`, `Write-FunctionalPrompt`, `Write-Summary`, and `Main`.
   - Required behavior:
     - Parameters: `[Parameter(Mandatory=$true)][string]$SkillPath`, `[switch]$PrintFunctionalPrompt`.
@@ -116,7 +116,7 @@ Create a discoverable lazy-vault skill that owns the harness and its conventions
   - Diagnostic checks: `Select-String -LiteralPath "C:\Users\DaveWitkin\.opencode-lazy-vault\skill-test-harness\scripts\skill-smoke-test.ps1" -Pattern '^function '`
   - Error recovery: If the implementation becomes too large for one write, write in chunks and rerun task 1.4.
 
-- [ ] 1.4 Parse-check the harness script.
+- [x] 1.4 Parse-check the harness script.
   - Command:
     ```powershell
     $errors = $null
@@ -134,7 +134,7 @@ Create a discoverable lazy-vault skill that owns the harness and its conventions
 ### Objective
 Define a mandatory functional test-case convention.
 
-- [ ] 2.1 Create `reference.md` for harness behavior and limitations.
+- [x] 2.1 Create `reference.md` for harness behavior and limitations.
   - Command: Write `C:\Users\DaveWitkin\.opencode-lazy-vault\skill-test-harness\reference.md` documenting output schema, checks performed, limitations, and the mandatory sub-agent report step.
   - Required exact sentence: `A skill is confirmed only when structural checks, script checks when applicable, and at least one representative functional smoke test pass.`
   - Authoritative acceptance check (run verbatim; outputs `True` or `False`):
@@ -153,7 +153,7 @@ Define a mandatory functional test-case convention.
   - Diagnostic checks: `Select-String -LiteralPath "C:\Users\DaveWitkin\.opencode-lazy-vault\skill-test-harness\reference.md" -SimpleMatch 'RESULT: PASS'`.
   - Error recovery: If required sentence is absent, rewrite the file.
 
-- [ ] 2.2 Create `templates\test-case.template.md`.
+- [x] 2.2 Create `templates\test-case.template.md`.
   - Command: Write `C:\Users\DaveWitkin\.opencode-lazy-vault\skill-test-harness\templates\test-case.template.md` with headings `# Skill Functional Test Case`, `## Skill Under Test`, `## Representative User Request`, `## Expected Behavior`, `## Forbidden Actions`, `## Acceptance Checks`, and `## Sub-Agent Prompt`.
   - Required exact sentence: `Every new skill MUST include at least one functional test case in tests/ or explicitly document that it is structurally valid but functionally unconfirmed.`
   - Authoritative acceptance check (run verbatim; outputs `True` or `False`):
@@ -181,7 +181,7 @@ Define a mandatory functional test-case convention.
 ### Objective
 Make the harness the canonical skill-creation validation path and close the Conductor template quality gap.
 
-- [ ] 3.1 Repair and update `skill-writer\reference.md` Step 10.
+- [x] 3.1 Repair and update `skill-writer\reference.md` Step 10.
   - Command: Replace the full Step 10 section from `### Step 10` up to but not including `### Step 11` with guidance that uses `C:\Users\DaveWitkin\.opencode-lazy-vault\skill-test-harness\scripts\skill-smoke-test.ps1`, requires a Task sub-agent report, and distinguishes structural validation from functional confirmation.
   - Additional required validation: no standalone line containing only a backtick may remain in Step 10.
   - Authoritative acceptance check (run verbatim; outputs `True` or `False`):
@@ -207,7 +207,7 @@ Make the harness the canonical skill-creation validation path and close the Cond
   - Diagnostic checks: `Select-String -LiteralPath $ref -SimpleMatch '### Step 10' | Select-Object LineNumber`.
   - Error recovery: Restore from `backups-20260703\skill-writer-reference.md.bak` and retry with whole-section replacement (`### Step 10` up to but not including `### Step 11`) if formatting is corrupted or the backtick guard fails.
 
-- [ ] 3.2 Create Conductor pipeline integration reference.
+- [x] 3.2 Create Conductor pipeline integration reference.
   - Command: Write `C:\Users\DaveWitkin\.config\opencode\skill\conductor-pipeline\references\skill-creation-testing.md` documenting that skill-creation tracks add a harness run plus actual Task sub-agent smoke-test report after structural validation and before closeout.
   - Required exact sentence: `Skill creation tracks are not confirmed until a functional-test report records FUNCTIONAL_SMOKE_TEST_PASSED or FUNCTIONAL_SMOKE_TEST_FAILED with explicit reasons.`
   - Authoritative acceptance check (run verbatim; outputs `True` or `False`):
@@ -226,7 +226,7 @@ Make the harness the canonical skill-creation validation path and close the Cond
   - Diagnostic checks: `Select-String -LiteralPath "C:\Users\DaveWitkin\.config\opencode\skill\conductor-pipeline\references\skill-creation-testing.md" -SimpleMatch 'Task sub-agent'`.
   - Error recovery: If write fails under global skill path, stop and report permission issue.
 
-- [ ] 3.3 Create/update/verify base Conductor `track-plan.template.md` task-authoring standards.
+- [x] 3.3 Create/update/verify base Conductor `track-plan.template.md` task-authoring standards.
   - Command: Append or insert (or verify already present) a section titled `## Task Authoring Standards` in `C:\Users\DaveWitkin\.config\opencode\skill\conductor\references\templates\track-plan.template.md`.
   - Required body bullets: atomic tasks, exact file paths, explicit commands, one `Authoritative acceptance check:` per task, separate `Diagnostic checks:`, `Error recovery:`, body-content verification, and idempotency.
   - Authoritative acceptance check (run verbatim; outputs `True` or `False`):
@@ -259,7 +259,7 @@ Make the harness the canonical skill-creation validation path and close the Cond
 ### Objective
 Prove the harness works and record an actual sub-agent functional smoke-test outcome.
 
-- [ ] 4.1 Run harness against `slack-send-message`.
+- [x] 4.1 Run harness against `slack-send-message`.
   - Command:
     ```powershell
     pwsh -NoProfile -ExecutionPolicy Bypass -File "C:\Users\DaveWitkin\.opencode-lazy-vault\skill-test-harness\scripts\skill-smoke-test.ps1" -SkillPath "C:\Users\DaveWitkin\.opencode-lazy-vault\slack-send-message" -PrintFunctionalPrompt
@@ -281,7 +281,7 @@ Prove the harness works and record an actual sub-agent functional smoke-test out
   - Diagnostic checks: `Get-Content -Raw -LiteralPath $log` to inspect the full harness output.
   - Error recovery: If `slack-send-message` has legitimate failures, record them in the execution log; do not modify that skill in this track unless explicitly authorized. Re-run after any harness-script fix.
 
-- [ ] 4.2 Run actual Task sub-agent functional smoke test.
+- [x] 4.2 Run actual Task sub-agent functional smoke test.
   - Command/Action: Copy the `FUNCTIONAL PROMPT TEMPLATE` from task 4.1 into a Task sub-agent. The test case should be safe and offline: ask the sub-agent to use the `slack-send-message` skill instructions to draft a plan for sending a Slack DM without sending any API request or using any token. Save the returned report to `C:\development\opencode\.conductor\tracks\20260703-skill-creation-functional-testing\functional-test-report-2026-07-03.md`.
   - Authoritative acceptance check (run verbatim; outputs `True` or `False`):
     ```powershell
@@ -301,7 +301,7 @@ Prove the harness works and record an actual sub-agent functional smoke-test out
   - Diagnostic checks: `Select-String -LiteralPath $r -SimpleMatch 'FUNCTIONAL_SMOKE_TEST_'`; review report body for forbidden actions.
   - Error recovery: If the sub-agent cannot perform the task, record `FUNCTIONAL_SMOKE_TEST_FAILED` with reasons in each of the four required sub-bullets and mark the skill unconfirmed in the execution log. Do not record a synthetic PASS.
 
-- [ ] 4.3 Validate all deliverable acceptance strings.
+- [x] 4.3 Validate all deliverable acceptance strings.
   - Command (the original naive .Contains pattern silently swallowed $null and falsely reported ALL_DELIVERABLE_STRINGS_PRESENT when files were missing; the version below guards every read with Test-Path and an explicit null check):
     ```powershell
     $checks = @(
@@ -333,7 +333,7 @@ Prove the harness works and record an actual sub-agent functional smoke-test out
 ### Objective
 Synchronize Conductor artifacts and leave auditable evidence.
 
-- [ ] 5.1 Create execution log.
+- [x] 5.1 Create execution log.
   - Command: Write `C:\development\opencode\.conductor\tracks\20260703-skill-creation-functional-testing\execution-log-2026-07-03.md` with changed files, validation commands, Task sub-agent result, deviations, and unresolved follow-ups.
   - Authoritative acceptance check (run verbatim; outputs `True` or `False`):
     ```powershell
@@ -347,7 +347,7 @@ Synchronize Conductor artifacts and leave auditable evidence.
   - Diagnostic checks: `Test-Path -LiteralPath "C:\development\opencode\.conductor\tracks\20260703-skill-creation-functional-testing\execution-log-2026-07-03.md"`.
   - Error recovery: If functional test failed, log it honestly and do not mark the skill confirmed.
 
-- [ ] 5.2 Update metadata and ledgers at closeout.
+- [x] 5.2 Update metadata and ledgers at closeout.
   - Command: Upsert `metadata.json`, `tracks.md`, and `tracks-ledger.md` so they reflect the actual final status and task count.
   - Authoritative acceptance check (run verbatim; outputs `True` or `False`):
     ```powershell
@@ -376,7 +376,7 @@ Synchronize Conductor artifacts and leave auditable evidence.
   - Diagnostic checks: Parse `metadata.json` with `ConvertFrom-Json`.
   - Error recovery: Avoid duplicate ledger rows; update existing rows in place.
 
-- [ ] 5.3 Create validation report.
+- [x] 5.3 Create validation report.
   - Command: Write `C:\development\opencode\.conductor\tracks\20260703-skill-creation-functional-testing\validation-report-2026-07-03.md` summarizing deliverables, checks, and whether the skill-test harness itself is confirmed.
   - Authoritative acceptance check (run verbatim; outputs `True` or `False`):
     ```powershell
@@ -391,12 +391,12 @@ Synchronize Conductor artifacts and leave auditable evidence.
   - Error recovery: If validation finds blockers, write them explicitly and leave metadata status non-completed.
 
 ## Execution-Readiness Checklist
-- [ ] Every implementation task has one authoritative acceptance check.
-- [ ] The harness is first-class and discoverable as `skill-test-harness`.
-- [ ] Functional confirmation requires an actual Task sub-agent report, not just a printed prompt.
-- [ ] Every new skill MUST include a test case or be labeled unconfirmed.
-- [ ] The base Conductor template exposes task-authoring quality standards.
-- [ ] No step calls real external APIs or uses secrets.
+- [x] Every implementation task has one authoritative acceptance check.
+- [x] The harness is first-class and discoverable as `skill-test-harness`.
+- [x] Functional confirmation requires an actual Task sub-agent report, not just a printed prompt.
+- [x] Every new skill MUST include a test case or be labeled unconfirmed.
+- [x] The base Conductor template exposes task-authoring quality standards.
+- [x] No step calls real external APIs or uses secrets.
 
 ## Top 3 Risks + Mitigations
 1. Risk: The harness parser is too strict and flags examples as missing files. Mitigation: Treat ambiguous references as warnings; fail only explicit local paths with known extensions.
