@@ -1,0 +1,12 @@
+{
+  "track_id": "skillshare-rollout-improvements",
+  "status": "complete",
+  "progress": "27/27",
+  "task_count": 27,
+  "readiness_check_count": 0,
+  "total_checkbox_count": 27,
+  "completed_tasks": 27,
+  "executed_at": "2026-07-04",
+  "updated_at": "2026-07-04",
+  "executor_model": "zai-coding-plan/glm-5.2"
+}

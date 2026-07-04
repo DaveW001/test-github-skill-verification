@@ -1,0 +1,27 @@
+{
+  "track_id": "test-skillshare-skills",
+  "title": "SkillShare Skills Test Pipeline",
+  "status": "validated",
+  "created": "2026-07-04",
+  "completed": "2026-07-04",
+  "spec": "C:\\development\\opencode\\.conductor\\tracks\\test-skillshare-skills\\spec.md",
+  "plan": "C:\\development\\opencode\\.conductor\\tracks\\test-skillshare-skills\\plan.md",
+  "execution_log": "C:\\development\\opencode\\.conductor\\tracks\\test-skillshare-skills\\execution-log-2026-07-04.md",
+  "validation_report": "C:\\development\\opencode\\.conductor\\tracks\\test-skillshare-skills\\validation-report-2026-07-04-182055.md",
+  "review_report": "C:\\development\\opencode\\.conductor\\tracks\\test-skillshare-skills\\review-report-2026-07-04-134531.md",
+  "stages_completed": ["plan-creation", "plan-review", "execution", "validation"],
+  "stages_skipped": ["conditional-re-review (B+C not met)", "conditional-re-validation (A+C not met)"],
+  "models": {
+    "creator": "openai/gpt-5.5",
+    "reviewer": "opencode-go/minimax-m3",
+    "executor": "zai-coding-plan/glm-5.2",
+    "validator": "opencode-go/minimax-m3"
+  },
+  "diversity_checks": {
+    "creator_vs_reviewer": true,
+    "executor_vs_validator": true
+  },
+  "closeout_verdict": "conditional-pass",
+  "tasks_total": 19,
+  "tasks_completed": 19
+}

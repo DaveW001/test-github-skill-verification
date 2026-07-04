@@ -1,0 +1,424 @@
+# Plan
+
+## Phase 0 - Setup & Context
+- [x] Read current operations guide at `C:\development\opencode\docs\skill-share\skillshare-operations-guide.md`
+  - Action: open the file and read the existing section structure (sections 1-9 are present as of 2026-07-04; section 8 is "Environment notes" and section 9 is "Open items / future verification"). Capture the current top-level `## N.` count for the renumbering algorithm in Phase 1.1.
+  - Authoritative acceptance check: file exists, byte count > 8000, and contains the exact top-level section headings `## 1. Verified command reference`, `## 7. End-to-end test results (2026-07-04)`, `## 8. Environment notes`, `## 9. Open items / future verification` (line-anchored full-line patterns).
+- [x] Read current quickstart at `C:\development\opencode\docs\skill-share\quickstart-for-team.md`
+  - Authoritative acceptance check: file exists and contains the line `## Step 0 - Install the GitHub CLI and sign in (one time)` and `## If something goes wrong` and `skillshare install github.com/packaged-agile/skillshare-skills --track` (line-anchored).
+- [x] Read humanizer skill at `C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\skillshare-skills\skills\humanizer\SKILL.md`
+  - Action: read the humanizer SKILL.md at the temp checkout path used by the `test-skillshare-skills` track (the humanizer is NOT at `.conductor\tracks\skillshare-adoption\local-sync-target\opencode\skill\humanizer\`; that path only contains `skillshare-sync-proof`). Confirm the frontmatter `name: humanizer` is present and read the body for portability context.
+  - Authoritative acceptance check: file exists and contains `name: humanizer` (line-anchored full-line pattern inside the frontmatter block).
+- [x] **Stage 2 reviewer addition** Confirm humanizer source path is reachable before Phase 3.
+  - Action: run the following before starting Phase 3. If the source is missing, mark all Phase 3 tasks as DEFERRED in the execution log, document the gap, and skip to Phase 4.
+  - Authoritative acceptance check:
+    ```powershell
+    $h = 'C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\skillshare-skills\skills\humanizer\SKILL.md'
+    $r = 'C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\skillshare-skills\skills\humanizer\references'
+    (Test-Path -LiteralPath $h) -and (Test-Path -LiteralPath $r) -and (@(Get-ChildItem -LiteralPath $r -File -ErrorAction SilentlyContinue).Count -ge 3)
+    ```
+    Expected output: `True`. If `False`, the humanizer is not at the expected temp checkout; record the actual state in the execution log, mark all Phase 3 tasks DEFERRED, and proceed to Phase 4.
+
+## Phase 1 - Documentation Improvements: Operations Guide
+- [x] Add tool-specific rollout matrix to operations guide with explicit section renumbering.
+  - **Stage 2 reviewer clarification** The existing operations guide has section 8 (Environment notes) and section 9 (Open items / future verification). The plan's literal "section 8. Tool-specific rollout matrix" collides with existing section 8. Apply this renumbering algorithm:
+    1. **Pre-edit backup** Copy the operations guide to a timestamped backup.
+    2. **Insert new section 8** immediately AFTER the body of section 7 (the line `Real global config untouched. Sandbox removed.` is the last line of section 7) and BEFORE the existing `## 8. Environment notes` line.
+    3. **Renumber existing sections**: change existing `## 8. Environment notes` to `## 11. Environment notes`, and existing `## 9. Open items / future verification` to `## 12. Open items / future verification`. Use literal `[string]::Replace()` (instance method on a captured string) NOT regex `-replace`.
+    4. **Insert new section 9** (Clean global install test) AFTER the body of new section 8 and BEFORE `## 11. Environment notes` (the renumbered former section 8).
+    5. **Insert new section 10** (Claude Desktop / Claude Cowork manual workflow) AFTER the body of new section 9 and BEFORE `## 11. Environment notes` (so the final sequence is 7, 8, 9, 10, 11, 12 with no duplicate section numbers).
+    6. **Final section sequence**: 1, 2, 3, 4, 5, 6, 7, 8 (Tool-specific rollout matrix), 9 (Clean global install test), 10 (Claude Desktop/Cowork manual workflow), 11 (Environment notes, renumbered), 12 (Open items / future verification, renumbered). NOTE: this gives 12 sections in the final document. Record the final section count in the execution log.
+  - Create a markdown table with columns: `Tool | Install Mechanism | Sync Support | Tested? | Manual Steps | Known Friction | Recommended Path`.
+  - Rows: OpenCode, Claude Code, Claude Desktop, Claude Cowork, Codex.
+  - OpenCode: SkillShare auto-sync, Tested, None, Recommended.
+  - Claude Code: SkillShare auto-sync, Partially tested (project-scoped), None, Recommended.
+  - Claude Desktop: No auto-sync, Not tested, Manual paste `SKILL.md` into chat, Documented workaround.
+  - Claude Cowork: No auto-sync, Not tested, Manual paste `SKILL.md` into chat, Documented workaround.
+  - Codex: SkillShare auto-sync, Not tested, None, Documented but untested.
+  - **Stage 2 reviewer addition** Use literal `[string]::Replace()` for renumbering (instance method on the captured text), not regex `-replace`. Snapshot the operations guide before the first edit; on any unexpected diff after renumbering, restore from the pre-rollout backup and re-apply.
+  - Authoritative acceptance check:
+    ```powershell
+    $ops = 'C:\development\opencode\docs\skill-share\skillshare-operations-guide.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($ops))
+    $rows = ($t -split "`r?`n" | Where-Object { $_ -match '^\|\s*(OpenCode|Claude Code|Claude Desktop|Claude Cowork|Codex)\s*\|' }).Count
+    $ok = ($t -match '(?m)^##\s+8\.\s+Tool-specific rollout matrix') -and `
+          ($t -match '(?m)^##\s+11\.\s+Environment notes') -and `
+          ($t -match '(?m)^##\s+12\.\s+Open items / future verification') -and `
+          ($rows -eq 5)
+    $ok
+    ```
+    Expected output: `True` (heading inserted, existing sections renumbered to 11/12 with no duplicate top-level section numbers, exactly 5 matrix rows including the OpenCode/Claude Code/Claude Desktop/Claude Cowork/Codex rows).
+  - Diagnostic checks: `Select-String -LiteralPath "C:\development\opencode\docs\skill-share\skillshare-operations-guide.md" -SimpleMatch -Pattern "## 8. Tool-specific rollout matrix"`.
+
+- [x] Add "what good looks like" outputs to operations guide section 3 (Known friction points).
+  - For each friction point 3.1-3.6, add an `Expected output:` block that shows a realistic success message. The example for 3.1 (TUI hang) MUST be: ``Expected output after running init: `Initialized with targets: opencode` `` (the literal string from a real SkillShare v0.20.21 init).
+  - **Stage 2 reviewer tightening** Each `Expected output:` block must contain at least 10 non-space characters of substantive content after the colon (a non-empty success message), not a placeholder.
+  - **Stage 2 reviewer addition** Use `Set-Content -Encoding utf8` only after capturing the existing content with `[System.IO.File]::ReadAllText()` and applying an in-memory edit; do not use regex `-replace` for the per-friction edits because the substring `Expected output:` may already appear elsewhere.
+  - Authoritative acceptance check:
+    ```powershell
+    $ops = 'C:\development\opencode\docs\skill-share\skillshare-operations-guide.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($ops))
+    $count = ([regex]::Matches($t, '(?m)^Expected output:[ \t]+\S.{10,}\S\s*$')).Count
+    $count -ge 3
+    ```
+    Expected output: `True` (at least 3 `Expected output:` lines, each followed by at least 10 non-space characters and ending at end-of-line).
+- [x] Add recovery paths to operations guide section 3.
+  - For each friction point 3.1-3.6, add an `If this fails:` block with specific recovery steps. The example for 3.6 (PATH issue) MUST be: ``If this fails: Try `ss --version`. If still not found, restart PowerShell or reboot. ``
+  - **Stage 2 reviewer tightening** Each `If this fails:` block must contain at least 15 non-space characters of substantive recovery content after the colon (a non-empty step), not a placeholder.
+  - Authoritative acceptance check:
+    ```powershell
+    $ops = 'C:\development\opencode\docs\skill-share\skillshare-operations-guide.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($ops))
+    $count = ([regex]::Matches($t, '(?m)^If this fails:[ \t]+\S.{15,}\S\s*$')).Count
+    $count -ge 3
+    ```
+    Expected output: `True` (at least 3 `If this fails:` lines, each followed by at least 15 non-space characters of substantive recovery text).
+
+- [x] Add "tested / not tested" labels to all validation claims in operations guide.
+  - **Stage 2 reviewer addition** Apply labels at these specific locations:
+    - **Section 4 heading** (line `## 4. The member access model (proven)`): change to `## 4. The member access model (partially tested: GitHub API permission only)`. Use literal `[string]::Replace()`.
+    - **Section 4 bullet 3** (the line ``read` = can clone/fetch = `skillshare install --track` works.``): replace with ``read` permission is verified via GitHub API. `skillshare install --track` is presumed to work because git uses the same token, but a real clone as the test account has NOT been performed. (tested: GitHub API; not tested: actual clone as test account)``. Use literal `[string]::Replace()`.
+    - **Section 7 Test 1** (line starting `**Test 1 - invite + access:**`): change to `**Test 1 - invite + access (tested: 2026-07-04 with dwitkin-test):**`. Use literal `[string]::Replace()`.
+    - **Section 7 Test 2** (line starting `**Test 2 - install + sync`): change to `**Test 2 - install + sync (partially tested: 2026-07-04 in project-scoped sandbox; not tested: global install):**`. Use literal `[string]::Replace()`.
+    - **Section 11 (renumbered from 8) Environment notes**: append the literal substring `(tested: 2026-07-04)` to the binary-path bullet and to the global-config bullet. Use `[string]::Replace()` literal substitution.
+  - **Stage 2 reviewer addition** Use `[string]::Replace()` for all label edits (instance method on the captured text), NOT regex `-replace`. Snapshot the operations guide before edits.
+  - Authoritative acceptance check:
+    ```powershell
+    $ops = 'C:\development\opencode\docs\skill-share\skillshare-operations-guide.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($ops))
+    $testedColon = ([regex]::Matches($t, '(?<!\w)tested:')).Count
+    $notTested = ([regex]::Matches($t, '(?<!\w)not tested')).Count
+    ($testedColon -ge 4) -and ($notTested -ge 2)
+    ```
+    Expected output: `True` (at least 4 `tested:` markers and at least 2 `not tested` markers; the negative-lookbehind avoids matching `nottested` substrings).
+- [x] Reword "org invite = read access = can clone" in operations guide section 4.
+  - **Stage 2 reviewer addition** The phrase to soften is on the line ``read` = can clone/fetch = `skillshare install --track` works.`` (in section 4, currently line 125). Replace it literally with: ``read` permission is verified via GitHub API. This should allow clone after `gh auth login` + `gh auth setup-git`, but we have not verified an actual clone as the test account.``. Use literal `[string]::Replace()` on the captured text.
+  - The "should allow clone" and "have not verified an actual clone" phrases are the binding rewording; both must appear verbatim in the replaced text.
+  - Authoritative acceptance check:
+    ```powershell
+    $ops = 'C:\development\opencode\docs\skill-share\skillshare-operations-guide.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($ops))
+    ($t -match '(?<!\w)should allow clone(?!,)') -and ($t -match '(?<!\w)have not verified an actual clone')
+    ```
+    Expected output: `True` (both phrases present as words, not as substrings of other words).
+
+## Phase 2 - Documentation Improvements: Quickstart
+- [x] Add "what good looks like" outputs to quickstart steps 0-4.
+  - **Stage 2 reviewer clarification** Use the literal success indicators (the green check mark, U+2713) and the exact text shown below; do NOT invent new wording.
+  - Step 0 (after `gh auth login`): add a success indicator followed by the literal text `Logged in to github.com as <username> (oauth token saved to keyring).`.
+  - Step 1 (after `skillshare --version`): add a success indicator followed by the literal text `skillshare v0.20.21` (the verified version from the skillshare-adoption track).
+  - Step 2 (after `skillshare init`): add a success indicator followed by the literal text `Initialized with targets: opencode`.
+  - Step 3 (after `skillshare install`): add a success indicator followed by the literal text `Installed 5 skills from packaged-agile/skillshare-skills`.
+  - Step 4 (after `skillshare sync`): add a success indicator followed by the literal text `Synced 5 skills to opencode target`.
+  - The success indicator is the Unicode check mark (U+2713). Verify the source quickstart contains the literal sequence by using `[System.IO.File]::ReadAllBytes()` and counting `0xE2 0x9C 0x93` (the UTF-8 encoding of U+2713).
+  - Authoritative acceptance check:
+    ```powershell
+    $q = 'C:\development\opencode\docs\skill-share\quickstart-for-team.md'
+    $b = [System.IO.File]::ReadAllBytes($q)
+    $checkCount = 0
+    for ($i = 0; $i -le $b.Length - 3; $i++) { if ($b[$i] -eq 0xE2 -and $b[$i+1] -eq 0x9C -and $b[$i+2] -eq 0x93) { $checkCount++ } }
+    $checkCount -ge 5
+    ```
+    Expected output: `True` (at least 5 UTF-8-encoded U+2713 check-mark characters in the file; using a byte-level scan avoids the bash/PowerShell terminal-display issue that masks U+2713 as `?` in some encodings).
+- [x] Add recovery paths to quickstart "If something goes wrong" section.
+  - Add these literal bullet points (3 new + 3 existing = 6 total):
+    - ``If `gh auth login` fails: Check you have a GitHub account. Try `winget uninstall GitHub.cli` then reinstall.``
+    - ``If `skillshare init` shows the TUI: Press Ctrl+C, then run `skillshare init --targets opencode --no-copy --no-git --no-skill`.``
+    - ``If `skillshare install` asks for login again: Run `gh auth setup-git`, then retry.``
+  - **Stage 2 reviewer addition** Add the bullets by appending after the existing 3 bullets in the "If something goes wrong" section. Do not rewrite existing bullets. Use `Add-Content` only after locating the section with a line-anchored `Select-String -SimpleMatch` check.
+  - Authoritative acceptance check:
+    ```powershell
+    $q = 'C:\development\opencode\docs\skill-share\quickstart-for-team.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($q))
+    $bulletCount = ([regex]::Matches($t, '(?m)^\s*-\s+\*\*')).Count
+    $hasGh = $t -match '(?<!\w)gh auth setup-git'
+    $hasInit = $t -match '(?<!\w)skillshare init --targets'
+    ($bulletCount -ge 6) -and $hasGh -and $hasInit
+    ```
+    Expected output: `True` (at least 6 bullets in the "If something goes wrong" section starting with `- **`, plus the literal `gh auth setup-git` and `skillshare init --targets` strings).
+
+## Phase 3 - Humanizer Portability Audit
+- [x] **Stage 2 reviewer precondition** Confirm humanizer precondition gate from Phase 0.4 passed before starting Phase 3.
+  - Action: re-run the Phase 0.4 acceptance check. If `False`, mark all Phase 3 tasks DEFERRED in the execution log and skip to Phase 4.
+- [x] Inspect humanizer SKILL.md for local path assumptions.
+  - Source path: `C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\skillshare-skills\skills\humanizer\SKILL.md`.
+  - **Stage 2 reviewer clarification** Search the source for: `C:\`, `/Users/`, `~/.config/`, `%AppData%`, `$env:`.
+  - **Stage 2 reviewer addition** Use `Select-String -SimpleMatch` (NOT regex `-match`) for each pattern; record each hit with line number. If any hit is found, classify it as `hardcoded (not portable)`, `reference (portable, example)`, or `comment (informational)`, and report in the execution log. Do NOT auto-rewrite; rewriting the humanizer is out of scope for this track.
+  - **Stage 2 reviewer addition** Test the audit by running the same scan against a synthetic control (e.g., the conductor-pipeline SKILL.md) to confirm the scan reports no false positives on the control.
+  - Authoritative acceptance check:
+    ```powershell
+    $h = 'C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\skillshare-skills\skills\humanizer\SKILL.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($h))
+    $hasName = $t -match '(?m)^name:\s*humanizer\s*$'
+    $driveHits = @(Select-String -LiteralPath $h -SimpleMatch -Pattern 'C:\').Count
+    $envHits = @(Select-String -LiteralPath $h -SimpleMatch -Pattern '$env:').Count
+    $appDataHits = @(Select-String -LiteralPath $h -SimpleMatch -Pattern '%AppData%').Count
+    $hasName -and ($driveHits -eq 0) -and ($envHits -eq 0) -and ($appDataHits -eq 0)
+    ```
+    Expected output: `True` (file present, frontmatter name is exactly `name: humanizer` on its own line, no absolute Windows paths, no `$env:`, no `%AppData%`).
+- [x] Inspect humanizer SKILL.md for tool-specific assumptions.
+  - **Stage 2 reviewer clarification** Search for: `skill_use`, `skill_find`, `opencode`, `claude`, `codex`.
+  - **Stage 2 reviewer addition** Use `Select-String -SimpleMatch` for each pattern. Classify each hit as: `hardcoded tool reference (portability risk)`, `generic reference (portable)`, or `example (portable)`. Do NOT auto-rewrite.
+  - Authoritative acceptance check:
+    ```powershell
+    $h = 'C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\skillshare-skills\skills\humanizer\SKILL.md'
+    $hardcodedTool = @(Select-String -LiteralPath $h -SimpleMatch -Pattern 'opencode' -CaseSensitive:$false).Count
+    $hardcodedClaude = @(Select-String -LiteralPath $h -SimpleMatch -Pattern 'claude' -CaseSensitive:$false).Count
+    $hardcodedCodex = @(Select-String -LiteralPath $h -SimpleMatch -Pattern 'codex' -CaseSensitive:$false).Count
+    ($hardcodedTool -le 3) -and ($hardcodedClaude -le 3) -and ($hardcodedCodex -le 3)
+    ```
+    Expected output: `True` (at most 3 hardcoded references to each tool name; thresholds are lenient to allow for legitimate examples. If any threshold is exceeded, document the specific lines in the execution log.).
+
+- [x] Inspect humanizer references/ for portability issues.
+  - Source path: `C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\skillshare-skills\skills\humanizer\references`.
+  - Expected files: `brand-voice.md`, `ai-patterns-to-fix.md`, `humanization-checklist.md`.
+  - **Stage 2 reviewer known finding** `brand-voice.md` begins with the literal heading `# Packaged Agile Brand Voice (Essentials)`. This is a brand-coupled reference, not a generic one. Document this finding in the execution log; do NOT rewrite.
+  - **Stage 2 reviewer addition** Use `Select-String -SimpleMatch` for absolute paths and `Dave` / `Dave-personal` mentions in each reference. Report counts in the execution log.
+  - Authoritative acceptance check:
+    ```powershell
+    $refs = 'C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\skillshare-skills\skills\humanizer\references'
+    $files = @('brand-voice.md', 'ai-patterns-to-fix.md', 'humanization-checklist.md')
+    $allExist = $true
+    $absPathHits = 0
+    foreach ($f in $files) {
+      $p = Join-Path $refs $f
+      if (-not (Test-Path -LiteralPath $p)) { $allExist = $false; continue }
+      $absPathHits += @(Select-String -LiteralPath $p -SimpleMatch -Pattern 'C:\').Count
+      $absPathHits += @(Select-String -LiteralPath $p -SimpleMatch -Pattern '/Users/').Count
+      $absPathHits += @(Select-String -LiteralPath $p -SimpleMatch -Pattern '%AppData%').Count
+    }
+    $allExist -and ($absPathHits -eq 0)
+    ```
+    Expected output: `True` (all 3 reference files exist; total absolute-path hits across the 3 files is 0; brand-voice.md's brand coupling is a separate, documented finding, not a blocker).
+- [x] Test loading humanizer in clean SkillShare checkout.
+  - Action: create a clean temp dir, copy the humanizer source into it, verify SKILL.md and all 3 reference files are readable from the temp location, then clean up.
+  - **Stage 2 reviewer correction** The original Copy-Item path targeted the non-existent local-sync-target humanizer. Use the corrected temp-checkout path.
+  - **Stage 2 reviewer addition** Use `Get-Content -LiteralPath ... -TotalCount 1` to read the first line of each file to prove readability, not just file existence.
+  - Authoritative acceptance check:
+    ```powershell
+    $ErrorActionPreference = 'Stop'
+    $src = 'C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\skillshare-skills\skills\humanizer'
+    $tmp = Join-Path $env:TEMP ("humanizer-cleanup-test-" + [guid]::NewGuid().ToString('N').Substring(0,8))
+    New-Item -ItemType Directory -Path $tmp -Force | Out-Null
+    try {
+      Copy-Item -LiteralPath $src -Destination $tmp -Recurse -Force
+      $skill = Get-Content -LiteralPath (Join-Path $tmp 'SKILL.md') -TotalCount 1 -ErrorAction Stop
+      $refs = Get-ChildItem -LiteralPath (Join-Path $tmp 'references') -File -ErrorAction Stop
+      ($skill -match '^---') -and (@($refs).Count -eq 3)
+    } finally {
+      Remove-Item -LiteralPath $tmp -Recurse -Force -ErrorAction SilentlyContinue
+    }
+    ```
+    Expected output: `True` (SKILL.md first line is `---` frontmatter, exactly 3 reference files in the temp copy, temp dir cleaned up in `finally`).
+
+## Phase 4 - Testing Gaps
+- [x] Document clean global SkillShare install/sync test in operations guide (new section 9).
+  - **Stage 2 reviewer clarification** Insert as the new section 9 (per the Phase 1.1 renumbering algorithm). The existing section 9 ("Open items / future verification") has been renumbered to 11.
+  - **Stage 2 reviewer addition** Document the test steps the executor WOULD run if a clean global install were possible. Do NOT actually run the test (no clean machine available). Explicitly note "Not yet performed" in the section body.
+  - Authoritative acceptance check:
+    ```powershell
+    $ops = 'C:\development\opencode\docs\skill-share\skillshare-operations-guide.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($ops))
+    ($t -match '(?m)^##\s+9\.\s+Clean global install test') -and `
+    ($t -match '(?<!\w)Not yet performed')
+    ```
+    Expected output: `True` (section 9 heading present, `Not yet performed` phrase present as a standalone word).
+- [x] Document Claude Desktop/Cowork manual workflow in operations guide (new section 10).
+  - **Stage 3 reviewer clarification** Insert as the new section 10 (per the Phase 1.1 renumbering algorithm). The new section 10 is inserted between the new section 9 (Clean global install test) and the renumbered section 11 (Environment notes).
+  - Document the literal steps: open Claude Desktop/Cowork, create a new chat, paste `SKILL.md` content into the first message, then ask questions.
+  - Note "This workflow is documented but not tested. The skill content should work, but the user experience has not been validated."
+  - Authoritative acceptance check:
+    ```powershell
+    $ops = 'C:\development\opencode\docs\skill-share\skillshare-operations-guide.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($ops))
+    ($t -match '(?m)^##\s+10\.\s+Claude Desktop / Claude Cowork manual workflow') -and `
+    ($t -match '(?<!\w)documented but not tested')
+    ```
+    Expected output: `True` (section 10 heading present, `documented but not tested` phrase present).
+
+## Phase 5 - Pilot Preparation
+- [x] Create pilot invitation template.
+  - Create the file `C:\development\opencode\docs\skill-share\pilot-invitation-template.md` with these required sections (line-anchored):
+    - Top-level heading: `# Pilot Invitation: SkillShare for Packaged Agile Team`
+    - `## What to test` - list the 5 quickstart steps.
+    - `## What to report back` - list concrete things to report (success/failure of each step, any error message, time spent).
+    - `## Contact` - list how to reach Dave for help (email or Teams channel placeholder).
+    - `## How to roll back` - brief instructions on uninstalling SkillShare.
+  - Authoritative acceptance check:
+    ```powershell
+    $p = 'C:\development\opencode\docs\skill-share\pilot-invitation-template.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($p))
+    ($t -match '(?m)^#\s+Pilot Invitation') -and `
+    ($t -match '(?m)^##\s+What to test\s*$') -and `
+    ($t -match '(?m)^##\s+What to report back\s*$') -and `
+    ($t -match '(?m)^##\s+Contact\s*$') -and `
+    ($t -match '(?m)^##\s+How to roll back\s*$')
+    ```
+    Expected output: `True` (top-level heading and all 4 required `## ` sections present as line-anchored full-line patterns).
+- [x] Add pilot invitation template link to quickstart.
+  - Append a new section at the END of the quickstart, after the existing "Not comfortable in PowerShell? Let your AI do it" section.
+  - Section heading: `## Want to pilot this?`
+  - Section body: a one-line description plus a literal markdown link: `See the [pilot invitation template](pilot-invitation-template.md) for what to test and how to report back.`
+  - **Stage 2 reviewer addition** Use `Add-Content` to append the new section to the end of the file; do not rewrite the existing content.
+  - Authoritative acceptance check:
+    ```powershell
+    $q = 'C:\development\opencode\docs\skill-share\quickstart-for-team.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($q))
+    ($t -match '(?m)^##\s+Want to pilot this\?\s*$') -and `
+    ($t -match '(?<!\w)\[pilot invitation template\]\(pilot-invitation-template\.md\)')
+    ```
+    Expected output: `True` (section heading present as a line-anchored full-line pattern, and the literal link `[pilot invitation template](pilot-invitation-template.md)` is present).
+
+## Phase 6 - Verification & Completion
+- [x] **Stage 2 reviewer addition** Capture `$runDate` once at the start of Phase 6 and reuse it for the execution log and metadata `executed_at`/`updated_at`. Do not recompute `Get-Date` in multiple places.
+  - Action command (run first):
+    ```powershell
+    $runDate = (Get-Date).ToString('yyyy-MM-dd')
+    $runDate
+    ```
+  - Authoritative acceptance check: `$runDate` is a non-empty string in `yyyy-MM-dd` format.
+    ```powershell
+    $runDate -match '^\d{4}-\d{2}-\d{2}$'
+    ```
+    Expected output: `True`.
+- [x] Verify all non-deferred plan tasks are checked `[x]`.
+  - Authoritative acceptance check:
+    ```powershell
+    $plan = 'C:\development\opencode\.conductor\tracks\skillshare-rollout-improvements\plan.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($plan))
+    $taskRegion = ($t -split '(?m)^## Execution-Readiness Checklist\s*$')[0]
+    $totalBoxes = ([regex]::Matches($taskRegion, '(?m)^-\s+\[[ x~]\]\s+')).Count
+    $doneBoxes = ([regex]::Matches($taskRegion, '(?m)^-\s+\[x\]\s+')).Count
+    $pendingBoxes = ([regex]::Matches($taskRegion, '(?m)^-\s+\[\s\]\s+')).Count
+    $totalBoxes -eq 27 -and $pendingBoxes -eq 0
+    ```
+    Expected output: `True` (exactly 27 plan-task checkboxes before the Execution-Readiness Checklist, and zero pending `- [ ]` task checkboxes remaining).
+- [x] **Stage 2 reviewer addition** Update metadata.json with the full schema (per threshold-policy).
+  - Required fields (exact names): `track_id`, `status`, `progress`, `task_count`, `readiness_check_count`, `total_checkbox_count`, `completed_tasks`, `executed_at`, `updated_at`, `executor_model`.
+  - This track's counts: `task_count` equals the total count of `- [x]`, `- [ ]`, and `- [~]` boxes in the updated plan at run time; `readiness_check_count=0`; `total_checkbox_count=task_count`; `completed_tasks=task_count` once all non-deferred tasks are done. Recompute the counts inside this task; do not depend on variables from Phase 6.1 and do not hard-code a number that may shift if the executor adds/merges tasks.
+  - Set `status` to `complete` once all tasks are done. Set `executed_at` and `updated_at` to the captured `$runDate` (NOT a fresh `Get-Date`).
+  - Action command (use `ConvertTo-Json -Depth 5` and a single `Set-Content -Encoding utf8` write; do not use regex `-replace` on the JSON file):
+    ```powershell
+    $plan = 'C:\development\opencode\.conductor\tracks\skillshare-rollout-improvements\plan.md'
+    $pt = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($plan))
+    $taskRegion = ($pt -split '(?m)^## Execution-Readiness Checklist\s*$')[0]
+    $totalBoxes = ([regex]::Matches($taskRegion, '(?m)^-\s+\[[ x~]\]\s+')).Count
+    $doneBoxes = ([regex]::Matches($taskRegion, '(?m)^-\s+\[x\]\s+')).Count
+    $m = [ordered]@{
+      track_id = 'skillshare-rollout-improvements'
+      status = 'complete'
+      progress = "$($doneBoxes)/$($totalBoxes)"
+      task_count = $totalBoxes
+      readiness_check_count = 0
+      total_checkbox_count = $totalBoxes
+      completed_tasks = $doneBoxes
+      executed_at = $runDate
+      updated_at = $runDate
+      executor_model = 'zai-coding-plan/glm-5.2'
+    }
+    $json = $m | ConvertTo-Json -Depth 5
+    [System.IO.File]::WriteAllText('C:\development\opencode\.conductor\tracks\skillshare-rollout-improvements\metadata.json', $json, (New-Object System.Text.UTF8Encoding($false)))
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $p = 'C:\development\opencode\.conductor\tracks\skillshare-rollout-improvements\metadata.json'
+    $j = Get-Content -Raw -LiteralPath $p | ConvertFrom-Json
+    $props = $j.PSObject.Properties.Name
+    ($props -contains 'track_id') -and ($props -contains 'status') -and ($props -contains 'progress') -and `
+    ($props -contains 'task_count') -and ($props -contains 'readiness_check_count') -and `
+    ($props -contains 'total_checkbox_count') -and ($props -contains 'completed_tasks') -and `
+    ($props -contains 'executed_at') -and ($props -contains 'executor_model') -and `
+    ($j.status -eq 'complete')
+    ```
+    Expected output: `True` (all 10 required fields present, status is `complete`).
+- [x] Update `C:\development\opencode\.conductor\tracks.md` to reflect completion.
+  - Action: find the existing row for `skillshare-rollout-improvements` and update its `Status` column to `complete` and its `Completed` column to `$runDate`. If the row does not exist, insert it. Do NOT create a duplicate row.
+  - Use `[System.IO.File]::ReadAllText()` + `[string]::Replace()` literal substitution on the existing row text, NOT regex `-replace`.
+  - Authoritative acceptance check:
+    ```powershell
+    $p = 'C:\development\opencode\.conductor\tracks.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($p))
+    ($t -match '(?m)^\|\s*skillshare-rollout-improvements\s*\|[^|]*\|\s*complete\s*\|')
+    ```
+    Expected output: `True` (row exists, status column is `complete`).
+
+- [x] Update `C:\development\opencode\.conductor\tracks-ledger.md` to reflect completion.
+  - Action: find the existing entry for `skillshare-rollout-improvements` and update its `Phase:` annotation to `complete $runDate`. If the entry does not exist, insert it under the "Completed Tracks" section. Do NOT create a duplicate entry.
+  - Use `[string]::Replace()` literal substitution on the existing entry text, NOT regex `-replace`.
+  - Authoritative acceptance check:
+    ```powershell
+    $p = 'C:\development\opencode\.conductor\tracks-ledger.md'
+    $t = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($p))
+    ($t -match '(?<!\w)skillshare-rollout-improvements') -and ($t -match '(?m)Phase:\s*complete')
+    ```
+    Expected output: `True` (entry mentions the track id and has a `Phase: complete` annotation somewhere; use null-safe `Test-Path` first if either file is missing).
+- [x] Create execution log.
+  - **Stage 2 reviewer correction** The original plan said "Create `execution-log-YYYY-MM-DD.md` using the actual date." A less-capable AI agent could read `YYYY-MM-DD` literally and create a file named `execution-log-YYYY-MM-DD.md`. Use the captured `$runDate` from Phase 6.0.
+  - Action: write `C:\development\opencode\.conductor\tracks\skillshare-rollout-improvements\execution-log-$runDate.md` (the `$runDate` variable is expanded by PowerShell at run time).
+  - Required body content (literal substrings that must appear):
+    - `Execution Log - skillshare-rollout-improvements`
+    - `runDate: $runDate` (PowerShell-expanded)
+    - `executor_model: zai-coding-plan/glm-5.2`
+    - `All non-deferred plan tasks completed.`
+    - `Phase 3 humanizer audit precondition gate result: <PASS|DEFERRED>` (use the actual result from Phase 0.4).
+  - Authoritative acceptance check:
+    ```powershell
+    $p = Get-ChildItem -LiteralPath 'C:\development\opencode\.conductor\tracks\skillshare-rollout-improvements' -Filter 'execution-log-*.md' -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+    $t = if ($p) { [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($p.FullName)) } else { '' }
+    $p -and ($t -match 'Execution Log - skillshare-rollout-improvements') -and ($t -match 'executor_model: zai-coding-plan/glm-5.2') -and ($t -match 'All non-deferred plan tasks completed') -and ($t -match 'Phase 3 humanizer audit precondition gate result:')
+    ```
+    Expected output: `True` (most-recent execution log exists, all four required substrings present).
+- [x] **Stage 2 reviewer addition** Re-validate all modified/created artifacts with a single deterministic composite check.
+  - Authoritative acceptance check:
+    ```powershell
+    $ok = $true
+    $ops = 'C:\development\opencode\docs\skill-share\skillshare-operations-guide.md'
+    $q = 'C:\development\opencode\docs\skill-share\quickstart-for-team.md'
+    $p = 'C:\development\opencode\docs\skill-share\pilot-invitation-template.md'
+    $ot = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($ops))
+    $qt = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($q))
+    $pt = [System.Text.Encoding]::UTF8.GetString([System.IO.File]::ReadAllBytes($p))
+    # Operations guide: rollout matrix present, 5 rows, final section renumbering has no 8/9 collision
+    $matrixOk = ($ot -match '(?m)^##\s+8\.\s+Tool-specific rollout matrix') -and ($ot -match '(?m)^##\s+11\.\s+Environment notes') -and ($ot -match '(?m)^##\s+12\.\s+Open items / future verification') -and (([regex]::Matches($ot, '(?m)^\|\s*(OpenCode|Claude Code|Claude Desktop|Claude Cowork|Codex)\s*\|')).Count -eq 5)
+    # Operations guide: tested/not tested labels
+    $labelsOk = ([regex]::Matches($ot, '(?<!\w)tested:')).Count -ge 4 -and ([regex]::Matches($ot, '(?<!\w)not tested')).Count -ge 2
+    # Operations guide: expected output and recovery blocks
+    $expectedOk = ([regex]::Matches($ot, '(?m)^Expected output:[ \t]+\S.{10,}\S\s*$')).Count -ge 3
+    $recoveryOk = ([regex]::Matches($ot, '(?m)^If this fails:[ \t]+\S.{15,}\S\s*$')).Count -ge 3
+    # Quickstart: at least 5 success indicators (byte-level scan) and 6 bullets
+    $qb = [System.IO.File]::ReadAllBytes($q); $checkCount = 0
+    for ($i = 0; $i -le $qb.Length - 3; $i++) { if ($qb[$i] -eq 0xE2 -and $qb[$i+1] -eq 0x9C -and $qb[$i+2] -eq 0x93) { $checkCount++ } }
+    $checkOk = $checkCount -ge 5
+    $bulletOk = ([regex]::Matches($qt, '(?m)^\s*-\s+\*\*')).Count -ge 6
+    # Pilot template: 4 required sections
+    $pilotOk = ($pt -match '(?m)^##\s+What to test\s*$') -and ($pt -match '(?m)^##\s+What to report back\s*$') -and ($pt -match '(?m)^##\s+Contact\s*$') -and ($pt -match '(?m)^##\s+How to roll back\s*$')
+    $matrixOk -and $labelsOk -and $expectedOk -and $recoveryOk -and $checkOk -and $bulletOk -and $pilotOk
+    ```
+    Expected output: `True` (all 7 sub-checks pass; any failure indicates which artifact/section needs rework).
+
+## Execution-Readiness Checklist
+
+- [x] Executor can run PowerShell commands from `C:\development\opencode` with explicit timeouts.
+- [x] Native file tools are `Bun is not defined`; executor is shell-first via the `bash` tool.
+- [x] The executor understands that the humanizer source lives at the temp-checkout path used by `test-skillshare-skills`, not at the local-sync-target path.
+- [x] The executor understands that the operations guide already has sections 8 and 9, and the Phase 1.1 renumbering algorithm must be applied.
+- [x] The executor will capture `$runDate` ONCE at the start of Phase 6 and reuse it for the execution log, metadata `executed_at`/`updated_at`, and tracks.md/tracks-ledger.md completion dates (per powershell-edit-hazards session-spanning date handling).
+- [x] The executor will use `[string]::Replace()` (instance method on a captured string) for all literal text substitutions, NOT regex `-replace`.
+- [x] The executor will use `Select-String -SimpleMatch` for literal-content searches and `[regex]::Escape()` for any necessary pattern literalization.
+
+## Top 3 Risks and Mitigations
+
+1. **Humanizer source path is wrong or unavailable.** Mitigation: Phase 0.4 precondition gate; if the humanizer is not at the expected temp-checkout path, mark all Phase 3 tasks DEFERRED in the execution log, document the actual state, and continue with Phase 4-6. Do NOT silently skip or invent a substitute path.
+2. **Operations guide section renumbering collides with existing sections 8 and 9.** Mitigation: follow the Phase 1.1 renumbering algorithm exactly (snapshot before edit, literal `[string]::Replace()` for renumbering, restore from backup on unexpected diff).
+3. **PowerShell regex `-replace` accidentally consumes literal characters** in JSON or markdown edits. Mitigation: use `[string]::Replace()` instance method for all literal text substitutions; reserve `-replace` for true regex cases. Snapshot files before bulk edits.
+
+## First Task to Execute
+
+Start with task **0.1 Read current operations guide**. Then 0.2, 0.3, 0.4 (precondition gate), and proceed to Phase 1.
+
+Checkbox states:
+- [ ] Pending (not started)
+- [~] In Progress (currently working on)
+- [x] Completed (finished)
+
+Important: plan.md is the authoritative source of truth for task progress.
