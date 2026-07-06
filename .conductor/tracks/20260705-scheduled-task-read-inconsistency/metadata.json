@@ -1,0 +1,18 @@
+{
+  "track_id": "20260705-scheduled-task-read-inconsistency",
+  "title": "Scheduled Task Read Inconsistency (email-triage hourly task)",
+  "status": "executed-complete",
+  "created_at": "2026-07-05",
+  "task_count": 18,
+  "readiness_check_count": 6,
+  "total_checkbox_count": 18,
+  "completed_tasks": 16,
+  "executor_model": "zai-coding-plan/glm-5.2",
+  "validator_model": "opencode-go/minimax-m3",
+  "executed_at": "2026-07-05T16:12:17.7099302Z",
+  "phase": "executed-complete",
+  "resolution": "Elevated diagnostic REFUTED Hypothesis C as a current condition. TaskCache GUID blob {2672E99F-EAE1-44C0-BE42-00008616B728} EXISTS and is consistent (Path matches task URI; Hash 32B, Schema 65539, Actions populated). All three previously-failing APIs (Get-ScheduledTaskInfo, Export-ScheduledTask, schtasks /Query /V) now SUCCEED. Root-cause branch: no current inconsistency (self-resolved 2026-07-04->2026-07-05, likely Task Scheduler service cache self-heal). Remediation: Option 3 document-and-monitor - NO registration touch, so NO Tier-1 approval triggered. Tasks 3.2/3.3 correctly skipped as N/A under Option 3. Task fires every 15 min (Exit code 0, Status: success). Awaiting Stage 5 validation by minimax-m3.",
+  "spec": "C:\\development\\opencode\\.conductor\\tracks\\20260705-scheduled-task-read-inconsistency\\spec.md",
+  "plan": "C:\\development\\opencode\\.conductor\\tracks\\20260705-scheduled-task-read-inconsistency\\plan.md",
+  "execution_log": "C:\\development\\opencode\\.conductor\\tracks\\20260705-scheduled-task-read-inconsistency\\execution-log-2026-07-05.md"
+}

@@ -1,38 +1,10 @@
-<<<<<<< Updated upstream
 # Conductor Tracks Ledger
 
 This ledger tracks all active, completed, and archived tracks in this repository.
 
 ## Active Tracks
-
-- [20260502-skill-junction-unification](./tracks/20260502-skill-junction-unification/spec.md): Repair 49 broken Codex junctions and establish lazy vault as single source of truth for all 54 skills via parent-level directory junctions + plugin basePaths expansion. (Phase: planning)
-- [army-kb-extraction](./tracks/army-kb-extraction/spec.md): Extract Army knowledge (challenges, key people, agile practices/frameworks) from NotebookLM for the Packaged Agile KB. (Phase: planning)
-- [20260428-kb-ingest-troubleshoot](./tracks/20260428-kb-ingest-troubleshoot/spec.md): Diagnose and fix the hourly KB ingest scheduled job (`Session not found` error). (Phase: diagnosis)
-- [20260429-openai-silent-failure](./tracks/20260429-openai-silent-failure/spec.md): Patched oc-chatgpt-multi-auth cached runtime for OpenAI silent failures: parseable JSON 502 on malformed/no-terminal SSE, 120s stream stall default, gpt-5.4-mini preservation, and DEBUG_CHATGPT_PROXY diagnostics. (Phase: validation pending live OpenCode model tests)
-
-
-
-
-## Completed Tracks
-
-- [20260502-lazy-skill-discovery-regression](./tracks/20260502-lazy-skill-discovery-regression/spec.md): Fixed lazy skill discovery regression caused by plugin config in wrong directory. Root cause: config at `~/.config/opencode/` but plugin searches `~/.config/opencode-skillful/`. Also moved leaked microsoft-graph skill to vault, fixed 5 stale doc refs, added frontmatter. All smoke tests pass: 48 skills discovered via skill_find, skill_use works with underscores. (Completed: 2026-05-02)
-- [20260502-disable-md-table-formatter-plugin](./tracks/20260502-disable-md-table-formatter-plugin/spec.md): Disabled `@franlol/opencode-md-table-formatter@0.0.3` from global OpenCode plugin array. Timestamped backup created, config parsing validated, reference docs updated to 6 plugins. (Completed: 2026-05-02)
-- [20260501-skill-token-optimization](./tracks/20260501-skill-token-optimization/spec.md): Completed skill token optimization migration using @zenobius/opencode-skillful; native skill prompt reduced from 53 to 5 core skills; ~93% token reduction achieved. Lazy skills remain available through skill_find/skill_use. (Completed: 2026-05-01)
-- [20260501-codex-multi-auth-upgrade](./tracks/20260501-codex-multi-auth-upgrade/spec.md): Upgraded runtime from oc-chatgpt-multi-auth@5.4.4 to oc-codex-multi-auth@6.1.8 by fixing effective global config source (`opencode.jsonc`), validating plugin cache, Codex account health/tools, required models, env timeout, rollback cache preservation, and supersession note linkage. (Completed: 2026-05-01)
-- [openai-parameter-fix](./tracks/openai-parameter-fix/spec.md): Fixed OpenAI SDK parameter mismatch by pinning `@ai-sdk/openai` provider and patched `oc-chatgpt-multi-auth` missing arguments on deferred tools. All 5 validation gates passed. (Completed: 2026-04-29)
-- [20260429-email-calendar-mcp-audit](./tracks/20260429-email-calendar-mcp-audit/spec.md): Fix Outlook email skills tool-name mismatch, install Google Gmail/Calendar MCP server, create Outlook calendar skills, and document test plan. All 6 phases complete. (Completed: 2026-04-29)
-- [20260430-google-skills](./tracks/20260430-google-skills/spec.md): Created 6 Google-side skills (gmail-inbox-triage, gmail-draft-reply, google-calendar-today, google-calendar-schedule, unified-calendar-today, google-contacts) with reference.md files. All phases complete. (Completed: 2026-04-29)
-- [20260501-scheduler-headless-hardening](./tracks/20260501-scheduler-headless-hardening/spec.md): Migrated 4 OpenCode scheduled tasks to wscript/VBS headless launcher pattern, created runbook, updated scheduler skill v2.1.0. All validation passed. (Completed: 2026-05-01)
-
-## Archived Tracks
-
-*(None yet)*
-=======
-# Conductor Tracks Ledger
-
-This ledger tracks all active, completed, and archived tracks in this repository.
-
-## Active Tracks
+- [20260705-scheduled-task-read-inconsistency](./tracks/20260705-scheduled-task-read-inconsistency/spec.md): Diagnose and resolve the Task Scheduler metadata/read inconsistency for `opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort` (Get-ScheduledTaskInfo/Export-ScheduledTask/schtasks /Query all failing "The system cannot find the file specified" while the task still fired). Elevated diagnostic REFUTED Hypothesis C: TaskCache GUID blob {2672E99F-EAE1-44C0-BE42-00008616B728} EXISTS and is consistent (Path matches; Hash 32B, Schema 65539, Actions populated); all three APIs now SUCCEED; task fires every 15 min (Exit code 0). Root cause: no current inconsistency (self-resolved 2026-07-04->2026-07-05). Remediation Option 3 document-and-monitor; NO registration touch; NO Tier-1 approval triggered. Tasks 3.2/3.3 skipped as N/A. (Phase: executed-complete 2026-07-05, 16/18 tasks)
+- [20260704-humanizer-peer-review-fixes](./tracks/20260704-humanizer-peer-review-fixes/spec.md): Fix 8 peer-review issues on the humanizer Packaged Agile voice skill (contradiction resolution, Kobak 26-word sync, checklist prioritization, measurement expansion to 8 checks, after.md short-sentence-stack fix, report updates) and commit to the skillshare-skills repo. 23/23 tasks done; all 8 issues fixed and the expanded suite reports AllPass: True / ShortSentenceStackCount: 0. RESOLVED Task 5.3 2026-07-04: orchestrator-authorized push check found local main == origin/main (eea3c9f); humanizer fix commit 3221851 already an ancestor of origin/main (pushed by a parallel session), touches only skills/humanizer/* (4 files, 215/30); no merge/force-push/amend performed. (Phase: executed-complete 2026-07-04)
 - [skillshare-rollout-improvements](./tracks/skillshare-rollout-improvements/spec.md): Address gaps identified in peer review: add tool-specific rollout matrix, 'what good looks like' outputs, recovery paths, tested/not-tested labels, humanizer portability audit, clean global sync test documentation, Claude Desktop/Cowork workflow, and pilot invitation template. (Phase: complete 2026-07-04)
 
 
@@ -79,13 +51,16 @@ This ledger tracks all active, completed, and archived tracks in this repository
 - [20260614-image-ocr-skill](./tracks/20260614-image-ocr-skill/spec.md): Create a new OpenCode skill (image-ocr) that extracts plain text from images and outputs clean Markdown. Two-tier architecture: Gemini 2.5 Flash primary (best quality, free tier) with Tesseract offline fallback (zero setup). Mirrors visual-ocr Gemini API patterns and doc-to-markdown batch/output patterns. (Phase: planning-complete-ready-for-build)
 
 
+- [20260704-session-continuation-codex-skill-architecture-fix](./tracks/20260704-session-continuation-codex-skill-architecture-fix/spec.md): Repair the pptx-to-pdf-converter self-referential vault junction from backup, safely remove the no-backup image-to-html-reconstruction self-ref junction, and harden the two flawed migration scripts + skill-health-validator.md so they can never recreate per-skill Codex child junctions under the parent-junction Codex root. Added Assert-CodexRootIsNotParentJunction guard to both scripts; rewrote validator Check 3; wrote docs/runbooks/codex-skill-architecture.md. All 9 tasks executed; 9/9 acceptance criteria PASS. Followup: image-to-html-reconstruction removed without restore (no backup existed). (Phase: complete-with-followup 2026-07-04)
+
 ## Completed Tracks
 - [20260508-restore-opencode-scheduler-plugin](./tracks/20260508-restore-opencode-scheduler-plugin/spec.md): Restore the opencode-scheduler npm plugin to the active global config (appended once to the top-level plugin array) and validate plugin install/load, scheduler scope JSON integrity, and Windows Task Scheduler entries. Plugin restored (count=1, cache present v1.3.0), all 23 opencode-job tasks intact (hourly email auto-sort Ready). Manual dry-run of hourly email auto-sort produced an actionable auth-failure (exit 10): the microsoft-graph lazy-skill junction is self-referential (points to itself), making connect-graph-no-wam.ps1 unreachable -- same systemic root cause documented by track 20260702-codex-skill-symlinks. Graph cert is valid (NotAfter 2029-03-09, private key present); only the junction is broken. Surfaced as HIGH out-of-scope follow-up. (Phase: handover 2026-07-04, 27/27 tasks)
 
 - [skillshare-adoption](./tracks/skillshare-adoption/spec.md): Document the SkillShare adoption decision, prove local Windows sync of a sample skill into a repo-local target, and publish a copy-pasteable team quickstart. Optional packaged-agile GitHub repo deferred. All 15 tasks complete; docs and local prototype deterministic checks pass. Validated by minimax-m3; verdict Ready to close. (Phase: validated 2026-07-03)
 - [20260703-skill-creation-functional-testing](./tracks/20260703-skill-creation-functional-testing/spec.md): Build a first-class skill-test-harness, mandatory functional smoke-test convention, and Conductor/skill-writer integration. (Phase: validated 2026-07-03, 17/17 tasks; verdict: Close with minor follow-ups)
 
-- [20260703-write-permission-fix](./tracks/20260703-write-permission-fix/spec.md): Eliminate mid-run permission prompts by adding write: allow to the global opencode.jsonc permission block and all 9 conductor subagent frontmatters, while keeping validators' dit: deny. Add a bounded, append-only JSONL anomaly log at .conductor/logs/pipeline-anomalies.jsonl (5000-line FIFO archive), wire it into the conductor-pipeline stage prompts and SKILL.md, document the schema in eferences/anomaly-logging.md, and codify a two-layer permission baseline in gent-development-standards.md. All 28 executable tasks and 9 validation tasks complete; 3 anomalies logged for this track. (Phase: validated 2026-07-03)
+- [20260703-write-permission-fix](./tracks/20260703-write-permission-fix/spec.md): Eliminate mid-run permission prompts by adding write: allow to the global opencode.jsonc permission block and all 9 conductor subagent frontmatters, while keeping validators' dit: deny. Add a bounded, append-only JSONL anomaly log at .conductor/logs/pipeline-anomalies.jsonl (5000-line FIFO archive), wire it into the conductor-pipeline stage prompts and SKILL.md, document the schema in 
+eferences/anomaly-logging.md, and codify a two-layer permission baseline in gent-development-standards.md. All 28 executable tasks and 9 validation tasks complete; 3 anomalies logged for this track. (Phase: validated 2026-07-03)
 
 - [20260702-slack-skill-validation](./tracks/20260702-slack-skill-validation/spec.md): Validate slack-send-message skill quality and add Slack documentation cross-references. (Completed: 2026-07-02)
 - [20260701-dcp-runtime-hooks-fix](./tracks/20260701-dcp-runtime-hooks-fix/spec.md): DCP runtime hook failure follow-up. Functionally complete: post-restart runtime registration restored and validated. Genuine compress permission at 2026-07-01T18:14:28.169Z, new prune-state ses_0e1ecc970ffe2fYOlczHfTfws4 at 18:14:29Z, and end-to-end eligible-session compression proven (one_time_saved=33080, compound_saved=66160). Minor follow-ups only: optional interactive /dcp help check and V.3 rolling-window metric redesign. (Completed: 2026-07-01)
@@ -112,6 +87,8 @@ This ledger tracks all active, completed, and archived tracks in this repository
 - [20260502-skill-junction-unification](./tracks/20260502-skill-junction-unification/spec.md): Established lazy vault as single source of truth for all 63 skills (56 OpenCode + 7 built-in Codex). Bridged 6 always-on skills into vault via junctions, deduplicated pptx-to-pdf-converter, preserved 7 built-in Codex skills, replaced individual junctions with single parent-level junctions in Codex and .agents. Plugin configured with single basePath. (Completed: 2026-05-05)
 - [20260614-image-ocr-glm-primary](./tracks/20260614-image-ocr-glm-primary/spec.md): Inverted image-ocr engine priority: GLM-OCR (Z.AI dedicated OCR model) is now Tier 1 primary, Gemini 2.5 Flash demoted to Tier 2 secondary, Tesseract stays Tier 3 offline fallback. Raw httpx integration with Pillow format conversion + downscale. Live-validated 2026-06-15: 4-line test image OCR'd perfectly via both --engine glmocr and --engine auto (frontmatter confirms engine: glm-ocr). (Completed: 2026-06-15)
 
+- [20260704-microsoft-graph-junction-repair](./tracks/20260704-microsoft-graph-junction-repair/spec.md): Repaired microsoft-graph + 62 self-referential lazy-vault junctions; Graph auth verified; scheduled-task issue documented (not recreated); bookkeeping synced. (Completed: 2026-07-04)
+
 ## Archived Tracks
 
 *(None yet)*
@@ -128,5 +105,4 @@ This ledger tracks all active, completed, and archived tracks in this repository
 
 - [test-skillshare-skills](./tracks/test-skillshare-skills/spec.md): Tested 4 of 5 SkillShare skills (pa-ui-design, first-principles-mastery, markdown-pdf-publisher, humanizer) via full Conductor pipeline. Each skill produced a reviewable artifact + programmatic quality gauge. All gauges passed: WCAG contrast 6/6, first-principles structural completeness 13/13, PDF 5 pages via PyMuPDF, humanizer burstiness 7.054->9.939 with markers 6->0 and em-dashes 3->0. Retrospective excluded (already tested). (Validated: 2026-07-04)
 
-| 20260704-microsoft-graph-junction-repair | planning | 2026-07-04 | Plan created for Microsoft Graph junction repair and follow-ups |
->>>>>>> Stashed changes
+

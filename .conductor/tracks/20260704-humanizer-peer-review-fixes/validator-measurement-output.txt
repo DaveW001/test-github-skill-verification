@@ -1,0 +1,9 @@
+Wrote: C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\skillshare-tests\humanizer\metrics-report.md
+AllPass: True
+ShortSentenceStackCount: 0
+HookFormulaOpenerCount: 0
+KobakExcessWordCount: 0
+ResolutionCloserCount: 0
+RhetoricalContrastCount: 0
+Before: burstiness=7.054 markers=6 em=3 sentences=5 mean=30.8
+After:  burstiness=6.411 markers=0 em=1 sentences=21 mean=15.19

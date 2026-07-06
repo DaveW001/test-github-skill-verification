@@ -1,0 +1,11 @@
+{
+  "Skill": "image-to-html-reconstruction",
+  "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-to-html-reconstruction",
+  "IsReparse": true,
+  "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-to-html-reconstruction",
+  "IsSelfReferential": true,
+  "CapturedAt": "2026-07-04T20:58:31.6858360-04:00",
+  "BackupSearched": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups (full subtree) + native root",
+  "BackupFound": false,
+  "Note": "No SKILL.md exists in any backup or native; per Stage 2 review backup audit. Safe-remove only."
+}

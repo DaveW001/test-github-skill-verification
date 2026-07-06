@@ -46,7 +46,7 @@ The following 35 skills are listed in the global skills index but have no matchi
 | 30 | INDEX_STALE | `thinking-partner` | No canonical directory |
 | 31 | INDEX_STALE | `agent-writer` | No canonical directory |
 | 32 | INDEX_STALE | `command-writer` | No canonical directory |
-| 33 | INDEX_STALE | `skill-writer` | No canonical directory |
+| 33 | INDEX_STALE | `skill-creator` | No canonical directory |
 | 34 | INDEX_STALE | `snippet-writer` | No canonical directory |
 | 35 | INDEX_STALE | `gemini-proxy` | No canonical directory |
 
@@ -58,3 +58,4 @@ The following 35 skills are listed in the global skills index but have no matchi
 ## Summary
 
 5 canonical skills checked. 1 auto-fix applied (junction for pptx-to-pdf-converter in agents). 35 flags for manual review — all INDEX_STALE entries exist as lazy-loaded skills in codex-skills/ and may reflect an outdated index scope rather than genuine staleness.
+

@@ -1,0 +1,37 @@
+{
+  "trackId": "20260704-session-continuation-codex-skill-architecture-fix",
+  "title": "Codex Skill Architecture Repair and Automation Hardening",
+  "status": "complete-with-followup",
+  "createdAt": "2026-07-04T22:11:55Z",
+  "sourceSession": {
+    "title": "2026-07-03 Peer Review Skill migration handoff",
+    "id": "ses_0d5dc5f6dffe9JJBeutG1SekuY",
+    "repo": "C:\\development\\opencode",
+    "watermark": "2026-07-04T18:02:56.366"
+  },
+  "artifactPaths": {
+    "track": "C:\\development\\opencode\\.conductor\\tracks\\20260704-session-continuation-codex-skill-architecture-fix",
+    "spec": "C:\\development\\opencode\\.conductor\\tracks\\20260704-session-continuation-codex-skill-architecture-fix\\spec.md",
+    "plan": "C:\\development\\opencode\\.conductor\\tracks\\20260704-session-continuation-codex-skill-architecture-fix\\plan.md"
+  },
+  "knownBrokenItem": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pptx-to-pdf-converter",
+  "backupSource": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-090412-pptx-repair\\native",
+  "phase": "executed",
+  "executed_at": "2026-07-05T01:11:37.3459357Z",
+  "executor_model": "zai-coding-plan/glm-5.2",
+  "completed_tasks": 9,
+  "total_tasks": 9,
+  "validationReport": "C:\\development\\opencode\\.conductor\\tracks\\20260704-session-continuation-codex-skill-architecture-fix\\validation-report-2026-07-04.md",
+  "followups": [
+    {
+      "skill": "image-to-html-reconstruction",
+      "restored": false,
+      "reason": "Self-referential vault junction removed; no backup SKILL.md existed anywhere; documented in backups/skills-not-restored.md"
+    },
+    {
+      "skill": "skill-health-validator Check 4",
+      "restored": true,
+      "reason": "Latent: Check 4 uses Remove-Item on Codex/Agents entries which may be reparse points under parent-junction architecture. Harden to cmd /c rmdir when target is a junction. Out of Task 7 scope."
+    }
+  ]
+}

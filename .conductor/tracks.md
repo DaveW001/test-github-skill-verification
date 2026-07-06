@@ -42,4 +42,9 @@
 | test-skillshare-skills | SkillShare Skills Test Pipeline | validated | 2026-07-04 | C:\development\opencode\.conductor\tracks\test-skillshare-skills |
 | 20260508-restore-opencode-scheduler-plugin | Restore OpenCode Scheduler Plugin and Validate Scheduled Jobs | completed | 2026-07-04 | C:\development\opencode\.conductor\tracks\20260508-restore-opencode-scheduler-plugin |
 
-| 20260704-microsoft-graph-junction-repair | Microsoft Graph lazy-vault junction repair | planning | 2026-07-04 | C:\development\opencode\.conductor\tracks\20260704-microsoft-graph-junction-repair\ |
+| 20260704-microsoft-graph-junction-repair | Microsoft Graph lazy-vault junction repair | completed | 2026-07-04 | C:\development\opencode\.conductor\tracks\20260704-microsoft-graph-junction-repair\ |
+| 20260704-humanizer-peer-review-fixes | Humanizer Peer Review Fixes | executed-complete | 2026-07-04 | C:\development\opencode\.conductor\tracks\20260704-humanizer-peer-review-fixes |
+| 20260704-session-continuation-codex-skill-architecture-fix | Codex Skill Architecture Repair and Automation Hardening | complete-with-followup | 2026-07-04 | C:\development\opencode\.conductor\tracks\20260704-session-continuation-codex-skill-architecture-fix |
+| 20260705-conductor-pipeline-tdd-doc-stages | Conductor Pipeline TDD + Documentation Stages | p0-p2-fixes-applied-needs-restart | 2026-07-06 (19/22) | C:\development\opencode\.conductor\tracks\20260705-conductor-pipeline-tdd-doc-stages |
+
+| 20260705-scheduled-task-read-inconsistency | Scheduled Task Read Inconsistency (email-triage hourly task) | executed-complete | 16/18 | C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency |

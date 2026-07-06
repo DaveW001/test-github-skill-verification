@@ -1,0 +1,21 @@
+{
+  "codexRoot": "C:\\Users\\DaveWitkin\\.codex\\skills",
+  "codexIsReparse": true,
+  "codexTarget": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault",
+  "codexTargetsVault": true,
+  "vaultRoot": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault",
+  "vaultIsReparse": false,
+  "nativeRoot": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill",
+  "nativeIsReparse": false,
+  "nlmSkill": {
+    "nativeExists": false,
+    "vaultExists": true,
+    "vaultHasSkill": true,
+    "codexSeesSkill": true
+  },
+  "pptxBackupFile": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-090412-pptx-repair\\native\\SKILL.md",
+  "pptxBackupExists": true,
+  "pptxBackupSha": "1B75F6E8E929D4B20FD5ABD04BF7A016D3E112F3875F32F9A577B5684D37985F",
+  "backupRootDir": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups",
+  "trackDir": "C:\\development\\opencode\\.conductor\\tracks\\20260704-session-continuation-codex-skill-architecture-fix"
+}

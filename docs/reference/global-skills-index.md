@@ -86,7 +86,7 @@
 |-------|-------------|
 | `agent-writer` | Create and update OpenCode agents |
 | `command-writer` | Create and improve OpenCode slash commands |
-| `skill-writer` | Create and update OpenCode skills with valid frontmatter |
+| `skill-creator` | Create and update OpenCode skills with valid frontmatter |
 | `snippet-writer` | Create and manage OpenCode snippets |
 | `gemini-proxy` | Manage local Gemini API Key Rotator Proxy |
 | `notebooklm-meta-prompt` | NotebookLM Meta-Prompt v5.1 insight extraction |
@@ -118,3 +118,4 @@ Quick path:
 ---
 
 *Last updated: 2026-04-25*
+

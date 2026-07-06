@@ -1,0 +1,914 @@
+[
+  {
+    "Name": "_archived_skills",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\_archived_skills",
+    "LinkType": null,
+    "CurrentTarget": [
+      null
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\_archived_skills",
+    "IsSelfReferential": false,
+    "ExpectedSourceExists": true,
+    "Action": "skip-not-self-referential-junction"
+  },
+  {
+    "Name": ".system",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\.system",
+    "LinkType": null,
+    "CurrentTarget": [
+      null
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\.system",
+    "IsSelfReferential": false,
+    "ExpectedSourceExists": true,
+    "Action": "skip-not-self-referential-junction"
+  },
+  {
+    "Name": "agent-writer",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\agent-writer",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\agent-writer"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\agent-writer",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "calendar-schedule",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\calendar-schedule",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\calendar-schedule"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\calendar-schedule",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "calendar-today",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\calendar-today",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\calendar-today"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\calendar-today",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "clickup",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\clickup",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "clickup-cli",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup-cli",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup-cli"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\clickup-cli",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "codex-primary-runtime",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\codex-primary-runtime",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\codex-primary-runtime"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\codex-primary-runtime",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "command-writer",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\command-writer",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\command-writer"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\command-writer",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "conductor",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\conductor",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\conductor",
+    "IsSelfReferential": false,
+    "ExpectedSourceExists": false,
+    "Action": "skip-not-self-referential-junction"
+  },
+  {
+    "Name": "conductor-pipeline",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\conductor-pipeline",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\conductor-pipeline",
+    "IsSelfReferential": false,
+    "ExpectedSourceExists": false,
+    "Action": "skip-not-self-referential-junction"
+  },
+  {
+    "Name": "content-trend-researcher",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\content-trend-researcher",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\content-trend-researcher"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\content-trend-researcher",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "design-system-extractor",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\design-system-extractor",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\design-system-extractor"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\design-system-extractor",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "doc",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\doc",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "doc-to-markdown",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc-to-markdown",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc-to-markdown"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\doc-to-markdown",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "email-attachment-detacher",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-attachment-detacher",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-attachment-detacher"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\email-attachment-detacher",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "email-auto-sorter",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-auto-sorter",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-auto-sorter"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\email-auto-sorter",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "email-draft-reply",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-draft-reply",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-draft-reply"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\email-draft-reply",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "email-routing-config",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-routing-config",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-routing-config"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\email-routing-config",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "email-to-clickup",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-to-clickup",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-to-clickup"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\email-to-clickup",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "enrich-meeting-notes",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\enrich-meeting-notes",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\enrich-meeting-notes"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\enrich-meeting-notes",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "find-info",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\find-info",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\find-info"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\find-info",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "firebase-deployment-specialist",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\firebase-deployment-specialist",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\firebase-deployment-specialist"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\firebase-deployment-specialist",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "first-principles-mastery",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\first-principles-mastery",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\first-principles-mastery"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\first-principles-mastery",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "frontend-design",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\frontend-design",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\frontend-design"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\frontend-design",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "gemini-proxy",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gemini-proxy",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gemini-proxy"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\gemini-proxy",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "git-push",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\git-push",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\git-push"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\git-push",
+    "IsSelfReferential": false,
+    "ExpectedSourceExists": false,
+    "Action": "skip-not-self-referential-junction"
+  },
+  {
+    "Name": "github-create-repo",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\github-create-repo",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\github-create-repo"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\github-create-repo",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "github-management",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\github-management",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\github-management"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\github-management",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "gmail-draft-reply",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-draft-reply",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-draft-reply"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\gmail-draft-reply",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "gmail-inbox-triage",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-inbox-triage",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-inbox-triage"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\gmail-inbox-triage",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "gmail-workspace",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-workspace",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-workspace"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\gmail-workspace",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "google-calendar-schedule",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-calendar-schedule",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-calendar-schedule"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\google-calendar-schedule",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "google-calendar-today",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-calendar-today",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-calendar-today"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\google-calendar-today",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "google-contacts",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-contacts",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-contacts"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\google-contacts",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "google-drive",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-drive",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-drive"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\google-drive",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "image-generator",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-generator",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-generator"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\image-generator",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "image-manifest-builder",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-manifest-builder",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-manifest-builder"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\image-manifest-builder",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "image-ocr",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-ocr",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-ocr"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\image-ocr",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "image-to-html-reconstruction",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-to-html-reconstruction",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-to-html-reconstruction"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\image-to-html-reconstruction",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": false,
+    "Action": "skip-missing-source"
+  },
+  {
+    "Name": "imagegen",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\imagegen",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\imagegen"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\imagegen",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "knowledge-graph-builder",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-builder",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-builder"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\knowledge-graph-builder",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "knowledge-graph-maintainer",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-maintainer",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-maintainer"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\knowledge-graph-maintainer",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "knowledge-graph-query",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-query",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-query"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\knowledge-graph-query",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "markdown-pdf-publisher",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\markdown-pdf-publisher",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\markdown-pdf-publisher"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\markdown-pdf-publisher",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "markdown-render",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\markdown-render",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\markdown-render"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\markdown-render",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "microsoft-graph",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\microsoft-graph",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\microsoft-graph"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\microsoft-graph",
+    "IsSelfReferential": false,
+    "ExpectedSourceExists": true,
+    "Action": "skip-not-self-referential-junction"
+  },
+  {
+    "Name": "nlm-skill",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\nlm-skill",
+    "LinkType": null,
+    "CurrentTarget": [
+      null
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\nlm-skill",
+    "IsSelfReferential": false,
+    "ExpectedSourceExists": false,
+    "Action": "skip-not-self-referential-junction"
+  },
+  {
+    "Name": "notebooklm-cli",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-cli",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-cli"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\notebooklm-cli",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "notebooklm-meta-prompt",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-meta-prompt",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-meta-prompt"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\notebooklm-meta-prompt",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "opencode-scheduler",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-scheduler",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\opencode-scheduler"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\opencode-scheduler",
+    "IsSelfReferential": false,
+    "ExpectedSourceExists": false,
+    "Action": "skip-not-self-referential-junction"
+  },
+  {
+    "Name": "osgrep",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\osgrep",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\osgrep"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\osgrep",
+    "IsSelfReferential": false,
+    "ExpectedSourceExists": false,
+    "Action": "skip-not-self-referential-junction"
+  },
+  {
+    "Name": "outlook-email-search",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\outlook-email-search",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\outlook-email-search"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\outlook-email-search",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "outlook-inbox-triage",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\outlook-inbox-triage",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\outlook-inbox-triage"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\outlook-inbox-triage",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "pa-ui-design",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pa-ui-design",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pa-ui-design"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\pa-ui-design",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "perplexity-search",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\perplexity-search",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\perplexity-search"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\perplexity-search",
+    "IsSelfReferential": false,
+    "ExpectedSourceExists": false,
+    "Action": "skip-not-self-referential-junction"
+  },
+  {
+    "Name": "playwright-interactive",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\playwright-interactive",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\playwright-interactive"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\playwright-interactive",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "powershell-master",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\powershell-master",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\powershell-master"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\powershell-master",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "pptx-to-pdf-converter",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pptx-to-pdf-converter",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pptx-to-pdf-converter"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\pptx-to-pdf-converter",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": false,
+    "Action": "skip-missing-source"
+  },
+  {
+    "Name": "retrospective",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\retrospective",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\retrospective"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\retrospective",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "scheduled-job-best-practices",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\scheduled-job-best-practices",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\scheduled-job-best-practices"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\scheduled-job-best-practices",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "session-handoff",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-handoff",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\session-handoff"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\session-handoff",
+    "IsSelfReferential": false,
+    "ExpectedSourceExists": false,
+    "Action": "skip-not-self-referential-junction"
+  },
+  {
+    "Name": "skill-discovery",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-discovery",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\skill-discovery"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\skill-discovery",
+    "IsSelfReferential": false,
+    "ExpectedSourceExists": false,
+    "Action": "skip-not-self-referential-junction"
+  },
+  {
+    "Name": "skill-test-harness",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-test-harness",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-test-harness"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\skill-test-harness",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "skill-writer",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-writer",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-writer"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\skill-writer",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "slack-messaging",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\slack-messaging",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\slack-messaging"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\slack-messaging",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "slack-send-message",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\slack-send-message",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\slack-send-message"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\slack-send-message",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "speech",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\speech",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\speech"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\speech",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "terminal-aliases",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\terminal-aliases",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\terminal-aliases"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\terminal-aliases",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "thinking-partner",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\thinking-partner",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\thinking-partner"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\thinking-partner",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "unified-calendar-today",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\unified-calendar-today",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\unified-calendar-today"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\unified-calendar-today",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "vercel-deploy",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\vercel-deploy",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\vercel-deploy"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\vercel-deploy",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "visual-ocr",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\visual-ocr",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\visual-ocr"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\visual-ocr",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "webapp-testing",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\webapp-testing",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\webapp-testing"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\webapp-testing",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "windows-task-scheduler",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\windows-task-scheduler",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\windows-task-scheduler"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\windows-task-scheduler",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  },
+  {
+    "Name": "youtube-shorts",
+    "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\youtube-shorts",
+    "LinkType": "Junction",
+    "CurrentTarget": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\youtube-shorts"
+    ],
+    "ExpectedTarget": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\youtube-shorts",
+    "IsSelfReferential": true,
+    "ExpectedSourceExists": true,
+    "Action": "repair"
+  }
+]

@@ -1,0 +1,610 @@
+[
+  {
+    "Name": "_archived_skills",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\_archived_skills",
+    "LinkType": null,
+    "Target": [
+      null
+    ]
+  },
+  {
+    "Name": ".system",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\.system",
+    "LinkType": null,
+    "Target": [
+      null
+    ]
+  },
+  {
+    "Name": "agent-writer",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\agent-writer",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\agent-writer"
+    ]
+  },
+  {
+    "Name": "calendar-schedule",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\calendar-schedule",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\calendar-schedule"
+    ]
+  },
+  {
+    "Name": "calendar-today",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\calendar-today",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\calendar-today"
+    ]
+  },
+  {
+    "Name": "clickup",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup"
+    ]
+  },
+  {
+    "Name": "clickup-cli",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup-cli",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup-cli"
+    ]
+  },
+  {
+    "Name": "codex-primary-runtime",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\codex-primary-runtime",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\codex-primary-runtime"
+    ]
+  },
+  {
+    "Name": "command-writer",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\command-writer",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\command-writer"
+    ]
+  },
+  {
+    "Name": "conductor",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\conductor",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor"
+    ]
+  },
+  {
+    "Name": "conductor-pipeline",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\conductor-pipeline",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline"
+    ]
+  },
+  {
+    "Name": "content-trend-researcher",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\content-trend-researcher",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\content-trend-researcher"
+    ]
+  },
+  {
+    "Name": "design-system-extractor",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\design-system-extractor",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\design-system-extractor"
+    ]
+  },
+  {
+    "Name": "doc",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc"
+    ]
+  },
+  {
+    "Name": "doc-to-markdown",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc-to-markdown",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc-to-markdown"
+    ]
+  },
+  {
+    "Name": "email-attachment-detacher",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-attachment-detacher",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-attachment-detacher"
+    ]
+  },
+  {
+    "Name": "email-auto-sorter",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-auto-sorter",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-auto-sorter"
+    ]
+  },
+  {
+    "Name": "email-draft-reply",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-draft-reply",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-draft-reply"
+    ]
+  },
+  {
+    "Name": "email-routing-config",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-routing-config",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-routing-config"
+    ]
+  },
+  {
+    "Name": "email-to-clickup",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-to-clickup",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-to-clickup"
+    ]
+  },
+  {
+    "Name": "enrich-meeting-notes",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\enrich-meeting-notes",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\enrich-meeting-notes"
+    ]
+  },
+  {
+    "Name": "find-info",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\find-info",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\find-info"
+    ]
+  },
+  {
+    "Name": "firebase-deployment-specialist",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\firebase-deployment-specialist",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\firebase-deployment-specialist"
+    ]
+  },
+  {
+    "Name": "first-principles-mastery",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\first-principles-mastery",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\first-principles-mastery"
+    ]
+  },
+  {
+    "Name": "frontend-design",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\frontend-design",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\frontend-design"
+    ]
+  },
+  {
+    "Name": "gemini-proxy",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gemini-proxy",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gemini-proxy"
+    ]
+  },
+  {
+    "Name": "git-push",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\git-push",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\git-push"
+    ]
+  },
+  {
+    "Name": "github-create-repo",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\github-create-repo",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\github-create-repo"
+    ]
+  },
+  {
+    "Name": "github-management",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\github-management",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\github-management"
+    ]
+  },
+  {
+    "Name": "gmail-draft-reply",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-draft-reply",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-draft-reply"
+    ]
+  },
+  {
+    "Name": "gmail-inbox-triage",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-inbox-triage",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-inbox-triage"
+    ]
+  },
+  {
+    "Name": "gmail-workspace",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-workspace",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-workspace"
+    ]
+  },
+  {
+    "Name": "google-calendar-schedule",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-calendar-schedule",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-calendar-schedule"
+    ]
+  },
+  {
+    "Name": "google-calendar-today",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-calendar-today",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-calendar-today"
+    ]
+  },
+  {
+    "Name": "google-contacts",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-contacts",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-contacts"
+    ]
+  },
+  {
+    "Name": "google-drive",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-drive",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-drive"
+    ]
+  },
+  {
+    "Name": "image-generator",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-generator",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-generator"
+    ]
+  },
+  {
+    "Name": "image-manifest-builder",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-manifest-builder",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-manifest-builder"
+    ]
+  },
+  {
+    "Name": "image-ocr",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-ocr",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-ocr"
+    ]
+  },
+  {
+    "Name": "image-to-html-reconstruction",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-to-html-reconstruction",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-to-html-reconstruction"
+    ]
+  },
+  {
+    "Name": "imagegen",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\imagegen",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\imagegen"
+    ]
+  },
+  {
+    "Name": "knowledge-graph-builder",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-builder",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-builder"
+    ]
+  },
+  {
+    "Name": "knowledge-graph-maintainer",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-maintainer",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-maintainer"
+    ]
+  },
+  {
+    "Name": "knowledge-graph-query",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-query",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-query"
+    ]
+  },
+  {
+    "Name": "markdown-pdf-publisher",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\markdown-pdf-publisher",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\markdown-pdf-publisher"
+    ]
+  },
+  {
+    "Name": "markdown-render",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\markdown-render",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\markdown-render"
+    ]
+  },
+  {
+    "Name": "microsoft-graph",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\microsoft-graph",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\microsoft-graph"
+    ]
+  },
+  {
+    "Name": "nlm-skill",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\nlm-skill",
+    "LinkType": null,
+    "Target": [
+      null
+    ]
+  },
+  {
+    "Name": "notebooklm-cli",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-cli",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-cli"
+    ]
+  },
+  {
+    "Name": "notebooklm-meta-prompt",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-meta-prompt",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-meta-prompt"
+    ]
+  },
+  {
+    "Name": "opencode-scheduler",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-scheduler",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\opencode-scheduler"
+    ]
+  },
+  {
+    "Name": "osgrep",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\osgrep",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\osgrep"
+    ]
+  },
+  {
+    "Name": "outlook-email-search",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\outlook-email-search",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\outlook-email-search"
+    ]
+  },
+  {
+    "Name": "outlook-inbox-triage",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\outlook-inbox-triage",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\outlook-inbox-triage"
+    ]
+  },
+  {
+    "Name": "pa-ui-design",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pa-ui-design",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pa-ui-design"
+    ]
+  },
+  {
+    "Name": "perplexity-search",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\perplexity-search",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\perplexity-search"
+    ]
+  },
+  {
+    "Name": "playwright-interactive",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\playwright-interactive",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\playwright-interactive"
+    ]
+  },
+  {
+    "Name": "powershell-master",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\powershell-master",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\powershell-master"
+    ]
+  },
+  {
+    "Name": "pptx-to-pdf-converter",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pptx-to-pdf-converter",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pptx-to-pdf-converter"
+    ]
+  },
+  {
+    "Name": "retrospective",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\retrospective",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\retrospective"
+    ]
+  },
+  {
+    "Name": "scheduled-job-best-practices",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\scheduled-job-best-practices",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\scheduled-job-best-practices"
+    ]
+  },
+  {
+    "Name": "session-handoff",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-handoff",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\session-handoff"
+    ]
+  },
+  {
+    "Name": "skill-discovery",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-discovery",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\skill-discovery"
+    ]
+  },
+  {
+    "Name": "skill-test-harness",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-test-harness",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-test-harness"
+    ]
+  },
+  {
+    "Name": "skill-writer",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-writer",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-writer"
+    ]
+  },
+  {
+    "Name": "slack-messaging",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\slack-messaging",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\slack-messaging"
+    ]
+  },
+  {
+    "Name": "slack-send-message",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\slack-send-message",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\slack-send-message"
+    ]
+  },
+  {
+    "Name": "speech",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\speech",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\speech"
+    ]
+  },
+  {
+    "Name": "terminal-aliases",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\terminal-aliases",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\terminal-aliases"
+    ]
+  },
+  {
+    "Name": "thinking-partner",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\thinking-partner",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\thinking-partner"
+    ]
+  },
+  {
+    "Name": "unified-calendar-today",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\unified-calendar-today",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\unified-calendar-today"
+    ]
+  },
+  {
+    "Name": "vercel-deploy",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\vercel-deploy",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\vercel-deploy"
+    ]
+  },
+  {
+    "Name": "visual-ocr",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\visual-ocr",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\visual-ocr"
+    ]
+  },
+  {
+    "Name": "webapp-testing",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\webapp-testing",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\webapp-testing"
+    ]
+  },
+  {
+    "Name": "windows-task-scheduler",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\windows-task-scheduler",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\windows-task-scheduler"
+    ]
+  },
+  {
+    "Name": "youtube-shorts",
+    "FullName": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\youtube-shorts",
+    "LinkType": "Junction",
+    "Target": [
+      "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\youtube-shorts"
+    ]
+  }
+]

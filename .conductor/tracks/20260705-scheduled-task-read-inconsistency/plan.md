@@ -1,0 +1,575 @@
+# Scheduled Task Read Inconsistency - Plan
+
+Track: `20260705-scheduled-task-read-inconsistency`
+Repo root: `C:\development\opencode`
+
+## Restatement Before Tasks
+- Goal/outcome: determine the exact root cause of the Task Scheduler metadata/read inconsistency for the hourly email-triage task, then propose and, only after explicit Tier-1 approval, apply the safest remediation that restores normal reads without breaking the still-working schedule.
+- Constraints/non-goals: PowerShell-first because native file tools are broken; every command must be bounded; elevated probes are required for TaskCache; do not delete/recreate or re-register without approval; do not change cadence, job JSON, email-triage production logic, Graph cert, or unrelated `opencode-job` tasks.
+- Definition of done: elevated registry evidence identifies the root cause; the chosen remediation path is documented; if approved/applied, `Get-ScheduledTaskInfo`, `Export-ScheduledTask`, and `schtasks /Query /V` succeed, sibling spot checks remain healthy, and post-remediation schedule firing is observed or explicitly handed off as a timed follow-up.
+
+## Global Execution Rules for Stage 4
+- Use PowerShell 7 through the `bash` tool only; do not use native Read/Edit/Write/glob/grep tools in this session.
+- Use `Get-Content -Raw -LiteralPath "<path>"` for reads and `Set-Content -Encoding utf8NoBOM -LiteralPath "<path>" -Value` for writes.
+- Use `[string]::Contains()` or `Select-String -SimpleMatch` for literal checks; avoid ad hoc regex, wildcard `-like` traps, and regex `-replace` for structural edits.
+- Add `timeout` on every `bash` tool call and use non-interactive command flags. Do not run `Read-Host`, `Wait-Process`/`-Wait`, `tail -f`, `Start-Process -Wait`, or an uncapped server.
+- Append one JSONL anomaly line to `C:\development\opencode\.conductor\logs\pipeline-anomalies.jsonl` for each anomaly observed during execution; never edit prior lines.
+- Use `gsudo` for elevated commands if available. If unavailable, stop and report the blocker rather than attempting non-elevated TaskCache conclusions.
+
+## Phase 0 Setup & Preconditions
+
+Objective: Establish a safe, bounded, PowerShell-first workspace and prove the executor has the inputs and elevation path needed before diagnostics.
+
+### Ordered checklist
+
+- [x] Task 0.1 - Confirm required input artifacts exist.
+  - Action: From `C:\development\opencode`, verify the handoff and existing evidence files are present.
+  - Command:
+    ```powershell
+    $paths = @(
+      'C:\development\opencode\.opencode\handoffs\20260704-2035-scheduled-task-read-inconsistency.md',
+      'C:\development\opencode\.conductor\tracks\20260704-microsoft-graph-junction-repair\scheduled-task-diagnostics.md',
+      'C:\development\opencode\.conductor\tracks\20260704-microsoft-graph-junction-repair\scheduled-task-remediation-proposal.md',
+      'C:\development\opencode\.conductor\tracks\20260704-microsoft-graph-junction-repair\execution-log-2026-07-04.md',
+      'C:\development\opencode\.conductor\tracks\20260704-microsoft-graph-junction-repair\plan.md'
+    )
+    $result = foreach ($p in $paths) { [pscustomobject]@{ Path = $p; Exists = Test-Path -LiteralPath $p } }
+    $result | ConvertTo-Json -Compress
+    if (($result | Where-Object { -not $_.Exists }).Count -gt 0) { exit 1 }
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $json = @'
+    <paste command JSON output here>
+    '@ | ConvertFrom-Json
+    (($json | Where-Object { $_.Path -eq 'C:\development\opencode\.opencode\handoffs\20260704-2035-scheduled-task-read-inconsistency.md' -and $_.Exists -eq $true }).Count -eq 1) -and (($json | Where-Object { $_.Exists -eq $false }).Count -eq 0)
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    Get-Content -Raw -LiteralPath 'C:\development\opencode\.opencode\handoffs\20260704-2035-scheduled-task-read-inconsistency.md' | Select-String -SimpleMatch 'Hypothesis C'
+    ```
+  - Error recovery: If any evidence file is missing, continue only with the handoff file and record the missing paths in `C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\execution-log-YYYY-MM-DD.md`; do not infer missing evidence contents.
+
+- [x] Task 0.2 - Confirm elevated-command readiness without running diagnostics.
+  - Action: Check whether `gsudo` is available and whether a bounded elevated no-op can return `IsAdmin=True`.
+  - Command:
+    ```powershell
+    $gsudo = Get-Command gsudo -ErrorAction SilentlyContinue
+    if (-not $gsudo) { [pscustomobject]@{ GsudoAvailable = $false; IsAdmin = $false } | ConvertTo-Json -Compress; exit 2 }
+    gsudo pwsh -NoLogo -NoProfile -NonInteractive -Command "[pscustomobject]@{ GsudoAvailable = `$true; IsAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator) } | ConvertTo-Json -Compress"
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $raw = @'
+    <paste command JSON output here>
+    '@
+    try {
+      $json = $raw | ConvertFrom-Json -ErrorAction Stop
+      ($json.GsudoAvailable -eq $true) -and ($json.IsAdmin -eq $true)
+    } catch {
+      $false
+    }
+    ```
+    Expected output: `True` (returns `$false` if gsudo is missing, elevation is denied, or the inner pwsh emits non-JSON output).
+  - Diagnostic checks:
+    ```powershell
+    Get-Command gsudo -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source
+    ```
+  - Error recovery: If `gsudo` is missing or elevation is denied, read `C:\Users\DaveWitkin\.config\opencode\references\admin-elevation-gsudo.md` if present, then stop and ask for an elevated PowerShell 7 session; do not run non-elevated TaskCache probes as authoritative evidence.
+
+- [x] Task 0.3 - Create the execution log skeleton for this track.
+  - Action: Create `C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\execution-log-YYYY-MM-DD.md` with sections for commands, evidence, approval gate, remediation, validation, and follow-ups.
+  - Command:
+    ```powershell
+    $date = Get-Date -Format 'yyyy-MM-dd'
+    $log = "C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\execution-log-$date.md"
+    $body = @('# Execution Log - Scheduled Task Read Inconsistency','','## Bounded Command Log','','## Elevated Evidence','','## Root Cause Decision','','## Tier-1 Approval Gate','','## Remediation Performed','','## Validation Results','','## Follow-ups') -join "`n"
+    Set-Content -Encoding utf8NoBOM -LiteralPath $log -Value $body
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $date = Get-Date -Format 'yyyy-MM-dd'
+    $log = "C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\execution-log-$date.md"
+    $text = Get-Content -Raw -LiteralPath $log
+    $text.Contains('## Elevated Evidence') -and $text.Contains('## Tier-1 Approval Gate') -and $text.Contains('## Validation Results')
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    Get-Item -LiteralPath "C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\execution-log-$(Get-Date -Format 'yyyy-MM-dd').md" | Select-Object FullName, Length
+    ```
+  - Error recovery: If writing fails, verify the track directory exists; if not, create it with `New-Item -ItemType Directory -Force` and retry once.
+
+### Exit criteria
+- Input evidence paths are accounted for.
+- Elevation path is confirmed or a blocker is recorded.
+- Execution log exists with required body sections.
+
+## Phase 1 Elevated Diagnostic
+
+Objective: Run read-only elevated probes to collect decisive Task Scheduler on-disk, API, TaskCache, sibling-control, and event-log evidence.
+
+### Ordered checklist
+
+- [x] Task 1.1 - Capture elevated on-disk XML evidence for the target task.
+  - Action: Read-only confirm the exact on-disk task file exists and capture length, timestamp, and XML root metadata.
+  - Command:
+    ```powershell
+    $n = 'opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort'
+    $file = "C:\Windows\System32\Tasks\OpenCode\$n"
+    gsudo pwsh -NoLogo -NoProfile -NonInteractive -Command "`$file = '$file'; `$item = Get-Item -LiteralPath `$file; [xml]`$xml = Get-Content -Raw -LiteralPath `$file; [pscustomobject]@{ FullName = `$item.FullName; Length = `$item.Length; LastWriteTime = `$item.LastWriteTime.ToString('o'); XmlRoot = `$xml.DocumentElement.LocalName; TaskVersion = `$xml.Task.version } | ConvertTo-Json -Compress"
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $json = @'
+    <paste command JSON output here>
+    '@ | ConvertFrom-Json
+    ($json.FullName -eq 'C:\Windows\System32\Tasks\OpenCode\opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort') -and ($json.Length -gt 0) -and ($json.XmlRoot -eq 'Task')
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    gsudo pwsh -NoLogo -NoProfile -NonInteractive -Command "Get-Content -Raw -LiteralPath 'C:\Windows\System32\Tasks\OpenCode\opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort' | Select-String -SimpleMatch 'hourly-email-auto-sort.ps1'"
+    ```
+  - Error recovery: If the file is missing, stop remediation planning and document that the handoff's known file-present premise changed.
+
+- [x] Task 1.2 - Capture elevated API split behavior for the target task.
+  - Action: In one elevated command, test enumeration, info, export, and `schtasks /Query /V` behavior without changing anything.
+  - Command:
+    ```powershell
+    $n = 'opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort'
+    gsudo pwsh -NoLogo -NoProfile -NonInteractive -Command "`$n = '$n'; `$r = [ordered]@{}; try { `$t = Get-ScheduledTask -TaskName `$n -TaskPath '\OpenCode\' -ErrorAction Stop; `$r.GetScheduledTask = 'OK:' + `$t.State } catch { `$r.GetScheduledTask = 'ERR:' + `$_.Exception.Message }; try { `$i = Get-ScheduledTaskInfo -TaskName `$n -TaskPath '\OpenCode\' -ErrorAction Stop; `$r.GetScheduledTaskInfo = 'OK:' + `$i.LastRunTime.ToString('o') + '|' + `$i.NextRunTime.ToString('o') } catch { `$r.GetScheduledTaskInfo = 'ERR:' + `$_.Exception.Message }; try { `$x = Export-ScheduledTask -TaskName `$n -TaskPath '\OpenCode\' -ErrorAction Stop; `$r.ExportScheduledTask = 'OK:' + ([xml]`$x).DocumentElement.LocalName } catch { `$r.ExportScheduledTask = 'ERR:' + `$_.Exception.Message }; `$out = & schtasks.exe /Query /TN ('\OpenCode\' + `$n) /V /FO LIST 2>&1; `$r.SchtasksQuery = if (`$LASTEXITCODE -eq 0) { 'OK' } else { 'ERR:' + (`$out -join ' ') }; [pscustomobject]`$r | ConvertTo-Json -Compress"
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $json = @'
+    <paste command JSON output here>
+    '@ | ConvertFrom-Json
+    $json.GetScheduledTask.StartsWith('OK:') -and ($json.GetScheduledTaskInfo.StartsWith('OK:') -or $json.GetScheduledTaskInfo.StartsWith('ERR:')) -and ($json.ExportScheduledTask.StartsWith('OK:') -or $json.ExportScheduledTask.StartsWith('ERR:')) -and ($json.SchtasksQuery.StartsWith('OK') -or $json.SchtasksQuery.StartsWith('ERR:'))
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    # Preserve exact ERR values in the execution log.
+    ```
+  - Error recovery: If `Get-ScheduledTask` fails too, severity may have changed; stop before remediation and ask whether to treat this as a functional registration failure.
+
+- [x] Task 1.3 - Capture elevated TaskCache Tree and GUID blob evidence.
+  - Action: Read `TaskCache\Tree\OpenCode\<name>`, extract `Id`, test/read `TaskCache\Tasks\{GUID}`, and capture key fields.
+  - Command:
+    ```powershell
+    $n = 'opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort'
+    gsudo pwsh -NoLogo -NoProfile -NonInteractive -Command "`$n = '$n'; `$treeKey = 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\OpenCode\' + `$n; `$treeExists = Test-Path -LiteralPath `$treeKey; `$tree = if (`$treeExists) { Get-ItemProperty -LiteralPath `$treeKey } else { `$null }; `$guid = if (`$tree) { [string]`$tree.Id } else { '' }; `$blobKey = if (`$guid) { 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\' + `$guid } else { '' }; `$blobExists = if (`$blobKey) { Test-Path -LiteralPath `$blobKey } else { `$false }; `$blob = if (`$blobExists) { Get-ItemProperty -LiteralPath `$blobKey } else { `$null }; [pscustomobject]@{ TreeKey = `$treeKey; TreeExists = `$treeExists; Id = `$guid; BlobKey = `$blobKey; BlobExists = `$blobExists; BlobPath = if (`$blob) { [string]`$blob.Path } else { '' }; BlobHashLength = if (`$blob -and `$blob.Hash) { `$blob.Hash.Length } else { 0 }; BlobSchema = if (`$blob -and `$blob.Schema) { `$blob.Schema } else { '' } } | ConvertTo-Json -Compress"
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $json = @'
+    <paste command JSON output here>
+    '@ | ConvertFrom-Json
+    ($json.TreeKey -eq 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\OpenCode\opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort') -and ($json.TreeExists -eq $true) -and ([string]$json.Id).Contains('{') -and ([string]$json.BlobKey).Contains('TaskCache\Tasks\') -and ([string]$json.BlobKey -eq ('HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\' + $json.Id))
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    # If BlobExists is False, Hypothesis C missing-GUID-blob branch is strongly supported.
+    ```
+  - Error recovery: If `TreeExists=False`, run a bounded elevated search for the exact task name under `TaskCache\Tree`; record results and stop before remediation.
+
+- [x] Task 1.4 - Capture elevated read-only sibling controls.
+  - Action: Spot-check one or two sibling `opencode-job` tasks to confirm normal read behavior remains intact.
+  - Command:
+    ```powershell
+    gsudo pwsh -NoLogo -NoProfile -NonInteractive -Command "`$siblings = Get-ScheduledTask | Where-Object { `$_.TaskName -like 'opencode-job-*' -and `$_.TaskName -ne 'opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort' } | Select-Object -First 2; `$result = foreach (`$s in `$siblings) { try { `$info = Get-ScheduledTaskInfo -TaskName `$s.TaskName -TaskPath `$s.TaskPath -ErrorAction Stop; [pscustomobject]@{ TaskPath = `$s.TaskPath; TaskName = `$s.TaskName; Info = 'OK'; LastRunTime = `$info.LastRunTime.ToString('o') } } catch { [pscustomobject]@{ TaskPath = `$s.TaskPath; TaskName = `$s.TaskName; Info = 'ERR:' + `$_.Exception.Message; LastRunTime = '' } } }; `$result | ConvertTo-Json -Compress"
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $json = @'
+    <paste command JSON output here>
+    '@ | ConvertFrom-Json
+    @($json).Count -ge 1 -and (@($json) | Where-Object { $_.Info -eq 'OK' }).Count -ge 1
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    # Record any sibling ERR values, but do not modify sibling tasks.
+    ```
+  - Error recovery: If no sibling reads are healthy, broaden diagnosis to Task Scheduler store health and stop before touching the target registration.
+
+- [x] Task 1.5 - Capture recent Task Scheduler operational events for the target task.
+  - Action: Read the Task Scheduler Operational event log for recent target-task events.
+  - Command:
+    ```powershell
+    gsudo pwsh -NoLogo -NoProfile -NonInteractive -Command "Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-TaskScheduler/Operational'; ID=100,101,102,103,203,404} -MaxEvents 80 -ErrorAction SilentlyContinue | Where-Object { `$_.Message.Contains('email-triage') -or `$_.Message.Contains('opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort') } | Select-Object -First 20 TimeCreated, Id, LevelDisplayName, Message | ConvertTo-Json -Compress"
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $raw = @'
+    <paste command JSON output here>
+    '@
+    $raw.Contains('opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort') -or $raw.Contains('email-triage') -or $raw.Trim() -eq ''
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    # Empty output is allowed if the operational log has no retained matching events.
+    ```
+  - Error recovery: If event log access fails, document the access error and continue with file-log-based firing validation.
+
+### Exit criteria
+- Elevated on-disk XML evidence, API split behavior, TaskCache evidence, and sibling controls are captured.
+
+## Phase 2 Root Cause Determination
+
+Objective: Convert raw elevated evidence into a clear root-cause branch and remediation recommendation.
+
+### Ordered checklist
+
+- [x] Task 2.1 - Write the root-cause evidence table.
+  - Action: Create `C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\root-cause-evidence.md` with elevated findings and interpretation.
+  - Command:
+    ```powershell
+    $out = 'C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\root-cause-evidence.md'
+    $body = @'
+    # Root Cause Evidence - Scheduled Task Read Inconsistency
+    ## Elevated TaskCache Evidence
+    - Tree key exists: <True/False>
+    - Tree Id GUID: <GUID or blank>
+    - Tasks GUID blob exists: <True/False>
+    - Blob Path: <path or blank>
+    - Blob Hash length: <number>
+    - Blob Schema: <schema or blank>
+    ## Elevated API Behavior
+    - Get-ScheduledTask: <OK/ERR details>
+    - Get-ScheduledTaskInfo: <OK/ERR details>
+    - Export-ScheduledTask: <OK/ERR details>
+    - schtasks /Query /V: <OK/ERR details>
+    ## On-Disk XML Evidence
+    - XML path: C:\Windows\System32\Tasks\OpenCode\opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort
+    - XML root: <Task>
+    - XML length: <bytes>
+    ## Sibling Controls
+    - Sibling read checks: <OK/ERR summary>
+    ## Interpretation
+    - Root-cause branch: <Missing GUID blob / stale or mismatched GUID blob / no current inconsistency / deeper scheduler store corruption>
+    - Recommended remediation: <Option 1 / Option 2 / Option 3>
+    '@
+    Set-Content -Encoding utf8NoBOM -LiteralPath $out -Value $body
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $text = Get-Content -Raw -LiteralPath 'C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\root-cause-evidence.md'
+    $placeholdersLeft = $text.Contains('<True/False>') -or $text.Contains('<GUID or blank>') -or $text.Contains('<path or blank>') -or $text.Contains('<number>') -or $text.Contains('<schema or blank>') -or $text.Contains('<OK/ERR details>') -or $text.Contains('<bytes>') -or $text.Contains('<OK/ERR summary>') -or $text.Contains('<Missing GUID blob / stale or mismatched GUID blob / no current inconsistency / deeper scheduler store corruption>') -or $text.Contains('<Option 1 / Option 2 / Option 3>')
+    (-not $placeholdersLeft) -and $text.Contains('## Elevated TaskCache Evidence') -and $text.Contains('- Tasks GUID blob exists:') -and $text.Contains('## Interpretation') -and $text.Contains('- Recommended remediation:')
+    ```
+    Expected output: `True`. The check fails if any `<...>` placeholder is left in the file; every value must be the actual elevated evidence (or `UNKNOWN - <reason>`).
+  - Diagnostic checks:
+    ```powershell
+    Select-String -LiteralPath 'C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\root-cause-evidence.md' -SimpleMatch 'Root-cause branch:'
+    ```
+  - Error recovery: If some Phase 1 outputs are unavailable, write `UNKNOWN - <reason>` in the relevant row; do not fabricate evidence.
+
+- [x] Task 2.2 - Select the remediation branch based on evidence.
+  - Action: Replace placeholders in `root-cause-evidence.md` with one concrete branch and recommendation.
+  - Command:
+    ```powershell
+    $path = 'C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\root-cause-evidence.md'
+    # Replace these two values with exactly one evidence-backed branch and one option before running.
+    $chosenBranch = 'Missing GUID blob'  # allowed: Missing GUID blob | stale or mismatched GUID blob | no current inconsistency | deeper scheduler store corruption
+    $chosenOption = 'Option 1'           # allowed: Option 1 | Option 2 | Option 3
+    if ($chosenBranch -notin @('Missing GUID blob','stale or mismatched GUID blob','no current inconsistency','deeper scheduler store corruption')) { throw "Invalid chosenBranch: $chosenBranch" }
+    if ($chosenOption -notin @('Option 1','Option 2','Option 3')) { throw "Invalid chosenOption: $chosenOption" }
+    $text = Get-Content -Raw -LiteralPath $path
+    $text = $text.Replace('<Missing GUID blob / stale or mismatched GUID blob / no current inconsistency / deeper scheduler store corruption>', $chosenBranch)
+    $text = $text.Replace('<Option 1 / Option 2 / Option 3>', $chosenOption)
+    Set-Content -Encoding utf8NoBOM -LiteralPath $path -Value $text
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $text = Get-Content -Raw -LiteralPath 'C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\root-cause-evidence.md'
+    (-not $text.Contains('<chosen branch>')) -and (-not $text.Contains('<chosen option>')) -and (-not $text.Contains('<Missing GUID blob / stale or mismatched GUID blob / no current inconsistency / deeper scheduler store corruption>')) -and (-not $text.Contains('<Option 1 / Option 2 / Option 3>'))
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    Get-Content -Raw -LiteralPath 'C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\root-cause-evidence.md' | Select-String -SimpleMatch 'Recommended remediation:'
+    ```
+  - Error recovery: If evidence supports more than one branch, stop and ask for review; do not proceed to remediation under uncertainty.
+
+### Exit criteria
+- Root-cause evidence file exists and selects exactly one branch and one recommended remediation option.
+
+## Phase 3 Remediation
+
+Objective: Apply no destructive changes unless approved; if approved, perform the least invasive safe remediation and preserve rollback evidence.
+
+### Ordered checklist
+
+- [x] Task 3.1 - Obtain explicit Tier-1 approval before touching task registration. [Resolved: Option 3 by evidence - no registration touch, no approval triggered]
+  - Action: Present the chosen remediation and exact command(s), then record approval/denial verbatim in the execution log.
+  - Command:
+    ```powershell
+    $date = Get-Date -Format 'yyyy-MM-dd'
+    $log = "C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\execution-log-$date.md"
+    $approvalText = @'
+    ## Tier-1 Approval Gate
+    Chosen remediation: <Option 1/2/3>
+    Exact registration-touch command proposed: schtasks /Create /TN "\OpenCode\opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort" /XML "C:\Windows\System32\Tasks\OpenCode\opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort" /F
+    User approval decision: <APPROVED or DENIED, paste exact user words>
+    '@
+    Add-Content -Encoding utf8 -LiteralPath $log -Value $approvalText
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $date = Get-Date -Format 'yyyy-MM-dd'
+    $log = "C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\execution-log-$date.md"
+    $text = Get-Content -Raw -LiteralPath $log
+    $chosenFilled = ($text.Contains('Chosen remediation: Option 1') -or $text.Contains('Chosen remediation: Option 2') -or $text.Contains('Chosen remediation: Option 3'))
+    $text.Contains('Exact registration-touch command proposed: schtasks /Create /TN "\OpenCode\opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort" /XML "C:\Windows\System32\Tasks\OpenCode\opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort" /F') -and $chosenFilled -and (-not $text.Contains('<Option 1/2/3>')) -and ($text.Contains('User approval decision: APPROVED') -or $text.Contains('User approval decision: DENIED'))
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    Select-String -LiteralPath "C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\execution-log-$(Get-Date -Format 'yyyy-MM-dd').md" -SimpleMatch 'User approval decision:'
+    ```
+  - Error recovery: If approval is denied or ambiguous, **STOP before Tasks 3.2 and 3.3**. Do not run any registration-touching command. Choose Option 3 document-and-monitor, run Task 3.4, and proceed to Final Phase Validation & Handover.
+
+- [ ] Task 3.2 - Back up the on-disk XML before approved registration remediation. [SKIPPED - N/A under Option 3; only runs if Option 1 approved]
+  - Action: If Task 3.1 approval is `APPROVED`, copy the on-disk XML to temp backup before any registration touch.
+  - Command:
+    ```powershell
+    $n = 'opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort'
+    $src = "C:\Windows\System32\Tasks\OpenCode\$n"
+    $dst = "C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\$n.xml.bak.$(Get-Date -Format 'yyyyMMdd-HHmmss')"
+    gsudo pwsh -NoLogo -NoProfile -NonInteractive -Command "Copy-Item -LiteralPath '$src' -Destination '$dst'; `$s = Get-Item -LiteralPath '$src'; `$d = Get-Item -LiteralPath '$dst'; [pscustomobject]@{ Source = `$s.FullName; Destination = `$d.FullName; SourceLength = `$s.Length; BackupLength = `$d.Length } | ConvertTo-Json -Compress"
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $json = @'
+    <paste command JSON output here>
+    '@ | ConvertFrom-Json
+    ($json.Source -eq 'C:\Windows\System32\Tasks\OpenCode\opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort') -and ($json.BackupLength -eq $json.SourceLength) -and ($json.BackupLength -gt 0)
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    Get-ChildItem -LiteralPath 'C:\Users\DAVEWI~1\AppData\Local\Temp\opencode' | Where-Object { $_.Name.Contains('opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort.xml.bak') } | Select-Object FullName, Length, LastWriteTime
+    ```
+  - Error recovery: If backup fails, do not re-register; stop and report the backup failure.
+
+- [ ] Task 3.3 - Apply approved Option 1 re-registration from on-disk XML. [SKIPPED - N/A under Option 3; only runs if Option 1 approved]
+  - Action: If approved and backed up, re-register the exact existing XML for the target task.
+  - Command:
+    ```powershell
+    $n = 'opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort'
+    $tn = "\OpenCode\$n"
+    $xml = "C:\Windows\System32\Tasks\OpenCode\$n"
+    $jsonText = gsudo pwsh -NoLogo -NoProfile -NonInteractive -Command "`$out = & schtasks.exe /Create /TN '$tn' /XML '$xml' /F 2>&1; [pscustomobject]@{ ExitCode = `$LASTEXITCODE; Output = (`$out -join ' ') } | ConvertTo-Json -Compress"
+    $jsonText
+    $result = $jsonText | ConvertFrom-Json -ErrorAction Stop
+    if ($result.ExitCode -eq 0 -and ([string]$result.Output).Contains('SUCCESS')) {
+      $date = Get-Date -Format 'yyyy-MM-dd'
+      $log = "C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\execution-log-$date.md"
+      Add-Content -Encoding utf8 -LiteralPath $log -Value ("`n## Remediation Applied: {0}`nOption 1 re-registration from on-disk XML succeeded." -f (Get-Date).ToString('o'))
+    }
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $json = @'
+    <paste command JSON output here>
+    '@ | ConvertFrom-Json
+    ($json.ExitCode -eq 0) -and ([string]$json.Output).Contains('SUCCESS')
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    gsudo pwsh -NoLogo -NoProfile -NonInteractive -Command "Get-ScheduledTask -TaskName 'opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort' -TaskPath '\OpenCode\' | Select-Object TaskName, TaskPath, State | ConvertTo-Json -Compress"
+    ```
+  - Error recovery: If re-registration fails, do not try Option 2 automatically; preserve the backup path, record the error, and ask for approval before any delete/recreate path.
+
+- [x] Task 3.4 - Document Option 3 if remediation is deferred.
+  - Action: If approval is denied, ambiguous, or remediation is too risky, write the monitoring decision and exact follow-up checks.
+  - Command:
+    ```powershell
+    $out = 'C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\deferred-remediation.md'
+    $body = @'
+    # Deferred Remediation Decision
+    Remediation was not applied in this run.
+    Reason: <approval denied / approval ambiguous / root cause uncertain / risk exceeds benefit>
+    Accepted status: LOW severity because the task still fires, but metadata reads and export remain impaired.
+    Follow-up checks:
+    - Re-run elevated TaskCache evidence capture.
+    - Re-run `Get-ScheduledTaskInfo` and `Export-ScheduledTask` for the target task.
+    - Confirm a fresh `C:\development\email-triage\logs\*_run.md` file appears after the next hourly tick.
+    '@
+    Set-Content -Encoding utf8NoBOM -LiteralPath $out -Value $body
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $text = Get-Content -Raw -LiteralPath 'C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\deferred-remediation.md'
+    $reasonFilled = ($text.Contains('Reason: approval denied') -or $text.Contains('Reason: approval ambiguous') -or $text.Contains('Reason: root cause uncertain') -or $text.Contains('Reason: risk exceeds benefit'))
+    $text.Contains('Remediation was not applied in this run.') -and (-not $text.Contains('<approval denied / approval ambiguous / root cause uncertain / risk exceeds benefit>')) -and $reasonFilled -and $text.Contains('Accepted status: LOW severity because the task still fires, but metadata reads and export remain impaired.') -and $text.Contains('Confirm a fresh `C:\development\email-triage\logs\*_run.md` file appears after the next hourly tick.')
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    Test-Path -LiteralPath 'C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\deferred-remediation.md'
+    ```
+  - Error recovery: If writing fails, append the deferred decision to the execution log instead.
+
+### Exit criteria
+- Either approved Option 1 remediation is backed up and applied, or a deferred remediation decision is documented.
+- No delete/recreate path is attempted without separate explicit approval.
+
+## Final Phase Validation & Handover
+
+Objective: Prove the target task metadata reads are restored if remediation ran, confirm no sibling disturbance, and produce handover for timed follow-up.
+
+### Ordered checklist
+
+- [x] Task 4.1 - Validate target metadata APIs after remediation or document unchanged failure after deferral.
+  - Action: Run target read/export/query checks and record the result.
+  - Command:
+    ```powershell
+    $n = 'opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort'
+    gsudo pwsh -NoLogo -NoProfile -NonInteractive -Command "`$n = '$n'; `$r = [ordered]@{}; try { `$i = Get-ScheduledTaskInfo -TaskName `$n -TaskPath '\OpenCode\' -ErrorAction Stop; `$r.GetScheduledTaskInfo = 'OK:' + `$i.LastRunTime.ToString('o') + '|' + `$i.NextRunTime.ToString('o') } catch { `$r.GetScheduledTaskInfo = 'ERR:' + `$_.Exception.Message }; try { `$x = Export-ScheduledTask -TaskName `$n -TaskPath '\OpenCode\' -ErrorAction Stop; `$r.ExportScheduledTask = 'OK:' + ([xml]`$x).DocumentElement.LocalName } catch { `$r.ExportScheduledTask = 'ERR:' + `$_.Exception.Message }; `$out = & schtasks.exe /Query /TN ('\OpenCode\' + `$n) /V /FO LIST 2>&1; `$r.SchtasksQuery = if (`$LASTEXITCODE -eq 0) { 'OK' } else { 'ERR:' + (`$out -join ' ') }; [pscustomobject]`$r | ConvertTo-Json -Compress"
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $json = @'
+    <paste command JSON output here>
+    '@ | ConvertFrom-Json
+    $json.GetScheduledTaskInfo.StartsWith('OK:') -and $json.ExportScheduledTask.StartsWith('OK:Task') -and $json.SchtasksQuery -eq 'OK'
+    ```
+    Expected output after approved remediation: `True`. If remediation was deferred, expected output may be `False`; record that as known remaining issue.
+  - Diagnostic checks:
+    ```powershell
+    # If True, paste LastRunTime and NextRunTime into the execution log.
+    ```
+  - Error recovery: If false after approved Option 1, do not attempt Option 2 automatically; document failure and request explicit approval for higher-blast-radius action.
+
+- [x] Task 4.2 - Validate sibling tasks still read normally.
+  - Action: Re-run read-only sibling spot checks after any remediation.
+  - Command:
+    ```powershell
+    gsudo pwsh -NoLogo -NoProfile -NonInteractive -Command "`$siblings = Get-ScheduledTask | Where-Object { `$_.TaskName -like 'opencode-job-*' -and `$_.TaskName -ne 'opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort' } | Select-Object -First 2; `$result = foreach (`$s in `$siblings) { try { `$info = Get-ScheduledTaskInfo -TaskName `$s.TaskName -TaskPath `$s.TaskPath -ErrorAction Stop; [pscustomobject]@{ TaskPath = `$s.TaskPath; TaskName = `$s.TaskName; Info = 'OK'; NextRunTime = `$info.NextRunTime.ToString('o') } } catch { [pscustomobject]@{ TaskPath = `$s.TaskPath; TaskName = `$s.TaskName; Info = 'ERR:' + `$_.Exception.Message; NextRunTime = '' } } }; `$result | ConvertTo-Json -Compress"
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $json = @'
+    <paste command JSON output here>
+    '@ | ConvertFrom-Json
+    @($json).Count -ge 1 -and (@($json) | Where-Object { $_.Info -eq 'OK' }).Count -ge 1 -and (@($json) | Where-Object { ([string]$_.TaskName).Contains('opencode-job-email-triage-0fff020d966c-email-triage-hourly-email-auto-sort') }).Count -eq 0
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    # Record task names checked for auditability.
+    ```
+  - Error recovery: If sibling checks fail after remediation, stop and record potential broader Task Scheduler impact; do not touch siblings.
+
+- [x] Task 4.3 - Check or defer hourly firing evidence without stalling.
+  - Action: Compare newest email-triage run log timestamp against remediation time; do not wait indefinitely for the next hourly tick.
+  - Command:
+    ```powershell
+    $latest = Get-ChildItem -LiteralPath 'C:\development\email-triage\logs' -Filter '*_run.md' -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1 FullName, LastWriteTime, Length
+    $latest | ConvertTo-Json -Compress
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $json = @'
+    <paste command JSON output here>
+    '@ | ConvertFrom-Json
+    $exists = ([string]$json.FullName).Contains('C:\development\email-triage\logs\') -and ([string]$json.FullName).Contains('_run.md') -and ($json.Length -gt 0)
+    # Compare last-write time against the remediation timestamp captured in Task 3.3.
+    # Task 3.3 must append a `## Remediation Applied: <iso-timestamp>` section to the execution log.
+    $remediationStamp = $null
+    $log = "C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\execution-log-$(Get-Date -Format 'yyyy-MM-dd').md"
+    if (Test-Path -LiteralPath $log) {
+      $logText = Get-Content -Raw -LiteralPath $log
+      $stampMatch = [regex]::Match($logText, '## Remediation Applied:\s*([0-9T:\-\.]+)')
+      if ($stampMatch.Success) { try { $remediationStamp = [datetime]::Parse($stampMatch.Groups[1].Value) } catch {} }
+    }
+    $recentEnough = $false
+    if ($json.LastWriteTime) {
+      $logTime = [datetime]::Parse($json.LastWriteTime)
+      if ($remediationStamp) { $recentEnough = ($logTime -ge $remediationStamp) }
+      else { $recentEnough = ($logTime.Date -eq (Get-Date).Date) }
+    }
+    $followupLogged = $false
+    if (Test-Path -LiteralPath $log) { $followupLogged = (Get-Content -Raw -LiteralPath $log).Contains('Timed follow-up required: confirm a new *_run.md appears after the next hourly tick.') }
+    ($exists -and $recentEnough) -or $followupLogged
+    ```
+    Expected output: `True` if a post-remediation/same-day run log is available, or if the bounded-run follow-up note has been appended to the execution log.
+  - Diagnostic checks:
+    ```powershell
+    Get-Content -Raw -LiteralPath '<latest run log path from command output>' | Select-String -SimpleMatch 'Exit code 0'
+    ```
+  - Error recovery: If no new post-remediation hourly log is available within the bounded run, write `Timed follow-up required: confirm a new *_run.md appears after the next hourly tick.` to the execution log.
+
+- [x] Task 4.4 - Finalize handover summary.
+  - Action: Write `C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\handover-summary.md` with final status, root cause, remediation decision, validation results, risks, and follow-ups.
+  - Command:
+    ```powershell
+    $out = 'C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\handover-summary.md'
+    $body = @'
+    # Handover Summary - Scheduled Task Read Inconsistency
+    ## Final Status
+    <Resolved / Deferred / Blocked>
+    ## Root Cause
+    <Evidence-backed root cause from root-cause-evidence.md>
+    ## Remediation Decision
+    <Option 1 applied / Option 2 not attempted / Option 3 monitor / blocked waiting for approval>
+    ## Validation Results
+    - Get-ScheduledTaskInfo: <OK/ERR>
+    - Export-ScheduledTask: <OK/ERR>
+    - schtasks /Query /V: <OK/ERR>
+    - Sibling spot checks: <OK/ERR>
+    - Hourly firing evidence: <observed/deferred>
+    ## Follow-ups
+    - <None or exact timed follow-up>
+    '@
+    Set-Content -Encoding utf8NoBOM -LiteralPath $out -Value $body
+    ```
+  - Authoritative acceptance check:
+    ```powershell
+    $text = Get-Content -Raw -LiteralPath 'C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\handover-summary.md'
+    $placeholdersLeft = $text.Contains('<Resolved / Deferred / Blocked>') -or $text.Contains('<Evidence-backed root cause from root-cause-evidence.md>') -or $text.Contains('<Option 1 applied / Option 2 not attempted / Option 3 monitor / blocked waiting for approval>') -or $text.Contains('<OK/ERR>') -or $text.Contains('<observed/deferred>') -or $text.Contains('<None or exact timed follow-up>')
+    (-not $placeholdersLeft) -and $text.Contains('## Final Status') -and $text.Contains('## Root Cause') -and $text.Contains('## Validation Results') -and $text.Contains('- Hourly firing evidence:')
+    ```
+    Expected output: `True`.
+  - Diagnostic checks:
+    ```powershell
+    Get-Item -LiteralPath 'C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency\handover-summary.md' | Select-Object FullName, Length
+    ```
+  - Error recovery: If the summary cannot be written, append the same headings to the execution log and report the write failure.
+
+### Exit criteria
+- Target metadata API behavior is validated and recorded.
+- Sibling tasks are spot-checked and recorded.
+- Hourly firing is observed or explicitly assigned as a bounded follow-up.
+- Handover summary exists.
+
+## Execution-Readiness Checklist
+- [x] Stage 4 executor understands native file tools are broken and must use PowerShell-first via `bash`.
+- [x] Every shell command must be run with the `bash` tool timeout set explicitly.
+- [x] `gsudo`/admin elevation is required for TaskCache registry reads and registration remediation.
+- [x] The first real diagnostic action is elevated TaskCache probing, not re-registering.
+- [x] Registration touch requires explicit Tier-1 approval recorded in the execution log.
+- [x] Delete/recreate is out of scope unless separately approved after Option 1 fails.
+
+## Top 3 Risks and Mitigations
+1. Risk: Non-elevated TaskCache reads produce misleading empty results. Mitigation: Treat only elevated TaskCache output as authoritative; if elevation is unavailable, stop and record blocker.
+2. Risk: Re-registration changes a working scheduled task. Mitigation: Require explicit approval, back up the on-disk XML first, use the existing XML only, and validate read APIs plus sibling controls afterward.
+3. Risk: Waiting for the next hourly run stalls the pipeline. Mitigation: Check latest log once with a bounded command; if the next tick has not occurred, record a timed follow-up instead of waiting.
+
+## First Task to Execute
+Task 0.1 - Confirm required input artifacts exist.
+
+
+
+
+
+
+
+
