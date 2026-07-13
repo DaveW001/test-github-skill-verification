@@ -57,4 +57,3 @@
 | 20260710-session-db-query-skill | Session DB Query Skill | closed | 2026-07-10 | C:\development\opencode\.conductor\tracks\20260710-session-db-query-skill |
 | 20260710-pptx-powerpoint-render-backend | PowerPoint COM Render Backend for pptx-from-layouts Visual Validation | closed | 2026-07-11 | C:\development\opencode\.conductor\tracks\20260710-pptx-powerpoint-render-backend |
 | 20260712-pptx-quality-pipeline | PowerPoint Creation and Evaluation Quality Pipeline | complete | 2026-07-12 | C:\development\opencode\.conductor\tracks\20260712-pptx-quality-pipeline |
-| 20260712-pptx-reference-image-rebuild | Editable PowerPoint Reference-Image Reconstruction Mode | complete | 2026-07-13 | C:\development\opencode\.conductor\tracks\20260712-pptx-reference-image-rebuild |
