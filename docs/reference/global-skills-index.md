@@ -1,6 +1,10 @@
 # Global Skills Index
 
-**Purpose:** Reference index of all personal/global OpenCode skills installed at `C:\Users\DaveWitkin\.config\opencode\skill\`. These skills are available in every project and session.
+**Status:** Historical index; not authoritative for skill storage policy.
+
+**Purpose:** Human-readable index of commonly used personal/global OpenCode skills. The current storage architecture is documented in `C:\development\opencode\docs\runbooks\codex-skill-architecture.md`.
+
+> Most skills should now live in `C:\Users\DaveWitkin\.opencode-lazy-vault\`, not `C:\Users\DaveWitkin\.config\opencode\skill\`. The native `skill\` directory is reserved for the small always-on set injected into every OpenCode session.
 
 > For project-specific skills, check `.opencode/skill/` in the project root.
 
@@ -97,7 +101,9 @@
 
 | Location | Path | Scope |
 |----------|------|-------|
-| **Global skills** | `C:\Users\DaveWitkin\.config\opencode\skill\<name>\SKILL.md` | Personal, all projects |
+| **Default lazy skills** | `C:\Users\DaveWitkin\.opencode-lazy-vault\<name>\SKILL.md` | Personal, lazy-loaded, Codex-visible |
+| **Always-on native skills** | `C:\Users\DaveWitkin\.config\opencode\skill\<name>\SKILL.md` | Foundational skills injected into every OpenCode session |
+| **Codex skills surface** | `C:\Users\DaveWitkin\.codex\skills` -> `C:\Users\DaveWitkin\.opencode-lazy-vault` | Parent junction; do not create child junctions here |
 | **Project skills** | `<repo>\.opencode\skill\<name>\SKILL.md` | Team, repo-specific |
 | **Global templates** | `C:\Users\DaveWitkin\.config\opencode\templates\<name>.md` | Personal, all projects |
 | **Global snippets** | `C:\Users\DaveWitkin\.config\opencode\snippet\<name>.md` | Personal, all projects |
@@ -106,16 +112,23 @@
 
 ## Adding a New Skill
 
-See the **Skill Creation Runbook**: `C:\Users\DaveWitkin\.config\opencode\templates\skill-creation-runbook.md`
+Use the `skill-creator` skill and the current architecture runbook:
+
+```text
+C:\Users\DaveWitkin\.opencode-lazy-vault\skill-creator\SKILL.md
+C:\development\opencode\docs\runbooks\codex-skill-architecture.md
+```
 
 Quick path:
-1. Create directory: `C:\Users\DaveWitkin\.config\opencode\skill\<skill-name>\`
+1. Create directory: `C:\Users\DaveWitkin\.opencode-lazy-vault\<skill-name>\`
 2. Create `SKILL.md` with valid frontmatter (name must match directory)
 3. Add reference files as needed (one level deep)
 4. Run activation smoke test
 5. Update this index with the new skill
 
+Only create under `C:\Users\DaveWitkin\.config\opencode\skill\<skill-name>\` when the user explicitly wants the skill always-loaded.
+
 ---
 
-*Last updated: 2026-04-25*
+*Last updated: 2026-07-06*
 

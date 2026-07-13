@@ -1,0 +1,107 @@
+# Artifact Output Format (Conductor Pipeline)
+
+How stage agents must write report / log / summary artifacts (`review-report-<ts>.md`, `review-diff-summary-<ts>.md`, `execution-log-<date>.md`, validation verdicts, etc.) into track folders. Companion to `references/stage-prompts.md` (Tool preflight) and `references/powershell-edit-hazards.md`.
+
+## TL;DR rule
+
+Create artifacts with the **native `Write` tool**, passing the content as the tool argument.
+
+When native file tools are down (the `Bun is not defined` session failure) and the session is shell-first, write via PowerShell but **do NOT bundle a large payload + `Set-Content` into one inline `-Command` string**. Instead either:
+
+- use the shell tool's here-string/stdin mechanism to feed `Set-Content` (the shell tool itself is the transport, not a bundled `-Command` blob), or
+- write the body to a temp `.ps1` / `.txt` file first, then move/copy it into place.
+
+## Why this rule exists (incident)
+
+**2026-07-01 09:33** - `conductor-plan-reviewer` (Stage 2) produced `review-diff-summary-2026-07-01-093323.md` by emitting a single PowerShell invocation of the shape:
+
+```
+pwsh.exe -NoLogo -NoProfile -NonInteractive -Command $diffPath = "...md" ; $diffContent = @' ...~13 KB of markdown describing Set-Content ops on opencode.jsonc and agent files... '@ ; Set-Content -Encoding utf8 -LiteralPath $diffPath -Value $diffContent
+```
+
+Windows Defender raised a heuristic "virus" flag on this. The flag was a **false positive**:
+
+- The command only *wrote a markdown documentation file* to the project's own track folder. It executed no payload - the here-string was literal text describing earlier dry-run edits, not code that ran.
+- No network, no elevation, no child process, no token, no decode.
+
+But the heuristic trip is a real, recurring cost. Two independent failure modes make the inline-blob pattern wrong regardless of the AV issue:
+
+1. **Heuristic AV false positives.** A long `-Command` string that combines `-NonInteractive`, a multi-KB here-string containing PowerShell keywords (`Set-Content`, `throw`, `[regex]`, `Get-Content`), references to editing config / "permissions", and a write-to-disk step looks like a dropper to string-matching heuristics. This caused the 2026-07-01 quarantine.
+2. **Command fragility.** Bundling a here-string into one `-Command` argument crosses a process boundary where quoting, backtick, and CRLF/LF handling are least stable. It is exactly the class of op that `references/powershell-edit-hazards.md` warns loses structural characters.
+
+## Decision tree
+
+```
+Need to write a track artifact (.md report/log/summary)?
+|
++-- Native Write tool available?  --> USE IT. Content goes as the tool arg. Done.
+|
++-- Bun is not defined / native tools failing (shell-first session)?
+    |
+    +-- Payload small (<~1 KB, no code-fence with PS keywords)?
+    |   --> OK to use a short inline Set-Content via the shell tool.
+    |
+    +-- Payload large OR contains PowerShell/agent/config prose?
+        --> Use the shell tool's here-string transport, OR
+        --> Stage the body in a temp file, then copy into place.
+        NEVER bundle into one -Command string passed across a process boundary.
+```
+
+## Anti-pattern (do not do this)
+
+A stage agent emitting, as its artifact-writing step, a single command that stuffs a big here-string and a `Set-Content` into one `-Command` invocation. Conceptual shape (deliberately compressed onto fewer lines so this document does not itself contain a column-0 here-string closer):
+
+```
+# WRONG - this is the shape that tripped Defender on 2026-07-01
+pwsh.exe -NoProfile -NonInteractive -Command `
+  $p = "...review-diff-summary-....md"; `
+  $c = @' <multi-KB markdown full of Set-Content / throw / regex prose> '@; `
+  Set-Content -Encoding utf8 -LiteralPath $p -Value $c
+```
+
+Why wrong: large payload + PowerShell keywords + write-to-disk in one `-Command` blob = heuristic dropper signature, and brittle quoting across the process boundary.
+
+## Approved patterns
+
+### Pattern A - native Write tool (preferred)
+
+Always try this first. It is the smallest command surface and never trips heuristics.
+
+```
+Write tool:
+  filePath: C:\development\opencode\.conductor\tracks\<track>\review-diff-summary-<ts>.md
+  content:  <the full markdown body>
+```
+
+### Pattern B - shell-first, here-string as transport (when native tools are down)
+
+When the session is already shell-first because native tools returned `Bun is not defined`, the shell tool itself is the transport. Feed `Set-Content` from a here-string kept *inside* the shell tool call - do not wrap a second `-Command` inside it. The example below is indented four spaces so this document can embed it without its here-string closer terminating this very file's own here-string; in real use the closing delimiter sits at column 0.
+
+    $path = "C:\development\opencode\.conductor\tracks\<track>\review-diff-summary-<ts>.md"
+    $value = @'
+    ...markdown body...
+    '@
+    Set-Content -Encoding utf8 -LiteralPath $path -Value $value
+
+Note the difference from the anti-pattern: here the shell tool is the outermost layer. The violation occurs when an *agent* emits `pwsh.exe -Command <big here-string + Set-Content>` as a single artifact-writing step, pushing the blob across a fresh process boundary it does not need to cross.
+
+### Pattern C - stage to temp, then place (for very large or AV-sensitive bodies)
+
+```powershell
+$tmp = "C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\artifact-$([guid]::NewGuid()).md"
+Set-Content -Encoding utf8 -LiteralPath $tmp -Value $value
+Copy-Item -LiteralPath $tmp -Destination "C:\development\opencode\.conductor\tracks\<track>\review-diff-summary-<ts>.md"
+```
+
+## Applies to
+
+All Conductor stage agents that write handoff artifacts: `conductor-plan-reviewer`, `conductor-plan-reviewer-alt`, `conductor-track-executor`, `conductor-track-validator`, `conductor-track-validator-alt`, and the orchestrator when it writes bookkeeping files directly. The reviewer is the most frequent offender because it emits the largest prose payloads (diff summaries), so it carries the strongest obligation.
+
+## Verification
+
+After writing any artifact via shell, confirm with a content assertion (per `powershell-edit-hazards.md` - parse-success is not correctness):
+
+```powershell
+$check = Get-Content -Raw -LiteralPath $path
+if (-not $check.Contains('# Review Diff Summary')) { throw 'artifact body missing expected heading' }
+```

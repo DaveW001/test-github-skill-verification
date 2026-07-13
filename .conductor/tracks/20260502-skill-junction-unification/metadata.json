@@ -1,56 +1,35 @@
 {
   "trackId": "20260502-skill-junction-unification",
-  "title": "Skill Junction Unification — Single Source of Truth",
-  "status": "active",
-  "phase": "planning",
-  "priority": "high",
+  "title": "Skill Junction Unification - Superseded",
+  "status": "superseded",
+  "phase": "closed",
+  "priority": "closed",
   "created_at": "2026-05-02",
-  "updated_at": "2026-05-02T13:11:00Z",
-  "completed": null,
-  "estimatedHours": "0.5-1",
-  "assignedTo": "Build Agent",
+  "updated_at": "2026-07-06T00:00:00-04:00",
+  "completed": "2026-07-06",
+  "assignedTo": "n/a",
   "type": "maintenance",
-  "tags": ["skills", "junctions", "codex", "agents", "lazy-vault"],
+  "tags": ["skills", "junctions", "codex", "agents", "lazy-vault", "superseded"],
   "progress": {
     "totalTasks": 27,
     "completedTasks": 0,
-    "percentage": 0
+    "percentage": 0,
+    "note": "Original plan was not executed as written; current architecture was resolved by later tracks and documentation."
   },
-  "summary": "Repair 49 broken Codex junctions and establish lazy vault as single source of truth for all 54 skills. Bridge 4 always-on skills into vault via junctions, replace individual skill-level junctions with parent-level directory junctions in Codex and .agents, and add skill/ to plugin basePaths.",
-  "keyOutcomes": [
-    "All 54 skills discoverable via skill_find/skill_use",
-    "Codex sees all 54 skills through single parent junction",
-    ".agents sees all 54 skills through single parent junction",
-    "Zero broken junctions",
-    "Adding new skills to vault requires zero junction maintenance"
+  "superseded_by": [
+    "C:\\development\\opencode\\docs\\runbooks\\codex-skill-architecture.md",
+    "C:\\development\\opencode\\.conductor\\tracks\\20260704-session-continuation-codex-skill-architecture-fix"
   ],
-  "risks": [
-    "Name collision if always-on skills already exist in vault (mitigated by Phase 0 pre-check)",
-    "Directory locked by running Codex process during junction replacement (mitigated by close-first instruction)",
-    "Plugin basePaths change causes duplicate skill entries (mitigated by rollback procedure)"
+  "summary": "This May 2026 planning track proposed making both ~/.codex/skills and ~/.agents/skills parent junctions to ~/.opencode-lazy-vault. The Codex parent-junction architecture is now valid and documented, but .agents/skills is no longer treated as an active required surface. The current authoritative policy is in docs/runbooks/codex-skill-architecture.md.",
+  "closure_notes": [
+    "Do not execute this plan as written. Its counts, always-on set, plugin-config assumptions, and .agents guidance are stale.",
+    "Codex access is now provided by C:\\Users\\DaveWitkin\\.codex\\skills -> C:\\Users\\DaveWitkin\\.opencode-lazy-vault.",
+    "C:\\Users\\DaveWitkin\\.agents\\skills is legacy/non-authoritative unless a future tool explicitly requires it.",
+    "New skills default to C:\\Users\\DaveWitkin\\.opencode-lazy-vault as real folders; OneDrive-backed junctions are optional historical sync plumbing, not the default."
   ],
-  "dependencies": [
-    "Track 20260501-skill-token-optimization (completed) — established lazy vault architecture",
-    "Track 20260502-lazy-skill-discovery-regression (Phases 0-3 complete) — confirmed plugin health"
-  ],
-  "blocking": [],
-  "relatedTracks": [
-    "20260502-lazy-skill-discovery-regression",
-    "20260501-skill-token-optimization"
-  ],
-  "deliverables": [
-    "4 bridge junctions in lazy vault pointing to always-on skills",
-    "Updated .opencode-skillful.json with dual basePaths",
-    "Single parent junction: ~/.codex/skills/ → ~/.opencode-lazy-vault/",
-    "Single parent junction: ~/.agents/skills/ → ~/.opencode-lazy-vault/",
-    "Zero broken junctions across all skill directories"
-  ],
-  "validationCriteria": [
-    "skill_find \"*\" returns 54 skills after restart",
-    "Codex sees 54 skills through ~/.codex/skills/",
-    ".agents sees 54 skills through ~/.agents/skills/",
-    "Zero broken junctions in Codex or .agents",
-    "Always-on skills still physically in ~/.config/opencode/skill/",
-    "Plugin config has 2 basePaths and valid JSON"
-  ]
+  "validation": {
+    "closed_by": "documentation reconciliation audit",
+    "date": "2026-07-06",
+    "evidence": "Current filesystem audit and later Codex architecture runbook supersede this plan."
+  }
 }

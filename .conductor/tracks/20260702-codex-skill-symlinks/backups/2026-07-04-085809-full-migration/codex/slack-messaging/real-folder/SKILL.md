@@ -1,0 +1,160 @@
+---
+name: slack-messaging
+description: "Send, search, and read Slack messages via Slack MCP server."
+triggers:
+  user_phrases:
+    - send a slack message
+    - post to slack
+    - search slack
+    - read slack
+    - check slack thread
+    - download slack file
+    - slack message
+    - message on slack
+
+---
+
+# Slack Messaging
+
+Send and read Slack messages through the `slack` MCP server. All interaction uses
+MCP tools — no standalone Python scripts or CLI wrappers exist.
+
+## MCP Server
+
+- **Package**: `slack-mcp-server@latest` (npx)
+- **Transport**: stdio
+- **Auth**: `SLACK_MCP_XOXP_TOKEN` — user OAuth token (`xoxp-` prefix) configured in `opencode.jsonc` under `mcp.slack.environment`
+- **Token location**: `C:\Users\DaveWitkin\.config\opencode\opencode.jsonc` — do NOT log, echo, or expose the token value
+
+## Enabled Tools
+
+Only these 6 tools are enabled via `SLACK_MCP_ENABLED_TOOLS`. Other Slack MCP tools will fail.
+
+| Tool | Purpose |
+|------|---------|
+| `slack_channels_list` | List accessible channels with IDs — requires `channel_types` |
+| `slack_conversations_history` | Read recent messages from a channel |
+| `slack_conversations_search_messages` | Search messages across channels |
+| `slack_conversations_add_message` | Post a message to a channel or thread |
+| `slack_conversations_replies` | Read replies in a thread |
+| `slack_attachment_get_data` | Download a file attachment from a message |
+
+## Tool Parameters
+
+### `slack_channels_list`
+
+- **`channel_types`** (required): Comma-separated list of channel types to include.
+  - Allowed values: `mpim`, `im`, `public_channel`, `private_channel`
+  - Example: `"public_channel,private_channel,im"`
+  - Use `"public_channel,private_channel,im,mpim"` to list all accessible channels.
+- **`limit`** (optional): Max items to return (1–1000, default 100).
+- **`cursor`** (optional): Pagination cursor from a previous response.
+- **`sort`**: Sort by member count (`popularity`) or default order.
+
+## Quick Reference
+
+### Send a Message to a Channel
+
+1. If channel ID is unknown, call `slack_channels_list(channel_types="public_channel,private_channel,im")` to find it.
+2. Call `slack_conversations_add_message` with:
+   - `channel_id`: Channel ID (e.g., `Cxxxxxxxxxx`) or name (`#general`)
+   - `text`: Message content (Markdown supported)
+   - `thread_ts`: Omit for top-level message; include to reply in a thread
+
+### Send a Thread Reply
+
+Same as above, but include `thread_ts` set to the parent message's timestamp
+(format: `1234567890.123456`).
+
+### Search Messages
+
+Call `slack_conversations_search_messages` with:
+- `search_query`: Text to search for (required if no filters provided)
+- Optional filters: `filter_in_channel`, `filter_users_from`, `filter_date_on`, `filter_date_during`, `filter_threads_only`
+
+### Read Channel History
+
+Call `slack_conversations_history` with:
+- `channel_id`: Required — channel ID or name
+- `limit`: Optional — time range (e.g., `1d`, `1w`) or message count (e.g., `50`)
+- `cursor`: For pagination (use `next_cursor` from previous response)
+- `include_activity_messages`: Set `true` to include join/leave events
+
+### Read Thread Replies
+
+Call `slack_conversations_replies` with:
+- `channel_id`: Channel containing the thread
+- `thread_ts`: Timestamp of the parent message
+- `limit`, `cursor`, `include_activity_messages`: Same as history
+
+### Download an Attachment
+
+Call `slack_attachment_get_data` with:
+- `file_id`: Attachment ID from message metadata (format `Fxxxxxxxxxx`)
+- Returns file metadata and content (text as-is, binary as base64, max 5MB)
+
+## Channel ID Patterns
+
+- Public channels: `Cxxxxxxxxxx`
+- Private channels: `Gxxxxxxxxxx`
+- Direct messages: `Dxxxxxxxxxx`
+- Multi-party DMs: `Gxxxxxxxxxx`
+
+Use `slack_channels_list(channel_types="public_channel,private_channel,im")` to resolve `#channel-name` to its ID when needed.
+
+## Common Workflows
+
+### Post a Status Update
+
+```
+1. slack_conversations_add_message(channel_id="#general", text="Status: ...")
+2. Confirm the message was posted (tool returns ts on success)
+```
+
+### Search for a Specific Message
+
+```
+1. slack_conversations_search_messages(search_query="deploy failed", filter_date_during="This week")
+2. Return matching messages with channel, user, and timestamp
+```
+
+### Read Recent Activity in a Channel
+
+```
+1. slack_conversations_history(channel_id="#project-updates", limit="1d")
+2. Summarize key messages
+```
+
+### Reply to a Thread
+
+```
+1. slack_conversations_replies(channel_id="Cxxx", thread_ts="1234567890.123456")
+2. Review existing replies
+3. slack_conversations_add_message(channel_id="Cxxx", thread_ts="1234567890.123456", text="Reply text")
+```
+
+## Special Cases
+
+- **Markdown**: The `text` field in `conversations_add_message` supports `text/markdown` (default) and `text/plain`. Use Markdown for formatting.
+- **Rate limits**: Slack API enforces rate limits. If a tool fails with a rate-limit error, wait and retry.
+- **Permissions**: The `xoxp` token grants access based on the authenticated user's workspace permissions. If a channel is inaccessible, the user may not be a member.
+- **No bot tokens**: This setup uses a user token (`xoxp`), not a bot token (`xoxb`). All messages appear as the authenticated user.
+- **No Python scripts**: There are no custom Python scripts for Slack. All operations go through MCP tools.
+
+## External References
+
+For upstream documentation, repo details, and advanced configuration options, see:
+[references/external-docs.md](references/external-docs.md)
+
+## Troubleshooting
+
+| Symptom | Likely Cause |
+|---------|-------------|
+| Tool not found | Tool not in `SLACK_MCP_ENABLED_TOOLS` — only 6 tools are enabled |
+| Channel not found | Wrong ID format or user not a member — run `channels_list` with `channel_types` to verify |
+| Attachment download fails | File > 5MB or file_id format wrong (must be `Fxxxxxxxxxx`) |
+| MCP server not responding | Check `opencode.jsonc` — `slack` MCP must be configured and not disabled |
+
+## Related Skills
+
+- Use `slack-send-message` when you need scripted Slack bot-token automation, reusable Python or PowerShell helpers, file-upload automation, or non-interactive notification workflows.

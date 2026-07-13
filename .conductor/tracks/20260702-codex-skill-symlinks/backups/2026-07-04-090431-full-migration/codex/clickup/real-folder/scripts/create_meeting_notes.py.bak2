@@ -1,0 +1,229 @@
+#!/usr/bin/env python3
+"""
+Create ClickUp Meeting Notes Task
+Accepts meeting notes text (direct string or file path) and creates a properly formatted task in Meeting Notes list.
+"""
+
+import sys
+import json
+import argparse
+import os
+from datetime import datetime
+import time
+from pathlib import Path
+import re
+
+# Set UTF-8 encoding for stdout/stderr to handle emojis on Windows
+if sys.stdout.encoding.lower() != 'utf-8':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except AttributeError:
+        pass # Python < 3.7 or other environment
+
+# Add scripts to path
+sys.path.append(str(Path(__file__).parent))
+try:
+    from clickup_client import ClickUpClient, API_URL
+except ImportError:
+    # Fallback if run directly and not in path
+    try:
+        sys.path.append(str(Path(__file__).parent.parent))
+        from scripts.clickup_client import ClickUpClient, API_URL
+    except ImportError:
+        print("Error: Could not import clickup_client. Make sure you are in the scripts directory or repository root.")
+        sys.exit(1)
+
+# Constants from config
+MEETING_NOTES_LIST_ID = "901107655225"
+DAVE_USER_ID = "80264"
+
+# Custom field IDs for Meeting Notes list
+CF_MEETING_DATE = "19408341-d116-45fc-b30e-8a3a2bbbadbf"
+CF_FOLLOW_UP = "9ddd4ccd-5461-4105-af17-d106f64ceb7f"
+CF_ATTENDEES = "824ed3e1-4b33-4d24-b216-77a4fca891d7"
+
+# Follow Up options
+FOLLOW_UP_YES = "904d53a4-615f-4876-9d39-3d3ac2f66fc6"
+FOLLOW_UP_NO = "a3767735-31ae-4bde-9509-2e4aec952a1f"
+
+
+def parse_meeting_notes(text):
+    """
+    Parse meeting notes text to extract key information.
+
+    Looks for:
+    - Meeting date (from title, Started line, or Date line)
+    - Attendees (from Attendees section)
+    - Action items (presence check)
+    """
+    meeting_date = None
+    attendees = None
+    has_action_items = False
+
+    lines = text.split('\n')
+    for i, line in enumerate(lines):
+        line = line.strip()
+        if not line:
+            continue
+
+        # Parse Attendees
+        if '## Attendees' in line or '**Attendees:**' in line:
+            content = line.replace('## Attendees', '').replace('**Attendees:**', '').strip()
+            if content:
+                attendees = content
+            elif i + 1 < len(lines):
+                next_line = lines[i + 1].strip()
+                if next_line and not next_line.startswith(('-', '*', '#')):
+                    attendees = next_line
+
+        # Parse Action Items presence
+        elif '## Action Items' in line:
+            has_action_items = True
+
+        # 1. Try to find date in Title (# Title - Date)
+        elif line.startswith('#'):
+            date_match = re.search(r'(\d{4}-\d{2}-\d{2})', line)
+            if date_match:
+                try:
+                    meeting_date = datetime.strptime(date_match.group(1), '%Y-%m-%d').date()
+                except ValueError:
+                    pass
+            else:
+                date_match = re.search(r'([A-Z][a-z]+ \d{1,2}, \d{4})', line)
+                if date_match:
+                    try:
+                        meeting_date = datetime.strptime(date_match.group(1), '%B %d, %Y').date()
+                    except ValueError:
+                        pass
+
+        # 2. Try to find "Started" line
+        elif 'Started' in line:
+            match = re.search(r'on (\d{1,2} [A-Z][a-z]+)(?:,|$|\s)', line)
+            if match:
+                date_str = match.group(1)
+                try:
+                    parsed = datetime.strptime(date_str, '%d %b')
+                    meeting_date = parsed.replace(year=datetime.now().year).date()
+                except ValueError:
+                    try:
+                        parsed = datetime.strptime(date_str, '%d %B')
+                        meeting_date = parsed.replace(year=datetime.now().year).date()
+                    except ValueError:
+                        pass
+
+        # 3. Try to find **Date:** line
+        elif '**Date:**' in line or line.startswith('Date:'):
+            date_str = line.replace('**Date:**', '').replace('Date:', '').strip()
+            try:
+                meeting_date = datetime.strptime(date_str, '%Y-%m-%d').date()
+            except ValueError:
+                pass
+
+    return meeting_date, attendees, has_action_items
+
+
+def create_meeting_notes(notes_text, assignees=None, meeting_date=None):
+    """
+    Create a ClickUp meeting notes task with proper formatting.
+    """
+    lines = notes_text.split('\n')
+    first_line = lines[0].strip() if lines else ''
+
+    # Extract meeting title for task name
+    skip_patterns = ['🕞', '🕐', '📅', 'Started at', 'Duration:']
+    should_skip_first_line = False
+    for pattern in skip_patterns:
+        if pattern in first_line:
+            should_skip_first_line = True
+            break
+
+    if first_line and not should_skip_first_line:
+        raw_title = first_line.strip('#').strip()
+        date_pattern = r'(?:[-—–]\s*\d{4}-\d{2}-\d{2}|[-—–]\s*[A-Z][a-z]+ \d{1,2}, \d{4}|\s\(\d{4}-\d{2}-\d{2}\))$'
+        title_match = re.sub(date_pattern, '', raw_title).strip()
+        final_title = title_match if title_match else raw_title
+        description_lines = lines[1:]
+    else:
+        for line in lines:
+            if line.strip().startswith('## '):
+                potential_title = line.strip().replace('## ', '')
+                if potential_title not in ['Key Points', 'Action Items', 'Summary', 'Attendees', 'Discussion Summary']:
+                    final_title = potential_title
+                    break
+        else:
+            final_title = "Meeting Notes"
+        description_lines = lines
+
+    # Clean notes text: handle blank lines
+    cleaned_lines = []
+    i = 0
+    prev_was_heading = False
+
+    while i < len(description_lines):
+        line = description_lines[i]
+        stripped = line.strip()
+
+        if not stripped:
+            # Blank line logic
+            if prev_was_heading:
+                # Always skip blank line immediately AFTER a heading
+                i += 1
+                continue
+            
+            # Check if NEXT line is a heading
+            next_is_heading = False
+            if i + 1 < len(description_lines):
+                next_is_heading = description_lines[i+1].strip().startswith('##')
+            
+            if next_is_heading:
+                # Text -> Blank -> Header (Keep blank) OR Header -> Blank -> Header (Skip blank - handled by prev_was_heading)
+                cleaned_lines.append(line)
+            else:
+                # Normal blank line between content
+                cleaned_lines.append(line)
+            
+            prev_was_heading = False # Blank lines are not headings
+        else:
+            cleaned_lines.append(line)
+            prev_was_heading = stripped.startswith('##')
+        
+        i += 1
+
+    notes_text = '\n'.join(cleaned_lines).strip()
+
+    client = ClickUpClient()
+    parsed_date, parsed_attendees, has_action_items = parse_meeting_notes(notes_text)
+    final_date = meeting_date or parsed_date
+
+    if final_date:
+        task_name = f"{final_date.strftime('%Y-%m-%d')} - {final_title}"
+    else:
+        task_name = final_title
+
+    if len(task_name) > 95:
+        task_name = task_name[:92] + '...'
+
+    follow_up_value = FOLLOW_UP_YES if has_action_items else FOLLOW_UP_NO
+    custom_fields = [{"id": CF_FOLLOW_UP, "value": follow_up_value}]
+    if final_date:
+        ts = int(datetime.combine(final_date, datetime.min.time()).timestamp()) * 1000
+        custom_fields.append({"id": CF_MEETING_DATE, "value": ts})
+
+    print(f"Creating meeting notes task: {task_name}")
+    response = client.create_task(
+        list_id=MEETING_NOTES_LIST_ID,
+        name=task_name,
+        description=notes_text,
+        priority=3,
+        assignees=[],
+        custom_fields=custom_fields
+    )
+
+    print(f"✅ Task created: {response.get('url')}")
+    return response
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Create ClickUp Meeting Notes task')
+    parser.add_argument('input', help='File path to meeting notes OR direct text string')
+    parser.add_argument('--assignees', help='Com

@@ -45,6 +45,16 @@
 | 20260704-microsoft-graph-junction-repair | Microsoft Graph lazy-vault junction repair | completed | 2026-07-04 | C:\development\opencode\.conductor\tracks\20260704-microsoft-graph-junction-repair\ |
 | 20260704-humanizer-peer-review-fixes | Humanizer Peer Review Fixes | executed-complete | 2026-07-04 | C:\development\opencode\.conductor\tracks\20260704-humanizer-peer-review-fixes |
 | 20260704-session-continuation-codex-skill-architecture-fix | Codex Skill Architecture Repair and Automation Hardening | complete-with-followup | 2026-07-04 | C:\development\opencode\.conductor\tracks\20260704-session-continuation-codex-skill-architecture-fix |
-| 20260705-conductor-pipeline-tdd-doc-stages | Conductor Pipeline TDD + Documentation Stages | p0-p2-fixes-applied-needs-restart | 2026-07-06 (19/22) | C:\development\opencode\.conductor\tracks\20260705-conductor-pipeline-tdd-doc-stages |
+| 20260705-conductor-pipeline-tdd-doc-stages | Conductor Pipeline TDD + Documentation Stages | delivered-4.2-verified | 2026-07-06 (20/22) | C:\development\opencode\.conductor\tracks\20260705-conductor-pipeline-tdd-doc-stages |
 
 | 20260705-scheduled-task-read-inconsistency | Scheduled Task Read Inconsistency (email-triage hourly task) | executed-complete | 16/18 | C:\development\opencode\.conductor\tracks\20260705-scheduled-task-read-inconsistency |
+| 20260706-conductor-pipeline-closeout-hardening | Conductor Pipeline Closeout Hardening | completed | 2026-07-06 (25/25) | C:\development\opencode\.conductor\tracks\20260706-conductor-pipeline-closeout-hardening |
+
+| 20260706-conductor-skill-pipeline-alignment | Conductor Skill <-> Pipeline Drift Reconciliation | completed | 2026-07-06 | C:\development\opencode\.conductor\tracks\20260706-conductor-skill-pipeline-alignment |
+| 20260706-lazy-vault-localization | Lazy Vault Localization | completed | 2026-07-06 (63/63 converted) | C:\development\opencode\.conductor\tracks\20260706-lazy-vault-localization |
+| 20260706-bookkeeping-smoke-test | Bookkeeping Smoke Test Marker | executed-complete | 2026-07-06 | C:\development\opencode\.conductor\tracks\20260706-bookkeeping-smoke-test |
+| 20260709-pptx-skill-adapt | Adapt pptx-from-layouts skill for OpenCode | executed-complete | 2026-07-10 | 33/33 | C:\development\opencode\.conductor\tracks\20260709-pptx-skill-adapt\plan.md |
+| 20260710-session-db-query-skill | Session DB Query Skill | closed | 2026-07-10 | C:\development\opencode\.conductor\tracks\20260710-session-db-query-skill |
+| 20260710-pptx-powerpoint-render-backend | PowerPoint COM Render Backend for pptx-from-layouts Visual Validation | closed | 2026-07-11 | C:\development\opencode\.conductor\tracks\20260710-pptx-powerpoint-render-backend |
+| 20260712-pptx-quality-pipeline | PowerPoint Creation and Evaluation Quality Pipeline | complete | 2026-07-12 | C:\development\opencode\.conductor\tracks\20260712-pptx-quality-pipeline |
+| 20260712-pptx-reference-image-rebuild | Editable PowerPoint Reference-Image Reconstruction Mode | complete | 2026-07-13 | C:\development\opencode\.conductor\tracks\20260712-pptx-reference-image-rebuild |

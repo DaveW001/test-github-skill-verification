@@ -13,3 +13,10 @@ nul
 # migration backups with credentials
 .conductor/tracks/*/artifacts/opencode.json.backup-pre-migration
 .conductor/tracks/20260425-tool-search-plugin/artifacts/opencode.jsonc.backup-pre-tool-search
+
+# secrets and databases in conductor track artifacts
+**/.env
+.conductor/tracks/*/artifacts/**/*.db
+
+# temp stage6 output files
+stage6-*

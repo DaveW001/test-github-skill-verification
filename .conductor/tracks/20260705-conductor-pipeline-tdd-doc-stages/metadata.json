@@ -1,22 +1,24 @@
 {
   "track_id": "20260705-conductor-pipeline-tdd-doc-stages",
   "title": "Conductor Pipeline TDD + Documentation Stages",
-  "status": "p0-p2-fixes-applied-needs-restart",
+  "status": "delivered-4.2-verified-4.3-4.4-deferred",
   "track_type": "bookkeeping",
   "test_framework": "n/a",
   "test_command": "n/a",
   "created": "2026-07-05",
   "updated": "2026-07-06",
   "executed_at": "2026-07-05",
-  "progress": "86%",
+  "progress": "91%",
   "task_count": 22,
-  "completed_tasks": 19,
+  "completed_tasks": 20,
   "readiness_check_count": 9,
   "executor_model": "zai-coding-plan/glm-5.2",
-  "notes": "P0/P1/P2 fixes applied after peer review and smoke-blocker: command entrypoint now 9-stage, stale stage numbering normalized, Stage 7/8 routing specified, RED gate hardened, no-test-framework policy added, Stage 9 doc-safety added, artifact inventory/read-only boundaries updated, Stage 4 test-writer moved to opencode-go/qwen3.7-plus. Restart OpenCode before rerunning Phase 4.2 smoke. See p0-p2-fixes-report-2026-07-06.md.",
+  "notes": "Task 4.2 bookkeeping smoke test PASSED 2026-07-06 (live run: track_type=bookkeeping, path 1->5->7->9, test-writer/test-runner skipped, doc-writer invoked). Tasks 4.3/4.4 (code-track smoke tests) deferred: this repo has no test framework; will validate naturally on first real code track. P0/P1/P2 fixes applied after peer review. See smoke-test-report-2026-07-06.md, p0-p2-fixes-report-2026-07-06.md.",
   "artifacts": {
     "spec": "spec.md",
     "plan": "plan.md",
-    "execution_log": "execution-log-2026-07-05.md"
+    "execution_log": "execution-log-2026-07-05.md",
+    "smoke_test_report": "smoke-test-report-2026-07-06.md",
+    "smoke_test_track": "20260706-bookkeeping-smoke-test"
   }
 }

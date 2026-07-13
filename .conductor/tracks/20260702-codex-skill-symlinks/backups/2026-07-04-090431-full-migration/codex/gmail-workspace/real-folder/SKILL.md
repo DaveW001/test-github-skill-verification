@@ -1,0 +1,338 @@
+---
+name: gmail-workspace
+description: Export, triage, and process Gmail via Python and Google Apps Script.
+triggers:
+  intent:
+    - gmail export
+    - gmail batch processing
+    - gmail pre-triage
+    - gmail knowledge base extraction
+    - google workspace offline access
+  user_phrases:
+    - export my gmail
+    - export gmail to markdown
+    - run gmail pre-triage
+    - gmail batch export
+    - process gmail offline
+    - triage gmail export
+    - generate kb from gmail
+  file_context:
+    extensions: [py, js, md, csv]
+    paths: ["scripts/gmail*", "scripts/export-gmail*", "scripts/pretriage-gmail*", "scripts/generate-gmail*"]
+  priority: high
+  suggest_only: false
+---
+
+# Gmail / Google Workspace
+
+Export, triage, and process Gmail messages using local Python scripts and Google Apps Script. This skill provides offline/batch Gmail access when MCP-based tools (`mcp-google`) are unavailable.
+
+## Decision Tree
+
+| If you need to... | Use... |
+|---|---|
+| Export Gmail messages to markdown (one-time batch) | `export-gmail-window.py` or `gmail-export-apps-script.js` |
+| Classify and score exported messages | `pretriage-gmail-export.py` |
+| Generate extraction register from triaged messages | `generate-gmail-extraction-register.py` |
+| Create KB entity files from extraction register | `generate-gmail-kb-files.py` |
+| Read/triage individual emails interactively | `gmail-inbox-triage` skill (requires MCP) |
+| Draft replies interactively | `gmail-draft-reply` skill (requires MCP) |
+| Access Gmail via CLI | `gws` CLI (requires resolved OAuth — see blocking issue) |
+
+## Quick Start: Full Pipeline
+
+### Gmail API Credentials
+
+Two accounts have OAuth credentials configured:
+
+| Account | Credentials Path | Token Path (auto-generated) |
+|---------|-----------------|-----------------------------|
+| `dave.witkin@packagedagile.com` | `~/.config/gmail-api/credentials.json` | `~/.config/gmail-api/token.json` |
+| `davidawitkin@gmail.com` | `~/.config/gmail-api-personal/credentials.json` | `~/.config/gmail-api-personal/token.json` |
+| `dave.witkin@scruminc.com` | N/A (managed domain, no Cloud Console) | N/A |
+
+First run with a new credential opens a browser for OAuth authorization. Token is cached automatically.
+
+```bash
+# Step 1: Export (Python API approach)
+python scripts/export-gmail-window.py \
+  --account dave.witkin@packagedagile.com \
+  --start-date 2026-02-01 \
+  --end-date-exclusive 2026-05-01 \
+  --output "60 archive/2026-05-03/gmail_export_90days.md" \
+  --manifest .conductor/tracks/gmail-high-signal-ingestion/gmail-export-manifest.md \
+  --credentials ~/.config/gmail-api/credentials.json \
+  --token ~/.config/gmail-api/token.json
+
+# Step 2: Pre-triage
+python scripts/pretriage-gmail-export.py \
+  --input "60 archive/2026-05-03/gmail_export_90days.md" \
+  --config pretriage-config.json \
+  --output-csv .conductor/tracks/gmail-high-signal-ingestion/pretriage-gmail.csv \
+  --triage-md message-triage-auto.md \
+  --priority-md priority-review-queue.md \
+  --skip-sample-md skip-auto-sample.md \
+  --thread-groups-md thread-groups.md \
+  --summary-md pretriage-summary.md
+
+# Step 3: Generate extraction register
+python scripts/generate-gmail-extraction-register.py \
+  --input "60 archive/2026-05-03/gmail_export_90days.md" \
+  --priority-csv .conductor/tracks/gmail-high-signal-ingestion/pretriage-gmail.csv \
+  --output extraction-register.md
+
+# Step 4: Generate KB files
+python scripts/generate-gmail-kb-files.py \
+  --input "60 archive/2026-05-03/gmail_export_90days.md" \
+  --register extraction-register.md \
+  --source-id source-gmail-high-signal-ingestion
+```
+
+## Export Methods
+
+### Method 1: Python Gmail API (`export-gmail-window.py`)
+
+**Best for:** One-time batch exports with full OAuth control.
+
+- Uses Google Gmail API v1 with `gmail.readonly` scope
+- Requires `credentials.json` (OAuth client ID) and generates `token.json` on first run
+- Outputs deterministic markdown with metadata table per message
+- Supports `--dry-run` for auth testing
+- Supports `--max-results` for limiting export size
+
+**Dependencies:**
+```bash
+pip install google-auth-oauthlib google-auth-httplib2 google-api-python-client beautifulsoup4 lxml
+```
+
+### Method 2: Google Apps Script (`gmail-export-apps-script.js`)
+
+**Best for:** Running entirely in the browser without local Python setup.
+
+- Open https://script.google.com/ → New project → paste the script
+- Edit `START_DATE`, `END_DATE`, `MAX_MESSAGES` at the top
+- Run `exportGmailToMarkdown()` — grant permissions when prompted
+- Output saved to Google Drive as `gmail_export_90days.md`
+- Download and place in `60 archive/YYYY-MM-DD/`
+
+**Limitations:** No raw Gmail thread IDs (Apps Script generates synthetic IDs). Same markdown format as Python export.
+
+### Method 3: gws CLI
+
+**Status: BLOCKED** — See [Blocking Issues](#blocking-issues).
+
+## Scripts Reference
+
+| Script | Location | Purpose |
+|--------|----------|---------|
+| `export-gmail-window.py` | `scripts/` | Export Gmail messages to markdown via Gmail API |
+| `gmail-export-apps-script.js` | `scripts/` | Export Gmail messages via Google Apps Script |
+| `pretriage-gmail-export.py` | `scripts/` | Classify, score, collapse threads, write queues |
+| `generate-gmail-extraction-register.py` | `scripts/` | Generate extraction register from triaged messages |
+| `generate-gmail-kb-files.py` | `scripts/` | Generate KB entity files from extraction register |
+
+All scripts are also mirrored in this skill's `scripts/` folder for portability.
+
+## Markdown Export Format
+
+Both export scripts produce the same deterministic format:
+
+```markdown
+## 1. Subject Line
+
+| Field | Value |
+|-------|-------|
+| MessageId | `<raw-message-id>` |
+| ThreadId | `<gmail-thread-id>` |
+| InternalDate | `2026-03-15T14:30:00Z` |
+| From | `sender@example.com` |
+| To | `recipient@example.com` |
+| Cc | `cc@example.com` |
+| Labels | `INBOX` |
+| Snippet | `First 200 chars...` |
+
+Email body text here...
+
+---
+```
+
+## Pre-Triage Classification Labels
+
+| Label | Meaning |
+|-------|---------|
+| `INGEST-CANDIDATE` | High signal, ready for KB extraction |
+| `REVIEW` | Worth reviewing, may need human decision |
+| `SKIP-AUTO` | Low signal, auto-classified as noise |
+| `DUPLICATE-CANDIDATE` | Thread duplicate, representative already selected |
+| `NEEDS-HUMAN` | Contains patterns requiring human judgment |
+
+## Scrum Inc. Gmail Account — Complete Process Guide
+
+**Account:** `dave.witkin@scruminc.com` (managed Google Workspace domain)
+
+### Critical Constraint
+
+**No Google Cloud Console access.** This is a managed Google Workspace domain. The user does NOT have admin access to:
+- Create OAuth client IDs
+- Enable Gmail API or other Google APIs
+- Manage service accounts
+- Configure domain-wide delegation
+
+**Any approach requiring Google Cloud Console will fail for this account.** Do NOT propose it.
+
+### Alternative: Packaged Agile Account
+
+The user has a **Packaged Agile** Google Workspace account (`dave.witkin@packagedagile.com`) with OAuth credentials configured. If Scrum Inc. emails are forwarded or accessible from the Packaged Agile account, use those credentials instead:
+- Credentials: ``~/.config/gmail-api/credentials.json``
+- Token: ``~/.config/gmail-api/token.json``
+
+### Export Methods - Decision Tree
+
+| Scenario | Method | Effort | Best For |
+|----------|--------|--------|----------|
+| **1-5 emails** (specific messages) | Chrome browser tools | Low | Quick extraction of known emails. Navigate to `mail.google.com`, expand thread, extract content into pipeline markdown format. |
+| **Bulk export** (dozens+ messages, date range) | Google Apps Script | Medium | User has used this before. Runs in browser under their own Google session. No Cloud Console needed. Produces same markdown format as Python export. |
+| **CLI automation** (future) | `gws` CLI | Blocked | Currently blocked by OAuth 403 on bundled client. See [Blocking Issues](#blocking-issues). |
+| **Python Gmail API** | `export-gmail-window.py` | NOT VIABLE | Requires OAuth credentials from Google Cloud Console — user doesn't have access. |
+
+### Method A: Chrome Browser Tools (Single/Few Emails)
+
+**When to use:** User provides a specific Gmail URL or you need to extract 1-5 messages.
+
+**Steps:**
+1. Navigate to `https://mail.google.com/mail/u/0/` — user must sign in manually (do NOT handle credentials)
+2. Navigate to the specific email URL (format: `https://mail.google.com/mail/u/0/#inbox/<message-id>`)
+3. Use `control-chrome_take_snapshot` to get the page content
+4. Expand all messages in the thread (click to expand collapsed replies)
+5. Extract: From, To, Cc, Date, Subject, Body, Attachments
+6. Write to `60 archive/YYYY-MM-DD/<thread-subject>.md` in the pipeline's markdown format:
+   ```markdown
+   ## N. Subject Line
+   | Field | Value |
+   |-------|-------|
+   | MessageId | ... |
+   | ThreadId | ... |
+   | InternalDate | ... |
+   | From | ... |
+   | To | ... |
+   | Cc | ... |
+   | Labels | ... |
+   | Snippet | ... |
+
+   Body text...
+   ---
+   ```
+7. Note any attachments (names listed) — they cannot be downloaded via browser tools
+
+### Method B: Google Apps Script (Bulk Export)
+
+**When to use:** User needs to export many messages (date range, search query). User has successfully used this method before.
+
+**Script location:** `scripts/gmail-export-apps-script.js` (also in this skill's `scripts/` folder)
+
+**Steps:**
+1. Open https://script.google.com/ in the user's browser (must be logged into Scrum Inc. account)
+2. Create new project → paste the full script from `gmail-export-apps-script.js`
+3. Edit the configuration variables at the top:
+   ```javascript
+   var START_DATE = "2026/02/01";        // Start date (inclusive)
+   var END_DATE = "2026/05/01";          // End date (exclusive)
+   var MAX_MESSAGES = 500;               // Max messages to export
+   var OUTPUT_FILENAME = "gmail_export_90days.md";
+   ```
+4. Click **Run** → grant permissions when prompted (first run only)
+5. Check Execution log for progress
+6. Output file (`gmail_export_90days.md`) is saved to Google Drive root
+7. Download the file and place it in `60 archive/YYYY-MM-DD/`
+8. Proceed with pre-triage pipeline (Step 2 below)
+
+**Limitations:**
+- Maximum execution time: 6 minutes (Google Apps Script limit)
+- For very large exports, may need to run in batches (narrower date ranges)
+- Generates synthetic thread IDs (format: `thread-{timestamp}-{n}`) — downstream scripts handle this
+- Date filtering via `GmailApp.search()` can be imprecise on boundaries; script re-checks dates
+
+**Automation note:** This method currently requires manual copy-paste into script.google.com. Future automation options:
+- Could potentially use browser tools to navigate to script.google.com, paste the script, and trigger execution — but this is complex and fragile
+- For now, the manual approach is reliable and the user is familiar with it
+
+### After Export: Run the Pipeline
+
+Once you have a markdown export file, run the full pipeline:
+
+```bash
+# Step 2: Pre-triage (classify, score, collapse threads)
+python scripts/pretriage-gmail-export.py \
+  --input "60 archive/YYYY-MM-DD/gmail_export.md" \
+  --config .conductor/tracks/gmail-high-signal-ingestion/pretriage-config.json \
+  --output-csv .conductor/tracks/gmail-high-signal-ingestion/pretriage-gmail.csv \
+  --triage-md message-triage-auto.md \
+  --priority-md priority-review-queue.md \
+  --skip-sample-md skip-auto-sample.md \
+  --thread-groups-md thread-groups.md \
+  --summary-md pretriage-summary.md
+
+# Step 3: Generate extraction register
+python scripts/generate-gmail-extraction-register.py \
+  --input "60 archive/YYYY-MM-DD/gmail_export.md" \
+  --priority-csv .conductor/tracks/gmail-high-signal-ingestion/pretriage-gmail.csv \
+  --output extraction-register.md
+
+# Step 4: Generate KB files
+python scripts/generate-gmail-kb-files.py \
+  --input "60 archive/YYYY-MM-DD/gmail_export.md" \
+  --register extraction-register.md \
+  --source-id source-gmail-high-signal-ingestion
+```
+
+See [reference.md](reference.md) for detailed parameter docs.
+
+## Blocking Issues
+
+### gws CLI OAuth 403 Error
+
+**Error:**
+```
+Error 403: access_denied
+chatgpt-desktop-auth has not completed the Google verification process.
+The app is currently being tested, and can only be accessed by developer-approved testers.
+```
+
+**Cause:** The `gws` CLI (v0.22.5, installed via `cargo install google-workspace-cli`) bundles a client app called "chatgpt-desktop-auth" that has not completed Google's OAuth verification. This blocks the OAuth flow for non-developer accounts.
+
+**Resolution options:**
+1. Register a custom OAuth client ID in Google Cloud Console and configure `gws` to use it
+2. Use the Python Gmail API approach (`export-gmail-window.py`) with your own OAuth credentials
+3. Use the Google Apps Script approach (`gmail-export-apps-script.js`) which runs under the user's own Google session
+4. Wait for `gws` to complete Google verification or switch to a different CLI tool
+
+**Status:** Unresolved for Scrum Inc. account. For Packaged Agile and personal Gmail accounts, Python API is fully operational with OAuth credentials at:
+- Packaged Agile: `~/.config/gmail-api/credentials.json`
+- Personal: `~/.config/gmail-api-personal/credentials.json`
+
+## Gotchas
+
+- **gws credentials don't transfer between machines** — encrypted credentials are machine-specific. If you see "May have been created on a different machine", re-authenticate.
+- **Apps Script date precision** — Gmail search in Apps Script can be imprecise on date boundaries; the script re-checks dates on each message.
+- **Thread IDs differ** — Apps Script generates synthetic thread IDs; Python export uses real Gmail thread IDs. Downstream scripts handle both.
+- **Rate limits** — Gmail API has per-user rate limits. For large exports (>1000 messages), the Python script handles pagination automatically.
+- **Markdown format must match** — `pretriage-gmail-export.py` expects the exact table format produced by the export scripts. Don't modify the export format without updating the parser.
+
+## Dependencies
+
+```bash
+# Full pipeline requirements
+pip install google-auth-oauthlib google-auth-httplib2 google-api-python-client beautifulsoup4 lxml
+```
+
+Or use `requirements-gmail-ingestion.txt` from the workspace root.
+
+## Related Skills
+
+- **gmail-inbox-triage** — Interactive real-time triage via MCP (requires `mcp-google`)
+- **gmail-draft-reply** — Draft replies via MCP (requires `mcp-google`)
+- **google-contacts** — Contact lookup via MCP (requires `mcp-google`)
+- **google-calendar-today** / **google-calendar-schedule** — Calendar access via MCP
+- **knowledge-graph-builder** — Build knowledge graph from extracted entities
+
+For detailed script parameters and advanced usage, see [reference.md](reference.md).

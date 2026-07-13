@@ -56,3 +56,15 @@ None. All execution tasks (0.1-5.2) complete. The "Execution-Readiness Checklist
 
 ## Review handoff
 See C:\Users\DAVEWI~1\AppData\Local\Temp\opencode\skillshare-tests\handover.md for the full artifact list with fully qualified Windows paths.
+## 2026-07-04 Out-of-band humanizer peer-review fixes
+
+This section records an out-of-band follow-up to the humanizer peer review (track 20260704-humanizer-peer-review-fixes). It is separate from the main run above.
+
+Scope of out-of-band fixes:
+- Contradiction resolution: clarified the em-dash rule (brand-voice.md Rule 3); banned "Here's the thing" as an observer-opener AI tell across brand-voice.md Rule 7, the Banned phrases list, and ai-patterns-to-fix.md Pattern 10 Observer Opener.
+- Kobak list synchronization: replaced the over-broad 40-word list with the canonical 26-word Kobak list, synchronized across brand-voice.md and humanization-checklist.md.
+- Checklist prioritization: added a "Top 5 high-signal checks" callout near the top of humanization-checklist.md.
+- measurement expansion: extended measure-humanizer.ps1 from 3 metrics to 8 checks (short sentence stacks, hook-formula openers, Kobak excess words, resolution closers, rhetorical contrast) with an AllPass gate on the expanded checks.
+- after.md short-sentence stack fix: rewrote the three short-sentence stacks (under 12 words, 4+ consecutive) without losing meaning or the Packaged Agile voice.
+
+Validation: the expanded suite reports AllPass: True, ShortSentenceStackCount: 0, HookFormulaOpenerCount: 0, KobakExcessWordCount: 0, ResolutionCloserCount: 0. The skill source changes were committed and pushed to the skillshare-skills origin.

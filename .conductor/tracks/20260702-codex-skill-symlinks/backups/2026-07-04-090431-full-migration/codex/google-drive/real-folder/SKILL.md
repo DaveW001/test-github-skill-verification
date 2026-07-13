@@ -1,0 +1,210 @@
+---
+name: google-drive
+description: List, search, download, upload, and read Google Drive/Docs files via gws CLI.
+triggers:
+  intent:
+    - google drive
+    - drive files
+    - google docs
+    - download from drive
+    - upload to drive
+    - drive search
+    - google calendar
+    - google contacts
+    - google gmail
+    - google email
+    - google workspace
+  user_phrases:
+    - find a file in drive
+    - download from google drive
+    - upload to drive
+    - read this google doc
+    - list my drive files
+    - what's in my drive
+    - list my google calendar events
+    - list my google contacts
+    - send a google email
+    - list my google gmail messages
+    - triage my google gmail inbox
+  priority: medium
+  suggest_only: false
+---
+
+# Google Drive & Docs
+
+List, search, download, upload, and read files from Google Drive and Google Docs using the `gws` CLI (Google Workspace CLI). Use Python fallback scripts only for batch workflows where CLI output is inconvenient.
+
+## Decision Tree
+
+| If the user needs to... | Use... |
+|---|---|
+| Check auth status | `gws auth status` |
+| List files in Drive | `gws drive files list --params '{"pageSize": 10}' --format table` |
+| Search for a file by name | `gws drive files list --params '{"q": "name contains \"filename\""}' --format table` |
+| Download a binary file | `gws drive files get --params '{"fileId": "FILE_ID"}' --output "./output-file"` |
+| Upload a local file | `gws drive +upload --upload "./local-file.pdf" --params '{"name": "uploaded-file.pdf"}'` |
+| Read Google Docs JSON | `gws docs documents get --params '{"documentId": "DOC_ID"}' --format json` |
+| List file permissions | `gws drive permissions list --params '{"fileId": "FILE_ID"}' --format table` |
+| Batch list Drive files | `python scripts/drive-list.py --query "name contains 'report'" --output files.md` |
+| Batch download files | `python scripts/drive-download.py --file-id FILE_ID --output-dir ./downloads` |
+| Export a Google Doc to Markdown | `python scripts/docs-export.py --document-id DOC_ID --output doc.md` |
+| List upcoming calendar events | `gws calendar events list --params '{"calendarId": "primary", "maxResults": 10}' --format table` |
+| Create a calendar event | `gws calendar +insert --summary "Meeting" --start "2026-05-12T10:00:00" --end "2026-05-12T11:00:00"` |
+| Show today's agenda | `gws calendar +agenda` |
+| Get my Google profile | `gws people people get --params '{"resourceName": "people/me", "personFields": "names,emailAddresses"}' --format json` |
+| List my contacts | `gws people connections list --params '{"resourceName": "people/me", "pageSize": 10, "personFields": "names,emailAddresses"}' --format json` |
+| List Gmail messages | `gws gmail users messages list --params '{"userId": "me", "maxResults": 5}' --format json` |
+| Send an email | `gws gmail +send --to "recipient@example.com" --subject "Hello" --body "Message text"` |
+| Triage unread emails | `gws gmail +triage --max 10` |
+| Batch list calendar events | `python scripts/calendar-list.py --days 7 --output events.json` |
+| Batch triage Gmail | `python scripts/gmail-triage.py --max 20 --output triage.json` |
+
+## Routing Guide
+
+Use this skill for **Google Workspace** operations. Use other skills for **Microsoft/Outlook** or specialized Google operations:
+
+| If the user needs... | Use this skill |
+|---|---|
+| Google Drive files, Google Docs | This skill (google-drive) |
+| Google Calendar events (list, create) | This skill (google-drive) |
+| Google Contacts (list, lookup) | This skill (google-drive) |
+| Gmail messages (list, send, triage) | This skill (google-drive) |
+| Outlook/Exchange email or inbox | `outlook-inbox-triage` or `email-draft-reply` |
+| Outlook/Exchange calendar scheduling | `calendar-schedule` |
+| Today's Google calendar overview | `google-calendar-today` (quick summary) or this skill (detailed event data) |
+| Google contact lookup by name | `google-contacts` (interactive lookup) or this skill (raw list) |
+| Gmail export or batch processing | `gmail-workspace` |
+| Draft an email reply in user's voice | `email-draft-reply` (Outlook) or `gmail-draft-reply` (Gmail) |
+
+## Auth Prerequisites
+
+Always check auth before live Drive or Docs operations:
+
+```bash
+gws auth status
+```
+
+If auth status shows "auth_method": "none"` or the command returns `Access denied. No credentials provided`, tell the user to run this interactive command:
+
+```bash
+gws auth login
+```
+
+Credential locations used by `gws`:
+- Client secret: `C:\Users\DaveWitkin\.config\gws\client_secret.json`
+- Encrypted credentials: `C:\Users\DaveWitkin\.config\gws\credentials.enc`
+- Plain credentials: `C:\Users\DaveWitkin\.config\gws\credentials.json`
+
+### Calendar, People, and Gmail Auth
+
+These services use the same `gws` OAuth credentials as Drive. If you authenticated with limited scopes, you may need to re-authenticate:
+
+```bash
+# Re-authenticate with specific services (recommended for unverified apps)
+gws auth login -s drive,gmail,calendar,people
+```
+
+**Scope limit warning**: Unverified Google OAuth apps are limited to ~25 scopes. If the scope picker fails, choose individual services instead of "select all".
+
+## Error Recovery
+
+| Error or symptom | Recovery action |
+|---|---|
+| `401` or `Access denied. No credentials provided` | Ask user to run `gws auth login`, then retry `gws auth status`. |
+| `404` file not found | Search by name with `gws drive files list --params '{"q": "name contains \"filename\""}' --format table`. |
+| `403` permission denied | Confirm the signed-in Google account has access to the file or folder. |
+| `429` rate limit | Wait 60 seconds; for paginated commands add `--page-delay 2000`. |
+| `gws` command not found | Try `& "C:\Users\DaveWitkin\.cargo\bin\gws.exe" --version`; if missing, install `gws` before continuing. |
+| Python dependency missing | Run `pip install google-api-python-client google-auth google-auth-oauthlib pyyaml`. |
+| `403 accessNotConfigured` | The API is not enabled in your Google Cloud project. Enable it in the API Library and retry. |
+| `403` scope limit exceeded | Re-run `gws auth login -s drive,gmail,calendar,people` with fewer services. |
+| Gmail command not found | Use `gws gmail --help` to discover available commands; helper commands use `+` prefix. |
+| Calendar timezone issues | Add `--timezone "America/New_York"` to `gws calendar +agenda`. |
+
+## Quick Start
+
+```bash
+# List 10 most recent files
+gws drive files list --params '{"pageSize": 10, "orderBy": "modifiedTime desc"}' --format table
+
+# Search by file name
+gws drive files list --params '{"q": "name contains \"quarterly-report\""}' --format table
+
+# Download a file by ID
+gws drive files get --params '{"fileId": "FILE_ID_HERE"}' --output "./downloaded-file"
+
+# Read a Google Doc as JSON
+gws docs documents get --params '{"documentId": "DOC_ID_HERE"}' --format json
+```
+
+### Calendar Quick Start
+
+```bash
+# List today's events
+gws calendar events list --params '{"calendarId": "primary", "timeMin": "2026-05-11T00:00:00Z", "timeMax": "2026-05-12T00:00:00Z", "singleEvents": true}' --format table
+
+# Show agenda
+gws calendar +agenda
+
+# Create an event
+gws calendar +insert --summary "Team Standup" --start "2026-05-12T09:00:00" --end "2026-05-12T09:30:00"
+```
+
+### People Quick Start
+
+```bash
+# Get your profile
+gws people people get --params '{"resourceName": "people/me", "personFields": "names,emailAddresses"}' --format json
+
+# List contacts
+gws people connections list --params '{"resourceName": "people/me", "pageSize": 10, "personFields": "names,emailAddresses"}' --format json
+```
+
+### Gmail Quick Start
+
+```bash
+# List recent messages
+gws gmail users messages list --params '{"userId": "me", "maxResults": 5}' --format json
+
+# Triage unread inbox
+gws gmail +triage --max 10
+
+# Send an email
+gws gmail +send --to "recipient@example.com" --subject "Hello" --body "Message text"
+```
+
+### Calendar Quick Start
+
+```bash
+# List today's events
+gws calendar events list --params '{"calendarId": "primary", "timeMin": "2026-05-11T00:00:00Z", "timeMax": "2026-05-12T00:00:00Z", "singleEvents": true}' --format table
+
+# Show agenda
+gws calendar +agenda
+
+# Create an event
+gws calendar +insert --summary "Team Standup" --start "2026-05-12T09:00:00" --end "2026-05-12T09:30:00"
+```
+
+### People Quick Start
+
+```bash
+# Get your profile
+gws people people get --params '{"resourceName": "people/me", "personFields": "names,emailAddresses"}' --format json
+
+# List contacts
+gws people connections list --params '{"resourceName": "people/me", "pageSize": 10, "personFields": "names,emailAddresses"}' --format json
+```
+
+### Gmail Quick Start
+
+```bash
+# List recent messages
+gws gmail users messages list --params '{"userId": "me", "maxResults": 5}' --format json
+
+# Triage unread inbox
+gws gmail +triage --max 10
+
+# Send an email
+gws gmail +send --to "recipient@example.com" --subject "Hello" --body "Message text"
+```

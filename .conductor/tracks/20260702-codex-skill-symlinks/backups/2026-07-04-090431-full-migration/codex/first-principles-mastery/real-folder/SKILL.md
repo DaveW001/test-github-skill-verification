@@ -1,0 +1,146 @@
+---
+name: first-principles-mastery
+description: Apply first principles thinking to deconstruct problems and rebuild from fundamentals.
+---
+
+# First Principles Mastery
+
+A structured framework for thinking from the bedrock up. Forces AI to move beyond conventional wisdom and pattern-matched summaries toward fundamental truth-based reasoning.
+
+## Default Output Format
+
+When applying this skill, structure the response as:
+
+1. **Common Assumptions**
+   - List the assumptions people usually make.
+2. **What Survives the Strip-Down**
+   - Identify what is fundamentally or empirically true.
+3. **Rebuilt Explanation**
+   - Reconstruct the topic only from those truths.
+4. **Plain-English Version**
+   - Explain it simply, with no jargon.
+5. **What Changes**
+   - Show how the conclusion differs from conventional thinking.
+6. **Next Question**
+   - Ask whether to go deeper, stress-test assumptions, or build a start-from-zero solution.
+
+## Decision Tree
+
+- **User wants to deeply understand a topic** → Start with Step 1 (Bedrock Prompt), then Step 2 (Feynman Test)
+- **User has a business/innovation challenge** → Use Step 3 (Business & Innovation version)
+- **User is about to learn/study something** → Use Step 4 (Learning & Study version)
+- **User wants to disrupt or reinvent something** → Use Step 5 (Musk Test / Start from Zero)
+- **User wants full mastery of a complex topic** → Run the complete 5-Step Execution Stack in sequence
+
+## Prompt Modes
+
+### Mode A: The Bedrock Prompt (Deconstruct & Strip Assumptions)
+
+This stops the AI from defaulting to standard summaries. The key phrase is "strip each assumption away."
+
+**Prompt Template:**
+
+> Break [topic] down using first principles thinking. Start by identifying every assumption people commonly make about this topic. Then strip each assumption away and ask: what is fundamentally, provably true here? Rebuild the concept from only what remains. Show me what changes when you remove inherited thinking.
+
+**Verification rule:** classify each claim as one of:
+- definitional truth
+- observable fact
+- mathematical/physical constraint
+- empirical evidence
+- useful assumption
+- contested belief
+- unknown
+
+Do not present uncertainty as certainty.
+
+### Mode B: The Feynman Test (Achieve Total Clarity)
+
+If you can't explain it simply, you don't understand it. This finds hidden complexity or jargon that masks a lack of true understanding.
+
+**Prompt Template:**
+
+> Now explain the same concept as if I'm a 12-year-old who has never heard any of these ideas before. No jargon. No assumed knowledge. If you can't explain it simply, that means there's still hidden complexity we haven't broken down yet. Keep going until it's genuinely simple.
+
+**Rule:** simplicity is not the same as oversimplification. Preserve accuracy.
+
+### Mode C: Business & Innovation Version
+
+Finds the most direct path to an outcome by challenging industry conventions (dealerships, middlemen, inherited processes).
+
+**Prompt Template:**
+
+> Apply first principles thinking to [business problem]. List every assumption I'm making about how this problem should be solved. Then ask: if none of these assumptions existed, what would be the most direct path from the problem to the outcome? What is the simplest possible version of a solution that works?
+
+### Mode D: Learning & Study Version
+
+Use before starting a course or reading a textbook. Primes the brain to be an active interrogator rather than a passive memorizer.
+
+**Prompt Template:**
+
+> I'm about to learn [topic]. Before I do, break down the 5 core assumptions this field makes that beginners just accept as true. What would someone need to question to genuinely understand this subject rather than just memorize it?
+
+### Mode E: The Musk Test (Starting from Zero)
+
+For industry disruption. Ignores "how can we improve X" and instead asks "if we started from physics alone, what would we build?"
+
+**Prompt Template:**
+
+> If you were starting from zero — no existing industry, no conventional wisdom, no inherited approach — and you only had the fundamental truths we've established, how would you build the solution from scratch? What would look completely different from how it's done today?
+
+## Activation Examples
+
+Use this skill when the user asks:
+
+- “Think about this from first principles.”
+- “What assumptions am I making?”
+- “Explain this without jargon.”
+- “How would we build this from scratch?”
+- “What would this look like if we ignored industry convention?”
+- “Help me deeply understand this before I study it.”
+
+## Instructions
+
+1. Identify which step(s) the user needs based on the Decision Tree above
+2. Apply the appropriate prompt template, replacing `[topic]` or `[business problem]` with the user's subject
+3. For full mastery, run all 5 steps in sequence:
+   - Step 1: Deconstruct and strip assumptions (Bedrock)
+   - Step 2: Apply the 12-year-old Feynman test to reveal gaps
+   - Step 3: Identify the 5 beginner assumptions to avoid blind acceptance
+   - Step 4: Stress test: "If the 3 most important assumptions turned out to be wrong, what happens?"
+   - Step 5: Build the "Start from Zero" solution
+4. After each step, ask the user if they want to go deeper or move to the next step
+5. Never skip straight to conclusions — the value is in the deconstruction process
+
+## Full Mastery Stack
+
+If the user wants the complete sequence, run this exact progression:
+
+1. **Bedrock** — identify assumptions and strip them away
+2. **Feynman** — explain it simply and expose hidden complexity
+3. **Beginner assumptions** — surface the five assumptions novices accept blindly
+4. **Stress test** — ask what breaks if the three most important assumptions are wrong
+5. **Start from zero** — rebuild from fundamental truths only
+
+## Verification Rules
+
+- Do not label something a fundamental truth unless it is definitional, observable, mathematical, physical, or directly supported by evidence.
+- Separate facts from assumptions.
+- If evidence is needed, say so.
+- If uncertainty remains, state it clearly instead of inventing a bedrock claim.
+- Prefer precision over confidence.
+
+## Gotchas
+
+- **Resist the urge to summarize**: The whole point is to avoid conventional summaries. If the output reads like a Wikipedia article, re-run with stricter instructions
+- **Watch for stealth assumptions**: AI will sometimes reintroduce assumptions mid-rebuild. Flag these immediately
+- **The Feynman Test is a diagnostic, not the final product**: If Step 2 reveals complexity, go back to Step 1 with that specific area
+- **"Simple" doesn't mean "dumbed down"**: Simple means no hidden complexity remains
+- **Avoid false bedrock**: Don't promote opinions, trends, or heuristics to the status of first principles
+
+## Source
+
+Based on the First Principles Thinking Framework by Mukul L.
+
+## Related Skills
+
+- **thinking-partner** — Broad multi-model thinking partner with 150+ mental models across 17 disciplines. Use when you want to explore a decision with multiple frameworks, not just first principles. Includes orientation detection and structured sparring.

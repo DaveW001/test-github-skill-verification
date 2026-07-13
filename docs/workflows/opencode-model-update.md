@@ -20,8 +20,8 @@ This workflow covers changing the default build model, plan agent model, and/or 
 
 | Key in `opencode.jsonc`   | What it controls                                   | Example                          |
 | ------------------------- | -------------------------------------------------- | -------------------------------- |
-| `"model"`                 | Default build model (Build mode)                   | `"zai-coding-plan/glm-5.1"`      |
-| `"small_model"`           | Lightweight tasks (titles, summaries)              | `"openai/gpt-5.4-mini"`          |
+| `"model"`                 | Default build model (Build mode)                   | `"zai-coding-plan/glm-5.2"`      |
+| `"small_model"`           | Lightweight tasks (titles, summaries)              | `"zai-coding-plan/glm-5.2"`      |
 | `"agent"."plan"."model"`  | Plan agent model (Plan mode)                       | `"openai/gpt-5.3-codex"`         |
 | `"agent".<name>."model"`  | Any custom agent override                          | `"zai-coding/glm-4.7"`           |
 
@@ -30,7 +30,7 @@ This workflow covers changing the default build model, plan agent model, and/or 
 All model IDs use the format: `provider_id/model_id`
 
 Examples:
-- `zai-coding-plan/glm-5.1` — Z.AI Coding Plan, GLM 5.1
+- `zai-coding-plan/glm-5.2` — Z.AI Coding Plan, GLM 5.2
 - `openai/gpt-5.3-codex` — OpenAI via OAuth, GPT 5.3 Codex
 - `openai/gpt-5.4-mini` — OpenAI via OAuth, GPT 5.4 Mini
 - `google/gemini-2.5-flash` — Google via local proxy, Gemini 2.5 Flash
@@ -93,7 +93,7 @@ If the new model should participate in agent routing tiers, update:
 "tiers": {
   "low": {
     "models": [
-      "zai-coding-plan/glm-5.1",   // <-- update model IDs here
+      "zai-coding-plan/glm-5.2",   // <-- update model IDs here
       "zai-coding/glm-4.7",
       "openrouter/kimi-2.5"
     ]
@@ -152,8 +152,13 @@ Copy-Item $latest.FullName "$env:USERPROFILE\.config\opencode\opencode.jsonc" -F
 
 | Role            | Model ID                     | Provider              | Auth Method  |
 | --------------- | ---------------------------- | --------------------- | ------------ |
-| Default Build   | `zai-coding-plan/glm-5.1`    | Z.AI Coding Plan      | API Key      |
+| Default Build   | `zai-coding-plan/glm-5.2`    | Z.AI Coding Plan      | API Key      |
 | Plan Agent      | `openai/gpt-5.3-codex`       | OpenAI (ChatGPT Team) | OAuth        |
-| Small Model     | `openai/gpt-5.4-mini`        | OpenAI (ChatGPT Team) | OAuth        |
-| CoVe Verifier   | `zai-coding/glm-4.7`         | Z.AI Coding           | API Key      |
-| CoVe Orchestrator | `openai/gpt-5.3-codex`     | OpenAI (ChatGPT Team) | OAuth        |
+| Small Model     | `zai-coding-plan/glm-5.2`    | Z.AI Coding Plan      | API Key      |
+| CoVe Verifier   | `zai-coding-plan/glm-5.2`    | Z.AI Coding Plan      | API Key      |
+| CoVe Orchestrator | `zai-coding-plan/glm-5.2`  | Z.AI Coding Plan      | API Key      |
+
+## GLM-5.2 thinking default
+
+For `zai-coding-plan/glm-5.2`, keep the provider/model default at `reasoningEffort: high`. Expose variants `none`, `high`, and `max` so the UI/session can opt into `max` when needed, but do not make `max` the default because it materially increases Z.AI quota usage. Agents pinned to GLM-5.2 should use `variant: high` unless there is a documented reason to opt into `max`.
+

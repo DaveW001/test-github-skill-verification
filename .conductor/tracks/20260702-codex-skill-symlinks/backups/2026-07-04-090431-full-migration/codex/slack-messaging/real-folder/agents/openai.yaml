@@ -1,0 +1,4 @@
+interface:
+  display_name: "Slack Messaging"
+  short_description: "Send, search, and read Slack messages via MCP"
+  default_prompt: "Send a Slack message to #general saying hello"

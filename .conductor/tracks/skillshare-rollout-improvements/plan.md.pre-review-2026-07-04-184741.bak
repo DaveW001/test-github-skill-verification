@@ -1,0 +1,124 @@
+# Plan
+
+## Phase 0 - Setup & Context
+- [ ] Read current operations guide at `C:\development\opencode\docs\skill-share\skillshare-operations-guide.md`
+  - Authoritative acceptance check: File exists and contains "SkillShare Operations & Troubleshooting Guide"
+- [ ] Read current quickstart at `C:\development\opencode\docs\skill-share\quickstart-for-team.md`
+  - Authoritative acceptance check: File exists and contains "SkillShare Quickstart for Team Members"
+- [ ] Read humanizer skill at `C:\development\opencode\.conductor\tracks\skillshare-adoption\local-sync-target\opencode\skill\humanizer\SKILL.md`
+  - Authoritative acceptance check: File exists and contains "name: humanizer"
+
+## Phase 1 - Documentation Improvements: Operations Guide
+- [ ] Add tool-specific rollout matrix to operations guide after section 7 (End-to-end test results)
+  - Create table with columns: Tool | Install Mechanism | Sync Support | Tested? | Manual Steps | Known Friction | Recommended Path
+  - Rows: OpenCode, Claude Code, Claude Desktop, Claude Cowork, Codex
+  - OpenCode: SkillShare auto-sync, Tested, None, Recommended
+  - Claude Code: SkillShare auto-sync, Partially tested (project-scoped), None, Recommended
+  - Claude Desktop: No auto-sync, Not tested, Manual paste SKILL.md into chat, Documented workaround
+  - Claude Cowork: No auto-sync, Not tested, Manual paste SKILL.md into chat, Documented workaround
+  - Codex: SkillShare auto-sync, Not tested, None, Documented but untested
+  - Authoritative acceptance check: Operations guide contains "## 8. Tool-specific rollout matrix" and table has 5 rows
+- [ ] Add "what good looks like" outputs to operations guide section 3 (Known friction points)
+  - For each friction point, add "Expected output:" showing what success looks like
+  - Example for 3.1 (TUI hang): "Expected output after running init: `✓ Initialized with targets: opencode`"
+  - Authoritative acceptance check: Operations guide contains at least 3 "Expected output:" blocks
+- [ ] Add recovery paths to operations guide section 3
+  - For each friction point, add "If this fails:" with specific recovery steps
+  - Example for 3.6 (PATH issue): "If this fails: Try `ss --version`. If still not found, restart PowerShell or reboot."
+  - Authoritative acceptance check: Operations guide contains at least 3 "If this fails:" blocks
+- [ ] Add "tested / not tested" labels to all validation claims in operations guide
+  - Section 4 (Access model): Change "proven" to "proven (tested: GitHub API permission check; not tested: actual clone as test account)"
+  - Section 7 (Test results): Add explicit labels to Test 1 and Test 2
+  - Section 8 (Environment notes): Add "tested" label to binary path, config path
+  - Authoritative acceptance check: Operations guide contains at least 5 instances of "tested:" or "not tested:"
+- [ ] Reword "org invite = read access = can clone" in operations guide section 4
+  - Change to: "Org invite grants GitHub read permission (tested via API). This should allow clone after `gh auth login` + `gh auth setup-git`, but we have not verified an actual clone as the test account."
+  - Authoritative acceptance check: Operations guide contains "should allow clone" and "have not verified an actual clone"
+
+## Phase 2 - Documentation Improvements: Quickstart
+- [ ] Add "what good looks like" outputs to quickstart steps 0-4
+  - Step 0: After `gh auth login`, show "✓ Logged in as <username>"
+  - Step 1: After `skillshare --version`, show "skillshare v0.20.21"
+  - Step 2: After `skillshare init`, show "✓ Initialized with targets: opencode"
+  - Step 3: After `skillshare install`, show "✓ Installed 5 skills from packaged-agile/skillshare-skills"
+  - Step 4: After `skillshare sync`, show "✓ Synced 5 skills to opencode target"
+  - Authoritative acceptance check: Quickstart contains at least 5 "✓" success indicators
+- [ ] Add recovery paths to quickstart "If something goes wrong" section
+  - Add: "If `gh auth login` fails: Check you have a GitHub account. Try `winget uninstall GitHub.cli` then reinstall."
+  - Add: "If `skillshare init` shows the TUI: Press Ctrl+C, then run `skillshare init --targets opencode --no-copy --no-git --no-skill`"
+  - Add: "If `skillshare install` asks for login again: Run `gh auth setup-git`, then retry."
+  - Authoritative acceptance check: Quickstart "If something goes wrong" section contains at least 6 bullet points
+
+## Phase 3 - Humanizer Portability Audit
+- [ ] Inspect humanizer SKILL.md for local path assumptions
+  - Search for: `C:\`, `/Users/`, `~/.config/`, `%AppData%`, `$env:`
+  - If found: Remove or replace with relative paths or environment variable references
+  - Authoritative acceptance check: Humanizer SKILL.md contains no absolute paths
+- [ ] Inspect humanizer SKILL.md for tool-specific assumptions
+  - Search for: `skill_use`, `skill_find`, `opencode`, `claude`, `codex`
+  - If found: Verify these are generic references (e.g., "your AI tool") not hardcoded
+  - Authoritative acceptance check: Humanizer SKILL.md uses generic terms like "your AI tool" or contains no tool-specific references
+- [ ] Inspect humanizer references/ for portability issues
+  - Check brand-voice.md: Should reference "Packaged Agile" not local file paths
+  - Check ai-patterns-to-fix.md: Should be generic, not Dave-specific
+  - Check humanization-checklist.md: Should be generic
+  - Authoritative acceptance check: All 3 reference files contain no absolute paths or Dave-specific content
+- [ ] Test loading humanizer in clean SkillShare checkout
+  - Create temp dir: `$tempDir = "$env:TEMP\humanizer-test"`
+  - Copy humanizer skill: `Copy-Item -Path "C:\development\opencode\.conductor\tracks\skillshare-adoption\local-sync-target\opencode\skill\humanizer" -Destination $tempDir -Recurse`
+  - Verify SKILL.md is readable: `Get-Content -LiteralPath "$tempDir\SKILL.md" | Select-Object -First 5`
+  - Verify references are readable: `Get-ChildItem -LiteralPath "$tempDir\references" | Measure-Object | Select-Object -ExpandProperty Count` (should be 3)
+  - Clean up: `Remove-Item -LiteralPath $tempDir -Recurse -Force`
+  - Authoritative acceptance check: SKILL.md and all 3 reference files are readable from temp location
+
+## Phase 4 - Testing Gaps
+- [ ] Document clean global SkillShare install/sync test in operations guide
+  - Add new section "9. Clean global install test (not yet performed)"
+  - Document the test steps that SHOULD be run: `skillshare init --targets opencode --no-copy --no-git --no-skill` (global, not -p), then `skillshare install github.com/packaged-agile/skillshare-skills --track`, then `skillshare sync`
+  - Note: "This test requires a clean machine or isolated environment. Not yet performed."
+  - Authoritative acceptance check: Operations guide contains section "9. Clean global install test" with "Not yet performed"
+- [ ] Document Claude Desktop/Cowork manual workflow in operations guide
+  - Add new section "10. Claude Desktop / Claude Cowork manual workflow"
+  - Document: Open Claude Desktop/Cowork, create new chat, paste SKILL.md content into first message, then ask questions
+  - Note: "This workflow is documented but not tested. The skill content should work, but the user experience has not been validated."
+  - Authoritative acceptance check: Operations guide contains section "10. Claude Desktop / Claude Cowork manual workflow"
+
+## Phase 5 - Pilot Preparation
+- [ ] Create pilot invitation template
+  - Create file: `C:\development\opencode\docs\skill-share\pilot-invitation-template.md`
+  - Content: Email/message template for inviting one team member to pilot
+  - Include: What to test, what to report back, contact info for help
+  - Authoritative acceptance check: File exists and contains "Pilot Invitation" and "What to test"
+- [ ] Add pilot invitation template link to quickstart
+  - Add section at end: "Want to pilot this?" with link to template
+  - Authoritative acceptance check: Quickstart contains "pilot-invitation-template.md"
+
+## Phase 6 - Verification & Completion
+- [ ] Verify all non-deferred plan tasks are checked `[x]`
+  - Authoritative acceptance check: All tasks in Phase 0-5 are marked [x]
+- [ ] Verify metadata.json status/progress values are synchronized with plan completion
+  - Update metadata.json: status = "complete", progress.percentage = 100, progress.completedTasks = totalTasks
+  - Authoritative acceptance check: metadata.json contains "status": "complete"
+- [ ] Verify tracks.md row status and completed date match metadata
+  - Upsert row for skillshare-rollout-improvements with status = complete, completed date = today
+  - Authoritative acceptance check: tracks.md contains "skillshare-rollout-improvements" with status "complete"
+- [ ] Verify tracks-ledger.md row matches metadata
+  - Upsert row for skillshare-rollout-improvements with phase = complete
+  - Authoritative acceptance check: tracks-ledger.md contains "skillshare-rollout-improvements" with phase "complete"
+- [ ] Create execution log
+  - Create file: `C:\development\opencode\.conductor\tracks\skillshare-rollout-improvements\execution-log-YYYY-MM-DD.md`
+  - Document: All tasks completed, any deviations, validation performed
+  - Authoritative acceptance check: Execution log exists and contains "Execution Log"
+- [ ] Re-open all modified/created artifacts and confirm required acceptance strings exist
+  - Operations guide: Contains rollout matrix, "what good looks like", recovery paths, "tested:" labels
+  - Quickstart: Contains "✓" success indicators, expanded "If something goes wrong"
+  - Humanizer: No absolute paths, no tool-specific assumptions
+  - Pilot template: Exists with required sections
+  - Authoritative acceptance check: All 4 artifacts pass their respective checks
+
+Checkbox states:
+- [ ] Pending (not started)
+- [~] In Progress (currently working on)
+- [x] Completed (finished)
+
+Important: plan.md is the authoritative source of truth for task progress.

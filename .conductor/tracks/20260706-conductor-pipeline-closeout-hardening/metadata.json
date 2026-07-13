@@ -1,0 +1,63 @@
+{
+  "trackId": "20260706-conductor-pipeline-closeout-hardening",
+  "title": "Conductor Pipeline Closeout Hardening",
+  "status": "completed",
+  "stage": "9-closed",
+  "created": "2026-07-06",
+  "completed": "2026-07-06",
+  "estimatedHours": "3-6",
+  "assignedTo": "Dave Witkin",
+  "type": "maintenance",
+  "track_type": "bookkeeping",
+  "test_framework": "none",
+  "test_command": "n/a",
+  "tags": [
+    "conductor",
+    "pipeline",
+    "closeout",
+    "opencode-config"
+  ],
+  "progress": {
+    "phase": "closed",
+    "totalTasks": 25,
+    "completedTasks": 25,
+    "percentage": 100
+  },
+  "summary": "Plan to implement still-valid recommendations from the email-triage nine-stage pipeline peer review: terminal closeout gate, stale Stage 5 labels, audit corrections, post-doc validation, Bun fallback documentation, and PSParser/mojibake follow-up disposition.",
+  "keyOutcomes": [
+    "Terminal closeout gate defined for Stage 9 and bookkeeping synchronization",
+    "Fallback executor agents use correct Stage 5 execution labels",
+    "Audit-correction and post-doc validation conventions documented",
+    "Bun is not defined recommendation grounded in upstream issue evidence and local fallback protocol",
+    "Email-triage PSParser/mojibake cleanup disposition captured"
+  ],
+  "risks": [
+    "Global agent/skill prompt edits require restart before future sessions see them",
+    "Bun issue may be upstream/runtime rather than locally fixable",
+    "Email-triage parser cleanup is cross-repo and should not be mixed with OpenCode pipeline prompt edits"
+  ],
+  "dependencies": [
+    "C:\\development\\opencode\\.conductor\\reviews\\20260706-email-triage-pipeline-peer-review-checklist.md",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\stage-prompts.md",
+    "https://github.com/anomalyco/opencode/issues/25880"
+  ],
+  "blocking": [],
+  "relatedTracks": [
+    "20260705-conductor-pipeline-tdd-doc-stages",
+    "20260706-email-triage-move-failure-observability"
+  ],
+  "deliverables": [
+    "Updated Conductor pipeline closeout policy/prompts",
+    "Corrected fallback executor stage labels",
+    "Audit correction convention",
+    "Post-documentation validation convention",
+    "Bun issue troubleshooting/fallback documentation",
+    "PSParser/mojibake follow-up track or explicit deferral"
+  ],
+  "validationCriteria": [
+    "All plan tasks have one authoritative acceptance check",
+    "Global file edits are backed up before execution",
+    "metadata.json, tracks.md, and tracks-ledger.md are synchronized at closeout",
+    "User is told to restart OpenCode after global agent/skill changes"
+  ]
+}

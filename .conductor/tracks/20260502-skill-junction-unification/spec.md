@@ -1,4 +1,10 @@
-# Spec — Skill Junction Unification
+# Spec - Skill Junction Unification
+
+> **Status: SUPERSEDED (2026-07-06). Do not execute this spec as current guidance.**  
+> Current authority: `C:\development\opencode\docs\runbooks\codex-skill-architecture.md`.  
+> Superseded note: `C:\development\opencode\.conductor\tracks\20260502-skill-junction-unification\superseded-note-2026-07-06.md`.
+
+The Codex parent-junction portion of this plan is now implemented and remains valid, but the `.agents\skills` mirror portion is no longer treated as required. Skill counts, always-on set, plugin-config details, and default creation paths below are historical.
 
 ## Goal
 

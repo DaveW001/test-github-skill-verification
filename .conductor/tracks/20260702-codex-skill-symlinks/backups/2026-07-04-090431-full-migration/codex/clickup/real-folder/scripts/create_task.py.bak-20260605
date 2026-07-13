@@ -1,0 +1,184 @@
+import sys
+sys.path.append(sys.path[0])
+from common import setup_path
+setup_path()
+
+import click
+from clickup_api import create_task, get_task
+import requests
+from datetime import datetime, timedelta
+import pytz
+import re
+
+from date_utils import convert_ms_to_datetime, get_human_readable_due_date
+
+DEFAULT_ASSIGNEE = "80264"
+DEFAULT_LIST = "3984798"
+
+@click.command()
+@click.option("--list-id", default=DEFAULT_LIST, help=f"The List ID (Default Inbox: {DEFAULT_LIST}).")
+@click.option("--name", required=True, help="The name of the task (Use emojis!).")
+@click.option("--description", default="", help="The description of the task.")
+@click.option("--description-file", default=None, type=click.Path(exists=True), help="Path to a file containing the task description (markdown). Takes precedence over --description.")
+@click.option("--priority", default=3, type=int, help="Priority (1=Urgent, 2=High, 3=Normal, 4=Low). Default: 3.")
+@click.option("--due-date", default=None, type=int, help="Due date (Unix timestamp in milliseconds).")
+@click.option("--due-tomorrow", is_flag=True, help="Due tomorrow at 1:00 PM EST.")
+@click.option("--due-tomorrow-morning", is_flag=True, help="Due tomorrow at 9:00 AM EST.")
+@click.option("--due-relative", type=str, help="Due date relative to now (e.g., '2 hours', '3 days', 'tomorrow 1pm').")
+@click.option("--assignees", multiple=True, help=f"User IDs to assign (Default: {DEFAULT_ASSIGNEE}).")
+def create_task_cli(list_id, name, description, description_file, priority, due_date, due_tomorrow, due_tomorrow_morning, due_relative, assignees):
+    """
+    Create a new task in ClickUp following strict patterns.
+
+    PATTERNS ENFORCED:
+    - Default Priority: 3 (Normal)
+    - Default Assignee: Dave Witkin
+    - Default List: Inbox
+    - Human-readable due date options (--due-tomorrow, --due-tomorrow-morning, --due-relative)
+    - Automatic validation after creation
+
+    DUE DATE OPTIONS (New):
+    - --due-tomorrow - Due tomorrow at 1:00 PM EST
+    - --due-tomorrow-morning - Due tomorrow at 9:00 AM EST
+    - --due-relative "X hours" - Due X hours from now
+    - --due-relative "3 days" - Due 3 business days from now
+    - --due-date <timestamp> - Manual Unix timestamp (for advanced use)
+    - --description-file <path> - Load description from a file (avoids shell escaping issues)
+    """
+    click.echo(f"Creating task \"{name}\" in list {list_id}...")
+
+    # Enforce default assignee if not provided
+    if not assignees:
+        assignees_list = [DEFAULT_ASSIGNEE]
+        click.echo(f"  > Auto-assigning to Dave Witkin ({DEFAULT_ASSIGNEE})")
+    else:
+        assignees_list = list(assignees)
+
+    # Load description from file if provided (avoids shell escaping issues)
+    if description_file:
+        with open(description_file, 'r', encoding='utf-8') as f:
+            description = f.read()
+        click.echo(f"  > Description loaded from file: {description_file}")
+
+    # Validate Priority
+    if priority == 4:
+        click.echo("  > WARNING: Priority 4 (Low) is discouraged. Are you sure?")
+
+    # Calculate due date from human-readable options
+    calculated_due_date = None
+    if due_tomorrow:
+        # Due tomorrow at 1:00 PM EST
+        ny_tz = pytz.timezone("America/New_York")
+        due_dt = datetime.now(ny_tz) + timedelta(days=1)
+        due_dt = due_dt.replace(hour=13, minute=0, second=0, microsecond=0)
+        calculated_due_date = int(due_dt.timestamp() * 1000)
+        click.echo(f"  > Due date: Tomorrow at 1:00 PM EST")
+    elif due_tomorrow_morning:
+        # Due tomorrow at 9:00 AM EST
+        ny_tz = pytz.timezone("America/New_York")
+        due_dt = datetime.now(ny_tz) + timedelta(days=1)
+        due_dt = due_dt.replace(hour=9, minute=0, second=0, microsecond=0)
+        calculated_due_date = int(due_dt.timestamp() * 1000)
+        click.echo(f"  > Due date: Tomorrow at 9:00 AM EST")
+    elif due_relative:
+        # Parse relative date (e.g., "2 hours", "3 days", "tomorrow 1pm")
+        ny_tz = pytz.timezone("America/New_York")
+        now = datetime.now(ny_tz)
+
+        # Simple parsing
+        if "hour" in due_relative.lower():
+            # Extract number
+            match = re.search(r'(\d+)\s*hour', due_relative, re.IGNORECASE)
+            if match:
+                hours = int(match.group(1))
+                due_dt = now + timedelta(hours=hours)
+                calculated_due_date = int(due_dt.timestamp() * 1000)
+                click.echo(f"  > Due date: In {hours} hours from now")
+        elif "day" in due_relative.lower():
+            # Extract number
+            match = re.search(r'(\d+)\s*day', due_relative, re.IGNORECASE)
+            if match:
+                days = int(match.group(1))
+                # Add business days (skip weekends)
+                step = 1 if days >= 0 else -1
+                while abs(days) > 0:
+                    test_day = now + timedelta(days=step)
+                    if test_day.weekday() < 5:  # Monday-Friday
+                        days -= step
+                due_dt = now + timedelta(days=days)
+                calculated_due_date = int(due_dt.timestamp() * 1000)
+                click.echo(f"  > Due date: In {abs(days)} business days from now")
+        else:
+            # Try to parse "tomorrow 1pm", etc.
+            click.echo(f"  > Warning: Could not parse '{due_relative}'. Using today + 24 hours as fallback.")
+            due_dt = now + timedelta(hours=24)
+            calculated_due_date = int(due_dt.timestamp() * 1000)
+
+    # Use calculated due date, or manual --due-date, or None
+    final_due_date = calculated_due_date or due_date
+
+    try:
+        task = create_task(
+            list_id=list_id,
+            name=name,
+            description=description,
+            priority=priority,
+            due_date=final_due_date,
+            assignees=assignees_list
+        )
+        click.echo("Task created successfully!")
+        click.echo(f"  ID: {task['id']}")
+        click.echo(f"  Name: {task['name']}")
+        click.echo(f"  URL: {task['url']}")
+
+        # NEW: AUTO-VALIDATION AFTER CREATION
+        click.echo("\n--- Validating task ---")
+        try:
+            task_details = get_task(task["id"])
+            click.echo("[OK] Task validation passed")
+
+            # Show key fields for verification
+            if task_details.get("due_date"):
+                readable_date = get_human_readable_due_date(str(task_details['due_date']))
+                click.echo(f"  [OK] Due date: {readable_date}")
+            else:
+                click.echo("  [WARN] Warning: No due date set")
+
+            if task_details.get("list"):
+                list_data = task_details.get("list", {})
+                list_name = list_data.get("name", "Unknown")
+                click.echo(f"  [OK] List: {list_name} ({task_details.get('list', {}).get('id')})")
+
+            if task_details.get("priority"):
+                priority_names = {1: "Urgent", 2: "High", 3: "Normal", 4: "Low"}
+                priority_name = priority_names.get(task_details.get("priority", 3), "Unknown")
+                click.echo(f"  [OK] Priority: {priority_name}")
+
+            # Check for wrong list assignment
+            if task_details.get("list", {}).get("id") != list_id:
+                intended_list_name = list_data.get("name", "Unknown")
+                click.echo(f"  [WARN] Warning: Task is in list '{intended_list_name}' not in intended list '{list_id}'")
+
+            if task_details.get("assignees"):
+                assignee_count = len(task_details.get("assignees", []))
+                click.echo(f"  [OK] Assignees: {assignee_count}")
+
+            # NEW: Validate description content survived round-trip
+            stored_desc = task_details.get("description", "")
+            if description and len(description) > 50:
+                # Check for common corruption patterns
+                if chr(65533) in stored_desc:  # replacement character
+                    click.echo(click.style("  [WARN] Description contains replacement characters - encoding issue detected", fg="yellow"))
+                elif len(stored_desc) < len(description) * 0.5:
+                    click.echo(click.style(f"  [WARN] Description appears truncated: stored {len(stored_desc)} chars vs expected {len(description)} chars", fg="yellow"))
+                else:
+                    click.echo(f"  [OK] Description: {len(stored_desc)} chars stored successfully")
+
+        except Exception as e:
+            click.echo(click.style(f"  [WARN] Validation failed: {e}", fg="yellow"))
+
+    except (ValueError, requests.exceptions.RequestException) as e:
+        click.echo(click.style(f"Error: {e}", fg="red"))
+
+if __name__ == "__main__":
+    create_task_cli()

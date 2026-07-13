@@ -1,0 +1,114 @@
+---
+name: conductor-pipeline
+description: Nine-stage Conductor pipeline orchestration protocol (plan -> review -> re-review -> write-tests(RED) -> RED-gate -> code(GREEN) -> run-tests -> validate -> re-validate -> docs) with model diversity, measurable gates, auditable handoffs, and failure/rollback. Use when running or building the /conductor-pipeline command and its stage subagents.
+---
+
+# Conductor Pipeline
+
+Orchestrates a request from idea to validated result across nine stages. Each stage runs on a **model-pinned subagent**. Hard diversity gates: the reviewer model is never the creator model, and the validator model is never the executor model. All output paths are fully qualified absolute Windows paths.
+
+## Approved decisions (2026-06-28)
+- Autonomy: **full-auto through validation** (no human checkpoint between stages). The execution-failure stop rule below still applies.
+- Re-review trigger (Stage 3): **B+C hybrid**.
+- Re-validation trigger (Stage 8): **A+C hybrid**.
+- Layout: thin command + this skill reference pack.
+
+## Scope Language
+
+Conductor Pipeline work spans two distinct scopes that have different ownership and re-review triggers:
+
+- **deliverable/application scope** - changes to the user's actual application, runtime code, or end-user deliverables. These edits are owned by the track's deliverable intent and re-trigger execution re-review when they change behavior.
+- **pipeline bookkeeping scope** - changes to Conductor artifacts only (plan.md, metadata.json, tracks.md, tracks-ledger.md, execution logs, and repo-local .conductor/docs and .conductor/scripts). These edits are owned by the executor/validator bookkeeping workflow and do not re-trigger deliverable re-review.
+
+Deliverable edits and bookkeeping edits have different ownership and re-review triggers: a stale bookkeeping entry is a minor closeout fix, not a deliverable regression.
+
+## Model assignments (pinned per subagent)
+
+| Stage | Subagent | Model | Variant |
+|---|---|---|---|
+| 1 Plan creation | conductor-plan-creator | openai/gpt-5.5 | low |
+| 2 Plan review | conductor-plan-reviewer | opencode-go/minimax-m3 | - |
+| 3 Conditional re-review | conductor-plan-reviewer-alt | openai/gpt-5.5 | low |
+| 4 Write tests (RED) | conductor-test-writer | opencode-go/qwen3.7-plus | - |
+| 4b RED-state gate | orchestrator logic (not an agent) | - | runs suite; tests MUST fail |
+| 5 Write code (GREEN) | conductor-track-executor | zai-coding-plan/glm-5.2 | - |
+| 6 Run tests | conductor-test-runner | opencode-go/minimax-m3 | - |
+| 7 Validation | conductor-track-validator | opencode-go/minimax-m3 | - |
+| 8 Conditional re-validation | conductor-track-validator-alt | openai/gpt-5.5 | low |
+| 9 Documentation | conductor-doc-writer | zai-coding-plan/glm-5.1 | - |
+
+Orchestrator (this pipeline's coordinator) runs on zai-coding-plan/glm-5.2 and is NOT a stage model.
+
+Diversity log (log each at its gate):
+- Test-writer (qwen3.7-plus) != planner (gpt-5.5) and executor (glm-5.2). OK - stronger adversarial test design.
+- Test-runner (minimax-m3) != executor (glm-5.2). OK - genuine cross-check.
+- Doc-writer (glm-5.1) != executor (glm-5.2). OK — different models, same family; doc-writer is a terminal closeout stage, not a review gate.
+- Validator (minimax-m3) != executor (glm-5.2). OK (unchanged).
+- Re-review model must differ from the immediately preceding reviewer; re-validation model must differ from the executor.
+
+## Track-type discriminator (stage branching)
+
+Stages 4 / 4b / 6 run ONLY for `code`-type tracks. `bookkeeping` tracks (skills, docs, config, agent config) skip them and take the path **1 -> 2 -> 3 -> 5(executor) -> 7 -> 8 -> 9**. The plan-creator declares `track_type` (`code` | `bookkeeping`) in `metadata.json`; default `bookkeeping` (skip TDD) when the plan-creator cannot determine it. Stage 9 (documentation) runs for both types.
+
+### RED-state gate (Stage 4b)
+After Stage 4 writes tests, the orchestrator runs `test_command` once and verifies **valid RED-state**: newly-written acceptance tests fail for expected behavioral/assertion reasons mapped to spec acceptance criteria. A nonzero exit caused by syntax errors, missing dependencies, test harness setup failures, unrelated pre-existing failures, or invalid test placement is **not** valid RED and must be routed back to Stage 4 once (cap 1). If tests PASS immediately (premature green - tests assert existing behavior), reopen Stage 4 once (cap 1). If valid RED is still not demonstrated after the cap, stop and surface to the user; do not proceed silently. Only valid RED may proceed to Stage 5 (GREEN).
+
+### Test-runner retry cap
+When Stage 6 (test-runner) reports failures after implementation, route back to Stage 5 (executor) **once**, with the test-runner's failure report as input, then re-run Stage 6. If still failing after one retry loop, stop and surface to the user (mirrors the validation "route back once, then stop" rule).
+
+## Stage flow
+
+Stages 4 / 4b / 6 (TDD cluster) run ONLY for `code`-type tracks. `bookkeeping` tracks skip them and take 1 -> 2 -> 3 -> 5(executor) -> 7 -> 8 -> 9.
+
+1. **Plan creation** - conductor-plan-creator writes spec.md + plan.md into `.conductor/tracks/<track-id>/` (declaring `track_type` in metadata.json). Does not execute.
+2. **Plan review** - conductor-plan-reviewer reviews spec/plan, applies confident improvements, surfaces uncertain ones. Writes `review-report-<ts>.md` and `review-diff-summary-<ts>.md`.
+3. **Conditional re-review decision** - evaluate the B+C hybrid threshold (see references/threshold-policy.md). If triggered, conductor-plan-reviewer-alt runs one extra review pass. Cap: 1 extra pass, then pause for the user.
+4. **Write tests (RED)** [code-type only] - conductor-test-writer writes failing tests from the spec acceptance criteria into the repo; emits a RED-state report.
+4b. **RED-state gate** [code-type only] - orchestrator runs `test_command` and confirms the suite is RED (failing). On premature green, reopen Stage 4 once (cap 1).
+5. **Write code (GREEN)** - conductor-track-executor writes the minimum implementation to make the tests pass (GREEN); for bookkeeping tracks, executes plan items directly. Writes `execution-log-<date>.md`.
+6. **Run tests** [code-type only] - conductor-test-runner runs `test_command` and emits `test-run-report-<ts>.md` (per-test pass/fail). On failure, route back to Stage 5 once, then stop.
+7. **Validation** - conductor-track-validator validates closeout artifacts (plan/metadata/ledgers/logs) and writes `validation-report-<ts>.md` with a closeout verdict.
+8. **Conditional re-validation decision** - evaluate the A+C hybrid threshold. If triggered, conductor-track-validator-alt runs one extra validation pass. Cap: 1 extra pass, then write `validation-blockers-<ts>.md` and pause for the user.
+9. **Documentation** - conductor-doc-writer updates README/API docs/changelog/ADRs and emits `doc-update-log-<ts>.md`.
+
+The exact standard prompt text for every stage lives in `references/stage-prompts.md`. The thresholds, iteration caps, and failure/rollback rules live in `references/threshold-policy.md`.
+
+## Context handoff rule
+Each subagent receives a self-contained prompt with absolute artifact paths and the exact stage prompt. Never assume a child session shares state. Pass full paths under `C:\development\opencode\.conductor\tracks\<track-id>\` (or the active workspace root).
+
+## Failure / stop rule (applies even in full-auto)
+- Stop immediately on unclear, destructive, or blocked tasks; do not guess.
+- Model unavailable: log `model-unavailable` with the attempted model + stage, then use the documented fallback while preserving diversity.
+- Execution failure: executor leaves incomplete tasks unchecked, updates the log, and stops. Orchestrator runs validation only if there is enough evidence.
+- Validation finds major issues: route back to execution once; after one fix/re-validation loop, stop and ask the user.
+
+## Autonomy note
+Full-auto means no pause between stages. It does NOT remove the obligation to stop on the failure conditions above or to respect iteration caps.
+
+## Related references
+
+PowerShell edit hazards, including parse-check limitations, content-anchored edits, markdown indentation bleed, structural-character literal edits, and session-spanning date handling, live in references/powershell-edit-hazards.md. Mid-run authorization tiers live in references/threshold-policy.md#mid-run-authorization.
+Anomaly logging taxonomy, JSONL schema, FIFO-archive rotation, all-stages-append rule, and closeout summary generation live in references/anomaly-logging.md.
+
+## Model fallback chain
+
+Stage 5 execution uses a procedural fallback chain because OpenCode agents have one pinned `model:` and no native `fallbackModels` field.
+
+| Tier | Subagent | Model |
+|---|---|---|
+| 1 | `conductor-track-executor` | `zai-coding-plan/glm-5.2` |
+| 2 | `conductor-track-executor-glm51` | `zai-coding-plan/glm-5.1` |
+| 3 | `conductor-track-executor-qwen` | `opencode-go/qwen3.7-plus` |
+
+Retry transient failure signals (timeout/abort, HTTP 429/5xx, connection refused, unreachable provider, no or empty response, chunk timeout, freeze) on the same tier up to two additional attempts, then escalate. Failure-signal examples include HTTP 429, HTTP 5xx, chunk timeout, and freeze; retry the same tier up to two additional attempts with brief backoff before escalating to the next tier. If Tier 3 fails, log `model-unavailable` and stop.
+
+Diversity remains intact because each executor tier differs from validator `opencode-go/minimax-m3`.
+
+Orchestrator limitation: the orchestrator itself remains pinned to `zai-coding-plan/glm-5.2` and cannot self-swap at runtime; provider timeouts fail fast, and recovery is to restart OpenCode, optionally after changing the orchestrator `model:` line to a fallback tier.
+
+### Failure detection scope (what the chain does/does not catch)
+
+- Catches: model/provider stalls - provider `chunkTimeout` (2 min) / `headerTimeout` (1 min) / `timeout` (10 min) on `zai-coding-plan` and `opencode-go` abort a frozen/overloaded/unreachable model request and surface it as an error; the executor then reports `model-unavailable` and the orchestrator retries/escalates.
+- Does NOT catch: a subagent stalled on a non-model operation (a bash/tool call blocking indefinitely, a hung MCP tool). OpenCode has no per-agent execution timeout and the Task tool has no `timeout`, so there is no orchestrator-level watchdog on a child. In that case the run hangs until a human stops it.
+- Mitigation (child-side self-bounding, ALL stages): every stage subagent - executor AND non-executor stages (plan-creator, reviewers, validator) - MUST keep commands bounded (explicit `timeout`/`-TimeoutSec` on every shell/network call, non-interactive flags like `--yes`), avoid commands that can block indefinitely (Read-Host, uncapped network calls, Wait-Process/-Wait, tail -f, Start-Process -Wait, servers), and report back promptly on a blocker instead of hanging. This discipline is propagated via the stage-prompts Tool preflight (added 2026-07-03) and is NOT limited to the executor: a stall can occur at any stage (incident: a Stage 1 plan-creator stalled with no anti-stall guard). A tool-side hang then self-aborts inside the child instead of stalling the pipeline.
+- Recommended platform fix (not yet available): a per-agent execution timeout that aborts the Task call after N idle minutes. See `references/threshold-policy.md` (Failure detection scope & limitations) for the full analysis.

@@ -1,0 +1,225 @@
+---
+name: gemini-proxy
+compatibility: opencode
+description: Manage the local Gemini API Key Rotator Proxy for load-balanced access to Google's Gemini API. Use when the proxy needs checking, restarting, API key management, monitoring, or troubleshooting. Handles status checks, key rotation, auto-restart, and health monitoring. Triggers on proxy issues, Gemini errors, API key changes, or scheduled task problems.
+triggers:
+  user_phrases:
+    - check gemini proxy
+    - restart gemini proxy
+    - gemini proxy down
+    - proxy status
+    - reload gemini keys
+    - add gemini api key
+    - gemini proxy not working
+    - fix gemini proxy
+    - monitor gemini proxy
+    - gemini 429 errors
+  error_context:
+    - fetch failed
+    - ECONNREFUSED 127.0.0.1:8000
+    - 429 Too Many Requests
+    - Gemini API timeout
+  priority: high
+  suggest_only: true
+---
+
+# Gemini Proxy Manager
+
+Manages the local proxy server that provides load-balanced, rotating access to multiple Google Gemini API keys. Prevents rate limiting and distributes quota across keys.
+
+## Infrastructure Overview
+
+- **Location**: `C:/Users/DaveWitkin/.local/gemini-proxy/`
+- **Port**: `127.0.0.1:8000`
+- **Auto-start**: OpenCode scheduler (`opencode-job-opencode-global-7a3f9c2e1b84-gemini-proxy-starter`, daily at 6:00 AM)
+- **Monitoring**: Every 30 minutes via OpenCode scheduler (`opencode-job-opencode-global-7a3f9c2e1b84-gemini-proxy-monitor`)
+- **Source of truth**: See [Gemini Proxy Source of Truth](file:///C:/development/opencode/docs/reference/gemini-proxy-source-of-truth.md)
+- **Keys**: Rotated automatically via round-robin algorithm
+
+## Quick Start
+
+Check proxy status immediately:
+```powershell
+cd C:/Users/DaveWitkin/.local/gemini-proxy; ./proxy-status.ps1
+```
+
+**IMPORTANT: When displaying status results, always use the friendly key names from `key_names.json`.**
+- Read `C:/Users/DaveWitkin/.local/gemini-proxy/key_names.json` to get friendly names for each API key
+- Map each key_preview to its friendly name for human-readable output
+- Include both the friendly name AND the key_preview in status displays
+
+## When Not To Use
+
+- Do not use this skill for general Gemini model prompt tuning or app-level model behavior issues.
+- Do not use this skill for cloud-hosted proxy infrastructure outside this local machine.
+- Do not use this skill to rotate or manage keys for providers other than Google Gemini.
+- Do not use this skill when the issue is clearly in OpenCode app logic unrelated to proxy connectivity.
+
+## Decision Tree
+
+**If user says "check proxy" or "is proxy working":**
+→ Run status check → Show key health → Report issues
+
+**If user says "restart proxy" or "proxy is down":**
+→ Stop proxy → Start proxy → Verify status
+
+**If user says "add API key" or "remove key":**
+→ Edit api_keys.txt → Reload keys without restart
+
+**If user says "proxy keeps failing" or "monitoring":**
+→ Check Windows Task Scheduler → Review logs → Test auto-restart
+
+**If user sees 429 errors or timeouts:**
+→ Check key health → Verify rotation is working → Consider adding more keys
+
+## Common Commands
+
+### Status & Health
+
+```powershell
+# Full status with key health
+cd C:/Users/DaveWitkin/.local/gemini-proxy; ./proxy-status.ps1
+
+# Quick process check
+Get-Process -Id (Get-Content C:/Users/DaveWitkin/.local/gemini-proxy/proxy.pid) -ErrorAction SilentlyContinue
+
+# Check Windows scheduled tasks
+Get-ScheduledTask -TaskName 'opencode-job-opencode-global*' | Get-ScheduledTaskInfo
+```
+
+### Start / Stop / Restart
+
+```powershell
+# Start proxy (background)
+cd C:/Users/DaveWitkin/.local/gemini-proxy; ./start-proxy-background.ps1
+
+# Stop proxy
+cd C:/Users/DaveWitkin/.local/gemini-proxy; ./stop-proxy.ps1
+
+# Restart proxy
+cd C:/Users/DaveWitkin/.local/gemini-proxy; ./stop-proxy.ps1; Start-Sleep 2; ./start-proxy-background.ps1
+```
+
+### API Key Management
+
+```powershell
+
+# View/edit friendly key names
+notepad C:/Users/DaveWitkin/.local/gemini-proxy/key_names.json
+
+# Reload keys without restart (use after editing api_keys.txt)
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/reload-keys" -Method POST -Headers @{"x-proxy-admin"="changeme_local_only"}
+
+# View current key health
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/status" -Method GET
+```
+
+### View Logs
+
+```powershell
+# Proxy logs (last 50 lines)
+Get-Content C:/Users/DaveWitkin/.local/gemini-proxy/logs/proxy.log -Tail 50
+
+# Monitor alerts
+Get-Content C:/Users/DaveWitkin/.local/gemini-proxy/logs/alerts.log -Tail 20
+
+# Real-time proxy logs
+Get-Content C:/Users/DaveWitkin/.local/gemini-proxy/logs/proxy.log -Wait -Tail 20
+```
+
+## Troubleshooting
+
+### Proxy won't start
+1. Check if port 8000 is in use: `netstat -ano | findstr :8000`
+2. Verify Python virtual environment: `C:/Users/DaveWitkin/.local/gemini-proxy/venv/Scripts/Activate.ps1`
+3. Check Windows Event Viewer for task errors
+4. Review logs: `Get-Content C:/Users/DaveWitkin/.local/gemini-proxy/logs/proxy.log -Tail 30`
+
+### 429 errors or rate limiting
+1. Check key health: `./proxy-status.ps1`
+2. Verify multiple keys are loaded: `(Invoke-RestMethod "http://127.0.0.1:8000/status").key_count`
+3. Check if any keys are marked unhealthy
+4. Consider adding more API keys if only 1-2 are active
+
+### Auto-restart not working
+1. Check Task Scheduler: `Get-ScheduledTask -TaskName 'opencode-job-opencode-global-7a3f9c2e1b84-gemini-proxy-starter'`
+2. Verify task is enabled: `(Get-ScheduledTask -TaskName 'opencode-job-opencode-global-7a3f9c2e1b84-gemini-proxy-starter').State`
+3. Review task history: `Get-ScheduledTaskInfo -TaskName 'opencode-job-opencode-global-7a3f9c2e1b84-gemini-proxy-starter'`
+4. Check if proxy starts manually: `./start-proxy-background.ps1`
+5. See source-of-truth doc: `C:\development\opencode\docs\reference\gemini-proxy-source-of-truth.md`
+
+### Admin endpoints return 404
+1. Verify proxy is running: `./proxy-status.ps1`
+2. Check admin token: Ensure `x-proxy-admin` header matches `changeme_local_only`
+3. Review main.py routes: `/status` and `/reload-keys` must be before catch-all route
+
+## References
+
+- [Complete Reference Guide](file:///C:/development/opencode/docs/reference/gemini-proxy.md)
+- [Troubleshooting Guide](file:///C:/development/opencode/docs/troubleshooting/active/gemini-proxy-down.md)
+- [Detailed Commands & Procedures](reference.md) - Advanced usage
+
+## File Structure
+
+```
+C:/Users/DaveWitkin/.local/gemini-proxy/
+├── main.py                      # Proxy server code
+├── api_keys.txt                 # API keys (one per line)
+├── key_names.json              # Friendly names for each API key
+├── proxy.pid                    # Current process ID
+├── start-proxy-background.ps1   # Start proxy headless
+├── stop-proxy.ps1               # Stop proxy
+├── proxy-status.ps1             # Status check script
+├── Create-GeminiProxyTask.ps1   # (legacy - tasks now managed by OpenCode scheduler)
+├── Create-MonitorTask.ps1       # (legacy - tasks now managed by OpenCode scheduler)
+├── logs/
+│   ├── proxy.log               # Application logs
+│   ├── alerts.log              # Monitor notifications
+│   └── monitor-state.json      # Monitor state tracking
+└── venv/                        # Python virtual environment
+```
+
+## Windows Scheduled Tasks
+
+| Task Name | Trigger | Action | Purpose |
+|-----------|---------|--------|---------|
+| `opencode-job-...-gemini-proxy-starter` | Daily at 6:00 AM | Start proxy headless | Auto-start via OpenCode scheduler |
+| `opencode-job-...-gemini-proxy-monitor` | Every 30 min | Check health + restart if needed | Monitor via OpenCode scheduler |
+
+## Admin Endpoints
+
+Requires header: `x-proxy-admin: changeme_local_only`
+
+- `GET http://127.0.0.1:8000/status` - Full status and key health
+- `POST http://127.0.0.1:8000/reload-keys` - Reload keys without restart
+
+## Security Notes
+
+- Admin token is hardcoded as `changeme_local_only` (local-only, no external access)
+- API keys stored in plaintext in `api_keys.txt` (local machine only)
+- Proxy binds to `127.0.0.1` (localhost only, no remote access)
+- OpenCode configured to use proxy via `baseURL: http://127.0.0.1:8000/v1beta`
+
+## Emergency Procedures
+
+**If proxy is completely down and won't start:**
+1. Stop any hanging processes: `Get-Process python | Stop-Process -Force`
+2. Clear port 8000: `netstat -ano | findstr :8000` then `taskkill /PID <PID> /F`
+3. Manual start for debugging: `cd C:/Users/DaveWitkin/.local/gemini-proxy; ./venv/Scripts/Activate.ps1; python main.py`
+4. Check logs for errors: `Get-Content logs/proxy.log -Tail 50`
+
+**If API keys are exhausted:**
+1. Add new keys to `api_keys.txt` (one per line)
+2. Reload: `Invoke-RestMethod -Uri "http://127.0.0.1:8000/reload-keys" -Method POST -Headers @{"x-proxy-admin"="changeme_local_only"}`
+3. Verify: `./proxy-status.ps1`
+
+## Validation Prompts
+
+Use these prompts to verify activation quality and expected behavior:
+
+- Prompt: `check gemini proxy`  
+  Expected: Runs status checks first and reports process, endpoint, key health, and task health.
+- Prompt: `restart gemini proxy`  
+  Expected: Stops proxy safely, starts it again, then confirms port + `/status` endpoint are healthy.
+- Prompt: `I am getting ECONNREFUSED 127.0.0.1:8000`  
+  Expected: Follows troubleshooting path for proxy-down scenarios, including logs and Task Scheduler checks.

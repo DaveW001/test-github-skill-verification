@@ -1,0 +1,518 @@
+# Agent Development Standards
+
+**Purpose:** Standards for creating and modifying OpenCode agents  
+**Authority:** Global configuration - must be followed by ALL AI assistants  
+**Location:** `~/.config/opencode/agent-development-standards.md`
+
+---
+
+## Core Principles
+
+1. **Read-only agents should never be information-starved** - Grant access to the currently approved read-only research tools
+2. **Write access requires explicit justification** - Document why an agent needs write/edit/bash
+3. **Explicit is better than implicit** - Always specify mode, and `permission`
+4. **Separation of concerns** - Agents should have single, clear purposes
+5. **Reuse prompt patterns before inventing new ones** - Prefer shared templates in `patterns/prompts/`
+
+---
+
+## Canonical Permission Syntax (read first)
+
+OpenCode gates tools via the **`permission:`** (singular) key in agent frontmatter. Each value is `"allow" | "ask" | "deny"`, or an object of glob-pattern rules for `bash`/`task`/`skill`. Key permission keys: `read`, `edit` (gates `write` + `edit` + `apply_patch` - there is no separate `write` key), `glob`, `grep`, `list`, `bash`, `task`, `skill`, `webfetch`, `websearch`, `lsp`, `todowrite`, `question`, `external_directory`.
+
+**The legacy `tools:` key is DEPRECATED - do not use it in new agents.** `tools: { x: true }` maps to `permission: { x: {"*":"allow"} }` and `false` to `{"*":"deny"}`, but it cannot express `ask`, glob rules, or per-command bash restrictions. A plural `permissions:` key is silently **ignored**. Migrate every agent still using `tools:` (or plural `permissions:`) to `permission:`.
+
+**Read-only agents MUST keep `bash: allow`.** The native `Read`/`Glob`/`Grep` tools fail with `Bun is not defined` in this environment; without `bash` the agent cannot read any file and its review is inconclusive. Enforce read-only behavior with (a) `edit: deny` to block all file-modification tools, plus (b) a prompt Tool-Layer Failure Protocol section that restricts bash to read-only cmdlets (`Get-Content`, `Select-String`, `Get-ChildItem`, `Test-Path`) with a hard-prohibition list. The peer-review agent is the canonical example.
+
+---
+
+## Agent Types
+
+### Primary Agents
+
+Agents that users interact with directly.
+
+**Characteristics:**
+- `mode: primary`
+- May have write access (with justification)
+- Can orchestrate other agents
+- User-facing workflows
+
+**Example:**
+```yaml
+---
+description: Default development agent with CLI-only osgrep search workflow
+mode: primary
+permission:
+  edit: allow    # Justified: creates & modifies code files (covers write+edit+apply_patch)
+  bash: allow    # Justified: runs tests, git commands
+  skill:
+    perplexity-search: allow
+    notebooklm: allow
+    content-trend-researcher: allow
+---
+```
+
+### Subagents (Read-Only)
+
+Agents invoked by other agents or commands for specialized analysis/review.
+
+**Characteristics:**
+- `mode: subagent`
+- **No file modification** (`edit: deny` blocks write/edit/apply_patch). Keep `bash: allow` so the agent can read files (native Read/Glob/Grep fail with `Bun is not defined`); enforce read-only bash via the prompt protocol
+- **FULL research access** (grant the currently approved read-only skills under `permission.skill`)
+- Focused on analysis, validation, review
+
+**Standard Template:**
+```yaml
+---
+description: [What this agent does - be specific about activation triggers]
+mode: subagent
+permission:
+  edit: deny        # Read-only: blocks write/edit/apply_patch (no separate write key)
+  bash: allow       # REQUIRED for reading files: native Read/Glob/Grep fail with Bun is not defined
+  task:
+    "*": deny       # Anti-recursion (see Subagent Spawning Prevention)
+  skill:
+    # Grant the currently approved read-only research skills
+    perplexity-search: allow
+    notebooklm: allow
+    content-trend-researcher: allow
+    # Add more as needed
+---
+```
+
+### Subagents (Write-Enabled)
+
+Rare. Only when a specialized agent needs to create specific types of files.
+
+**Characteristics:**
+- `mode: subagent`
+- Limited write access with **clear justification**
+- Explicit skill permissions
+- Hidden from user menu (`hidden: true`)
+
+**Template:**
+```yaml
+---
+description: [Specific purpose requiring write access]
+mode: subagent
+hidden: true   # Not shown in agent menu
+permission:
+  edit: allow        # JUSTIFICATION: Creates [specific file types] (edit covers write+edit+apply_patch)
+  bash: deny         # No shell commands (use allow only if the agent must run commands)
+  task:
+    "*": deny        # Anti-recursion
+  skill:
+    # Minimal skill set - only what is needed
+---
+```
+
+---
+
+## Required Frontmatter Fields
+
+### Mandatory
+
+| Field | Required | Purpose |
+|-------|----------|---------|
+| `description` | ✅ Yes | What the agent does + when to activate it |
+| `mode` | ✅ Yes | `primary`, `subagent`, or `all` |
+| `permission` | Yes | Canonical tool/permission gating (edit, bash, task, skill, ...). Legacy `tools` is deprecated.
+
+### Optional
+
+| Field | When to Use |
+|-------|-------------|
+| `permission.skill` | When agent uses skills (almost always) |
+| `hidden` | For internal-only subagents |
+| `steps` | For cost-sensitive agents (legacy `maxSteps` is deprecated) |
+| `model` | For agents requiring specific models |
+
+---
+
+## Prompt Pattern Reuse Standard
+
+When writing agent prompts, reuse the shared prompt pattern library before creating new structures. Paths below are repo-relative from the OpenCode repository root.
+
+- Library index: `patterns/prompts/README.md`
+- Authoring template: `patterns/prompts/TEMPLATE.md`
+- Rule: if no existing pattern fits, create a new reusable pattern in `patterns/prompts/` first, then use it in the agent prompt.
+
+---
+
+## Skill Permissions: The Critical Standard
+
+### For Read-Only Agents (Most Common)
+
+**ALWAYS grant ALL read-only research skills:**
+
+```yaml
+permission:
+  skill:
+    perplexity-search: allow       # Web research with citations
+    notebooklm: allow              # Knowledge base queries
+    content-trend-researcher: allow # Trend/topic research
+```
+
+**Why?** Read-only agents need information to do their jobs effectively:
+- **seo-auditor** needs to research latest 2025 SEO standards
+- **brand-voice-validator** needs to find brand voice examples
+- **peer-review** needs to find related specs and requirements
+- **gen-headlines** needs to research current headline trends
+
+### For Primary Agents
+
+**Review each skill individually:**
+
+```yaml
+permission:
+  skill:
+    # Research skills (usually safe)
+    perplexity-search: allow
+    notebooklm: allow
+    
+    # Write-capable skills (needs justification)
+    Conductor: allow  # Justification: Creates tracks for planning
+    Retro: allow      # Justification: Post-session analysis
+    
+    # Deny by omission (or explicit deny)
+    # git-push, github-create-repo, etc. not listed = denied
+```
+
+### ❌ Common Mistakes
+
+**Mistake 1: `skill: false` on Read-Only Agents**
+
+```yaml
+# ❌ WRONG - Prevents ALL research
+permission:
+  edit: deny
+  bash: allow
+  skill: deny     # WRONG - starves the agent of all research
+```
+
+**Mistake 2: Only Granting One Skill**
+
+```yaml
+# ❌ INCOMPLETE - Agent can't research latest info
+permission:
+  skill:
+    # Missing: perplexity-search, notebooklm, etc.
+```
+
+**Mistake 3: Granting Write Skills Without Justification**
+
+```yaml
+# ❌ WRONG - Primary agent with every skill
+permission:
+  skill:
+    "*": allow  # Too permissive!
+```
+
+---
+
+## Agent Naming Conventions
+
+### File Names
+
+- Use lowercase with hyphens: `peer-review.md`, `seo-auditor.md`
+- Prefix with numbers for ordering if needed: `01-planner.md`
+- Avoid name collisions with commands
+
+### Descriptions
+
+**Bad (Too Generic):**
+```yaml
+description: Helps with code review
+```
+
+**Good (Specific Activation Criteria):**
+```yaml
+description: Performs comprehensive peer reviews of work from other agents, validating plans against requirements and ensuring deliverables match original specifications.
+```
+
+---
+
+## Validation Checklist
+
+Before saving any agent file, verify:
+
+### For Read-Only Subagents
+
+- [ ] `mode: subagent` ✅
+- [ ] `edit: deny` (blocks write/edit/apply_patch)
+- [ ] `bash: allow` (required to read files under the Bun fallback)
+- [ ] `task: { "*": deny }` (anti-recursion)
+- [ ] read-only research skills granted under `permission.skill`
+- [ ] Grants `perplexity-search` ✅
+- [ ] Grants `notebooklm` ✅
+- [ ] Grants `content-trend-researcher` ✅
+- [ ] Description is specific about when to activate ✅
+- [ ] No write-capable skills (Conductor, git-push, etc.) ✅
+
+### For Primary Agents
+
+- [ ] `mode: primary` ✅
+- [ ] `edit` / `bash` grants have justification (edit covers write+edit+apply_patch)
+- [ ] Skill permissions reviewed individually ✅
+- [ ] Write-capable skills have clear justification in comments ✅
+- [ ] Description explains primary purpose ✅
+
+### For Write-Enabled Subagents (Rare)
+
+- [ ] `mode: subagent` ✅
+- [ ] Write access is clearly justified (comment in file) ✅
+- [ ] `hidden: true` (if internal-only) ✅
+- [ ] Skill permissions are minimal (only what's needed) ✅
+
+---
+
+## Examples
+
+### ✅ Excellent Read-Only Agent (peer-review)
+
+```yaml
+---
+description: Performs comprehensive peer reviews of work from other agents, validating plans against requirements and ensuring deliverables match original specifications.
+mode: subagent
+permission:
+  edit: deny        # Read-only
+  bash: allow       # Required to read files (Bun fallback)
+  task:
+    "*": deny       # Anti-recursion
+  skill:
+    perplexity-search: allow
+    notebooklm: allow
+    content-trend-researcher: allow
+---
+
+You are the **Peer Review Agent**, a specialized reviewer designed to validate work produced by other agents.
+
+[Rest of agent definition...]
+```
+
+**Why this is excellent:**
+- ✅ Clear, specific description
+- ✅ Explicit mode setting
+- Properly restricted: `edit: deny` (no file writes) + `bash: allow` read-only via prompt
+- ✅ Skills enabled with the currently approved read-only tools
+- ✅ Comprehensive research capabilities
+
+### ✅ Excellent Primary Agent (build)
+
+```yaml
+---
+description: Default development agent with non-osgrep search workflow
+mode: primary
+permission:
+  edit: allow    # Creates & modifies code files
+  bash: allow    # Runs tests, git commands
+  skill:
+---
+
+You are the default Build agent.
+**Semantic Search Rule:** Use `osgrep` for semantic discovery in CLI-only mode. Do not use `osgrep mcp` or bridge/server workflows. If osgrep fails or times out, fall back to `grep`, `glob`, targeted `Read`, and focused `bash` commands.
+```
+
+**Why this is excellent:**
+- ✅ Explicit mode
+- ✅ Write access with inline justification
+- ✅ Minimal skill permissions (only what's currently approved and needed)
+- ✅ Clear purpose
+
+### ❌ Bad Example (Don't Do This)
+
+```yaml
+---
+description: Validates content
+permission:
+  edit: deny
+  bash: allow
+  skill: deny    # WRONG - Agent cannot research anything!
+---
+```
+
+**Problems:**
+- ❌ No mode specified
+- ❌ skill: false prevents all research
+- ❌ Description too generic
+- No `permission` block
+
+---
+
+## Decision Tree
+
+```
+Creating a new agent?
+├─ Will it create/modify files?
+│   ├─ YES → mode: primary (or justified subagent)
+│   │   ├─ Document why write access is needed
+│   │   ├─ Review each skill permission individually
+│   │   └─ Grant minimal skill set
+│   │
+│   └─ NO (read-only) → mode: subagent
+│       ├─ edit: deny + bash: allow (read files) + task: deny
+│       ├─ skill: true ✅
+│       └─ Grant approved read-only skills:
+│           ├─ perplexity-search: allow
+│           ├─ notebooklm: allow
+│           └─ content-trend-researcher: allow
+│
+└─ Is this for user interaction or internal use?
+    ├─ User interaction → mode: primary
+    └─ Internal/invoked by other agents → mode: subagent, hidden: true
+```
+
+---
+
+## Philosophy
+
+> **"Read-only agents should never be information-starved. Give them access to all read-only research tools. Trust them to use only what they need. The only restriction should be: don't modify anything."**
+
+This principle ensures:
+- **Effectiveness:** Agents can research, analyze, and provide thorough feedback
+- **Safety:** `edit: deny` blocks all file-modification tools; read-only bash is enforced by the prompt protocol
+- **Flexibility:** Agents use only the tools they need for each task
+- **Trust:** We trust the AI to use tools appropriately
+
+---
+
+## Permission baseline for file-creating agents
+
+The Conductor pipeline and any other agent that creates files uses `edit: allow` in the agent frontmatter. The `edit` permission key gates all file-modification tools (`write`, `edit`, `apply_patch`) - there is **no separate `write` permission key**, so `edit: allow` is sufficient and canonical for any agent that must create or modify files.
+
+1. File-creating agent frontmatter MUST include `edit: allow` in its `permission:` block. This single key covers the `write`, `edit`, and `apply_patch` tools.
+2. Read-only validators (stages that must NOT modify files) keep `edit: deny`, which blocks all three file-modification tools. `bash: allow` is still required so the agent can read files under the Bun-fallback runtime.
+
+Concretely: **never use `write: allow` as a permission key** - `write` is a tool name, not a permission key, and it is non-canonical (the `write` tool is gated by `edit`). File-creating agents grant `edit: allow`; read-only agents grant `edit: deny`. If a global `permission` block is ever added to `opencode.jsonc`, file-creating agents override it per-agent with `edit: allow`.
+
+## When to Update This Standard
+
+Update this document when:
+- New read-only skills are added to the system → Add to "always allow" list
+- New write-capable skills are created → Document when they should be granted
+- Permission patterns change → Update templates and examples
+- New agent types emerge → Add new sections
+- 2026-07-03: Permission baseline for file-creating agents added (see retro conductor-pipeline-write-permission-retro-2026-07-02.md).
+- 2026-07-04: Migrated agent permission syntax from deprecated `tools:` to canonical `permission:` (singular); read-only agents now keep `bash: allow` (required for file reading under the Bun-fallback runtime); fixed plural `permissions:` (ignored) to `permission:`.
+- 2026-07-04: Applied the canonical syntax across all agents - migrated 8 `tools:`-based agents to `permission:` (read-only reviewers now use `edit: deny` + `bash: allow`); removed the non-canonical `write: allow` key from 9 Conductor agents (research confirmed `write` is a tool name gated by `edit`, not a permission key); fixed the two read-only validators where `write: allow` contradicted `edit: deny`; rewrote the file-creating baseline section to use `edit` only.
+
+**Location of this file:** `~/.config/opencode/agent-development-standards.md`  
+**Applies to:** ALL agent creation and modification  
+**Authority:** Global configuration - loaded for all conversations
+
+---
+
+**Created:** 2026-01-18  
+**Last Updated:** 2026-07-04
+**Version:** 1.1
+
+---
+
+---
+
+## Agent Registration & Session Restart
+
+### The Problem
+OpenCode caches available agents when a session begins. New markdown files added to .opencode/agent/ mid-session are not dynamically recognized by the Task tool (which triggers an "Unknown agent type" error).
+
+### The Solution: Required Restart
+If you create a new agent via a skill, you **must** instruct the user to restart the current OpenCode session before attempting to use the new agent via the Task tool.
+
+### CLI Testing (Pre-Restart Verification)
+Before asking the user to restart, test the newly created agent via the OpenCode CLI to verify the frontmatter parses correctly:
+`ash
+opencode run --agent <agent-name> "test"
+`
+*(Note: If the agent is a subagent, the CLI will throw a warning about falling back to the default agent. This is expected and proves the YAML frontmatter is structurally sound.)*
+
+## Subagent Spawning Prevention
+
+### The Problem
+
+OpenCode's `task` permission defaults to `"allow"`. This means ANY agent (including subagents) can use the `task()` tool to spawn other subagents, creating nested chains:
+
+```
+User → @critic-cio (subagent 1) → spawns subagent 2 → spawns subagent 3
+```
+
+This causes:
+- **Cost inflation** - Each nested subagent consumes tokens
+- **Latency** - Nested execution takes longer
+- **Confusion** - Hard to trace which agent did what
+- **Broken UX** - Questions from deeply nested agents may not appear in TUI (GitHub #7654)
+
+### The Solution: Hard Deny
+
+For **review-only subagents**, ALWAYS include:
+
+```yaml
+permission:
+  task:
+    "*": deny
+```
+
+**Do NOT rely solely on prompt guardrails.** LLMs may ignore "do not" instructions.
+
+### Complete Template for Review-Only Subagents
+
+```yaml
+---
+description: [What this agent reviews/validates]
+mode: subagent
+permission:
+  edit: deny        # Read-only (blocks write/edit/apply_patch)
+  bash: allow       # Required so the agent can read files (Bun fallback)
+  task:
+    "*": deny              # CRITICAL: Prevents nested subagent spawning
+  skill:
+    perplexity-search: allow
+    notebooklm: allow
+    content-trend-researcher: allow
+---
+
+[Agent prompt with guardrail text:]
+
+Guardrail (anti-recursion): You are a single reviewer pass. Do NOT spawn or delegate to other agents. The task tool is DISABLED for this agent.
+```
+
+### Agents That SHOULD Have Task Access
+
+These are **orchestrator agents** that intentionally delegate:
+
+| Agent            | Mode    | Why Task Allowed         |
+| ----------------| ------- | ------------------------ |
+| content-factory | primary | Orchestrates writers, researchers |
+| youtube-shorts  | primary | Orchestrates writer, critic, designer |
+| content-repurposer | primary | Orchestrates repurposing workflow |
+| image-creator   | primary | Orchestrates image generation |
+
+### Agents That Should NOT Have Task Access
+
+These are **review-only subagents** that should work independently:
+
+| Agent                | Mode     | Why Task Denied         |
+| --------------------| -------- | ----------------------- |
+| critic-cio           | subagent | Single-pass reviewer    |
+| cio-review           | subagent | Single-pass reviewer    |
+| peer-review          | subagent | Independent validation  |
+| seo-auditor          | subagent | Standalone analysis     |
+| brand-voice-validator| subagent | Single-purpose check    |
+| gen-headlines        | subagent | Independent generation  |
+| offer-architect      | subagent | Single-purpose creation |
+
+### Detection: How to Spot the Problem
+
+In logs, look for:
+```
+service=session ... created ... parentID=...
+```
+
+Multiple sessions with `parentID` relationships indicate nested spawning.
+
+### Related Issues
+
+- GitHub #7654: Questions from nested sub-agents don't appear in TUI
+- GitHub #14308: Custom agents cannot access task tool despite configuration
+

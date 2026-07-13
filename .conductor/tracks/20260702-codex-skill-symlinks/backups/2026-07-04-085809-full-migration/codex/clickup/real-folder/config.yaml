@@ -1,0 +1,44 @@
+# ClickUp Skill Configuration
+# This file manages the connection to the external cursor-clickup-mcp repository
+
+external_repo:
+  # Primary path to the cursor-clickup-mcp repository
+  # This can be absolute or relative to your home directory (~)
+  path: "C:/development/cursor-clickup-mcp"
+  
+  # Whether the external repo is required for the skill to function
+  required: true
+  
+  # Minimum required files that must exist in the repo
+  required_files:
+    - "clickup_api.py"
+    - "scripts/clickup_client.py"
+    - "scripts/date_utils.py"
+
+# Fallback locations to search if primary path is not found
+# These are checked in order if the primary path fails
+fallback_paths:
+  - "~/cursor-clickup-mcp"
+  - "~/development/cursor-clickup-mcp"
+  - "C:/dev/cursor-clickup-mcp"
+  - "/mnt/c/development/cursor-clickup-mcp"  # WSL path
+  - "/Users/$USER/development/cursor-clickup-mcp"  # Mac
+
+# Auto-discovery settings
+discovery:
+  # Whether to automatically search fallback paths if primary not found
+  enabled: true
+  
+  # Whether to update the config file when a path is auto-discovered
+  update_config: true
+  
+  # Maximum depth to search in parent directories
+  max_search_depth: 3
+
+# Validation settings
+validation:
+  # Whether to verify required files exist before allowing operations
+  check_required_files: true
+  
+  # Whether to test import of critical modules
+  test_imports: true

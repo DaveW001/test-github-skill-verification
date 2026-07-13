@@ -1,0 +1,89 @@
+{
+  "track_type": "bookkeeping",
+  "risks": [
+    "Private data leakage",
+    "Timestamp millisecond misinterpretation",
+    "Invalid skill frontmatter"
+  ],
+  "created": "2026-07-10",
+  "completed": "2026-07-10",
+  "validationCriteria": [
+    "Required files exist",
+    "Frontmatter name matches directory",
+    "Python script compiles",
+    "Required body literals are present",
+    "No obvious secrets are present"
+  ],
+  "summary": "Create session-db-query lazy-vault skill from existing session-history command knowledge.",
+  "deliverables": [
+    "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+    "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\reference.md",
+    "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\scripts\\query_sessions.py"
+  ],
+  "test_command": "n/a",
+  "progress": {
+    "completedTasks": 11,
+    "percentage": 100,
+    "totalTasks": 11
+  },
+  "test_framework": "none",
+  "pipeline_path": "1 -> 5 -> 7 -> 9",
+  "trackId": "20260710-session-db-query-skill",
+  "dependencies": [
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\commands\\session-history.md"
+  ],
+  "assignedTo": "Dave Witkin",
+  "status": "closed",
+  "skipped_stages": [
+    {
+      "reason": "Skipped candidate because the plan is explicit, low-risk, and limited to skill/documentation artifacts.",
+      "stage": "2 Plan Review"
+    },
+    {
+      "reason": "Skipped candidate because no plan-review threshold is expected for certain bookkeeping work.",
+      "stage": "3 Conditional Re-review"
+    },
+    {
+      "reason": "Skipped because track_type is bookkeeping and test_framework is none.",
+      "stage": "4 Write Tests (RED)"
+    },
+    {
+      "reason": "Skipped because no RED tests are applicable.",
+      "stage": "4b RED-state gate"
+    },
+    {
+      "reason": "Skipped because no project test suite applies; validation uses deterministic file/content checks and Python py_compile.",
+      "stage": "6 Run Tests"
+    },
+    {
+      "reason": "Skipped candidate unless Stage 7 finds major issues or audit mismatches.",
+      "stage": "8 Conditional Re-validation"
+    }
+  ],
+  "classification": "certain",
+  "keyOutcomes": [
+    "Discoverable session database query skill",
+    "Detailed query reference",
+    "Reusable Python query template"
+  ],
+  "estimatedHours": "1-2",
+  "relatedTracks": [],
+  "title": "Session DB Query Skill",
+  "tags": [
+    "skill",
+    "lazy-vault",
+    "opencode",
+    "sqlite",
+    "bookkeeping"
+  ],
+  "type": "maintenance",
+  "pipeline_mode": "bookkeeping",
+  "blocking": [],
+  "pipeline_rationale": "This track creates a lazy-vault skill and Conductor bookkeeping only. No production application code, executable test suite, security migration, deployment, or data-loss risk is in scope; deterministic file/content/Python syntax checks are sufficient.",
+  "executed_at": "2026-07-10T00:00:00Z",
+  "executor_model": "zai-coding-plan/glm-5.2",
+  "progress_phase": "closed",
+  "stage": "closed",
+  "closed_at": "2026-07-10T12:05:00"
+}
+

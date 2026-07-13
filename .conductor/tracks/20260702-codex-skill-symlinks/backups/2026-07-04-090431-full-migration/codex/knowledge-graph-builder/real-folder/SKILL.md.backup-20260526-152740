@@ -1,0 +1,195 @@
+﻿---
+name: knowledge-graph-builder
+description: |
+  Ingest new source material into the local markdown knowledge graph by converting sources,
+  extracting entities, deduplicating against existing nodes, preserving provenance,
+  validating schema, rebuilding indexes, and handing unresolved gaps to the maintainer skill.
+
+  Triggers when user mentions:
+  - "Build knowledge graph notes from this source file"
+  - "Extract people and orgs into the knowledge base"
+  - "Process this document into graph entities"
+  - "Add this file to the knowledge graph"
+  - "Extract entities from this source"
+  - "Ingest from inbox"
+  - "Run knowledge graph extraction"
+---
+
+## Skill Boundary
+
+This skill owns source-to-graph ingestion. It does not own recurring graph health audits,
+contradiction detection, active synthesis, community detection, or review queue management.
+Route those tasks to knowledge-graph-maintainer.
+
+## Reference Workflow
+
+The following reference files provide detailed guidance for each ingestion phase. Consult them in order when processing a source.
+
+| # | Reference File | Purpose |
+|---|----------------|---------|
+| 1 | `references/ingestion-workflow.md` | End-to-end ingestion lifecycle, preconditions, decision tree, and error recovery |
+| 2 | `references/source-conversion.md` | How to convert each source type (PDF, DOCX, email, Slack, Google) to readable markdown |
+| 3 | `references/entity-extraction.md` | Supported entity types, extraction rules, relationship rules, confidence levels, and examples |
+| 4 | `references/deduplication-and-merge.md` | Source and entity deduplication, merge rules, and cases where you must not merge |
+| 5 | `references/provenance-rules.md` | Source node provenance, relationship provenance, time-sensitive claims, and PII handling |
+| 6 | `references/incremental-ingest.md` | Change detection, affected-node updates, and skip rules for incremental processing |
+| 7 | `references/post-ingest-validation.md` | Validation commands, expected results, smoke tests, and failure recovery |
+| 8 | `references/archiving-and-logging.md` | Folder lifecycle, archive rules, ingest log template, and handoff notes |
+## Quick Usage (Already Configured)
+
+### Extract entities from a single file
+```
+Tell the agent: "Extract entities from this source: C:\path\to\file.docx"
+The agent will read the file, extract entities, and write typed notes under knowledge-base/.
+```
+
+### Run batch ingestion from inbox
+```
+Tell the agent: "Ingest from inbox"
+It will process all files in C:\development\02-Kx-to-process\10 inbox\ sequentially.
+```
+
+### Query the knowledge base
+```
+python scripts\search.py "C2 transformation stakeholders"
+```
+## Schema
+
+All entity notes follow the schema in:
+`C:\development\02-Kx-to-process\proposed-markdown-graph-schema.md`
+
+### 8 Entity Types
+
+| Type | Folder | Key Fields |
+|------|--------|------------|
+| person | `people/` | name, rank_or_title, primary_org |
+| organization | `organizations/` | parent_orgs, org_type |
+| program | `programs/` | status, lead_org |
+| role | `roles/` | held_by, within_org |
+| acronym | `acronyms/` | expansion, context |
+| event | `events/` | date, event_type |
+| source | `sources/` | source_path, source_type, extraction_status, sensitivity, contains_pii |
+| concept | `concepts/` | domain |
+
+### Required Frontmatter (all types)
+
+```yaml
+id: {type}-{slug}           # Must match filename stem
+type: {type}                 # One of 8 entity types
+name: Display Name
+aliases: []
+confidence: high|medium|low
+review_status: needs_review|reviewed|approved
+last_updated: YYYY-MM-DD
+sources:
+  - "[[source-id]]"
+```
+
+### 17 Approved Predicates
+
+affiliated_with, reports_to, works_with, member_of, has_role, stakeholder_for, owns, supports, attended, interviewed_for, mentioned_in, source_for, part_of, depends_on, related_acronym, illustrates, constrains
+
+## Agent Workflow
+
+### Step 1: Read Source Document
+- `.pdf` → use `doc-to-markdown` skill first
+- `.docx` / `.xlsx` / `.pptx` → Python zipfile XML extraction (see scripts/)
+- `.md` / `.txt` → direct Read
+- `.gdoc` / `.gsheet` → FAIL with clear export instructions
+
+### Step 2: Extract Entities
+Identify all instances of: people, organizations, programs, roles, acronyms, events, concepts.
+
+### Step 3: Deduplication
+- Hash file content (SHA-256 of first 4096 chars) and check against existing notes.
+- Compare extracted entity names/slugs against existing files in `knowledge-base/`.
+- If entity already exists: merge new relationships only (never overwrite without evidence).
+
+### Step 4: Write Entity Notes
+- One `.md` file per entity in the appropriate `knowledge-base/{type}/` folder.
+- Set `review_status: needs_review` on all new notes.
+- Every relationship must include `source:` reference and `confidence:` level.
+
+### Step 5: Create/Update Source Note
+- Create a source note in `knowledge-base/sources/` with `extraction_status: complete`.
+- Link all extracted entities via `source_for::` relationships.
+
+### Step 6: Update Index
+- Regenerate `knowledge-base/indexes/graph-index.md` listing all nodes and edges.
+
+### Step 7: Log
+- Append entry to `knowledge-base/logs/ingest-log.md` with: timestamp, file, entities_created, entities_merged, errors.
+
+
+
+### Step 8: Post-Ingest Graph Verification (GraphQLite)
+
+After creating or updating entities, verify they appear in the GraphQLite graph.
+
+**Warning:** If the entity note contains YAML parse warnings (e.g., unescaped backslashes in paths), DO NOT run `--incremental` sync. Fix the YAML syntax first, or the file hash will be poisoned and permanently excluded from future incremental syncs.
+
+```bash
+# Sync markdown changes to the graph
+python scripts/parse_markdown_to_graph.py --incremental
+
+# Verify entity appears in the graph
+python scripts/query-graph.py lookup --name "EntityName" --top 5
+
+# Check entity has relationships
+python scripts/query-graph.py neighbors --id entity-id --depth 1
+
+# Verify graph health
+python scripts/query-graph.py health
+```
+
+**Acceptance criteria:**
+- New entity appears in lookup results
+- Entity has at least 1 edge (from source note link)
+- Health check shows expected node/edge counts
+
+If graph sync fails, fall back to python scripts/search.py for verification.
+## Safety / Privacy Rules
+
+1. Never copy raw email addresses, phone numbers, or physical addresses.
+2. Mark PII: `contains_pii: true`, `sensitivity: high`.
+3. Default to summaries over raw excerpts.
+4. Never merge ambiguous identities — flag for review.
+5. Never assert relationships without a source reference.
+6. Respect confidence levels — never upgrade without evidence.
+
+## Validation Checks
+
+1. Every note has a valid `type` from the 8 allowed types.
+2. Every note has a matching `id` and filename stem.
+3. Every relationship uses an approved predicate.
+4. Every relationship has a `source:` reference.
+5. Time-sensitive facts have `as_of` dates.
+6. No duplicate slugs.
+7. No raw contact data unless explicitly approved.
+
+
+## When to Hand Off to Maintainer
+
+After ingestion, route these situations to ``knowledge-graph-maintainer``:
+
+- **Contradictory source claims:** Two or more sources assert different facts about the same entity.
+- **Missing canonical entity pages:** Entities referenced in relationships but not yet created as notes.
+- **Low-confidence identity matches:** Entities that might be duplicates but cannot be confirmed with available evidence.
+- **Orphan nodes or unlinked clusters** not caused by the current source extraction.
+- **Review queue aggregation:** Items requiring human review that exceed the builder scope (e.g., ambiguous identity resolution across multiple sources).
+
+Document each handoff in the ingest log with a ``HANDOFF:`` prefix.
+## Common Gotchas
+
+- `.gdoc` / `.gsheet` files are Google shortcuts and cannot be read. Export to Office format first.
+- Military ranks change — store rank in `rank_or_title`, not in the slug.
+- Same name + different org = separate entity until proven otherwise.
+- `review_status: needs_review` is the default for all machine-generated notes.
+
+## Scripts
+
+- `scripts/validate-kg.py` - Validate all entity notes against schema rules (types, IDs, predicates, source refs, PII).
+- `scripts/build-index.py` - Build/rebuild the SQLite FTS5 full-text search index from markdown notes.
+- `scripts/search.py` - Search the knowledge graph with BM25 relevance scoring.
+- `scripts/build-vector-index.py` - Build vector embeddings for semantic search.
+- `scripts/validate-vector-search.py` - Validate vector search quality.

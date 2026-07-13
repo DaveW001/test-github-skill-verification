@@ -1,0 +1,785 @@
+{
+  "Summary": {
+    "Timestamp": "20260706-170000",
+    "VaultRoot": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault",
+    "Total": 77,
+    "Junctions": 70,
+    "RealFolders": 7,
+    "OneDriveBacked": 63,
+    "NativeBacked": 7,
+    "BrokenTarget": 0,
+    "MissingSkillMd": 3
+  },
+  "Entries": [
+    {
+      "Name": "_archived_skills",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\_archived_skills",
+      "Kind": "realfolder",
+      "LinkType": null,
+      "Target": null,
+      "TargetExists": false,
+      "OneDriveBacked": false,
+      "HasSkillMd": false
+    },
+    {
+      "Name": ".system",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\.system",
+      "Kind": "realfolder",
+      "LinkType": null,
+      "Target": null,
+      "TargetExists": false,
+      "OneDriveBacked": false,
+      "HasSkillMd": false
+    },
+    {
+      "Name": "agent-writer",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\agent-writer",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\agent-writer",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "calendar-schedule",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\calendar-schedule",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\calendar-schedule",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "calendar-today",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\calendar-today",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\calendar-today",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "clickup",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\clickup",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "clickup-cli",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup-cli",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\clickup-cli",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "codex-primary-runtime",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\codex-primary-runtime",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\codex-primary-runtime",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": false
+    },
+    {
+      "Name": "command-writer",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\command-writer",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\command-writer",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "conductor",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\conductor",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor",
+      "TargetExists": true,
+      "OneDriveBacked": false,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "conductor-pipeline",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\conductor-pipeline",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline",
+      "TargetExists": true,
+      "OneDriveBacked": false,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "content-trend-researcher",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\content-trend-researcher",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\content-trend-researcher",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "design-system-extractor",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\design-system-extractor",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\design-system-extractor",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "doc",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\doc",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "doc-to-markdown",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc-to-markdown",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\doc-to-markdown",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "email-attachment-detacher",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-attachment-detacher",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\email-attachment-detacher",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "email-auto-sorter",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-auto-sorter",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\email-auto-sorter",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "email-draft-reply",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-draft-reply",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\email-draft-reply",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "email-routing-config",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-routing-config",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\email-routing-config",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "email-to-clickup",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-to-clickup",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\email-to-clickup",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "enrich-meeting-notes",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\enrich-meeting-notes",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\enrich-meeting-notes",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "find-info",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\find-info",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\find-info",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "firebase-deployment-specialist",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\firebase-deployment-specialist",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\firebase-deployment-specialist",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "first-principles-mastery",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\first-principles-mastery",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\first-principles-mastery",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "frontend-design",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\frontend-design",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\frontend-design",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "gemini-proxy",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gemini-proxy",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\gemini-proxy",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "git-push",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\git-push",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\git-push",
+      "TargetExists": true,
+      "OneDriveBacked": false,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "github-create-repo",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\github-create-repo",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\github-create-repo",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "github-management",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\github-management",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\github-management",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "gmail-draft-reply",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-draft-reply",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\gmail-draft-reply",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "gmail-inbox-triage",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-inbox-triage",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\gmail-inbox-triage",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "gmail-workspace",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-workspace",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\gmail-workspace",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "google-calendar-schedule",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-calendar-schedule",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\google-calendar-schedule",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "google-calendar-today",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-calendar-today",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\google-calendar-today",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "google-contacts",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-contacts",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\google-contacts",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "google-drive",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-drive",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\google-drive",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "handoff-deep",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\handoff-deep",
+      "Kind": "realfolder",
+      "LinkType": null,
+      "Target": null,
+      "TargetExists": false,
+      "OneDriveBacked": false,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "handoff-quick",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\handoff-quick",
+      "Kind": "realfolder",
+      "LinkType": null,
+      "Target": null,
+      "TargetExists": false,
+      "OneDriveBacked": false,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "image-generator",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-generator",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\image-generator",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "image-manifest-builder",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-manifest-builder",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\image-manifest-builder",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "image-ocr",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-ocr",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\image-ocr",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "imagegen",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\imagegen",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\imagegen",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "knowledge-graph-builder",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-builder",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\knowledge-graph-builder",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "knowledge-graph-maintainer",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-maintainer",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\knowledge-graph-maintainer",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "knowledge-graph-query",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-query",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\knowledge-graph-query",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "markdown-pdf-publisher",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\markdown-pdf-publisher",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\markdown-pdf-publisher",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "markdown-render",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\markdown-render",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\markdown-render",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "microsoft-graph",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\microsoft-graph",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\microsoft-graph",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "nlm-skill",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\nlm-skill",
+      "Kind": "realfolder",
+      "LinkType": null,
+      "Target": null,
+      "TargetExists": false,
+      "OneDriveBacked": false,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "notebooklm-cli",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-cli",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\notebooklm-cli",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "notebooklm-meta-prompt",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-meta-prompt",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\notebooklm-meta-prompt",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "opencode-scheduler",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-scheduler",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\opencode-scheduler",
+      "TargetExists": true,
+      "OneDriveBacked": false,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "osgrep",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\osgrep",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\osgrep",
+      "TargetExists": true,
+      "OneDriveBacked": false,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "outlook-email-search",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\outlook-email-search",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\outlook-email-search",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "outlook-inbox-triage",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\outlook-inbox-triage",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\outlook-inbox-triage",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "pa-ui-design",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pa-ui-design",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\pa-ui-design",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "perplexity-search",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\perplexity-search",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\perplexity-search",
+      "TargetExists": true,
+      "OneDriveBacked": false,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "playwright-interactive",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\playwright-interactive",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\playwright-interactive",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "powershell-master",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\powershell-master",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\powershell-master",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "pptx-to-pdf-converter",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pptx-to-pdf-converter",
+      "Kind": "realfolder",
+      "LinkType": null,
+      "Target": null,
+      "TargetExists": false,
+      "OneDriveBacked": false,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "retrospective",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\retrospective",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\retrospective",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "root-cause-analysis",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\root-cause-analysis",
+      "Kind": "realfolder",
+      "LinkType": null,
+      "Target": null,
+      "TargetExists": false,
+      "OneDriveBacked": false,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "scheduled-job-best-practices",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\scheduled-job-best-practices",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\scheduled-job-best-practices",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "skill-creator",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-creator",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\skill-creator",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "skill-discovery",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-discovery",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\skill-discovery",
+      "TargetExists": true,
+      "OneDriveBacked": false,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "skill-test-harness",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-test-harness",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\skill-test-harness",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "slack-messaging",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\slack-messaging",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\slack-messaging",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "slack-send-message",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\slack-send-message",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\slack-send-message",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "speech",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\speech",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\speech",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "terminal-aliases",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\terminal-aliases",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\terminal-aliases",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "thinking-partner",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\thinking-partner",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\thinking-partner",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "unified-calendar-today",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\unified-calendar-today",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\unified-calendar-today",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "vercel-deploy",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\vercel-deploy",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\vercel-deploy",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "visual-ocr",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\visual-ocr",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\visual-ocr",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "webapp-testing",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\webapp-testing",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\webapp-testing",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "windows-task-scheduler",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\windows-task-scheduler",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\windows-task-scheduler",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    },
+    {
+      "Name": "youtube-shorts",
+      "Path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\youtube-shorts",
+      "Kind": "junction",
+      "LinkType": "Junction",
+      "Target": "C:\\Users\\DaveWitkin\\OneDrive - Packaged Agile\\Documents\\development-config\\.opencode-lazy-vault\\youtube-shorts",
+      "TargetExists": true,
+      "OneDriveBacked": true,
+      "HasSkillMd": true
+    }
+  ]
+}

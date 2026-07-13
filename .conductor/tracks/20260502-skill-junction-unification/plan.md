@@ -1,4 +1,10 @@
-# Plan — Skill Junction Unification
+# Plan - Skill Junction Unification
+
+> **Status: SUPERSEDED (2026-07-06). Do not execute this plan as current guidance.**  
+> Current authority: `C:\development\opencode\docs\runbooks\codex-skill-architecture.md`.  
+> Superseded note: `C:\development\opencode\.conductor\tracks\20260502-skill-junction-unification\superseded-note-2026-07-06.md`.
+
+The Codex parent-junction architecture is now documented and valid, but the `.agents\skills` portion of this plan is not current policy. This plan remains as historical context only.
 
 This plan is written for a **Build agent** with access to `bash` (PowerShell on Windows), `Read`, `Write`, `Edit`, `Grep`, `Glob`.
 All commands are PowerShell. Junction creation requires NO elevation.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual OCR"
+  short_description: "Extract structured content from slide images using vision AI"
+  default_prompt: "Extract structured content from these slide images"

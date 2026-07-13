@@ -1,61 +1,76 @@
-# Skill Health Report — 2026-05-05
+# Skill Health Latest
 
-**Date**: 2026-05-05
-**Total skills checked**: 5
-**Issues found**: 36
-
-## Auto-Fixes Applied
-
-- `JUNCTION_CREATED` | `pptx-to-pdf-converter` | agents — missing junction created → `C:\Users\DaveWitkin\.config\opencode\skill\pptx-to-pdf-converter`
-
-## Flags (Manual Review Needed)
-
-The following 35 skills are listed in the global skills index but have no matching canonical directory at `C:\Users\DaveWitkin\.config\opencode\skill\`. All exist as lazy-loaded skills in `C:\Users\DaveWitkin\.codex\skills\`.
-
-| # | Flag | Skill | Reason |
-|---|------|-------|--------|
-| 1 | INDEX_STALE | `content-trend-researcher` | No canonical directory |
-| 2 | INDEX_STALE | `image-generator` | No canonical directory |
-| 3 | INDEX_STALE | `image-manifest-builder` | No canonical directory |
-| 4 | INDEX_STALE | `youtube-shorts` | No canonical directory |
-| 5 | INDEX_STALE | `design-system-extractor` | No canonical directory |
-| 6 | INDEX_STALE | `frontend-design` | No canonical directory |
-| 7 | INDEX_STALE | `html-demo-design` | No canonical directory |
-| 8 | INDEX_STALE | `pa-ui-design` | No canonical directory |
-| 9 | INDEX_STALE | `notebooklm-cli` | No canonical directory |
-| 10 | INDEX_STALE | `notebooklm-meta-prompt` | No canonical directory (duplicate index entry — lines 32 and 92) |
-| 11 | INDEX_STALE | `firebase-deployment-specialist` | No canonical directory |
-| 12 | INDEX_STALE | `github-create-repo` | No canonical directory |
-| 13 | INDEX_STALE | `github-management` | No canonical directory |
-| 14 | INDEX_STALE | `powershell-master` | No canonical directory |
-| 15 | INDEX_STALE | `webapp-testing` | No canonical directory |
-| 16 | INDEX_STALE | `doc-to-markdown` | No canonical directory |
-| 17 | INDEX_STALE | `markdown-pdf-publisher` | No canonical directory |
-| 18 | INDEX_STALE | `markdown-render` | No canonical directory |
-| 19 | INDEX_STALE | `clickup` | No canonical directory |
-| 20 | INDEX_STALE | `clickup-cli` | No canonical directory |
-| 21 | INDEX_STALE | `session-retro` | No canonical directory |
-| 22 | INDEX_STALE | `scheduled-job-best-practices` | No canonical directory |
-| 23 | INDEX_STALE | `terminal-aliases` | No canonical directory |
-| 24 | INDEX_STALE | `windows-task-scheduler` | No canonical directory |
-| 25 | INDEX_STALE | `email-auto-sorter` | No canonical directory |
-| 26 | INDEX_STALE | `email-draft-reply` | No canonical directory |
-| 27 | INDEX_STALE | `email-to-clickup` | No canonical directory |
-| 28 | INDEX_STALE | `outlook-inbox-triage` | No canonical directory |
-| 29 | INDEX_STALE | `first-principles-mastery` | No canonical directory |
-| 30 | INDEX_STALE | `thinking-partner` | No canonical directory |
-| 31 | INDEX_STALE | `agent-writer` | No canonical directory |
-| 32 | INDEX_STALE | `command-writer` | No canonical directory |
-| 33 | INDEX_STALE | `skill-creator` | No canonical directory |
-| 34 | INDEX_STALE | `snippet-writer` | No canonical directory |
-| 35 | INDEX_STALE | `gemini-proxy` | No canonical directory |
-
-## Observations
-
-- **Duplicate index entry**: `notebooklm-meta-prompt` appears in both "NotebookLM & Research" (line 32) and "AI & Agent Tooling" (line 92). Consider deduplicating.
-- **Architecture note**: The canonical directory (`opencode\skill\`) contains only 5 always-on native skills. The global index lists 40 skills, with 35 served as lazy-loaded skills from `codex\skills\`. Consider updating the index description to document this multi-location architecture and avoid false INDEX_STALE signals in future runs.
+> **Status:** Regenerated documentation snapshot after skill-architecture reconciliation.  
+> **Generated:** 2026-07-06.  
+> **Authoritative policy:** `C:\development\opencode\docs\runbooks\codex-skill-architecture.md`.
 
 ## Summary
 
-5 canonical skills checked. 1 auto-fix applied (junction for pptx-to-pdf-converter in agents). 35 flags for manual review — all INDEX_STALE entries exist as lazy-loaded skills in codex-skills/ and may reflect an outdated index scope rather than genuine staleness.
+The old skill-health report was stale and referenced obsolete assumptions about `.agents\skills`, native/global skill locations, and junction repair behavior.
 
+Current verified architecture:
+
+| Surface | Current status | Notes |
+|---|---|---|
+| `C:\Users\DaveWitkin\.opencode-lazy-vault` | Active lazy-vault root | Default for new skills. |
+| `C:\Users\DaveWitkin\.codex\skills` | Parent junction to lazy vault | Active Codex skill surface. |
+| `C:\Users\DaveWitkin\.config\opencode\skill` | Active always-on native root | Keep small; seven current always-on skills. |
+| `C:\Users\DaveWitkin\.agents\skills` | Archived / absent | Not required by current OpenCode/Codex setup; archived to `C:\Users\DaveWitkin\.agents\archive\skills-20260706-144958`. |
+| OneDrive `development-config` backing | Historical sync/backup plumbing; OneDrive originals retained as backup | All 63 OneDrive-backed lazy-vault junctions localized to real folders on 2026-07-06 (track `20260706-lazy-vault-localization`). |
+
+## Current always-on set
+
+```text
+conductor
+conductor-pipeline
+git-push
+opencode-scheduler
+osgrep
+perplexity-search
+skill-discovery
+```
+
+## Known non-blocking issues
+
+### `.agents\skills` legacy drift
+
+`.agents\skills` was legacy and partially broken, and it is not an active required surface under the current architecture. It has been archived and removed from the live location. Do not spend maintenance effort repairing it unless a future tool explicitly requires `.agents\skills`.
+
+If it must be revived, prefer a deliberate parent junction to the lazy vault or configure that future tool to use `C:\Users\DaveWitkin\.codex\skills` / the lazy vault directly. Do not maintain partial child-junction mirrors.
+
+### OneDrive-backed vault entries (localized 2026-07-06)
+
+Previously, many lazy-vault entries were junctions to:
+
+```text
+C:\Users\DaveWitkin\OneDrive - Packaged Agile\Documents\development-config\.opencode-lazy-vault\<skill-name>
+```
+
+**Status (2026-07-06):** All 63 OneDrive-backed junctions were converted to local real folders (content-identical, SHA256-verified) via track `20260706-lazy-vault-localization`. The OneDrive originals remain as a backup layer. Current vault inventory: 70 real folders, 7 native-backed always-on junctions, 0 OneDrive-backed junctions, 0 broken, 0 self-referential.
+
+## Superseded reports / tracks
+
+The following should not be used as current architecture guidance:
+
+```text
+C:\development\opencode\.conductor\tracks\20260502-skill-junction-unification
+```
+
+It is now marked superseded. Use:
+
+```text
+C:\development\opencode\docs\runbooks\codex-skill-architecture.md
+```
+
+## Health-check guidance for future reports
+
+A future automated health report should check:
+
+1. `C:\Users\DaveWitkin\.codex\skills` is a parent junction to `C:\Users\DaveWitkin\.opencode-lazy-vault`.
+2. No self-referential child junctions exist under the lazy vault.
+3. Every active lazy-vault skill directory intended for use contains `SKILL.md`.
+4. The always-on native set remains intentionally small.
+5. No script creates per-skill child junctions under `C:\Users\DaveWitkin\.codex\skills`.
+6. `.agents\skills` is ignored unless explicitly reactivated by a documented decision.
+
+Do not auto-create or auto-repair `.agents\skills` child junctions based on this report.

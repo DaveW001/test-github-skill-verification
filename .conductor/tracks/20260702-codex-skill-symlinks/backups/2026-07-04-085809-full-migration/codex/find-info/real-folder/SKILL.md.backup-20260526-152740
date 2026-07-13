@@ -1,0 +1,49 @@
+---
+name: find-info
+description: Use when the user asks to find information, documents, links, agendas, attachments, decisions, or context but is unsure where the source lives. Routes searches across email, Slack, knowledge base, ClickUp, and OneDrive/SharePoint with privacy-safe logging and failure handling.
+---
+
+# Skill: find-info
+
+## Privacy Rules
+- Never copy private email bodies, tokens, IDs, credentials, or raw attachment contents into repo files.
+- Summarize findings and cite source type, sender/channel, date, and filename when safe.
+- Redact internal IDs in public-facing output unless the user explicitly asks for operational fidelity.
+
+## Start Here
+1. Restate the target artifact or question in one sentence.
+2. Classify the request using the Source Routing Matrix.
+3. Run the Auth/Access Preflight for the selected source.
+4. Search sources in priority order.
+5. Record each source checked in a private or ephemeral search ledger.
+6. Stop dead-end tools after one auth/config failure and one corrected retry.
+7. Return concise findings, open questions, and next best action.
+
+## Source Routing Matrix
+| User intent | First source | Second source | Third source |
+| --- | --- | --- | --- |
+| Agenda, deck, attachment, "sent over", registration link | Outlook/email | Slack/DM | OneDrive/SharePoint |
+| Recent conversation, shared link, "who said what" | Slack/DM | Outlook/email | Knowledge base |
+| Decisions, risks, people, orgs, Army C2/CC2 context | Knowledge base | Slack | Outlook/email |
+| Task status, owner, due date, action item | ClickUp after auth check | Slack | Outlook/email |
+| Local file path or exported artifact | Repo/file search | OneDrive local sync | Ask user |
+
+## Auth/Access Preflight
+- Outlook/email: load the Outlook email search workflow and verify Microsoft Graph access before message search.
+- Slack: verify channel or DM scope if known; otherwise search broad terms first, then narrow.
+- Knowledge base: use known graph paths for people, orgs, programs, decisions, risks, and source notes.
+- ClickUp: verify `cup` or API access before searching; if auth fails, do not keep retrying.
+- OneDrive/SharePoint: prefer known shared links; use local sync search only with path-safe scripts.
+
+## Failure Handling
+- If a tool returns auth/config errors, make one corrected retry.
+- If the corrected retry fails, record the failed source and move to the next source.
+- If the failed source is essential, ask one targeted question instead of guessing.
+
+## Output Format
+- What I found
+- Where I found it
+- Confidence level
+- Sources checked but not fruitful
+- Remaining open questions
+- Recommended next action

@@ -1,0 +1,40 @@
+# Tool-Layer Failure Runbook: "Bun is not defined"
+
+## Symptom
+The file tools `Read`, `Edit`, `Write`, and/or `glob` return the error:
+> Bun is not defined
+
+The `bash` tool (PowerShell) continues to work because it shells out and does not depend on the Bun-backed tool sandbox.
+
+## Root cause (confirmed 2026-06-14)
+- Bun **IS installed** (v1.3.4) at `...\Oven-sh.Bun...\bun.exe` and is on PATH.
+- opencode runs via npm (`opencode.ps1`); its file tools are implemented on a Bun-backed sandbox that intermittently fails to initialize.
+- This is a **runtime sandbox-init failure**, NOT a missing install. Reinstalling Bun does not help.
+- Known upstream issues:
+  - `code-yeongyu/oh-my-openagent #3826` (closed) — https://github.com/code-yeongyu/oh-my-openagent/issues/3826
+  - `lgladysz/opencode-ignore #5` (open) — https://github.com/lgladysz/opencode-ignore/issues/5
+  - `anomalyco/opencode #25799` (closed) — https://github.com/anomalyco/opencode/issues/25799
+
+## Immediate action (do this first)
+1. Stop retrying the failing tool - each retry is a wasted call.
+2. Switch the **whole session** to PowerShell-first via the `bash` tool.
+
+## Cmdlet map (PowerShell equivalents)
+| Tool | PowerShell via `bash` |
+|------|----------------------|
+| Read | `Get-Content -LiteralPath <p> -Raw` (full) or `-TotalCount N` / `-Skip` |
+| Write | `Set-Content -LiteralPath <p> -Encoding utf8 -Value @'<content>'@` (verbatim here-string) |
+| Edit | `Select-String` to locate the line, then `[string]::Replace($old,$new)` LITERAL (NOT regex `-replace`) |
+| glob | `Get-ChildItem -Recurse -Filter <pattern>` |
+| grep | `Select-String -LiteralPath <p> -Pattern <regex>` |
+
+## Critical: avoid regex on structural characters
+Use `[string]::Replace($old, $new)` (literal) for edits involving quotes, brackets, backticks, or markdown. PowerShell `-replace` is regex and will eat structural chars (this caused a quote-balance bug on 2026-06-13).
+
+## Detection at session start
+Run one cheap file op at the start of a session. If it fails with "Bun is not defined", assume PowerShell-first for the entire session.
+
+## Do NOT
+- Do not reinstall Bun (it is installed and working at the CLI).
+- Do not retry the failing tool repeatedly hoping it recovers mid-session.
+- Do not treat this as exceptional - it is recurring across sessions (observed 2026-06-13 and 2026-06-14).

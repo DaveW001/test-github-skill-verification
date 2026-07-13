@@ -1,0 +1,133 @@
+---
+name: knowledge-graph-builder
+description: |
+  Build knowledge graph entity notes from source documents into a markdown-first
+  knowledge base with typed folders, YAML frontmatter, wikilink relationships,
+  provenance tracking, and confidence levels.
+
+  Triggers when user mentions:
+  - "Build knowledge graph notes from this source file"
+  - "Extract people and orgs into the knowledge base"
+  - "Process this document into graph entities"
+  - "Add this file to the knowledge graph"
+  - "Extract entities from this source"
+  - "Ingest from inbox"
+  - "Run knowledge graph extraction"
+---
+
+## Quick Usage (Already Configured)
+
+### Extract entities from a single file
+```
+Use this skill with a source file path. The agent will read the file, extract entities,
+and write typed notes under knowledge-base/.
+```
+
+### Run batch ingestion from inbox
+```
+Run: python scripts/ingest-inbox.py --inbox "C:\development\02-Kx-to-process\10 inbox" --kb "C:\development\02-Kx-to-process\knowledge-base"
+```
+
+### Query the knowledge base
+```
+Run: python scripts/query-kb.py --kb "C:\development\02-Kx-to-process\knowledge-base" --query "C2 transformation stakeholders"
+```
+
+## Schema
+
+All entity notes follow the schema in:
+`C:\development\02-Kx-to-process\proposed-markdown-graph-schema.md`
+
+### 8 Entity Types
+
+| Type | Folder | Key Fields |
+|------|--------|------------|
+| person | `people/` | name, rank_or_title, primary_org |
+| organization | `organizations/` | parent_orgs, org_type |
+| program | `programs/` | status, lead_org |
+| role | `roles/` | held_by, within_org |
+| acronym | `acronyms/` | expansion, context |
+| event | `events/` | date, event_type |
+| source | `sources/` | source_path, source_type, extraction_status, sensitivity, contains_pii |
+| concept | `concepts/` | domain |
+
+### Required Frontmatter (all types)
+
+```yaml
+id: {type}-{slug}           # Must match filename stem
+type: {type}                 # One of 8 entity types
+name: Display Name
+aliases: []
+confidence: high|medium|low
+review_status: needs_review|reviewed|approved
+last_updated: YYYY-MM-DD
+sources:
+  - "[[source-id]]"
+```
+
+### 17 Approved Predicates
+
+affiliated_with, reports_to, works_with, member_of, has_role, stakeholder_for, owns, supports, attended, interviewed_for, mentioned_in, source_for, part_of, depends_on, related_acronym, illustrates, constrains
+
+## Agent Workflow
+
+### Step 1: Read Source Document
+- `.pdf` → use `doc-to-markdown` skill first
+- `.docx` / `.xlsx` / `.pptx` → Python zipfile XML extraction (see scripts/)
+- `.md` / `.txt` → direct Read
+- `.gdoc` / `.gsheet` → FAIL with clear export instructions
+
+### Step 2: Extract Entities
+Identify all instances of: people, organizations, programs, roles, acronyms, events, concepts.
+
+### Step 3: Deduplication
+- Hash file content (SHA-256 of first 4096 chars) and check against existing notes.
+- Compare extracted entity names/slugs against existing files in `knowledge-base/`.
+- If entity already exists: merge new relationships only (never overwrite without evidence).
+
+### Step 4: Write Entity Notes
+- One `.md` file per entity in the appropriate `knowledge-base/{type}/` folder.
+- Set `review_status: needs_review` on all new notes.
+- Every relationship must include `source:` reference and `confidence:` level.
+
+### Step 5: Create/Update Source Note
+- Create a source note in `knowledge-base/sources/` with `extraction_status: complete`.
+- Link all extracted entities via `source_for::` relationships.
+
+### Step 6: Update Index
+- Regenerate `knowledge-base/indexes/graph-index.md` listing all nodes and edges.
+
+### Step 7: Log
+- Append entry to `knowledge-base/logs/ingest-log.md` with: timestamp, file, entities_created, entities_merged, errors.
+
+## Safety / Privacy Rules
+
+1. Never copy raw email addresses, phone numbers, or physical addresses.
+2. Mark PII: `contains_pii: true`, `sensitivity: high`.
+3. Default to summaries over raw excerpts.
+4. Never merge ambiguous identities — flag for review.
+5. Never assert relationships without a source reference.
+6. Respect confidence levels — never upgrade without evidence.
+
+## Validation Checks
+
+1. Every note has a valid `type` from the 8 allowed types.
+2. Every note has a matching `id` and filename stem.
+3. Every relationship uses an approved predicate.
+4. Every relationship has a `source:` reference.
+5. Time-sensitive facts have `as_of` dates.
+6. No duplicate slugs.
+7. No raw contact data unless explicitly approved.
+
+## Common Gotchas
+
+- `.gdoc` / `.gsheet` files are Google shortcuts and cannot be read. Export to Office format first.
+- Military ranks change — store rank in `rank_or_title`, not in the slug.
+- Same name + different org = separate entity until proven otherwise.
+- `review_status: needs_review` is the default for all machine-generated notes.
+
+## Scripts
+
+- `scripts/ingest-inbox.py` — Batch ingestion from inbox folder with dedup and DLQ.
+- `scripts/build-index.py` — Build/rebuild the SQLite FTS5 index from markdown notes.
+- `scripts/query-kb.py` — BM25 query against the SQLite index with metadata filtering.

@@ -1,0 +1,33 @@
+{
+  "track_id": "20260706-lazy-vault-localization",
+  "title": "Lazy Vault Localization",
+  "status": "completed",
+  "phase": "complete",
+  "created_at": "2026-07-06",
+  "updated_at": "2026-07-06",
+  "completed_at": "2026-07-06",
+  "summary": "Converted all 63 OneDrive-backed lazy-vault child junctions into local real folders while preserving the Codex parent junction and the seven always-on native bridges. Executed with backup/rollback package, dependency audit, 3-skill pilot, and full re-validation.",
+  "scope": "docs/config/filesystem skill-store maintenance",
+  "risk": "high - executed with staged pilot + validation gates (mitigated)",
+  "pre_execution_inventory": {
+    "lazy_vault_entries": 77,
+    "reparse_children": 70,
+    "onedrive_backed_junctions": 63,
+    "native_backed_junctions": 7,
+    "real_folders": 7,
+    "broken_targets": 0
+  },
+  "post_execution_inventory": {
+    "lazy_vault_entries": 77,
+    "reparse_children": 7,
+    "onedrive_backed_junctions": 0,
+    "native_backed_junctions": 7,
+    "real_folders": 70,
+    "broken_targets": 0,
+    "self_referential": 0
+  },
+  "converted_count": 63,
+  "backup_package": ".conductor/tracks/20260706-lazy-vault-localization/backups/20260706-170000/",
+  "requires_explicit_approval_before_execution": true,
+  "approval_received": "2026-07-06 (user message m0010)"
+}

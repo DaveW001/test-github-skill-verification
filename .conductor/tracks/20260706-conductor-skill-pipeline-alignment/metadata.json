@@ -1,0 +1,76 @@
+{
+  "trackId": "20260706-conductor-skill-pipeline-alignment",
+  "title": "Conductor Skill <-> Pipeline Drift Reconciliation",
+  "status": "completed",
+  "stage": "9-closed",
+  "created": "2026-07-06",
+  "completed": "2026-07-06",
+  "estimatedHours": "1-2",
+  "assignedTo": "Dave Witkin",
+  "type": "maintenance",
+  "track_type": "bookkeeping",
+  "test_framework": "none",
+  "test_command": "n/a",
+  "pipeline_mode": "bookkeeping",
+  "pipeline_path": "1 -> 5 -> 7 -> 9",
+  "pipeline_rationale": "All edits are skill/config/reference/template docs; no production code, no executable test framework. Auto-qualifies for bookkeeping under the Pipeline Selection Policy. Peer-reviewed 2026-07-06: direction approved, revisions required and now applied (5th target file added to backups/dependencies; phase wording aligned to Stage 1 'Final Phase Validation & Handover'; template pipeline_path made a placeholder; test_framework examples broadened; evidence wording corrected; closeout date plain YYYY-MM-DD).",
+  "skipped_stages": [
+    { "stage": 2, "reason": "No production code; docs/config only - peer review optional." },
+    { "stage": 3, "reason": "No re-review needed for bookkeeping config reconciliation." },
+    { "stage": 4, "reason": "No executable test framework; RED gate n/a." },
+    { "stage": "4b", "reason": "No tests to write." },
+    { "stage": 6, "reason": "No tests to run green." },
+    { "stage": 8, "reason": "Re-validation folded into Stage 7 for bookkeeping path." }
+  ],
+  "tags": ["conductor", "pipeline", "drift", "templates", "opencode-config"],
+  "progress": {
+    "phase": "closed",
+    "totalTasks": 12,
+    "completedTasks": 12,
+    "percentage": 100
+  },
+  "summary": "Close drift between the conductor skill (templates/hygiene) and conductor-pipeline skill (staged execution) introduced when the risk-adjusted pipeline modes were added without updating the conductor skill. Make the metadata template pipeline-compliant, point Stage 1 at the conductor skill as the single source of truth for hygiene, and make both skills pipeline-aware and mutually consistent.",
+  "keyOutcomes": [
+    "track-metadata.template.json de-duped (was duplicated by stale read) + pipeline_path placeholder; all 7 pipeline fields present exactly once",
+    "Stage 1 prompt now directs plan-creators to load the conductor skill + Upsert-row ledger wording + dual-ledger + track-ID + 3-state checkboxes",
+    "conductor/SKILL.md Completion Gate is pipeline-aware (pipeline_mode/pipeline_path check) + conditional ledger wording + field glossary + conductor-pipeline cross-ref",
+    "track-plan.template.md renumbered to Phase 0 / Final Phase + pipeline-consistency checkbox",
+    "Bidirectional cross-references between conductor and conductor-pipeline skills"
+  ],
+  "risks": [
+    "Agent/skill/command config is not hot-reloaded; OpenCode restart required before testing /conductor-pipeline.",
+    "Future full-casing normalization of metadata would touch 5+ pipeline stages; consciously deferred here.",
+    "A parallel OpenCode session was active 2026-07-06 editing unrelated tracks (skill-junction-unification); ledger upserts are guarded but should coordinate to avoid collisions."
+  ],
+  "dependencies": [
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor\\references\\templates\\track-metadata.template.json",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor\\references\\templates\\track-plan.template.md",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor\\SKILL.md",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\stage-prompts.md",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\SKILL.md"
+  ],
+  "blocking": [],
+  "relatedTracks": [
+    "20260705-conductor-pipeline-tdd-doc-stages",
+    "20260706-conductor-pipeline-closeout-hardening"
+  ],
+  "deliverables": [
+    "Pipeline-compliant track-metadata.template.json (7 pipeline fields; pipeline_path as selected-path placeholder)",
+    "Stage 1 prompt directive to load conductor skill + hygiene conventions",
+    "Pipeline-aware conductor/SKILL.md Completion Gate",
+    "Reconciled ledger wording and phase numbering (Final Phase Validation & Handover) across both skills",
+    "Updated track-plan.template.md Final Phase + phase numbering",
+    "Bidirectional skill cross-references"
+  ],
+  "validationCriteria": [
+    "track-metadata.template.json parses as valid JSON and contains all 7 pipeline field names",
+    "pipeline_mode/pipeline_path in the template are a selected-path example/placeholder and validation confirms semantic mode/path consistency (not just presence)",
+    "Stage 1 prompt references loading the conductor skill and the Upsert-row ledger convention",
+    "conductor/SKILL.md Completion Gate references pipeline_mode/pipeline_path consistency",
+    "Both skills agree on ledger-mandatory wording and the exact phase convention (Phase 0 ... Final Phase Validation & Handover)",
+    "All 5 target files (including conductor-pipeline/SKILL.md) are backed up before editing",
+    "No production/application code modified",
+    "tracks.md and tracks-ledger.md upserted and agree"
+  ]
+}
+

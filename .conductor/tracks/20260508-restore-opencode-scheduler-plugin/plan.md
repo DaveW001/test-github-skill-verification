@@ -268,7 +268,7 @@ Objective: Verify the hourly email auto-sort script is ready to run headlessly w
   - Working directory: `C:\development\email-triage`
   - Command:
     ```powershell
-    powershell -NoProfile -ExecutionPolicy Bypass -File "C:\development\email-triage\scripts\hourly-email-auto-sort.ps1"
+    pwsh -NoProfile -ExecutionPolicy Bypass -File "C:\development\email-triage\scripts\hourly-email-auto-sort.ps1"
     ```
   - Authoritative acceptance check: script reaches `## Authentication` and either logs successful no-WAM/app-only connection or completes with an exit code that maps to a documented non-auth condition.
   - Error recovery: if output includes `Graph auth failed`, capture the exact message and validate certificate presence:

@@ -1,0 +1,81 @@
+---
+name: image-ocr
+description: >-
+  Extract plain text from images (photos of documents, screenshots, scanned pages,
+  receipts, whiteboards) and output clean Markdown. Uses Gemini 2.5 Flash for best
+  quality with Tesseract offline fallback. Use when user asks to OCR an image,
+  extract text from a photo/screenshot/scan, convert image to text/markdown, or
+  read text from an image file. Triggers: "OCR", "image to text", "extract text
+  from image", "read text from screenshot", "scan to markdown", "image to markdown".
+---
+
+## Quick Start
+
+```bash
+# Single image
+python scripts/ocr_extract.py document.png
+
+# Batch directory
+python scripts/ocr_extract.py ./scans/ --batch --output-dir ./output/
+
+# Force Gemini, no fallback
+python scripts/ocr_extract.py photo.jpg --engine gemini
+
+# Preserve layout (headings, tables, lists)
+python scripts/ocr_extract.py report.png --preserve-layout
+```
+
+## Engines
+
+| Engine | Quality | Speed | Setup | Best For |
+|--------|---------|-------|-------|----------|
+| Gemini 2.5 Flash (default) | Best | Fast | API key (free) | Handwriting, photos, forms, multi-language |
+| Tesseract | Good | Fast | Binary install | Clean printed text, offline use |
+
+Use `--engine auto` (default) to try Gemini first, fall back to Tesseract.
+
+## Setup
+
+**Required (always)**:
+```bash
+pip install httpx pytesseract Pillow
+```
+
+**Gemini API key** (for Tier 1):
+- Set `GEMINI_API_KEY` environment variable, OR
+- Place key in `%USERPROFILE%\.local\gemini-proxy\api_keys.txt`
+
+**Tesseract binary** (for Tier 2 fallback):
+- Windows: `winget install UB-Mannheim.TesseractOCR`
+- Or set `TESSERACT_CMD` environment variable to binary path
+
+## Output Format
+
+Each output `.md` file has YAML frontmatter:
+```yaml
+---
+source: "document.png"
+engine: gemini-direct
+model: gemini-2.5-flash
+extracted: 2026-06-14T12:30:00
+language: auto
+---
+```
+
+Batch mode also writes `manifest.json` with `processed`, `failed`, `skipped` arrays.
+
+## Gotchas
+
+- **Gemini key not found**: Check `GEMINI_API_KEY` env var or `%USERPROFILE%\.local\gemini-proxy\api_keys.txt`
+- **Tesseract not found on Windows**: Default path is `C:\Program Files\Tesseract-OCR\tesseract.exe`. Set `TESSERACT_CMD` if installed elsewhere.
+- **Language packs**: Tesseract needs language packs installed. Gemini handles most languages natively.
+- **Large images**: Images >20MB are skipped (Gemini API limit).
+- **Rate limits**: Gemini free tier has rate limits. Script retries once on 429, then falls back to Tesseract.
+
+## When to Use This vs Other Skills
+
+| Skill | Use When |
+|-------|----------|
+| `image-ocr` (this) | Extract plain text from images (photos, screenshots, scans, receipts) |
+| `visual-ocr` | Extract visual structure (org charts, diagrams, tables with relationships) |
+| `doc-to-markdown` | Convert PDF or HTML documents to Markdown |

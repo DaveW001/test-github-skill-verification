@@ -1,0 +1,4 @@
+interface:
+  display_name: "Email Attachment Detacher"
+  short_description: "Detach email PDFs into organized folders"
+  default_prompt: "Use $email-attachment-detacher to download email attachments into named folders, normalize filenames, and archive only after verification."

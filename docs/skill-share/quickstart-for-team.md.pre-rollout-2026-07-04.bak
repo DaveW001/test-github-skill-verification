@@ -1,0 +1,124 @@
+# SkillShare Quickstart for Team Members
+
+This guide sets up your machine to receive the Packaged Agile team's shared AI skills. You only do this **once**. After that, getting updates is two commands.
+
+> Not comfortable in PowerShell? Open **Claude Code**, **OpenAI Codex**, or **OpenCode** and paste the prompt at the end of this guide. Your AI assistant will run the commands for you.
+
+## Before you start
+
+- Ask **Dave** to invite your GitHub account to the `packaged-agile` organization, then **accept the invite** (check the email tied to your GitHub account).
+- You need a Windows PC with **PowerShell**. (Mac and Linux work too; the commands are the same except where noted.)
+
+## Step 0 - Install the GitHub CLI and sign in (one time)
+
+Our skill library is **private**, so your machine needs permission to reach it.
+
+```powershell
+# Install the GitHub CLI (skip if you already have it)
+winget install --id GitHub.cli
+
+# Sign in with your browser
+gh auth login
+```
+
+When prompted, choose: **GitHub.com -> HTTPS -> Login with a web browser.** Then let git reuse that sign-in so you are not asked to log in twice:
+
+```powershell
+gh auth setup-git
+```
+
+## Step 1 - Install SkillShare
+
+```powershell
+irm https://raw.githubusercontent.com/runkids/skillshare/main/install.ps1 | iex
+```
+
+**Important:** SkillShare will not be recognized in this window yet. **Close and reopen PowerShell**, then confirm:
+
+```powershell
+skillshare --version
+```
+
+(If it still is not found, try `ss --version`. `ss` is the shorthand.)
+
+## Step 2 - Point SkillShare at your AI tool (one time)
+
+Tell SkillShare which AI tool to deliver skills to. Replace `opencode` below with the tool you use:
+
+| Your AI tool | Use this target name |
+|--------------|---------------------|
+| OpenCode | `opencode` |
+| Claude Code | `claude` |
+| OpenAI Codex | `codex` |
+
+```powershell
+skillshare init --targets opencode --no-copy --no-git --no-skill
+```
+
+Use more than one? Comma-separate them: `--targets opencode,claude`.
+
+> **Claude Desktop or Claude Cowork?** These chat apps have no skills folder, so SkillShare cannot auto-deliver. Skip this step and open a skill's `SKILL.md`, pasting the guidance into your chat when you need it. (Or use OpenCode / Claude Code for automatic delivery.)
+
+## Step 3 - Connect to the shared skill library
+
+```powershell
+skillshare install github.com/packaged-agile/skillshare-skills --track
+```
+
+The `--track` flag remembers this library so updates are easy. You will see a short security scan run. That is normal.
+
+> **Note:** you cannot add `--all` or `--yes` to a `--track` install (SkillShare blocks that combination). Just run the command as shown; it finishes on its own.
+
+Want only some skills? List them:
+
+```powershell
+skillshare install github.com/packaged-agile/skillshare-skills --track -s humanizer,retrospective
+```
+
+## Step 4 - Send the skills to your AI tool
+
+```powershell
+skillshare sync
+```
+
+Done. Your AI assistant now knows the Packaged Agile skills.
+
+## Updating later (the everyday command)
+
+When Dave adds or improves a skill:
+
+```powershell
+skillshare update --all
+skillshare sync
+```
+
+## A note on `markdown-pdf-publisher`
+
+This skill turns documents into branded PDFs. It needs **Node.js** on your machine and runs an npm package (Vivliostyle) to build the PDF. SkillShare's security scan flags it as **medium** for that reason. If you do not need PDF publishing, skip it:
+
+```powershell
+skillshare install github.com/packaged-agile/skillshare-skills --track --exclude markdown-pdf-publisher
+```
+
+## If something goes wrong
+
+Full troubleshooting is in **[skillshare-operations-guide.md](skillshare-operations-guide.md)**. The most common fixes:
+
+- **`skillshare` not recognized** -> close and reopen PowerShell.
+- **A full-screen list of AI tools appeared** -> that is the target picker. Select yours with arrow keys + Space, then Enter. (Running Step 2 first avoids it entirely.)
+- **`install` asks you to log in again** -> run `gh auth setup-git`, then retry.
+
+## Not comfortable in PowerShell? Let your AI do it
+
+Open **Claude Code**, **OpenAI Codex**, or **OpenCode** and paste this:
+
+> Please install SkillShare and connect it to my team's shared skill library. Run these PowerShell commands one at a time and tell me the result of each before continuing:
+>
+> 1. `irm https://raw.githubusercontent.com/runkids/skillshare/main/install.ps1 | iex`
+> 2. Close and reopen PowerShell, then run `skillshare --version`
+> 3. `gh auth login` (choose GitHub.com, HTTPS, web browser), then `gh auth setup-git`
+> 4. `skillshare init --targets opencode --no-copy --no-git --no-skill`
+> 5. `skillshare install github.com/packaged-agile/skillshare-skills --track`
+> 6. `skillshare sync`
+>
+> If any step fails, stop and tell me what went wrong before trying the next one.

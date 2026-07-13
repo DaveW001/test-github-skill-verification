@@ -1,0 +1,17 @@
+{
+  "name": "youtube-shorts",
+  "version": "1.0.0",
+  "description": "Creates viral B2G YouTube Shorts scripts with 'Claire' (CIO) persona review, evidence research, and visual prompts.",
+  "author": "Packaged Agile",
+  "entry_point": "scripts/create_script.py",
+  "dependencies": [
+    "conductor",
+    "content-researcher",
+    "idea-generator",
+    "image-generator",
+    "perplexity-search"
+  ],
+  "env": {
+    "CONTENT_ROOT": "C:\development\content-marketing"
+  }
+}

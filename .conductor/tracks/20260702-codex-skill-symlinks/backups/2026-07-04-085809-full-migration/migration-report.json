@@ -1,0 +1,1176 @@
+{
+  "Apply": false,
+  "GeneratedAt": "2026-07-04T08:58:11.2090911-04:00",
+  "BackupRoot": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration",
+  "CodexRoot": "C:\\Users\\DaveWitkin\\.codex\\skills",
+  "VaultRoot": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault",
+  "NativeRoot": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill",
+  "PhaseMSkills": [
+    "nlm-skill",
+    "pptx-to-pdf-converter"
+  ],
+  "ExcludedNames": [
+    ".system",
+    "_archived_skills"
+  ],
+  "Actions": [
+    {
+      "Sequence": 1,
+      "Name": "nlm-skill",
+      "Action": "backup-native",
+      "Path": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\nlm-skill",
+      "Target": null,
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\phase-m\\nlm-skill\\native",
+      "Message": "Backed up native before migration.",
+      "Extra": null
+    },
+    {
+      "Sequence": 2,
+      "Name": "nlm-skill",
+      "Action": "would-migrate-native-to-vault",
+      "Path": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\nlm-skill",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\nlm-skill",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\phase-m\\nlm-skill\\native",
+      "Message": "Dry-run: would make vault real, repoint Codex to vault, then remove native after backups.",
+      "Extra": null
+    },
+    {
+      "Sequence": 3,
+      "Name": "pptx-to-pdf-converter",
+      "Action": "backup-native",
+      "Path": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\pptx-to-pdf-converter",
+      "Target": null,
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\phase-m\\pptx-to-pdf-converter\\native",
+      "Message": "Backed up native before migration.",
+      "Extra": null
+    },
+    {
+      "Sequence": 4,
+      "Name": "pptx-to-pdf-converter",
+      "Action": "would-migrate-native-to-vault",
+      "Path": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\pptx-to-pdf-converter",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pptx-to-pdf-converter",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\phase-m\\pptx-to-pdf-converter\\native",
+      "Message": "Dry-run: would make vault real, repoint Codex to vault, then remove native after backups.",
+      "Extra": null
+    },
+    {
+      "Sequence": 5,
+      "Name": "agent-writer",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\agent-writer",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\agent-writer",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\agent-writer\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "95E839CDB80AC2CB9FE9E6A9C47F708D1E879A96F63A463CB48F2035CF6A18C0",
+        "TargetSkillHash": "95E839CDB80AC2CB9FE9E6A9C47F708D1E879A96F63A463CB48F2035CF6A18C0",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 6,
+      "Name": "calendar-schedule",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\calendar-schedule",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\calendar-schedule",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\calendar-schedule\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "0F5B6B604D5A52591BEF61FDB9189181B2B57638EDF3B8C1259AB12679785F84",
+        "TargetSkillHash": "0F5B6B604D5A52591BEF61FDB9189181B2B57638EDF3B8C1259AB12679785F84",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 7,
+      "Name": "calendar-today",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\calendar-today",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\calendar-today",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\calendar-today\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "39973569128818A41C04A8E37725C0DD4A33BBA82EB8D45024DAB67EA1F788D1",
+        "TargetSkillHash": "39973569128818A41C04A8E37725C0DD4A33BBA82EB8D45024DAB67EA1F788D1",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 8,
+      "Name": "clickup",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\clickup",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\clickup\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "8FE31013307B9D52A8BF504B9626F7F51CC95555F6D2AF17E0989E131C9E8746",
+        "TargetSkillHash": "8FE31013307B9D52A8BF504B9626F7F51CC95555F6D2AF17E0989E131C9E8746",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 9,
+      "Name": "clickup-cli",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\clickup-cli",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup-cli",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\clickup-cli\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "0E82892AC9E011D13771FB5821DBE88FE4E3C38035E58C331A7F415929767840",
+        "TargetSkillHash": "0E82892AC9E011D13771FB5821DBE88FE4E3C38035E58C331A7F415929767840",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 10,
+      "Name": "codex-primary-runtime",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\codex-primary-runtime",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\codex-primary-runtime",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\codex-primary-runtime\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": null,
+        "TargetSkillHash": null,
+        "SkillMdHashesMatch": false
+      }
+    },
+    {
+      "Sequence": 11,
+      "Name": "command-writer",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\command-writer",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\command-writer",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\command-writer\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "374535BC185AF814B83D815A548B2DE8C464734FDA5D26125992C42F2100297B",
+        "TargetSkillHash": "374535BC185AF814B83D815A548B2DE8C464734FDA5D26125992C42F2100297B",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 12,
+      "Name": "conductor",
+      "Action": "codex-junction-already-correct",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\conductor",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor",
+      "Applied": false,
+      "BackupPath": null,
+      "Message": "No change needed.",
+      "Extra": null
+    },
+    {
+      "Sequence": 13,
+      "Name": "conductor-pipeline",
+      "Action": "would-create-missing-codex-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\conductor-pipeline",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline",
+      "Applied": false,
+      "BackupPath": null,
+      "Message": "Dry-run: would create missing Codex junction.",
+      "Extra": null
+    },
+    {
+      "Sequence": 14,
+      "Name": "content-trend-researcher",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\content-trend-researcher",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\content-trend-researcher",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\content-trend-researcher\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "FD20BF55A5EDAF0BCED32732AE206103972A51266611D5DA67258905E117E490",
+        "TargetSkillHash": "FD20BF55A5EDAF0BCED32732AE206103972A51266611D5DA67258905E117E490",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 15,
+      "Name": "design-system-extractor",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\design-system-extractor",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\design-system-extractor",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\design-system-extractor\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "C270786E98F0F112B97432250D2EE3549D25F04A3F714654A53C9BAD8434F618",
+        "TargetSkillHash": "C270786E98F0F112B97432250D2EE3549D25F04A3F714654A53C9BAD8434F618",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 16,
+      "Name": "doc",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\doc",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\doc\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "2DD628AFC3F9217D88BBA8F61454B964AA25921F55F69E8D4D923B2AB092C54F",
+        "TargetSkillHash": "2DD628AFC3F9217D88BBA8F61454B964AA25921F55F69E8D4D923B2AB092C54F",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 17,
+      "Name": "doc-to-markdown",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\doc-to-markdown",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc-to-markdown",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\doc-to-markdown\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "0E8F3B9C5B9AE46317057D32EA3A2272FE0D2EE6412BE75170CA4950E9280671",
+        "TargetSkillHash": "0E8F3B9C5B9AE46317057D32EA3A2272FE0D2EE6412BE75170CA4950E9280671",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 18,
+      "Name": "email-attachment-detacher",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\email-attachment-detacher",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-attachment-detacher",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\email-attachment-detacher\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "F6C745DDFF54DAD17A0AE28E43BE8981422749644A77D713F1A43E1A6C93A78F",
+        "TargetSkillHash": "F6C745DDFF54DAD17A0AE28E43BE8981422749644A77D713F1A43E1A6C93A78F",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 19,
+      "Name": "email-auto-sorter",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\email-auto-sorter",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-auto-sorter",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\email-auto-sorter\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "A8D5EF2CE994D21C12511670D487E263CA20809AA88CD2E6605202A8AB3D3E7F",
+        "TargetSkillHash": "A8D5EF2CE994D21C12511670D487E263CA20809AA88CD2E6605202A8AB3D3E7F",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 20,
+      "Name": "email-draft-reply",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\email-draft-reply",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-draft-reply",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\email-draft-reply\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "C7B104A043C6A997028F0083D51CFF243E81F3B491B4006D6914AC78D258D457",
+        "TargetSkillHash": "C7B104A043C6A997028F0083D51CFF243E81F3B491B4006D6914AC78D258D457",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 21,
+      "Name": "email-routing-config",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\email-routing-config",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-routing-config",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\email-routing-config\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "A4EB4E808E62AB78932BAE23F26C45A68BF557D0103FCA3DD043A210EC0BC946",
+        "TargetSkillHash": "A4EB4E808E62AB78932BAE23F26C45A68BF557D0103FCA3DD043A210EC0BC946",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 22,
+      "Name": "email-to-clickup",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\email-to-clickup",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\email-to-clickup",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\email-to-clickup\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "1805C0D0FC74907A9B2CCA7969F32D502DAECCFD6E37C36850706CDFDFB6617A",
+        "TargetSkillHash": "1805C0D0FC74907A9B2CCA7969F32D502DAECCFD6E37C36850706CDFDFB6617A",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 23,
+      "Name": "enrich-meeting-notes",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\enrich-meeting-notes",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\enrich-meeting-notes",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\enrich-meeting-notes\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "4F4E9B7A1CB60CE560BB922B70CEA0DAF7CE1FE85A9C7AA4998300AD2536F98E",
+        "TargetSkillHash": "4F4E9B7A1CB60CE560BB922B70CEA0DAF7CE1FE85A9C7AA4998300AD2536F98E",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 24,
+      "Name": "find-info",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\find-info",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\find-info",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\find-info\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "26B80164D9B58A7F97857B4317ACFB41469E4B44B092D8AB426803FCED4492B1",
+        "TargetSkillHash": "26B80164D9B58A7F97857B4317ACFB41469E4B44B092D8AB426803FCED4492B1",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 25,
+      "Name": "firebase-deployment-specialist",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\firebase-deployment-specialist",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\firebase-deployment-specialist",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\firebase-deployment-specialist\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "9E394EA6E1A72DE366276FF08B65F9B967B9B33C207B6616AE8D9F2A90577474",
+        "TargetSkillHash": "9E394EA6E1A72DE366276FF08B65F9B967B9B33C207B6616AE8D9F2A90577474",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 26,
+      "Name": "first-principles-mastery",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\first-principles-mastery",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\first-principles-mastery",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\first-principles-mastery\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "7A230780D18FC584088722C1CD4CE99765914F5D59DF784C4CFF7A939668B564",
+        "TargetSkillHash": "7A230780D18FC584088722C1CD4CE99765914F5D59DF784C4CFF7A939668B564",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 27,
+      "Name": "frontend-design",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\frontend-design",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\frontend-design",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\frontend-design\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "B771018BFD694A068DE4A69797F79342B061D31F42EEDFF9645F586C8E07C1D6",
+        "TargetSkillHash": "B771018BFD694A068DE4A69797F79342B061D31F42EEDFF9645F586C8E07C1D6",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 28,
+      "Name": "gemini-proxy",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\gemini-proxy",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gemini-proxy",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\gemini-proxy\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "7A32C4BF9A8C3EE835BDDC6588CE92CF2153D5BF73A65D4EC3916E4F727D5391",
+        "TargetSkillHash": "7A32C4BF9A8C3EE835BDDC6588CE92CF2153D5BF73A65D4EC3916E4F727D5391",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 29,
+      "Name": "git-push",
+      "Action": "codex-junction-already-correct",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\git-push",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\git-push",
+      "Applied": false,
+      "BackupPath": null,
+      "Message": "No change needed.",
+      "Extra": null
+    },
+    {
+      "Sequence": 30,
+      "Name": "github-create-repo",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\github-create-repo",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\github-create-repo",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\github-create-repo\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "D4B07EA3E0EBDEC6E1D9E6E1EB71CC4C3D4113560A379B9232B1E4037B2D1BD1",
+        "TargetSkillHash": "D4B07EA3E0EBDEC6E1D9E6E1EB71CC4C3D4113560A379B9232B1E4037B2D1BD1",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 31,
+      "Name": "github-management",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\github-management",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\github-management",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\github-management\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "14EF5C8DA92181760D3D30227638D9FC2AEF720DF150A8D5C9ADB9ECDDDA0412",
+        "TargetSkillHash": "14EF5C8DA92181760D3D30227638D9FC2AEF720DF150A8D5C9ADB9ECDDDA0412",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 32,
+      "Name": "gmail-draft-reply",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\gmail-draft-reply",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-draft-reply",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\gmail-draft-reply\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "4FCA3A683CC79049154034F83E678B8B7D79C44F10F8B01BB769CEFBF146BEA0",
+        "TargetSkillHash": "4FCA3A683CC79049154034F83E678B8B7D79C44F10F8B01BB769CEFBF146BEA0",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 33,
+      "Name": "gmail-inbox-triage",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\gmail-inbox-triage",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-inbox-triage",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\gmail-inbox-triage\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "EEC6615E1EA52930572B4C5CF0ADC7535DE80F567D8677BB99A15274F0E31B43",
+        "TargetSkillHash": "EEC6615E1EA52930572B4C5CF0ADC7535DE80F567D8677BB99A15274F0E31B43",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 34,
+      "Name": "gmail-workspace",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\gmail-workspace",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gmail-workspace",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\gmail-workspace\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "A993E18E6879246ED11F1DCDD3C33F00F3F6E738D4229DC85D9FEDEEB7C7AA04",
+        "TargetSkillHash": "A993E18E6879246ED11F1DCDD3C33F00F3F6E738D4229DC85D9FEDEEB7C7AA04",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 35,
+      "Name": "google-calendar-schedule",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\google-calendar-schedule",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-calendar-schedule",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\google-calendar-schedule\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "1976E7527CB4DB6EA4860A1EB1A444DE69A84DC040DEE88C2C1A12A4AF29DB33",
+        "TargetSkillHash": "1976E7527CB4DB6EA4860A1EB1A444DE69A84DC040DEE88C2C1A12A4AF29DB33",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 36,
+      "Name": "google-calendar-today",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\google-calendar-today",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-calendar-today",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\google-calendar-today\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "6615F20CFF240D7131361CC77BBA44AE3290E69D7392CC814D3900941FBC1CD6",
+        "TargetSkillHash": "6615F20CFF240D7131361CC77BBA44AE3290E69D7392CC814D3900941FBC1CD6",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 37,
+      "Name": "google-contacts",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\google-contacts",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-contacts",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\google-contacts\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "091F590FDDB0B5FD320C73D97BCBC5FFB5F7B2A8927A96B0E6BFDF9A634CEC2A",
+        "TargetSkillHash": "091F590FDDB0B5FD320C73D97BCBC5FFB5F7B2A8927A96B0E6BFDF9A634CEC2A",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 38,
+      "Name": "google-drive",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\google-drive",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\google-drive",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\google-drive\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "A07CBD98DB356259F8F4DB92607FF783C5165D9F3396A2B2AD81652BD73F887D",
+        "TargetSkillHash": "A07CBD98DB356259F8F4DB92607FF783C5165D9F3396A2B2AD81652BD73F887D",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 39,
+      "Name": "image-generator",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\image-generator",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-generator",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\image-generator\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "0D9AAD237BF0DD9E5B81C9BF8B4EA2A751001069A24C75C83E2A1F3CB3C066A2",
+        "TargetSkillHash": "0D9AAD237BF0DD9E5B81C9BF8B4EA2A751001069A24C75C83E2A1F3CB3C066A2",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 40,
+      "Name": "image-manifest-builder",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\image-manifest-builder",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-manifest-builder",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\image-manifest-builder\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "44716395256B22FF95BD4843E592B9023163826AC5D1AC502DBF5FD7D12EEB9E",
+        "TargetSkillHash": "44716395256B22FF95BD4843E592B9023163826AC5D1AC502DBF5FD7D12EEB9E",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 41,
+      "Name": "image-ocr",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\image-ocr",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-ocr",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\image-ocr\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "27B429D4FBEC0B3EA147578BD1DD5BE3DF9E7049F92488FD606DD2834E0462DF",
+        "TargetSkillHash": "27B429D4FBEC0B3EA147578BD1DD5BE3DF9E7049F92488FD606DD2834E0462DF",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 42,
+      "Name": "image-to-html-reconstruction",
+      "Action": "would-repoint-codex-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\image-to-html-reconstruction",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-to-html-reconstruction",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\image-to-html-reconstruction\\junction-metadata.json",
+      "Message": "Dry-run: would repoint from C:\\Users\\DaveWitkin\\.local\\skills\\html-demo-design.",
+      "Extra": null
+    },
+    {
+      "Sequence": 43,
+      "Name": "imagegen",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\imagegen",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\imagegen",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\imagegen\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "3090E6742D8EA1116D77E166F8CDD4482FD4A3A3A63678BEDF37E1191B4CB269",
+        "TargetSkillHash": "3090E6742D8EA1116D77E166F8CDD4482FD4A3A3A63678BEDF37E1191B4CB269",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 44,
+      "Name": "knowledge-graph-builder",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\knowledge-graph-builder",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-builder",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\knowledge-graph-builder\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "7FE2733380104B0EA473A8925ACF7D126512E1768E20537C1F28D79657CD62FE",
+        "TargetSkillHash": "7FE2733380104B0EA473A8925ACF7D126512E1768E20537C1F28D79657CD62FE",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 45,
+      "Name": "knowledge-graph-maintainer",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\knowledge-graph-maintainer",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-maintainer",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\knowledge-graph-maintainer\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "CDA6B2A3F1F1F831DC0C306B5987FDFF76A02165C75D03C53EFF6BFBB94B2CE0",
+        "TargetSkillHash": "CDA6B2A3F1F1F831DC0C306B5987FDFF76A02165C75D03C53EFF6BFBB94B2CE0",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 46,
+      "Name": "knowledge-graph-query",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\knowledge-graph-query",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\knowledge-graph-query",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\knowledge-graph-query\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "1796948CB8D93DAF0FB3101DD978B7E90676CB95A5C32E056EB302F9F0435076",
+        "TargetSkillHash": "1796948CB8D93DAF0FB3101DD978B7E90676CB95A5C32E056EB302F9F0435076",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 47,
+      "Name": "markdown-pdf-publisher",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\markdown-pdf-publisher",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\markdown-pdf-publisher",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\markdown-pdf-publisher\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "0121A88623816F1AB991B654A0C1C5320A68C22BFF1DAE7DF0AF89C8D0F3F44B",
+        "TargetSkillHash": "0121A88623816F1AB991B654A0C1C5320A68C22BFF1DAE7DF0AF89C8D0F3F44B",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 48,
+      "Name": "markdown-render",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\markdown-render",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\markdown-render",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\markdown-render\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "D16130D0A51948D8E3B9ECBB0B9B50C88A01D0561CB1D073FCC70965010431B4",
+        "TargetSkillHash": "D16130D0A51948D8E3B9ECBB0B9B50C88A01D0561CB1D073FCC70965010431B4",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 49,
+      "Name": "microsoft-graph",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\microsoft-graph",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\microsoft-graph",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\microsoft-graph\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "A24319E0E08BE8D9B13BABB41FB8DDFDAC044092066397789DD180BFBB14290C",
+        "TargetSkillHash": "A24319E0E08BE8D9B13BABB41FB8DDFDAC044092066397789DD180BFBB14290C",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 50,
+      "Name": "nlm-skill",
+      "Action": "codex-junction-already-correct",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\nlm-skill",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\nlm-skill",
+      "Applied": false,
+      "BackupPath": null,
+      "Message": "No change needed.",
+      "Extra": null
+    },
+    {
+      "Sequence": 51,
+      "Name": "notebooklm-cli",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\notebooklm-cli",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-cli",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\notebooklm-cli\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "986A6CF3747B3C7E67BE0011B3693CA5617E63772F7FD6F0B6085722911D9B31",
+        "TargetSkillHash": "986A6CF3747B3C7E67BE0011B3693CA5617E63772F7FD6F0B6085722911D9B31",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 52,
+      "Name": "notebooklm-meta-prompt",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\notebooklm-meta-prompt",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-meta-prompt",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\notebooklm-meta-prompt\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "E3B714E019077A247CFED519FC7284298A7E413DAE7858B7FF64296EA80480DE",
+        "TargetSkillHash": "E3B714E019077A247CFED519FC7284298A7E413DAE7858B7FF64296EA80480DE",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 53,
+      "Name": "osgrep",
+      "Action": "codex-junction-already-correct",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\osgrep",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\osgrep",
+      "Applied": false,
+      "BackupPath": null,
+      "Message": "No change needed.",
+      "Extra": null
+    },
+    {
+      "Sequence": 54,
+      "Name": "outlook-email-search",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\outlook-email-search",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\outlook-email-search",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\outlook-email-search\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "C5371008A78107B339FE214B480370C011955721C3E8B806F4ACA2565515B423",
+        "TargetSkillHash": "C5371008A78107B339FE214B480370C011955721C3E8B806F4ACA2565515B423",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 55,
+      "Name": "outlook-inbox-triage",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\outlook-inbox-triage",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\outlook-inbox-triage",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\outlook-inbox-triage\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "520077AC357A0836CDE33CB6F91B3CF26992FE5B39920A36EAC62860BF4BE6CE",
+        "TargetSkillHash": "520077AC357A0836CDE33CB6F91B3CF26992FE5B39920A36EAC62860BF4BE6CE",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 56,
+      "Name": "pa-ui-design",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\pa-ui-design",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pa-ui-design",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\pa-ui-design\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "3AEA9F34E064AD596EAC691B358F0B22BF5F0170F41E3B11C64EDC269C7266EE",
+        "TargetSkillHash": "3AEA9F34E064AD596EAC691B358F0B22BF5F0170F41E3B11C64EDC269C7266EE",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 57,
+      "Name": "perplexity-search",
+      "Action": "codex-junction-already-correct",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\perplexity-search",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\perplexity-search",
+      "Applied": false,
+      "BackupPath": null,
+      "Message": "No change needed.",
+      "Extra": null
+    },
+    {
+      "Sequence": 58,
+      "Name": "playwright-interactive",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\playwright-interactive",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\playwright-interactive",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\playwright-interactive\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "33C4539AD34784BB83632D4F9340A8C50247E3CE500B329B0E8909C01A39E4B6",
+        "TargetSkillHash": "33C4539AD34784BB83632D4F9340A8C50247E3CE500B329B0E8909C01A39E4B6",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 59,
+      "Name": "powershell-master",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\powershell-master",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\powershell-master",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\powershell-master\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "077985BD43BFA1FAA3A6E874381E530ACF6A9F9D48D4A7854C86B62A44F762D4",
+        "TargetSkillHash": "077985BD43BFA1FAA3A6E874381E530ACF6A9F9D48D4A7854C86B62A44F762D4",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 60,
+      "Name": "pptx-to-pdf-converter",
+      "Action": "codex-junction-already-correct",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\pptx-to-pdf-converter",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\pptx-to-pdf-converter",
+      "Applied": false,
+      "BackupPath": null,
+      "Message": "No change needed.",
+      "Extra": null
+    },
+    {
+      "Sequence": 61,
+      "Name": "retrospective",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\retrospective",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\retrospective",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\retrospective\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "56685C1B54E76BCA9B477BC4323880907ACE679FBF213E74880AE9AF9AD27B52",
+        "TargetSkillHash": "56685C1B54E76BCA9B477BC4323880907ACE679FBF213E74880AE9AF9AD27B52",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 62,
+      "Name": "scheduled-job-best-practices",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\scheduled-job-best-practices",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\scheduled-job-best-practices",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\scheduled-job-best-practices\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "ED0FB604CAAA71AB972C637305F5B7B694B4DB7C1475158896E6B97395660A9F",
+        "TargetSkillHash": "ED0FB604CAAA71AB972C637305F5B7B694B4DB7C1475158896E6B97395660A9F",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 63,
+      "Name": "skill-discovery",
+      "Action": "codex-junction-already-correct",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\skill-discovery",
+      "Target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\skill-discovery",
+      "Applied": false,
+      "BackupPath": null,
+      "Message": "No change needed.",
+      "Extra": null
+    },
+    {
+      "Sequence": 64,
+      "Name": "skill-test-harness",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\skill-test-harness",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-test-harness",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\skill-test-harness\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "5156ABC44C78D27B32EFE14E65DAEC7ADC7E832B749B477B4452AD748CE69C3C",
+        "TargetSkillHash": "5156ABC44C78D27B32EFE14E65DAEC7ADC7E832B749B477B4452AD748CE69C3C",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 65,
+      "Name": "skill-writer",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\skill-writer",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-writer",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\skill-writer\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "CF0BF5A02C837656CA4F37CE9C2A0B9D56F0B8F75E105FD71DFED0FDDFCC1784",
+        "TargetSkillHash": "CF0BF5A02C837656CA4F37CE9C2A0B9D56F0B8F75E105FD71DFED0FDDFCC1784",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 66,
+      "Name": "slack-messaging",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\slack-messaging",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\slack-messaging",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\slack-messaging\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "FA5EF6CF89BF9CF2E4CB577ABE968C1663A3AA10FF37BD1A4E617069D22B9E89",
+        "TargetSkillHash": "FA5EF6CF89BF9CF2E4CB577ABE968C1663A3AA10FF37BD1A4E617069D22B9E89",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 67,
+      "Name": "slack-send-message",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\slack-send-message",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\slack-send-message",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\slack-send-message\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "4154965AEF6F25EF6F82E2EAE7DB85351964A84C433485B20A75BB234FB617AF",
+        "TargetSkillHash": "4154965AEF6F25EF6F82E2EAE7DB85351964A84C433485B20A75BB234FB617AF",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 68,
+      "Name": "speech",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\speech",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\speech",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\speech\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "E71CD464D98745E8D51A6CC3B59630A34DBD2553E9DB9CDF8DC59247ABC754F4",
+        "TargetSkillHash": "E71CD464D98745E8D51A6CC3B59630A34DBD2553E9DB9CDF8DC59247ABC754F4",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 69,
+      "Name": "terminal-aliases",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\terminal-aliases",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\terminal-aliases",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\terminal-aliases\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "A5B88F9C5F9CB520D940ABA7CBBFC3A6C998D7D1385CD430830C6D371BE06250",
+        "TargetSkillHash": "A5B88F9C5F9CB520D940ABA7CBBFC3A6C998D7D1385CD430830C6D371BE06250",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 70,
+      "Name": "thinking-partner",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\thinking-partner",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\thinking-partner",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\thinking-partner\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "53B4942D9E84F4A2569BDBE71C2C307E841F6F8A493BD2E5F0D2A1E7E708D78D",
+        "TargetSkillHash": "53B4942D9E84F4A2569BDBE71C2C307E841F6F8A493BD2E5F0D2A1E7E708D78D",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 71,
+      "Name": "unified-calendar-today",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\unified-calendar-today",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\unified-calendar-today",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\unified-calendar-today\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "9B46DF10A26950591849F594D2D7B8357BE43459E1A305EDC912595CF869A5B9",
+        "TargetSkillHash": "9B46DF10A26950591849F594D2D7B8357BE43459E1A305EDC912595CF869A5B9",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 72,
+      "Name": "vercel-deploy",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\vercel-deploy",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\vercel-deploy",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\vercel-deploy\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "AFAC6B5B71952AF08F8DCD19C01EC1D80A040240CC50929E3ADD8200B3FCD459",
+        "TargetSkillHash": "AFAC6B5B71952AF08F8DCD19C01EC1D80A040240CC50929E3ADD8200B3FCD459",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 73,
+      "Name": "visual-ocr",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\visual-ocr",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\visual-ocr",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\visual-ocr\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "12E30BCAA1181235F1D43B3CCEB057CE12BA75B4A854F7FA46206C1D7B14849F",
+        "TargetSkillHash": "12E30BCAA1181235F1D43B3CCEB057CE12BA75B4A854F7FA46206C1D7B14849F",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 74,
+      "Name": "webapp-testing",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\webapp-testing",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\webapp-testing",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\webapp-testing\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "C89B90CBE17E5896C9CF0DD9A567FFA0BF32757938DCFEF816D0C3CA12DCFEA4",
+        "TargetSkillHash": "C89B90CBE17E5896C9CF0DD9A567FFA0BF32757938DCFEF816D0C3CA12DCFEA4",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 75,
+      "Name": "windows-task-scheduler",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\windows-task-scheduler",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\windows-task-scheduler",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\windows-task-scheduler\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "4C8988BD6E6914C5A3D20829631297F5ECF67C06E47844BDA6284331F0F106C7",
+        "TargetSkillHash": "4C8988BD6E6914C5A3D20829631297F5ECF67C06E47844BDA6284331F0F106C7",
+        "SkillMdHashesMatch": true
+      }
+    },
+    {
+      "Sequence": 76,
+      "Name": "youtube-shorts",
+      "Action": "would-convert-real-codex-folder-to-junction",
+      "Path": "C:\\Users\\DaveWitkin\\.codex\\skills\\youtube-shorts",
+      "Target": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\youtube-shorts",
+      "Applied": false,
+      "BackupPath": "C:\\development\\opencode\\.conductor\\tracks\\20260702-codex-skill-symlinks\\backups\\2026-07-04-085809-full-migration\\codex\\youtube-shorts\\real-folder",
+      "Message": "Dry-run: would backup real folder, remove it, and create junction.",
+      "Extra": {
+        "BackupSkillHash": "9FB1BDD51B5FC5EF1246AC27F17480C12A41978F38246245CB3C0C4F62491610",
+        "TargetSkillHash": "9FB1BDD51B5FC5EF1246AC27F17480C12A41978F38246245CB3C0C4F62491610",
+        "SkillMdHashesMatch": true
+      }
+    }
+  ],
+  "DanglingCodexJunctions": [],
+  "NonJunctionCodexDirs": [
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\agent-writer",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\calendar-schedule",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\calendar-today",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\clickup",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\clickup-cli",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\codex-primary-runtime",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\command-writer",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\content-trend-researcher",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\design-system-extractor",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\doc",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\doc-to-markdown",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\email-attachment-detacher",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\email-auto-sorter",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\email-draft-reply",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\email-routing-config",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\email-to-clickup",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\enrich-meeting-notes",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\find-info",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\firebase-deployment-specialist",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\first-principles-mastery",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\frontend-design",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\gemini-proxy",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\github-create-repo",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\github-management",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\gmail-draft-reply",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\gmail-inbox-triage",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\gmail-workspace",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\google-calendar-schedule",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\google-calendar-today",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\google-contacts",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\google-drive",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\image-generator",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\image-manifest-builder",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\image-ocr",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\imagegen",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\knowledge-graph-builder",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\knowledge-graph-maintainer",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\knowledge-graph-query",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\markdown-pdf-publisher",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\markdown-render",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\microsoft-graph",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\notebooklm-cli",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\notebooklm-meta-prompt",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\outlook-email-search",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\outlook-inbox-triage",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\pa-ui-design",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\playwright-interactive",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\powershell-master",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\retrospective",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\scheduled-job-best-practices",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\skill-test-harness",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\skill-writer",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\slack-messaging",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\slack-send-message",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\speech",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\terminal-aliases",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\thinking-partner",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\unified-calendar-today",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\vercel-deploy",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\visual-ocr",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\webapp-testing",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\windows-task-scheduler",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\youtube-shorts"
+  ],
+  "ExcludedCodexDirsPresent": [
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\_archived_skills",
+    "C:\\Users\\DaveWitkin\\.codex\\skills\\.system"
+  ]
+}

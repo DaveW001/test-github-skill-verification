@@ -1,0 +1,455 @@
+#!/usr/bin/env python3
+"""Image-to-Markdown OCR extraction. Three-tier: GLM-OCR primary, Gemini secondary, Tesseract offline fallback."""
+
+import argparse
+import asyncio
+import base64
+import json
+import os
+import shutil
+import sys
+import time
+from datetime import datetime
+from pathlib import Path
+
+import httpx
+import pytesseract
+from PIL import Image
+
+SUPPORTED_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".bmp", ".tiff"}
+
+GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
+
+GLMOCR_MODEL = "glm-ocr"
+GLMOCR_API_URL = "https://api.z.ai/api/paas/v4/layout_parsing"
+GLMOCR_MAX_IMAGE_BYTES = 9_500_000  # 9.5MB safety margin under the 10MB API limit
+GLMOCR_NATIVE_FORMATS = {".png", ".jpg", ".jpeg"}  # formats GLM-OCR accepts as-is
+
+TESSERACT_WINDOWS_PATH = Path(r"C:\Program Files\Tesseract-OCR\tesseract.exe")
+
+LANG_MAP = {
+    "english": "eng", "french": "fra", "german": "deu", "spanish": "spa",
+    "chinese": "chi_sim", "japanese": "jpn", "korean": "kor", "auto": "eng",
+}
+
+
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Extract text from images as Markdown")
+    parser.add_argument("image_path", type=Path, help="Image file or directory (with --batch)")
+    parser.add_argument("--output-dir", type=Path, default=Path("./ocr-output"),
+                        help="Output directory (default: ./ocr-output)")
+    parser.add_argument("--batch", action="store_true", help="Process all images in directory")
+    parser.add_argument("--engine", choices=["auto", "glmocr", "gemini", "tesseract"], default="auto",
+                        help="Extraction engine (default: auto)")
+    parser.add_argument("--language", default="auto",
+                        help="OCR language hint (GLM-OCR/Gemini auto-detect; Tesseract maps to eng by default)")
+    parser.add_argument("--preserve-layout", action="store_true",
+                        help="Preserve visual structure (headings, lists, tables)")
+    parser.add_argument("--dry-run", action="store_true", help="Preview without writing files")
+    parser.add_argument("--no-fallback", action="store_true",
+                        help="In auto mode, stop after primary GLM-OCR and skip Gemini/Tesseract fallbacks")
+    return parser.parse_args()
+
+
+# ---------------------------------------------------------------------------
+# Gemini tier
+# ---------------------------------------------------------------------------
+
+def resolve_gemini_key():
+    """Resolve Gemini API key: env var -> key_names.json -> api_keys.txt.
+
+    NOTE: key_names.json maps {API_KEY: NAME}, so we iterate the KEYS
+    (not values) to obtain actual API keys. The plan specified data.values()
+    which returns names; corrected here. See execution log.
+    """
+    key = os.environ.get("GEMINI_API_KEY")
+    if key:
+        return key.strip()
+    proxy_dir = Path.home() / ".local" / "gemini-proxy"
+    key_names_path = proxy_dir / "key_names.json"
+    if key_names_path.exists():
+        try:
+            data = json.loads(key_names_path.read_text(encoding="utf-8"))
+            # data is {API_KEY: NAME}; iterate keys to get the actual key
+            for k in data.keys():
+                if k and k.strip():
+                    return k.strip()
+        except Exception:
+            pass
+    api_keys_path = proxy_dir / "api_keys.txt"
+    if api_keys_path.exists():
+        lines = api_keys_path.read_text(encoding="utf-8").strip().splitlines()
+        if lines:
+            return lines[0].strip()
+    return None
+
+
+def resolve_zai_key():
+    """Resolve Z.AI API key from env. The key is loaded into the opencode process
+    from ~/.config/opencode/.env at startup as ZAI_API_KEY."""
+    key = os.environ.get("ZAI_API_KEY")
+    if key:
+        return key.strip()
+    return None
+
+
+def encode_image(path):
+    """Encode image to base64. Returns (base64_str, media_type). Raises if >20MB."""
+    size_mb = path.stat().st_size / (1024 * 1024)
+    if size_mb > 20:
+        raise ValueError(f"Image too large: {size_mb:.1f}MB (max 20MB)")
+    suffix = path.suffix.lower()
+    media_map = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
+                 ".gif": "image/gif", ".webp": "image/webp", ".bmp": "image/bmp",
+                 ".tiff": "image/tiff"}
+    media_type = media_map.get(suffix, "image/png")
+    b64 = base64.standard_b64encode(path.read_bytes()).decode("ascii")
+    return b64, media_type
+
+
+def _downscale_to_png(path, max_bytes=GLMOCR_MAX_IMAGE_BYTES):
+    """Open image, convert to RGB PNG, progressively downscale (LANCZOS) until under max_bytes.
+    Returns base64 string of the PNG."""
+    import io
+    img = Image.open(path)
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    for _ in range(6):
+        buf = io.BytesIO()
+        img.save(buf, format="PNG")
+        if buf.tell() <= max_bytes:
+            return base64.standard_b64encode(buf.getvalue()).decode("ascii")
+        new_size = (int(img.width * 0.8), int(img.height * 0.8))
+        if new_size[0] < 100 or new_size[1] < 100:
+            break  # do not shrink below 100px
+        img = img.resize(new_size, Image.LANCZOS)
+    raise ValueError(f"Could not compress image under {max_bytes} bytes after downscaling")
+
+
+def encode_for_glmocr(path):
+    """Encode image for GLM-OCR as a data URI. Converts non-native formats
+    (GIF/WEBP/BMP/TIFF) to PNG via Pillow and downscales if >10MB.
+    Returns a string like 'data:image/png;base64,<...>'."""
+    suffix = path.suffix.lower()
+    size_bytes = path.stat().st_size
+    if suffix in GLMOCR_NATIVE_FORMATS and size_bytes <= GLMOCR_MAX_IMAGE_BYTES:
+        mime = "image/png" if suffix == ".png" else "image/jpeg"
+        b64 = base64.standard_b64encode(path.read_bytes()).decode("ascii")
+        return f"data:{mime};base64,{b64}"
+    # non-native format OR oversized -> convert/downscale via Pillow
+    b64 = _downscale_to_png(path)
+    return f"data:image/png;base64,{b64}"
+
+
+def build_gemini_prompt(language, preserve_layout):
+    base = (
+        "Extract ALL text content from this image as clean Markdown.\n"
+        "Preserve paragraph structure, headings, bullet points, and numbered lists.\n"
+        "Maintain reading order (top-to-bottom, left-to-right).\n"
+        "Do not add commentary or descriptions -- output ONLY the extracted text.\n"
+        "If the image contains handwriting, transcribe it as faithfully as possible."
+    )
+    if preserve_layout:
+        base += (
+            "\n\nPreserve visual structure: use ## for headings, markdown tables for "
+            "tabular data, code blocks for code, blockquotes for quoted text."
+        )
+    if language and language != "auto":
+        base += f"\n\nThis text is in {language}."
+    return base
+
+
+async def extract_gemini(image_path, language, preserve_layout):
+    """Call Gemini API. Returns dict with keys: text, model, tokens_in, tokens_out."""
+    key = resolve_gemini_key()
+    if not key:
+        raise RuntimeError("No Gemini API key found. Set GEMINI_API_KEY or place key "
+                           "in ~/.local/gemini-proxy/")
+    b64, media_type = encode_image(image_path)
+    prompt = build_gemini_prompt(language, preserve_layout)
+    payload = {
+        "contents": [{"parts": [
+            {"text": prompt},
+            {"inline_data": {"mime_type": media_type, "data": b64}}
+        ]}]
+    }
+    async with httpx.AsyncClient(timeout=60.0) as client:
+        resp = await client.post(f"{GEMINI_API_URL}?key={key}", json=payload)
+        resp.raise_for_status()
+        data = resp.json()
+    text = data["candidates"][0]["content"]["parts"][0]["text"]
+    usage = data.get("usageMetadata", {})
+    return {
+        "text": text,
+        "model": GEMINI_MODEL,
+        "tokens_in": usage.get("promptTokenCount", 0),
+        "tokens_out": usage.get("candidatesTokenCount", 0),
+    }
+
+
+async def run_gemini(image_path, args):
+    """Run Gemini extraction with retry on 429 and graceful error handling."""
+    for attempt in range(2):
+        try:
+            result = await extract_gemini(image_path, args.language, args.preserve_layout)
+            result["engine"] = "gemini-direct"
+            return result
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code == 429 and attempt == 0:
+                print("Rate limited, retrying in 2s...")
+                time.sleep(2)
+                continue
+            print(f"Gemini API error: {e.response.status_code} - {e.response.text[:200]}")
+            return None
+        except httpx.TimeoutException:
+            print("Gemini API timeout (60s). Try again or use --engine tesseract.")
+            return None
+        except ValueError as e:
+            print(f"Skipping {image_path.name}: {e}")
+            return None
+        except Exception as e:
+            print(f"Gemini error: {e}")
+            return None
+    return None
+
+
+# ---------------------------------------------------------------------------
+# GLM-OCR tier (PRIMARY)
+# ---------------------------------------------------------------------------
+
+async def extract_glmocr(image_path, language, preserve_layout):
+    """Call GLM-OCR layout_parsing API. Returns dict: text, model, tokens_in, tokens_out.
+    NOTE: language and preserve_layout are accepted for signature parity but ignored --
+    GLM-OCR is a dedicated OCR model that preserves layout and detects language natively."""
+    key = resolve_zai_key()
+    if not key:
+        raise RuntimeError("No ZAI_API_KEY found. Set it in ~/.config/opencode/.env "
+                           "(loads at opencode startup).")
+    data_uri = encode_for_glmocr(image_path)
+    payload = {"model": GLMOCR_MODEL, "file": data_uri}
+    headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
+    async with httpx.AsyncClient(timeout=90.0) as client:
+        resp = await client.post(GLMOCR_API_URL, json=payload, headers=headers)
+        resp.raise_for_status()
+        data = resp.json()
+    md = data.get("md_results", "")
+    usage = data.get("usage", {})
+    return {
+        "text": md,
+        "model": GLMOCR_MODEL,
+        "tokens_in": usage.get("prompt_tokens", 0),
+        "tokens_out": usage.get("completion_tokens", 0),
+    }
+
+
+async def run_glmocr(image_path, args):
+    """Run GLM-OCR extraction with retry on 429 and graceful error handling."""
+    for attempt in range(2):
+        try:
+            result = await extract_glmocr(image_path, args.language, args.preserve_layout)
+            result["engine"] = "glm-ocr"
+            return result
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code == 429 and attempt == 0:
+                print("GLM-OCR rate limited, retrying in 2s...")
+                time.sleep(2)
+                continue
+            print(f"GLM-OCR API error: {e.response.status_code} - {e.response.text[:200]}")
+            return None
+        except httpx.TimeoutException:
+            print("GLM-OCR API timeout (90s).")
+            return None
+        except ValueError as e:
+            print(f"Skipping {image_path.name}: {e}")
+            return None
+        except Exception as e:
+            print(f"GLM-OCR error: {e}")
+            return None
+    return None
+
+
+# ---------------------------------------------------------------------------
+# Tesseract tier
+# ---------------------------------------------------------------------------
+
+def find_tesseract():
+    """Locate Tesseract binary. Returns path or None."""
+    cmd = os.environ.get("TESSERACT_CMD")
+    if cmd and Path(cmd).exists():
+        return cmd
+    if TESSERACT_WINDOWS_PATH.exists():
+        return str(TESSERACT_WINDOWS_PATH)
+    found = shutil.which("tesseract")
+    if found:
+        return found
+    return None
+
+
+def resolve_tesseract_lang(language):
+    return LANG_MAP.get(language.lower(), language)
+
+
+def extract_tesseract(image_path, language, preserve_layout):
+    """Extract text via Tesseract. Returns dict or None on failure."""
+    tesseract_cmd = find_tesseract()
+    if not tesseract_cmd:
+        print("Tesseract not found. Install from: "
+              "https://github.com/UB-Mannheim/tesseract/wiki")
+        return None
+    pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
+    try:
+        img = Image.open(image_path)
+    except Exception as e:
+        print(f"Cannot open image: {e}")
+        return None
+    lang_code = resolve_tesseract_lang(language)
+    config = "--psm 6" if preserve_layout else ""
+    try:
+        text = pytesseract.image_to_string(img, lang=lang_code, config=config)
+    except pytesseract.TesseractError as e:
+        print(f"Tesseract error: {e}")
+        return None
+    return {"text": text.strip(), "model": "tesseract",
+            "engine": "tesseract", "tokens_in": 0, "tokens_out": 0}
+
+
+# ---------------------------------------------------------------------------
+# Pipeline
+# ---------------------------------------------------------------------------
+
+async def process_image(image_path, args):
+    """Process one image through the selected engine pipeline."""
+    if args.engine == "glmocr":
+        return await run_glmocr(image_path, args)
+    elif args.engine == "gemini":
+        return await run_gemini(image_path, args)
+    elif args.engine == "tesseract":
+        return extract_tesseract(image_path, args.language, args.preserve_layout)
+    else:  # auto: GLM-OCR -> Gemini -> Tesseract
+        # Tier 1: GLM-OCR (primary)
+        if resolve_zai_key():
+            result = await run_glmocr(image_path, args)
+            if result:
+                return result
+        if args.no_fallback:
+            print("GLM-OCR failed and --no-fallback set. Skipping all fallbacks.")
+            return None
+        # Tier 2: Gemini (secondary)
+        if resolve_gemini_key():
+            result = await run_gemini(image_path, args)
+            if result:
+                return result
+        # Tier 3: Tesseract (offline last resort)
+        return extract_tesseract(image_path, args.language, args.preserve_layout)
+
+
+def collect_images(path):
+    """Collect supported image files from path."""
+    if path.is_file():
+        return [path] if path.suffix.lower() in SUPPORTED_EXTENSIONS else []
+    if path.is_dir():
+        all_files = [p for p in path.iterdir() if p.is_file()]
+        images = [p for p in all_files if p.suffix.lower() in SUPPORTED_EXTENSIONS]
+        skipped = len(all_files) - len(images)
+        if skipped > 0:
+            print(f"Skipping {skipped} non-image file(s)")
+        return sorted(images)
+    return []
+
+
+def write_output(out_path, source, result):
+    """Write Markdown file with YAML frontmatter."""
+    frontmatter = (
+        "---\n"
+        f'source: "{source.name}"\n'
+        f"engine: {result['engine']}\n"
+        f"model: {result['model']}\n"
+        f"extracted: {datetime.now().isoformat(timespec='seconds')}\n"
+        f"language: auto\n"
+        "---\n\n"
+    )
+    out_path.write_text(frontmatter + result["text"], encoding="utf-8")
+
+
+async def run_single(args):
+    """Process a single image."""
+    result = await process_image(args.image_path, args)
+    if result:
+        out_path = args.output_dir / f"{args.image_path.stem}.md"
+        if args.dry_run:
+            print(f"[DRY RUN] Would write: {out_path}")
+            print(f"Engine: {result['engine']}, Model: {result['model']}")
+            preview = result["text"][:200]
+            print(f"Text preview: {preview}...")
+        else:
+            args.output_dir.mkdir(parents=True, exist_ok=True)
+            write_output(out_path, args.image_path, result)
+            print(f"Written: {out_path}")
+    else:
+        if args.engine == "tesseract":
+            print("ERROR: Tesseract extraction failed. See messages above.")
+        else:
+            print("ERROR: Extraction failed. See messages above.")
+        sys.exit(1)
+
+
+async def run_batch(args):
+    """Process all images in directory."""
+    images = collect_images(args.image_path)
+    if not images:
+        print(f"No supported images found in {args.image_path}")
+        return
+    results = {"processed": [], "failed": [], "skipped": []}
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    for i, img in enumerate(images):
+        print(f"[{i+1}/{len(images)}] {img.name}...")
+        result = await process_image(img, args)
+        if result:
+            out_path = args.output_dir / f"{img.stem}.md"
+            if not args.dry_run:
+                write_output(out_path, img, result)
+            results["processed"].append({"source": img.name,
+                                         "output": str(out_path),
+                                         "engine": result["engine"]})
+            print(f"  -> {out_path}")
+        else:
+            results["failed"].append({"source": img.name,
+                                      "reason": "extraction failed"})
+        if i < len(images) - 1:
+            time.sleep(0.5)
+    manifest_path = args.output_dir / "manifest.json"
+    if not args.dry_run:
+        manifest_path.write_text(json.dumps(results, indent=2), encoding="utf-8")
+    print(f"\nDone: {len(results['processed'])} processed, "
+          f"{len(results['failed'])} failed")
+
+
+async def _async_main(args):
+    """Async entrypoint after arg validation."""
+    if args.batch:
+        await run_batch(args)
+    else:
+        await run_single(args)
+
+
+def main():
+    args = parse_args()
+    # Edge case: path not found
+    if not args.image_path.exists():
+        print(f"ERROR: Path not found: {args.image_path}")
+        sys.exit(1)
+    # Edge case: single-file unsupported format
+    if args.image_path.is_file() and args.image_path.suffix.lower() not in SUPPORTED_EXTENSIONS:
+        print(f"ERROR: Unsupported format: {args.image_path.suffix}. "
+              f"Supported: {', '.join(sorted(SUPPORTED_EXTENSIONS))}")
+        sys.exit(1)
+    asyncio.run(_async_main(args))
+
+
+if __name__ == "__main__":
+    main()
