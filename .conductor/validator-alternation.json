@@ -1,0 +1,13 @@
+{
+  "purpose": "Strict-alternation selector for Stage 7 paired validators. Guarantees EXACT 50/50 M3 vs Luna validator usage across consecutive tracks. Replaces the rejected probabilistic SHA-256 parity design.",
+  "rule": "Before Stage 7 dispatch, read last_used; invoke the OTHER validator; after dispatch, flip last_used to the agent just used. Never use SHA-256 parity.",
+  "last_used": "m3",
+  "next": "tera",
+  "agents": {
+    "tera": "conductor-track-validator (openai/gpt-5.6-luna, variant high)",
+    "m3": "conductor-track-validator-m3 (opencode-go/minimax-m3)"
+  },
+  "initial_state_reason": "Set to tera because track 20260715-minimax-m3-half-routing was validated by conductor-track-validator (Luna primary); therefore the NEXT validation run must use the M3 paired validator.",
+  "state_file": "C:\\development\\opencode\\.conductor\\validator-alternation.json",
+  "created": "2026-07-16"
+}

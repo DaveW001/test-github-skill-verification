@@ -1,0 +1,13 @@
+{
+  "dbBytes": 21262741504,
+  "walBytes": 16871432,
+  "shmBytes": 65536,
+  "freelistCount": 0,
+  "userVersion": 0,
+  "pageCount": 5189515,
+  "pageSize": 4096,
+  "redactionPolicy": "metadata-only-v1",
+  "cutoffUtc": 1768761780188,
+  "attributionSql": "SUM(length(data)) grouped by session_id/aggregate_id from message, part, event",
+  "schemaFingerprint": "01f14ac2a76055327b2b2d14c3f273a7deeb925858ff0804ecf34f08665eed7b"
+}

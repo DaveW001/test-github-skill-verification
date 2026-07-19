@@ -63,7 +63,8 @@
 | `clickup` / `clickup-cli` | Manage ClickUp tasks, sprints, comments via `cup` CLI |
 | `conductor` | Context-Driven Development — manage tracks, specs, plans in `.conductor/` |
 | `git-push` | Standardized git stage+commit+push workflow for Windows |
-| `session-retro` | Retrospective analysis after OpenCode sessions — capture changes, identify improvements (formerly retro) |
+| `opencode-go-key-rotation` | Safely switch the built-in OpenCode Go provider between approved Workspace 01 and Workspace 02 keys; manual switching only |
+| `session-retro` | Retrospective analysis after OpenCode sessions - capture changes, identify improvements (formerly retro) |
 | `scheduled-job-best-practices` | Patterns for resilient, non-interactive scheduled OpenCode jobs |
 | `terminal-aliases` | Add/update terminal aliases across PowerShell 5.x, 7.x, and Git Bash |
 | `windows-task-scheduler` | Create and modify Windows scheduled tasks |

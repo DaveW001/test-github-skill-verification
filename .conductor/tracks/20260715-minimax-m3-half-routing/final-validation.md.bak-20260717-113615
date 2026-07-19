@@ -1,0 +1,115 @@
+# Final Validation Report (Post-Remediation)
+
+## Changed files
+
+**Active agent edited (2):**
+- `C:\Users\DaveWitkin\.config\opencode\agent\conductor-test-runner.md` - model changed from `opencode-go/minimax-m3` to `openai/gpt-5.6-terra`, variant `medium` added (initial Stage 5 execution).
+- `C:\Users\DaveWitkin\.config\opencode\agent\conductor-track-validator.md` - model changed from `opencode-go/minimax-m3` to `openai/gpt-5.6-terra`, variant `medium` added (remediation M-1).
+
+**Active agent created (1):**
+- `C:\Users\DaveWitkin\.config\opencode\agent\conductor-track-validator-m3.md` - new paired M3 validator for deterministic parity alternation (remediation M-1).
+
+**Pipeline documentation updated (1):**
+- `C:\Users\DaveWitkin\.config\opencode\skill\conductor-pipeline\SKILL.md` - added deterministic validator parity rule section; updated model assignment table and diversity log; preserved GLM-5.2 quota operational note and canonical fallback chain.
+
+**Backups created (4):**
+- `C:\Users\DaveWitkin\.config\opencode\agent\conductor-test-runner.md.bak-20260715-194208`
+- `C:\Users\DaveWitkin\.config\opencode\skill\conductor-pipeline\SKILL.md.bak-20260715-194257`
+- `C:\Users\DaveWitkin\.config\opencode\agent\conductor-track-validator.md.bak-20260715-195909`
+- `C:\Users\DaveWitkin\.config\opencode\skill\conductor-pipeline\SKILL.md.bak-20260715-195912`
+
+## Inventory reconciliation
+
+- Active M3 pins before remediation: 3 (plan-reviewer, test-runner, validator)
+- Active M3 pins after remediation: 2 (plan-reviewer, validator-m3)
+- Active Tera pins after remediation: 2 (test-runner, validator)
+- Total active agents: 4 (plan-reviewer M3, test-runner Tera, validator Tera, validator-m3 M3)
+- Historical M3 references: 220+ (all in .conductor artifacts, unchanged)
+- Unexplained active M3 references: 0
+
+## Tera usage ratio
+
+- **Static agent count:** 2 Tera / 2 M3 = 50% Tera (of 4 active agents)
+- **Cyclic invocation distribution:** plan-reviewer always M3, test-runner always Tera, validator 50% Tera / 50% M3 by deterministic parity
+- **Over two-track cycle:** 3 M3 checkpoints + 3 Tera checkpoints = exactly 50% each
+- **Method:** deterministic SHA-256(track_id) last-hex-digit parity rule
+
+## Routing decision
+
+Native 50/50 weighted routing: Unsupported by verified evidence (OpenCode 1.18.1). Selected mechanism: fixed pins with paired agents and deterministic SHA-256 parity invocation rule.
+
+## Independent-review diversity
+
+- Stage 1 (OpenAI SOL) vs Stage 2 (MiniMax M3): different families. OK.
+- Stage 5 (GLM) vs Stage 6 (OpenAI Tera): different families. OK.
+- Stage 5 (GLM) vs Stage 7 Tera primary (OpenAI Tera): different families. OK.
+- Stage 5 (GLM) vs Stage 7 M3 paired (MiniMax M3): different families. OK.
+- Same-family pair count: 0.
+
+## GLM-5.2 quota workaround
+
+- Canonical chain preserved: `zai-coding-plan/glm-5.2` -> `zai-coding-plan/glm-5.1` -> `opencode-go/qwen3.7-plus`
+- Operational note in SKILL.md: while GLM-5.2 is exhausted, Stage 5 starts with GLM-5.1, then Qwen.
+- This run (Stage 5 remediation): opencode-go/qwen3.7-plus (Tier 3) directly.
+- Both GLM-5.2 and GLM-5.1 tiers recorded as model-unavailable (user-reported quota exhaustion).
+
+## Deterministic validation
+
+| Check | Result |
+|---|---|
+| Parse validation (frontmatter) | PASS (4 files) |
+| Post-change inventory reconciliation | PASS (0 unexplained) |
+| Diversity validation | PASS (0 same-family pairs, 50% Tera) |
+| Rollback validation | PASS (backups exist, hashes match) |
+| Routing decision evidence | PASS |
+| Deterministic parity rule | PASS (SHA-256 auditable, 50/50 distribution) |
+| Bookkeeping sync (tracks.md, tracks-ledger.md, metadata.json) | PASS |
+
+## Restart and runtime validation
+
+- Restart required: YES
+- Live testing: DEFERRED (in-session opencode run reproduces pre-existing 'Session not found')
+- Deterministic validation: ALL PASSED
+- Post-restart test commands documented in runtime-validation.md
+
+## Rollback readiness
+
+- Backup exists for every changed file
+- Pre-edit SHA-256 hashes recorded in baseline-manifest.json and rollback-validation.json
+- Per-file restore commands generated in rollback-validation.json
+- New file (conductor-track-validator-m3.md) has delete-only rollback (no prior state)
+- No bulk restore used; file-scoped only
+
+## Anomalies and deferrals
+
+1. model-fallback (warn): Tier 1 (GLM-5.2) and Tier 2 (GLM-5.1) skipped due to user-reported Z.AI quota exhaustion. Run starts at Tier 3 (Qwen). Canonical chain unchanged.
+2. Runtime blocked: Live smoke test deferred until after OpenCode restart. Pre-existing 'Session not found' issue documented.
+3. 50%-target material mismatch (remediated): Initial execution achieved 33% Tera (1/3). Remediation M-1 converted validator to Tera primary with paired M3 validator and deterministic parity rule, achieving exactly 50% Tera over distributed track IDs.
+
+## Stage 9 documentation waiver
+
+This is a bookkeeping track with no public API surface changes. The SKILL.md deterministic parity rule section is a non-contractual sync. Stage 9 documentation is waived (no public documentation change required).
+
+---
+
+## V2 remediation addendum (operator-authorized, 2026-07-16, Option A)
+
+Resolves Stage 8 blockers B-1, B-2, and B-4 (B-3 remains correctly deferred pending restart):
+
+- **B-1 RESOLVED:** Orchestrator now permits conductor-track-validator-m3 in its task allowlist and its Stage 7 catalog line implements the persisted-alternation selection (read last_used -> dispatch opposite -> flip).
+- **B-2 RESOLVED (Option A):** Probabilistic SHA-256 parity replaced by persisted strict-alternation counter .conductor/validator-alternation.json. Guarantees EXACT 50/50 (one Tera + one M3 per two consecutive validation runs) - no longer a statistical tendency.
+- **B-4 RESOLVED:** Labeled 7-key audit-correction anomaly appended; no historical JSONL rewritten. pproved-routing-map.json map_hash re-frozen = 1B58BC1E1D3F238FB0CD49AF364E89E8EE8AB3F41E961F039163239AF19E5E88.
+- Doc drift fixed in conductor-test-runner.md.
+
+### Deterministic verification (all pass)
+- Orchestrator allowlist contains conductor-track-validator-m3: allow - PASS
+- Orchestrator Stage 7 line implements alternation dispatch - PASS
+- Alternation state file valid (last_used=tera, next=m3) - PASS
+- Zero SHA-256(track_id) residue across orchestrator, SKILL.md, both validators - PASS
+- SKILL.md alternation heading present, parity heading removed - PASS
+- Validator frontmatter: validator=Tera medium, validator-m3=M3 - PASS
+- All track artifacts valid JSON - PASS
+- Active agent reconciliation: plan-reviewer M3, test-runner Tera, validator Tera, validator-m3 M3 - PASS
+
+### Still pending (B-3)
+- Runtime model-resolution smoke test requires OpenCode restart. Not claimed as passed. GLM-5.2 and GLM-5.1 not invoked.

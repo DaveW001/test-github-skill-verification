@@ -1,11 +1,13 @@
 # Workflow: Update OpenCode Default Models
 
-**Last updated:** 2026-04-25
+**Last updated:** 2026-07-18
 **Owner:** Dave Witkin
 
 ## Overview
 
 This workflow covers changing the default build model, plan agent model, and/or small model in your OpenCode configuration.
+
+> **Global-config rule:** Edit only `C:\Users\DaveWitkin\.config\opencode\opencode.jsonc`. Never create or update a sibling global `opencode.json`; OpenCode will merge both and can silently reintroduce stale settings. If the JSON file exists, treat it as drift and follow the consolidation procedure in the [OpenCode Configuration Reference](../reference/opencode-configuration.md#machine-policy-global-jsonc-only).
 
 ## Files Involved
 

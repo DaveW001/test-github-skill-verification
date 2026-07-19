@@ -1,0 +1,43 @@
+{
+  "id": "20260714-notebooklm-connection-rca",
+  "name": "NotebookLM Query Connection Failure RCA",
+  "type": "retro",
+  "track_type": "bookkeeping",
+  "status": "remediation-validated",
+  "phase": "query-path-repaired",
+  "created_at": "2026-07-14T00:00:00Z",
+  "updated_at": "2026-07-14T00:00:00Z",
+  "pipeline_mode": "bookkeeping",
+  "pipeline_path": "research-and-documentation",
+  "skipped_stages": [
+    "implementation",
+    "package-upgrade",
+    "production-batch-validation"
+  ],
+  "current_cli_version": "0.8.6",
+  "latest_cli_version_observed": "0.8.6",
+  "auth_profile_state": {
+    "session_id_missing_after_upgrade": true,
+    "session_id_persisted_after_forced_refresh": true
+  },
+  "target_notebook": {
+    "title": "C2/CC2 Portfolio Engagement Kx",
+    "id": "5125c1f1-71b3-4dbe-afc5-d725d1a4db2c",
+    "source_count": 162
+  },
+  "confirmed_findings": [
+    "Authentication and target notebook access are valid.",
+    "A source-grounded query succeeds at the time of assessment.",
+    "The reported errors are interrupted response-stream failures.",
+    "The approved 0.8.6 upgrade passed default-transport authentication, listing, doctor, and grounded-query checks.",
+    "A missing persisted session ID reproduced the one-source query disconnect and was repaired by nlm login --force."
+  ],
+  "documentation_artifacts": [
+    "C:\\development\\opencode\\.conductor\\tracks\\20260714-notebooklm-connection-rca\\rca.md",
+    "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-cli\\references\\connection-recovery.md"
+  ],
+  "blockers": [
+    "Any transport change requires user approval.",
+    "No upstream request ID or server-side telemetry is available to assign exclusive responsibility to Google."
+  ]
+}

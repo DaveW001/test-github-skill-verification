@@ -1,0 +1,51 @@
+{
+  "debug": true,
+  "$schema": "https://raw.githubusercontent.com/Opencode-DCP/opencode-dynamic-context-pruning/master/dcp.schema.json",
+
+  "compress": {
+    // Global default: percentage-based so smaller-context models scale correctly.
+    // 65% of a 200K model = 130K | 65% of a 128K model = ~83K | 65% of an 8K model = ~5K
+    // CAUTION: the % is relative to a model's FULL context window, so 1M-window
+    // models would balloon to ~650K before DCP triggers. All known 1M models are
+    // hard-capped in modelMaxLimits below to prevent that.
+    "maxContextLimit": "65%",
+    "minContextLimit": 50000,
+
+    // Hard caps for large-context (1M) models. Retrieval quality degrades past
+    // ~150-200K and cached tokens are NOT free (re-billed on every turn), so we
+    // don't want these sessions drifting toward their full 1M window. Caps match
+    // the GLM-5.2 precedent. Per-model overrides take priority over the global %.
+    "modelMaxLimits": {
+      "zai-coding-plan/glm-5.2": 150000,
+
+      "google/gemini-2.5-flash": 150000,
+      "google/gemini-2.5-pro": 150000,
+      "google/gemini-2.5-flash-lite": 150000,
+      "google/gemini-3-flash-preview": 150000,
+      "google/gemini-3-pro-preview": 150000,
+      "google/gemini-3.1-pro-preview": 150000,
+      "google/gemini-3.1-flash-lite": 150000,
+      "google/gemini-3.5-flash": 150000,
+      "google/gemini-flash-latest": 150000,
+
+      // gpt-5.2 family: 272K window -> 65% = 177K (above the 150K target). Capped.
+      "openai/gpt-5.2-none": 150000,
+      "openai/gpt-5.2-low": 150000,
+      "openai/gpt-5.2-medium": 150000,
+      "openai/gpt-5.2-high": 150000,
+      "openai/gpt-5.2-xhigh": 150000,
+      "openai/gpt-5.2-codex-low": 150000,
+      "openai/gpt-5.2-codex-medium": 150000,
+      "openai/gpt-5.2-codex-high": 150000,
+      "openai/gpt-5.2-codex-xhigh": 150000,
+
+      // minimax-m3 has a 1M window and is served via the "opencode-go" provider.
+      // Confirmed via DCP debug log: providerID=opencode-go, modelID=minimax-m3.
+      // (go-dave and go-tiberius are both disabled providers - removed.)
+      "opencode-go/minimax-m3": 150000
+    },
+
+    // Preserve user prompts verbatim during compression (no loss).
+    "protectUserMessages": true
+  }
+}

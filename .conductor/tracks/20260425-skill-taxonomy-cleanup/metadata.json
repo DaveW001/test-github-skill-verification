@@ -31,7 +31,7 @@
   ],
   "deliverables": [
     "Backup: C:\\Users\\DaveWitkin\\.config\\opencode\\skill-backups\\20260425-cleanup\\",
-    "Archive: C:\\Users\\DaveWitkin\\.config\\opencode\\_archived_skills\\notebooklm-legacy\\",
+    "Retired NotebookLM legacy skill: deleted 2026-07-17; use C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\notebooklm-cli\\SKILL.md and its connection-recovery runbook",
     "Renamed skills: session-retro, html-demo-design, notebooklm-cli, notebooklm-meta-prompt",
     "Cross-references added to: email-auto-sorter, outlook-inbox-triage, email-draft-reply, image-generator, image-manifest-builder, thinking-partner, first-principles-mastery, snippet-writer"
   ],

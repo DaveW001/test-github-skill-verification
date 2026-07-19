@@ -1,0 +1,52 @@
+{
+  "track": "20260717-dcp-child-session-safety",
+  "db_uri": "file:C:/Users/DaveWitkin/.local/share/opencode/opencode.db?mode=ro",
+  "db_open_mode": "read-only",
+  "captured_at_utc": "2026-07-19T00:32:00.813903Z",
+  "tables": [
+    "__drizzle_migrations",
+    "account",
+    "account_state",
+    "control_account",
+    "credential",
+    "data_migration",
+    "event",
+    "event_sequence",
+    "message",
+    "migration",
+    "part",
+    "permission",
+    "project",
+    "project_directory",
+    "session",
+    "session_context_epoch",
+    "session_input",
+    "session_message",
+    "session_share",
+    "sqlite_sequence",
+    "todo",
+    "workspace"
+  ],
+  "secret_or_content_fields_emitted": 0,
+  "sessions_total": 2888,
+  "child_sessions_parent_id_not_null": 843,
+  "task_child_sessions_title_pattern": 843,
+  "permission_rows": 0,
+  "child_cumulative_token_buckets": {
+    "cumulative_1_to_150k": 253,
+    "cumulative_over_150k": 571,
+    "zero": 19
+  },
+  "source_file_hashes": {
+    "C:/Users/DaveWitkin/.config/opencode/dcp.jsonc": "397b58fcd7f0623f14bd0fde4a1544f069cdec6cc9feda6efe1de4564685e7c3"
+  },
+  "dcp_state_dir_exists": true,
+  "dcp_state_file_count": 639,
+  "dcp_state_json_count": 639,
+  "required_aggregates_unresolvable_without_content": {
+    "audited_child_sessions": "Stage-1 RCA methodology (sampled audit of 200); not a DB-derived count. parent_id IS NOT NULL = 843, task-child title pattern = 843; neither yields 200.",
+    "children_over_150k": "Requires live context-window size; session.tokens_* are cumulative lifetime totals (cumulative>150000 = 571 children, not 22). Live size needs message/part `data` content.",
+    "child_compress_calls": "Compress tool calls are stored only in part/message `data` (content) columns; no metadata count exists."
+  },
+  "status": "BLOCKED - required aggregates need content columns (forbidden by no-content rule)"
+}

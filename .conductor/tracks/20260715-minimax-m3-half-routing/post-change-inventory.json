@@ -1,0 +1,38 @@
+{
+  "unexplained_active_count": 0,
+  "created_at": "2026-07-15T23:59:00Z",
+  "remediation_applied": "2026-07-15T23:59:00Z",
+  "unreadable_paths": [],
+  "historical_unchanged_count": 220,
+  "records": [
+    {
+      "agent": "conductor-plan-reviewer",
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-plan-reviewer.md",
+      "status": "m3-retained (approved)",
+      "model": "opencode-go/minimax-m3",
+      "classification": "active"
+    },
+    {
+      "agent": "conductor-test-runner",
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-test-runner.md",
+      "status": "changed to Tera Medium (approved)",
+      "model": "openai/gpt-5.6-terra",
+      "classification": "active"
+    },
+    {
+      "agent": "conductor-track-validator",
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator.md",
+      "status": "changed to Tera Medium primary validator (remediation M-1)",
+      "model": "openai/gpt-5.6-terra",
+      "classification": "active"
+    },
+    {
+      "agent": "conductor-track-validator-m3",
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator-m3.md",
+      "status": "new paired M3 validator created (remediation M-1)",
+      "model": "opencode-go/minimax-m3",
+      "classification": "active"
+    }
+  ],
+  "coverage_complete": true
+}

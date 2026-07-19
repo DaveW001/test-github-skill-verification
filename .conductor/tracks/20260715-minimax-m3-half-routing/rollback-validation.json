@@ -1,0 +1,46 @@
+{
+  "remediation_applied": "2026-07-15T23:59:00Z",
+  "created_at": "2026-07-15T23:59:00Z",
+  "files": [
+    {
+      "backup_exists": true,
+      "pre_hash_matches": true,
+      "backup_actual_hash": "7293BBC60F1F0AD76913A0DEC23F55B15D997414810987CB4C00AB101F5274C4",
+      "manifest_pre_hash": "7293BBC60F1F0AD76913A0DEC23F55B15D997414810987CB4C00AB101F5274C4",
+      "backup": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-test-runner.md.bak-20260715-194208",
+      "restore_command": "Copy-Item -LiteralPath 'C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-test-runner.md.bak-20260715-194208' -Destination 'C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-test-runner.md' -Force",
+      "post_restore_hash_command": "(Get-FileHash -LiteralPath 'C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-test-runner.md' -Algorithm SHA256).Hash -eq '7293BBC60F1F0AD76913A0DEC23F55B15D997414810987CB4C00AB101F5274C4'",
+      "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-test-runner.md"
+    },
+    {
+      "backup_exists": true,
+      "pre_hash_matches": true,
+      "backup_actual_hash": "301AAED882151E5068D58FFFDC76FABEE4AF9E8425209DF19A3913F00AC899DB",
+      "manifest_pre_hash": "301AAED882151E5068D58FFFDC76FABEE4AF9E8425209DF19A3913F00AC899DB",
+      "backup": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator.md.bak-20260715-195909",
+      "restore_command": "Copy-Item -LiteralPath 'C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator.md.bak-20260715-195909' -Destination 'C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator.md' -Force",
+      "post_restore_hash_command": "(Get-FileHash -LiteralPath 'C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator.md' -Algorithm SHA256).Hash -eq '301AAED882151E5068D58FFFDC76FABEE4AF9E8425209DF19A3913F00AC899DB'",
+      "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator.md"
+    },
+    {
+      "backup_exists": false,
+      "pre_hash_matches": false,
+      "backup_actual_hash": "n/a",
+      "manifest_pre_hash": "n/a",
+      "backup": "none (new file created in remediation)",
+      "restore_command": "Remove-Item -LiteralPath 'C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator-m3.md' -Force",
+      "post_restore_hash_command": "-not (Test-Path -LiteralPath 'C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator-m3.md')",
+      "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator-m3.md"
+    },
+    {
+      "backup_exists": true,
+      "pre_hash_matches": true,
+      "backup_actual_hash": "0BF0C7DAFF0C8F7691D458936A7DD09DEFF3B313709C377AC73E8007B88F6FEF",
+      "manifest_pre_hash": "0BF0C7DAFF0C8F7691D458936A7DD09DEFF3B313709C377AC73E8007B88F6FEF",
+      "backup": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\SKILL.md.bak-20260715-195912",
+      "restore_command": "Copy-Item -LiteralPath 'C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\SKILL.md.bak-20260715-195912' -Destination 'C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\SKILL.md' -Force",
+      "post_restore_hash_command": "(Get-FileHash -LiteralPath 'C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\SKILL.md' -Algorithm SHA256).Hash -eq '0BF0C7DAFF0C8F7691D458936A7DD09DEFF3B313709C377AC73E8007B88F6FEF'",
+      "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\SKILL.md"
+    }
+  ]
+}

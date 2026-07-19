@@ -1,0 +1,97 @@
+{
+  "trackId": "20260714-local-run-session-creator-rca",
+  "title": "Local OpenCode Run Session-Creation Failure RCA and Safe Recovery",
+  "status": "completed",
+  "created": "2026-07-14",
+  "completed": "2026-07-15",
+  "estimatedHours": "1-3",
+  "assignedTo": "Build agent / operator",
+  "type": "maintenance",
+  "track_type": "bookkeeping",
+  "classification": "certain",
+  "pipeline_mode": "full",
+  "pipeline_path": "2 -> 5 -> 7 -> 9, with mandatory evidence/backup and standalone plus attached-server smoke gates",
+  "pipeline_rationale": "Stage 1 (plan creation) is already complete; the next path is Stage 2 (plan review) -> Stage 5 (execution) -> Stage 7 (validation) -> Stage 9 (closeout). No production source changes are planned, but shared session persistence and an upgrade create high operational risk. A full safety review and explicit validation gates are required; code-test stages are replaced by deterministic runtime diagnostics.",
+  "skipped_stages": [
+    "Stage 3: run only if plan review identifies material ambiguity or disagreement (this Stage 2 review found none requiring re-review).",
+    "Stage 4 and Stage 4b: no application code or test suite is in scope; pre-change failure capture and post-change smoke tests are the required replacement gates.",
+    "Stage 6: no repository test command applies; runtime smoke tests and session persistence checks are mandatory instead.",
+    "Stage 8: skipped after Stage 7 because only three bookkeeping mismatches were found and reconciled; no contradiction or post-remediation failure remained."
+  ],
+  "test_framework": "none",
+  "test_command": "n/a; use enumerated runtime smoke commands in plan.md",
+  "tags": [
+    "opencode",
+    "session",
+    "sqlite",
+    "runtime-version-skew",
+    "headless-server",
+    "minimax"
+  ],
+  "progress": {
+    "totalTasks": 9,
+    "completedTasks": 9,
+    "percentage": 100
+  },
+  "summary": "Investigate the known 1.15.x session_message.seq failure pattern, protect the shared database, upgrade the canonical runtime, and separately validate standalone and headless-server attachment paths.",
+  "keyOutcomes": [
+    "Evidence-based distinction between read-only session listing and session/message write health.",
+    "A non-destructive upgrade-first remediation path based on upstream issue and commit evidence.",
+    "Verified MiniMax standalone and attached-server results or a high-quality upstream escalation package."
+  ],
+  "risks": [
+    "Database loss or unintended migration from destructive troubleshooting.",
+    "Coexisting binaries cause the wrong version to remain active.",
+    "MiniMax provider availability is mistaken for a session persistence defect."
+  ],
+  "dependencies": [
+    "Operator approval for runtime upgrade and any PATH/install normalization.",
+    "A MiniMax model identifier returned by the upgraded OpenCode runtime.",
+    "Exclusive or coordinated access to the shared OpenCode database during backup and upgrade (stop OpenCode.exe Desktop processes first per plan.md P1.1)."
+  ],
+  "blocking": [],
+  "relatedTracks": [],
+  "deliverables": [
+    "Sanitized evidence and decision logs.",
+    "Verified database backup reference and compatibility assessment.",
+    "Standalone and attached-server validation results or an upstream issue draft."
+  ],
+  "validationCriteria": [
+    "No database reset or manual schema patch is used in the primary remediation path.",
+    "Canonical CLI version is no longer 1.15.10 and contains the upstream seq fix or later stable equivalent.",
+    "Both standalone and attached-server smoke runs create/persist sessions successfully.",
+    "MiniMax is tested only with an enumerated available model identifier."
+  ],
+  "review_evidence": {
+    "reviewer_subagent": "conductor-plan-reviewer-alt / minimax-m3",
+    "review_ts": "2026-07-14T21:07:43Z",
+    "dry_run_targets": [
+      "node:sqlite PRAGMA quick_check on live 14.36 GB DB returned [{\"quick_check\":\"ok\"}] in 68.857s",
+      "node:sqlite session_message schema probe confirmed seq INTEGER NOT NULL with no default",
+      "node:sqlite __drizzle_migrations count = 21 (last id=21 at epoch 1778520877000)",
+      "node:sqlite backup() API smoke on 1 MB synthetic DB returned 252 pages in 11 ms",
+      "Get-Item OpenCode.exe VersionInfo.FileVersion = 1.17.19",
+      "opencode --version = 1.15.10",
+      "opencode session list --max-count 1 --format json returned 1 session",
+      "opencode models listed opencode/minimax-m2.5, m2.7, m3 and opencode-go/minimax-m3"
+    ]
+  },
+  "executor": {
+    "routing_override": "user-authorized; Z.AI quota exhausted for GLM-5.2 and GLM-5.1",
+    "model": "opencode-go/qwen3.7-plus",
+    "executed_date": "2026-07-15",
+    "tier": "Tier 3"
+  },
+  "execution_notes": "P3.1 not needed (P2.1+P2.2 both passed). P3.2 bookkeeping completed. CLI 1.15.10 -> 1.18.1. No escalation required. Reconciled 2026-07-16: totalTasks 8->9, 19 spec checkboxes marked, dangling relatedTracks entry removed.",
+  "validation": {
+    "stage7_verdict": "Close with minor follow-ups",
+    "stage7_report": "validation-report-2026-07-16-000922.md",
+    "stage8": "skipped; bookkeeping findings reconciled and A+C threshold not met"
+  },
+  "documentation_closeout": {
+    "stage9": "waived; no public documentation surface or semantic setup/API change",
+    "doc_update_log": "doc-update-log-2026-07-16-001000.md",
+    "post_doc_validation": "post-doc-validation-2026-07-16-001000.md",
+    "terminal_gate": "satisfied"
+  }
+}

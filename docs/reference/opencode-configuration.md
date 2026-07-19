@@ -1,9 +1,14 @@
 # OpenCode Configuration Reference
 
-**Last updated:** 2026-07-06
+**Last updated:** 2026-07-18
 
 > **See also:** [Workflow: Update OpenCode Default Models](../workflows/opencode-model-update.md) — step-by-step guide for changing models.
 
+## Machine Policy: Global JSONC Only
+
+> **Mandatory:** On Dave's machine, `C:\Users\DaveWitkin\.config\opencode\opencode.jsonc` is the one and only global configuration file. Do not create or edit a sibling `opencode.json`. Although OpenCode supports both formats generically, having both global files causes silent merging and configuration drift.
+>
+> If `C:\Users\DaveWitkin\.config\opencode\opencode.json` exists: stop, back up both files, merge unique settings into `opencode.jsonc`, validate the effective configuration with `opencode debug config`, and remove the JSON file. Project-level configs may still use either extension when explicitly required by that project.
 ## Config File Locations
 
 OpenCode supports config in JSON or JSONC (JSON with Comments) format. Config files are **merged** (not replaced) — later sources override earlier ones for conflicting keys.
@@ -22,6 +27,8 @@ OpenCode supports config in JSON or JSONC (JSON with Comments) format. Config fi
 **Since no project-level config exists, everything runs from the global config directory.**
 
 > **Note (2026-03-25):** `opencode.json` was consolidated into `opencode.jsonc`. The old file was deleted (backup at `opencode.json.bak`). Settings unique to `opencode.json` (Slack MCP server) were merged into `opencode.jsonc`. The `keybinds` section was removed — those keys (`input_newline`, `input_submit`) are not recognized by OpenCode's config resolver.
+
+> **Resolved drift (2026-07-18):** A reappeared `C:\Users\DaveWitkin\.config\opencode\opencode.json` was found merging at runtime. Its 17 unique OpenAI model definitions were backed up and consolidated into canonical `opencode.jsonc`, then the duplicate JSON file was removed. Effective plugins, providers, defaults, OpenAI models, and OpenCode Go authentication were verified afterward. See [Rotate the Default OpenCode Go Workspace Key](../workflows/opencode-go-key-rotation.md) for the independent credential-switch workflow.
 
 ---
 
@@ -103,4 +110,4 @@ Project config will **override** global config for conflicting keys while preser
 ## Backup
 
 A backup of an older config exists at:
-- `C:\Users\DaveWitkin\.config\opencode\opencode.json.backup-20260130-101943.json`
+- `C:\Users\DaveWitkin\.config\opencode\opencode.json.backup-20260130-101943.json` (historical; do not restore as the global config)

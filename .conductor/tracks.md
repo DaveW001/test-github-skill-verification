@@ -1,6 +1,13 @@
 # Conductor Tracks
 
 | Track ID | Title | Status | Completed | Path |
+| 20260717-dcp-child-session-safety | DCP Protection for Task-Created Child Sessions | in-progress | 2026-07-17 (19/29) | C:\development\opencode\.conductor\tracks\20260717-dcp-child-session-safety |
+| 20260717-opencode-event-log-compaction | code | full | high | certain | phase6-complete-pending-swap | 2026-07-18 (40/42)
+| 20260717-opencode-session-db-reduction | Safely Reduce the Local OpenCode Session Database | gated-no-candidates | 2026-07-17 (8/14 completed, 4 cancelled, 1 deferred, 1 in-progress) | C:\development\opencode\.conductor\tracks\20260717-opencode-session-db-reduction |
+| 20260715-minimax-m3-half-routing | MiniMax M3 Half-Usage Agent Routing | closed | 2026-07-17 | C:\development\opencode\.conductor\tracks\20260715-minimax-m3-half-routing |
+| 20260714-gpt-56-sol-migration | GPT-5.6 SOL Low-Thinking Migration | complete | 2026-07-15 | C:\development\opencode\.conductor\tracks\20260714-gpt-56-sol-migration |
+| 20260714-local-run-session-creator-rca | Local OpenCode Run Session-Creation Failure RCA and Safe Recovery | completed | 2026-07-16 (9/9) | C:\development\opencode\.conductor\tracks\20260714-local-run-session-creator-rca |
+| 20260714-notebooklm-connection-rca | NotebookLM Query Connection Failure RCA | remediation-validated |  | C:\development\opencode\.conductor\tracks\20260714-notebooklm-connection-rca |
 | skillshare-rollout-improvements | SkillShare Rollout Improvements (Peer Review Gaps) | complete | 2026-07-04 | C:\development\opencode\.conductor\tracks\skillshare-rollout-improvements |
 | 20260702-codex-skill-symlinks | Codex Skill Junction Reconciliation | blocked |  | C:\development\opencode\.conductor\tracks\20260702-codex-skill-symlinks |
 | 20260703-skill-creation-functional-testing | Skill Creation Functional Testing Harness | validated | 2026-07-03 | C:\development\opencode\.conductor\tracks\20260703-skill-creation-functional-testing |
@@ -57,3 +64,4 @@
 | 20260710-session-db-query-skill | Session DB Query Skill | closed | 2026-07-10 | C:\development\opencode\.conductor\tracks\20260710-session-db-query-skill |
 | 20260710-pptx-powerpoint-render-backend | PowerPoint COM Render Backend for pptx-from-layouts Visual Validation | closed | 2026-07-11 | C:\development\opencode\.conductor\tracks\20260710-pptx-powerpoint-render-backend |
 | 20260712-pptx-quality-pipeline | PowerPoint Creation and Evaluation Quality Pipeline | complete | 2026-07-12 | C:\development\opencode\.conductor\tracks\20260712-pptx-quality-pipeline |
+

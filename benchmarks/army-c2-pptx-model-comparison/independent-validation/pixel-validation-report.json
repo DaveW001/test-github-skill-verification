@@ -1,0 +1,12 @@
+{
+  "pptx": "C:\\development\\opencode\\benchmarks\\army-c2-pptx-model-comparison\\out\\deck.pptx",
+  "renderer": "Microsoft PowerPoint COM (win32com)",
+  "slide_count_reported": 0,
+  "rendered_ok": 0,
+  "rendered_failed": 0,
+  "all_rendered": false,
+  "composite_grid": null,
+  "elapsed_seconds": 6.94,
+  "error": "(-2147352567, 'Exception occurred.', (0, None, None, None, 0, -2147024893), None)",
+  "slides": []
+}

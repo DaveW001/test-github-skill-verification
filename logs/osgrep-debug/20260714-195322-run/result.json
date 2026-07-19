@@ -1,0 +1,22 @@
+{
+  "label": "run",
+  "started": "2026-07-14T23:53:22.272826+00:00",
+  "cwd": "C:\\development\\opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "osgrep",
+    "search",
+    "NotebookLM integration, HTTP client, browser automation, or connector configuration"
+  ],
+  "timeout_seconds": 20,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "No matches found.\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 2.853,
+  "finished": "2026-07-14T23:53:25.130433+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- osgrep search 'NotebookLM integration, HTTP client, browser automation, or connector configuration'"
+}

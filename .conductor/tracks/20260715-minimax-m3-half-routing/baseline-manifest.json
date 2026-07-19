@@ -1,0 +1,36 @@
+{
+  "bulk_restore_forbidden": true,
+  "targets": [
+    {
+      "git_root": "N/A (user-level agent)",
+      "pre_hash": "6D95C322F86AAF13479B114F131CCFB27CCC79EC58B3F957BE66F79A344D5A28",
+      "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-plan-reviewer.md",
+      "tracked": false
+    },
+    {
+      "git_root": "N/A (user-level agent)",
+      "pre_hash": "7293BBC60F1F0AD76913A0DEC23F55B15D997414810987CB4C00AB101F5274C4",
+      "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-test-runner.md",
+      "tracked": false
+    },
+    {
+      "git_root": "N/A (user-level agent)",
+      "pre_hash": "301AAED882151E5068D58FFFDC76FABEE4AF9E8425209DF19A3913F00AC899DB",
+      "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator.md",
+      "tracked": false
+    }
+  ],
+  "created_at": "2026-07-15T23:37:06Z",
+  "preserve_preexisting_changes": true,
+  "preexisting_git_status": [
+    " M .conductor/logs/pipeline-anomalies.jsonl",
+    " M .conductor/tracks-ledger.md",
+    " M .conductor/tracks.md",
+    "?? .conductor/tracks/20260714-gpt-56-sol-migration/",
+    "?? .conductor/tracks/20260714-local-run-session-creator-rca/",
+    "?? .conductor/tracks/20260714-notebooklm-connection-rca/",
+    "?? .conductor/tracks/20260715-minimax-m3-half-routing/",
+    "?? benchmarks/",
+    "?? logs/osgrep-debug/20260714-195322-run/"
+  ]
+}

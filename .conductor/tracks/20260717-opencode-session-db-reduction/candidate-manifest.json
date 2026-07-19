@@ -1,0 +1,15 @@
+{
+  "cutoffUtc": 1768761780188,
+  "policyVersion": "metadata-only-v1",
+  "createdAt": "2026-07-17T18:43:26.356Z",
+  "keepListCount": 0,
+  "summary": {
+    "totalSessions": 2776,
+    "protectedSessions": 2776,
+    "candidateSessions": 0,
+    "candidateFamilies": 0,
+    "estimatedBytes": 0,
+    "protectedBytes": 20622681162
+  },
+  "sessions": []
+}

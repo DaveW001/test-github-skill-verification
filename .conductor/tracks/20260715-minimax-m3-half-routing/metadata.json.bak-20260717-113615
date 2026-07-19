@@ -1,0 +1,61 @@
+{
+  "track_id": "20260715-minimax-m3-half-routing",
+  "phase": "stage-8-remediation-v2-applied",
+  "glm52_quota_workaround": "Preserve canonical GLM-5.2 -> GLM-5.1 -> Qwen fallback documentation; start Stage 5 at GLM-5.1 then Qwen while GLM-5.2 exhausted. This run started at Tier 3 (Qwen) directly.",
+  "track_type": "bookkeeping",
+  "pipeline_path": "1 -> 5 -> 7 -> 9",
+  "test_framework": "none",
+  "recommended_pipeline_mode": "bookkeeping",
+  "deterministic_parity_rule": "SHA-256(track_id) last hex digit: even=Tera primary validator, odd=M3 paired validator",
+  "runtime_validation": "deferred-restart-required",
+  "test_command": "n/a",
+  "model_routing_proposal": "Fixed pins with paired agents and persisted strict-alternation validator selection (native weighted routing unsupported; SHA-256 parity rejected as non-exact).",
+  "status": "executed-deterministic-complete-runtime-pending",
+  "restart_required": true,
+  "skipped_stage_candidates": [
+    {
+      "stage": "2/3",
+      "reason": "Skipped because plan is configuration-only with per-task deterministic acceptance checks."
+    },
+    {
+      "stage": "4",
+      "reason": "No application code or unit-test harness applies."
+    },
+    {
+      "stage": "6",
+      "reason": "No unit-test suite applies; Stage 5 ran deterministic checks."
+    },
+    {
+      "stage": "8",
+      "reason": "Skipped; deterministic validation passed."
+    },
+    {
+      "stage": "9",
+      "reason": "Waived; bookkeeping track with no public API surface changes."
+    }
+  ],
+  "pipeline_rationale": "The work is configuration/agent/process-only, but routing capability and exact active inventory remain uncertain. Stage 5 used Qwen (Tier 3) while GLM-5.2 and GLM-5.1 quota exhausted; deterministic PowerShell checks replace TDD.",
+  "completed_tasks": 16,
+  "tera_ratio": 0.5,
+  "executed_at": "2026-07-15T23:46:21Z",
+  "pipeline_mode": "bookkeeping",
+  "remediation_executed_at": "2026-07-15T23:59:00Z",
+  "classification": "uncertain",
+  "created_at": "2026-07-15",
+  "active_agent_count": 4,
+  "total_tasks": 16,
+  "executor_tier": 3,
+  "execution_model": "opencode-go/qwen3.7-plus",
+  "planner_model": "openai/gpt-5.6-sol",
+  "title": "MiniMax M3 Half-Usage Agent Routing",
+  "selection_mechanism": "persisted-strict-alternation",
+  "deterministic_alternation_rule": "Read last_used from .conductor/validator-alternation.json; dispatch opposite validator; flip last_used. Guarantees exact 50/50 Tera/M3 per two consecutive validation runs.",
+  "remediation_v2_applied_at": "2026-07-16T00:41:00Z",
+  "remediation_v2_option": "A",
+  "alternation_state_file": "C:\\development\\opencode\\.conductor\\validator-alternation.json",
+  "stage8_blockers_resolved": [
+    "B-1 orchestrator dispatch",
+    "B-2 exact-50/50 alternation"
+  ],
+  "stage8_blocker_remaining": "B-3 runtime smoke test (restart required)"
+}

@@ -1,0 +1,86 @@
+{
+  "trackId": "20260717-dcp-child-session-safety",
+  "title": "DCP Protection for Task-Created Child Sessions",
+  "status": "in_progress",
+  "created": "2026-07-17",
+  "completed": null,
+  "estimatedHours": "40-80",
+  "assignedTo": "Build",
+  "type": "bugfix",
+  "track_type": "code",
+  "classification": "uncertain",
+  "test_framework": "bun:test (expected in both upstream TypeScript repositories; Phase 0 must pin and confirm)",
+  "test_command": "bun test (run separately in pinned OpenCode and opencode-dynamic-context-pruning source roots; exact package-scoped commands recorded by Phase 0)",
+  "recommended_pipeline_mode": "full",
+  "pipeline_mode": "full",
+  "pipeline_path": "1 -> 2 -> 3? -> 4 -> 4b -> 5 -> 6 -> 7 -> 8? -> 9",
+  "pipeline_rationale": "This changes production core permissions, plugin persistence/concurrency, shared global configuration, and context-integrity enforcement across two source owners. Data-loss, security, runaway-cost, migration, and reentrancy risks require independent plan review, RED tests, implementation, test running, validation, and documentation.",
+  "skipped_stage_candidates": [
+    {
+      "stage": "3 Conditional re-review",
+      "reason": "Skip only if Stage 2 reports no threshold-triggering ambiguity or major rewrite; otherwise run once."
+    },
+    {
+      "stage": "8 Conditional re-validation",
+      "reason": "Skip only if Stage 7 finds no major issue, behavior-changing correction, or unresolved validation ambiguity; otherwise run once."
+    }
+  ],
+  "skipped_stages": [],
+  "tags": [
+    "dcp",
+    "opencode-core",
+    "task",
+    "subagent",
+    "permissions",
+    "state-isolation",
+    "context-integrity"
+  ],
+  "progress": {
+    "totalTasks": 29,
+    "completedTasks": 19,
+    "percentage": 66
+  },
+  "summary": "Remove the blanket Task-child compression denial, make DCP state session-aware, cap all active exact model keys at 150K, and add safe enforcement plus Conductor pre-140K containment.",
+  "risks": [
+    "Lossy or partial compression can corrupt context or discard evidence.",
+    "Concurrent hooks can cross-contaminate child state or overwrite newer state.",
+    "Permission changes can accidentally bypass explicit security denials."
+  ],
+  "dependencies": [
+    "Pinned anomalyco/opencode source revision and ownership decision",
+    "Pinned Opencode-DCP/opencode-dynamic-context-pruning source revision and ownership decision",
+    "Runtime-resolved provider/model identity inventory"
+  ],
+  "blocking": [
+    "User decision required: retain active openai/gpt-5.6-luna and cap both Luna+Terra, or separately authorize migration of relevant Conductor agents to openai/gpt-5.6-terra"
+  ],
+  "relatedTracks": [
+    "20260701-dcp-runtime-hooks-fix",
+    "20260714-gpt-56-sol-migration",
+    "20260628-multi-agent-conductor-orchestration"
+  ],
+  "deliverables": [
+    "OpenCode core child compression permission policy and tests",
+    "DCP per-session state registry, persistence, enforcement, telemetry, and tests",
+    "Exact active-model 150K cap inventory and configuration",
+    "Conductor pre-140K child-session guardrail and bounded-stage workflow"
+  ],
+  "validationCriteria": [
+    "Current child-session failure reproduced in RED tests",
+    "Concurrent and nested session isolation tests pass",
+    "Exact active model key set has 150000 caps",
+    "Guardrail and enforcement tests are non-destructive",
+    "Rollback tests pass"
+  ],
+  "reviewNotes": [
+    "2026-07-17 Stage 2 plan review: applied 19 line-level high-confidence edits across 10 categories to plan.md; added Phase 0.5.1 (DCP dependency install); task count 28 -> 29; readiness score 68/100; B+C triggers Stage 3 re-review (score < 90); two user-confirmation items surfaced (Tera resolution branch, set-vs-subset equality); 0 Blocking tasks remain after edits.",
+    "2026-07-17 Stage 3 conditional re-review (final allowed pass): readiness 82/100; required-subset DCP cap semantics resolved; exact openai/gpt-5.6-terra catalog identity confirmed but active files use distinct openai/gpt-5.6-luna; one Blocking user decision remains; no production changes.",
+    "2026-07-17 Stage 5 GREEN (tier 1, zai-coding-plan/glm-5.2): Phase 4 complete and verified - dcp.jsonc exact 150K caps for all 7 required keys (active-model-limits.test.ts 5/5 GREEN; Luna+Terra both per user decision, unrelated keys preserved); 3 conductor-pipeline skill files + 12 Conductor agent files gained DCP/Bounded-Stage guardrail sections (ValidateSkill & ValidateAgents PASS; all 12 frontmatter blocks unchanged); 16 global files backed up to backups/2026-07-17-pre-edit. Phase 0.2/0.4/0.5.1 confirmed done; curated active-model-inventory.json written (0.3 partial - generator scripts deferred). Phase 1 RED authored+validated by Stage 4 test-writer (valid RED gate 20260717-195524). BLOCKER: Task 1.1 core test is unsatisfiable as written (hardcodes compress:deny rule in-test then asserts it absent) -> Phase 2 (2.1/2.2) cannot GREEN without test-writer rework; surfaced as anomaly. Deferred to next bounded child: Phase 0.1 (RCA SQLite evidence+scripts), Phase 0.3 generator scripts, Phase 2 (post test-rework), Phase 3 (DCP registry/persistence/enforcement/handoff/telemetry TS implementation), Phase 5 (integration/full-suite/rollback/canary), Final (validation matrix/handover/closeout).",
+    "2026-07-18 Stage 5 GREEN (tier 1, zai-coding-plan/glm-5.2, same executor): exceptional NON-BEHAVIORAL testability refactor to resolve Task 1.1 TDD deadlock (Blocker 1). Extracted the inline child-session permission construction from packages/opencode/src/tool/task.ts (former lines 139-172, 34 lines) into a new pure exported helper buildChildSessionPermission({parentSessionPermission, subagent, primaryTools?, taskPermissionId}) -> PermissionV1.Ruleset in packages/opencode/src/agent/subagent-permissions.ts (sibling to deriveSubagentSessionPermission, which is unchanged). task.ts now calls the helper (13 lines, -34/+13 net). Runtime behavior preserved BYTE-FOR-BYTE including the current compress/primary_tools blanket-deny bug (intentionally retained for plan Task 2.1). Regression proof: git diff minimal/surgical; typecheck (tsgo --noEmit) 0 errors in BOTH refactored production files (all 8 errors are pre-existing in the untouched Task 1.1 test); task.test.ts 20/20 pass incl 'execute shapes child permissions for task, todowrite, and primary tools' exact-array integration test; plan-mode-subagent-bypass.test.ts 5/5 pass. Helper signature + exact test import path (../../src/agent/subagent-permissions) handed to orchestrator for Stage 4 test-writer rework of Task 1.1 (replace in-test duplicated logic with helper call; fix relative imports). SCOPE BOUNDARIES: Task 2.1 NOT checked (still [ ]); Task 1.1 test file NOT edited; compress deny NOT removed; no global config/skill/agent files touched; no commit/push. Backups: backups/20260718-testability-refactor/{subagent-permissions.ts, task.ts, metadata.json}. Anomaly logged (type=deviation).",
+    "2026-07-17 Stage 5 GREEN resume (tier 1, zai-coding-plan/glm-5.2): Task 1.1 blocker RESOLVED (test-writer behavior-preserving refactor extracted buildChildSessionPermission; orchestrator verified 5 pass/1 expected RED, 25 pass regression, typecheck 0). Phase 2 GREEN - subagent-permissions.ts gates primary_tools blanket-deny behind opt-in forceChildToolDeny (default false=eligible); explicit parent/subagent denies preserved as hard ceilings; compatibility switch via API; child-compression-eligibility 6/6 GREEN, child-compression-compatibility 3/3 GREEN (eligible/explicit-deny/compatibility-deny), task+plan-mode-subagent-bypass 25/25 no regression, opencode typecheck exit 0 (task.ts reverted to pre-2.1 since helper default already fixes runtime; task.test.ts assertion updated to new eligible policy). Phase 3 GREEN - lib/state/registry.ts (SessionStateRegistry + globalThis), atomic temp+rename persistence with backward-compatible schema versioning + revision, Logger content-free telemetry (sha256 session-ID redaction), lib/enforcement/{context-limit,handoff}.ts + getConfig-attached API, SessionState enforcement fields; DCP 26/26 targeted GREEN (active-model-limits 5, session-state-registry 5, telemetry 6, context-limit-enforcement 10). Full DCP suite 109 pass / 1 fail where the 1 fail (prompts.test.ts node:test t.test() subtest) is PRE-EXISTING and unrelated. CAVEATS: 3.3/3.6 plan acceptance --test-name-pattern gates reference test names not present in the Stage-4 test files (plan/test mismatch); verified via closest deterministic checks. config-level wiring of force_child_tool_deny deferred (experimental type is generated/strict; schema regen is 2.2 follow-up). DEFERRED: 0.1 RCA SQLite evidence+scripts, 0.3 generator scripts, Phase 5 (5.1-5.4), Final (F.1-F.4)."
+  ],
+  "phase": "stage5-green (Phases 2+3+4 DONE; Phase 5 + Final pending)",
+  "executed_at": "2026-07-17",
+  "executor_model": "zai-coding-plan/glm-5.2",
+  "executor_tier": 1
+}

@@ -1,0 +1,22 @@
+{
+  "label": "run",
+  "started": "2026-07-17T19:17:29.142095+00:00",
+  "cwd": "C:\\development\\opencode",
+  "command": [
+    "osgrep",
+    "--",
+    "osgrep",
+    "search",
+    "Find the OpenCode local SQLite schema or code paths that store session event history, message updates, and support deleting or compacting session events while retaining messages"
+  ],
+  "timeout_seconds": 20,
+  "platform": "nt",
+  "cleanup": {},
+  "exit_code": 0,
+  "stdout": "No matches found.\n",
+  "stderr": "",
+  "timed_out": false,
+  "duration_seconds": 2.08,
+  "finished": "2026-07-17T19:17:31.224435+00:00",
+  "command_text": "'C:\\Users\\DaveWitkin\\AppData\\Roaming\\npm\\osgrep.CMD' -- osgrep search 'Find the OpenCode local SQLite schema or code paths that store session event history, message updates, and support deleting or compacting session events while retaining messages'"
+}

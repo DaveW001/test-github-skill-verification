@@ -1,0 +1,74 @@
+{
+  "approved_summary": "Remediation v2 (Option A, user-approved 2026-07-16): validator converted to Tera Medium primary with paired M3 validator. Stage 7 selection is a PERSISTED STRICT-ALTERNATION counter (.conductor/validator-alternation.json), NOT SHA-256 parity. This guarantees exactly one Tera and one M3 validation per two consecutive runs. Plan reviewer retained M3 (Stage 1 creator is OpenAI SOL). Test runner on Tera Medium.",
+  "selection_mechanism": "persisted-strict-alternation",
+  "deterministic_alternation_rule": "Read last_used from <workspace-root>\\.conductor\\validator-alternation.json; dispatch the opposite validator identity; flip last_used to the agent just used. Guarantees EXACT 50/50 Tera/M3 across consecutive validation runs. Replaces the rejected SHA-256 parity design.",
+  "approval_status": "approved",
+  "option": "A",
+  "total_active": 4,
+  "pipeline_files": [
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\SKILL.md"
+  ],
+  "assignments": [
+    {
+      "change": false,
+      "agent": "conductor-plan-reviewer",
+      "new_model": "opencode-go/minimax-m3",
+      "invocation_rule": "Stage 2 plan review always uses this agent identity",
+      "role_family": "MiniMax",
+      "new_variant": "",
+      "diversity_counterpart": "conductor-plan-creator (Stage 1, OpenAI SOL)",
+      "reason": "Cannot change: creator (Stage 1) is OpenAI SOL; changing reviewer to Tera would create same-family pair",
+      "old_model": "opencode-go/minimax-m3",
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-plan-reviewer.md",
+      "selection_bucket": "m3-retained"
+    },
+    {
+      "change": true,
+      "agent": "conductor-test-runner",
+      "new_model": "openai/gpt-5.6-terra",
+      "invocation_rule": "Stage 6 test runner always uses this agent identity",
+      "role_family": "OpenAI",
+      "new_variant": "medium",
+      "diversity_counterpart": "conductor-track-executor (Stage 5, GLM)",
+      "reason": "Changed to Tera Medium: executor (GLM) != test-runner (OpenAI Tera) preserves diversity",
+      "old_model": "opencode-go/minimax-m3",
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-test-runner.md",
+      "selection_bucket": "tera-medium"
+    },
+    {
+      "change": true,
+      "agent": "conductor-track-validator",
+      "new_model": "openai/gpt-5.6-terra",
+      "invocation_rule": "Stage 7 validation uses this Tera primary when validator-alternation.json last_used=m3 (strict alternation)",
+      "role_family": "OpenAI",
+      "new_variant": "medium",
+      "diversity_counterpart": "conductor-track-executor (Stage 5, GLM)",
+      "reason": "Changed to Tera Medium primary validator; paired with conductor-track-validator-m3 and selected by persisted strict-alternation counter for exact 50/50",
+      "old_model": "opencode-go/minimax-m3",
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator.md",
+      "selection_bucket": "tera-medium"
+    },
+    {
+      "change": true,
+      "agent": "conductor-track-validator-m3",
+      "new_model": "opencode-go/minimax-m3",
+      "invocation_rule": "Stage 7 validation uses this M3 paired validator when validator-alternation.json last_used=tera (strict alternation)",
+      "role_family": "MiniMax",
+      "new_variant": "",
+      "diversity_counterpart": "conductor-track-executor (Stage 5, GLM)",
+      "reason": "Paired M3 validator selected by persisted strict-alternation counter; exact 50/50 with Tera primary",
+      "old_model": "(new file)",
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator-m3.md",
+      "selection_bucket": "m3-retained"
+    }
+  ],
+  "indivisible_count_exception": "Plan reviewer (Stage 2) ineligible for Tera: creator (Stage 1) is OpenAI SOL (same OpenAI family). With plan-reviewer fixed at M3, test-runner fixed at Tera, and validator strictly alternating Tera/M3, the checkpoint distribution over every two consecutive runs is exactly 3 M3 + 3 Tera = 50% each (hard guarantee, not statistical).",
+  "tera_ratio": 0.5,
+  "approved_at": "2026-07-15T23:41:15Z",
+  "option_a_approved_at": "2026-07-16T00:35:00Z",
+  "tera_count": 2,
+  "m3_retained_count": 2,
+  "approval_required": true,
+  "map_hash": "1B58BC1E1D3F238FB0CD49AF364E89E8EE8AB3F41E961F039163239AF19E5E88",
+  "remediation_applied": "2026-07-16T00:35:00Z"
+}

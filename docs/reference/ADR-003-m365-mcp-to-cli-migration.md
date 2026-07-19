@@ -29,8 +29,8 @@ We have decided to decommission the M365 MCP server and switch to a CLI-first ap
 
 - **Auth**: App-only authentication using `connect-graph-no-wam.ps1` to avoid MSAL/WAM account-picker popups. Direct `Connect-MgGraph -CertificateThumbprint` was deprecated because it triggered interactive account selection even in app-only mode. See [microsoft-graph-wam-account-picker.md](../troubleshooting/active/microsoft-graph-wam-account-picker.md) for full history.
 - **Primary Tools**: `Get-MgUserMailFolder`, `Get-MgUserMessage`, `Move-MgUserMessage`.
-- **Config**: M365 block removed from `opencode.json`.
+- **Config**: M365 block removed from the then-used configuration snapshot. The current canonical global config is `C:\Users\DaveWitkin\.config\opencode\opencode.jsonc`.
 
 ## Rollback Plan
 
-To rollback, restore the `opencode.json` from the backup at `.conductor/tracks/20260315-ms365-mcp-to-cli-migration/artifacts/opencode.json.backup-pre-migration`.
+To rollback, review the historical backup at `.conductor/tracks/20260315-ms365-mcp-to-cli-migration/artifacts/opencode.json.backup-pre-migration`; do not restore it as the global config. If a rollback is authorized, merge only the required settings into canonical `C:\Users\DaveWitkin\.config\opencode\opencode.jsonc` and validate the effective configuration.

@@ -1,0 +1,92 @@
+{
+  "skipped_stage_candidates": [
+    {
+      "stage": "2/3",
+      "reason": "Skipped because plan is configuration-only with per-task deterministic acceptance checks."
+    },
+    {
+      "stage": "4",
+      "reason": "No application code or unit-test harness applies."
+    },
+    {
+      "stage": "6",
+      "reason": "No unit-test suite applies; Stage 5 ran deterministic checks."
+    },
+    {
+      "stage": "8",
+      "reason": "Skipped; deterministic validation passed."
+    },
+    {
+      "stage": "9",
+      "reason": "Waived; bookkeeping track with no public API surface changes."
+    }
+  ],
+  "glm52_quota_workaround": "Preserve canonical GLM-5.2 -> GLM-5.1 -> Qwen fallback documentation; start Stage 5 at GLM-5.1 then Qwen while GLM-5.2 exhausted. This run started at Tier 3 (Qwen) directly.",
+  "remediation_v2_applied_at": "2026-07-16T00:41:00Z",
+  "remediation_executed_at": "2026-07-15T23:59:00Z",
+  "deterministic_alternation_rule": "Read last_used from .conductor/validator-alternation.json; dispatch opposite validator; flip last_used. Guarantees exact 50/50 Tera/M3 per two consecutive validation runs.",
+  "pipeline_path": "1 -> 5 -> 7 -> 9",
+  "executor_tier": 3,
+  "title": "MiniMax M3 Half-Usage Agent Routing",
+  "runtime_validation": "passed-both-smoke",
+  "selection_mechanism": "persisted-strict-alternation",
+  "stage8_blockers_resolved": [
+    "B-1 orchestrator dispatch",
+    "B-2 exact-50/50 alternation",
+    "B-3 runtime smoke test (Tera side passed 2026-07-17 ses_08f4a813cffewvxXj3YSlS0UNp; M3 side passed 2026-07-17 ses_08f324508ffeVw5cvmUdCr5375; live alternation dispatch executed 2026-07-17 report validation-report-20260717-160109Z.md)"
+  ],
+  "active_agent_count": 4,
+  "phase": "closed",
+  "status": "closed",
+  "pipeline_rationale": "The work is configuration/agent/process-only, but routing capability and exact active inventory remain uncertain. Stage 5 used Qwen (Tier 3) while GLM-5.2 and GLM-5.1 quota exhausted; deterministic PowerShell checks replace TDD.",
+  "closed_at": "2026-07-17",
+  "completed_tasks": 16,
+  "pipeline_mode": "bookkeeping",
+  "test_command": "n/a",
+  "restart_required": false,
+  "recommended_pipeline_mode": "bookkeeping",
+  "track_id": "20260715-minimax-m3-half-routing",
+  "executed_at": "2026-07-15T23:46:21Z",
+  "execution_model": "opencode-go/qwen3.7-plus",
+  "track_type": "bookkeeping",
+  "model_routing_proposal": "Fixed pins with paired agents and persisted strict-alternation validator selection (native weighted routing unsupported; SHA-256 parity rejected as non-exact; replaced by persisted strict alternation).",
+  "test_framework": "none",
+  "planner_model": "openai/gpt-5.6-sol",
+  "tera_ratio": 0.5,
+  "total_tasks": 16,
+  "remediation_v2_option": "A",
+  "runtime_evidence": {
+    "scope": "Proves explicit Tera Medium model-resolution works post-restart. Does not by itself execute a Stage 7 alternation dispatch.",
+    "output": "routing-ready",
+    "finish_reason": "stop",
+    "exit": "success",
+    "session_id": "ses_08f4a813cffewvxXj3YSlS0UNp",
+    "command": "opencode run --model openai/gpt-5.6-terra --variant medium --format json \"Reply with exactly: routing-ready\"",
+    "date": "2026-07-17"
+  },
+  "alternation_state_file": "C:\\development\\opencode\\.conductor\\validator-alternation.json",
+  "classification": "closed",
+  "created_at": "2026-07-15",
+  "m3_runtime_evidence": {
+    "scope": "Proves explicit MiniMax M3 model-resolution works post-restart. Combined with Tera smoke and Stage 7 dispatch, confirms both sides of the alternation pair are operationally valid.",
+    "output": "routing-ready",
+    "finish_reason": "stop",
+    "exit": "success",
+    "session_id": "ses_08f324508ffeVw5cvmUdCr5375",
+    "command": "opencode run --model opencode-go/minimax-m3 --format json \"Reply with exactly: routing-ready\"",
+    "model": "opencode-go/minimax-m3",
+    "cost_usd": 0.00423204,
+    "cost_label": "metered",
+    "date": "2026-07-17"
+  },
+  "stage7_dispatch_evidence": {
+    "validator": "conductor-track-validator-m3",
+    "model": "opencode-go/minimax-m3",
+    "report": "validation-report-20260717-160109Z.md",
+    "verdict": "Close with minor follow-ups (no blockers)",
+    "date": "2026-07-17T16:01:09Z",
+    "alternation_before": "last_used=tera, next=m3",
+    "alternation_after": "last_used=m3, next=tera",
+    "glm_invoked": false
+  }
+}

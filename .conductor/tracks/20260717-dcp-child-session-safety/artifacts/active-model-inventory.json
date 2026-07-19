@@ -1,0 +1,136 @@
+{
+  "track": "20260717-dcp-child-session-safety",
+  "generated_by": "inventory_active_models.py (Task 0.3)",
+  "user_decision": "Retain openai/gpt-5.6-luna; require BOTH Luna and Terra at 150000; preserve unrelated keys.",
+  "required_keys": [
+    "zai-coding-plan/glm-5.2",
+    "openai/gpt-5.6-sol",
+    "openai/gpt-5.6-luna",
+    "openai/gpt-5.6-terra",
+    "opencode-go/minimax-m3",
+    "opencode-go/qwen3.7-plus",
+    "opencode-go/mimo-v2.5-pro"
+  ],
+  "observed_runtime_keys": [
+    "openai/gpt-5.6-luna",
+    "openai/gpt-5.6-sol",
+    "openai/gpt-5.6-terra",
+    "opencode-go/mimo-v2.5-pro",
+    "opencode-go/minimax-m3",
+    "opencode-go/qwen3.7-plus",
+    "zai-coding-plan/glm-5.2"
+  ],
+  "display_to_runtime": {
+    "GLM-5.2": "zai-coding-plan/glm-5.2",
+    "GPT-5.6 SOL": "openai/gpt-5.6-sol",
+    "GPT-5.6 Luna": "openai/gpt-5.6-luna",
+    "GPT-5.6 Tera": "openai/gpt-5.6-terra",
+    "GPT-5.6 Terra": "openai/gpt-5.6-terra",
+    "Minimax M3": "opencode-go/minimax-m3",
+    "Qwen3.7 Plus": "opencode-go/qwen3.7-plus",
+    "MIMO v2.5 Pro": "opencode-go/mimo-v2.5-pro"
+  },
+  "agents": {
+    "01-Planner": {
+      "model": null,
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\01-planner.md"
+    },
+    "01-Boost": {
+      "model": null,
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\boost.md"
+    },
+    "brand-voice-validator": {
+      "model": "zai-coding-plan/glm-5.2",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\brand-voice-validator.md"
+    },
+    "build": {
+      "model": null,
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\build.md"
+    },
+    "conductor-doc-writer": {
+      "model": "opencode-go/mimo-v2.5-pro",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-doc-writer.md"
+    },
+    "conductor-pipeline-orchestrator": {
+      "model": "zai-coding-plan/glm-5.2",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-pipeline-orchestrator.md"
+    },
+    "conductor-plan-creator": {
+      "model": "openai/gpt-5.6-sol",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-plan-creator.md"
+    },
+    "conductor-plan-reviewer-alt": {
+      "model": "openai/gpt-5.6-sol",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-plan-reviewer-alt.md"
+    },
+    "conductor-plan-reviewer": {
+      "model": "opencode-go/minimax-m3",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-plan-reviewer.md"
+    },
+    "conductor-test-runner": {
+      "model": "openai/gpt-5.6-luna",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-test-runner.md"
+    },
+    "conductor-test-writer": {
+      "model": "opencode-go/qwen3.7-plus",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-test-writer.md"
+    },
+    "conductor-track-executor-glm51": {
+      "model": "opencode-go/mimo-v2.5-pro",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-track-executor-glm51.md"
+    },
+    "conductor-track-executor-mimo2.5pro": {
+      "model": "opencode-go/mimo-v2.5-pro",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-track-executor-mimo2.5pro.md"
+    },
+    "conductor-track-executor": {
+      "model": "zai-coding-plan/glm-5.2",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-track-executor.md"
+    },
+    "conductor-track-validator-alt": {
+      "model": "openai/gpt-5.6-sol",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-track-validator-alt.md"
+    },
+    "conductor-track-validator-m3": {
+      "model": "opencode-go/minimax-m3",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-track-validator-m3.md"
+    },
+    "conductor-track-validator": {
+      "model": "openai/gpt-5.6-luna",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\conductor-track-validator.md"
+    },
+    "cove-orchestrator": {
+      "model": "zai-coding-plan/glm-5.2",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\cove-orchestrator.md"
+    },
+    "cove-verifier": {
+      "model": "opencode-go/mimo-v2.5-pro",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\cove-verifier.md"
+    },
+    "gen-headlines": {
+      "model": "zai-coding-plan/glm-5.2",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\gen-headlines.md"
+    },
+    "peer-review": {
+      "model": "openai/gpt-5.6-sol",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\peer-review.md"
+    },
+    "pptx-deck-qa": {
+      "model": null,
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\pptx-deck-qa.md"
+    },
+    "pptx-outline-architect": {
+      "model": null,
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\pptx-outline-architect.md"
+    },
+    "pptx-template-onboarder": {
+      "model": null,
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\pptx-template-onboarder.md"
+    },
+    "seo-auditor": {
+      "model": "zai-coding-plan/glm-5.2",
+      "file": "C:/Users/DaveWitkin/.config/opencode/agent\\seo-auditor.md"
+    }
+  },
+  "unresolved": []
+}

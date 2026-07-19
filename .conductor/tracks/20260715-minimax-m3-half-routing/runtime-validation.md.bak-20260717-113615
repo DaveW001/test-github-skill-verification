@@ -1,0 +1,26 @@
+# Runtime Validation
+
+## Restart state
+
+Restart required: YES. Agent model pins changed in conductor-test-runner.md. OpenCode caches agent definitions at startup. Live effectiveness testing cannot proceed without restart.
+
+## MiniMax M3 result
+
+DEFERRED. Restart required before live testing. conductor-track-validator (Stage 7) retains opencode-go/minimax-m3. No change to test in isolation.
+
+## Tera Medium result
+
+DEFERRED. Restart required before live testing. conductor-test-runner (Stage 6) changed to openai/gpt-5.6-terra (medium). Cannot verify model resolution without restart.
+
+## Selected model evidence
+
+No live evidence available. Deterministic validation passed: frontmatter contains `model: openai/gpt-5.6-terra` and `variant: medium`. `opencode models openai` confirms the model is discoverable.
+
+## Verdict
+
+runtime blocked: Error: Session not found (pre-existing, documented in 20260714-gpt-56-sol-migration track). All deterministic checks passed. Live validation deferred until after OpenCode restart.
+
+## Post-restart test commands
+
+1. `opencode run --model openai/gpt-5.6-terra --variant medium --format json "Reply with exactly: routing-ready"`
+2. If Session not found persists after restart, remediate the runtime/session issue separately (predates this migration).

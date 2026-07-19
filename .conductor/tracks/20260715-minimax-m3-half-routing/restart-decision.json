@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-07-15T23:45:04Z",
+  "reason": "Agent model pins changed in conductor-test-runner.md. OpenCode caches agent definitions at startup. Live effectiveness testing requires restart. In-session opencode run reproduces pre-existing Session not found error.",
+  "restart_required": true,
+  "evidence": [
+    "Agent definitions are loaded at OpenCode startup and cached for the session",
+    "Prior migration (20260714-gpt-56-sol-migration) confirmed in-session opencode run fails with Session not found",
+    "Config changes to agent frontmatter require restart to take effect for new invocations"
+  ],
+  "safe_to_test_now": false
+}

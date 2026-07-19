@@ -1,0 +1,32 @@
+{
+  "files": [
+    {
+      "exit_code": 0,
+      "parser": "markdown-frontmatter",
+      "file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-test-runner.md",
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "exit_code": 0,
+      "parser": "markdown-frontmatter",
+      "file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator.md",
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "exit_code": 0,
+      "parser": "markdown-frontmatter",
+      "file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator-m3.md",
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "exit_code": 0,
+      "parser": "markdown-content",
+      "file": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\SKILL.md",
+      "status": "ok",
+      "error": ""
+    }
+  ]
+}

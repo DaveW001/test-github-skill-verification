@@ -1,0 +1,38 @@
+{
+  "track_id": "20260716-skill-health-validator-scope-fix",
+  "title": "Skill Health Validator scope + architecture-check correction",
+  "type": "maintenance",
+  "track_type": "bookkeeping",
+  "status": "planned",
+  "phase": "planned",
+  "created": "2026-07-16",
+  "updated": "2026-07-16",
+  "repo": "C:\\development\\opencode",
+  "primary_artifact": "C:\\Users\\DaveWitkin\\.config\\opencode\\scripts\\skill-health-validator.md",
+  "related_tracks": [
+    "20260425-skill-health-validator-job",
+    "20260704-session-continuation-codex-skill-architecture-fix",
+    "20260706-lazy-vault-localization"
+  ],
+  "authority": {
+    "architecture_runbook": "C:\\development\\opencode\\docs\\runbooks\\codex-skill-architecture.md",
+    "job_definition": "C:\\Users\\DaveWitkin\\.config\\opencode\\scheduler\\scopes\\development-88876ee600f5\\jobs\\development-skill-health-validator.json"
+  },
+  "defects": {
+    "A": { "severity": "critical", "title": "Scope: iterates 7 canonical skills, not 82-dir vault", "requirement": "R1,R2" },
+    "B": { "severity": "medium", "title": "Index treated as authoritative/exhaustive", "requirement": "R3" },
+    "C": { "severity": "low", "title": ".agents references + dot-folder skip gap", "requirement": "R6" },
+    "D": { "severity": "non-issue", "title": "3 vault dirs lack SKILL.md (all non-skill folders)", "requirement": "R6" },
+    "E": { "severity": "medium", "title": "No self-referential junction check", "requirement": "R4" },
+    "F": { "severity": "low-medium", "title": "No Codex parent-junction health assertion", "requirement": "R5" },
+    "G": { "severity": "low", "title": "Report template stale count / encoding", "requirement": "R7" }
+  },
+  "pipeline_mode": "manual",
+  "pipeline_path": "manual-bookkeeping",
+  "skipped_stages": [],
+  "task_count": 11,
+  "completed_tasks": 2,
+  "readiness_check_count": 8,
+  "total_checkbox_count": 17,
+  "notes": "Planner-authored track. Edit surface is a .md prompt file (not application code). All junction operations are flag-only; no auto-removal. Aligns the validator with the report's own 'future health-check guidance' (codex-skill-architecture.md) and the runbook."
+}

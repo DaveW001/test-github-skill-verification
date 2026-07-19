@@ -1,0 +1,79 @@
+{
+  "active_count": 3,
+  "scanned_roots": [
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\agent"
+  ],
+  "git_roots_scanned": [
+    "C:\\development\\01-knowledge-base",
+    "C:\\development\\02-Kx-to-process",
+    "C:\\development\\2025-pa-website",
+    "C:\\development\\anything-llm",
+    "C:\\development\\army-c2cc2",
+    "C:\\development\\article-agent",
+    "C:\\development\\clickup-contact-entry",
+    "C:\\development\\command-center",
+    "C:\\development\\create-new-github-repository",
+    "C:\\development\\cursor-clickup-mcp",
+    "C:\\development\\dai-assessment",
+    "C:\\development\\daily-priority-briefing",
+    "C:\\development\\digitalai-marketing",
+    "C:\\development\\duplicate-consolidator",
+    "C:\\development\\email-quarantine",
+    "C:\\development\\email-triage",
+    "C:\\development\\gemini-ext-toggle",
+    "C:\\development\\govpulse",
+    "C:\\development\\govpulse-autonomous-ops",
+    "C:\\development\\INACTIVE-content-marketing",
+    "C:\\development\\INACTIVE-margin-calc",
+    "C:\\development\\INACTIVE-old-hormozi-marketing",
+    "C:\\development\\margin-calc-firebase",
+    "C:\\development\\marketing",
+    "C:\\development\\marketing-materials",
+    "C:\\development\\opencode",
+    "C:\\development\\opencode-evaluator",
+    "C:\\development\\opencode-studio",
+    "C:\\development\\pa-expenses",
+    "C:\\development\\playground",
+    "C:\\development\\pptx-pipeline",
+    "C:\\development\\skillshare-skills",
+    "C:\\development\\slides",
+    "C:\\development\\tokscale",
+    "C:\\development\\v0-af-cyber-worx-topic-5-web-page",
+    "C:\\development\\website-analytics",
+    "C:\\development\\marketing\\marketingskills",
+    "C:\\development\\marketing\\playground\\authy-export"
+  ],
+  "records": [
+    {
+      "model": "opencode-go/minimax-m3",
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-plan-reviewer.md",
+      "reason": "Explicit model: frontmatter pin for Stage 2 plan reviewer",
+      "agent": "conductor-plan-reviewer",
+      "repository": "N/A (user-level agent)",
+      "classification": "active"
+    },
+    {
+      "model": "opencode-go/minimax-m3",
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-test-runner.md",
+      "reason": "Explicit model: frontmatter pin for Stage 6 test runner",
+      "agent": "conductor-test-runner",
+      "repository": "N/A (user-level agent)",
+      "classification": "active"
+    },
+    {
+      "model": "opencode-go/minimax-m3",
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator.md",
+      "reason": "Explicit model: frontmatter pin for Stage 7 validator",
+      "agent": "conductor-track-validator",
+      "repository": "N/A (user-level agent)",
+      "classification": "active"
+    }
+  ],
+  "unreadable_paths": [],
+  "created_at": "2026-07-15T23:38:52Z",
+  "missing_roots": [
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\agents"
+  ],
+  "historical_note": "All 220+ historical hits are in .conductor track artifacts, review/validation reports, session handoffs, backups, and retros. None are active configuration. Classified as historical per spec exclusions.",
+  "historical_count": 220
+}

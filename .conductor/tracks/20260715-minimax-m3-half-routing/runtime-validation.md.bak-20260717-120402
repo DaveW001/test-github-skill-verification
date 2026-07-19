@@ -1,0 +1,54 @@
+# Runtime Validation
+
+## Restart state
+
+Restart required: WAS YES (pre-2026-07-17). OpenCode caches agent definitions at startup, so the model/variant pin changes in conductor-test-runner.md and conductor-track-validator.md required a restart to take effect.
+
+**Post-restart state (2026-07-17):** Restart completed. OpenCode successfully resolves the Tera Medium pin.
+
+## Tera Medium result (post-restart, user-supplied evidence)
+
+**Command:**
+```
+opencode run --model openai/gpt-5.6-terra --variant medium --format json "Reply with exactly: routing-ready"
+```
+
+**Result:**
+- JSON event stream emitted text exactly `routing-ready`
+- Finish reason: `stop`
+- Exit: success
+- Session ID: `ses_08f4a813cffewvxXj3YSlS0UNp`
+- No model/variant resolution error
+
+**Verdict:** PASS. The explicit `openai/gpt-5.6-terra` model with `--variant medium` resolves correctly and runs to normal completion post-restart. The pre-existing `Session not found` runtime block is resolved.
+
+## Scope statement (honest)
+
+This smoke test proves explicit Tera Medium model-resolution works after restart. It does NOT by itself execute a Stage 7 alternation dispatch, nor does it prove that the persisted strict-alternation selector (`.conductor/validator-alternation.json`) will correctly flip between `conductor-track-validator` (Tera) and `conductor-track-validator-m3` (M3) across consecutive Stage 7 runs. That alternation dispatch has not yet occurred in a live Stage 7 run.
+
+What this evidence establishes:
+- The OpenAI GPT-5.6 Tera medium variant is reachable and completes normally.
+- The post-restart runtime is healthy (no `Session not found`).
+- The Tera Medium pin in `conductor-track-validator.md` and `conductor-test-runner.md` is operationally valid.
+
+What it does NOT establish:
+- That a live Stage 7 dispatch using `conductor-track-validator-m3` (MiniMax M3) would succeed (M3 has not been smoke-tested in this session).
+- That the alternation state file is actually read and flipped by a live orchestrator dispatch (no Stage 7 run has been executed against this track).
+
+## MiniMax M3 result
+
+DEFERRED (unchanged). No live M3 smoke test was performed. The M3 pin (`conductor-track-validator-m3`, `conductor-plan-reviewer`) remains configured but unverified in this post-restart session.
+
+## Selected model evidence
+
+Post-restart Tera Medium smoke test passed (see above). Deterministic validation (parse, inventory, diversity, rollback, alternation state file, bookkeeping sync) all passed. Live alternation dispatch remains unexecuted.
+
+## Verdict (updated 2026-07-17)
+
+runtime validation: PASSED for explicit Tera Medium resolution (user-supplied evidence, session `ses_08f4a813cffewvxXj3YSlS0UNp`). Pre-existing `Session not found` block resolved. Stage 8 blocker B-3 is resolved for the Tera side. M3 side and live alternation dispatch remain unverified but are not blocking closeout of this bookkeeping track.
+
+## Post-restart test commands (for future reference)
+
+1. `opencode run --model openai/gpt-5.6-terra --variant medium --format json "Reply with exactly: routing-ready"` - PASSED 2026-07-17
+2. `opencode run --model opencode-go/minimax-m3 --format json "Reply with exactly: routing-ready"` - not executed; would verify M3 pin
+3. Trigger a Stage 7 dispatch to verify alternation state flip - not executed

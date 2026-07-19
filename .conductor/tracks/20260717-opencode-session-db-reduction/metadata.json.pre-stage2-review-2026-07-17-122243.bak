@@ -1,0 +1,104 @@
+{
+  "trackId": "20260717-opencode-session-db-reduction",
+  "title": "Safely Reduce the Local OpenCode Session Database",
+  "status": "planned",
+  "created": "2026-07-17",
+  "completed": null,
+  "estimatedHours": "4-8",
+  "assignedTo": "Dave Witkin",
+  "type": "maintenance",
+  "track_type": "code",
+  "classification": "certain",
+  "risk": "high",
+  "test_framework": "PowerShell safety harness plus node:sqlite integration fixtures",
+  "test_command": "pwsh -NoProfile -File .conductor\\tracks\\20260717-opencode-session-db-reduction\\tests\\run-tests.ps1",
+  "pipeline_mode": "full",
+  "recommended_pipeline_mode": "full",
+  "pipeline_path": "1 -> 2 -> 3? -> 4 -> 4b -> 5 -> 6 -> 7 -> 8? -> 9",
+  "pipeline_rationale": "This track creates safety-critical automation and performs retention/deletion, backup, SQLite compaction, and reversible replacement of shared user storage. High data-loss and privacy impact require full independent review, RED tests on disposable fixtures, execution, test running, and validation.",
+  "skipped_stages": [],
+  "skipped_stage_candidates": [
+    {
+      "stage": "3 Conditional re-review",
+      "reason": "Skip only if the Stage 2 B+C threshold is not triggered; never skip merely to shorten a high-risk storage track."
+    },
+    {
+      "stage": "8 Conditional re-validation",
+      "reason": "Skip only if the Stage 7 A+C threshold is not triggered and no deliverable, retention, rollback, or reporting mismatch remains."
+    },
+    {
+      "stage": "9 Documentation",
+      "reason": "A no-product-doc edit may be waived only with a dated execution-log reason; handover, savings, and rollback records remain mandatory deliverables."
+    }
+  ],
+  "pipeline_determination": {
+    "productionCodeChanges": false,
+    "safetyAutomationChanges": true,
+    "dataDeletion": true,
+    "storageTouched": true,
+    "schemaChanges": false,
+    "riskLevel": "high",
+    "decision": "full"
+  },
+  "tags": [
+    "opencode",
+    "sqlite",
+    "session-retention",
+    "data-safety",
+    "maintenance"
+  ],
+  "progress": {
+    "phase": "Stage 1 plan creation",
+    "totalTasks": 13,
+    "completedTasks": 0,
+    "percentage": 0
+  },
+  "summary": "Inventory metadata safely, protect valuable session families, obtain approval for an immutable candidate manifest, delete only through the supported OpenCode CLI, compact reversibly, and report exact disk savings.",
+  "keyOutcomes": [
+    "No message content or credentials appear in inventory or reports",
+    "Only explicitly approved sessions are deleted through opencode session delete",
+    "Fresh backup and pre-compaction rollback copies remain available",
+    "Exact allocated-byte savings are reported"
+  ],
+  "risks": [
+    "Irreversible deletion of valuable sessions",
+    "SQLite inconsistency from concurrent writers or WAL mishandling",
+    "Private content leakage through inventory or logs"
+  ],
+  "dependencies": [
+    "PowerShell 7",
+    "Canonical opencode CLI with session delete support",
+    "Node runtime with node:sqlite backup and query support",
+    "Sufficient disk capacity for backup and compact candidate"
+  ],
+  "blocking": [
+    "User confirmation of cutoff/keep-list/unarchived protection",
+    "Explicit user approval of generated candidate manifest hash before deletion"
+  ],
+  "relatedTracks": [
+    "20260710-session-db-query-skill",
+    "20260714-local-run-session-creator-rca"
+  ],
+  "deliverables": [
+    ".conductor/tracks/20260717-opencode-session-db-reduction/spec.md",
+    ".conductor/tracks/20260717-opencode-session-db-reduction/plan.md",
+    "Execution-time redacted inventory, backup validation, approval, deletion, integrity, compaction, savings, rollback, and handover artifacts"
+  ],
+  "validationCriteria": [
+    "Manifest hash used for deletion exactly matches explicit approval",
+    "quick_check is ok and schema fingerprint/user_version are unchanged",
+    "Protected sessions remain and approved sessions are absent",
+    "Exact pre/post DB+WAL+SHM byte arithmetic is internally consistent",
+    "Application session-list smoke read exits zero"
+  ],
+  "approvals": {
+    "generalChangesAuthorized": true,
+    "exactDeletionManifestApprovalRequired": true,
+    "approvalStatus": "pending"
+  },
+  "tool_preflight": {
+    "nativeFileTools": "unavailable: Bun is not defined",
+    "fallback": "PowerShell-first through bounded bash tool calls",
+    "pathRules": "Use -LiteralPath and quoted absolute Windows paths; do not retry native file tools in this session"
+  }
+}

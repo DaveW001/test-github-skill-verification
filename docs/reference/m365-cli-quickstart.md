@@ -212,6 +212,4 @@ Get-MgUserDriveItem -UserId $UserId -DriveId (Get-MgUserDrive -UserId $UserId).I
 
 ## 7. Rollback
 
-To restore the M365 MCP server:
-1. Copy backup from `.conductor/tracks/20260315-ms365-mcp-to-cli-migration/artifacts/opencode.json.backup-pre-migration`
-2. Overwrite `C:\Users\DaveWitkin\.config\opencode\opencode.json`
+This rollback text is historical and predates the machine's JSONC-only global configuration policy. Do not restore or recreate the global `C:\Users\DaveWitkin\.config\opencode\opencode.json`. If a rollback is ever authorized, review the historical backup and merge only the required settings into canonical `C:\Users\DaveWitkin\.config\opencode\opencode.jsonc`, then validate with `opencode debug config`.

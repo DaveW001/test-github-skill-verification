@@ -1,0 +1,47 @@
+{
+  "status": "ok",
+  "selection_mechanism": "persisted-strict-alternation",
+  "invocation_rule_proof": "Each pipeline stage maps to exactly one agent identity with a fixed model pin. Stage 7 validator uses a PERSISTED STRICT-ALTERNATION counter (.conductor/validator-alternation.json): read last_used, dispatch the opposite validator, flip last_used. This is a hard 50/50 guarantee across consecutive runs, not a statistical tendency (SHA-256 parity was rejected as non-exact).",
+  "indivisible_count_exception": "Plan reviewer (Stage 2) ineligible: creator (Stage 1) is OpenAI SOL same family. Persisted strict alternation guarantees exactly one Tera and one M3 validation per two consecutive runs.",
+  "tera_ratio": 0.5,
+  "ratio_type": "exact (hard guarantee via persisted alternation)",
+  "creator_reviewer_pairs": [
+    {
+      "creator": "openai/gpt-5.6-sol (Stage 1)",
+      "reviewer": "opencode-go/minimax-m3 (Stage 2)",
+      "families_different": true
+    }
+  ],
+  "assignment_count": 4,
+  "bucket_counts": {
+    "tera_medium": 2,
+    "m3_retained": 2
+  },
+  "ongoing_usage_calculation": "Plan reviewer (Stage 2): always M3. Test runner (Stage 6): always Tera. Validator (Stage 7): strictly alternating Tera/M3 - one of each per two consecutive runs (hard guarantee). Over a two-run cycle: 3 M3 + 3 Tera = exactly 50% each.",
+  "deterministic_alternation_rule": {
+    "state_file": "C:\\development\\opencode\\.conductor\\validator-alternation.json",
+    "algorithm": "strict-alternation (persisted counter); last_used field flips each Stage 7 dispatch",
+    "guarantee": "exactly 50% Tera / 50% M3 per two consecutive validation runs",
+    "rejected_design": "SHA-256(track_id) last-hex parity - rejected 2026-07-16 because it cannot guarantee an exact split on consecutive tracks"
+  },
+  "executor_validator_pairs": [
+    {
+      "executor": "zai-coding-plan/glm-5.2 or fallback (Stage 5)",
+      "test_runner": "openai/gpt-5.6-terra (Stage 6)",
+      "families_different": true
+    },
+    {
+      "executor": "zai-coding-plan/glm-5.2 or fallback (Stage 5)",
+      "validator_tera": "openai/gpt-5.6-terra (Stage 7, alternation)",
+      "families_different": true
+    },
+    {
+      "executor": "zai-coding-plan/glm-5.2 or fallback (Stage 5)",
+      "validator_m3": "opencode-go/minimax-m3 (Stage 7, alternation)",
+      "families_different": true
+    }
+  ],
+  "auditable_selection_count": 4,
+  "same_family_pair_count": 0,
+  "remediation_applied": "2026-07-16T00:35:00Z"
+}

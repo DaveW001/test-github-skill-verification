@@ -1,0 +1,120 @@
+{
+  "trackId": "20260717-opencode-event-log-compaction",
+  "title": "Checkpointed OpenCode Event-Log Compaction",
+  "status": "phase6-complete-pending-swap",
+  "created": "2026-07-17",
+  "completed": "2026-07-17 (29/42; closed at authorization boundary)",
+  "estimatedHours": "24-40",
+  "assignedTo": "Dave Witkin",
+  "type": "feature",
+  "track_type": "code",
+  "classification": "certain",
+  "risk_level": "high",
+  "pipeline_mode": "full",
+  "pipeline_path": "1 -> 2 -> [3 skipped: no-B+C-trigger] -> 4 -> 4b -> 5 -> 6 -> 7 -> 8? -> 9",
+  "pipeline_rationale": "Checkpoint/replay semantics and mutation of shared persistent storage create high data-loss risk. Independent review, RED/GREEN tests, disposable-copy rehearsal, bounded approval, validation, and documentation are mandatory.",
+  "planning_review": {
+    "status": "accepted",
+    "date": "2026-07-17",
+    "artifact": "review-report-2026-07-17.md"
+  },
+  "skipped_stages": [
+    {
+      "stage": 3,
+      "rationale": "No breaking-change or complexity (B+C) trigger. Track classified as certain/high-risk but no architectural ambiguity requiring Stage 3 diversity review. Checkpoint/replay risk addressed by RED/GREEN gate (Stage 2/4) and disposable-copy rehearsal (Stage 5).",
+      "skipped_at": "2026-07-17",
+      "actual_path": "1 -> 2 -> [3 skipped] -> 4 -> 4b -> 5"
+    }
+  ],
+  "test_framework": "bun:test (primary, source feature @ packages/core) + PowerShell PSScriptAnalyzer/syntax harness (skill scripts) + disposable SQLite fixture checks",
+  "test_command": "cd packages\\core && bun test test/session-event-log-compaction.test.ts test/session-event-log-compaction-acceptance.test.ts",
+  "tags": [
+    "opencode",
+    "sqlite",
+    "event-log",
+    "checkpoint",
+    "compaction",
+    "skill"
+  ],
+  "progress": 95.2,
+  "summary": "Build or adopt an upstream-compatible checkpointed event-log compactor and package a fail-closed reusable lazy-vault skill, preserving visible chats and current projections while reclaiming superseded event history older than 90 days.",
+  "keyOutcomes": [
+    "Checkpointed, replay-safe, append-safe bounded event compaction",
+    "Reusable opencode-event-log-compactor lazy-vault skill and scripts",
+    "Disposable-copy proof before exact-hash-approved live execution",
+    "Measured logical and physical space savings with rollback"
+  ],
+  "risks": [
+    "Projection or replay divergence after deleting durable events",
+    "Sequence/checkpoint incompatibility with future appends or sync",
+    "Concurrent writer or SQLite swap corruption",
+    "Sensitive content or identifiers leaking through manifests and logs",
+    "Upstream PR design changing before implementation"
+  ],
+  "dependencies": [
+    "Execution-time status of anomalyco/opencode PR #36710 or equivalent release",
+    "Isolated upstream OpenCode source checkout/fork if feature remains unreleased",
+    "Adequate disk space for fresh backup, disposable copy, and VACUUM INTO candidate",
+    "Canonical skill-creator and skill-test-harness",
+    "Explicit exact manifest SHA-256 approval before live apply"
+  ],
+  "blocking": [],
+  "relatedTracks": [
+    "20260717-opencode-session-db-reduction",
+    "20260714-local-run-session-creator-rca"
+  ],
+  "deliverables": [
+    "Upstream-compatible OpenCode event-log compaction source feature or released-CLI adoption",
+    "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-event-log-compactor\\",
+    "Versioned checkpoint/manifest format and compatibility matrix",
+    "Fixture, source, skill, and disposable-copy test evidence",
+    "Backup, validation, rollback, and exact savings reports"
+  ],
+  "validationCriteria": [
+    "Current projections, visible chats, replay, and subsequent append remain equivalent",
+    "Owned/synced/workspace and ambiguous aggregates fail closed",
+    "Live apply is bounded, transaction-safe, exact-hash approved, and backed up",
+    "VACUUM INTO candidate passes integrity/application checks before reversible swap",
+    "Skill passes structural and functional validation"
+  ],
+  "source_decision": {
+    "path": "isolated-source-build",
+    "recorded": "2026-07-17",
+    "artifact": "upstream-decision.json",
+    "feature_in_release": false
+  },
+  "executed_at": "2026-07-18T00:15:00Z",
+  "executor_model": "zai-coding-plan/glm-5.1",
+  "source_checkout_path": "C:\\development\\opencode-upstream",
+  "source_checkout_head": "04954f8bde41730251c7516f45d34b975b1d45f5",
+  "source_checkout_base": "5bdfcaac3c7772fac3a6ab2370a64e9e7975a572",
+  "policy_fingerprint": "07702f56721192e60dc55ba78818064f335208f70ddf689139f31271acf0d84b",
+  "blockers": [
+    "Phase 6 HARD STOP: no authorization for live DB mutation. Requires exact manifest-hash approval, maintenance window, and explicit go/no-go.",
+    "Task 4.8: skill_find/skill_use cannot discover the new skill in-session (lazy-vault index built at session start). Structural validation passes (9/9 scripts valid, WhatIf recognized, 0 content leaks). Discovery/activation requires session restart.",
+    "RESOLVED (Stage 9 closeout): Tasks 5.4-5.7 now [x] - satisfied via synthetic-fixture tests (plan 5.4-5.7 equivalence notes; acceptance suite 51 tests pass). Production disposable copy had 0 age-eligible candidates; operational go/no-go NO-GO. No longer blocking.",
+    "Production-scale performance note: full-scan dry-run on 22 GiB / 720 aggregates takes ~16 min (msg.updated: 418s, msg.part.updated: ~550s). Early termination applies when candidates exist. Current database has 0 age-eligible candidates (all events < 90 days old)."
+  ],
+  "design_decisions_for_awareness": [
+    "D1 rewrite=logical-deletion",
+    "D2 reference-checkpoint model",
+    "D3 part-timestamp fallback chain"
+  ],
+  "local_bun_version": "1.3.4 (functional against pinned 1.3.14; install+test green)",
+  "test_evidence_current": "56 pass / 0 fail; 118 expect calls; typecheck clean; lint 0 warnings / 0 errors (includes 5 cutoffDays tests added 2026-07-18)",
+  "lint_status": "clean: 0 warnings, 0 errors. Stage 9 closeout resolved the 2 prior no-unsafe-type-assertion warnings in event-log-compaction.ts (projectedData JSON.parse + checkFreeSpace statfs) via runtime type guards (isStringRecord).",
+  "stage9_completed": "2026-07-17T20:20Z",
+  "closed_at_authorization_boundary": true,
+  "closeout_verdict": "Closed with minor follow-ups (authorization boundary). Deliverable (source, tests, skill) complete and validated; live apply (Phase 6/7) deferred pending exact manifest-hash approval, maintenance window, writer shutdown, and go/no-go.",
+  "phase6": {
+    "compactedFilePath": "C:\\Users\\DaveWitkin\\.local\\share\\opencode\\opencode.db.compacted-final-7day-20260718-193249",
+    "physicalGiBSaved": 8.2,
+    "projectionsIntact": true,
+    "swapScriptPath": "C:\\development\\opencode-upstream\\Activate-CompactedDb.ps1",
+    "savingsPercent": 35.5,
+    "eventsCompacted": 242484,
+    "logicalGiBReclaimed": 7.65,
+    "quickCheck": "ok"
+  },
+  "completedTasks": 40
+}

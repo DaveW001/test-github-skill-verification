@@ -1,0 +1,53 @@
+{
+  "invocation_rule_proof": "Each pipeline stage maps to exactly one agent identity with a fixed model pin. Stage 7 validator uses deterministic SHA-256(track_id) last-hex-digit parity: even=Tera primary, odd=M3 paired. No random or unpersisted selection.",
+  "indivisible_count_exception": "Plan reviewer (Stage 2) ineligible: creator (Stage 1) is OpenAI SOL same family. Deterministic parity rule yields exactly 50% Tera / 50% M3 for validator role across distributed track IDs.",
+  "tera_ratio": 0.5,
+  "creator_reviewer_pairs": [
+    {
+      "creator": "openai/gpt-5.6-sol (Stage 1)",
+      "families_different": true,
+      "reviewer": "opencode-go/minimax-m3 (Stage 2)"
+    }
+  ],
+  "assignment_count": 4,
+  "bucket_counts": {
+    "tera_medium": 2,
+    "m3_retained": 2
+  },
+  "ongoing_usage_calculation": "Plan reviewer (Stage 2): always M3. Test runner (Stage 6): always Tera. Validator (Stage 7): 50% Tera / 50% M3 by parity. Over two-track cycle: 3 M3 + 3 Tera = exactly 50% each.",
+  "created_at": "2026-07-15T23:59:00Z",
+  "deterministic_parity_rule": {
+    "distribution": "exactly 50% Tera / 50% M3 over uniformly distributed track IDs",
+    "selection": "last hex digit parity: even (0,2,4,6,8,a,c,e) = conductor-track-validator (Tera Medium); odd (1,3,5,7,9,b,d,f) = conductor-track-validator-m3 (MiniMax M3)",
+    "example": {
+      "parity": "even",
+      "last_hex_digit": "4",
+      "sha256": "8677AAA1BE6917702C1CFEF010C3430525B2FCC1E71C68016B51CFE4CECB4A44",
+      "track_id": "20260715-minimax-m3-half-routing",
+      "selected_validator": "conductor-track-validator (Tera Medium)"
+    },
+    "input": "track_id",
+    "algorithm": "SHA-256"
+  },
+  "executor_validator_pairs": [
+    {
+      "families_different": true,
+      "executor": "zai-coding-plan/glm-5.2 or fallback (Stage 5)",
+      "test_runner": "openai/gpt-5.6-terra (Stage 6)"
+    },
+    {
+      "families_different": true,
+      "validator_tera": "openai/gpt-5.6-terra (Stage 7, even parity)",
+      "executor": "zai-coding-plan/glm-5.2 or fallback (Stage 5)"
+    },
+    {
+      "validator_m3": "opencode-go/minimax-m3 (Stage 7, odd parity)",
+      "families_different": true,
+      "executor": "zai-coding-plan/glm-5.2 or fallback (Stage 5)"
+    }
+  ],
+  "auditable_selection_count": 4,
+  "status": "ok",
+  "same_family_pair_count": 0,
+  "remediation_applied": "2026-07-15T23:59:00Z"
+}
