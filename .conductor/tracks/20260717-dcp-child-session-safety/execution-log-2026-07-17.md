@@ -211,3 +211,26 @@ DCP source edits backed up under `backups\2026-07-17-stage5-dcp\` (6 files). Cor
 
 ### Remaining (resume point in handoff.md)
 0.1 (RCA SQLite evidence+scripts), 0.3 (generator scripts), Phase 5 (5.1-5.4), Final (F.1-F.4).
+## Update (Stage 5 resume #2, 2026-07-19) - Phase 0.3, Phase 5, Final F.1-F.3
+
+**Executor:** Tier 1 `zai-coding-plan/glm-5.2` (resume child #2). PowerShell-first throughout.
+
+### Phase 0.1 - BLOCKED (honest)
+Required RCA aggregates (`audited_child_sessions==200`, `children_over_150k==22`, `child_compress_calls==0`) cannot be computed without selecting message/part content columns (forbidden by Global Execution Rule #4). DB schema discovery (read-only): `session.tokens_*` are CUMULATIVE lifetime totals (top child = 52M; cumulative>150000 = 571 children, not 22); live context-window size and compress tool-calls live only in content-bearing `data` columns. Deliverables: `scripts/capture_rca_evidence.py` (read-only, computes safe aggregates, exits 2 on blocked), `artifacts/rca-evidence.json` (honest, status BLOCKED), `artifacts/rca-evidence-blockers-*.md`. Task 0.1 left `[ ]` (no fabrication).
+
+### Phase 0.3 - DONE
+`scripts/inventory_active_models.py` (scans 25 agents + canonical opencode.jsonc; display_to_runtime=8 entries), `verify_model_inventory.py` (PASS model-inventory, 0 unresolved), `verify_dcp_limits.py` (JSONC-aware: //, /* */, trailing commas, strict=False; PASS dcp-limits - 7 required all 150000, 18 extras preserved).
+
+### Phase 5
+- **5.1 integration harness** GREEN (7/7): `tests/integration/task-child-dcp.test.ts` exercises REAL production paths - SessionStateRegistry parent/2-children/nested isolation, atomic persistence round-trip (revision bump + schemaVersion=2 + zero leaked .tmp locks), legacy non-destructive load, enforcement (internal-helper + explicit-deny exclusion, valid-summary commit, invalid-summary rollback + handoff), automaticCompressionAllowed default-off, content-free telemetry (sha256-redacted, once-per-transition). Fixed a parallel-isolation bug surfaced by the full suite (another test mutates XDG_DATA_HOME mid-suite) by exporting `getStorageDir()` from persistence and using the frozen module-load path in fixtures.
+- **5.2 full suites** BLOCKED (honest, `all_zero=False`): DCP `bun test` = 116 pass / 1 fail; the 1 fail (`prompts.test.ts` "system prompt overrides handle reminder tags safely") is PRE-EXISTING - PROVEN at pinned clean commit `85b6f5c` via `git show` (the test already uses `test("...", async (t) => await t.test(...))` triggering Bun `NotImplementedError: test() inside another test()`). opencode full `bun test --timeout 30000` did not complete within a 600s bound under isolated XDG_DATA_HOME (not re-run per anti-stall); targeted permission suites pass 34/34 and `@opencode-ai/opencode` typecheck exit 0. `artifacts/full-suite-results.json` records honest exit codes; 5.2 left `[ ]`.
+- **5.3 rollback** GREEN (4/4): `tests/integration/rollback.test.ts` prints `originals-preserved`, `legacy-readable`, `compatibility-deny-restored` on disposable storage.
+- **5.4 canary** GREEN: built DCP (`bun run build` exit 0, dist/index.js 281KB; added canary re-exports to index.ts); `scripts/run_canary.mjs` runs against BUILT dist - 3 distinct state IDs, 0 cross-session references, all 6 telemetry events, post-enforcement context 140000 (<150K) + handoff generated, 0 original-message hash changes. `artifacts/canary-report.json`.
+
+### Final F.1-F.3
+- F.1 `validation-matrix.md` + `verify_validation_matrix.py --require-all` -> PASS (11 criteria, 0 gaps).
+- F.2 `handover.md` + `verify_handover.py --require "universal eligibility" "explicit deny" "internal helper" "rollback" "data loss"` -> PASS (5 phrases).
+- F.3 `validate_track_closeout.py --require-zero-fail` -> 0 FAIL (exit 0); bookkeeping consistent.
+
+### Remaining (for later agents)
+0.1 RCA (needs content-access waiver), 5.2 full-suite all-zero gate, F.4 (Stage 7/8 validation + Stage 9 docs/terminal closeout).
