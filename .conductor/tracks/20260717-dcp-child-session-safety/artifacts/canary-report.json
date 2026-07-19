@@ -1,0 +1,29 @@
+{
+  "track": "20260717-dcp-child-session-safety",
+  "task": "5.4",
+  "ran_against": "C:/development/opencode-dcp-child-fix/dist/index.js",
+  "storage_root": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\opencode\\dcp-canary\\opencode\\storage\\plugin\\dcp",
+  "state_ids": [
+    "canary-parent",
+    "canary-child1",
+    "canary-child2"
+  ],
+  "distinct_state_ids": 3,
+  "cross_session_references": 0,
+  "telemetry_events_emitted": {
+    "resolved_threshold": 1,
+    "nudge_delivered": 1,
+    "tool_unavailable": 1,
+    "nudge_ignored": 1,
+    "compaction_completed": 1,
+    "context_still_over_limit": 1
+  },
+  "telemetry_event_count": 6,
+  "all_six_events": true,
+  "post_enforcement_max_context": 140000,
+  "under_limit_or_handoff": true,
+  "handoff_generated": true,
+  "original_message_hash_changes": 0,
+  "persisted_state_roundtrip_ok": true,
+  "automatic_compression_default_off": true
+}
