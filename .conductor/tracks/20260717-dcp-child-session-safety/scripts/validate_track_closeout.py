@@ -31,12 +31,16 @@ def main():
     if not el:
         fails.append("execution-log-*.md missing")
 
-    # one canonical row each
-    for label, path in (("tracks.md", args.tracks), ("tracks-ledger.md", args.ledger)):
-        text = open(path, encoding="utf-8").read()
-        rows = len(re.findall(re.escape(tid), text))
-        if rows != 1:
-            fails.append(f"{label} has {rows} references to {tid} (want 1)")
+    # one canonical row each (row-anchored, not substring count: a single row
+    # legitimately contains the id in both the id column and the path column)
+    tracks_text = open(args.tracks, encoding="utf-8").read()
+    tracks_rows = len(re.findall(r"^\|\s*" + re.escape(tid) + r"\s", tracks_text, re.MULTILINE))
+    if tracks_rows != 1:
+        fails.append(f"tracks.md has {tracks_rows} rows for {tid} (want 1)")
+    ledger_text = open(args.ledger, encoding="utf-8").read()
+    ledger_rows = len(re.findall(r"^-\s*\[" + re.escape(tid) + r"\]", ledger_text, re.MULTILINE))
+    if ledger_rows != 1:
+        fails.append(f"tracks-ledger.md has {ledger_rows} bullets for {tid} (want 1)")
 
     # metadata parseable + plan/metadata agreement
     if not fails:

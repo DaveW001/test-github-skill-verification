@@ -1,7 +1,7 @@
 # Conductor Tracks
 
 | Track ID | Title | Status | Completed | Path |
-| 20260717-dcp-child-session-safety | DCP Protection for Task-Created Child Sessions | in-progress | 2026-07-17 (19/29) | C:\development\opencode\.conductor\tracks\20260717-dcp-child-session-safety |
+| 20260717-dcp-child-session-safety | DCP Protection for Task-Created Child Sessions | in-progress | 2026-07-17 (26/29) | C:\development\opencode\.conductor\tracks\20260717-dcp-child-session-safety |
 | 20260717-opencode-event-log-compaction | code | full | high | certain | phase6-complete-pending-swap | 2026-07-18 (40/42)
 | 20260717-opencode-session-db-reduction | Safely Reduce the Local OpenCode Session Database | gated-no-candidates | 2026-07-17 (8/14 completed, 4 cancelled, 1 deferred, 1 in-progress) | C:\development\opencode\.conductor\tracks\20260717-opencode-session-db-reduction |
 | 20260715-minimax-m3-half-routing | MiniMax M3 Half-Usage Agent Routing | closed | 2026-07-17 | C:\development\opencode\.conductor\tracks\20260715-minimax-m3-half-routing |

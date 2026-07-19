@@ -1,0 +1,26 @@
+# Validation Matrix - Track 20260717-dcp-child-session-safety
+
+Maps every spec acceptance criterion to the exact test(s)/command/exit code/artifact that verifies it. Statuses are honest: GREEN = verified this Stage 5; PARTIAL = verified with a documented caveat; BLOCKED = cannot honestly pass (see blocker artifact).
+
+| # | Spec acceptance criterion | Test(s) | Command (workdir) | Exit | Artifact / Status |
+|---|---|---|---|---|---|
+| 1 | Fixture reproduces old Task-child compress deny, zero tool availability, missing child state | buildChildSessionPermission w/ forceChildToolDeny=true (compat) | `bun test test/agent/child-compression-compatibility.test.ts` (packages/opencode) | 0 | compatibility-deny assertion GREEN |
+| 2 | OpenCode core: default child eligibility; preserve explicit deny + unrelated ceilings | child-compression-eligibility.test.ts (6), child-compression-compatibility.test.ts (3), task.test.ts + plan-mode-subagent-bypass.test.ts (25) | `bun test ...` (packages/opencode) | 0 | 34/34 GREEN; opencode typecheck exit 0 |
+| 3 | DCP: separate state records for parent/concurrent siblings/nested; no cross-session refs | task-child-dcp.test.ts "registry isolates..." + session-state-registry.test.ts | `bun test tests/integration/task-child-dcp.test.ts` (DCP) | 0 | 7/7 + 5/5 GREEN |
+| 4 | Cancellation during compression leaves originals + prior durable state intact; retry idempotent | rollback.test.ts "originals-preserved" + context-limit-enforcement transactionalCompress rollback | `bun test tests/integration/rollback.test.ts` (DCP) | 0 | rollback markers emitted GREEN |
+| 5 | Legacy state migration non-destructive, schema-versioned, rollback-readable | task-child-dcp.test.ts "legacy state...", rollback.test.ts "legacy-readable", persistence SCHEMA_VERSION_CURRENT=2 | `bun test tests/integration/task-child-dcp.test.ts tests/integration/rollback.test.ts` (DCP) | 0 | schemaVersion=2, legacy loads GREEN |
+| 6 | Every active model key in modelMaxLimits at integer 150000; unrelated preserved; SOL required; Luna+Terra per user decision | active-model-limits.test.ts (5) + verify_dcp_limits.py | `bun test tests/active-model-limits.test.ts`; `python scripts/verify_dcp_limits.py ...` | 0/0 | 5/5 GREEN; PASS dcp-limits (7 required, 18 extras preserved) |
+| 7 | Enforcement: transactional compression, tool unavailable, ignored nudge, still-over-limit, incompatible, reentrancy, handoff/no-drop | context-limit-enforcement.test.ts (10) + task-child-dcp enforcement integration cases | `bun test tests/context-limit-enforcement.test.ts tests/integration/task-child-dcp.test.ts` (DCP) | 0 | 10/10 + enforcement integration GREEN |
+| 8 | Telemetry: 6 events once per transition, no message/tool body | telemetry-events.test.ts (6) + task-child-dcp telemetry integration | `bun test tests/telemetry-events.test.ts` (DCP) | 0 | 6/6 GREEN; sha256-redacted, content-free |
+| 9 | Conductor guardrail: split/handoff before ~140K; bounded-phase limits prevent 100-200-call loops | conductor_context_guard.Tests.ps1 -Mode ValidateSkill + ValidateAgents | `pwsh -NoProfile -File .../conductor_context_guard.Tests.ps1 -Mode ValidateSkill` / `-Mode ValidateAgents` | 0/0 | PASS conductor-guardrail + conductor-agents |
+| 10 | Both upstream suites + integration + type checks + rollback pass from pinned clean source | DCP full `bun test`; opencode full `bun test --timeout 30000`; DCP typecheck `bun run typecheck` | see above | DCP=1 (pre-existing prompts); opencode=TIMEOUT; DCP typecheck=0 | PARTIAL/BLOCKED - see artifacts/full-suite-results.json + 5.2 blocker. DCP has 1 PRE-EXISTING unrelated prompts.test.ts node:test failure (proven at clean commit 85b6f5c). opencode full suite timed out (>600s) under isolated env; targeted permission suites 34/34 + opencode pkg typecheck exit 0. Integration (5.1), rollback (5.3), canary (5.4) all GREEN. |
+| 11 | Completion Hygiene gate passes | validate_track_closeout.py | `python scripts/validate_track_closeout.py ...` | 0 (bookkeeping) | 0 FAIL (bookkeeping consistent); open blocked tasks: 0.1 (RCA needs content columns), 5.2 (full-suite all-zero gate), F.4 (Stage 7/9 - deferred to later agents) |
+
+## Open / blocked items (honest)
+- **0.1 RCA evidence** - BLOCKED: required aggregates (200/22/0) need message/part content columns (forbidden by no-content rule). See artifacts/rca-evidence-blockers-*.md.
+- **5.2 full suites all-zero gate** - BLOCKED: DCP `bun test` exits 1 on a pre-existing unrelated prompts.test.ts node:test subtest limitation (proven at pinned clean commit); opencode full suite timed out under isolated env. See artifacts/full-suite-results.json.
+- **F.4 terminal closeout** - DEFERRED: independent Stage 7/8 validation + Stage 9 docs belong to later agents (per current task scope).
+
+## Pinned source revisions
+- opencode core: `C:\development\opencode-core-dcp-fix` @ 45cd8d76920839e4a7b6b931c4e26b52e1495636 (branch dev, MIT, anomalyco)
+- DCP plugin: `C:\development\opencode-dcp-child-fix` @ 85b6f5ceba144fee9e65eb28dc36cab1b960e418 (branch master, AGPL-3.0-or-later, Opencode-DCP)
