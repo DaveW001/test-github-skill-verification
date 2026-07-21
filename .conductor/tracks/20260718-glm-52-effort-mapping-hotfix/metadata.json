@@ -1,0 +1,63 @@
+{
+  "track_id": "20260718-glm-52-effort-mapping-hotfix",
+  "title": "GLM-5.2 High/Max Effort-Mapping Hotfix",
+  "type": "bugfix",
+  "track_type": "code",
+  "status": "planned",
+  "phase": "ready-for-execution",
+  "classification": "certain",
+  "created": "2026-07-18",
+  "completed": null,
+  "estimated_hours": "3-5 hours immediate work plus a dated one-week reevaluation",
+  "assigned_to": "Build agent",
+  "pipeline_mode": "standard",
+  "pipeline_path": "1 -> 5 -> 7 -> 9 -> dated reevaluation -> closeout",
+  "pipeline_rationale": "The change affects active global model routing and incurs real-provider validation calls, but does not modify OpenCode application code. Independent validation and a delayed reevaluation are warranted.",
+  "skipped_stages": [
+    "Stage 2 plan review is optional because the user required an execution-ready plan with deterministic checks.",
+    "Stage 4 RED test writing is replaced by preserved live baseline evidence and a local transport-shape regression mode.",
+    "Stage 6 separate test runner is replaced by the diagnostic script's deterministic local mode and live response-token parser."
+  ],
+  "test_framework": "Python 3 standard library plus OpenCode CLI",
+  "test_command": "python scripts/diagnostics/test_glm_thinking_levels.py --mode request-shape --output .conductor/tracks/20260718-glm-52-effort-mapping-hotfix/evidence/request-shape-after.json",
+  "restart_required": true,
+  "reevaluation_not_before": "2026-07-25",
+  "progress": {
+    "total_tasks": 18,
+    "completed_tasks": 0,
+    "percentage": 0
+  },
+  "summary": "Swap GLM-5.2 high/max outbound effort mappings while preserving logical labels, document the token anomaly, validate immediately, and reevaluate after one week.",
+  "key_outcomes": [
+    "Logical high remains the default but maps to the empirically lower-token outbound max value.",
+    "Logical max remains opt-in and maps to the empirically higher-token outbound high value.",
+    "None remains live-validated at zero reasoning tokens.",
+    "A reusable nine-call benchmark supports immediate and one-week comparisons."
+  ],
+  "risks": [
+    "Small-sample stochastic variance can invert high/max token ordering.",
+    "Logical labels and transport values can be confused during future maintenance.",
+    "Config-time changes do not affect already-running OpenCode processes until restart."
+  ],
+  "dependencies": [
+    "OpenCode CLI 1.18.1 or later",
+    "Active Z.AI Coding Plan credentials for live mode",
+    "Python 3.11 or later"
+  ],
+  "blocking": [],
+  "related_tracks": [
+    "20260622-glm-52-non-thinking-variant"
+  ],
+  "deliverables": [
+    "Swapped GLM-5.2 effort mapping in canonical global JSONC",
+    "Reusable local/live diagnostic",
+    "Incident and remediation documentation",
+    "Immediate and one-week token evidence"
+  ],
+  "validation_criteria": [
+    "Local transport capture matches the four-case expected mapping",
+    "Immediate and one-week live runs each contain nine successful calls",
+    "All none calls report zero reasoning tokens",
+    "One-week high-to-max generated-token ratio is calculated and dispositioned"
+  ]
+}
