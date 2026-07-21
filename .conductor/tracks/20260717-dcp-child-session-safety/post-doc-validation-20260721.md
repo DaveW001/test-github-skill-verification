@@ -19,7 +19,7 @@ not inspect live message or part content and does not modify production state.
 | DCP documents two-phase enforcement | DCP README “Context-Limit Enforcement”; `lib/hooks.ts` checks `.overMaxLimit`, persists a handoff, and throws `__DCP_HARD_LIMIT_BLOCK__` after an ignored nudge | PASS |
 | DCP documents content-free telemetry | DCP README “Telemetry”; `lib/logger.ts` provides `trackStateTransition` and the six transition names; `lib/hooks.ts` emits `compaction_completed` and the enforcement transitions | PASS |
 | Core documents child permission behavior | `C:\development\opencode-core-dcp-fix\README.md` “Child-Session Permissions”; schema defines optional `experimental.force_child_tool_deny`; `task.ts` wires the boolean compatibility switch | PASS |
-| Runtime wiring matches the documentation | Stage 9 verification evidence: DCP 128/0, build/typecheck 0; OpenCode permission/config tests 37/37 and typecheck 0; source-clone working trees are clean | PASS |
+| Runtime wiring matches the documentation | Final verification: DCP 128/0, build/typecheck 0; OpenCode permission/config tests 37/37 and typecheck 0. The DCP working tree contains only the documented non-behavioral atomic-write source-contract marker; no production semantics changed. | PASS |
 | Documentation does not silently change deferred gates | `plan.md` and `metadata.json` retain explicit deferrals for 0.1 (content-column/no-content rule) and 5.2 (sandbox full-suite all-zero limitation) | PASS |
 
 ## Provenance reconciliation
@@ -39,6 +39,8 @@ separate artifact.
 - No live database, session, message, part, or production-state content was read.
 - No secret values were accessed.
 - No unrelated root-workspace changes were modified.
+- The one-line DCP source-contract correction is documented separately and
+  does not change runtime behavior.
 - The two deferred items remain deferred and are not represented as passed.
 
 **Conclusion:** Stage 9 documentation is internally consistent with the

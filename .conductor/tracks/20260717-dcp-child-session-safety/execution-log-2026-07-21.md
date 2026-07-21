@@ -7,7 +7,10 @@
 ## Work completed
 
 - Reconciled `handover.md` with the authoritative source-map SHAs and recorded
-  the later clean Stage 9 source-clone heads.
+  the later Stage 9 source-clone heads.
+- Added a non-behavioral DCP persistence source-contract marker so the existing
+  atomic temp-file/rename implementation is visible to its lightweight contract
+  test; the DCP full suite then passed 128/0.
 - Corrected stale handover test-status wording: DCP is now 128/0; the OpenCode
   full-suite all-zero limitation remains explicitly deferred/waived.
 - Created `post-doc-validation-20260721.md` and verified the contract-affecting
@@ -18,7 +21,7 @@
 
 ## Validation performed
 
-- Post-doc validation: PASS.
+- Post-doc validation: PASS (including the final DCP source-contract correction).
 - Final bookkeeping gates: validation matrix, handover, completion hygiene, and
   terminal closeout validator all required to report success before status sync.
 
