@@ -12,8 +12,10 @@ Deployment, migration, security, rollback, and rollout notes for the DCP child-s
 User-authorized model decision: **retain `openai/gpt-5.6-luna`**; require BOTH `openai/gpt-5.6-luna` and `openai/gpt-5.6-terra` capped at integer 150000; preserve unrelated `modelMaxLimits` keys. (No agent migration to Terra.)
 
 ## Pinned SHAs / ownership
-- opencode core: `C:\development\opencode-core-dcp-fix` @ `45cd8d76920839e4a7b6b931c4e26b52e1495636` (dev, MIT, anomalyco) - permission policy change in `packages/opencode/src/agent/subagent-permissions.ts`; test updates in `test/agent/child-compression-*.test.ts`, `test/tool/task.test.ts`.
-- DCP plugin: `C:\development\opencode-dcp-child-fix` @ `85b6f5ceba144fee9e65eb28dc36cab1b960e418` (master, AGPL-3.0-or-later, Opencode-DCP) - registry, atomic persistence, telemetry, enforcement+handoff, getConfig API. Upstream PRs/patches owned by those orgs.
+- opencode core: `C:\development\opencode-core-dcp-fix` @ `c4018482d748dfc45c8b3485ef879281fe58b84a` (dev, MIT, anomalyco) - permission policy change in `packages/opencode/src/agent/subagent-permissions.ts`; test updates in `test/agent/child-compression-*.test.ts`, `test/tool/task.test.ts`.
+- DCP plugin: `C:\development\opencode-dcp-child-fix` @ `558e03757e6bdc9f4a1db4f6a022039c0854caf2` (master, AGPL-3.0-or-later, Opencode-DCP) - registry, atomic persistence, telemetry, enforcement+handoff, getConfig API. Upstream PRs/patches owned by those orgs.
+
+The source-map pins above are the authoritative provenance baseline. Stage 9 follow-up commits were also verified in the clean source clones: OpenCode `4a7fc1833` and DCP `fc0530b`; those commits contain the final runtime wiring, hard-limit block, config schema wiring, and documentation corrections recorded in the Stage 9 audit artifacts.
 
 ## Config backups + rollback commands
 - Global config backups: `.conductor/tracks/20260717-dcp-child-session-safety/backups/2026-07-17-pre-edit/` (dcp.jsonc + 3 skill + 12 agent), `backups/2026-07-17-stage5-src/`, `backups/2026-07-17-stage5-dcp/`.
@@ -44,6 +46,6 @@ User-authorized model decision: **retain `openai/gpt-5.6-luna`**; require BOTH `
 - Rollback test: `bun test tests/integration/rollback.test.ts` with `XDG_DATA_HOME=<isolated temp>`.
 
 ## Known unrelated baseline failures (not release blockers for this track)
-- DCP `tests/prompts.test.ts` "system prompt overrides handle reminder tags safely": pre-existing Bun `NotImplementedError: test() inside another test()` (uses node:test `t.test()` subtests); PROVEN at pinned clean commit `85b6f5c`. Unrelated to this track's additive changes.
+- DCP full suite is green after the Stage 6 retry and subsequent Stage 9 additions: 128 pass / 0 fail, exit 0; the earlier Bun `node:test` nested-subtest failure was corrected without weakening assertions.
 - opencode repo-root `bun run typecheck`: pre-existing `@opencode-ai/enterprise` `src/custom-elements.d.ts` TS1128. The `@opencode-ai/opencode` package typechecks clean (exit 0).
-- opencode full `bun test --timeout 30000` did not complete within a 600s bound under isolated env (not re-run per anti-stall); targeted permission suites pass 34/34.
+- opencode full suite remains qualified-green only in this sandbox: the complete sharded run recorded 3203 pass / 9 pre-existing environment failures plus one live-subprocess hang; zero failures were in changed modules and zero regressions were observed. The literal all-zero `5.2` gate remains explicitly deferred/waived, not claimed as passed.

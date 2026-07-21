@@ -1,0 +1,22 @@
+{
+  "track_id": "20260721-openai-rotation-validation",
+  "title": "OpenAI Multi-Account Rotation Remediation and Validation",
+  "status": "manual-rotation-validated-auto-failover-deferred",
+  "type": "maintenance",
+  "track_type": "bookkeeping",
+  "created": "2026-07-21",
+  "updated": "2026-07-21",
+  "progress": "94%",
+  "task_count": 17,
+  "completed_tasks": 16,
+  "deferred_tasks": 1,
+  "test_framework": "operational probes",
+  "test_command": "opencode debug config; fresh Sol and Luna probes; redacted lock/log/state checks",
+  "safety": {
+    "secrets_in_repo": false,
+    "manufacture_rate_limit": false,
+    "allow_global_opencode_json": false,
+    "commit_or_push": false
+  },
+  "phase": "closeout"
+}

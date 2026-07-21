@@ -20,3 +20,4 @@ nul
 
 # temp stage6 output files
 stage6-*
+.opencode/

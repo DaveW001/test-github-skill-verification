@@ -1,9 +1,9 @@
 {
   "trackId": "20260717-dcp-child-session-safety",
   "title": "DCP Protection for Task-Created Child Sessions",
-  "status": "in_progress",
+  "status": "complete",
   "created": "2026-07-17",
-  "completed": null,
+  "completed": "2026-07-21",
   "estimatedHours": "40-80",
   "assignedTo": "Build",
   "type": "bugfix",
@@ -37,10 +37,10 @@
   ],
   "progress": {
     "totalTasks": 29,
-    "completedTasks": 26,
-    "percentage": 90,
+    "completedTasks": 27,
+    "percentage": 93,
     "deferredTasks": 2,
-    "pendingTasks": 1,
+    "pendingTasks": 0,
     "nonDeferred": 27
   },
   "summary": "Remove the blanket Task-child compression denial, make DCP state session-aware, cap all active exact model keys at 150K, and add safe enforcement plus Conductor pre-140K containment.",
@@ -89,9 +89,9 @@
     "2026-07-19 Stage 9 post-doc reopened Stage 5 (tier 1, zai-coding-plan/glm-5.2): fixed real runtime wiring gap (product code, not docs). index.ts now resolves per-session state via sessionStateRegistry.getOrCreate for ALL hooks + compress tool (no shared mutable state); hooks.ts handlers backward-compat (SessionState|resolver); chat transform wires hard-limit enforcement (isContextOverLimits -> generateHandoff persisted) + 6 telemetry transitions (trackStateTransition, once-per-transition, redacted); event handler emits compaction_completed; compress pipeline rebinds per-session state. New tests/integration/plugin-wiring.test.ts (4 tests) drives real hook factories + real registry resolver concurrently -> independent per-session state. Verification: DCP full 127/0 exit 0, build exit 0 (dist 284.71KB), DCP typecheck exit 0, OpenCode permission 34/34 + typecheck exit 0. Audit correction audit-correction-2026-07-19-stage9-runtime-wiring.md documents the prior false-positive helper-only validation. 3.1-3.6 now genuinely complete (real wiring). Completion counts unchanged (26 completed / 2 deferred / 1 pending Stage9). No commit/push; isolated temp storage; no content reads.",
     "2026-07-19 Stage 9 reopen continued (tier 1, zai-coding-plan/glm-5.2): fixed both previously-admitted unmet behaviors (no docs). A) Hard-limit BLOCK: messages.transform throws __DCP_HARD_LIMIT_BLOCK__ when overMaxLimit + prior-nudge-ignored -> yield* propagation in prompt.ts:1255 aborts the request (fail-fast/restart); handoff persisted, originals preserved (no destructive prune on block path). Fixed latent isContextOverLimits object-vs-boolean bug (.overMaxLimit). Block integration test added. B) forceChildToolDeny config-wired: added force_child_tool_deny to authoritative Effect Schema (packages/core/src/v1/config/config.ts experimental struct, default absent=eligible); task.ts passes cfg.experimental?.force_child_tool_deny === true; parse/resolution test added (3 tests). Verification: DCP full 128/0 + build exit 0; Core typecheck 0 + core config test 15/15; OpenCode typecheck 0 + permission/parse 37/37. No commit/push; isolated temp storage; no content reads. Completion counts unchanged."
   ],
-  "phase": "stage7+stage8 reconciled; ready for Stage 9 (docs + mandatory post-doc validation + terminal closeout)",
-  "executed_at": "2026-07-19",
-  "executor_model": "zai-coding-plan/glm-5.2",
+  "phase": "terminal closeout complete",
+  "executed_at": "2026-07-21",
+  "executor_model": "local-build",
   "executor_tier": 1,
-  "last_reconciled": "2026-07-19"
+  "last_reconciled": "2026-07-21"
 }
