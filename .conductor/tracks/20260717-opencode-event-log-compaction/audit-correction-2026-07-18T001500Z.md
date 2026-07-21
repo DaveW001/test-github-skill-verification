@@ -124,3 +124,8 @@ None of this evidence was produced. While the 0-candidate finding is legitimate 
 - Plan: 25/42 complete (59.5%), 17 unchecked
 - Phase 6: HARD STOP (no authorization)
 - Metadata/ledgers: reconciled and consistent
+---
+
+## SUPERSESSION NOTE (2026-07-20T20:00:00Z)
+
+**This correction is a historical record.** The progress counts it set (`completedTasks=25`, `percentage=59.5%`) were superseded by the 2026-07-20 reconciliation, which re-checked tasks 4.8 and 5.4-5.7 based on post-restart evidence (skill_find/skill_use confirmed) and synthetic-fixture equivalence. Current state: 40/42 (95.2%), status `reconciled-post-restart`. See `execution-log-2026-07-20-reconciliation.md` and `audit-correction-addendum-2026-07-20T200000Z.md`.

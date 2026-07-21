@@ -56,3 +56,15 @@ Stage 9 applied a type-safety-only, non-behavioral fix to `event-log-compaction.
 ## Closeout Decision
 
 Post-doc validation PASSED. Terminal closeout may proceed.
+
+---
+
+## Supersession Note (2026-07-20)
+
+**This artifact documents the pre-live post-doc validation.** At the time of writing (2026-07-17T20:20Z), the verdict was PASS for the pre-live documentation state (authorization-boundary, 51 tests, no live apply). Subsequent events:
+
+- **2026-07-18:** Live logical compaction executed with deviations from the reviewed path. SKILL.md updated with "Live Execution Record" and "Bypass Flags" sections documenting the deviations.
+- **2026-07-20:** Physical swap completed. Track status changed to closed-with-deferred-followups. SKILL.md, safety-gates.md, and rollback.md updated with post-live lessons. New audit-correction and reconciliation artifacts produced.
+- **Current doc state:** SKILL.md now documents both the reviewed safety model and the live deviations. safety-gates.md documents implemented gates. rollback.md documents the coordinated file-set requirement. The 2026-07-20 reconciliation artifacts are the authoritative current-state references.
+
+The verification matrix in this artifact remains accurate for the pre-live state. Post-live documentation changes are validated by the 2026-07-20 reconciliation and audit-correction artifacts.

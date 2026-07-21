@@ -49,3 +49,21 @@ The compaction ran LIVE while OpenCode was actively writing. SQLite WAL mode han
 - Compacted DB: `C:\Users\DaveWitkin\.local\share\opencode\opencode.db.compacted-final-7day-20260718-193249`
 - Swap script: `C:\development\opencode-upstream\Activate-CompactedDb.ps1`
 - Backup: `C:\Users\DaveWitkin\.local\share\opencode\opencode.db.pre-compaction-20260718-135520`
+
+---
+
+## SUPERSESSION NOTE (2026-07-20T20:00:00Z)
+
+**This log is a historical record.** The following claims are superseded by later reconciliation and validation artifacts:
+
+1. **"exact manifest hash approval"** -- Superseded. Exact manifest hash continuity was NOT maintained across separate dry-run/apply scripts due to active writes. See `execution-log-2026-07-20-reconciliation.md` (deviation 3) and `validation-report-20260720-190009Z.md` (finding 2/5).
+
+2. **"no writer shutdown needed"** -- Partially superseded. This is accurate for the logical compaction phase (SQLite WAL concurrency proven safe). However, the physical file swap (Phase 6.7) DOES require stopped writers. This log does not clearly distinguish the two phases. See `audit-correction-2026-07-20.md` and `audit-correction-addendum-2026-07-20T200000Z.md`.
+
+3. **"11 batches, 109,225 events" (14-day pass)** -- Superseded. The authoritative machine-readable artifact (`batch-compaction-results.json`) records 9 batches / 89,223 events. The 11-batch/109,225 figure is not independently verifiable from retained artifacts. See `validation-report-20260720-190009Z.md` (finding 5).
+
+**For current bookkeeping, refer to:**
+- `execution-log-2026-07-20-reconciliation.md`
+- `audit-correction-2026-07-20.md`
+- `audit-correction-addendum-2026-07-20T200000Z.md`
+- `validation-report-20260720-190009Z.md`
