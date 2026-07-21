@@ -1,0 +1,55 @@
+{
+  "trackId": "20260720-opencode-db-activation-safety",
+  "title": "OpenCode Database Activation Safety Remediation",
+  "status": "validated",
+  "created": "2026-07-20",
+  "estimatedHours": "8-16",
+  "assignedTo": "Build agent",
+  "type": "bugfix",
+  "track_type": "code",
+  "classification": "certain",
+  "risk_level": "high",
+  "pipeline_mode": "full",
+  "pipeline_path": "1 -> 2 -> 4 -> 4b -> 5 -> 6 -> 7 -> [8 conditional] -> 9",
+  "pipeline_rationale": "The affected scripts replace persistent SQLite DB/WAL/SHM state. RED fault-injection tests, recoverability evidence, independent validation, and honest documentation are mandatory.",
+  "planning_review": {
+    "status": "accepted",
+    "date": "2026-07-20",
+    "artifact": "planning-review-2026-07-20.md"
+  },
+  "test_framework": "Pester disposable SQLite fixtures plus PowerShell parser/static checks",
+  "test_command": "Invoke-Pester C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-event-log-compactor\\tests\\DatabaseActivationSafety.Tests.ps1 -EnableExit; Invoke-Pester C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-event-log-compactor\\tests\\ProductionEntrypoint.Tests.ps1 -EnableExit",
+  "summary": "Remove unsafe force-kill activation behavior, add explicit writer/handle gates and journaled partial-failure recovery, and prove activation/restoration safety on disposable fixtures without touching the live OpenCode database.",
+  "relatedTracks": [
+    "20260717-opencode-event-log-compaction"
+  ],
+  "sourceValidationReports": [
+    "C:\\development\\opencode\\.conductor\\tracks\\20260717-opencode-event-log-compaction\\validation-report-20260720-200653Z.md",
+    "C:\\development\\opencode\\.conductor\\tracks\\20260717-opencode-event-log-compaction\\validation-blockers-20260720-200653Z.md"
+  ],
+  "deliverables": [
+    "Hardened Activate-CompactedDb.ps1 wrapper",
+    "Journaled and recoverable Switch-ValidatedDatabase.ps1",
+    "Journaled and recoverable Restore-OpenCodeDatabase.ps1",
+    "Disposable fault-injection Pester suite",
+    "Corrected skill/runbook/evidence documentation"
+  ],
+  "validationCriteria": [
+    "No force-kill or direct active-set mutation remains in the activation wrapper",
+    "Writer, maintenance-lock, and exclusive-handle gates fail closed",
+    "Every injected partial transition recovers byte-for-byte or preserves an explicit manual-recovery state",
+    "Successful disposable activation and restore pass SQLite quick_check without stale sidecars",
+    "Parent evidence rows and deferred live checks are represented honestly"
+  ],
+  "safetyConstraints": [
+    "No live OpenCode DB access or mutation",
+    "No OpenCode shutdown or process termination",
+    "No rollback, VACUUM, backup deletion, commit, or push",
+    "Preserve all existing recovery artifacts"
+  ],
+  "blocking": [],
+  "progress": 22,
+  "completedTasks": 22,
+  "totalTasks": 22
+}
+
