@@ -1,0 +1,18 @@
+{
+  "captured_at": "2026-07-19T02:06:55Z",
+  "purpose": "Pre-next-Stage9 documentation baseline: SHA-256 hashes of both READMEs so docs-only provenance can be verified after Stage 9 edits.",
+  "files": [
+    {
+      "name": "opencode-core",
+      "path": "C:\\development\\opencode-core-dcp-fix\\README.md",
+      "sha256": "264168A61A8B7136EF2DFB7BA17AD322CA7A70519BB6FA4013A970D5B90C0592",
+      "bytes": 6091
+    },
+    {
+      "name": "dcp",
+      "path": "C:\\development\\opencode-dcp-child-fix\\README.md",
+      "sha256": "3E289BDCAB090734A5F9826182F7D6297A73B7DA70B55E7A43AD27E72E83B2ED",
+      "bytes": 15409
+    }
+  ]
+}

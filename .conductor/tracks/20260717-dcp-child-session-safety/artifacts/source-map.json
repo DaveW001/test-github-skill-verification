@@ -1,8 +1,8 @@
 {
   "opencode": {
-    "root": "C:\\development\\opencode-core-dcp-fix",
+    "root": "C:\\\\development\\\\opencode-core-dcp-fix",
     "remote": "https://github.com/anomalyco/opencode.git",
-    "commit": "45cd8d76920839e4a7b6b931c4e26b52e1495636",
+    "commit": "c4018482d748dfc45c8b3485ef879281fe58b84a",
     "branch": "dev",
     "test_command": "bun test --timeout 30000",
     "ownership": "anomalyco",
@@ -12,14 +12,14 @@
     "task_source": "packages/opencode/src/tool/task.ts"
   },
   "dcp": {
-    "root": "C:\\development\\opencode-dcp-child-fix",
+    "root": "C:\\\\development\\\\opencode-dcp-child-fix",
     "remote": "https://github.com/Opencode-DCP/opencode-dynamic-context-pruning.git",
-    "commit": "85b6f5ceba144fee9e65eb28dc36cab1b960e418",
+    "commit": "558e03757e6bdc9f4a1db4f6a022039c0854caf2",
     "branch": "master",
     "test_command": "bun test",
     "ownership": "Opencode-DCP",
     "license": "AGPL-3.0-or-later",
-    "dirty": false,
+    "dirty": true,
     "entry_source": "index.ts",
     "state_sources": [
       "lib/state/state.ts",

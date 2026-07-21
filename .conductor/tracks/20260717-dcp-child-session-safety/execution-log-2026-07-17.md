@@ -234,3 +234,51 @@ Required RCA aggregates (`audited_child_sessions==200`, `children_over_150k==22`
 
 ### Remaining (for later agents)
 0.1 RCA (needs content-access waiver), 5.2 full-suite all-zero gate, F.4 (Stage 7/8 validation + Stage 9 docs/terminal closeout).
+## Stage 6 -> Stage 5 retry (2026-07-18) - full-suite blockers resolved/evidenced
+
+**Executor:** Tier 1 `zai-coding-plan/glm-5.2`. Stage 6 verdict was RED on two full-suite conditions (71/71 acceptance tests passed). See `audit-correction-2026-07-18-stage6-retry.md` for full detail; `test-run-report-2026-07-18-212156.md` not altered.
+
+- **DCP full suite FIXED:** `tests/prompts.test.ts` flattened 3 nested `t.test()` subtests into 3 top-level `test()` calls (Bun node:test compat; identical assertion bodies; no weakening/skip; no production change). `bun test` -> **123 pass / 0 fail, exit 0** (was 120/1/exit 1).
+- **OpenCode full suite analyzed:** `vcs.test.ts` is slow (passes with `--timeout 120000`, 12/12); `instance-bootstrap.test.ts` is a live `CrossSpawnSpawner` subprocess test that hangs indefinitely in the sandbox (set aside via rename for the run, restored after). Complete sharded run: **3203 pass / 9 fail** where all 9 + the hang are pre-existing sandbox-env issues (Windows symlink limits, no Zed, AGENTS.md env, live-subprocess bootstrap) - ZERO in the track's changed modules, ZERO regressions.
+- `artifacts/full-suite-results.json` updated: dcp exit 0; opencode exit 1 (pre-existing env). all_zero=False (OpenCode literal full not all-zero due to pre-existing env).
+- Task 5.2 left `[ ]` (literal all-zero gate not met for OpenCode) per no-falsification; track deliverables remain 100% green.
+## Stage 7 -> Stage 5 validation-fix loop (2026-07-19) - disposition/provenance/audit reconciliation
+
+**Executor:** Tier 1 `zai-coding-plan/glm-5.2`. **No source behavior changes** (product tests already qualified-green). Responds to `validation-report-20260719-020453Z.md` (validator `openai/gpt-5.6-luna`).
+
+- **0.1 DEFERRED** (not completed): the required 200/22/0 RCA aggregates cannot be derived metadata-only (`session.tokens_*` are cumulative; live context + compress-calls need content columns). Plan/spec/metadata updated; follow-up = user-approved content-access waiver. No fabrication.
+- **5.2 DEFERRED/WAIVED** per user-requested continuation: DCP full is 123/0 exit 0 (green); OpenCode full is 3203 pass / 9 pre-existing sandbox-env failures + 1 live-subprocess hang, 0 changed-module regressions. Literal `all(exit_code==0)` not satisfiable in this sandbox. Future env documented (symlinks/Zed/instruction-isolation/live-subprocess). Not claimed as passed.
+- **F.4 [PENDING STAGE 9]**: Stage 7 validation complete; Stage 9 docs + post-doc + terminal closeout remain.
+- **Plan 3.3/3.6 corrected**: name-pattern drift fixed to actual test names; rerun 3.3 -> 8 pass/exit 0, 3.6 -> 3 pass/exit 0.
+- **Provenance reconciled**: `source-map.json` -> opencode `c4018482d` (clean), dcp `558e037` (dirty test-only prompts.test.ts); prior pinned values preserved in `provenance_history`. `audit-correction-2026-07-19-provenance-reconcile.md` written.
+- **Audit (immutable report defect)**: `audit-correction-2026-07-19-stage6-report-control-chars.md` lists corrected command/path tokens (test-baseline.json, execution-log, bun test/typecheck/build, artifacts/...) for the control-char defect in `test-run-report-2026-07-18-212156.md` (NOT edited in place).
+- **Bookkeeping synced**: metadata (executed_at 2026-07-19; stale luna/terra blocker cleared; progress completed=26/deferred=2/pending=1/nonDeferred=27); tracks.md + ledger dates reconciled to 2026-07-19 with deferral counts; handoff rewritten.
+
+Task-progress: 29 total = 26 completed + 2 deferred (0.1, 5.2) + 1 pending Stage 9 (F.4) = 27 non-deferred + 2 deferred.
+## Stage 8 -> final user-authorized bookkeeping correction (2026-07-19)
+
+**Executor:** Tier 1 `zai-coding-plan/glm-5.2`. **No source/test/config behavior changes; no completion-claim changes.** Responds to `validation-report-20260719-021615Z.md` + `validation-blockers-20260719-021615Z.md` (3 blockers). Stage 8 pass cap exhausted; not rerun.
+
+1. **validation-matrix.md reconciled** to post-retry truth: criterion 10 -> DCP 123/0 exit 0 + OpenCode 3203/9 qualified-green; 0.1/5.2 explicitly DEFERRED; F.4 PENDING STAGE 9; revisions c4018482d/558e037; Stage 7+8 COMPLETE. `verify_validation_matrix.py --require-all` -> PASS (11 criteria, 0 gaps).
+2. **tracks-ledger.md single canonical entry wording fixed** (5.2 "left [ ]" -> "deferred [~]"; F.4 "Stage 7/8+9 deferred" -> "pending Stage 9; Stage 7+8 complete"). Still exactly one row.
+3. **source-map.json restored to exact {opencode,dcp} top-level** (Stage 7 had added top-level provenance_history, breaking Task 0.2). Provenance history moved to `artifacts/source-map-provenance-history.json`; prior audit correction updated to reference it. Reconciled commit/dirty retained (opencode c4018482d clean; dcp 558e037 dirty test-only tests/prompts.test.ts). Exact Task 0.2 acceptance -> PASS source-map.
+
+Gates rerun: Task 0.2 PASS, F.1 PASS, F.2 PASS, F.3 0 FAIL (plan 26 [x] + 3 [~]; metadata agrees; 1 row each). Counts unchanged: 29 = 26 completed + 2 deferred (0.1, 5.2) + 1 pending Stage 9 (F.4). F.4 NOT marked complete. Artifact: `audit-correction-2026-07-19-stage8-bookkeeping-fix.md`.
+## Stage 9 post-doc -> reopened Stage 5 (2026-07-19): real runtime wiring (not helper-only)
+
+**Executor:** Tier 1 `zai-coding-plan/glm-5.2`. Post-doc validation found the DCP plugin still used ONE shared SessionState across hooks; registry/enforcement/handoff/telemetry were helper-only. Fixed the actual product (no docs this pass).
+
+- `index.ts`: removed shared `state`; added `resolveState = (sessionId) => sessionStateRegistry.getOrCreate(sessionId)` to all hooks + compress tool.
+- `lib/hooks.ts`: all 4 handlers resolve per-session state by sessionID; backward-compatible signature (`SessionState | resolver` via `asResolver`). Chat transform wires hard-limit enforcement decision (`isContextOverLimits` -> `generateHandoff` persisted to `state.compressionBackup`) + six telemetry transitions via `logger.trackStateTransition` (resolved_threshold/nudge_delivered/tool_unavailable/nudge_ignored/context_still_over_limit); event handler emits `compaction_completed`.
+- `lib/compress/types.ts` + `pipeline.ts`: `ToolContext.resolveState`; `prepareSession` rebinds `ctx.state` to the exact sessionID per compress call.
+- New `tests/integration/plugin-wiring.test.ts` (4 tests): drives real hook factories + real registry resolver concurrently -> independent per-session state, telemetry, enforcement/handoff.
+
+Verification: DCP full 127/0 exit 0; DCP build exit 0 (dist 284.71 KB); DCP typecheck exit 0; OpenCode permission 34/34 + typecheck exit 0. Audit correction: `audit-correction-2026-07-19-stage9-runtime-wiring.md`. 3.1-3.6 now genuinely complete (real wiring); no [x] unchecked.
+## Stage 9 reopen (continued, 2026-07-19): hard-limit BLOCK + config-wired forceChildToolDeny
+
+**Executor:** Tier 1 `zai-coding-plan/glm-5.2`. Fixed the two previously-admitted unmet behaviors (no docs this pass).
+
+- **A) Hard-limit BLOCK (fail-fast):** confirmed `experimental.chat.messages.transform` is triggered with `yield*` in `packages/opencode/src/session/prompt.ts:1255` and `Plugin.trigger` propagates hook errors -> a hook throw aborts the model request. Implemented in DCP `lib/hooks.ts`: when `isContextOverLimits(...).overMaxLimit` AND a prior nudge was ignored (`contextLimitAnchors.size > 0`), persist durable `generateHandoff` + telemetry, then THROW `__DCP_HARD_LIMIT_BLOCK__` before destructive pruning (originals preserved). Fixed a latent bug: `isContextOverLimits` returns `{overMaxLimit,overMinLimit}` (object) - prior boolean usage was always-truthy; now `.overMaxLimit`. New block integration test drives the actual hook -> asserts throw + handoff + originals preserved.
+- **B) Config-wired forceChildToolDeny:** added `force_child_tool_deny: Schema.optional(Schema.Boolean)` to the authoritative Effect Schema in `packages/core/src/v1/config/config.ts` (experimental struct; default absent=eligible). Wired `packages/opencode/src/tool/task.ts` to pass `forceChildToolDeny: cfg.experimental?.force_child_tool_deny === true`. New parse/resolution test (`child-compression-config-parse.test.ts`, 3 tests) proves eligible/compatibility-deny resolution via `Schema.decodeUnknownSync(ConfigV1.Info)`.
+
+Verification: DCP full 128/0 exit 0; DCP build exit 0 (dist 285.74KB); Core typecheck exit 0 + core config test 15/15; OpenCode typecheck exit 0 + permission/parse 37/37. Artifact: `audit-correction-2026-07-19-stage9-block-and-config.md`.
