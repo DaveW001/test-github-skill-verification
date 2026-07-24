@@ -24,7 +24,7 @@ opencode debug config | rg "@tarquinen/opencode-dcp|plugin"
 
 Source repo used for validation:
 
-- `C:\development\temp\opencode-dynamic-context-pruning`
+- `C:\development\opencode-dcp-child-fix`
 
 Validation command run in that repo:
 
@@ -50,16 +50,28 @@ Note:
 - Conductor track root: `C:\development\opencode\.conductor\tracks\20260314-dcp-install-validation`
 - Conductor validation log: `C:\development\opencode\.conductor\tracks\20260314-dcp-install-validation\artifacts\validation-log.md`
 
+## Child-Session Safety (2026-07)
+
+The DCP plugin was hardened to protect Task-created child sessions:
+
+- Per-session state isolation via SessionStateRegistry (no shared mutable global)
+- Default compression eligibility for child sessions (blanket deny removed; opt-in via experimental.force_child_tool_deny)
+- Blocking-pending-compression enforcement with durable handoff fallback
+- Content-free telemetry (6 transition events, SHA-256 redacted session IDs)
+- 150K token caps for all active model identities
+
+Source checkout: C:\development\opencode-dcp-child-fix
+Track: C:\development\opencode\.conductor\tracks\20260717-dcp-child-session-safety
 ## Do we need to keep the local cloned repo?
 
-Short answer: **No, it is safe to delete** if you do not plan to modify or re-run plugin source tests right now.
+Short answer: The runtime does not need a local clone to function, but the current source checkout contains unmerged child-session-safety work and should NOT be deleted until upstreamed.
 
 Reason:
 
-- OpenCode uses the configured plugin package (`@tarquinen/opencode-dcp@latest`) from config resolution, not the local clone in `C:\development\temp\opencode-dynamic-context-pruning`.
+- OpenCode uses the configured plugin package (`@tarquinen/opencode-dcp@latest`) from config resolution, not the local clone in `C:\development\opencode-dcp-child-fix`.
 
-If you want to delete it now:
+If the work has been upstreamed and you want to clean up:
 
 ```bash
-rm -rf "C:\development\temp\opencode-dynamic-context-pruning"
+rm -rf "C:\development\opencode-dcp-child-fix"
 ```
