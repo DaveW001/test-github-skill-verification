@@ -21,3 +21,5 @@ nul
 # temp stage6 output files
 stage6-*
 .opencode/
+# Conductor validator lock (runtime mutex, not a work product)
+.conductor/.validator-alternation.json.lock
