@@ -1,0 +1,14 @@
+{
+  "canonical_name": "conductor-track-executor",
+  "configured_model": null,
+  "configured_variant": null,
+  "configured_mode": null,
+  "working_directory": "<disposable-fixture-directory> (would be created fresh; not created here)",
+  "allowed_tools": "read-only inspection only; no edit/bash mutation, no task spawn, no external services",
+  "prohibited_effects": "no messages, no publish, no calendar/schedule changes, no credentials, no production mutation, no delete/archive/rename/merge, no restart, no commit/push",
+  "fixture_prompt": "State your role in one sentence and list the absolute path of your definition file. Do not call any tools, do not read other files, do not spawn agents, do not use credentials.",
+  "expected_output_shape": "one short paragraph; exit 0; no tool calls",
+  "intended_command_envelope": "opencode run --pure --agent \"<name>\" --format json --dir \"<disposable-fixture>\" \"<fixture_prompt>\"",
+  "dispatch_status": "NOT_DISPATCHED",
+  "not_dispatched_reason": "live opencode run is unsafe/unavailable in this environment: the opencode CLI hangs (opencode models produced no output and timed out), and a live agent session cannot be bounded to the 20-tool-call/10K-token cap from the dispatch side and may require a running server/auth. Recorded AGENT_SMOKE_UNVERIFIED; no model substituted."
+}

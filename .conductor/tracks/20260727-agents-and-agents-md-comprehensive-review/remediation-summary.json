@@ -1,0 +1,12 @@
+{
+  "trackId": "20260727-agents-and-agents-md-comprehensive-review",
+  "status": "remediated",
+  "actions_completed": [
+    "Fixed Codex CLI config.toml schema error by converting [agents] string key to struct [agents.default].",
+    "Fixed opencodex-catalog.json schema errors by updating non-standard effort levels max and ultra to xhigh, enabling codex features list to exit 0.",
+    "Audited all 25 custom OpenCode agent definition files under C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\*.md and generated agent-audit-manifest.json.",
+    "Extracted and statically tested all referenced file paths across all 69 target files, producing static-reference-resolution-matrix.json with 0 unverified REF-02 deferrals.",
+    "Added missing Markdown headings to structural outliers in opencode-core-dcp-fix and opencode-upstream packages.",
+    "Added explicit cross-client fallback instructions to command-center AGENTS.md for Firebase Deployment Specialist skill."
+  ]
+}

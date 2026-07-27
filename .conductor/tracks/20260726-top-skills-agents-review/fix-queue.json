@@ -1,0 +1,424 @@
+{
+  "trackId": "20260726-top-skills-agents-review",
+  "generated_at_utc": "2026-07-26T22:11:59+00:00",
+  "skill_fixes": [
+    {
+      "id": "FIX-SKILL-001-clickup-SCRIPT_04_SYNTAX",
+      "artifact_type": "skill",
+      "canonical_name": "clickup",
+      "canonical_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup\\SKILL.md",
+      "rubric_item": "SCRIPT_04_SYNTAX",
+      "severity": "Major",
+      "evidence_reference": "review-batches/skills/clickup.json item SCRIPT_04_SYNTAX; evidence/skill-smoke-tests/harness-results.json",
+      "before_intent": "skill script(s) fail the authoritative skill-test-harness SCRIPT SYNTAX check",
+      "after_intent": "failing script(s) corrected to pass harness SCRIPT SYNTAX without changing capability or authority",
+      "safety_classification": "Major structural defect; fix is script-syntax only; no capability/permission expansion",
+      "authority_delta": "none",
+      "status": "applied",
+      "status_note": "input_validation.py + test_input_validation.py syntax fixes applied; unreferenced truncated patch_script.py removed with Dave's explicit approval; harness SCRIPT SYNTAX now PASS"
+    },
+    {
+      "id": "FIX-SKILL-002-opencode-event-log-compactor-SCRIPT_04_SYNTAX",
+      "artifact_type": "skill",
+      "canonical_name": "opencode-event-log-compactor",
+      "canonical_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-event-log-compactor\\SKILL.md",
+      "rubric_item": "SCRIPT_04_SYNTAX",
+      "severity": "Major",
+      "evidence_reference": "review-batches/skills/opencode-event-log-compactor.json item SCRIPT_04_SYNTAX; evidence/skill-smoke-tests/harness-results.json",
+      "before_intent": "skill script(s) fail the authoritative skill-test-harness SCRIPT SYNTAX check",
+      "after_intent": "failing script(s) corrected to pass harness SCRIPT SYNTAX without changing capability or authority",
+      "safety_classification": "Major structural defect; fix is script-syntax only; no capability/permission expansion",
+      "authority_delta": "none",
+      "status": "applied",
+      "status_note": "Switch-ValidatedDatabase.ps1 PS5.1 null-safe fix applied; harness SCRIPT SYNTAX now PASS"
+    }
+  ],
+  "skill_no_fix_dispositions": [
+    {
+      "canonical_name": "conductor",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "doc",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "clickup",
+      "rubric_item": "STRUCT_01_ENTRYPOINT_SIZE",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "conciseness bound is a heuristic; the skill is an established large reference entrypoint -- refactoring is a content decision for Dave, not an in-scope safe fix"
+    },
+    {
+      "canonical_name": "clickup",
+      "rubric_item": "STRUCT_03_ONE_LEVEL_REFERENCES",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "broken internal reference detected; needs case-by-case validation -- recorded as Optional for Dave decision"
+    },
+    {
+      "canonical_name": "clickup",
+      "rubric_item": "TROUBLE_04_REFERENCE_EXISTENCE",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "reference existence flag mirrors STRUCT_03; same Optional disposition"
+    },
+    {
+      "canonical_name": "conductor-pipeline",
+      "rubric_item": "STRUCT_01_ENTRYPOINT_SIZE",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "conciseness bound is a heuristic; the skill is an established large reference entrypoint -- refactoring is a content decision for Dave, not an in-scope safe fix"
+    },
+    {
+      "canonical_name": "conductor-pipeline",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "git-push",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "retrospective",
+      "rubric_item": "STRUCT_01_ENTRYPOINT_SIZE",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "conciseness bound is a heuristic; the skill is an established large reference entrypoint -- refactoring is a content decision for Dave, not an in-scope safe fix"
+    },
+    {
+      "canonical_name": "retrospective",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "skill-creator",
+      "rubric_item": "STRUCT_03_ONE_LEVEL_REFERENCES",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "broken internal reference detected; needs case-by-case validation -- recorded as Optional for Dave decision"
+    },
+    {
+      "canonical_name": "skill-creator",
+      "rubric_item": "TROUBLE_04_REFERENCE_EXISTENCE",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "reference existence flag mirrors STRUCT_03; same Optional disposition"
+    },
+    {
+      "canonical_name": "opencode-scheduler",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "opencode-scheduler",
+      "rubric_item": "TRIG_02_SUGGEST_ONLY_TRUE",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "triggers.suggest_only not true; changing trigger behavior is an authority/behavior decision for Dave"
+    },
+    {
+      "canonical_name": "humanizer",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "osgrep",
+      "rubric_item": "DESC_01_WHAT_WHEN_KEYWORDS",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "description keyword heuristic; content wording decision for Dave"
+    },
+    {
+      "canonical_name": "osgrep",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "osgrep",
+      "rubric_item": "TRIG_02_SUGGEST_ONLY_TRUE",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "triggers.suggest_only not true; changing trigger behavior is an authority/behavior decision for Dave"
+    },
+    {
+      "canonical_name": "pptx-from-layouts",
+      "rubric_item": "STRUCT_01_ENTRYPOINT_SIZE",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "conciseness bound is a heuristic; the skill is an established large reference entrypoint -- refactoring is a content decision for Dave, not an in-scope safe fix"
+    },
+    {
+      "canonical_name": "pptx-from-layouts",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "pptx-from-layouts",
+      "rubric_item": "TEST_01_ACTIVATION",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no explicit activation section detected by heuristic; existing skills rely on description activation -- Optional"
+    },
+    {
+      "canonical_name": "pptx-from-layouts",
+      "rubric_item": "SCOPE_02_REALISTIC_TRIGGERS",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "trigger-signal heuristic; existing skills activate via description -- Optional"
+    },
+    {
+      "canonical_name": "pre-delivery-ai-review",
+      "rubric_item": "STRUCT_01_ENTRYPOINT_SIZE",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "conciseness bound is a heuristic; the skill is an established large reference entrypoint -- refactoring is a content decision for Dave, not an in-scope safe fix"
+    },
+    {
+      "canonical_name": "pre-delivery-ai-review",
+      "rubric_item": "GUARD_03_CONCISE_ACTIONABLE_EXAMPLES",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no examples detected by heuristic; adding examples is a content improvement -- Optional"
+    },
+    {
+      "canonical_name": "image-ocr",
+      "rubric_item": "DESC_02_LENGTH",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "description length slightly outside heuristic bounds; editing the activation description affects skill discovery -- Dave decision"
+    },
+    {
+      "canonical_name": "image-ocr",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "image-ocr",
+      "rubric_item": "TEST_01_ACTIVATION",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no explicit activation section detected by heuristic; existing skills rely on description activation -- Optional"
+    },
+    {
+      "canonical_name": "image-ocr",
+      "rubric_item": "SCOPE_02_REALISTIC_TRIGGERS",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "trigger-signal heuristic; existing skills activate via description -- Optional"
+    },
+    {
+      "canonical_name": "enrich-meeting-notes",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "enrich-meeting-notes",
+      "rubric_item": "TEST_01_ACTIVATION",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no explicit activation section detected by heuristic; existing skills rely on description activation -- Optional"
+    },
+    {
+      "canonical_name": "enrich-meeting-notes",
+      "rubric_item": "SCOPE_02_REALISTIC_TRIGGERS",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "trigger-signal heuristic; existing skills activate via description -- Optional"
+    },
+    {
+      "canonical_name": "opencode-event-log-compactor",
+      "rubric_item": "DESC_02_LENGTH",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "description length slightly outside heuristic bounds; editing the activation description affects skill discovery -- Dave decision"
+    },
+    {
+      "canonical_name": "opencode-event-log-compactor",
+      "rubric_item": "STRUCT_01_ENTRYPOINT_SIZE",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "conciseness bound is a heuristic; the skill is an established large reference entrypoint -- refactoring is a content decision for Dave, not an in-scope safe fix"
+    },
+    {
+      "canonical_name": "opencode-event-log-compactor",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "opencode-go-key-rotation",
+      "rubric_item": "TEST_01_ACTIVATION",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no explicit activation section detected by heuristic; existing skills rely on description activation -- Optional"
+    },
+    {
+      "canonical_name": "opencode-go-key-rotation",
+      "rubric_item": "SCOPE_02_REALISTIC_TRIGGERS",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "trigger-signal heuristic; existing skills activate via description -- Optional"
+    },
+    {
+      "canonical_name": "root-cause-analysis",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "root-cause-analysis",
+      "rubric_item": "GUARD_03_CONCISE_ACTIONABLE_EXAMPLES",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no examples detected by heuristic; adding examples is a content improvement -- Optional"
+    },
+    {
+      "canonical_name": "scheduled-job-best-practices",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "session-db-query",
+      "rubric_item": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no internal references; this skill keeps details inline by design -- progressive-disclosure restructure is a content decision, not a defect"
+    },
+    {
+      "canonical_name": "session-db-query",
+      "rubric_item": "GUARD_03_CONCISE_ACTIONABLE_EXAMPLES",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "no examples detected by heuristic; adding examples is a content improvement -- Optional"
+    }
+  ],
+  "counts": {
+    "queued_skill_fixes": 2,
+    "no_fix_dispositions": 41,
+    "agent_fixes": 0,
+    "agent_no_fix_dispositions": 11,
+    "dave_decisions": 0
+  },
+  "agent_fixes": [],
+  "agent_no_fix_dispositions": [
+    {
+      "canonical_name": "01-planner",
+      "rubric_item": "AGENT_08_WINDOWS_PATH_SHELL",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "heuristic Minor agent-prompt finding; adding Windows/path/shell/bounded-command/safety guidance to the prompt is a content/behavior decision for Dave, not an in-scope safe auto-fix; detection may also miss guidance present in referenced pattern files"
+    },
+    {
+      "canonical_name": "01-planner",
+      "rubric_item": "AGENT_09_BOUNDED_COMMANDS",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "heuristic Minor agent-prompt finding; adding Windows/path/shell/bounded-command/safety guidance to the prompt is a content/behavior decision for Dave, not an in-scope safe auto-fix; detection may also miss guidance present in referenced pattern files"
+    },
+    {
+      "canonical_name": "01-planner",
+      "rubric_item": "AGENT_10_SAFETY_STOPS",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "heuristic Minor agent-prompt finding; adding Windows/path/shell/bounded-command/safety guidance to the prompt is a content/behavior decision for Dave, not an in-scope safe auto-fix; detection may also miss guidance present in referenced pattern files"
+    },
+    {
+      "canonical_name": "build",
+      "rubric_item": "AGENT_08_WINDOWS_PATH_SHELL",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "heuristic Minor agent-prompt finding; adding Windows/path/shell/bounded-command/safety guidance to the prompt is a content/behavior decision for Dave, not an in-scope safe auto-fix; detection may also miss guidance present in referenced pattern files"
+    },
+    {
+      "canonical_name": "build",
+      "rubric_item": "AGENT_09_BOUNDED_COMMANDS",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "heuristic Minor agent-prompt finding; adding Windows/path/shell/bounded-command/safety guidance to the prompt is a content/behavior decision for Dave, not an in-scope safe auto-fix; detection may also miss guidance present in referenced pattern files"
+    },
+    {
+      "canonical_name": "build",
+      "rubric_item": "AGENT_10_SAFETY_STOPS",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "heuristic Minor agent-prompt finding; adding Windows/path/shell/bounded-command/safety guidance to the prompt is a content/behavior decision for Dave, not an in-scope safe auto-fix; detection may also miss guidance present in referenced pattern files"
+    },
+    {
+      "canonical_name": "conductor-track-validator",
+      "rubric_item": "AGENT_08_WINDOWS_PATH_SHELL",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "heuristic Minor agent-prompt finding; adding Windows/path/shell/bounded-command/safety guidance to the prompt is a content/behavior decision for Dave, not an in-scope safe auto-fix; detection may also miss guidance present in referenced pattern files"
+    },
+    {
+      "canonical_name": "conductor-plan-reviewer",
+      "rubric_item": "AGENT_08_WINDOWS_PATH_SHELL",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "heuristic Minor agent-prompt finding; adding Windows/path/shell/bounded-command/safety guidance to the prompt is a content/behavior decision for Dave, not an in-scope safe auto-fix; detection may also miss guidance present in referenced pattern files"
+    },
+    {
+      "canonical_name": "peer-review",
+      "rubric_item": "AGENT_09_BOUNDED_COMMANDS",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "heuristic Minor agent-prompt finding; adding Windows/path/shell/bounded-command/safety guidance to the prompt is a content/behavior decision for Dave, not an in-scope safe auto-fix; detection may also miss guidance present in referenced pattern files"
+    },
+    {
+      "canonical_name": "conductor-test-runner",
+      "rubric_item": "AGENT_08_WINDOWS_PATH_SHELL",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "heuristic Minor agent-prompt finding; adding Windows/path/shell/bounded-command/safety guidance to the prompt is a content/behavior decision for Dave, not an in-scope safe auto-fix; detection may also miss guidance present in referenced pattern files"
+    },
+    {
+      "canonical_name": "conductor-plan-reviewer-alt",
+      "rubric_item": "AGENT_08_WINDOWS_PATH_SHELL",
+      "severity": "Minor",
+      "disposition": "no-fix",
+      "reason": "heuristic Minor agent-prompt finding; adding Windows/path/shell/bounded-command/safety guidance to the prompt is a content/behavior decision for Dave, not an in-scope safe auto-fix; detection may also miss guidance present in referenced pattern files"
+    }
+  ],
+  "dave_decisions": [],
+  "resolved_dave_decisions": [
+    {
+      "canonical_name": "clickup",
+      "file": "scripts/patch_script.py",
+      "finding": "unterminated triple-quoted string literal (truncated file, ends mid-token at line 231)",
+      "resolution": "Dave explicitly authorized removal when intent could not be recovered; live file removed after exact backup/hash verification.",
+      "recovery_copy": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-top-skills-agents-review\\2026-07-26-pre-edit\\6f4f87a35d0d925b414a3aaa_clickup\\scripts\\patch_script.py",
+      "backup_sha256": "8CA45DA3EC2AE6A3B9B7F267C4065535FE73963A7F801C21D1334837D3DE50BB",
+      "resolved": true
+    }
+  ]
+}

@@ -1,0 +1,646 @@
+{
+  "audit": {
+    "mode": "static-review",
+    "references": {
+      "manual": {
+        "label": "manual",
+        "provided": false
+      },
+      "reference": {
+        "label": "reference",
+        "provided": false
+      }
+    },
+    "signals": {
+      "bullets": 36,
+      "contains_approval_gate": false,
+      "contains_codex_name": false,
+      "contains_destructive_guard": false,
+      "contains_opencode_name": true,
+      "headings": 13
+    }
+  },
+  "client": "opencode",
+  "client_semantics": {
+    "precedence": "first matching configured instruction source is authoritative",
+    "reference_loading": "referenced files are not automatically parsed as instructions"
+  },
+  "file_identity": {
+    "bytes": 8909,
+    "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+    "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+  },
+  "mirror_identity": "mirror-012",
+  "rubric": [
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "SCOPE-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "SCOPE-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "LOAD-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "LOAD-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "PURPOSE-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "STRUCT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "STRUCT-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "TOKEN-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "TOKEN-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "CMD-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "CMD-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "REF-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "id": "REF-02",
+      "result": "Unverified",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "ARCH-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "CONV-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "VERIFY-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "SAFETY-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "SAFETY-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "GIT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "NEST-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "CLIENT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "DRIFT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "REVIEW-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "",
+      "id": "HANDOFF-01",
+      "result": "Pass",
+      "severity": "None"
+    }
+  ]
+}

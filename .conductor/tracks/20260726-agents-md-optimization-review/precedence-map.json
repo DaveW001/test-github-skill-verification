@@ -1,0 +1,288 @@
+{
+  "chains": [
+    {
+      "mirror_identity": null,
+      "parents": [],
+      "target": "C:\\development\\02-Kx-to-process\\AGENTS.md"
+    },
+    {
+      "mirror_identity": null,
+      "parents": [],
+      "target": "C:\\development\\chief-of-staff\\AGENTS.md"
+    },
+    {
+      "mirror_identity": null,
+      "parents": [],
+      "target": "C:\\development\\command-center\\AGENTS.md"
+    },
+    {
+      "mirror_identity": null,
+      "parents": [],
+      "target": "C:\\development\\INACTIVE-content-marketing\\AGENTS.md"
+    },
+    {
+      "mirror_identity": null,
+      "parents": [
+        "C:\\development\\INACTIVE-content-marketing\\AGENTS.md"
+      ],
+      "target": "C:\\development\\INACTIVE-content-marketing\\ops\\opencode-troubleshooting\\AGENTS.md"
+    },
+    {
+      "mirror_identity": null,
+      "parents": [],
+      "target": "C:\\development\\marketing\\AGENTS.md"
+    },
+    {
+      "mirror_identity": null,
+      "parents": [
+        "C:\\development\\marketing\\AGENTS.md"
+      ],
+      "target": "C:\\development\\marketing\\graphics\\fmqsmo-award\\AGENTS.md"
+    },
+    {
+      "mirror_identity": null,
+      "parents": [
+        "C:\\development\\marketing\\AGENTS.md"
+      ],
+      "target": "C:\\development\\marketing\\marketingskills\\AGENTS.md"
+    },
+    {
+      "mirror_identity": null,
+      "parents": [
+        "C:\\development\\marketing\\AGENTS.md"
+      ],
+      "target": "C:\\development\\marketing\\ops\\opencode-troubleshooting\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-012",
+      "parents": [],
+      "target": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-022",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\app\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-008",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+        "C:\\development\\opencode-core-dcp-fix\\packages\\app\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\app\\e2e\\performance\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-010",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\codemode\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-001",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\core\\src\\tool\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-021",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\desktop\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-024",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\effect-drizzle-sqlite\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-002",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\llm\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-023",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-007",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+        "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\src\\server\\routes\\instance\\httpapi\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-020",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+        "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\src\\session\\llm\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-005",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+        "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\test\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-018",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+        "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\AGENTS.md",
+        "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\test\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\test\\server\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-025",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\schema\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-026",
+      "parents": [
+        "C:\\development\\opencode-core-dcp-fix\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-core-dcp-fix\\packages\\stats\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-012",
+      "parents": [],
+      "target": "C:\\development\\opencode-upstream\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-022",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\app\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-008",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md",
+        "C:\\development\\opencode-upstream\\packages\\app\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\app\\e2e\\performance\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-010",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\codemode\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-001",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\core\\src\\tool\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-021",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\desktop\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-024",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\effect-drizzle-sqlite\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-002",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\llm\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-023",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\opencode\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-007",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md",
+        "C:\\development\\opencode-upstream\\packages\\opencode\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\server\\routes\\instance\\httpapi\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-020",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md",
+        "C:\\development\\opencode-upstream\\packages\\opencode\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-005",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md",
+        "C:\\development\\opencode-upstream\\packages\\opencode\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\opencode\\test\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-018",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md",
+        "C:\\development\\opencode-upstream\\packages\\opencode\\AGENTS.md",
+        "C:\\development\\opencode-upstream\\packages\\opencode\\test\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\opencode\\test\\server\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-025",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\schema\\AGENTS.md"
+    },
+    {
+      "mirror_identity": "mirror-026",
+      "parents": [
+        "C:\\development\\opencode-upstream\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencode-upstream\\packages\\stats\\AGENTS.md"
+    },
+    {
+      "mirror_identity": null,
+      "parents": [],
+      "target": "C:\\development\\opencodex\\AGENTS.md"
+    },
+    {
+      "mirror_identity": null,
+      "parents": [
+        "C:\\development\\opencodex\\AGENTS.md"
+      ],
+      "target": "C:\\development\\opencodex\\gui\\AGENTS.md"
+    }
+  ],
+  "version": 1
+}

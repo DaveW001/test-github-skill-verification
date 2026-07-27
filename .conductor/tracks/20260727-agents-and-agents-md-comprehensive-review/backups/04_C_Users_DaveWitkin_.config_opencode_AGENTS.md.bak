@@ -1,0 +1,149 @@
+# OpenCode Agent Instructions
+
+**Docs:** https://opencode.ai/docs | **Repo:** https://github.com/anomalyco/opencode
+
+---
+
+## Always-On Rules
+
+### Approval Boundaries
+Require explicit user approval before destructive cleanup, external communications, calendar mutations, publication or deployment, purchases, or other consequential external changes.
+
+### Global OpenCode Config: JSONC Only
+**On this machine, the sole canonical global OpenCode config is `C:\Users\DaveWitkin\.config\opencode\opencode.jsonc`.** Never create, restore, or edit `C:\Users\DaveWitkin\.config\opencode\opencode.json`. If a global `opencode.json` appears, treat it as drift: inspect and back up both files, propose any merge into `opencode.jsonc`, validate with `opencode debug config`, and obtain explicit approval before removing the JSON file. Generic OpenCode documentation or built-in skills may mention either extension; this machine-specific rule overrides that guidance for the global config. Project-level configs may use JSON or JSONC when a project explicitly requires one.
+### Osgrep CLI-Only (Canary)
+**Use osgrep for semantic code search in CLI-only mode.** Use first for discovery; fall back to `grep`/`glob`/`Read` on timeout/failure. Do not use `osgrep mcp`.
+
+### Knowledge Graph Entity Lookup
+**For Army C2/CC2, Packaged Agile business enrichment, meeting-note enrichment, stakeholder/contact lookup, organization context, and relationship questions, check the knowledge graph first.** Primary: `C:\development\02-Kx-to-process\knowledge-base\`
+- Lookup: `python scripts/query-graph.py lookup --name "Name" --type Person --top 5`
+- Broad search: `python scripts/search.py "topic" --top 5`
+- Fallback: `grep`/`glob`/`Read` when scripts fail
+- Skills: `knowledge-graph-builder` (extraction), `knowledge-graph-maintainer` (audits)
+
+
+### API Keys / Secrets Lookup
+Before searching repos for API keys or service credentials, consult `C:\Users\DaveWitkin\.config\opencode\secrets-index.jsonc`. This metadata-only index contains key names, services, canonical locations, consuming repos, duplicate locations, and status notes. Never print, copy, or commit secret values.
+### ClickUp Quick References
+- Army C2: list `901113158142` | Personal inbox: list `3984798`
+- Use directly when task clearly belongs; ask when uncertain.
+
+### Chrome DevTools MCP
+**Use `control-chrome_*` tools for browser automation.** Never use Playwright/Puppeteer/Selenium. MCP config name: `control-chrome`.
+
+### Semantic-First Navigation
+Use search tools before broad reads: osgrep → grep/glob → targeted Read. Only read full files when small or complete context needed.
+
+### File Tool Path Format
+**Use absolute paths.** Use the skill directory that actually exists and the canonical location named by its configuration; do not migrate between `skill\` and `skills\` without a specific request. For local HTML deliverables, use fully qualified Windows paths.
+
+### File Reading Strategy
+Search before broad reads, then read the complete file when its full context is required. Batch independent reads when useful; keep adaptive or dependent inspection sequential.
+
+---
+
+## Reference Index (Open only when triggered)
+
+### Slack Messaging
+**Trigger:** Slack, send Slack message, Slack notification, Slack alert, Slack DM, Slack webhook.
+**Action:** Use `skill_find "slack"` first. Prefer `slack-send-message` for scripted bot-token automation and `slack-messaging` for MCP-based interactive Slack workflows.
+
+### Microsoft 365 / Outlook / Email / Calendar
+**Trigger:** Outlook, email, inbox, calendar, Microsoft 365, Exchange, Graph.
+**Action:** Use `skill_find` to locate and load the appropriate skill.
+
+### Skill Discovery Preflight
+**Trigger:** Finding, editing, or using skills.
+**Action:** Use `skill_find "<keyword>"` first. Lazy-vault: `~/.opencode-lazy-vault`.
+
+**Creating/updating skills:** use **`skill-creator`** at `~/.opencode-lazy-vault/skill-creator/SKILL.md`. Default new skills to the configured lazy vault; use native always-loaded directories only when explicitly requested.
+
+Its bundled helpers provide initialization, validation, and OpenAI metadata generation.
+
+**`customize-opencode` skill note:** the built-in `customize-opencode` skill lists `~/.config/opencode/skill(s)/...` to document where OpenCode *scans* for skills (both `skill/` and `skills/` are scanned). Those are *scan/detection paths, not creation defaults*. Creation defaults come from `skill-creator` above.
+
+Always-available skills: `conductor`, `osgrep`, `git-push`, and `perplexity-search`. Load them with `skill_use` using the exact hyphenated skill name.
+
+### File Tool Path Format Errors
+**Trigger:** "Invalid path format" error
+**Reference:** `docs\troubleshooting\active\file-tool-path-format-errors.md`
+
+### ClickUp Meeting Notes
+**Trigger:** "create meeting notes", "add notes to ClickUp"
+**Reference:** `docs\workflows\clickup-meeting-notes.md`
+
+### Git Commits & Pull Requests
+**Trigger:** "push to GitHub", "create a commit", "make a PR"
+**Action:** Use /git-push command or `docs\workflows\git-pr.md`
+
+### Espanso Snippet Management
+**Trigger:** espanso, text expansion, snippet, editing espanso match files, "mapping values are not allowed in this context"
+**Reference:** currently missing; treat this as a ghost entry and do not chase it until the workflow is restored.
+
+### Firebase Deploy Requests
+**Trigger:** deploy, ship, release, go live
+**Action:** Load `firebase-deployment-specialist` skill first. Set `GOOGLE_APPLICATION_CREDENTIALS` and verify with `firebase projects:list`.
+
+### Developer Guidelines
+**Trigger:** Creating/modifying agents, commands, or skills
+**Reference:** `~/.config/opencode/agent-development-standards.md`, `command-development-standards.md`. For skills specifically, use the **`skill-creator`** skill (canonical OpenCode skill creator).
+
+### Skill Listing Format
+**Trigger:** "what skills do you have?"
+**Format:** Categorized list with emojis (Content Creation, Visuals, Development, Productivity, Research)
+
+### Fully Qualified File Paths for User Review
+**Always provide fully qualified absolute Windows paths** when asking user to review files.
+
+### Public-Safe Redaction for Sharing
+**Redact internal paths, IDs, and tokens** when sharing outside local contexts.
+
+### Research Tool Fallback
+**If google_search fails, fall back to** `perplexity-search` skill.
+
+### Admin Elevation
+**Trigger:** `Access is denied`, `0x80070005`
+**See:** `references/admin-elevation-gsudo.md`
+
+### Gemini Proxy Infrastructure
+**Trigger:** `ECONNREFUSED 127.0.0.1:8000`, 429 errors
+**See:** `references/gemini-proxy-infrastructure.md`
+
+### OpenAI Multi-Account Rotation (oc-codex-multi-auth)
+**Trigger:** OpenAI usage limit reached, endless retries without rotation, oc-codex-multi-auth stuck
+**See:** `C:\development\opencode\docs\troubleshooting\active\openai-rotation-oc-codex-orphan-locks.md`
+
+### Z.AI / GLM API Calling Conventions
+**Trigger:** GLM, Z.AI, ZAI, ZhipuAI, BigModel, glm-5.2, glm-4.7, GLM Coding Plan, `1113`, `1309`, `1311`, `1313`, "Insufficient balance", `api.z.ai`, `paas/v4`, `coding/paas/v4`
+**See:** `references/zai-calling-conventions.md`
+
+### Git Push Skip List (No Write Access)
+**Never attempt to push these repos** — they are forks of upstream repos where DaveW001 has no push access:
+- `opencode-studio` — fork of `Microck/opencode-studio`
+- `tokscale` — fork of `junhoyeo/tokscale`
+Skip silently during bulk push sweeps.
+
+## Tool-Layer Failure Protocol (Bun is not defined)
+
+**At session start, run one cheap file operation.** If it returns `Bun is not defined`, switch the session to PowerShell-first through the shell tool and do not retry the same broken file-tool layer.
+
+Use the read-only PowerShell equivalents in the runbook for inspection; use the established safe edit tool for modifications.
+
+Full runbook: `~/.config/opencode/docs/troubleshooting/tool-failure-bun-undefined.md`
+
+### Conductor PowerShell Edit Hazards
+**Trigger:** Editing files with PowerShell; structural-character edits; regex `-replace` hazards.
+
+For Conductor Pipeline PowerShell edit hazards (parse-check limitations, content-anchored targeting, markdown-list indentation bleed, literal structural-character edits, and session-spanning date handling), see C:\Users\DaveWitkin\.config\opencode\skill\conductor-pipeline\references\powershell-edit-hazards.md.
+
+## Reference Index Path-Root & Ghost Entries
+
+- All relative paths in the Reference Index above resolve under `~/.config/opencode/` (`C:\Users\DaveWitkin\.config\opencode\`) unless an absolute path or explicit `~/.config/opencode/...` is given. (Verified 2026-06-14: `references\admin-elevation-gsudo.md` and `references\gemini-proxy-infrastructure.md` exist there.)
+- **Ghost entries** (referenced but not yet created - do not chase; flag for follow-up):
+  - `docs\troubleshooting\active\file-tool-path-format-errors.md`
+  - `docs\workflows\clickup-meeting-notes.md`
+  - `docs\workflows\git-pr.md`
+
+### Provider Onboarding & Routing Validation
+**Trigger:** provider configuration, model routing, provider onboarding, or provider API smoke testing.
+**Action:** Follow `docs\guides\provider-onboarding.md`; registration alone is not acceptance.

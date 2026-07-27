@@ -1,0 +1,11 @@
+--- C:\development\marketing\graphics\fmqsmo-award\AGENTS.md (before)
++++ C:\development\marketing\graphics\fmqsmo-award\AGENTS.md (after)
+@@ -11,7 +11,7 @@
+ - Type check (called "lint" here): `npm run lint` (`tsc --noEmit` only; no ESLint configured)
+ - Production build: `npm run build`
+ - Preview build: `npm run preview`
+-- Clean output: `npm run clean` (removes `dist`)
++- Clean output: on native Windows, do not rely on `npm run clean` because the package script uses `rm -rf`; remove `dist` with a safe platform-appropriate command only when explicitly needed.
+ 
+ ## Environment + config quirks
+ - `vite.config.ts` loads env with `loadEnv(mode, '.', '')` (no `VITE_` prefix requirement).

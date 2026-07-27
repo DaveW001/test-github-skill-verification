@@ -1,0 +1,8 @@
+{
+  "check": "toolchain-self-test",
+  "helpers": 14,
+  "live_targets_touched": 0,
+  "negative_case_count": 18,
+  "negative_cases_passed": true,
+  "status": "PASS"
+}

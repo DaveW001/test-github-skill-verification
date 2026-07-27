@@ -1,0 +1,7 @@
+# Stats Package Agent Instructions
+
+## Overview
+Instructions and commands for working with the OpenCode stats package.
+
+## Development
+To start the stats site locally, run un dev:stats from the repo root.

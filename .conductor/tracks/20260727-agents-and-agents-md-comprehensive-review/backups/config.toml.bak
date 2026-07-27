@@ -1,0 +1,285 @@
+personality = "pragmatic"
+model_reasoning_effort = "medium"
+sandbox_mode = "danger-full-access"
+approval_policy = "on-request"
+service_tier = "default"
+model_auto_compact_token_limit = 150000
+model_auto_compact_token_limit_scope = "total"
+
+notify = [ "C:\\Users\\DaveWitkin\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\f8d2abcb7481383b\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+model = "gpt-5.6-sol"
+model_catalog_json = "C:\\Users\\DaveWitkin\\.codex\\opencodex-catalog.json"
+# Auto-injected by opencodex
+openai_base_url = "http://127.0.0.1:10101/v1"
+[agents.default]
+model = "gpt-5.6-luna"
+reasoning_effort = "high"
+
+[features]
+unified_exec = true
+shell_snapshot = true
+apps = true
+js_repl = false
+memories = true
+fast_mode = true
+
+[sandbox_workspace_write]
+writable_roots = [
+  "C:/Users/DaveWitkin/.codex",
+  "C:/Users/DaveWitkin/.config",
+  "C:/Users/DaveWitkin/.gemini",
+  "C:/Users/DaveWitkin/.opencode",
+  "C:/Users/DaveWitkin/.antigravity",
+  "C:/development",
+]
+
+[projects.'C:\Users\DaveWitkin']
+trust_level = "trusted"
+
+[projects.'C:\Users\DaveWitkin\.gemini']
+trust_level = "trusted"
+
+[projects.'C:\development']
+trust_level = "trusted"
+
+[projects.'C:\development\chief-of-staff']
+trust_level = "trusted"
+
+[projects.'\\?\C:\development\marketing']
+trust_level = "trusted"
+
+[projects.'C:\Users\DaveWitkin\OneDrive - Packaged Agile\Delivery - US Army C2CC2\Travel Receipts']
+trust_level = "trusted"
+
+[projects.'C:\development\pa-expenses']
+trust_level = "trusted"
+
+[projects.'C:\development\pa-partners']
+trust_level = "trusted"
+
+[projects.'C:\development\opencode']
+trust_level = "trusted"
+
+[projects.'C:\development\email-triage']
+trust_level = "trusted"
+
+[projects.'C:\Users\DaveWitkin\Packaged Agile\Delivery - Documents\US Army C2CC2']
+trust_level = "trusted"
+
+[projects.'c:\users\davewitkin\onedrive - packaged agile\documents\new project']
+trust_level = "trusted"
+
+[projects.'c:\development\playground\digital-ai-webinar']
+trust_level = "trusted"
+
+[projects.'c:\development\playground']
+trust_level = "trusted"
+
+[projects.'c:\development\army-c2cc2']
+trust_level = "trusted"
+
+[projects.'c:\development\02-kx-to-process']
+trust_level = "trusted"
+
+[projects.'c:\users\davewitkin\packaged agile\bd - documents\partners\scrum inc\2026-07 air force training']
+trust_level = "trusted"
+
+[projects.'c:\users\davewitkin\onedrive - packaged agile\documents\codex']
+trust_level = "trusted"
+
+[windows]
+sandbox = "elevated"
+
+[apps.asdk_app_694a9b3397cc8191a5b00f26adcb385b]
+enabled = false
+
+[apps.connector_4aaab2856305417b993eca9a216aaf6e.tools."microsoft outlook email_move_email"]
+approval_mode = "approve"
+
+[apps.connector_68e004f14af881919eb50893d3d9f523]
+enabled = false
+
+[apps.connector_c0f748249d6a42aea4b00fd375570ded]
+enabled = false
+
+[apps.asdk_app_699f29340c288191885b95a1ebd3cad6]
+enabled = false
+
+[apps.connector_246af0940da3457da0e751171dc1ce60]
+enabled = false
+
+[apps.asdk_app_6962f22632708191ac37920ed65e5392]
+enabled = false
+
+[mcp_servers.playwright]
+args = ["@playwright/mcp@latest"]
+command = "npx"
+enabled = false
+
+[mcp_servers.playwright.tools.browser_resize]
+approval_mode = "approve"
+
+[mcp_servers.node_repl]
+args = []
+command = 'C:\Users\DaveWitkin\AppData\Local\OpenAI\Codex\runtimes\cua_node\f8d2abcb7481383b\bin\node_repl.exe'
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\DaveWitkin\AppData\Local\OpenAI\Codex\runtimes\cua_node\f8d2abcb7481383b\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\DaveWitkin\AppData\Local\OpenAI\Codex\runtimes\cua_node\f8d2abcb7481383b\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\DaveWitkin\.codex'
+CODEX_HOME = 'C:\Users\DaveWitkin\.codex'
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "7ed52dae165c3bc22b6d24f282e2c1fbc87f6949fbbe037767a7418d8f517f01,e13fd947e846d3d306e9249dd3c73d14931b6494803dbafb16cef85e6add9506"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.721.41059"
+SKY_CUA_NATIVE_PIPE = "1"
+SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-f3c2b29a-1fec-4aff-a93e-f90e12f6c930'
+CODEX_CLI_PATH = 'C:\Users\DaveWitkin\AppData\Local\OpenAI\Codex\bin\69066b736e1e17a4\codex.exe'
+
+[marketplaces.openai-bundled]
+last_updated = "2026-07-26T19:37:30Z"
+source_type = "local"
+source = '\\?\C:\Users\DaveWitkin\.codex\.tmp\bundled-marketplaces\openai-bundled'
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-07-25T18:04:41Z"
+source_type = "local"
+source = '\\?\C:\Users\DaveWitkin\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."remotion@openai-curated"]
+enabled = true
+
+[plugins."hyperframes@openai-curated"]
+enabled = true
+
+[plugins."slack@openai-curated"]
+enabled = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."chatgpt-apps@openai-curated"]
+enabled = true
+
+[plugins."sharepoint@openai-curated"]
+enabled = true
+
+[plugins."google-calendar@openai-curated"]
+enabled = true
+
+[plugins."gmail@openai-curated"]
+enabled = true
+
+[plugins."outlook-email@openai-curated"]
+enabled = true
+
+[plugins."outlook-calendar@openai-curated"]
+enabled = true
+
+[plugins."google-drive@openai-curated"]
+enabled = true
+
+[plugins."clickup@openai-curated"]
+enabled = true
+
+[plugins."govtribe@openai-curated"]
+enabled = true
+
+[plugins."codex-security@openai-curated"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."teams@openai-curated"]
+enabled = true
+
+[plugins."vercel@openai-curated"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[desktop]
+appearanceTheme = "dark"
+appearanceDarkCodeThemeId = "github"
+sansFontSize = 15
+codeFontSize = 18
+default-service-tier = "priority"
+show-context-window-usage = true
+followUpQueueMode = "queue"
+enabled-reasoning-efforts = ["low", "medium", "high", "xhigh"]
+conversationDetailMode = "STEPS_PROSE"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#1f6feb"
+contrast = 50
+ink = "#e9f0f6"
+opaqueWindows = true
+surface = "#0d1117"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+code = '"Geist Mono", ui-monospace, "SFMono-Regular"'
+ui = "Geist, Inter"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#3fb950"
+diffRemoved = "#f85149"
+skill = "#bc8cff"
+
+[desktop.open-in-target-preferences]
+global = "systemDefault"
+
+[desktop.open-in-target-preferences.perPath]
+'C:\development\army-c2cc2' = "cursor"
+'C:\development\opencode' = "fileManager"
+'\\?\C:\development\marketing' = "antigravity"
+
+[memories]
+generate_memories = true
+use_memories = true
+
+[shell_environment_policy.set]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "7ed52dae165c3bc22b6d24f282e2c1fbc87f6949fbbe037767a7418d8f517f01,e13fd947e846d3d306e9249dd3c73d14931b6494803dbafb16cef85e6add9506"
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\DaveWitkin\.codex'
+
+[[skills.config]]
+path = 'C:\Users\DaveWitkin\.opencode-lazy-vault\firebase-deployment-specialist\SKILL.md'
+enabled = false
+
+[[skills.config]]
+path = 'C:\Users\DaveWitkin\.opencode-lazy-vault\gemini-proxy\SKILL.md'
+enabled = false
+
+[[skills.config]]
+path = 'C:\Users\DaveWitkin\.opencode-lazy-vault\_archived_skills\html-demo-design\SKILL.md'
+enabled = false

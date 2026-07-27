@@ -1,0 +1,645 @@
+{
+  "audit": {
+    "mode": "static-review",
+    "references": {
+      "manual": {
+        "label": "manual",
+        "provided": false
+      },
+      "reference": {
+        "label": "reference",
+        "provided": false
+      }
+    },
+    "signals": {
+      "bullets": 16,
+      "contains_approval_gate": false,
+      "contains_codex_name": true,
+      "contains_destructive_guard": false,
+      "contains_opencode_name": true,
+      "headings": 3
+    }
+  },
+  "client": "codex",
+  "client_semantics": {
+    "precedence": "hierarchical AGENTS discovery; nearer rules may refine parent rules",
+    "reference_loading": "explicit references are evidence, not automatically loaded instructions"
+  },
+  "file_identity": {
+    "bytes": 1749,
+    "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+    "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+  },
+  "rubric": [
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "SCOPE-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "SCOPE-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "id": "LOAD-01",
+      "result": "Unverified",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "LOAD-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "PURPOSE-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "STRUCT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "STRUCT-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "TOKEN-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "TOKEN-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "CMD-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "CMD-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "REF-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "REF-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "ARCH-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "CONV-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "VERIFY-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "SAFETY-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "SAFETY-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "GIT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "NEST-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "CLIENT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "DRIFT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "REVIEW-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 1749,
+          "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+          "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d"
+        }
+      },
+      "finding_id": "",
+      "id": "HANDOFF-01",
+      "result": "Pass",
+      "severity": "None"
+    }
+  ]
+}

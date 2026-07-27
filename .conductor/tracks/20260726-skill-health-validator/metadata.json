@@ -1,0 +1,56 @@
+{
+  "trackId": "20260726-skill-health-validator",
+  "title": "Harden Skill Health Validator",
+  "status": "active",
+  "created": "2026-07-26",
+  "completed": null,
+  "estimatedHours": "2-4",
+  "assignedTo": "Build agent",
+  "type": "maintenance",
+  "track_type": "bookkeeping",
+  "classification": "certain",
+  "pipeline_mode": "standard",
+  "pipeline_path": "1 -> 2 -> 5 -> 7 -> 9",
+  "pipeline_rationale": "The work changes an existing scheduled validator and filesystem-safety behavior; it needs architecture review, implementation, controlled verification, and handoff, but no application feature code.",
+  "skipped_stages": [],
+  "test_framework": "none",
+  "test_command": "n/a - use controlled PowerShell/fixture validation",
+  "tags": ["skills", "scheduler", "powershell", "filesystem-safety"],
+  "progress": {
+    "totalTasks": 14,
+    "completedTasks": 0,
+    "percentage": 0
+  },
+  "summary": "Make the daily skill taxonomy validator architecture-aware, safe around junctions, truthful about the historical index, and idempotent.",
+  "keyOutcomes": [
+    "No per-skill junctions are created beneath the Codex parent junction.",
+    "Archive cleanup cannot delete junction targets.",
+    "Reports, CSV logs, and console output are deterministic and actionable."
+  ],
+  "risks": [
+    "Historical global index may intentionally describe lazy-vault skills outside the canonical validation set.",
+    "Filesystem reparse-point operations can be destructive if link classification is wrong.",
+    "The validator currently runs through an agent prompt, so behavior must be verified non-interactively."
+  ],
+  "dependencies": [
+    "C:\\development\\opencode\\docs\\runbooks\\codex-skill-architecture.md",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\scripts\\skill-health-validator.md",
+    "C:\\development\\_shared-scripts\\skill-health-validator-quiet.ps1"
+  ],
+  "blocking": [],
+  "relatedTracks": [],
+  "deliverables": [
+    "Hardened validator prompt/implementation artifact",
+    "Controlled validation evidence",
+    "Updated latest report/log if the validator is run",
+    "Track execution/change log"
+  ],
+  "validationCriteria": [
+    "Preflight and canonical-only enumeration pass",
+    "Frontmatter remains flag-only",
+    "Codex parent junction is never given child junctions",
+    "Junction cleanup is target-safe",
+    "Report, CSV, and console contracts pass",
+    "Existing scheduled job remains unique and registry-aligned"
+  ]
+}

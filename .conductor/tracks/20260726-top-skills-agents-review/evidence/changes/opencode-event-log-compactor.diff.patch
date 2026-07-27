@@ -1,0 +1,13 @@
+diff --git "a/C:\\development\\opencode\\.git\\codex-track-backups\\20260726-top-skills-agents-review\\2026-07-26-pre-edit\\6ccd9ebf7d17f73ac4dbc69c_opencode-event-log-compactor/scripts/Switch-ValidatedDatabase.ps1" "b/C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-event-log-compactor/scripts/Switch-ValidatedDatabase.ps1"
+index a514575..deeee89 100644
+--- "a/C:\\development\\opencode\\.git\\codex-track-backups\\20260726-top-skills-agents-review\\2026-07-26-pre-edit\\6ccd9ebf7d17f73ac4dbc69c_opencode-event-log-compactor/scripts/Switch-ValidatedDatabase.ps1"
++++ "b/C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-event-log-compactor/scripts/Switch-ValidatedDatabase.ps1"
+@@ -219,7 +219,7 @@ function Invoke-SwitchValidatedDatabase {
+ 
+         $originalInv = Get-ActiveFileInventory $dbDir $dbName
+         Write-Host "`nOriginal state:" -ForegroundColor Cyan
+-        Write-Host "  DB:  present=$($originalInv.dbPresent) hash=$($originalInv.dbHash?.Substring(0,16))..."
++        Write-Host "  DB:  present=$($originalInv.dbPresent) hash=$(if ($originalInv.dbHash) { $originalInv.dbHash.Substring(0,16) })..."
+         Write-Host "  WAL: present=$($originalInv.walPresent)"
+         Write-Host "  SHM: present=$($originalInv.shmPresent)"
+ 

@@ -1,0 +1,12 @@
+{
+  "trackId": "20260726-top-skills-agents-review",
+  "backup_root": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-top-skills-agents-review\\2026-07-26-pre-edit",
+  "copy_targets_started": true,
+  "git_dir_resolved": "C:\\development\\opencode\\.git",
+  "track_backups_check_ignore": "NOT_IGNORED (exit 1); target contents must NOT be copied into the repo-local track backups path",
+  "destination_safety_rationale": "Backup root is beneath the resolved .git directory and therefore cannot be staged, committed, or diffed by the workspace repository; global skill/agent files are unversioned so a repo-tracked baseline is unavailable. The repo-local track backups path is NOT ignored, so it is prohibited as a backup destination. This location isolates backups from the worktree while remaining machine-local for verified restore.",
+  "baseline_inventory_sha256": "c16001f569cb9017df59b27f418e32d9e72ef538f4c76b1862319edce8c720e2",
+  "created_utc": "2026-07-26T22:03:25Z",
+  "targets_backed_up": 2,
+  "backup_manifest_path": "C:\\development\\opencode\\.conductor\\tracks\\20260726-top-skills-agents-review\\backup-manifest.json"
+}

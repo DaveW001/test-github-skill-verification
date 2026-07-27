@@ -1,0 +1,759 @@
+{
+  "audit": {
+    "mode": "static-review",
+    "references": {
+      "manual": {
+        "available": true,
+        "bytes": 774247,
+        "label": "manual",
+        "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+        "provided": true,
+        "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+      },
+      "reference": {
+        "label": "reference",
+        "provided": false
+      }
+    },
+    "signals": {
+      "bullets": 24,
+      "contains_approval_gate": true,
+      "contains_codex_name": true,
+      "contains_destructive_guard": false,
+      "contains_opencode_name": false,
+      "headings": 7
+    }
+  },
+  "client": "codex",
+  "client_semantics": {
+    "precedence": "hierarchical AGENTS discovery; nearer rules may refine parent rules",
+    "reference_loading": "explicit references are evidence, not automatically loaded instructions"
+  },
+  "file_identity": {
+    "bytes": 3923,
+    "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+    "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+  },
+  "rubric": [
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "SCOPE-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "SCOPE-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "LOAD-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "LOAD-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "PURPOSE-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "STRUCT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "STRUCT-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "TOKEN-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "TOKEN-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "CMD-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "CMD-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "REF-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "REF-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "ARCH-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "CONV-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "VERIFY-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "SAFETY-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "SAFETY-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "GIT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "NEST-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "CLIENT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "DRIFT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "REVIEW-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "codex",
+        "command": "audit_agents.py",
+        "manual": {
+          "available": true,
+          "bytes": 774247,
+          "label": "manual",
+          "path": "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+          "provided": true,
+          "sha256": "9aa974cc5289fa8e54ddb3b62c0a09979ba7764dcb094c10499462573d73617e"
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 3923,
+          "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+          "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c"
+        }
+      },
+      "finding_id": "",
+      "id": "HANDOFF-01",
+      "result": "Pass",
+      "severity": "None"
+    }
+  ]
+}

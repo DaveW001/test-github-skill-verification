@@ -1,0 +1,82 @@
+{
+  "trackId": "20260726-top-skills-agents-review",
+  "generated_at_utc": "2026-07-26T23:28:09+00:00",
+  "changed_skills": [
+    "clickup",
+    "opencode-event-log-compactor"
+  ],
+  "changed_skills_count": 2,
+  "results": [
+    {
+      "canonical_name": "clickup",
+      "folder": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup",
+      "applied_fix_files": [
+        "scripts/input_validation.py",
+        "tests/test_input_validation.py"
+      ],
+      "applied_fix_checks": [
+        {
+          "file": "scripts/input_validation.py",
+          "result": "PASS",
+          "command": "py_compile",
+          "exit_code": 0,
+          "detail": "py_compile OK"
+        },
+        {
+          "file": "tests/test_input_validation.py",
+          "result": "PASS",
+          "command": "py_compile",
+          "exit_code": 0,
+          "detail": "py_compile OK"
+        }
+      ],
+      "applied_fixes_all_pass": true,
+      "preexisting_unresolved_files": [],
+      "preexisting_checks": [],
+      "harness": {
+        "harness_exit": 0,
+        "script_syntax_line": "SCRIPT SYNTAX: OK (PASS x22)",
+        "result_line": "RESULT: PASS",
+        "harness_script_fail_files": []
+      },
+      "skill_level_script_syntax_pass": true,
+      "verdict": "PASS",
+      "verdict_reason": "all applied-fix files PASS syntax; skill-level harness SCRIPT SYNTAX PASS"
+    },
+    {
+      "canonical_name": "opencode-event-log-compactor",
+      "folder": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-event-log-compactor",
+      "applied_fix_files": [
+        "scripts/Switch-ValidatedDatabase.ps1"
+      ],
+      "applied_fix_checks": [
+        {
+          "file": "scripts/Switch-ValidatedDatabase.ps1",
+          "result": "PASS",
+          "command": "PS tokenize",
+          "exit_code": 0,
+          "detail": "PowerShell tokenize OK (0 parse errors)"
+        }
+      ],
+      "applied_fixes_all_pass": true,
+      "preexisting_unresolved_files": [],
+      "preexisting_checks": [],
+      "harness": {
+        "harness_exit": 0,
+        "script_syntax_line": "SCRIPT SYNTAX: OK (PASS x13)",
+        "result_line": "RESULT: PASS",
+        "harness_script_fail_files": []
+      },
+      "skill_level_script_syntax_pass": true,
+      "verdict": "PASS",
+      "verdict_reason": "all applied-fix files PASS syntax; skill-level harness SCRIPT SYNTAX PASS"
+    }
+  ],
+  "summary": {
+    "pass": 2,
+    "partial_preexisting": 0,
+    "fail": 0
+  },
+  "changed_agents": [],
+  "changed_agents_verdict": "NOT_APPLICABLE"
+}

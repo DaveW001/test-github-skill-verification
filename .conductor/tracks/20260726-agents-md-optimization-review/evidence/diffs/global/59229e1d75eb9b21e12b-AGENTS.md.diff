@@ -1,0 +1,78 @@
+--- C:\Users\DaveWitkin\.config\opencode\AGENTS.md (before)
++++ C:\Users\DaveWitkin\.config\opencode\AGENTS.md (after)
+@@ -4,10 +4,13 @@
+ 
+ ---
+ 
+-## Always-On Rules
++## Always-On Rules
++
++### Approval Boundaries
++Require explicit user approval before destructive cleanup, external communications, calendar mutations, publication or deployment, purchases, or other consequential external changes.
+ 
+ ### Global OpenCode Config: JSONC Only
+-**On this machine, the sole canonical global OpenCode config is `C:\Users\DaveWitkin\.config\opencode\opencode.jsonc`.** Never create, restore, or edit `C:\Users\DaveWitkin\.config\opencode\opencode.json`. If a global `opencode.json` appears, treat it as drift: back up both files, merge unique settings into `opencode.jsonc`, validate with `opencode debug config`, then remove the JSON file. Generic OpenCode documentation or built-in skills may mention either extension; this machine-specific rule overrides that guidance for the global config. Project-level configs may use JSON or JSONC when a project explicitly requires one.
++**On this machine, the sole canonical global OpenCode config is `C:\Users\DaveWitkin\.config\opencode\opencode.jsonc`.** Never create, restore, or edit `C:\Users\DaveWitkin\.config\opencode\opencode.json`. If a global `opencode.json` appears, treat it as drift: inspect and back up both files, propose any merge into `opencode.jsonc`, validate with `opencode debug config`, and obtain explicit approval before removing the JSON file. Generic OpenCode documentation or built-in skills may mention either extension; this machine-specific rule overrides that guidance for the global config. Project-level configs may use JSON or JSONC when a project explicitly requires one.
+ ### Osgrep CLI-Only (Canary)
+ **Use osgrep for semantic code search in CLI-only mode.** Use first for discovery; fall back to `grep`/`glob`/`Read` on timeout/failure. Do not use `osgrep mcp`.
+ 
+@@ -32,10 +35,10 @@
+ Use search tools before broad reads: osgrep → grep/glob → targeted Read. Only read full files when small or complete context needed.
+ 
+ ### File Tool Path Format
+-**All paths must be absolute.** Prefer `skills\` path over legacy `skill\`. If both exist, ask user. For HTML deliverables, use fully qualified Windows backslash paths.
++**Use absolute paths.** Use the skill directory that actually exists and the canonical location named by its configuration; do not migrate between `skill\` and `skills\` without a specific request. For local HTML deliverables, use fully qualified Windows paths.
+ 
+ ### File Reading Strategy
+-Files >50 lines: grep/glob first. Files >200 lines: targeted reads only. Stop before reading >2 files simultaneously.
++Search before broad reads, then read the complete file when its full context is required. Batch independent reads when useful; keep adaptive or dependent inspection sequential.
+ 
+ ---
+ 
+@@ -43,7 +46,7 @@
+ 
+ ### Slack Messaging
+ **Trigger:** Slack, send Slack message, Slack notification, Slack alert, Slack DM, Slack webhook.
+-**Action:** Use `skill_find `slack`` first. Prefer `slack-send-message` for scripted bot-token automation and `slack-messaging` for MCP-based interactive Slack workflows.
++**Action:** Use `skill_find "slack"` first. Prefer `slack-send-message` for scripted bot-token automation and `slack-messaging` for MCP-based interactive Slack workflows.
+ 
+ ### Microsoft 365 / Outlook / Email / Calendar
+ **Trigger:** Outlook, email, inbox, calendar, Microsoft 365, Exchange, Graph.
+@@ -53,13 +56,13 @@
+ **Trigger:** Finding, editing, or using skills.
+ **Action:** Use `skill_find "<keyword>"` first. Lazy-vault: `~/.opencode-lazy-vault`.
+ 
+-**Creating/updating skills — canonical tool:** use the **`skill-creator`** skill (`~/.opencode-lazy-vault/skill-creator/SKILL.md`). It is OpenCode-specific and lazy-vault-aware: the recommended default location for new skills is the active opencode-skillful lazy vault (`~/.opencode-lazy-vault`, from `~/.config/opencode-skillful/opencode-skillful.config.mjs`). Only use native always-loaded locations (`~/.config/opencode/skills/` or `~/.config/opencode/skill/`) when the user explicitly requests always-loaded skills.
++**Creating/updating skills:** use **`skill-creator`** at `~/.opencode-lazy-vault/skill-creator/SKILL.md`. Default new skills to the configured lazy vault; use native always-loaded directories only when explicitly requested.
+ 
+-**Use `skill-creator`** (`.opencode-lazy-vault/skill-creator`) for all skill creation guidance. The helper scripts (`init_skill.py`, `quick_validate.py`, `generate_openai_yaml.py`) are now bundled in the `skill-creator` skill.
++Its bundled helpers provide initialization, validation, and OpenAI metadata generation.
+ 
+ **`customize-opencode` skill note:** the built-in `customize-opencode` skill lists `~/.config/opencode/skill(s)/...` to document where OpenCode *scans* for skills (both `skill/` and `skills/` are scanned). Those are *scan/detection paths, not creation defaults*. Creation defaults come from `skill-creator` above.
+ 
+-Always-available skills: conductor, osgrep, git-push, perplexity-search. Load with `skill_use "<name>"` (underscores, not hyphens).
++Always-available skills: `conductor`, `osgrep`, `git-push`, and `perplexity-search`. Load them with `skill_use` using the exact hyphenated skill name.
+ 
+ ### File Tool Path Format Errors
+ **Trigger:** "Invalid path format" error
+@@ -75,7 +78,7 @@
+ 
+ ### Espanso Snippet Management
+ **Trigger:** espanso, text expansion, snippet, editing espanso match files, "mapping values are not allowed in this context"
+-**Reference:** `C:\development\opencode\docs\workflows\espanso-snippet-management.md`
++**Reference:** currently missing; treat this as a ghost entry and do not chase it until the workflow is restored.
+ 
+ ### Firebase Deploy Requests
+ **Trigger:** deploy, ship, release, go live
+@@ -122,9 +125,9 @@
+ 
+ ## Tool-Layer Failure Protocol (Bun is not defined)
+ 
+-**At session start, run one cheap file op** (e.g., glob a known file). If a file tool returns `Bun is not defined`, switch the **whole session** to PowerShell-first via the `bash` tool immediately - do NOT retry the failing tool per-call (each retry is wasted). Bun 1.3.4 IS installed; this is a runtime sandbox-init failure, not a missing install.
++**At session start, run one cheap file operation.** If it returns `Bun is not defined`, switch the session to PowerShell-first through the shell tool and do not retry the same broken file-tool layer.
+ 
+-Cmdlet map: Read -> `Get-Content -Raw`, Write -> `Set-Content -Encoding utf8` (or verbatim here-string `@'...'@`), Edit -> `Select-String` to locate + literal `[string]::Replace()` (NOT regex `-replace`, which eats structural chars), glob -> `Get-ChildItem -Recurse`, grep -> `Select-String`.
++Use the read-only PowerShell equivalents in the runbook for inspection; use the established safe edit tool for modifications.
+ 
+ Full runbook: `~/.config/opencode/docs/troubleshooting/tool-failure-bun-undefined.md`
+ 

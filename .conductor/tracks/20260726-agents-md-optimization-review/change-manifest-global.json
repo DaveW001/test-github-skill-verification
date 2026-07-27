@@ -1,0 +1,37 @@
+{
+  "authority_expansion": false,
+  "changes": [
+    {
+      "after_bytes": 9350,
+      "after_sha256": "2f64e04c734d488585ef05769d25b3d2951624b85334fde651c38610ec388f22",
+      "anchors": [
+        "## Always-On Rules",
+        "If a global `opencode.json` appears, treat it as drift: back up both files, merge unique settings into `opencode.jsonc`, validate with `opencode debug config`, then remove the JSON file.",
+        "**All paths must be absolute.** Prefer `skills\\` path over legacy `skill\\`. If both exist, ask user. For HTML deliverables, use fully qualified Windows backslash paths.",
+        "Files >50 lines: grep/glob first. Files >200 lines: targeted reads only. Stop before reading >2 files simultaneously.",
+        "**Action:** Use `skill_find `slack`` first. Prefer `slack-send-message` for scripted bot-token automation and `slack-messaging` for MCP-based interactive Slack workflows.",
+        "**Creating/updating skills \u2014 canonical tool:** use the **`skill-creator`** skill (`~/.opencode-lazy-vault/skill-creator/SKILL.md`). It is OpenCode-specific and lazy-vault-aware: the recommended default location for new skills is the active opencode-skillful lazy vault (`~/.opencode-lazy-vault`, from `~/.config/opencode-skillful/opencode-skillful.config.mjs`). Only use native always-loaded locations (`~/.config/opencode/skills/` or `~/.config/opencode/skill/`) when the user explicitly requests always-loaded skills.",
+        "**Use `skill-creator`** (`.opencode-lazy-vault/skill-creator`) for all skill creation guidance. The helper scripts (`init_skill.py`, `quick_validate.py`, `generate_openai_yaml.py`) are now bundled in the `skill-creator` skill.",
+        "Always-available skills: conductor, osgrep, git-push, perplexity-search. Load with `skill_use \"<name>\"` (underscores, not hyphens).",
+        "**Reference:** `C:\\development\\opencode\\docs\\workflows\\espanso-snippet-management.md`",
+        "**At session start, run one cheap file op** (e.g., glob a known file). If a file tool returns `Bun is not defined`, switch the **whole session** to PowerShell-first via the `bash` tool immediately - do NOT retry the failing tool per-call (each retry is wasted). Bun 1.3.4 IS installed; this is a runtime sandbox-init failure, not a missing install.",
+        "Cmdlet map: Read -> `Get-Content -Raw`, Write -> `Set-Content -Encoding utf8` (or verbatim here-string `@'...'@`), Edit -> `Select-String` to locate + literal `[string]::Replace()` (NOT regex `-replace`, which eats structural chars), glob -> `Get-ChildItem -Recurse`, grep -> `Select-String`."
+      ],
+      "authority_delta": false,
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\002-1622d0de85f4fad7-AGENTS.md",
+      "backup_sha256": "1622d0de85f4fad7247d22f6ce761f5c7a5bc8218e4bbfc17ca74ed381f39d6d",
+      "before_bytes": 9655,
+      "before_sha256": "1622d0de85f4fad7247d22f6ce761f5c7a5bc8218e4bbfc17ca74ed381f39d6d",
+      "diff": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\evidence\\diffs\\global\\59229e1d75eb9b21e12b-AGENTS.md.diff",
+      "dirty_observed": null,
+      "finding_id": "GLOBAL-OPENCODE-SEMANTIC-REVIEW",
+      "rationale": "Correct confirmed path and command drift, remove avoidable duplication, relax brittle read limits, and add explicit approval gates without broadening agent authority.",
+      "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\AGENTS.md"
+    }
+  ],
+  "dry_run": false,
+  "restore_simulation": "not-requested",
+  "restored": [],
+  "scope": "global",
+  "version": 1
+}

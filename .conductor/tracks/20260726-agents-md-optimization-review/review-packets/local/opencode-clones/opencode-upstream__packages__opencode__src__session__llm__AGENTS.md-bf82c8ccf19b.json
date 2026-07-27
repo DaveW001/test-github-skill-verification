@@ -1,0 +1,652 @@
+{
+  "audit": {
+    "analysis_reused_from": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+    "mode": "static-review",
+    "references": {
+      "manual": {
+        "label": "manual",
+        "provided": false
+      },
+      "reference": {
+        "label": "reference",
+        "provided": false
+      }
+    },
+    "signals": {
+      "bullets": 13,
+      "contains_approval_gate": false,
+      "contains_codex_name": false,
+      "contains_destructive_guard": false,
+      "contains_opencode_name": true,
+      "headings": 3
+    }
+  },
+  "client": "opencode",
+  "client_semantics": {
+    "precedence": "first matching configured instruction source is authoritative",
+    "reference_loading": "referenced files are not automatically parsed as instructions"
+  },
+  "file_identity": {
+    "bytes": 7162,
+    "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+    "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+  },
+  "mirror_identity": "mirror-020",
+  "rubric": [
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "SCOPE-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "SCOPE-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "LOAD-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "LOAD-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "PURPOSE-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "STRUCT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "STRUCT-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "TOKEN-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "TOKEN-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "CMD-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "CMD-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "REF-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "id": "REF-02",
+      "result": "Unverified",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "ARCH-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "CONV-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "VERIFY-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "SAFETY-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "SAFETY-02",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "GIT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "NEST-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "CLIENT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "DRIFT-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "REVIEW-01",
+      "result": "Pass",
+      "severity": "None"
+    },
+    {
+      "applicability": true,
+      "confidence": 1.0,
+      "disposition": "none",
+      "evidence": {
+        "client": "opencode",
+        "command": "audit_agents.py",
+        "manual": {
+          "label": "manual",
+          "provided": false
+        },
+        "reference": {
+          "label": "reference",
+          "provided": false
+        },
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "",
+      "id": "HANDOFF-01",
+      "result": "Pass",
+      "severity": "None"
+    }
+  ]
+}

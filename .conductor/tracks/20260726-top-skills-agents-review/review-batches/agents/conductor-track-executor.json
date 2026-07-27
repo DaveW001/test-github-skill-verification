@@ -1,0 +1,150 @@
+{
+  "packet_type": "agent",
+  "canonical_name": "conductor-track-executor",
+  "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+  "selected": true,
+  "rank": 3,
+  "configured_model": "zai-coding-plan/glm-5.2",
+  "configured_variant": "high",
+  "configured_mode": "subagent",
+  "smoke_outcome": "AGENT_SMOKE_UNVERIFIED",
+  "smoke_evidence": {
+    "dispatch_status": "NOT_DISPATCHED",
+    "reason": "live opencode run is unsafe/unavailable in this environment: the opencode CLI hangs (opencode models produced no output and timed out), and a live agent session cannot be bounded to the 20-tool-call/10K-token cap from the dispatch side and may require a running server/auth. Recorded AGENT_SMOKE_UNVERIFIED; no model substituted.",
+    "fixture_record": "evidence/agent-smoke-tests/conductor-track-executor-fixture.json",
+    "intended_envelope": "opencode run --pure --agent \"<name>\" --format json --dir \"<disposable-fixture>\" \"<fixture_prompt>\""
+  },
+  "items": [
+    {
+      "id": "AGENT_02_FRONTMATTER_BODY_PARSE",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "frontmatter parses; body present (size=3605 lines=45)"
+    },
+    {
+      "id": "AGENT_01_IDENTITY_PURPOSE",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "description length=199 states role/purpose"
+    },
+    {
+      "id": "AGENT_03_MODE",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "mode=subagent (valid)"
+    },
+    {
+      "id": "AGENT_04_MODEL_ROUTE",
+      "result": "Unverified",
+      "severity": "Info",
+      "confidence": "medium",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "model='zai-coding-plan/glm-5.2' default='openai/gpt-5.6-luna'; provider 'zai-coding-plan' configured=True disabled=False model-declared=True default=False provider-has-models-block=True",
+      "blocker_reason": "LIVE opencode models unavailable (command hangs in this env; not retried). Config-level route supported: model='zai-coding-plan/glm-5.2' default='openai/gpt-5.6-luna'; provider 'zai-coding-plan' configured=True disabled=False model-declared=True default=False provider-has-models-block=True. Route not changed."
+    },
+    {
+      "id": "AGENT_05_VARIANT",
+      "result": "Unverified",
+      "severity": "Info",
+      "confidence": "medium",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "variant=high; config-level only",
+      "blocker_reason": "variant='high' declared; live availability unverified (opencode models hangs). Config-level model configured."
+    },
+    {
+      "id": "AGENT_06_PERMISSIONS_LEAST_PRIVILEGE",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "parsed permission keys=['bash', 'edit', 'skill', 'task']; mode=subagent; issues=none"
+    },
+    {
+      "id": "AGENT_07_TOOLS_SKILLS",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "parsed permission.skill={'conductor': 'allow', 'conductor-pipeline': 'allow'}; tools inferred from permission keys=['bash', 'edit', 'skill', 'task']"
+    },
+    {
+      "id": "AGENT_08_WINDOWS_PATH_SHELL",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "Windows/path/shell guidance present=True"
+    },
+    {
+      "id": "AGENT_09_BOUNDED_COMMANDS",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "bounded-command guidance present=True"
+    },
+    {
+      "id": "AGENT_10_SAFETY_STOPS",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "safety-stop guidance present=True"
+    },
+    {
+      "id": "AGENT_11_OUTPUT_CONTRACT",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "output contract/handoff guidance present=True"
+    },
+    {
+      "id": "AGENT_12_ROLE_OVERLAP",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "role-overlap scan across 10 selected agents; near-overlaps=none"
+    },
+    {
+      "id": "AGENT_13_SMOKE_OUTCOME",
+      "result": "Unverified",
+      "severity": "Info",
+      "confidence": "medium",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "smoke NOT dispatched; AGENT_SMOKE_UNVERIFIED. Fixture record at evidence/agent-smoke-tests/conductor-track-executor-fixture.json",
+      "blocker_reason": "live opencode run is unsafe/unavailable in this environment: the opencode CLI hangs (opencode models produced no output and timed out), and a live agent session cannot be bounded to the 20-tool-call/10K-token cap from the dispatch side and may require a running server/auth. Recorded AGENT_SMOKE_UNVERIFIED; no model substituted."
+    },
+    {
+      "id": "AGENT_14_CONDUCTOR_DIVERSITY",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "conductor role; resolved_model=zai-coding-plan/glm-5.2; other conductor models=['openai/gpt-5.6-luna', 'openai/gpt-5.6-sol', 'opencode-go/deepseek-v4-flash', 'opencode-go/minimax-m3']; diversity assessed"
+    },
+    {
+      "id": "AGENT_15_EXTERNAL_AUTHORITY_BOUNDARY",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "external-authority capability detected; boundary must be respected (no publish/send/schedule/credential/production mutation in review)"
+    },
+    {
+      "id": "AGENT_16_CROSS_FIELD_CONSISTENCY",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "evidence": "cross-field check: permission/model/mode fields constrain body statements; body references align with mode=subagent permission=['bash', 'edit', 'skill', 'task'] model=zai-coding-plan/glm-5.2"
+    }
+  ]
+}

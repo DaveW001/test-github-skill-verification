@@ -1,0 +1,37 @@
+{
+  "trackId": "20260727-agents-and-agents-md-comprehensive-review",
+  "title": "Comprehensive Agent Definitions and AGENTS.md Optimization & Validation",
+  "type": "maintenance",
+  "track_type": "bookkeeping",
+  "phase": "complete",
+  "status": "complete",
+  "created": "2026-07-27",
+  "plan_creator": "Codex / Root Orchestrator",
+  "plan_creator_model": "gpt-5.6-sol",
+  "reviewer": "Archimedes",
+  "reviewer_model": "gpt-5.6-terra",
+  "baseline_status": "KNOWN-RED",
+  "baseline_evidence": "C:\\development\\opencode\\.conductor\\tracks\\20260727-agents-and-agents-md-comprehensive-review\\baseline-report-20260727-140000.md",
+  "review_status": "passed",
+  "classification": "certain",
+  "test_framework": "none",
+  "test_command": "n/a - deterministic file, path, and CLI config checks",
+  "skipped_stages": [
+    "Stage 4/4b/6: skipped because track_type is bookkeeping and no production code changes apply",
+    "Stage 8: conditional re-validation pending Stage 7 result"
+  ],
+  "assignedTo": "Codex / Root Orchestrator",
+  "pipeline_mode": "bookkeeping",
+  "pipeline_path": "0 -> 1 -> 2 -> 5 -> 7 -> 9",
+  "pipeline_rationale": "Comprehensive audit of 69 artifacts (config.toml, 2 global AGENTS.md, 25 custom agent definitions, 41 local repository AGENTS.md) with real static path verification.",
+  "deliverables": [
+    "spec.md",
+    "plan.md",
+    "metadata.json",
+    "baseline-report-20260727-140000.md",
+    "review-report-stage2.md",
+    "backup-manifest.json",
+    "comprehensive-audit-report.md"
+  ],
+  "completed": "2026-07-27"
+}

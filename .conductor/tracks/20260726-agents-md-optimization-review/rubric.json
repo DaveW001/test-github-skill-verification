@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "rubric_ids": [
+    "SCOPE-01", "SCOPE-02", "LOAD-01", "LOAD-02", "PURPOSE-01", "STRUCT-01",
+    "STRUCT-02", "TOKEN-01", "TOKEN-02", "CMD-01", "CMD-02", "REF-01",
+    "REF-02", "ARCH-01", "CONV-01", "VERIFY-01", "SAFETY-01", "SAFETY-02",
+    "GIT-01", "NEST-01", "CLIENT-01", "DRIFT-01", "REVIEW-01", "HANDOFF-01"
+  ],
+  "items": [
+    {"id": "SCOPE-01", "title": "Correct global/repository/subtree scope"},
+    {"id": "SCOPE-02", "title": "No broader rule where a narrower file is appropriate"},
+    {"id": "LOAD-01", "title": "Correct client discovery and precedence behavior"},
+    {"id": "LOAD-02", "title": "No hidden override/fallback conflict"},
+    {"id": "PURPOSE-01", "title": "Concise repository or personal-context orientation"},
+    {"id": "STRUCT-01", "title": "Scannable headings and actionable bullets"},
+    {"id": "STRUCT-02", "title": "Critical rules appear before optional references"},
+    {"id": "TOKEN-01", "title": "No avoidable duplication or low-value context cost"},
+    {"id": "TOKEN-02", "title": "Large files use valid client-specific modularization"},
+    {"id": "CMD-01", "title": "Commands exist and match the repository"},
+    {"id": "CMD-02", "title": "Windows/path/shell guidance is accurate"},
+    {"id": "REF-01", "title": "Local references resolve or are explicitly optional/ghost"},
+    {"id": "REF-02", "title": "Reference loading semantics match the client"},
+    {"id": "ARCH-01", "title": "Architecture and important-directory guidance is current"},
+    {"id": "CONV-01", "title": "Engineering conventions are project-specific"},
+    {"id": "VERIFY-01", "title": "Definition of done names proportional verification"},
+    {"id": "SAFETY-01", "title": "Destructive/external/high-authority actions retain human gates"},
+    {"id": "SAFETY-02", "title": "Secrets and sensitive data guidance is least privilege"},
+    {"id": "GIT-01", "title": "Repository ownership and dirty-tree rules are accurate"},
+    {"id": "NEST-01", "title": "Nested files add local rules without restating parents"},
+    {"id": "CLIENT-01", "title": "Client-only tool names do not leak across clients"},
+    {"id": "DRIFT-01", "title": "Instructions agree with current manifests, CI, docs, and paths"},
+    {"id": "REVIEW-01", "title": "Review guidance flags behavior and safe alternatives"},
+    {"id": "HANDOFF-01", "title": "Changes, unresolved items, and limitations are explicit"}
+  ]
+}

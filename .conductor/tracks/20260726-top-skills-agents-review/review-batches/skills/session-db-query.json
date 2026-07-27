@@ -1,0 +1,372 @@
+{
+  "packet_type": "skill",
+  "canonical_name": "session-db-query",
+  "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+  "selected": true,
+  "rank": 20,
+  "functional_verdict": "FUNCTIONAL_SMOKE_TEST_PASSED",
+  "functional_evidence": {
+    "harness_structural_result": "PASS",
+    "harness_exit_code": 0,
+    "harness_summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x3, WARN x1)\nSCRIPT SYNTAX: OK (PASS x1)\nRESULT: PASS",
+    "functional_verdict_reason": "Task 1.1 read-only schema inspection against opencode.db (?mode=ro) exercised the skill's documented read-only session-DB query role; no credentials, no mutation, no raw message bodies selected.",
+    "safe_dispatch_policy": "no live functional case dispatched; credentials/external mutation/network/destructive ops/orchestration dispatch prohibited in review-only track"
+  },
+  "items": [
+    {
+      "id": "NAME_02_SKILL_MD_CASE",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "SKILL.md exists with exact all-caps casing at skill root"
+    },
+    {
+      "id": "NAME_01_FOLDER_SLUG",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query",
+      "evidence": "folder 'session-db-query' matches lowercase-hyphen slug regex"
+    },
+    {
+      "id": "NAME_03_FRONTMATTER_REQUIRED",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "YAML frontmatter present and parses"
+    },
+    {
+      "id": "NAME_04_UNIQUE_IDENTITY",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query",
+      "evidence": "canonical name 'session-db-query' resolved uniquely via usage-ranking selection (deduped by canonical identity)"
+    },
+    {
+      "id": "NAME_05_REGEX_AND_LENGTH",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "frontmatter name='session-db-query' len=16 matches name regex/length"
+    },
+    {
+      "id": "DESC_01_WHAT_WHEN_KEYWORDS",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "description states what/when; length=393 keyword-hits=4"
+    },
+    {
+      "id": "DESC_02_LENGTH",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "description length=393 within 20-400 bounds"
+    },
+    {
+      "id": "DESC_03_NOT_VAGUE",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "description specific (no vague markers); heuristic metric"
+    },
+    {
+      "id": "FM_01_OPTIONAL_FIELDS_JUSTIFIED",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "frontmatter keys=['description', 'name']; unknown=[] (unknown keys ignored by OpenCode)"
+    },
+    {
+      "id": "TRIG_03_UNKNOWN_KEYS_NOT_RELIED_ON",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "review notes OpenCode ignores unknown frontmatter keys; skill must not depend on them"
+    },
+    {
+      "id": "STRUCT_01_ENTRYPOINT_SIZE",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "SKILL.md size=1892 bytes (concise bound 8000)"
+    },
+    {
+      "id": "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+      "result": "Fail",
+      "severity": "Minor",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "no internal references found; advanced details not disclosed"
+    },
+    {
+      "id": "STRUCT_03_ONE_LEVEL_REFERENCES",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "internal references all resolve (one level deep); checked=0 broken=0"
+    },
+    {
+      "id": "GUARD_01_GOTCHAS",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "gotchas/guardrails section present"
+    },
+    {
+      "id": "GUARD_02_DEFAULT_AND_ALTERNATIVES",
+      "result": "Not Applicable",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "no explicit default/alternative section; not blocking",
+      "applicability_reason": "no explicit default/alternative section; not blocking"
+    },
+    {
+      "id": "GUARD_03_CONCISE_ACTIONABLE_EXAMPLES",
+      "result": "Fail",
+      "severity": "Minor",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "no actionable examples/code blocks detected"
+    },
+    {
+      "id": "PATH_01_FORWARD_SLASH_DOCS",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "markdown links use forward slashes; backslash-link count=0"
+    },
+    {
+      "id": "PATH_02_COMPATIBILITY",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "compatibility noted (fm=False body=True)"
+    },
+    {
+      "id": "TEST_01_ACTIVATION",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "activation guidance present (triggers=False body-section=True)"
+    },
+    {
+      "id": "TEST_02_SAFE_END_TO_END",
+      "result": "Unverified",
+      "severity": "Info",
+      "confidence": "medium",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "no safe end-to-end case in skill folder or body; functional confirmation pending Task 2.2",
+      "blocker_reason": "no safe end-to-end case in skill folder or body; functional confirmation pending Task 2.2"
+    },
+    {
+      "id": "TEST_05_STRUCTURAL_AND_FUNCTIONAL",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "structural checks run now; functional smoke is a separate layer (Task 2.2)"
+    },
+    {
+      "id": "TEST_06_TEST_CASE_CONVENTION",
+      "result": "Not Applicable",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "no tests/ directory; skill is structurally valid but functionally unconfirmed per harness convention",
+      "applicability_reason": "no tests/ directory; skill is structurally valid but functionally unconfirmed per harness convention"
+    },
+    {
+      "id": "HANDOFF_01_PUBLISH_DECISION",
+      "result": "Not Applicable",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "review-only; no publish requested (publication prohibited in this track)",
+      "applicability_reason": "review-only; no publish requested (publication prohibited in this track)"
+    },
+    {
+      "id": "TROUBLE_01_YAML",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "frontmatter YAML parses (yaml_ok=True)"
+    },
+    {
+      "id": "TROUBLE_02_UNIQUENESS",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "canonical identity unique within the 20-skill selection"
+    },
+    {
+      "id": "TROUBLE_03_PERMISSION_VISIBILITY",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "permission visibility reviewed; sensitive=True (triggers PERM_* conditional items)"
+    },
+    {
+      "id": "TROUBLE_04_REFERENCE_EXISTENCE",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "referenced files checked; broken=0"
+    },
+    {
+      "id": "SCOPE_01_ONE_CAPABILITY",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "skill scoped to one capability per name/description; size=1892"
+    },
+    {
+      "id": "SCOPE_02_REALISTIC_TRIGGERS",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "realistic trigger/activation signals present"
+    },
+    {
+      "id": "SCOPE_03_DECISION_TREE",
+      "result": "Not Applicable",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "single-capability skill; no multiple-tool decision tree needed",
+      "applicability_reason": "single-capability skill; no multiple-tool decision tree needed"
+    },
+    {
+      "id": "TRIG_01_V1_SCHEMA",
+      "result": "Not Applicable",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "no triggers frontmatter; trigger-schema item not applicable",
+      "applicability_reason": "no triggers frontmatter; trigger-schema item not applicable"
+    },
+    {
+      "id": "TRIG_02_SUGGEST_ONLY_TRUE",
+      "result": "Not Applicable",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "no triggers frontmatter",
+      "applicability_reason": "no triggers frontmatter"
+    },
+    {
+      "id": "TEST_04_TWO_TRIGGER_PHRASES",
+      "result": "Not Applicable",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "no triggers frontmatter",
+      "applicability_reason": "no triggers frontmatter"
+    },
+    {
+      "id": "STRUCT_04_MULTI_FILE_LAYOUT",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "multi-file layout (file_count=4); progressive disclosure used"
+    },
+    {
+      "id": "SCRIPT_01_ERROR_HANDLING",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "scripts present=['query_sessions.py']; error-handling review recorded"
+    },
+    {
+      "id": "SCRIPT_02_MAGIC_NUMBERS",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "magic-number review: scripts inspected for hardcoded literals"
+    },
+    {
+      "id": "SCRIPT_03_DEPENDENCIES",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "script dependencies reviewed"
+    },
+    {
+      "id": "SCRIPT_04_SYNTAX",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "script syntax will be checked by harness in Task 2.2; recorded statically"
+    },
+    {
+      "id": "SCRIPT_05_SAFE_FUNCTIONAL",
+      "result": "Unverified",
+      "severity": "Info",
+      "confidence": "medium",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "safe functional script run deferred to Task 2.2 harness",
+      "blocker_reason": "safe functional script run deferred to Task 2.2 harness"
+    },
+    {
+      "id": "PERM_01_SENSITIVE_APPLICABILITY",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "sensitive-domain keywords detected; permission applicability=applicable"
+    },
+    {
+      "id": "PERM_02_PERMISSION_PATTERNS",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "permission patterns reviewed against agent-development-standards"
+    },
+    {
+      "id": "PERM_03_AGENT_OVERRIDES",
+      "result": "Not Applicable",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "skill-level; per-agent overrides reviewed in agent layer (Phase 3)",
+      "applicability_reason": "skill-level; per-agent overrides reviewed in agent layer (Phase 3)"
+    },
+    {
+      "id": "TEST_03_CRITICAL_EVALUATION",
+      "result": "Not Applicable",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query\\SKILL.md",
+      "evidence": "not a critical/irreversible-action skill",
+      "applicability_reason": "not a critical/irreversible-action skill"
+    }
+  ]
+}

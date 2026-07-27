@@ -1,0 +1,40 @@
+{
+  "contract_version": 1,
+  "frozen_at_utc": "2026-07-26T22:30:00Z",
+  "trackId": "20260726-top-skills-agents-review",
+  "selection_targets": { "skills": 20, "agents": 10 },
+  "weights": {
+    "observed_frequency": 0.55,
+    "unique_session_breadth": 0.25,
+    "recency": 0.15,
+    "operational_importance": 0.05
+  },
+  "weights_sum_to_one": 1.0,
+  "reference_timestamp_utc": "2026-07-26T22:30:00Z",
+  "normalization": {
+    "frequency_norm": "frequency / max_frequency_within_artifact_type (skills normalized over skill max; agents over agent max)",
+    "breadth_norm": "unique_sessions / max_unique_sessions_within_artifact_type",
+    "recency": "exp(-days_since_last_use / 90) computed from reference_timestamp_utc; days = (reference - last_use_timestamp_ms/1000)/86400",
+    "operational_importance": "1.0 = active safety/orchestration/validation infrastructure; 0.5 = active cross-client business-workflow infrastructure; 0.0 = otherwise; classification reason recorded"
+  },
+  "missing_signal_behavior": "Missing signals contribute 0 to that component and lower the candidate confidence. A candidate with no observed signal can still be selected by tie-break but is labeled low confidence.",
+  "confidence_rules": {
+    "high": "direct structured signal (e.g. session.agent column for agents)",
+    "medium": "inferred but differentiated signal",
+    "low": "inferred/weak signal or all-zero observed components"
+  },
+  "deduplication": "Aliases and cross-source records deduplicate by resolved canonical identity (canonical skill folder name; canonical agent definition id) before totals. Always-on skills that also exist in the vault collapse to one canonical record with the resolved path recorded.",
+  "eligibility": "Candidate must be an active canonical artifact: a skill folder containing SKILL.md under the vault or always-on skill root; an agent .md definition (excluding .bak/.routing) under the agent root. Archived/missing/package-managed-only duplicates are excluded from selection but recorded as near-cutoff where relevant.",
+  "final_sort": "(score desc, unique_sessions desc, recency desc, canonical_name casefold asc)",
+  "evidence_sources": {
+    "agents": "session.agent column in opencode.db (direct; read-only; no message bodies). Frequency = session count; breadth = COUNT(DISTINCT project_id); recency = MAX(time_created).",
+    "skills": "INFERRED: session.title mentions of the canonical skill folder name (word-boundary, case-insensitive). Frequency = mentioning-session count; breadth = COUNT(DISTINCT project_id) of mentioning sessions; recency = MAX(time_created) of mentioning sessions. Structured skill-call records are ABSENT from opencode.db (verified in Task 1.1)."
+  },
+  "known_limitations": [
+    "No structured skill-invocation table exists in opencode.db; event types are message/session lifecycle only; session.metadata is empty. Skill ranking is therefore INFERRED (low confidence) from session-title mentions plus operational importance.",
+    "Title mentions conflate a skill with same-named systems (e.g. 'conductor' titles largely reference the Conductor track system).",
+    "Codex-local session history exists at ~/.codex/sessions but is NOT parsed here because its files contain message bodies/private content; parsing would require a body-redaction contract. Recorded as an evidence gap for a possible follow-up track.",
+    "Metered cost is not used as a universal activity proxy."
+  ],
+  "scoring_formula": "score = 0.55*frequency_norm + 0.25*breadth_norm + 0.15*recency + 0.05*operational_importance"
+}

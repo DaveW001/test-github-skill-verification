@@ -1,0 +1,151 @@
+{
+  "packet_type": "agent",
+  "canonical_name": "build",
+  "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+  "selected": true,
+  "rank": 2,
+  "configured_model": "openai/gpt-5.6-luna",
+  "configured_variant": null,
+  "configured_mode": "primary",
+  "smoke_outcome": "AGENT_SMOKE_UNVERIFIED",
+  "smoke_evidence": {
+    "dispatch_status": "NOT_DISPATCHED",
+    "reason": "live opencode run is unsafe/unavailable in this environment: the opencode CLI hangs (opencode models produced no output and timed out), and a live agent session cannot be bounded to the 20-tool-call/10K-token cap from the dispatch side and may require a running server/auth. Recorded AGENT_SMOKE_UNVERIFIED; no model substituted.",
+    "fixture_record": "evidence/agent-smoke-tests/build-fixture.json",
+    "intended_envelope": "opencode run --pure --agent \"<name>\" --format json --dir \"<disposable-fixture>\" \"<fixture_prompt>\""
+  },
+  "items": [
+    {
+      "id": "AGENT_02_FRONTMATTER_BODY_PARSE",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "frontmatter parses; body present (size=1443 lines=31)"
+    },
+    {
+      "id": "AGENT_01_IDENTITY_PURPOSE",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "description length=62 states role/purpose"
+    },
+    {
+      "id": "AGENT_03_MODE",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "mode=primary (valid)"
+    },
+    {
+      "id": "AGENT_04_MODEL_ROUTE",
+      "result": "Unverified",
+      "severity": "Info",
+      "confidence": "medium",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "model='None' default='openai/gpt-5.6-luna'; provider 'openai' configured=True disabled=False model-declared=False default=True provider-has-models-block=True",
+      "blocker_reason": "LIVE opencode models unavailable (command hangs in this env; not retried). Config-level route supported: model='None' default='openai/gpt-5.6-luna'; provider 'openai' configured=True disabled=False model-declared=False default=True provider-has-models-block=True. Route not changed."
+    },
+    {
+      "id": "AGENT_05_VARIANT",
+      "result": "Not Applicable",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "no variant declared in frontmatter; uses model default variant",
+      "applicability_reason": "no variant declared in frontmatter; uses model default variant"
+    },
+    {
+      "id": "AGENT_06_PERMISSIONS_LEAST_PRIVILEGE",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "parsed permission keys=['edit', 'skill']; mode=primary; issues=none"
+    },
+    {
+      "id": "AGENT_07_TOOLS_SKILLS",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "parsed permission.skill='allow'; tools inferred from permission keys=['edit', 'skill']"
+    },
+    {
+      "id": "AGENT_08_WINDOWS_PATH_SHELL",
+      "result": "Fail",
+      "severity": "Minor",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "no Windows/path/shell guidance detected"
+    },
+    {
+      "id": "AGENT_09_BOUNDED_COMMANDS",
+      "result": "Fail",
+      "severity": "Minor",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "no bounded-command/timeout guidance detected"
+    },
+    {
+      "id": "AGENT_10_SAFETY_STOPS",
+      "result": "Fail",
+      "severity": "Minor",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "no safety-stop guidance detected"
+    },
+    {
+      "id": "AGENT_11_OUTPUT_CONTRACT",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "output contract/handoff guidance present=True"
+    },
+    {
+      "id": "AGENT_12_ROLE_OVERLAP",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "role-overlap scan across 10 selected agents; near-overlaps=none"
+    },
+    {
+      "id": "AGENT_13_SMOKE_OUTCOME",
+      "result": "Unverified",
+      "severity": "Info",
+      "confidence": "medium",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "smoke NOT dispatched; AGENT_SMOKE_UNVERIFIED. Fixture record at evidence/agent-smoke-tests/build-fixture.json",
+      "blocker_reason": "live opencode run is unsafe/unavailable in this environment: the opencode CLI hangs (opencode models produced no output and timed out), and a live agent session cannot be bounded to the 20-tool-call/10K-token cap from the dispatch side and may require a running server/auth. Recorded AGENT_SMOKE_UNVERIFIED; no model substituted."
+    },
+    {
+      "id": "AGENT_14_CONDUCTOR_DIVERSITY",
+      "result": "Not Applicable",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "not a Conductor creator/reviewer/executor/validator role",
+      "applicability_reason": "not a Conductor creator/reviewer/executor/validator role"
+    },
+    {
+      "id": "AGENT_15_EXTERNAL_AUTHORITY_BOUNDARY",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "external-authority capability detected; boundary must be respected (no publish/send/schedule/credential/production mutation in review)"
+    },
+    {
+      "id": "AGENT_16_CROSS_FIELD_CONSISTENCY",
+      "result": "Pass",
+      "severity": "Info",
+      "confidence": "high",
+      "source_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "evidence": "cross-field check: permission/model/mode fields constrain body statements; body references align with mode=primary permission=['edit', 'skill'] model=None"
+    }
+  ]
+}

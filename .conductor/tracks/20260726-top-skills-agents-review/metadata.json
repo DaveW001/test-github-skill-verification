@@ -1,0 +1,86 @@
+{
+  "trackId": "20260726-top-skills-agents-review",
+  "title": "Review Top 20 Skills and Top 10 Agents",
+  "status": "complete",
+  "created": "2026-07-26",
+  "completed": "2026-07-26",
+  "estimatedHours": "8-16",
+  "assignedTo": "Conductor pipeline",
+  "type": "maintenance",
+  "track_type": "bookkeeping",
+  "classification": "certain",
+  "pipeline_mode": "bookkeeping",
+  "pipeline_path": "1 -> 2 -> 5 -> 7 -> 9",
+  "pipeline_rationale": "This is a bookkeeping track with no production-code test framework. Stage 2 is deliberately added because the scope includes broad, unversioned global skill and agent artifacts; Stage 7 independently validates corrections.",
+  "skipped_stages": [
+    "Stage 3: conditional under the B+C trigger in C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\threshold-policy.md; required after the first review scored below 90 percent",
+    "Stage 4: skipped because this is a bookkeeping track without a unit-test framework; each skill and agent has deterministic structural and representative functional checks instead",
+    "Stage 4b: skipped because Stage 4 does not apply",
+    "Stage 6: skipped as a separate project-suite stage because test_framework is none; task-level harness and smoke checks are executed in Stages 5 and 7",
+    "Stage 8: conditional under the A+C trigger in C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\threshold-policy.md; run only if Stage 7 requires qualifying fixes"
+  ],
+  "test_framework": "none",
+  "test_command": "n/a - use deterministic task checks, skill-test-harness, script syntax checks, and bounded agent smoke tests",
+  "tags": [
+    "skills",
+    "agents",
+    "opencode",
+    "codex",
+    "portfolio-review",
+    "quality"
+  ],
+  "progress": {
+    "totalTasks": 21,
+    "completedTasks": 21,
+    "percentage": 100
+  },
+  "readiness_check_count": 8,
+  "total_checkbox_count": 29,
+  "summary": "Rank and comprehensively review Dave's top shared skills and agents using actual usage evidence, repair high-confidence defects, and validate the resulting portfolio.",
+  "keyOutcomes": [
+    "Evidence-backed top 20 skill and top 10 agent lists",
+    "Complete skill-creator checklist results for every selected skill",
+    "Safe, backed-up fixes for confirmed defects",
+    "Decision-ready portfolio report with independent validation"
+  ],
+  "risks": [
+    "Structured skill invocation history may be incomplete",
+    "Functional tests may require fixture-only validation for authority-sensitive skills",
+    "Global agent and always-on skill files are unversioned"
+  ],
+  "dependencies": [
+    "C:\\Users\\DaveWitkin\\.local\\share\\opencode\\opencode.db",
+    "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-creator\\reference.md",
+    "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-test-harness",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\agent"
+  ],
+  "blocking": [],
+  "validation_state": "terminal_closeout_complete",
+  "validation_cycle": 1,
+  "validation_cycle_max": 5,
+  "last_validator": "conductor-track-validator",
+  "stage7_verdict": "ready_to_close",
+  "stage8_decision": "authorized artifact removal completed; revision-2 manifest and both changed-skill PASS results generated",
+  "resume_point": "none; terminal Phase B complete",
+  "relatedTracks": [
+    "20260710-session-db-query-skill",
+    "20260703-skill-creation-functional-testing",
+    "20260706-lazy-vault-localization"
+  ],
+  "deliverables": [
+    "usage-ranking.json",
+    "skill-review-matrix.md",
+    "agent-review-matrix.md",
+    "fix-queue.json",
+    "change-manifest.json",
+    "validation-results.json",
+    "portfolio-review-report.md"
+  ],
+  "validationCriteria": [
+    "Exactly 20 skills and 10 agents selected from reproducible evidence",
+    "Every selected skill receives the full applicable checklist",
+    "Every selected agent receives the complete agent rubric",
+    "Every change has backup, narrow diff, and confirmation",
+    "Independent closeout validation passes"
+  ]
+}

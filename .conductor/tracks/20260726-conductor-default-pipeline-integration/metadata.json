@@ -1,0 +1,65 @@
+{
+  "trackId": "20260726-conductor-default-pipeline-integration",
+  "title": "Conductor Default Pipeline Integration",
+  "status": "complete",
+  "created": "2026-07-26",
+  "completed": "2026-07-26",
+  "estimatedHours": "2-4",
+  "assignedTo": "Dave Witkin",
+  "type": "maintenance",
+  "track_type": "bookkeeping",
+  "classification": "certain",
+  "pipeline_mode": "bookkeeping",
+  "pipeline_path": "0 -> 1 -> 2 -> 5 -> 7 -> 9",
+  "pipeline_rationale": "Global skill and documentation changes require deterministic baseline checks, independent plan review, bounded execution, independent validation, and closeout.",
+  "skipped_stages": [
+    "Stage 3: conditional and not yet triggered",
+    "Stages 4/4b/6: no production-code test framework applies",
+    "Stage 8: conditional on validation findings"
+  ],
+  "test_framework": "skill-test-harness",
+  "test_command": "skill-smoke-test.ps1 for conductor and conductor-pipeline",
+  "baseline_status": "PASS",
+  "baseline_evidence": ".conductor/tracks/20260726-conductor-default-pipeline-integration/baseline-report-2026-07-26.md",
+  "plan_creator": "root agent",
+  "plan_creator_model": "openai/gpt-5.6-sol",
+  "plan_reviewer": "conductor-plan-reviewer (independent agent)",
+  "plan_reviewer_model": "openai/gpt-5.6-terra",
+  "reviewed_at": "2026-07-26",
+  "review_status": "EXECUTION_READY",
+  "validation_status": "READY_TO_CLOSE",
+  "validation_evidence": ".conductor/tracks/20260726-conductor-default-pipeline-integration/validation-report-2026-07-26-204634.md",
+  "post_doc_validation": ".conductor/tracks/20260726-conductor-default-pipeline-integration/post-doc-validation-2026-07-26-204600.md",
+  "progress": {
+    "totalTasks": 17,
+    "completedTasks": 17,
+    "percentage": 100
+  },
+  "summary": "Make conductor automatically compose the applicable pipeline with mandatory baseline and independent plan review.",
+  "keyOutcomes": [
+    "Conductor automatically composes the applicable pipeline for new and updated plans",
+    "Stage 0 baseline and Stage 2 independent plan review are mandatory",
+    "Every stage enforces a capable-model floor and rejects mini/nano/economy downgrades"
+  ],
+  "risks": [
+    "Cross-file policy drift",
+    "Unversioned global skill edits",
+    "Capability downgrade during model substitution"
+  ],
+  "dependencies": [],
+  "blocking": [],
+  "relatedTracks": [
+    "20260706-conductor-skill-pipeline-alignment"
+  ],
+  "deliverables": [
+    "Updated conductor skill",
+    "Updated conductor-pipeline skill and canonical references",
+    "Validated templates and functional smoke-test evidence"
+  ],
+  "validationCriteria": [
+    "Both structural smoke tests pass",
+    "Independent functional smoke test passes",
+    "No active policy permits Stage 0 or Stage 2 bypass",
+    "Every active Conductor agent and substitution route meets the capable-model floor"
+  ]
+}

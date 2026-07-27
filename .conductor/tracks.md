@@ -1,6 +1,8 @@
 # Conductor Tracks
 
 | Track ID | Title | Status | Completed | Path |
+| 20260726-agents-md-optimization-review | Optimize and Review Global and Active Repository AGENTS.md Files | complete | 2026-07-27 (17/17) | C:\development\opencode\.conductor\tracks\20260726-agents-md-optimization-review |
+| 20260726-top-skills-agents-review | Review Top 20 Skills and Top 10 Agents | complete | 2026-07-26 (21/21; terminal closeout PASS) | C:\development\opencode\.conductor\tracks\20260726-top-skills-agents-review |
 | 20260721-openai-rotation-validation | OpenAI Multi-Account Rotation Remediation and Validation | manual-rotation-validated-auto-failover-deferred | 16/17 (1 deferred) | C:\development\opencode\.conductor\tracks\20260721-openai-rotation-validation |
 | 20260720-opencode-db-activation-safety | OpenCode Database Activation Safety Remediation | validated | 22/22 | C:\development\opencode\.conductor\tracks\20260720-opencode-db-activation-safety |
 | 20260718-glm-52-effort-mapping-hotfix | GLM-5.2 High/Max Effort-Mapping Hotfix | planned | 0/18 | C:\development\opencode\.conductor\tracks\20260718-glm-52-effort-mapping-hotfix |
@@ -67,4 +69,5 @@
 | 20260710-session-db-query-skill | Session DB Query Skill | closed | 2026-07-10 | C:\development\opencode\.conductor\tracks\20260710-session-db-query-skill |
 | 20260710-pptx-powerpoint-render-backend | PowerPoint COM Render Backend for pptx-from-layouts Visual Validation | closed | 2026-07-11 | C:\development\opencode\.conductor\tracks\20260710-pptx-powerpoint-render-backend |
 | 20260712-pptx-quality-pipeline | PowerPoint Creation and Evaluation Quality Pipeline | complete | 2026-07-12 | C:\development\opencode\.conductor\tracks\20260712-pptx-quality-pipeline |
+| 20260726-conductor-default-pipeline-integration | Conductor Default Pipeline Integration | complete | 2026-07-26 | C:\development\opencode\.conductor\tracks\20260726-conductor-default-pipeline-integration |
 

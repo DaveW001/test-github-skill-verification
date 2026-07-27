@@ -1,0 +1,147 @@
+# AGENTS.md
+
+This file guides agentic coding assistants for this repo.
+Keep changes aligned with the project docs and rules.
+
+## Sources of truth (must follow)
+- `GEMINI.md` (AI collaboration guide and project constraints).
+- `.cursorrules` (Cursor rules with external includes).
+- `.cursor/rules/shared` (pointer to shared rule set).
+- If present in the future: `.github/copilot-instructions.md`.
+
+## Core project context
+- Next.js 15 (App Router) + React 18 + TypeScript.
+- Tailwind CSS + shadcn/ui (Radix primitives).
+- Data for dashboard views is static JSON in `src/data/json/`.
+- Access data via `src/services/` service layer.
+- AI chatbot uses a database; dashboard UI does not.
+
+## Build, lint, test, deploy
+Use pnpm from repo root.
+
+```bash
+pnpm install
+pnpm run dev
+pnpm run build
+pnpm run start
+pnpm run lint
+```
+
+For Firebase deployment, always use the **Firebase Deployment Specialist** skill (OpenCode: skill({ name: "Firebase Deployment Specialist" }); Codex: load repository deployment instructions or request cross-client fallback) to ensure the correct build configuration is applied (especially for Node 24+ compatibility).
+
+Unit test command (single test file):
+
+```bash
+pnpm run test
+# or run a specific file
+pnpm exec tsx --test src/lib/action-scoring.test.ts
+```
+
+Playwright (ai-chatbot) e2e tests:
+
+```bash
+# run from repo root
+pnpm -C ai-chatbot exec playwright test
+# run a single file
+pnpm -C ai-chatbot exec playwright test tests/e2e/example.test.ts
+```
+
+Notes:
+- Playwright config lives at `ai-chatbot/playwright.config.ts`.
+- Web server is `pnpm dev` and expects `/ping` to respond.
+
+## Required docs to read before large changes
+- `docs/020-architecture.md`
+- `docs/040-running-locally.md`
+- `docs/060-vibe-coding-guidelines.md`
+- `docs/070-rollback-instructions.md`
+
+## Code style and formatting
+- TypeScript strict mode is enabled (`tsconfig.json`).
+- Use Prettier formatting (standard project settings).
+- Prefer functional React components and hooks.
+- Keep components small and single-responsibility.
+- Reuse before rebuild; check existing components first.
+
+### Imports
+- Prefer path alias `@/*` for src imports.
+- Group imports by: external, internal, relative, styles.
+- Avoid deep relative paths when alias is available.
+
+### File and symbol naming
+- Components: PascalCase (`SolutionOverviewSection.tsx`).
+- Files: kebab-case for general files and dashboards.
+- Functions/variables: camelCase.
+- Types/interfaces: PascalCase.
+- Constants: UPPER_SNAKE_CASE for true constants.
+
+### Types and data modeling
+- Define shared types in `src/types/`.
+- JSON data must map to typed interfaces.
+- Prefer explicit types on public functions and props.
+- Avoid `any`; use `unknown` with narrowing when needed.
+
+### Error handling
+- Fail fast with clear messages for invalid input.
+- Use error boundaries for UI resiliency when appropriate.
+- Keep error surfaces user-friendly and context-specific.
+
+### UI and branding
+- Preserve Army ARDAP branding and layout standards.
+- Maintain logo spacing and presentation view layout.
+- Keep SAFe terminology consistent in UI copy.
+- Use "leading practice" or "recommended practice" wording
+  instead of "best practice" (project terminology rule).
+
+### Data and architecture constraints
+- Dashboard data is static JSON under `src/data/json/`.
+- Access JSON only through `src/services/` service functions.
+- Keep dashboard UI decoupled from database code.
+- AI chatbot database lives in `ai-chatbot/` and `src/lib/db/`.
+- Prefer updating shared types when JSON shapes change.
+
+## Testing guidance
+- Test new or modified dashboard widgets in isolation first.
+- Validate in one dashboard level before reusing widely.
+- Prefer targeted tests before broader suites.
+
+## AI collaboration rules (from GEMINI.md)
+- Do not use the Google Antigravity agent browser for verification.
+- Ask the user to validate UI changes in their browser.
+- Follow Conventional Commits if you are asked to commit.
+- Use git helper scripts:
+  - `python scripts/git-inspect.py` for status/log/diff.
+  - `python scripts/git-push-universal.py` for commits.
+
+## Cursor rules summary (.cursorrules)
+The `.cursorrules` file includes shared rule sets from a 
+knowledge base outside this repo. Those includes cover:
+- ClickUp workflow rules and task management.
+- Git safe operations and terminal troubleshooting.
+- Coding principles, file naming, delivery methodology.
+- Brand voice guidelines and framework philosophy.
+- MCP tool usage and background task monitoring.
+If any rule conflicts exist, prefer `GEMINI.md` user section.
+
+## Copilot rules
+- No `.github/copilot-instructions.md` found in this repo.
+
+## Safe defaults for agents
+- Keep edits minimal and localized.
+- Avoid database work for dashboard UI unless requested.
+- Check `src/components/ui` and `src/components/dashboard`
+  before creating new components.
+- Respect Army ARDAP visual standards and accessibility.
+
+## Common paths
+- Pages and layouts: `app/`
+- Components: `src/components/`
+- Services: `src/services/`
+- Types: `src/types/`
+- Data: `src/data/json/`
+- Styles: `styles/` and `app/globals.css`
+- Scripts: `scripts/`
+
+## When unsure
+- Ask for clarification before making broad changes.
+- Provide options and explain tradeoffs briefly.

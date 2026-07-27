@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://conductor.local/agent-packet.schema.json",
+  "title": "Agent Review Packet",
+  "description": "One complete review packet for a selected agent. Every frozen agent rubric item must be present with result/severity/confidence/source_path/evidence; AGENT_04_MODEL_ROUTE and AGENT_05_VARIANT require exact live inventory evidence; AGENT_06/07 require parsed fields.",
+  "type": "object",
+  "required": ["packet_type", "canonical_name", "source_path", "selected", "items", "smoke_outcome"],
+  "additionalProperties": false,
+  "properties": {
+    "packet_type": { "type": "string", "const": "agent" },
+    "canonical_name": { "type": "string", "minLength": 1 },
+    "source_path": { "type": "string", "minLength": 1 },
+    "selected": { "type": "boolean", "const": true },
+    "rank": { "type": ["integer", "null"] },
+    "configured_model": { "type": ["string", "null"] },
+    "configured_variant": { "type": ["string", "null"] },
+    "configured_mode": { "type": ["string", "null"] },
+    "smoke_outcome": {
+      "type": "string",
+      "enum": [
+        "AGENT_SMOKE_PASSED",
+        "AGENT_SMOKE_FAILED",
+        "AGENT_SMOKE_UNVERIFIED"
+      ]
+    },
+    "smoke_evidence": { "type": "object" },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/item" }
+    }
+  },
+  "definitions": {
+    "item": {
+      "type": "object",
+      "required": ["id", "result", "severity", "confidence", "source_path", "evidence"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "enum": [
+            "AGENT_01_IDENTITY_PURPOSE",
+            "AGENT_02_FRONTMATTER_BODY_PARSE",
+            "AGENT_03_MODE",
+            "AGENT_04_MODEL_ROUTE",
+            "AGENT_05_VARIANT",
+            "AGENT_06_PERMISSIONS_LEAST_PRIVILEGE",
+            "AGENT_07_TOOLS_SKILLS",
+            "AGENT_08_WINDOWS_PATH_SHELL",
+            "AGENT_09_BOUNDED_COMMANDS",
+            "AGENT_10_SAFETY_STOPS",
+            "AGENT_11_OUTPUT_CONTRACT",
+            "AGENT_12_ROLE_OVERLAP",
+            "AGENT_13_SMOKE_OUTCOME",
+            "AGENT_14_CONDUCTOR_DIVERSITY",
+            "AGENT_15_EXTERNAL_AUTHORITY_BOUNDARY",
+            "AGENT_16_CROSS_FIELD_CONSISTENCY"
+          ]
+        },
+        "result": { "type": "string", "enum": ["Pass", "Fail", "Not Applicable", "Unverified"] },
+        "severity": {
+          "type": "string",
+          "enum": ["Critical", "Major", "Minor", "Optional", "Info"]
+        },
+        "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+        "source_path": { "type": "string", "minLength": 1 },
+        "evidence": { "type": "string", "minLength": 0 },
+        "applicability_reason": { "type": "string" },
+        "blocker_reason": { "type": "string" },
+        "source_line_range": { "type": "string" }
+      }
+    }
+  }
+}

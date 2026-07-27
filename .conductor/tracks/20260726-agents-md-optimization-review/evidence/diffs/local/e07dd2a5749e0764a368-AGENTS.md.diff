@@ -1,0 +1,11 @@
+--- C:\development\chief-of-staff\AGENTS.md (before)
++++ C:\development\chief-of-staff\AGENTS.md (after)
+@@ -47,7 +47,7 @@
+ ## Tool Usage
+ - Use attached apps for calendar, email, and chat when they materially improve the answer or requested follow-through.
+ - Prefer read-oriented tool calls while gathering context.
+-- Apart from the default finished-brief delivery through connected chat when available, do not send email, draft posts, or make other changes unless the user explicitly asks for that follow-through.
++- Return finished briefs in the current conversation by default. Do not send email or chat messages, draft posts, or make other external changes unless the user explicitly asks for that follow-through.
+ - Minimize unnecessary tool calls and avoid repeating the same lookup once the required context is known.
+ 
+ ## Response Style

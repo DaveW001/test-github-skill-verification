@@ -1,0 +1,130 @@
+{
+  "authority_expansion": false,
+  "changes": [
+    {
+      "after_bytes": 4122,
+      "after_sha256": "d4ba18f8337b48d83c339e92e11e6db79d3567331ba291f0e3c4c9ec91efc3fc",
+      "anchors": [
+        "The tracks-fedger.md is the source of truth; tracks.md is the dashboard.",
+        "5. Validation \u2014 `validate-kg.py` (or domain-equivalent) reports 0 FAIL"
+      ],
+      "authority_delta": false,
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\003-b449e81d52fd76fc-AGENTS.md",
+      "backup_sha256": "b449e81d52fd76fc886c21235b7b222245f081513d3c786c24fe1fa48a677654",
+      "before_bytes": 4035,
+      "before_sha256": "b449e81d52fd76fc886c21235b7b222245f081513d3c786c24fe1fa48a677654",
+      "diff": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\evidence\\diffs\\local\\1cd3a0f303c8bcc4b9d4-AGENTS.md.diff",
+      "dirty_observed": false,
+      "finding_id": "OPS-KG-LEDGER-VALIDATOR-DRIFT",
+      "rationale": "Correct the misspelled authoritative ledger and name the current KG validator path and required arguments.",
+      "target": "C:\\development\\02-Kx-to-process\\AGENTS.md"
+    },
+    {
+      "after_bytes": 4851,
+      "after_sha256": "802eaea17ca1d8e18a5fa9688ed1d69363ed3715d1ad84cb0ee34ba9c9ec5f72",
+      "anchors": [
+        "- Apart from the default finished-brief delivery through connected chat when available, do not send email, draft posts, or make other changes unless the user explicitly asks for that follow-through."
+      ],
+      "authority_delta": false,
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\043-5c96c509b22ca104-AGENTS.md",
+      "backup_sha256": "5c96c509b22ca1047ce5f924bd9cd0fa8252aad963dcbdc15d5e866b19e637c7",
+      "before_bytes": 4848,
+      "before_sha256": "5c96c509b22ca1047ce5f924bd9cd0fa8252aad963dcbdc15d5e866b19e637c7",
+      "diff": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\evidence\\diffs\\local\\e07dd2a5749e0764a368-AGENTS.md.diff",
+      "dirty_observed": null,
+      "finding_id": "OPS-CHIEF-OF-STAFF-SEND-GATE",
+      "rationale": "Remove the default connected-chat send exception so all external delivery remains explicitly authorized.",
+      "target": "C:\\development\\chief-of-staff\\AGENTS.md"
+    },
+    {
+      "after_bytes": 3812,
+      "after_sha256": "b78295bd0f7fbc595b1924bf9f48c3a568e36fbf27f73684b76f2f0f64089d7c",
+      "anchors": [
+        "<include src=\".gemini/GEMINI.md\" />"
+      ],
+      "authority_delta": false,
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\007-2867e6a7e21cd3ca-AGENTS.md",
+      "backup_sha256": "2867e6a7e21cd3cab89898e8a3fc913e238bc4dbf41c2dd471bcf17f85c44404",
+      "before_bytes": 3631,
+      "before_sha256": "2867e6a7e21cd3cab89898e8a3fc913e238bc4dbf41c2dd471bcf17f85c44404",
+      "diff": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\evidence\\diffs\\local\\eafc852e366eb2f4839a-AGENTS.md.diff",
+      "dirty_observed": false,
+      "finding_id": "MARKETING-ROOT-EXPLICIT-GEMINI-LOAD",
+      "rationale": "Replace an XML include that OpenCode does not parse automatically with an explicit read instruction.",
+      "target": "C:\\development\\marketing\\AGENTS.md"
+    },
+    {
+      "after_bytes": 1251,
+      "after_sha256": "c7b17c0e1f9f44dd3779ae6967a927c20502ce04707e98c62992a3d3feda1829",
+      "anchors": [
+        "<include src=\".gemini/GEMINI.md\" />"
+      ],
+      "authority_delta": false,
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\009-a066acd8336834a1-AGENTS.md",
+      "backup_sha256": "a066acd8336834a12255cf5c2523caffb4a9183b0ebe25241c34f23258d5ef21",
+      "before_bytes": 1054,
+      "before_sha256": "a066acd8336834a12255cf5c2523caffb4a9183b0ebe25241c34f23258d5ef21",
+      "diff": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\evidence\\diffs\\local\\49c8983bbbe213f1876e-AGENTS.md.diff",
+      "dirty_observed": false,
+      "finding_id": "MARKETING-TROUBLESHOOTING-EXPLICIT-GEMINI-LOAD",
+      "rationale": "Point the nested OpenCode scope to the real repository-root guide instead of a nonexistent child-relative include.",
+      "target": "C:\\development\\marketing\\ops\\opencode-troubleshooting\\AGENTS.md"
+    },
+    {
+      "after_bytes": 2000,
+      "after_sha256": "01c0f6605b98f296d7b9b17629d2118a6c1fd8a8abd048c941640ee625a35f1f",
+      "anchors": [
+        "<include src=\".gemini/GEMINI.md\" />"
+      ],
+      "authority_delta": false,
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\005-1e80ee6b7ce95e5d-AGENTS.md",
+      "backup_sha256": "1e80ee6b7ce95e5d6f07f0837d601e6372c76bc3f99a5acf9cc1ed998b14581f",
+      "before_bytes": 1802,
+      "before_sha256": "1e80ee6b7ce95e5d6f07f0837d601e6372c76bc3f99a5acf9cc1ed998b14581f",
+      "diff": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\evidence\\diffs\\local\\57ee810266b1330ceb08-AGENTS.md.diff",
+      "dirty_observed": false,
+      "finding_id": "INACTIVE-MARKETING-ROOT-EXPLICIT-GEMINI-LOAD",
+      "rationale": "Replace an XML include that OpenCode does not parse automatically with an explicit read instruction.",
+      "target": "C:\\development\\INACTIVE-content-marketing\\AGENTS.md"
+    },
+    {
+      "after_bytes": 1206,
+      "after_sha256": "2004a4976f3a44a6c6e80322b1a546b05273d372aed413edc44e332d4e1b015e",
+      "anchors": [
+        "<include src=\".gemini/GEMINI.md\" />"
+      ],
+      "authority_delta": false,
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\006-469434e6dc42b1c0-AGENTS.md",
+      "backup_sha256": "469434e6dc42b1c07a72aa8a0aeee14121079ecf35497e8c518285ebc01a448c",
+      "before_bytes": 992,
+      "before_sha256": "469434e6dc42b1c07a72aa8a0aeee14121079ecf35497e8c518285ebc01a448c",
+      "diff": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\evidence\\diffs\\local\\b02d9fba8cf528153529-AGENTS.md.diff",
+      "dirty_observed": false,
+      "finding_id": "INACTIVE-MARKETING-TROUBLESHOOTING-EXPLICIT-GEMINI-LOAD",
+      "rationale": "Point the nested OpenCode scope to the real repository-root guide instead of a nonexistent child-relative include.",
+      "target": "C:\\development\\INACTIVE-content-marketing\\ops\\opencode-troubleshooting\\AGENTS.md"
+    },
+    {
+      "after_bytes": 2008,
+      "after_sha256": "cd92d06f637c7cd974587a9de4ea3f0bde9ea8b38cf67b80cfde37a1147f7fd7",
+      "anchors": [
+        "- Clean output: `npm run clean` (removes `dist`)"
+      ],
+      "authority_delta": false,
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\008-88821adcb33720fe-AGENTS.md",
+      "backup_sha256": "88821adcb33720fe58901cf06a10eb66ae1536060b5163855cff65da375deb45",
+      "before_bytes": 1865,
+      "before_sha256": "88821adcb33720fe58901cf06a10eb66ae1536060b5163855cff65da375deb45",
+      "diff": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\evidence\\diffs\\local\\a2e70dd88ab985e0c475-AGENTS.md.diff",
+      "dirty_observed": false,
+      "finding_id": "MARKETING-GRAPHIC-WINDOWS-CLEAN",
+      "rationale": "Stop presenting a Unix-only rm-based npm script as a dependable native Windows command.",
+      "target": "C:\\development\\marketing\\graphics\\fmqsmo-award\\AGENTS.md"
+    }
+  ],
+  "dry_run": false,
+  "restore_simulation": "not-requested",
+  "restored": [],
+  "scope": "local",
+  "version": 1
+}

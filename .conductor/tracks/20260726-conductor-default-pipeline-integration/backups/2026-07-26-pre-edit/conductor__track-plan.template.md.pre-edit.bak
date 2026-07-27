@@ -1,0 +1,126 @@
+# Plan
+
+`plan.md` is the authoritative source of truth for execution progress.
+
+## Outcome, Constraints, and Definition of Done
+
+### Goal / outcome
+
+[State the concrete outcome and the artifact or capability that will exist.]
+
+### Constraints / non-goals
+
+- [State the important boundaries, preserved artifacts, and actions that require human approval.]
+- [State what this track must not change, publish, send, delete, or infer.]
+
+### Definition of done
+
+- [State the deterministic final condition, including validation, evidence, synchronized Conductor state, and human-authority boundaries.]
+
+## Phase 0: Setup & Preconditions
+
+Objective: [State what must be true before implementation begins.]
+
+1. - [ ] 0.1 [One atomic setup action.]
+   - Files: `[exact/repo-relative/path]`
+   - Prerequisites: None.
+   - Command:
+     ```powershell
+     [verbatim command]
+     ```
+   - Body requirements: [Exact body content, structure, or data the task must produce.]
+   - Authoritative acceptance check: `[one deterministic command that inspects the intended body content]`; expected output: `[actual output format]`.
+   - Diagnostic checks: `[optional supporting command, clearly separated from proof]`
+   - Error recovery: [Specific fallback for missing path, dependency, occupied port, parse failure, or unexpected format.]
+
+Phase exit criteria: [Deterministic condition proving all setup prerequisites are satisfied.]
+
+## Phase 1: Implementation
+
+Objective: [State the capability or subsystem implemented in this phase.]
+
+1. - [ ] 1.1 [One atomic implementation action.]
+   - Files: `[exact/repo-relative/path]`
+   - Prerequisites: `0.1`.
+   - Command:
+     ```powershell
+     [verbatim command]
+     ```
+   - Body requirements: [Include a concrete inline template, snippet, or expected record when format matters.]
+   - Authoritative acceptance check: `[one deterministic command that inspects the intended body content]`; expected output: `[actual output format]`.
+   - Diagnostic checks: `[optional supporting command, clearly separated from proof]`
+   - Error recovery: [Specific recovery instructions; stop rather than overwrite or invent evidence.]
+
+Phase exit criteria: [Deterministic condition proving the phase objective is met.]
+
+## Final Phase: Validation & Handover
+
+Objective: Prove the implemented outcome, preserve evidence, and synchronize Conductor state without crossing human-only authority boundaries.
+
+1. - [ ] F.1 [One atomic validation or handover action.]
+   - Files: `[exact/repo-relative/path]`
+   - Prerequisites: [All required predecessor task IDs.]
+   - Command:
+     ```powershell
+     [verbatim command]
+     ```
+   - Body requirements: [Exact validation evidence or handover content.]
+   - Authoritative acceptance check: `[one deterministic command that inspects the intended body content]`; expected output: `[actual output format]`.
+   - Diagnostic checks: `[optional supporting command, clearly separated from proof]`
+   - Error recovery: [Specific failure handling and rollback or escalation path.]
+
+Phase exit criteria: Every non-deferred plan task is checked `[x]`; validation passes; created/modified artifacts are verified on disk; the execution log records deviations, skips, and validation; `metadata.json` and `.conductor/tracks.md` agree; pipeline fields match the executed path; and any required human decision remains explicitly pending.
+
+## Execution Readiness Checklist
+
+- [ ] Atomic tasks: one clear action per checkbox.
+- [ ] Exact paths: every task names precise repo-relative or fully qualified paths.
+- [ ] Explicit commands: every task provides verbatim execution and verification commands.
+- [ ] Clear ordering: prerequisites and strict task order are explicit.
+- [ ] Verification per step: every task has exactly one authoritative acceptance check.
+- [ ] No assumed context: an unfamiliar agent can execute without extra repository exploration.
+- [ ] Concrete examples: format-sensitive tasks include templates, snippets, or exact expected output.
+- [ ] Error recovery: every task defines a safe fallback for common failures.
+
+## Top 3 Implementation Risks + Mitigations
+
+1. **[Risk]** — Mitigation: [specific control].
+2. **[Risk]** — Mitigation: [specific control].
+3. **[Risk]** — Mitigation: [specific control].
+
+## First Task to Execute Immediately
+
+Execute task `0.1`: [repeat the exact first action and command].
+
+## Checkbox States
+
+- [ ] Pending
+- [~] In progress
+- [x] Completed
+
+## Task Authoring Standards
+
+Apply all standards below to every executable checkbox:
+
+1. **Atomic tasks** — One clear action per checkbox. Split multiple decisions or multiple file edits.
+2. **Exact file paths** — Name precise files to create or modify. Use full repo-relative paths; use fully qualified Windows paths only for files outside the repo.
+3. **Explicit commands** — Write terminal commands verbatim, including exact arguments and working directory assumptions.
+4. **Clear ordering** — Put tasks in strict execution order and list prerequisites.
+5. **Verification per step** — Include a concrete, deterministic verification command and its exact expected output format.
+6. **No assumed context** — Include all source paths, output paths, schemas, and decision rules an unfamiliar agent needs.
+7. **Concrete examples** — Include inline templates, snippets, or expected records wherever format or structure matters.
+8. **Error recovery** — Provide safe recovery for missing dependencies, failing commands, occupied ports, path-not-found, parse failures, and unexpected file formats.
+9. **One authoritative acceptance check per task** — Include exactly one line labeled `Authoritative acceptance check:`. Put all supporting commands under `Diagnostic checks:`. The authoritative check must inspect intended body content, not only a heading, filename, or isolated phrase.
+10. **PowerShell safety** — Prefer single-quoted strings and `[string]::Contains()` for literal checks. For literal Windows paths or content, prefer `Select-String -SimpleMatch`, `[regex]::Escape()`, or line-anchored full-line patterns. Do not use wildcard matching for literal strings containing `[` or `]`; avoid backtick-heavy constructed commands.
+11. **Acceptance-check fidelity self-check** — Before finalizing each task, confirm every literal substring used by its authoritative acceptance check appears verbatim in the body requirements. If the checked command parses JSON, expect JSON syntax such as `"status": "ok"`; if it returns a Boolean, expect `True` or `False` exactly.
+12. **Idempotency** — Use upsert/update-in-place wording for ledgers and indexes. Do not create duplicate rows or sections.
+
+## Task Safety Rules
+
+### Collision Guard for Rename or Move Tasks
+
+Before a rename or move, verify the target path does not exist. If it exists, stop and report the collision; do not overwrite. Resolve only by user choice, an evidence-backed merge, or confirmed deletion authority.
+
+### Structured-File Edit Safety
+
+When editing three or more repeated structured records, prefer a deterministic whole-file rewrite or a schema-aware update over fragile repeated text substitutions.

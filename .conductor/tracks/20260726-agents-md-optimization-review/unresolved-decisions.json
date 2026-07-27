@@ -1,0 +1,746 @@
+{
+  "count": 44,
+  "decisions": [
+    {
+      "confidence": 0.65,
+      "disposition": "blocked",
+      "evidence": {
+        "reason": "destructive terms found without a static approval-gate marker"
+      },
+      "finding_id": "AUTO-SAFETY-GATE-UNVERIFIED",
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\AGENTS.md",
+      "result": "Unverified",
+      "root": null,
+      "rubric_id": "SAFETY-01",
+      "scope": "global",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\global\\opencode.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\02-Kx-to-process\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\02-Kx-to-process",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\operations\\02-Kx-to-process__AGENTS.md-b449e81d52fd.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\INACTIVE-content-marketing\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\INACTIVE-content-marketing",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\marketing\\INACTIVE-content-marketing__AGENTS.md-1e80ee6b7ce9.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\INACTIVE-content-marketing\\ops\\opencode-troubleshooting\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\INACTIVE-content-marketing",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\marketing\\INACTIVE-content-marketing__ops__opencode-troubleshooting__AGENTS.md-469434e6dc42.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\chief-of-staff\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\chief-of-staff",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\operations\\chief-of-staff__AGENTS.md-5c96c509b22c.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\command-center\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\command-center",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\operations\\command-center__AGENTS.md-92f97c750085.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\marketing\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\marketing",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\marketing\\marketing__AGENTS.md-2867e6a7e21c.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\marketing\\graphics\\fmqsmo-award\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\marketing",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\marketing\\marketing__graphics__fmqsmo-award__AGENTS.md-88821adcb337.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\marketing\\ops\\opencode-troubleshooting\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\marketing",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\marketing\\marketing__ops__opencode-troubleshooting__AGENTS.md-a066acd83368.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\marketing\\marketingskills\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\marketing\\marketingskills",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\marketing\\marketingskills__AGENTS.md-75f3b33b6035.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__AGENTS.md-8316fe29e94d.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\app\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__app__AGENTS.md-c149449babf7.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\app\\e2e\\performance\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__app__e2e__performance__AGENTS.md-51019ebd029e.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\codemode\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__codemode__AGENTS.md-6f045f49fa97.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\core\\src\\tool\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__core__src__tool__AGENTS.md-0118c72e4a84.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\desktop\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__desktop__AGENTS.md-bfab7dd8472b.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\effect-drizzle-sqlite\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__effect-drizzle-sqlite__AGENTS.md-ecddf7565d71.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\llm\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__llm__AGENTS.md-0cc7fd879883.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__opencode__AGENTS.md-d22661e91426.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\src\\server\\routes\\instance\\httpapi\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__opencode__src__server__routes__instance__httpapi__AGENTS.md-4f3fba362dc5.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__opencode__src__session__llm__AGENTS.md-bf82c8ccf19b.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\test\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__opencode__test__AGENTS.md-39f5e9314ff9.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\test\\server\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__opencode__test__server__AGENTS.md-abcf7fbbf1c2.json"
+    },
+    {
+      "confidence": 0.65,
+      "disposition": "blocked",
+      "evidence": {
+        "reason": "destructive terms found without a static approval-gate marker"
+      },
+      "finding_id": "AUTO-SAFETY-GATE-UNVERIFIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\test\\server\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "SAFETY-01",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__opencode__test__server__AGENTS.md-abcf7fbbf1c2.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\schema\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__schema__AGENTS.md-eefc3ef7eed3.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-core-dcp-fix\\packages\\stats\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-core-dcp-fix",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-core-dcp-fix__packages__stats__AGENTS.md-f4a5baec381b.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 8909,
+          "path": "C:\\development\\opencode-upstream\\AGENTS.md",
+          "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__AGENTS.md-8316fe29e94d.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 1256,
+          "path": "C:\\development\\opencode-upstream\\packages\\app\\AGENTS.md",
+          "sha256": "c149449babf7499bad1a6e3aaf9430888f505aab69609e6023780b4c4eaa33e2"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\app\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__app__AGENTS.md-c149449babf7.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 826,
+          "path": "C:\\development\\opencode-upstream\\packages\\app\\e2e\\performance\\AGENTS.md",
+          "sha256": "51019ebd029e1425bee369a1c78a43843543538467e2b8ebbc28713a1c6a07a8"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\app\\e2e\\performance\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__app__e2e__performance__AGENTS.md-51019ebd029e.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 3168,
+          "path": "C:\\development\\opencode-upstream\\packages\\codemode\\AGENTS.md",
+          "sha256": "6f045f49fa97fa53b64a2bc1dcbc99237eb2f49aa5b6d8259e5fec69f47ef731"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\codemode\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__codemode__AGENTS.md-6f045f49fa97.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 3802,
+          "path": "C:\\development\\opencode-upstream\\packages\\core\\src\\tool\\AGENTS.md",
+          "sha256": "0118c72e4a84906027cbeb4c1190657d31a80b9b58ad68c7ed41acf30aaf357c"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\core\\src\\tool\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__core__src__tool__AGENTS.md-0118c72e4a84.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 164,
+          "path": "C:\\development\\opencode-upstream\\packages\\desktop\\AGENTS.md",
+          "sha256": "bfab7dd8472bd76a7b973190193b7558dfbe603b297416d65fed4de189ed70a8"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\desktop\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__desktop__AGENTS.md-bfab7dd8472b.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 1383,
+          "path": "C:\\development\\opencode-upstream\\packages\\effect-drizzle-sqlite\\AGENTS.md",
+          "sha256": "ecddf7565d710343c838bca9737f80f43592ec149fd7c7fe476af646e7e6b0ca"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\effect-drizzle-sqlite\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__effect-drizzle-sqlite__AGENTS.md-ecddf7565d71.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 25005,
+          "path": "C:\\development\\opencode-upstream\\packages\\llm\\AGENTS.md",
+          "sha256": "0cc7fd879883146c44b8d304e4c7051533ae7740ffaa974c7c21afdeb637f9f1"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\llm\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__llm__AGENTS.md-0cc7fd879883.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 6584,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\AGENTS.md",
+          "sha256": "d22661e914260da4ecb0edd5a69b220c90eabcaa8b83cf1617628fa6ba7f3665"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\opencode\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__opencode__AGENTS.md-d22661e91426.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 2755,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\server\\routes\\instance\\httpapi\\AGENTS.md",
+          "sha256": "4f3fba362dc55d3e71089bbed24e9615c1e3ef6ee13f315060ddc30d8c1af7a0"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\server\\routes\\instance\\httpapi\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__opencode__src__server__routes__instance__httpapi__AGENTS.md-4f3fba362dc5.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 7162,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+          "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__opencode__src__session__llm__AGENTS.md-bf82c8ccf19b.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 8118,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\test\\AGENTS.md",
+          "sha256": "39f5e9314ff9f9153fa86f86e0b6dd45fbb27223ab2536ce7260ab58627a4869"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\opencode\\test\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__opencode__test__AGENTS.md-39f5e9314ff9.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 1716,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\test\\server\\AGENTS.md",
+          "sha256": "abcf7fbbf1c25d58844e5602116cdff54c229f4852e842f0e4b63fa7944bae23"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\opencode\\test\\server\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__opencode__test__server__AGENTS.md-abcf7fbbf1c2.json"
+    },
+    {
+      "confidence": 0.65,
+      "disposition": "blocked",
+      "evidence": {
+        "reason": "destructive terms found without a static approval-gate marker",
+        "target": {
+          "bytes": 1716,
+          "path": "C:\\development\\opencode-upstream\\packages\\opencode\\test\\server\\AGENTS.md",
+          "sha256": "abcf7fbbf1c25d58844e5602116cdff54c229f4852e842f0e4b63fa7944bae23"
+        }
+      },
+      "finding_id": "AUTO-SAFETY-GATE-UNVERIFIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\opencode\\test\\server\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "SAFETY-01",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__opencode__test__server__AGENTS.md-abcf7fbbf1c2.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 6518,
+          "path": "C:\\development\\opencode-upstream\\packages\\schema\\AGENTS.md",
+          "sha256": "eefc3ef7eed3e755069a0a659d6282a8d45d08b4c168df389c0aa70de9822304"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\schema\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__schema__AGENTS.md-eefc3ef7eed3.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit",
+        "target": {
+          "bytes": 74,
+          "path": "C:\\development\\opencode-upstream\\packages\\stats\\AGENTS.md",
+          "sha256": "f4a5baec381b0f265d0c1414959fb89893af0919f12bde3b86c7a142638e3ac8"
+        }
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencode-upstream\\packages\\stats\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencode-upstream",
+      "rubric_id": "REF-02",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencode-clones\\opencode-upstream__packages__stats__AGENTS.md-f4a5baec381b.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencodex\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencodex",
+      "rubric_id": "LOAD-01",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencodex\\opencodex__AGENTS.md-a707ab64d97d.json"
+    },
+    {
+      "confidence": 0.8,
+      "disposition": "defer",
+      "evidence": {
+        "reason": "no client reference was supplied to this static audit"
+      },
+      "finding_id": "AUTO-REFERENCE-NOT-SUPPLIED",
+      "path": "C:\\development\\opencodex\\gui\\AGENTS.md",
+      "result": "Unverified",
+      "root": "C:\\development\\opencodex",
+      "rubric_id": "LOAD-01",
+      "scope": "local",
+      "severity": "None",
+      "source_packet": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\review-packets\\local\\opencodex\\opencodex__gui__AGENTS.md-95a36bebbbcd.json"
+    }
+  ],
+  "version": 1
+}

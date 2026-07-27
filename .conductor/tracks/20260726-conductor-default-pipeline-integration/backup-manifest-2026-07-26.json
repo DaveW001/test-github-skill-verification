@@ -1,0 +1,47 @@
+[
+  {
+    "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor\\SKILL.md",
+    "backup": "C:\\development\\opencode\\.conductor\\tracks\\20260726-conductor-default-pipeline-integration\\backups\\2026-07-26-pre-edit\\conductor__SKILL.md.pre-edit.bak",
+    "sha256": "9CD732A33DE57CAE9B33431DB14966C8A7EF34A181535E7990E0716346989689"
+  },
+  {
+    "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\SKILL.md",
+    "backup": "C:\\development\\opencode\\.conductor\\tracks\\20260726-conductor-default-pipeline-integration\\backups\\2026-07-26-pre-edit\\conductor-pipeline__SKILL.md.pre-edit.bak",
+    "sha256": "0DA311F0754C64716AD6E15D5B60DB71AA222E37FD929BE4D57B0ECDCDA9B992"
+  },
+  {
+    "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\stage-prompts.md",
+    "backup": "C:\\development\\opencode\\.conductor\\tracks\\20260726-conductor-default-pipeline-integration\\backups\\2026-07-26-pre-edit\\conductor-pipeline__stage-prompts.md.pre-edit.bak",
+    "sha256": "5B59E1B32B41CF139EBC292EE69AFED042F5EBB91EF7C5815F60D53828DD0DCB"
+  },
+  {
+    "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\threshold-policy.md",
+    "backup": "C:\\development\\opencode\\.conductor\\tracks\\20260726-conductor-default-pipeline-integration\\backups\\2026-07-26-pre-edit\\conductor-pipeline__threshold-policy.md.pre-edit.bak",
+    "sha256": "70A196B8D06ED992A9317807697D56B688CC3873DD24827B84DEAD4B0B5B1292"
+  },
+  {
+    "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor\\references\\templates\\track-plan.template.md",
+    "backup": "C:\\development\\opencode\\.conductor\\tracks\\20260726-conductor-default-pipeline-integration\\backups\\2026-07-26-pre-edit\\conductor__track-plan.template.md.pre-edit.bak",
+    "sha256": "48787874B383A583BE022C7A1423A0A4B5F1938C6D10544073661F2A6F888DFA"
+  },
+  {
+    "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor\\references\\templates\\track-metadata.template.json",
+    "backup": "C:\\development\\opencode\\.conductor\\tracks\\20260726-conductor-default-pipeline-integration\\backups\\2026-07-26-pre-edit\\conductor__track-metadata.template.json.pre-edit.bak",
+    "sha256": "88853699EC1D973729AAA6EAB3389D9A63A8E0FA3DAD8D7EF2348683D54F815D"
+  },
+  {
+    "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\README.md",
+    "backup": "C:\\development\\opencode\\.conductor\\tracks\\20260726-conductor-default-pipeline-integration\\backups\\2026-07-26-pre-edit\\conductor-pipeline__README.md.pre-edit.bak",
+    "sha256": "35508603F32D6E65FEA7E199F999CD7AE2A3FB2EE70C3056496D1C59B2D81D9B"
+  },
+  {
+    "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\commands\\conductor-pipeline.md",
+    "backup": "C:\\development\\opencode\\.conductor\\tracks\\20260726-conductor-default-pipeline-integration\\backups\\2026-07-26-pre-edit\\commands__conductor-pipeline.md.pre-edit.bak",
+    "sha256": "5A64D2D3D88D213F859682D1F0886D23BB8ADB6AA552DEEF5AC228C4D9C50839"
+  },
+  {
+    "target": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-pipeline-orchestrator.md",
+    "backup": "C:\\development\\opencode\\.conductor\\tracks\\20260726-conductor-default-pipeline-integration\\backups\\2026-07-26-pre-edit\\agent__conductor-pipeline-orchestrator.md.pre-edit.bak",
+    "sha256": "4421E43E711E58D73D0BC28B51A649C5144D59E431E6129A3FC99A943E006283"
+  }
+]

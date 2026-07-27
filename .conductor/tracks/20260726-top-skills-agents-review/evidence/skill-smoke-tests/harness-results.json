@@ -1,0 +1,142 @@
+[
+  {
+    "canonical_name": "conductor",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x9, WARN x15)\nSCRIPT SYNTAX: OK (SKIP x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "doc",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\doc",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x2)\nSCRIPT SYNTAX: OK (PASS x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "clickup",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup",
+    "harness_exit_code": 1,
+    "harness_result": "FAIL",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x33, WARN x65)\nSCRIPT SYNTAX: FAIL (PASS x20, FAIL x3)\nRESULT: FAIL"
+  },
+  {
+    "canonical_name": "conductor-pipeline",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x14, WARN x48)\nSCRIPT SYNTAX: OK (SKIP x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "git-push",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\git-push",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: NOT RUN\nSCRIPT SYNTAX: OK (SKIP x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "retrospective",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\retrospective",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (WARN x4)\nSCRIPT SYNTAX: OK (SKIP x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "skill-creator",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\skill-creator",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x10, WARN x13)\nSCRIPT SYNTAX: OK (PASS x3)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "opencode-scheduler",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\opencode-scheduler",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x10, WARN x10)\nSCRIPT SYNTAX: OK (SKIP x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "humanizer",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\humanizer",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x3)\nSCRIPT SYNTAX: OK (SKIP x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "osgrep",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\osgrep",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x2)\nSCRIPT SYNTAX: OK (SKIP x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "diagram-svg",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\diagram-svg",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x10, WARN x5)\nSCRIPT SYNTAX: OK (PASS x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "pptx-from-layouts",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pptx-from-layouts",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x13, WARN x103)\nSCRIPT SYNTAX: OK (PASS x49)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "pre-delivery-ai-review",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\pre-delivery-ai-review",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x18)\nSCRIPT SYNTAX: OK (PASS x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "image-ocr",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\image-ocr",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x5, WARN x11)\nSCRIPT SYNTAX: OK (PASS x2)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "enrich-meeting-notes",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\enrich-meeting-notes",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: NOT RUN\nSCRIPT SYNTAX: OK (SKIP x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "opencode-event-log-compactor",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-event-log-compactor",
+    "harness_exit_code": 1,
+    "harness_result": "FAIL",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (WARN x12)\nSCRIPT SYNTAX: FAIL (PASS x12, FAIL x1)\nRESULT: FAIL"
+  },
+  {
+    "canonical_name": "opencode-go-key-rotation",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-go-key-rotation",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x1, WARN x4)\nSCRIPT SYNTAX: OK (SKIP x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "root-cause-analysis",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\root-cause-analysis",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x2, WARN x3)\nSCRIPT SYNTAX: OK (SKIP x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "scheduled-job-best-practices",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\scheduled-job-best-practices",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (WARN x1)\nSCRIPT SYNTAX: OK (SKIP x1)\nRESULT: PASS"
+  },
+  {
+    "canonical_name": "session-db-query",
+    "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\session-db-query",
+    "harness_exit_code": 0,
+    "harness_result": "PASS",
+    "summary_excerpt": "SKILL SMOKE TEST SUMMARY\nSTRUCTURE: OK (PASS x5)\nREFERENCES: OK (PASS x3, WARN x1)\nSCRIPT SYNTAX: OK (PASS x1)\nRESULT: PASS"
+  }
+]

@@ -1,0 +1,161 @@
+{
+  "allowlist": [
+    "C:\\development\\02-Kx-to-process\\AGENTS.md",
+    "C:\\development\\chief-of-staff\\AGENTS.md",
+    "C:\\development\\command-center\\AGENTS.md",
+    "C:\\development\\INACTIVE-content-marketing\\AGENTS.md",
+    "C:\\development\\INACTIVE-content-marketing\\ops\\opencode-troubleshooting\\AGENTS.md",
+    "C:\\development\\marketing\\AGENTS.md",
+    "C:\\development\\marketing\\graphics\\fmqsmo-award\\AGENTS.md",
+    "C:\\development\\marketing\\marketingskills\\AGENTS.md",
+    "C:\\development\\marketing\\ops\\opencode-troubleshooting\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\app\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\app\\e2e\\performance\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\codemode\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\core\\src\\tool\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\desktop\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\effect-drizzle-sqlite\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\llm\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\src\\server\\routes\\instance\\httpapi\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\test\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\test\\server\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\schema\\AGENTS.md",
+    "C:\\development\\opencode-core-dcp-fix\\packages\\stats\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\app\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\app\\e2e\\performance\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\codemode\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\core\\src\\tool\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\desktop\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\effect-drizzle-sqlite\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\llm\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\opencode\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\opencode\\src\\server\\routes\\instance\\httpapi\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\opencode\\test\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\opencode\\test\\server\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\schema\\AGENTS.md",
+    "C:\\development\\opencode-upstream\\packages\\stats\\AGENTS.md",
+    "C:\\development\\opencodex\\AGENTS.md",
+    "C:\\development\\opencodex\\gui\\AGENTS.md"
+  ],
+  "authority_expansion": false,
+  "backup_manifest": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\backup-manifest.json",
+  "entries": [
+    {
+      "target": "C:\\development\\02-Kx-to-process\\AGENTS.md",
+      "pre_edit_sha256": "b449e81d52fd76fc886c21235b7b222245f081513d3c786c24fe1fa48a677654",
+      "dirty": false,
+      "finding_id": "OPS-KG-LEDGER-VALIDATOR-DRIFT",
+      "rubric_id": "DRIFT-01",
+      "rationale": "Correct the misspelled authoritative ledger and name the current KG validator path and required arguments.",
+      "authority_delta": false,
+      "edits": [
+        {
+          "anchor": "The tracks-fedger.md is the source of truth; tracks.md is the dashboard.",
+          "replacement": "The `tracks-ledger.md` file is the source of truth; `tracks.md` is the dashboard."
+        },
+        {
+          "anchor": "5. Validation — `validate-kg.py` (or domain-equivalent) reports 0 FAIL",
+          "replacement": "5. Validation — `python scripts/validate-kg.py --kb knowledge-base --scope both --no-write-report` (or a domain-equivalent validator) reports 0 FAIL"
+        }
+      ]
+    },
+    {
+      "target": "C:\\development\\chief-of-staff\\AGENTS.md",
+      "pre_edit_sha256": "5c96c509b22ca1047ce5f924bd9cd0fa8252aad963dcbdc15d5e866b19e637c7",
+      "dirty": null,
+      "finding_id": "OPS-CHIEF-OF-STAFF-SEND-GATE",
+      "rubric_id": "SAFETY-01",
+      "rationale": "Remove the default connected-chat send exception so all external delivery remains explicitly authorized.",
+      "authority_delta": false,
+      "edits": [
+        {
+          "anchor": "- Apart from the default finished-brief delivery through connected chat when available, do not send email, draft posts, or make other changes unless the user explicitly asks for that follow-through.",
+          "replacement": "- Return finished briefs in the current conversation by default. Do not send email or chat messages, draft posts, or make other external changes unless the user explicitly asks for that follow-through."
+        }
+      ]
+    },
+    {
+      "target": "C:\\development\\marketing\\AGENTS.md",
+      "pre_edit_sha256": "2867e6a7e21cd3cab89898e8a3fc913e238bc4dbf41c2dd471bcf17f85c44404",
+      "dirty": false,
+      "finding_id": "MARKETING-ROOT-EXPLICIT-GEMINI-LOAD",
+      "rubric_id": "REF-02",
+      "rationale": "Replace an XML include that OpenCode does not parse automatically with an explicit read instruction.",
+      "authority_delta": false,
+      "edits": [
+        {
+          "anchor": "<include src=\".gemini/GEMINI.md\" />",
+          "replacement": "Before content work, explicitly read `C:\\development\\marketing\\.gemini\\GEMINI.md`; OpenCode does not automatically load file references from AGENTS.md. Treat that file as the core behavior, voice, and protocol guide."
+        }
+      ]
+    },
+    {
+      "target": "C:\\development\\marketing\\ops\\opencode-troubleshooting\\AGENTS.md",
+      "pre_edit_sha256": "a066acd8336834a12255cf5c2523caffb4a9183b0ebe25241c34f23258d5ef21",
+      "dirty": false,
+      "finding_id": "MARKETING-TROUBLESHOOTING-EXPLICIT-GEMINI-LOAD",
+      "rubric_id": "REF-02",
+      "rationale": "Point the nested OpenCode scope to the real repository-root guide instead of a nonexistent child-relative include.",
+      "authority_delta": false,
+      "edits": [
+        {
+          "anchor": "<include src=\".gemini/GEMINI.md\" />",
+          "replacement": "Before content work, explicitly read `C:\\development\\marketing\\.gemini\\GEMINI.md`; OpenCode does not automatically load file references from AGENTS.md. Treat that repository-root file as the core behavior, voice, and protocol guide."
+        }
+      ]
+    },
+    {
+      "target": "C:\\development\\INACTIVE-content-marketing\\AGENTS.md",
+      "pre_edit_sha256": "1e80ee6b7ce95e5d6f07f0837d601e6372c76bc3f99a5acf9cc1ed998b14581f",
+      "dirty": false,
+      "finding_id": "INACTIVE-MARKETING-ROOT-EXPLICIT-GEMINI-LOAD",
+      "rubric_id": "REF-02",
+      "rationale": "Replace an XML include that OpenCode does not parse automatically with an explicit read instruction.",
+      "authority_delta": false,
+      "edits": [
+        {
+          "anchor": "<include src=\".gemini/GEMINI.md\" />",
+          "replacement": "Before content work, explicitly read `C:\\development\\INACTIVE-content-marketing\\.gemini\\GEMINI.md`; OpenCode does not automatically load file references from AGENTS.md. Treat that file as the core behavior, voice, and protocol guide."
+        }
+      ]
+    },
+    {
+      "target": "C:\\development\\INACTIVE-content-marketing\\ops\\opencode-troubleshooting\\AGENTS.md",
+      "pre_edit_sha256": "469434e6dc42b1c07a72aa8a0aeee14121079ecf35497e8c518285ebc01a448c",
+      "dirty": false,
+      "finding_id": "INACTIVE-MARKETING-TROUBLESHOOTING-EXPLICIT-GEMINI-LOAD",
+      "rubric_id": "REF-02",
+      "rationale": "Point the nested OpenCode scope to the real repository-root guide instead of a nonexistent child-relative include.",
+      "authority_delta": false,
+      "edits": [
+        {
+          "anchor": "<include src=\".gemini/GEMINI.md\" />",
+          "replacement": "Before content work, explicitly read `C:\\development\\INACTIVE-content-marketing\\.gemini\\GEMINI.md`; OpenCode does not automatically load file references from AGENTS.md. Treat that repository-root file as the core behavior, voice, and protocol guide."
+        }
+      ]
+    },
+    {
+      "target": "C:\\development\\marketing\\graphics\\fmqsmo-award\\AGENTS.md",
+      "pre_edit_sha256": "88821adcb33720fe58901cf06a10eb66ae1536060b5163855cff65da375deb45",
+      "dirty": false,
+      "finding_id": "MARKETING-GRAPHIC-WINDOWS-CLEAN",
+      "rubric_id": "CMD-02",
+      "rationale": "Stop presenting a Unix-only rm-based npm script as a dependable native Windows command.",
+      "authority_delta": false,
+      "edits": [
+        {
+          "anchor": "- Clean output: `npm run clean` (removes `dist`)",
+          "replacement": "- Clean output: on native Windows, do not rely on `npm run clean` because the package script uses `rm -rf`; remove `dist` with a safe platform-appropriate command only when explicitly needed."
+        }
+      ]
+    }
+  ],
+  "scope": "local",
+  "unresolved_apply_findings": [],
+  "version": 1
+}

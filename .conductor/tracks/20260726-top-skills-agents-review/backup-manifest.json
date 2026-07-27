@@ -1,0 +1,40 @@
+{
+  "trackId": "20260726-top-skills-agents-review",
+  "status": "PASS",
+  "targets": 2,
+  "backup_root": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-top-skills-agents-review\\2026-07-26-pre-edit",
+  "entries": [
+    {
+      "canonical_name": "clickup",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup",
+      "backup_path": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-top-skills-agents-review\\2026-07-26-pre-edit\\6f4f87a35d0d925b414a3aaa_clickup",
+      "destination_name": "6f4f87a35d0d925b414a3aaa_clickup",
+      "target_type": "directory",
+      "queue_ids": [
+        "FIX-SKILL-001-clickup-SCRIPT_04_SYNTAX"
+      ],
+      "preexistence_marker": false,
+      "source_tree_sha256": "6ca2093d00bf7091e8183db303f07789481d2fb093d134bd17fed15b74918cce",
+      "backup_tree_sha256": "6ca2093d00bf7091e8183db303f07789481d2fb093d134bd17fed15b74918cce",
+      "file_count": 50,
+      "restore_command": "powershell -NoProfile -Command \"Remove-Item -LiteralPath \\\"C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup\\\" -Recurse -Force; Copy-Item -LiteralPath \\\"C:\\development\\opencode\\.git\\codex-track-backups\\20260726-top-skills-agents-review\\2026-07-26-pre-edit\\6f4f87a35d0d925b414a3aaa_clickup\\\" -Destination \\\"C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\\" -Recurse -Force\"",
+      "verified": true
+    },
+    {
+      "canonical_name": "opencode-event-log-compactor",
+      "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-event-log-compactor",
+      "backup_path": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-top-skills-agents-review\\2026-07-26-pre-edit\\6ccd9ebf7d17f73ac4dbc69c_opencode-event-log-compactor",
+      "destination_name": "6ccd9ebf7d17f73ac4dbc69c_opencode-event-log-compactor",
+      "target_type": "directory",
+      "queue_ids": [
+        "FIX-SKILL-002-opencode-event-log-compactor-SCRIPT_04_SYNTAX"
+      ],
+      "preexistence_marker": false,
+      "source_tree_sha256": "326c28e9a277e3eadb723679295b41f3555724ef4697f8cb4f47df909f91aed6",
+      "backup_tree_sha256": "326c28e9a277e3eadb723679295b41f3555724ef4697f8cb4f47df909f91aed6",
+      "file_count": 26,
+      "restore_command": "powershell -NoProfile -Command \"Remove-Item -LiteralPath \\\"C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\opencode-event-log-compactor\\\" -Recurse -Force; Copy-Item -LiteralPath \\\"C:\\development\\opencode\\.git\\codex-track-backups\\20260726-top-skills-agents-review\\2026-07-26-pre-edit\\6ccd9ebf7d17f73ac4dbc69c_opencode-event-log-compactor\\\" -Destination \\\"C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\\" -Recurse -Force\"",
+      "verified": true
+    }
+  ]
+}

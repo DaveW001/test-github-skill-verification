@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://conductor.local/skill-packet.schema.json",
+  "title": "Skill Review Packet",
+  "description": "One complete static+functional review packet for a selected skill. Every frozen rubric item must be present with result/severity/confidence/source_path/evidence; Pass requires nonempty evidence; Not Applicable / Unverified require a nonempty applicability/blocker reason.",
+  "type": "object",
+  "required": ["packet_type", "canonical_name", "source_path", "selected", "items", "functional_verdict"],
+  "additionalProperties": false,
+  "properties": {
+    "packet_type": { "type": "string", "const": "skill" },
+    "canonical_name": { "type": "string", "minLength": 1 },
+    "source_path": { "type": "string", "minLength": 1 },
+    "selected": { "type": "boolean", "const": true },
+    "rank": { "type": ["integer", "null"] },
+    "functional_verdict": {
+      "type": "string",
+      "enum": [
+        "FUNCTIONAL_SMOKE_TEST_PASSED",
+        "FUNCTIONAL_SMOKE_TEST_FAILED",
+        "FUNCTIONAL_SMOKE_TEST_UNVERIFIED",
+        "STRUCTURAL_ONLY_UNVERIFIED"
+      ]
+    },
+    "functional_evidence": { "type": "object" },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/item" }
+    }
+  },
+  "definitions": {
+    "item": {
+      "type": "object",
+      "required": ["id", "result", "severity", "confidence", "source_path", "evidence"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "enum": [
+            "SCOPE_01_ONE_CAPABILITY",
+            "SCOPE_02_REALISTIC_TRIGGERS",
+            "SCOPE_03_DECISION_TREE",
+            "NAME_01_FOLDER_SLUG",
+            "NAME_02_SKILL_MD_CASE",
+            "NAME_03_FRONTMATTER_REQUIRED",
+            "NAME_04_UNIQUE_IDENTITY",
+            "NAME_05_REGEX_AND_LENGTH",
+            "DESC_01_WHAT_WHEN_KEYWORDS",
+            "DESC_02_LENGTH",
+            "DESC_03_NOT_VAGUE",
+            "FM_01_OPTIONAL_FIELDS_JUSTIFIED",
+            "TRIG_01_V1_SCHEMA",
+            "TRIG_02_SUGGEST_ONLY_TRUE",
+            "TRIG_03_UNKNOWN_KEYS_NOT_RELIED_ON",
+            "TEST_04_TWO_TRIGGER_PHRASES",
+            "STRUCT_01_ENTRYPOINT_SIZE",
+            "STRUCT_02_ADVANCED_DETAILS_DISCLOSED",
+            "STRUCT_03_ONE_LEVEL_REFERENCES",
+            "STRUCT_04_MULTI_FILE_LAYOUT",
+            "GUARD_01_GOTCHAS",
+            "GUARD_02_DEFAULT_AND_ALTERNATIVES",
+            "GUARD_03_CONCISE_ACTIONABLE_EXAMPLES",
+            "PATH_01_FORWARD_SLASH_DOCS",
+            "PATH_02_COMPATIBILITY",
+            "TEST_01_ACTIVATION",
+            "TEST_02_SAFE_END_TO_END",
+            "TEST_03_CRITICAL_EVALUATION",
+            "TEST_05_STRUCTURAL_AND_FUNCTIONAL",
+            "TEST_06_TEST_CASE_CONVENTION",
+            "SCRIPT_01_ERROR_HANDLING",
+            "SCRIPT_02_MAGIC_NUMBERS",
+            "SCRIPT_03_DEPENDENCIES",
+            "SCRIPT_04_SYNTAX",
+            "SCRIPT_05_SAFE_FUNCTIONAL",
+            "PERM_01_SENSITIVE_APPLICABILITY",
+            "PERM_02_PERMISSION_PATTERNS",
+            "PERM_03_AGENT_OVERRIDES",
+            "HANDOFF_01_PUBLISH_DECISION",
+            "TROUBLE_01_YAML",
+            "TROUBLE_02_UNIQUENESS",
+            "TROUBLE_03_PERMISSION_VISIBILITY",
+            "TROUBLE_04_REFERENCE_EXISTENCE"
+          ]
+        },
+        "result": { "type": "string", "enum": ["Pass", "Fail", "Not Applicable", "Unverified"] },
+        "severity": {
+          "type": "string",
+          "enum": ["Critical", "Major", "Minor", "Optional", "Info"]
+        },
+        "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+        "source_path": { "type": "string", "minLength": 1 },
+        "evidence": { "type": "string", "minLength": 0 },
+        "applicability_reason": { "type": "string" },
+        "blocker_reason": { "type": "string" },
+        "source_line_range": { "type": "string" }
+      }
+    }
+  }
+}

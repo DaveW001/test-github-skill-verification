@@ -1,0 +1,99 @@
+{
+  "assignedTo": "Conductor pipeline",
+  "blocking": [],
+  "classification": "certain",
+  "completed": "2026-07-27",
+  "created": "2026-07-26",
+  "deliverables": [
+    "scope-inventory.json",
+    "rubric.json",
+    "agents-review-matrix.md",
+    "global-fix-queue.json",
+    "local-fix-queue.json",
+    "change-manifest.json",
+    "portfolio-review-report.md",
+    "validation-report-<timestamp>.md"
+  ],
+  "dependencies": [
+    "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+    "C:\\Users\\DaveWitkin\\.config\\opencode\\AGENTS.md",
+    "C:\\Users\\DAVEWI~1\\AppData\\Local\\Temp\\openai-docs-cache\\codex-manual.md",
+    "C:\\development\\opencode-upstream\\packages\\web\\src\\content\\docs\\rules.mdx"
+  ],
+  "estimatedHours": "12-24",
+  "execution_sync": {
+    "append_only": true,
+    "checkboxes": 25,
+    "completed_readiness": 8,
+    "completed_tasks": 17,
+    "log": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\execution-log-2026-07-26.md",
+    "readiness": 8,
+    "run_date": "2026-07-26",
+    "tasks": 17,
+    "timestamp": "2026-07-27T01:36:26Z"
+  },
+  "keyOutcomes": [
+    "Global Codex and OpenCode instruction files reviewed and validated first",
+    "Complete 24-item rubric evidence for 43 active files",
+    "Backed-up high-confidence optimizations with no unapproved authority expansion",
+    "Decision-ready portfolio report and independent closeout validation"
+  ],
+  "phase": "complete",
+  "pipeline_mode": "bookkeeping",
+  "pipeline_path": "1 -> 2 -> 3 -> 5 -> 7 -> (8 if A+C) -> 9",
+  "pipeline_rationale": "Instruction-file-only work has deterministic checks and no production-code changes. Stage 2 was deliberately retained because the two global files and broad nested/mirrored scope create medium process risk; Stage 3 ran once after the 45/100 Stage 2 score triggered B+C, and Stage 8 remains threshold-gated.",
+  "progress": {
+    "completedTasks": 17,
+    "percentage": 100,
+    "totalTasks": 17
+  },
+  "readiness_check_count": 8,
+  "relatedTracks": [
+    "20260726-top-skills-agents-review",
+    "20260706-conductor-pipeline-closeout-hardening",
+    "20260706-conductor-skill-pipeline-alignment"
+  ],
+  "risks": [
+    "Global guidance changes affect every future session",
+    "Nested files and duplicate clone trees can create hidden precedence or drift",
+    "Runtime instruction probes may be unavailable or time out"
+  ],
+  "skipped_stages": [
+    "Stage 4 and 4b: skipped because no production code or RED test-writing applies",
+    "Stage 6: skipped because test_framework is none; deterministic file, command, diff, and instruction-loading checks run in Stages 5 and 7",
+    "Stage 8: pending the A+C re-validation decision in C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\threshold-policy.md"
+  ],
+  "status": "complete",
+  "summary": "Review and safely optimize two global and 41 active local AGENTS.md files, preserving client-specific precedence, nested scope, safety, and verified recovery.",
+  "tags": [
+    "agents-md",
+    "codex",
+    "opencode",
+    "instructions",
+    "optimization",
+    "multi-repo"
+  ],
+  "terminal_closeout": {
+    "classification": "waived",
+    "orchestrator_owned": true,
+    "phase_b": "PASS",
+    "post_doc_validation": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\post-doc-validation-2026-07-27-124021.md",
+    "stage7_report": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\validation-report-2026-07-27-123201Z.md",
+    "stage9_artifact": "C:\\development\\opencode\\.conductor\\tracks\\20260726-agents-md-optimization-review\\doc-update-log-2026-07-27-124021.md",
+    "timestamp": "2026-07-27T12:40:21Z"
+  },
+  "test_command": "n/a - use verify_agents_review.py and bounded client instruction-discovery probes",
+  "test_framework": "none",
+  "title": "Optimize and Review Global and Active Repository AGENTS.md Files",
+  "total_checkbox_count": 25,
+  "trackId": "20260726-agents-md-optimization-review",
+  "track_type": "bookkeeping",
+  "type": "maintenance",
+  "validationCriteria": [
+    "Exactly 2 global and 41 local active files reviewed",
+    "All applicable rubric items have complete evidence",
+    "Every change has verified backup and narrow diff",
+    "Client loading checks pass or are explicitly Unverified",
+    "Independent validation and terminal closeout pass"
+  ]
+}

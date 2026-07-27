@@ -1,0 +1,20 @@
+--- C:\development\02-Kx-to-process\AGENTS.md (before)
++++ C:\development\02-Kx-to-process\AGENTS.md (after)
+@@ -16,7 +16,7 @@
+ 1. `.conductor/tracks.md` — quick-view status board
+ 2. `.conductor/tracks-ledger.md` — authoritative ledger with full detail
+ 
+-Do not mark a track complete in one without updating the other. The tracks-fedger.md is the source of truth; tracks.md is the dashboard.
++Do not mark a track complete in one without updating the other. The `tracks-ledger.md` file is the source of truth; `tracks.md` is the dashboard.
+ 
+ ## Track Completion Verification
+ 
+@@ -26,7 +26,7 @@
+ 2. `metadata.json` — **every field** must match actual completion: status, phase, updated_at, summary. Do not update only status and leave phase stale.
+ 3. `tracks.md` — track row status and date match metadata
+ 4. `tracks-ledger.md` — track row status matches tracks.md
+-5. Validation — `validate-kg.py` (or domain-equivalent) reports 0 FAIL
++5. Validation — `python scripts/validate-kg.py --kb knowledge-base --scope both --no-write-report` (or a domain-equivalent validator) reports 0 FAIL
+ 6. Logs — execution log exists and records deviations, skipped items, ambiguities, and validation performed
+ 7. Files — every claimed created/modified/deleted file verified on disk
+ 

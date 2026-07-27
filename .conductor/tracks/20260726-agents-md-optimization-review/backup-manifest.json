@@ -1,0 +1,396 @@
+{
+  "backup_root": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit",
+  "entries": [
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\001-130c1e0a4c3e2bc3-AGENTS.md",
+      "bytes": 3923,
+      "dirty": null,
+      "scope": "global",
+      "sha256": "130c1e0a4c3e2bc368f3861c948c62e073a1ffbf374c32426817de8911d2f24c",
+      "source": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+      "tracked": null
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\002-1622d0de85f4fad7-AGENTS.md",
+      "bytes": 9655,
+      "dirty": null,
+      "scope": "global",
+      "sha256": "1622d0de85f4fad7247d22f6ce761f5c7a5bc8218e4bbfc17ca74ed381f39d6d",
+      "source": "C:\\Users\\DaveWitkin\\.config\\opencode\\AGENTS.md",
+      "tracked": null
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\003-b449e81d52fd76fc-AGENTS.md",
+      "bytes": 4035,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "b449e81d52fd76fc886c21235b7b222245f081513d3c786c24fe1fa48a677654",
+      "source": "C:\\development\\02-Kx-to-process\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\004-92f97c750085b97d-AGENTS.md",
+      "bytes": 5160,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "92f97c750085b97dd66f30bd961a7792e10bf26141f106eb0e0b4f9382a0c3ba",
+      "source": "C:\\development\\command-center\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\005-1e80ee6b7ce95e5d-AGENTS.md",
+      "bytes": 1802,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "1e80ee6b7ce95e5d6f07f0837d601e6372c76bc3f99a5acf9cc1ed998b14581f",
+      "source": "C:\\development\\INACTIVE-content-marketing\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\006-469434e6dc42b1c0-AGENTS.md",
+      "bytes": 992,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "469434e6dc42b1c07a72aa8a0aeee14121079ecf35497e8c518285ebc01a448c",
+      "source": "C:\\development\\INACTIVE-content-marketing\\ops\\opencode-troubleshooting\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\007-2867e6a7e21cd3ca-AGENTS.md",
+      "bytes": 3631,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "2867e6a7e21cd3cab89898e8a3fc913e238bc4dbf41c2dd471bcf17f85c44404",
+      "source": "C:\\development\\marketing\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\008-88821adcb33720fe-AGENTS.md",
+      "bytes": 1865,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "88821adcb33720fe58901cf06a10eb66ae1536060b5163855cff65da375deb45",
+      "source": "C:\\development\\marketing\\graphics\\fmqsmo-award\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\009-a066acd8336834a1-AGENTS.md",
+      "bytes": 1054,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "a066acd8336834a12255cf5c2523caffb4a9183b0ebe25241c34f23258d5ef21",
+      "source": "C:\\development\\marketing\\ops\\opencode-troubleshooting\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\010-75f3b33b6035aa69-AGENTS.md",
+      "bytes": 9836,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "75f3b33b6035aa69f1108fbb0cb68532619ba808202706e97204e27e55e68271",
+      "source": "C:\\development\\marketing\\marketingskills\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\011-8316fe29e94db426-AGENTS.md",
+      "bytes": 8909,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb",
+      "source": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\012-c149449babf7499b-AGENTS.md",
+      "bytes": 1256,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "c149449babf7499bad1a6e3aaf9430888f505aab69609e6023780b4c4eaa33e2",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\app\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\013-51019ebd029e1425-AGENTS.md",
+      "bytes": 826,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "51019ebd029e1425bee369a1c78a43843543538467e2b8ebbc28713a1c6a07a8",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\app\\e2e\\performance\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\014-6f045f49fa97fa53-AGENTS.md",
+      "bytes": 3168,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "6f045f49fa97fa53b64a2bc1dcbc99237eb2f49aa5b6d8259e5fec69f47ef731",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\codemode\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\015-0118c72e4a849060-AGENTS.md",
+      "bytes": 3802,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "0118c72e4a84906027cbeb4c1190657d31a80b9b58ad68c7ed41acf30aaf357c",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\core\\src\\tool\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\016-bfab7dd8472bd76a-AGENTS.md",
+      "bytes": 164,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "bfab7dd8472bd76a7b973190193b7558dfbe603b297416d65fed4de189ed70a8",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\desktop\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\017-ecddf7565d710343-AGENTS.md",
+      "bytes": 1383,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "ecddf7565d710343c838bca9737f80f43592ec149fd7c7fe476af646e7e6b0ca",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\effect-drizzle-sqlite\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\018-0cc7fd879883146c-AGENTS.md",
+      "bytes": 25005,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "0cc7fd879883146c44b8d304e4c7051533ae7740ffaa974c7c21afdeb637f9f1",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\llm\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\019-d22661e914260da4-AGENTS.md",
+      "bytes": 6584,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "d22661e914260da4ecb0edd5a69b220c90eabcaa8b83cf1617628fa6ba7f3665",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\020-4f3fba362dc55d3e-AGENTS.md",
+      "bytes": 2755,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "4f3fba362dc55d3e71089bbed24e9615c1e3ef6ee13f315060ddc30d8c1af7a0",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\src\\server\\routes\\instance\\httpapi\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\021-bf82c8ccf19b5377-AGENTS.md",
+      "bytes": 7162,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\022-39f5e9314ff9f915-AGENTS.md",
+      "bytes": 8118,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "39f5e9314ff9f9153fa86f86e0b6dd45fbb27223ab2536ce7260ab58627a4869",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\test\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\023-abcf7fbbf1c25d58-AGENTS.md",
+      "bytes": 1716,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "abcf7fbbf1c25d58844e5602116cdff54c229f4852e842f0e4b63fa7944bae23",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\test\\server\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\024-eefc3ef7eed3e755-AGENTS.md",
+      "bytes": 6518,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "eefc3ef7eed3e755069a0a659d6282a8d45d08b4c168df389c0aa70de9822304",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\schema\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\025-f4a5baec381b0f26-AGENTS.md",
+      "bytes": 74,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "f4a5baec381b0f265d0c1414959fb89893af0919f12bde3b86c7a142638e3ac8",
+      "source": "C:\\development\\opencode-core-dcp-fix\\packages\\stats\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\026-8316fe29e94db426-AGENTS.md",
+      "bytes": 8909,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "8316fe29e94db4263999e6ec3c0556c9c9152ada6e8ad4ded8a5a9bf301fcffb",
+      "source": "C:\\development\\opencode-upstream\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\027-c149449babf7499b-AGENTS.md",
+      "bytes": 1256,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "c149449babf7499bad1a6e3aaf9430888f505aab69609e6023780b4c4eaa33e2",
+      "source": "C:\\development\\opencode-upstream\\packages\\app\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\028-51019ebd029e1425-AGENTS.md",
+      "bytes": 826,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "51019ebd029e1425bee369a1c78a43843543538467e2b8ebbc28713a1c6a07a8",
+      "source": "C:\\development\\opencode-upstream\\packages\\app\\e2e\\performance\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\029-6f045f49fa97fa53-AGENTS.md",
+      "bytes": 3168,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "6f045f49fa97fa53b64a2bc1dcbc99237eb2f49aa5b6d8259e5fec69f47ef731",
+      "source": "C:\\development\\opencode-upstream\\packages\\codemode\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\030-0118c72e4a849060-AGENTS.md",
+      "bytes": 3802,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "0118c72e4a84906027cbeb4c1190657d31a80b9b58ad68c7ed41acf30aaf357c",
+      "source": "C:\\development\\opencode-upstream\\packages\\core\\src\\tool\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\031-bfab7dd8472bd76a-AGENTS.md",
+      "bytes": 164,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "bfab7dd8472bd76a7b973190193b7558dfbe603b297416d65fed4de189ed70a8",
+      "source": "C:\\development\\opencode-upstream\\packages\\desktop\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\032-ecddf7565d710343-AGENTS.md",
+      "bytes": 1383,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "ecddf7565d710343c838bca9737f80f43592ec149fd7c7fe476af646e7e6b0ca",
+      "source": "C:\\development\\opencode-upstream\\packages\\effect-drizzle-sqlite\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\033-0cc7fd879883146c-AGENTS.md",
+      "bytes": 25005,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "0cc7fd879883146c44b8d304e4c7051533ae7740ffaa974c7c21afdeb637f9f1",
+      "source": "C:\\development\\opencode-upstream\\packages\\llm\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\034-d22661e914260da4-AGENTS.md",
+      "bytes": 6584,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "d22661e914260da4ecb0edd5a69b220c90eabcaa8b83cf1617628fa6ba7f3665",
+      "source": "C:\\development\\opencode-upstream\\packages\\opencode\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\035-4f3fba362dc55d3e-AGENTS.md",
+      "bytes": 2755,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "4f3fba362dc55d3e71089bbed24e9615c1e3ef6ee13f315060ddc30d8c1af7a0",
+      "source": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\server\\routes\\instance\\httpapi\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\036-bf82c8ccf19b5377-AGENTS.md",
+      "bytes": 7162,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "bf82c8ccf19b5377032c02fdf3188bd71a1fa6bc144ed7b55425658a2a1543d4",
+      "source": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\037-39f5e9314ff9f915-AGENTS.md",
+      "bytes": 8118,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "39f5e9314ff9f9153fa86f86e0b6dd45fbb27223ab2536ce7260ab58627a4869",
+      "source": "C:\\development\\opencode-upstream\\packages\\opencode\\test\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\038-abcf7fbbf1c25d58-AGENTS.md",
+      "bytes": 1716,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "abcf7fbbf1c25d58844e5602116cdff54c229f4852e842f0e4b63fa7944bae23",
+      "source": "C:\\development\\opencode-upstream\\packages\\opencode\\test\\server\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\039-eefc3ef7eed3e755-AGENTS.md",
+      "bytes": 6518,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "eefc3ef7eed3e755069a0a659d6282a8d45d08b4c168df389c0aa70de9822304",
+      "source": "C:\\development\\opencode-upstream\\packages\\schema\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\040-f4a5baec381b0f26-AGENTS.md",
+      "bytes": 74,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "f4a5baec381b0f265d0c1414959fb89893af0919f12bde3b86c7a142638e3ac8",
+      "source": "C:\\development\\opencode-upstream\\packages\\stats\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\041-a707ab64d97d3b5f-AGENTS.md",
+      "bytes": 3923,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "a707ab64d97d3b5f643eedc72bba61c574026d27d2960e52d614c357f04fd210",
+      "source": "C:\\development\\opencodex\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\042-95a36bebbbcdee99-AGENTS.md",
+      "bytes": 1749,
+      "dirty": false,
+      "scope": "local",
+      "sha256": "95a36bebbbcdee9949cd34e25c3324c6c7aaf38d873dd7ce856cd683ff7d8b9d",
+      "source": "C:\\development\\opencodex\\gui\\AGENTS.md",
+      "tracked": true
+    },
+    {
+      "backup": "C:\\development\\opencode\\.git\\codex-track-backups\\20260726-agents-md-optimization-review\\2026-07-26-pre-edit\\files\\043-5c96c509b22ca104-AGENTS.md",
+      "bytes": 4848,
+      "dirty": null,
+      "scope": "local",
+      "sha256": "5c96c509b22ca1047ce5f924bd9cd0fa8252aad963dcbdc15d5e866b19e637c7",
+      "source": "C:\\development\\chief-of-staff\\AGENTS.md",
+      "tracked": null
+    }
+  ],
+  "restore_simulation": "PASS",
+  "targets": 43,
+  "verified": 43,
+  "version": 1
+}

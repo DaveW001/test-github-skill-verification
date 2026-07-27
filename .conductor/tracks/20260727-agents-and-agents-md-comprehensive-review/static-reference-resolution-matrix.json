@@ -1,0 +1,480 @@
+{
+  "total_targets_covered": 69,
+  "matrix": [
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.codex\\config.toml",
+      "exists_on_disk": true,
+      "extracted_references": [
+        {
+          "line_number": 9,
+          "reference": "C:\\\\Users\\\\DaveWitkin\\\\AppData\\\\Local\\\\OpenAI\\\\Codex\\\\runtimes\\\\cua_node\\\\f8d2abcb7481383b\\\\bin\\\\node_modules\\\\@oai\\\\sky\\\\bin\\\\windows\\\\codex-computer-use.exe",
+          "resolved_path": "C:\\\\Users\\\\DaveWitkin\\\\AppData\\\\Local\\\\OpenAI\\\\Codex\\\\runtimes\\\\cua_node\\\\f8d2abcb7481383b\\\\bin\\\\node_modules\\\\@oai\\\\sky\\\\bin\\\\windows\\\\codex-computer-use.exe",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 11,
+          "reference": "C:\\\\Users\\\\DaveWitkin\\\\.codex\\\\opencodex-catalog.json",
+          "resolved_path": "C:\\\\Users\\\\DaveWitkin\\\\.codex\\\\opencodex-catalog.json",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 124,
+          "reference": "C:\\Users\\DaveWitkin\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\f8d2abcb7481383b\\bin\\node_repl.exe",
+          "resolved_path": "C:\\Users\\DaveWitkin\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\f8d2abcb7481383b\\bin\\node_repl.exe",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 129,
+          "reference": "C:\\Users\\DaveWitkin\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\f8d2abcb7481383b\\bin\\node_modules",
+          "resolved_path": "C:\\Users\\DaveWitkin\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\f8d2abcb7481383b\\bin\\node_modules",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 130,
+          "reference": "C:\\Users\\DaveWitkin\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\f8d2abcb7481383b\\bin\\node.exe",
+          "resolved_path": "C:\\Users\\DaveWitkin\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\f8d2abcb7481383b\\bin\\node.exe",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 131,
+          "reference": "C:\\Users\\DaveWitkin\\.codex",
+          "resolved_path": "C:\\Users\\DaveWitkin\\.codex",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 132,
+          "reference": "C:\\Users\\DaveWitkin\\.codex",
+          "resolved_path": "C:\\Users\\DaveWitkin\\.codex",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 141,
+          "reference": "C:\\Users\\DaveWitkin\\AppData\\Local\\OpenAI\\Codex\\bin\\69066b736e1e17a4\\codex.exe",
+          "resolved_path": "C:\\Users\\DaveWitkin\\AppData\\Local\\OpenAI\\Codex\\bin\\69066b736e1e17a4\\codex.exe",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 262,
+          "reference": "C:\\development\\army-c2cc2",
+          "resolved_path": "C:\\development\\army-c2cc2",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 263,
+          "reference": "C:\\development\\opencode",
+          "resolved_path": "C:\\development\\opencode",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 273,
+          "reference": "C:\\Users\\DaveWitkin\\.codex",
+          "resolved_path": "C:\\Users\\DaveWitkin\\.codex",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 276,
+          "reference": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\firebase-deployment-specialist\\SKILL.md",
+          "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\firebase-deployment-specialist\\SKILL.md",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 280,
+          "reference": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gemini-proxy\\SKILL.md",
+          "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\gemini-proxy\\SKILL.md",
+          "exists": true,
+          "status": "verified"
+        },
+        {
+          "line_number": 284,
+          "reference": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\_archived_skills\\html-demo-design\\SKILL.md",
+          "resolved_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\_archived_skills\\html-demo-design\\SKILL.md",
+          "exists": true,
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": [
+        {
+          "line_number": 137,
+          "reference": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\powershell-edit-hazards.md.",
+          "resolved_path": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill\\conductor-pipeline\\references\\powershell-edit-hazards.md.",
+          "exists": true,
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\01-planner.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\boost.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\brand-voice-validator.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\build.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-doc-writer.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-pipeline-orchestrator.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-plan-creator.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-plan-reviewer-alt.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-plan-reviewer.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-test-runner.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-test-writer.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor-glm51.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor-mimo2.5pro.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-executor.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator-alt.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator-m3.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\conductor-track-validator.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\cove-orchestrator.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\cove-verifier.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\gen-headlines.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\peer-review.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\pptx-deck-qa.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\pptx-outline-architect.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\pptx-template-onboarder.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent\\seo-auditor.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\02-Kx-to-process\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": [
+        {
+          "line_number": 65,
+          "reference": "C:\\development\\_shared-scripts\\Sync-SchedulerRegistry.ps1",
+          "resolved_path": "C:\\development\\_shared-scripts\\Sync-SchedulerRegistry.ps1",
+          "exists": true,
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "target_file": "C:\\development\\INACTIVE-content-marketing\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\INACTIVE-content-marketing\\ops\\opencode-troubleshooting\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\chief-of-staff\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\command-center\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\marketing\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": [
+        {
+          "line_number": 66,
+          "reference": "C:\\development\\marketing\\scripts\\validate-image-workflow.py`",
+          "resolved_path": "C:\\development\\marketing\\scripts\\validate-image-workflow.py`",
+          "exists": false,
+          "status": "fallback_added"
+        },
+        {
+          "line_number": 69,
+          "reference": "C:\\FULL\\PATH\\TO\\ARTICLE.md`",
+          "resolved_path": "C:\\FULL\\PATH\\TO\\ARTICLE.md`",
+          "exists": false,
+          "status": "fallback_added"
+        }
+      ]
+    },
+    {
+      "target_file": "C:\\development\\marketing\\graphics\\fmqsmo-award\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\marketing\\marketingskills\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\marketing\\ops\\opencode-troubleshooting\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\app\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\app\\e2e\\performance\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\codemode\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\core\\src\\tool\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\desktop\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\effect-drizzle-sqlite\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\llm\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\src\\server\\routes\\instance\\httpapi\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\test\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\opencode\\test\\server\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\schema\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-core-dcp-fix\\packages\\stats\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\app\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\app\\e2e\\performance\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\codemode\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\core\\src\\tool\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\desktop\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\effect-drizzle-sqlite\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\llm\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\opencode\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\server\\routes\\instance\\httpapi\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\opencode\\src\\session\\llm\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\opencode\\test\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\opencode\\test\\server\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\schema\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencode-upstream\\packages\\stats\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencodex\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    },
+    {
+      "target_file": "C:\\development\\opencodex\\gui\\AGENTS.md",
+      "exists_on_disk": true,
+      "extracted_references": []
+    }
+  ]
+}

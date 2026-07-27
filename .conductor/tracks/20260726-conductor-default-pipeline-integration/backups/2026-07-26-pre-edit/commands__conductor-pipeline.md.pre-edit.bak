@@ -1,0 +1,49 @@
+---
+description: Run the risk-adjusted Conductor pipeline with pipeline determination, optional TDD branching, documentation closeout, model diversity, and auditable handoffs.
+agent: conductor-pipeline-orchestrator
+subtask: false
+---
+
+Run the Conductor Pipeline for the following request:
+
+$ARGUMENTS
+
+You are the conductor-pipeline-orchestrator. Load the `conductor-pipeline` skill first, then run the risk-adjusted pipeline it prescribes. The nine stages are a full catalog, not a mandatory path for every track.
+
+## Mandatory Pipeline Determination
+
+Before execution, classify the request/track and print a concise determination:
+
+- `track_type`: `code` or `bookkeeping`
+- production-code changes: yes/no/uncertain
+- `test_framework` and `test_command`
+- risk level: low/medium/high/urgent
+- selected `pipeline_mode`: `full`, `standard`, `bookkeeping`, or `emergency`
+- selected path
+- skipped stages with reasons
+
+Persist the same decision in `metadata.json` when possible using `pipeline_mode`, `pipeline_path`, `pipeline_rationale`, and `skipped_stages`.
+
+## Pipeline modes
+
+- `full`: `1 -> 2 -> 3? -> 4 -> 4b -> 5 -> 6 -> 7 -> 8? -> 9`. Use for meaningful/high-risk production-code changes, new tests/TDD, APIs/auth/storage/migrations/security/deployment/shared infrastructure, ambiguous acceptance criteria, high failure cost, or explicit user request.
+- `standard`: `1 -> 2 -> 5 -> 6 -> 7 -> 9`. Use for localized low/medium-risk code changes where existing tests are adequate and RED test-writing is unnecessary or explicitly waived.
+- `bookkeeping`: `1 -> 5 -> 7 -> 9`, or `5 -> 7 -> 9` when an executable plan already exists. Use for markdown/config/skill/agent/process-only changes with deterministic literal/schema/file checks and `test_framework: none`.
+- `emergency`: `triage -> minimal fix -> targeted test/check -> validation -> follow-up note`. Use only for explicit urgent restoration/incident work.
+
+Auto-select `bookkeeping` when all criteria are low-risk and non-production. Ask before abbreviating if production code, missing behavior tests, auth/storage/payments/deployment/secrets/scheduling/CI/shared infrastructure, explicit full-pipeline request, or uncertainty is present.
+
+## Stage catalog and routing rules
+
+1. **Plan creation** - `conductor-plan-creator` writes spec.md, plan.md, and metadata.json. Metadata MUST include `track_type`, `test_framework`, `test_command`, and recommended pipeline fields.
+2. **Plan review** - `conductor-plan-reviewer` reviews and applies confident plan/spec improvements. Skip by default for low-risk `bookkeeping` mode when the plan is explicit and deterministic.
+3. **Conditional re-review** - evaluate the B+C hybrid threshold after Stage 2. If triggered, run `conductor-plan-reviewer-alt` once (cap 1).
+4. **Write tests (RED)** [code/TDD paths only] - `conductor-test-writer` writes acceptance tests from the spec.
+4b. **RED-state gate** [code/TDD paths only] - run `test_command` and confirm newly-written acceptance tests fail for expected behavioral/assertion reasons before Stage 5. Invalid RED or premature green may reopen Stage 4 up to twice (cap 2).
+5. **Execution / GREEN** - `conductor-track-executor` implements plan items. For code/TDD paths, write the minimum code to make Stage 4 tests pass. For bookkeeping tracks, execute plan items directly.
+6. **Run tests** [code paths only] - `conductor-test-runner` runs `test_command`, writes `test-run-report-<ts>.md`, and does not edit source/tests/config. A failing suite may route to Stage 5 up to twice, with Stage 6 rerun after each focused repair.
+7. **Validation** - `conductor-track-validator` validates artifacts and issues a closeout verdict.
+8. **Conditional re-validation** - evaluate the A+C hybrid threshold after Stage 7 and after any required fixes. If triggered, run up to five persisted correction-and-revalidation cycles total, continuing only after measurable progress. Stop early when the same stable blocker signature appears twice consecutively, two consecutive cycles resolve no prior blocker, safety/authority ambiguity, unavailable evidence, or an exhausted subordinate retry/budget. A restart does not reset the counter.
+9. **Documentation / Closeout** - `conductor-doc-writer` updates docs only and writes `doc-update-log-<ts>.md`, or record a waiver when no doc update applies. If docs change public contract/setup semantics, run lightweight post-doc validation before closeout. Missing terminal evidence may route back to Stage 9 once, then stops if still unresolved.
+
+Autonomy is full-auto through the selected path unless a stop condition is hit: unclear/destructive/blocked task, invalid RED, missing test framework for a code track, model unavailable with no diversity-preserving fallback, classification uncertainty that requires confirmation, validation stagnation, or iteration cap. Hand each subagent a self-contained prompt with absolute Windows paths and the exact stage prompt from the skill references. End with the track name, final status, pipeline determination, validation/doc verdicts, blockers, and fully qualified Windows paths to spec.md, plan.md, execution log, test-run report (if any), validation report, doc-update log or waiver, and anomaly log entries.

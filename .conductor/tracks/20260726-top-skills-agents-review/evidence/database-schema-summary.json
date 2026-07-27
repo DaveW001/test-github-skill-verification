@@ -1,0 +1,1078 @@
+{
+  "db_path": "C:\\Users\\DaveWitkin\\.local\\share\\opencode\\opencode.db",
+  "read_only": true,
+  "connection_uri": "file:<db>?mode=ro",
+  "captured_at_utc": "2026-07-26T22:06:09+00:00",
+  "timestamp_conversion": "time_created / time_updated / time_archived are Unix MILLISECONDS. Always divide by 1000 inside SQLite date functions: DATETIME(time_created / 1000, 'unixepoch').",
+  "archive_policy": "Do NOT filter on time_archived IS NULL. Archived sessions are completed work and the primary data source; ~90%+ are archived.",
+  "body_policy": "Message-body / private-content columns are recorded by NAME only via PRAGMA table_info. Their values are NEVER selected, printed, or stored. Hint columns: blob, body, content, data, message, messages, payload, prompt, raw, text, value",
+  "tables": [
+    {
+      "name": "__drizzle_migrations",
+      "type": "table",
+      "row_count": 21,
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "hash",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "created_at",
+          "type": "numeric",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "applied_at",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "account",
+      "type": "table",
+      "row_count": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "email",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "url",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "access_token",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "refresh_token",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "token_expiry",
+          "type": "INTEGER",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_updated",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "account_state",
+      "type": "table",
+      "row_count": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": true
+        },
+        {
+          "name": "active_account_id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "active_org_id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "control_account",
+      "type": "table",
+      "row_count": 0,
+      "columns": [
+        {
+          "name": "email",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": true
+        },
+        {
+          "name": "url",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": true
+        },
+        {
+          "name": "access_token",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "refresh_token",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "token_expiry",
+          "type": "INTEGER",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "active",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_updated",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "credential",
+      "type": "table",
+      "row_count": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "integration_id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "label",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "value",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "connector_id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "method_id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "active",
+          "type": "INTEGER",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_updated",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": [
+        "value"
+      ]
+    },
+    {
+      "name": "data_migration",
+      "type": "table",
+      "row_count": 2,
+      "columns": [
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "time_completed",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "event",
+      "type": "table",
+      "row_count": 827551,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "aggregate_id",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "seq",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "type",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "data",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": [
+        "data"
+      ]
+    },
+    {
+      "name": "event_sequence",
+      "type": "table",
+      "row_count": 2659,
+      "columns": [
+        {
+          "name": "aggregate_id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "seq",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "owner_id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "message",
+      "type": "table",
+      "row_count": 85368,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "session_id",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_updated",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "data",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": [
+        "data"
+      ]
+    },
+    {
+      "name": "migration",
+      "type": "table",
+      "row_count": 38,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "time_completed",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "part",
+      "type": "table",
+      "row_count": 368375,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "message_id",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "session_id",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_updated",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "data",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": [
+        "data"
+      ]
+    },
+    {
+      "name": "permission",
+      "type": "table",
+      "row_count": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "project_id",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "action",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "resource",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_updated",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "project",
+      "type": "table",
+      "row_count": 19,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "worktree",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "vcs",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "icon_url",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "icon_color",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_updated",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_initialized",
+          "type": "INTEGER",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "sandboxes",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "commands",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "icon_url_override",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "project_directory",
+      "type": "table",
+      "row_count": 18,
+      "columns": [
+        {
+          "name": "project_id",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": true
+        },
+        {
+          "name": "directory",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": true
+        },
+        {
+          "name": "type",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "strategy",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "session",
+      "type": "table",
+      "row_count": 4758,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "project_id",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "parent_id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "slug",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "directory",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "version",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "share_url",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "summary_additions",
+          "type": "INTEGER",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "summary_deletions",
+          "type": "INTEGER",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "summary_files",
+          "type": "INTEGER",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "summary_diffs",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "revert",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "permission",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_updated",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_compacting",
+          "type": "INTEGER",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "time_archived",
+          "type": "INTEGER",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "workspace_id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "path",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "agent",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "model",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "cost",
+          "type": "REAL",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "tokens_input",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "tokens_output",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "tokens_reasoning",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "tokens_cache_read",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "tokens_cache_write",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "metadata",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "session_context_epoch",
+      "type": "table",
+      "row_count": 0,
+      "columns": [
+        {
+          "name": "session_id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "baseline",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "snapshot",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "baseline_seq",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "session_input",
+      "type": "table",
+      "row_count": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "session_id",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "prompt",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "delivery",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "admitted_seq",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "promoted_seq",
+          "type": "INTEGER",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": [
+        "prompt"
+      ]
+    },
+    {
+      "name": "session_message",
+      "type": "table",
+      "row_count": 404,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "session_id",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "type",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_updated",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "data",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "seq",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": [
+        "data"
+      ]
+    },
+    {
+      "name": "session_share",
+      "type": "table",
+      "row_count": 4,
+      "columns": [
+        {
+          "name": "session_id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "secret",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "url",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_updated",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    },
+    {
+      "name": "todo",
+      "type": "table",
+      "row_count": 3417,
+      "columns": [
+        {
+          "name": "session_id",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": true
+        },
+        {
+          "name": "content",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "priority",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "position",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": true
+        },
+        {
+          "name": "time_created",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_updated",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": [
+        "content"
+      ]
+    },
+    {
+      "name": "workspace",
+      "type": "table",
+      "row_count": 0,
+      "columns": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": true
+        },
+        {
+          "name": "type",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "branch",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "directory",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "extra",
+          "type": "TEXT",
+          "notnull": false,
+          "pk": false
+        },
+        {
+          "name": "project_id",
+          "type": "TEXT",
+          "notnull": true,
+          "pk": false
+        },
+        {
+          "name": "time_used",
+          "type": "INTEGER",
+          "notnull": true,
+          "pk": false
+        }
+      ],
+      "body_like_column_names": []
+    }
+  ],
+  "skill_call_tables_detected": [],
+  "agent_column_detected": true,
+  "session_total": 4758
+}
