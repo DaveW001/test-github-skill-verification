@@ -1,0 +1,14 @@
+{
+  "mode": "AgentFrontmatter",
+  "generated": "2026-07-31T18:33:51.0258704Z",
+  "pass": true,
+  "checkCount": 1,
+  "failureCount": 0,
+  "checks": [
+    {
+      "name": "AgentFrontmatter.templates",
+      "pass": true,
+      "details": "sections=3; valid=3; legacy=False; plural=False; writePermission=False; missingSkills=0"
+    }
+  ]
+}

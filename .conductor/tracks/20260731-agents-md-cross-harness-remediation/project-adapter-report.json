@@ -1,0 +1,14 @@
+{
+  "mode": "ProjectAdapters",
+  "generated": "2026-07-31T18:36:31.9743170Z",
+  "pass": true,
+  "checkCount": 1,
+  "failureCount": 0,
+  "checks": [
+    {
+      "name": "ProjectAdapters.local-constraints",
+      "pass": true,
+      "details": "projects=4; missingMarkers=0"
+    }
+  ]
+}

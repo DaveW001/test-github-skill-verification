@@ -1,0 +1,14 @@
+{
+  "mode": "StandardsOwnership",
+  "generated": "2026-07-31T18:33:51.0810423Z",
+  "pass": true,
+  "checkCount": 1,
+  "failureCount": 0,
+  "checks": [
+    {
+      "name": "StandardsOwnership.single-owners",
+      "pass": true,
+      "details": "legacyMaps=0; pluralMaps=0; writeKeys=0; staleSkillNames=0; owners=True"
+    }
+  ]
+}

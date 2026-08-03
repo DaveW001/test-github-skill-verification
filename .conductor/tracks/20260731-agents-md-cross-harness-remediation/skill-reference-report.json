@@ -1,0 +1,14 @@
+{
+  "mode": "SkillReferences",
+  "generated": "2026-07-31T18:33:50.9642494Z",
+  "pass": true,
+  "checkCount": 1,
+  "failureCount": 0,
+  "checks": [
+    {
+      "name": "SkillReferences.agent-writer",
+      "pass": true,
+      "details": "references=7; missing=0; retiredPath=False"
+    }
+  ]
+}

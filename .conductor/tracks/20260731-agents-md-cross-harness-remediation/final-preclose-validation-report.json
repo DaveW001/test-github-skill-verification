@@ -1,0 +1,54 @@
+{
+  "mode": "All",
+  "generated": "2026-07-31T18:37:03.5195663Z",
+  "pass": true,
+  "checkCount": 9,
+  "failureCount": 0,
+  "checks": [
+    {
+      "name": "SelfTest.clean-frontmatter",
+      "pass": true,
+      "details": "clean fixture accepted"
+    },
+    {
+      "name": "SelfTest.legacy-tools-rejected",
+      "pass": true,
+      "details": "legacy capability fixture rejected"
+    },
+    {
+      "name": "SelfTest.plural-permissions-rejected",
+      "pass": true,
+      "details": "plural permission fixture rejected"
+    },
+    {
+      "name": "InstructionWiring.single-shared-core",
+      "pass": true,
+      "details": "exact=1; specialized=0; coreExists=True; modulesExist=True"
+    },
+    {
+      "name": "AgentFrontmatter.templates",
+      "pass": true,
+      "details": "sections=3; valid=3; legacy=False; plural=False; writePermission=False; missingSkills=0"
+    },
+    {
+      "name": "SkillReferences.agent-writer",
+      "pass": true,
+      "details": "references=7; missing=0; retiredPath=False"
+    },
+    {
+      "name": "StandardsOwnership.single-owners",
+      "pass": true,
+      "details": "legacyMaps=0; pluralMaps=0; writeKeys=0; staleSkillNames=0; owners=True"
+    },
+    {
+      "name": "EnvReference.central-source",
+      "pass": true,
+      "details": "envRef=1; inlineScalar=0; variableNamePresent=True; commentsPresent=True; envHashUnchanged=True"
+    },
+    {
+      "name": "ProjectAdapters.local-constraints",
+      "pass": true,
+      "details": "projects=4; missingMarkers=0"
+    }
+  ]
+}

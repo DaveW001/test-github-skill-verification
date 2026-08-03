@@ -29,7 +29,8 @@
       "diff_size": 20472,
       "correction": "Fixed syntax-only defects in scripts/input_validation.py (8 literal-newline-inside-string literals corrected to \\n; systematic corruption) and tests/test_input_validation.py (fixed indentation of f.write inside `with` block + removed a stray duplicated fragment). Removed unreferenced scripts/patch_script.py after Dave explicitly authorized removal; the exact pre-edit recovery copy remains in the track backup.",
       "authority_delta": "none",
-      "authority_basis": "diff is string-literal/operator syntax only; no new imports, functions, external-action verbs, or permission/capability expansion"
+      "authority_basis": "diff is string-literal/operator syntax only; no new imports, functions, external-action verbs, or permission/capability expansion",
+      "after_tree_sha256_meaning": "source-only tree hash (__pycache__/ excluded per 2026-07-26 resolution)"
     },
     {
       "canonical_name": "opencode-event-log-compactor",

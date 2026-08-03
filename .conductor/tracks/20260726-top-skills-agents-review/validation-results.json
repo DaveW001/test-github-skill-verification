@@ -31,7 +31,6 @@
         }
       ],
       "applied_fixes_all_pass": true,
-      "preexisting_unresolved_files": [],
       "preexisting_checks": [],
       "harness": {
         "harness_exit": 0,

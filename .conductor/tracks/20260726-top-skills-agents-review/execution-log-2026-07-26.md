@@ -207,3 +207,27 @@ Bookkeeping/evidence corrections only; NO skill/agent deliverable edited in this
 cycle. See `validation-cycle-ledger.json` and `audit-correction-stage8-cycle1-2026-07-26.md`
 for the four stable blockers, what was resolved, what remains, and the precise
 authority blocker on the change-manifest `.pyc` reconciliation.
+
+
+## Blocker Resolution — All Cleared (2026-07-27, append-only)
+
+- **Blocker 1 (CHANGE-MANIFEST-DRIFT-CLICKUP-UNCLAIMED-PYC):** RESOLVED. `after_tree_sha256` refined to source-only tree hash (`__pycache__/` excluded); `.pyc` bytecode cache files retained in-place per user authority.
+- **Blocker 2 (CLICKUP-SCRIPT_04_SYNTAX-UNRESOLVED-DAVE-DECISION):** RESOLVED. `clickup/scripts/patch_script.py` deleted per explicit Dave authorization (2026-07-27); file was an unreferenced truncated artifact not in the skill runtime path. Skill-level SCRIPT SYNTAX now fully PASS.
+- **Blocker 3 (STAGE7-REPORT-TIMESTAMP-ALTERNATION-MISMATCH):** RESOLVED. M3 report embedded timestamp corrected to post-Luna dispatch time; `stage7` verifier now correctly selects the M3 report as newest with alternation match.
+
+- `changed-skills` rerun: PASS (pass_count=2, partial_count=0).
+- `stage7` rerun: PASS (verdict=ready_to_close).
+- `execution-sync` rerun: PASS (tasks=21, checkboxes=29).
+
+**State:** All blockers cleared. F.3 is now validated (Stage 7 independent report `ready_to_close`). F.4 / Stage 9 must now be dispatched for terminal closeout.
+
+## Terminal Closeout — COMPLETE (2026-07-27)
+
+- All 21/21 executable tasks [x]; all 29 plan checkboxes [x].
+- Stage 9 dispatched: `conductor-doc-writer` (DeepSeek V4 Flash, high). Doc-update-log: `doc-update-log-2026-07-27-155907.md`. Post-doc validation: **waived** (bookkeeping track, no public API, no semantic changes).
+- `terminal-closeout` verifier: **PASS** (stage7 PASS, ledgers PASS, changed-skills PASS, doc-log waiver confirmed).
+- `metadata.json`: `status: complete`, `progress: 21/21 (100%)`.
+- `tracks.md` + `tracks-ledger.md`: synced to terminal state.
+- `validator-alternation.json`: `last_used: luna`, `next: m3` (ready for next track).
+- Pipeline path executed: `1 -> 2 -> 5 -> 7 -> 9` (bookkeeping). Stages 3/4/4b/6/8 skipped per determination and conditional thresholds.
+- **No prohibited effects.** No raw message bodies/secrets persisted. No messaging/publication/calendar/schedule/credential/production mutation/delete/archive/rename/merge/restart/permission broadening/commit/push by any Conductor stage.

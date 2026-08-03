@@ -1,0 +1,14 @@
+{
+  "mode": "InstructionWiring",
+  "generated": "2026-07-31T18:33:50.9909622Z",
+  "pass": true,
+  "checkCount": 1,
+  "failureCount": 0,
+  "checks": [
+    {
+      "name": "InstructionWiring.single-shared-core",
+      "pass": true,
+      "details": "exact=1; specialized=0; coreExists=True; modulesExist=True"
+    }
+  ]
+}

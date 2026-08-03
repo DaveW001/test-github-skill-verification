@@ -1,6 +1,6 @@
 # Workflow: Update OpenCode Default Models
 
-**Last updated:** 2026-07-18
+**Last updated:** 2026-07-31
 **Owner:** Dave Witkin
 
 ## Overview
@@ -163,4 +163,8 @@ Copy-Item $latest.FullName "$env:USERPROFILE\.config\opencode\opencode.jsonc" -F
 ## GLM-5.2 thinking default
 
 For `zai-coding-plan/glm-5.2`, keep the provider/model default at `reasoningEffort: high`. Expose variants `none`, `high`, and `max` so the UI/session can opt into `max` when needed, but do not make `max` the default because it materially increases Z.AI quota usage. Agents pinned to GLM-5.2 should use `variant: high` unless there is a documented reason to opt into `max`.
+
+> **OpenCodex proxy note (2026-07-28):** The above describes the OpenCode native client. For the OpenCodex proxy path (Codex Desktop), a `modelReasoningEffortMap` was added to `~/.opencodex/config.json` to achieve the same three-tier mapping (Light=no thinking, Medium/High=high, Extra High=max). See `2026-07-28 - GLM-5.2 Thinking Levels OpenCodex Proxy Mapping.md` in the Codex documents folder for the proxy-specific implementation.
+
+> **OpenCodex update note (2026-08-03):** When installing or updating opencodex, follow the [OpenCodex update and config guard workflow](opencodex-update-and-config-guard.md). OpenCodex `2.10.0` includes the upstream fix for [lidge-jun/opencodex#817](https://github.com/lidge-jun/opencodex/issues/817); after the idle-session gate and a controlled proxy restart, verify both root compaction keys remain. The local patch and daily guard are legacy safety measures, not the current fix.
 

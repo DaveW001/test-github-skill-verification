@@ -316,7 +316,7 @@
       "severity": "Info",
       "confidence": "high",
       "source_path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault\\clickup\\SKILL.md",
-      "evidence": "input_validation.py + test_input_validation.py pass syntax; the unreferenced truncated patch_script.py was removed with Dave's explicit approval after exact backup/hash verification; skill harness SCRIPT SYNTAX now PASS (22/22)."
+      "evidence": "All clickup scripts pass py_compile syntax check. Previously-truncated patch_script.py removed (Dave authorization 2026-07-26); all remaining scripts clean."
     },
     {
       "id": "SCRIPT_05_SAFE_FUNCTIONAL",

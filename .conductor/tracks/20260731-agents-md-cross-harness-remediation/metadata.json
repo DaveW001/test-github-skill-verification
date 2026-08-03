@@ -1,0 +1,65 @@
+{
+  "trackId": "20260731-agents-md-cross-harness-remediation",
+  "title": "Cross-Harness AGENTS.md and Instruction Architecture Remediation",
+  "status": "complete",
+  "created": "2026-07-31",
+  "completed": "2026-07-31",
+  "estimatedHours": "4-8",
+  "assignedTo": "Dave Witkin",
+  "type": "maintenance",
+  "track_type": "maintenance",
+  "classification": "uncertain",
+  "pipeline_mode": "standard",
+  "pipeline_path": "0 -> 1 -> 2 -> 5 -> 7 -> 9",
+  "pipeline_rationale": "The work changes global instructions, skills, and configuration and includes one authentication-bearing OpenCode JSONC property. Classification is uncertain because a security-sensitive shared-runtime field is touched; the standard path retains independent review, explicit backups, deterministic validation, and fresh-process checks instead of the abbreviated bookkeeping path.",
+  "skipped_stages": [
+    "Stage 4: skipped because no production-code behavior is being authored.",
+    "Stage 4b: skipped because no RED test authoring applies to instruction/configuration files.",
+    "Stage 6: skipped because deterministic structural/configuration checks replace an application test suite.",
+    "Stage 8: skipped because validation is deterministic and no correction-cycle trigger is present at plan creation."
+  ],
+  "baseline_status": "PASS",
+  "baseline_evidence": ".conductor/tracks/20260731-agents-md-cross-harness-remediation/baseline-report-2026-07-31-170000.md",
+  "plan_creator": "root",
+  "plan_creator_model": "gpt-5.6-sol",
+  "plan_reviewer": "conductor-plan-reviewer-4",
+  "plan_reviewer_model": "gpt-5.6-terra",
+  "review_status": "accepted",
+  "review_evidence": "C:\\development\\opencode\\.conductor\\tracks\\20260731-agents-md-cross-harness-remediation\\review-report-20260731-r4.md",
+  "prior_review": {"reviewer":"conductor-plan-reviewer","model":"gpt-5.6-terra","status":"blocked","evidence":"C:\\development\\opencode\\.conductor\\tracks\\20260731-agents-md-cross-harness-remediation\\review-report-2026-07-31.md"},
+  "prior_review_2": {"reviewer":"conductor-plan-reviewer-2","model":"gpt-5.6-terra","status":"blocked","evidence":"C:\\development\\opencode\\.conductor\\tracks\\20260731-agents-md-cross-harness-remediation\\review-report-20260731-r2.md"},
+  "prior_review_3": {"reviewer":"conductor-plan-reviewer-3","model":"gpt-5.6-terra","status":"blocked","evidence":"C:\\development\\opencode\\.conductor\\tracks\\20260731-agents-md-cross-harness-remediation\\review-report-20260731-r3.md"},
+  "test_framework": "deterministic PowerShell structural/configuration checks",
+  "test_command": "PowerShell validation commands in plan.md",
+  "tags": ["agents-md", "opencode", "codex", "progressive-disclosure", "configuration"],
+  "progress": {"totalTasks": 15, "completedTasks": 15, "percentage": 100.0},
+  "summary": "Remediate AGENTS.md architecture, progressive disclosure, shared Codex/OpenCode rule storage, agent-writer standards, project instruction files, and environment-variable references.",
+  "keyOutcomes": [
+    "Thin harness-specific global bootstrap files",
+    "Canonical shared rule modules under the OpenCode user folder",
+    "Current agent templates and deterministic validation",
+    "Commented user-level OpenCode environment source of truth preserved"
+  ],
+  "risks": [
+    "Over-aggressive extraction could remove a safety rule from always-on context",
+    "Global configuration edits could affect new sessions",
+    "Existing unrelated dirty-worktree changes could be overwritten if edits are broad"
+  ],
+  "dependencies": ["Independent Stage 2 plan review", "Fresh-session validation after global instruction changes"],
+  "blocking": [],
+  "relatedTracks": ["20260726-agents-md-optimization-review", "20260706-lazy-vault-localization", "20260623-api-key-centralization-index"],
+  "deliverables": [
+    "Shared rule modules and manifest",
+    "Updated global AGENTS.md adapters",
+    "Updated agent-writer skill references/templates",
+    "Updated selected project AGENTS.md files",
+    "Execution, validation, and rollback artifacts"
+  ],
+  "validationCriteria": [
+    "All referenced files exist",
+    "No active agent template uses deprecated tools frontmatter",
+    "OpenCode config contains no affected inline credential value",
+    "Structural checks pass",
+    "Conductor artifacts agree"
+  ]
+}

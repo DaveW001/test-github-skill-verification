@@ -15,7 +15,7 @@
       "safety_classification": "Major structural defect; fix is script-syntax only; no capability/permission expansion",
       "authority_delta": "none",
       "status": "applied",
-      "status_note": "input_validation.py + test_input_validation.py syntax fixes applied; unreferenced truncated patch_script.py removed with Dave's explicit approval; harness SCRIPT SYNTAX now PASS"
+      "status_note": "input_validation.py + test_input_validation.py syntax fixes applied and confirmed PASS; patch_script.py was a pre-existing truncated artifact, now removed (Dave authorization 2026-07-26). Skill-level SCRIPT SYNTAX now fully PASS."
     },
     {
       "id": "FIX-SKILL-002-opencode-event-log-compactor-SCRIPT_04_SYNTAX",

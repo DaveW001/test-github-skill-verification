@@ -1,0 +1,24 @@
+{
+  "mode": "SelfTest",
+  "generated": "2026-07-31T18:33:50.9787669Z",
+  "pass": true,
+  "checkCount": 3,
+  "failureCount": 0,
+  "checks": [
+    {
+      "name": "SelfTest.clean-frontmatter",
+      "pass": true,
+      "details": "clean fixture accepted"
+    },
+    {
+      "name": "SelfTest.legacy-tools-rejected",
+      "pass": true,
+      "details": "legacy capability fixture rejected"
+    },
+    {
+      "name": "SelfTest.plural-permissions-rejected",
+      "pass": true,
+      "details": "plural permission fixture rejected"
+    }
+  ]
+}

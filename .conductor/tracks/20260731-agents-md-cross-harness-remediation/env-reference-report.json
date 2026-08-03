@@ -1,0 +1,14 @@
+{
+  "mode": "EnvReference",
+  "generated": "2026-07-31T18:33:51.0280588Z",
+  "pass": true,
+  "checkCount": 1,
+  "failureCount": 0,
+  "checks": [
+    {
+      "name": "EnvReference.central-source",
+      "pass": true,
+      "details": "envRef=1; inlineScalar=0; variableNamePresent=True; commentsPresent=True; envHashUnchanged=True"
+    }
+  ]
+}

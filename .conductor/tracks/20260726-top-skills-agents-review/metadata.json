@@ -55,12 +55,12 @@
     "C:\\Users\\DaveWitkin\\.config\\opencode\\agent"
   ],
   "blocking": [],
-  "validation_state": "terminal_closeout_complete",
+  "validation_state": "stage8_resolved_ready_for_stage7_rerun",
   "validation_cycle": 1,
   "validation_cycle_max": 5,
   "last_validator": "conductor-track-validator",
   "stage7_verdict": "ready_to_close",
-  "stage8_decision": "authorized artifact removal completed; revision-2 manifest and both changed-skill PASS results generated",
+  "stage8_decision": "resolved_cycle_1_all_blockers_cleared",
   "resume_point": "none; terminal Phase B complete",
   "relatedTracks": [
     "20260710-session-db-query-skill",

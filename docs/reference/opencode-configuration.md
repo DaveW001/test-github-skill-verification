@@ -52,7 +52,8 @@ This is the **only** config file. Contains everything:
   - `google` - Gemini models via local proxy (2.5-flash, 2.5-pro, 3-flash-preview, 3-pro-preview) + blacklist of unused models
   - `openai` - GPT model variants with reasoning effort levels (none/low/medium/high/xhigh)
   - `moonshot` - Kimi K2.5 and Moonshot V1 models (currently disabled)
-  - `zai-coding-plan` - GLM-5.2 default model with `reasoningEffort: high`, variants `none`/`high`/`max` (`max` is opt-in)
+ - `zai-coding-plan` - GLM-5.2 default model with `reasoningEffort: high`, variants `none`/`high`/`max` (`max` is opt-in)
+  - > **OpenCodex proxy:** For Codex Desktop via the proxy, the same three-tier mapping is achieved through a `modelReasoningEffortMap` in `~/.opencodex/config.json` (added 2026-07-28). Light=no thinking, Medium/High=high, Extra High=max. See the GLM-5.2 mapping doc in the Codex documents folder.
   - `opencode-go` - OpenCode-hosted fallback models with provider timeout settings
 - **Default agent:** `01-Planner`
 - **Small model:** `zai-coding-plan/glm-5.2` (default high thinking)
