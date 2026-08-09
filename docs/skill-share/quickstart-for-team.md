@@ -1,6 +1,6 @@
 # SkillShare Quickstart for Team Members
 
-This guide sets up your machine to receive the Packaged Agile team's shared AI skills (humanizer, first-principles-mastery, and others). You only do this **once**. After that, getting updates is two commands.
+This guide sets up your machine to receive the Packaged Agile team's shared AI skills (humanizer, thinking-partner, and others). You only do this **once**. After that, getting updates is two commands.
 
 You have two paths. **Most people should take Path A.**
 

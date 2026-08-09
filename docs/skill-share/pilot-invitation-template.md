@@ -1,6 +1,6 @@
 # Pilot Invitation: SkillShare for Packaged Agile Team
 
-We are piloting SkillShare, a tool that automatically delivers our shared AI skills (humanizer, first-principles-mastery, etc.) to your AI assistant. We need one or two team members to try the setup and tell us what breaks before we roll it out to everyone.
+We are piloting SkillShare, a tool that automatically delivers our shared AI skills (humanizer, thinking-partner, etc.) to your AI assistant. We need one or two team members to try the setup and tell us what breaks before we roll it out to everyone.
 
 This should take 15 to 30 minutes. You only do it once; after that, updates are two commands.
 

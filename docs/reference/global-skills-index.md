@@ -15,14 +15,14 @@
 | Skill | Description |
 |-------|-------------|
 | `content-trend-researcher` | Research content and topic trends across web/social sources; produce data-driven article ideas and outlines |
-| `image-generator` | Generate on-brand visual prompts for hero images and diagrams (LEGO 3D Isometric, Hand-Drawn Whiteboard styles) |
-| `image-manifest-builder` | Analyze content to identify graphics needs; generate image-manifest.json with prioritized prompt drafts |
+| `image-generator` | Plan visual needs, build image manifests, and generate on-brand prompts for hero images and diagrams (LEGO 3D Isometric, Hand-Drawn Whiteboard styles) |
 | `youtube-shorts` | Generate B2G YouTube Shorts scripts with skeptical CIO review loop and evidence-first hooks |
 
 ## Visuals & Design
 
 | Skill | Description |
 |-------|-------------|
+| `image-ocr` | Extract plain text and visual structure from photos, scans, slides, diagrams, tables, and org charts |
 | `design-system-extractor` | Extract design tokens and system elements from URLs or graphic files |
 | `frontend-design` | Create distinctive, production-grade frontend interfaces with high design quality |
 | `html-demo-design` | HTML Demo Design System — high-fidelity demos, mockups, prototypes, video capture (formerly huashu-design) |
@@ -82,8 +82,7 @@
 
 | Skill | Description |
 |-------|-------------|
-| `first-principles-mastery` | First principles thinking — deconstruct problems, strip assumptions, rebuild from fundamentals |
-| `thinking-partner` | Challenge assumptions, apply mental models, stress-test ideas, play devil's advocate |
+| `thinking-partner` | Challenge assumptions, apply mental models, and use first-principles or Feynman modes to stress-test ideas |
 
 ## AI & Agent Tooling
 
@@ -129,7 +128,19 @@ Quick path:
 
 Only create under `C:\Users\DaveWitkin\.config\opencode\skill\<skill-name>\` when the user explicitly wants the skill always-loaded.
 
+## Consolidated skills
+
+The following capabilities now have one canonical entry point in the lazy vault:
+
+| Retired entry point | Canonical skill | Active modes |
+|---------------------|-----------------|--------------|
+| `visual-ocr` | `image-ocr` | Plain-text OCR and visual-structure extraction |
+| `first-principles-mastery` | `thinking-partner` | First-principles and Feynman reasoning |
+| `image-manifest-builder` | `image-generator` | Image-manifest planning and individual prompt generation |
+
+Historical copies are retained under `C:\Users\DaveWitkin\.opencode-lazy-vault\_archived_skills\` for recovery and audit purposes. They are not active skill roots; clients that still display those names need their skill index/catalog refreshed.
+
 ---
 
-*Last updated: 2026-07-06*
+*Last updated: 2026-08-09*
 

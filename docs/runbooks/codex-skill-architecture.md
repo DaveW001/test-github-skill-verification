@@ -1,7 +1,7 @@
 # Codex / OpenCode Skill Architecture Runbook
 
 > **Status:** Authoritative reference for this machine's OpenCode/Codex skill storage layout.  
-> **Last verified:** 2026-07-06.  
+> **Last verified:** 2026-08-09.
 > **Supersedes:** older guidance in `docs/reference/lazy-loaded-skills.md`, `docs/reference/global-skills-index.md`, and the older `.agents` unification assumptions in `.conductor/tracks/20260502-skill-junction-unification/`.
 
 ## Executive summary
@@ -151,6 +151,22 @@ C:\Users\DaveWitkin\.opencode-lazy-vault\handoff-deep
 ```
 
 unless/until cross-machine sync is explicitly desired.
+
+## Consolidated skill entry points
+
+When capabilities overlap, keep one active skill directory and put any retired
+implementation in `_archived_skills` only as a historical recovery copy. The
+current consolidated entry points are:
+
+| Capability | Canonical entry point | Retired entry point |
+|---|---|---|
+| Text and visual-structure OCR | `image-ocr` | `visual-ocr` |
+| General reasoning with first-principles and Feynman modes | `thinking-partner` | `first-principles-mastery` |
+| Visual-content planning and prompt generation | `image-generator` | `image-manifest-builder` |
+
+Archived copies are not active OpenCode skill roots. If a client still shows a
+retired name after consolidation, refresh that client's skill index/catalog
+before changing the active vault again.
 
 ## Safe operations
 
