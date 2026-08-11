@@ -191,12 +191,12 @@ That's it. Two commands, done.
 
 ---
 
-## A note on `markdown-pdf-publisher`
+## A note on `markdown-to-pdf`
 
 This skill turns documents into branded PDFs. It needs **Node.js** on your machine and runs an npm package (Vivliostyle) to build the PDF. SkillShare's security scan flags it as **medium** for that reason. If you do not need PDF publishing, skip it:
 
 ```powershell
-skillshare install github.com/packaged-agile/skillshare-skills --track --exclude markdown-pdf-publisher
+skillshare install github.com/packaged-agile/skillshare-skills --track --exclude markdown-to-pdf
 ```
 
 ---

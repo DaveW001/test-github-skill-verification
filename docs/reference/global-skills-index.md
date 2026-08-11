@@ -52,7 +52,7 @@
 | Skill | Description |
 |-------|-------------|
 | `doc-to-markdown` | Convert PDF and HTML files to structured Markdown |
-| `markdown-pdf-publisher` | Generate professional PDFs from Markdown using Vivliostyle pipeline |
+| `markdown-to-pdf` | Generate professional PDFs from Markdown using Vivliostyle pipeline |
 | `markdown-render` | Convert Markdown files into polished, branded static HTML pages |
 | `pptx-to-pdf-converter` | Convert PowerPoint presentations to PDF via COM automation |
 

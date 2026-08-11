@@ -32,7 +32,7 @@ skillshare doctor           # environment + config diagnostics
 ### Selective install
 ```powershell
 skillshare install <repo> --track -s humanizer,retrospective       # only these
-skillshare install <repo> --track --exclude markdown-pdf-publisher # all except
+skillshare install <repo> --track --exclude markdown-to-pdf # all except
 skillshare install <repo> --track --exclude "drafts-*"             # glob exclude
 ```
 
@@ -113,11 +113,11 @@ If this fails: Run `skillshare init --help` to see the exact accepted flags for 
 **Impact / open question:** Verify your AI client resolves the skill by its `name:` frontmatter through the prefixed folder. (OpenCode/skillful typically does.)
 **Fix if needed:** Adjust naming mode in config, but the prefix prevents collisions, so prefer leaving it.
 
-### 3.5 `markdown-pdf-publisher` flagged MEDIUM by audit
-**Symptom:** Audit reports `markdown-pdf-publisher` as **medium**: "Auto-execute untrusted npm package without confirmation" (the Vivliostyle/Node runner, SKILL.md:249). Plus low (external URL) and info findings.
+### 3.5 `markdown-to-pdf` flagged MEDIUM by audit
+**Symptom:** Audit reports `markdown-to-pdf` as **medium**: "Auto-execute untrusted npm package without confirmation" (the Vivliostyle/Node runner, SKILL.md:249). Plus low (external URL) and info findings.
 **Root cause:** The skill runs an npm package to build PDFs.
 **Impact:** Non-blocking (block threshold is **CRITICAL** by default). The skill works; it just executes npm.
-**Fix:** If a member does not want PDF publishing or lacks Node.js, exclude it: `skillshare install <repo> --track --exclude markdown-pdf-publisher`.
+**Fix:** If a member does not want PDF publishing or lacks Node.js, exclude it: `skillshare install <repo> --track --exclude markdown-to-pdf`.
 
 ### 3.6 `skillshare` not recognized right after install
 **Symptom:** After `irm | iex`, running `skillshare` in the same window fails.
