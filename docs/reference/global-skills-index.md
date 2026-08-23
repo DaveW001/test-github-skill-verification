@@ -60,8 +60,9 @@
 
 | Skill | Description |
 |-------|-------------|
-| `clickup` / `clickup-cli` | Manage ClickUp tasks, sprints, comments via `cup` CLI |
+| `clickup` | Create, update, search, and prioritize ClickUp tasks and Docs (reads via `cup` CLI, writes via `python scripts/` with `markdown_description`) |
 | `conductor` | Context-Driven Development — manage tracks, specs, plans in `.conductor/` |
+| `conductor-track-reviewer` | Review Conductor tracks for spec/plan quality and executability (vault bridge) |
 | `git-push` | Standardized git stage+commit+push workflow for Windows |
 | `opencode-go-key-rotation` | Safely switch the built-in OpenCode Go provider between approved Workspace 01 and Workspace 02 keys; manual switching only |
 | `session-retro` | Retrospective analysis after OpenCode sessions - capture changes, identify improvements (formerly retro) |
@@ -92,6 +93,11 @@
 | `command-writer` | Create and improve OpenCode slash commands |
 | `skill-creator` | Create and update OpenCode skills with valid frontmatter |
 | `snippet-writer` | Create and manage OpenCode snippets |
+| `agent-creator` | Create new OpenCode agents with the standard scaffold (vault bridge) |
+| `command-creator` | Create OpenCode custom commands for repeatable tasks (vault bridge) |
+| `plugin-creator` | Create OpenCode plugins and know where to load them (vault bridge) |
+| `get-started` | Guide users through get-started setup and demos (vault bridge) |
+| `workspace-guide` | Workspace guide to introduce OpenWork and onboard new users (vault bridge) |
 | `gemini-proxy` | Manage local Gemini API Key Rotator Proxy |
 | `notebooklm-meta-prompt` | NotebookLM Meta-Prompt v5.1 insight extraction |
 
@@ -104,6 +110,7 @@
 | **Default lazy skills** | `C:\Users\DaveWitkin\.opencode-lazy-vault\<name>\SKILL.md` | Personal, lazy-loaded, Codex-visible |
 | **Always-on native skills** | `C:\Users\DaveWitkin\.config\opencode\skill\<name>\SKILL.md` | Foundational skills injected into every OpenCode session |
 | **Codex skills surface** | `C:\Users\DaveWitkin\.codex\skills` -> `C:\Users\DaveWitkin\.opencode-lazy-vault` | Parent junction; do not create child junctions here |
+| **Dev workspace skills source** | `C:\development\.opencode\skills\<name>\SKILL.md` | Canonical home of dev-workspace skills; bridged into the lazy vault via child junctions (2026-08-15) |
 | **Project skills** | `<repo>\.opencode\skill\<name>\SKILL.md` | Team, repo-specific |
 | **Global templates** | `C:\Users\DaveWitkin\.config\opencode\templates\<name>.md` | Personal, all projects |
 | **Global snippets** | `C:\Users\DaveWitkin\.config\opencode\snippet\<name>.md` | Personal, all projects |
@@ -136,11 +143,15 @@ The following capabilities now have one canonical entry point in the lazy vault:
 |---------------------|-----------------|--------------|
 | `visual-ocr` | `image-ocr` | Plain-text OCR and visual-structure extraction |
 | `first-principles-mastery` | `thinking-partner` | First-principles and Feynman reasoning |
+| `clickup-cli` | `clickup` | Deprecated `cup` read alias (archived 2026-08-23; use `clickup`) |
 | `image-manifest-builder` | `image-generator` | Image-manifest planning and individual prompt generation |
 
 Historical copies are retained under `C:\Users\DaveWitkin\.opencode-lazy-vault\_archived_skills\` for recovery and audit purposes. They are not active skill roots; clients that still display those names need their skill index/catalog refreshed.
 
 ---
 
-*Last updated: 2026-08-09*
+*Last updated: 2026-08-23*
+
+
+
 

@@ -1,7 +1,7 @@
 # Codex / OpenCode Skill Architecture Runbook
 
 > **Status:** Authoritative reference for this machine's OpenCode/Codex skill storage layout.  
-> **Last verified:** 2026-08-09.
+> **Last verified:** 2026-08-23.
 > **Supersedes:** older guidance in `docs/reference/lazy-loaded-skills.md`, `docs/reference/global-skills-index.md`, and the older `.agents` unification assumptions in `.conductor/tracks/20260502-skill-junction-unification/`.
 
 ## Executive summary
@@ -32,6 +32,7 @@ Do **not** create new skills there unless the user explicitly wants the skill al
 | Surface | Path | Expected current type | Purpose | Policy |
 |---|---|---:|---|---|
 | Lazy vault | `C:\Users\DaveWitkin\.opencode-lazy-vault` | Real directory | Default store for most OpenCode/Codex skills | New skills go here by default. |
+| Dev workspace skills | `C:\development\.opencode\skills` | Real directory | Canonical source for dev-workspace OpenCode skills | Bridged into the lazy vault via child junctions on 2026-08-15; keep new dev skills here and bridge them, do not copy. |
 | Codex skills | `C:\Users\DaveWitkin\.codex\skills` | Parent junction to lazy vault | Makes lazy-vault skills visible to Codex | Keep as one parent junction; never add child junctions under it. |
 | OpenCode always-on skills | `C:\Users\DaveWitkin\.config\opencode\skill` | Real directory | Small prompt-injected OpenCode skill set | Only foundational skills belong here. |
 | OpenCode compatibility plural path | `C:\Users\DaveWitkin\.config\opencode\skills` | Compatibility directory/path | Historical/plural OpenCode scan path | Do not use as the default creation target. Prefer `skill\` for always-on and lazy vault for normal skills. |
@@ -116,6 +117,8 @@ C:\Users\DaveWitkin\.agents\archive\skills-20260706-144958
 
 Do not add new skills there and do not treat it as a required mirror.
 
+Incident (2026-08-15): a codex-docs work session recreated `.agents\skills` with seven child junctions by following generic Codex guidance instead of this runbook. All seven were removed the same day with `cmd /c rmdir`; targets were unharmed. Metadata snapshot: `C:\development\codex-docs\backup-20260815-agents-skills-junctions.txt`. A guardrail line referencing this runbook was added to both AGENTS.md adapters to prevent recurrence.
+
 If future tooling explicitly requires `.agents\skills`, prefer one of these deliberate choices and document the decision before changing filesystem state:
 
 1. Create `C:\Users\DaveWitkin\.agents\skills` as a parent junction to `C:\Users\DaveWitkin\.opencode-lazy-vault`; or
@@ -140,7 +143,7 @@ C:\Users\DaveWitkin\.opencode-lazy-vault
 Policy going forward:
 
 - New skills should be **real folders directly under the lazy vault**.
-- **Do not create OneDrive-backed runtime junctions.** The previous 63 were retired/localized on 2026-07-06; only 7 native-backed always-on junctions (pointing to `~/.config/opencode/skill`) remain by design.
+- **Do not create OneDrive-backed runtime junctions.** The previous 63 were retired/localized on 2026-07-06; only 7 native-backed always-on junctions (pointing to `~/.config/opencode/skill`) remain by design, plus 6 dev-bridge child junctions added deliberately on 2026-08-15 pointing to `C:\development\.opencode\skills` (agent-creator, command-creator, conductor-track-reviewer, get-started, plugin-creator, workspace-guide). Vault child-junction total: 13.
 - If a skill should be made portable/synced, copy it deliberately to the OneDrive backing tree as a *backup* (not a junction target), and record the reason in the skill or track notes.
 
 This means skills such as `handoff-quick` and `handoff-deep` are acceptable as local real folders under:
@@ -162,6 +165,7 @@ current consolidated entry points are:
 |---|---|---|
 | Text and visual-structure OCR | `image-ocr` | `visual-ocr` |
 | General reasoning with first-principles and Feynman modes | `thinking-partner` | `first-principles-mastery` |
+| ClickUp task/Doc management | `clickup` | `clickup-cli` |
 | Visual-content planning and prompt generation | `image-generator` | `image-manifest-builder` |
 
 Archived copies are not active OpenCode skill roots. If a client still shows a
@@ -268,3 +272,4 @@ Get-ChildItem -LiteralPath $vaultRoot -Directory -Force |
 
 - `.conductor/tracks/20260502-skill-junction-unification/` proposed using both `.codex\skills` and `.agents\skills` as parent junctions. The Codex half is now implemented and remains authoritative; the `.agents` half is superseded because `.agents\skills` is not an active required surface.
 - `.conductor/tracks/20260704-session-continuation-codex-skill-architecture-fix/` corrected the important root cause: child operations under a parent-junction Codex root mutate the lazy vault. This is the basis for the current Codex rule.
+

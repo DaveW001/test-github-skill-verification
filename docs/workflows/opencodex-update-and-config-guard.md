@@ -1,8 +1,13 @@
 # Workflow: OpenCodex Update and Config Guard
 
-**Last updated:** 2026-08-03
+**Last updated:** 2026-08-17
 **Owner:** Dave Witkin
 **Applies to:** Codex Desktop routing through the OpenCodex proxy (`@bitkyc08/opencodex`)
+
+> **Current installed version (verified 2026-08-17):** `@bitkyc08/opencodex@2.21.0`,
+> running on `http://127.0.0.1:10101`; `GET /healthz` returns 200.
+> The 2.10.0-era notes below describe the original fix and the legacy guard;
+> the guard and the manual checks remain installed on this workstation.
 
 ## Overview
 
@@ -75,7 +80,7 @@ safety net (hidden window, no admin). It:
    ocx status --json
    ```
 
-   The expected OpenCodex 2.10.0 state is a healthy proxy with the service
+   The expected OpenCodex 2.21.0 state is a healthy proxy with the service
    protected and reboot-safe.
 
 6. Verify the keys survive the fresh re-inject:
@@ -115,4 +120,4 @@ Because #817 is fixed and released:
 - [Upstream issue #817](https://github.com/lidge-jun/opencodex/issues/817)
 - [Fix PR #832](https://github.com/lidge-jun/opencodex/pull/832)
 - [OpenCodex 2.10.0 release](https://github.com/lidge-jun/opencodex/releases/tag/v2.10.0)
-- Durable note: `C:/Users/DaveWitkin/OneDrive - Packaged Agile/Documents/Codex/2026-07-31 - OpenCodex 150k Auto-Compaction Fix and Config Guard.md`
+- Durable note (current): `C:/development/opencodex-ops/docs/2026-08-15-codex-context-compaction-decision.md`
