@@ -1,0 +1,26 @@
+{
+  "trackId": "20260831-skill-health-validator",
+  "type": "maintenance",
+  "track_type": "code",
+  "classification": "certain",
+  "status": "blocked-plan-review",
+  "phase": "plan-review",
+  "baseline_status": "PASS",
+  "baseline_evidence": "C:\\development\\opencode\\.conductor\\baselines\\baseline-report-2026-08-31-000000.md",
+  "plan_creator": "01-Planner",
+  "plan_creator_model": "openai/gpt-5.6-luna",
+  "reviewer": "Peer Review Agent",
+  "reviewer_model": "openai/gpt-5.6-sol",
+  "review_status": "blocked",
+  "test_framework": "PowerShell fixture harness",
+  "test_command": "pwsh -NoProfile -NonInteractive -File C:\\development\\opencode\\scripts\\validate-skill-health.tests.ps1 -FixtureOnly",
+  "pipeline_mode": "full",
+  "pipeline_path": ["0-baseline", "1-plan-creation", "2-independent-plan-review", "4-write-tests", "4b-red-gate", "5-execute", "6-run-tests", "7-validate", "9-documentation"],
+  "pipeline_rationale": "The deliverable is executable filesystem automation that mutates an index/reports and can remove junctions; fixture-first TDD and independent validation are required despite the documentation/configuration-oriented subject.",
+  "skipped_stages": {
+    "3": "No conditional re-review decision has been made; trigger only if the corrected review thresholds require it.",
+    "8": "Deferred until Stage 7 evidence; run bounded correction cycles only if validation finds measurable blockers."
+  },
+  "supersedes_candidate": "20260801-skill-health-validator",
+  "scope_conflict_to_resolve": "20260716-skill-health-validator-scope-fix and 20260801-skill-health-validator overlap; only one track may remain authoritative before execution."
+}
