@@ -3,7 +3,7 @@
 **Location:** `C:\Users\DaveWitkin\.local\gemini-proxy\`  
 **Port:** `127.0.0.1:8000`  
 **Purpose:** Load-balanced proxy for Google Gemini API with automatic key rotation  
-**Last Updated:** May 2, 2026
+**Last Updated:** September 4, 2026
 
 ---
 
@@ -118,11 +118,16 @@ C:\Users\DaveWitkin\.config\opencode\opencode.jsonc
 
 **File:** `C:\Users\DaveWitkin\.local\gemini-proxy\api_keys.txt`
 
-Current configuration: **1 active key**
+Current configuration: **6 keys rotating** (per-key health tracked by the proxy; validation history in `KEY_STATUS.md`)
 
-```
-AIzaSyCND2NSbn3Sjkp0fFJb4Rkt4RdmDNe1q3g    # Dave Personal for OC (davidawitkin@gmail.com) — replaced 2026-04-20
-```
+| # | Key Prefix | Friendly Name (key_names.json) |
+|---|------------|-------------------------------|
+| 1 | AIzaSyDnMbf5... | — |
+| 2 | AIzaSyDAacPF... | Dave PA for OC |
+| 3 | AIzaSyBK3hWn... | — |
+| 4 | AIzaSyAJS1nH... | — |
+| 5 | AIzaSyA6fQmg... | — |
+| 6 | AIzaSyAo3MF8... | Dave Scrum Inc for OC (dave.witkin@scruminc.com, added 2026-09-03) |
 
 **Removed keys (2026-05-02):** Raquel and Tiberius keys removed — Google changed the family plan, no longer allowing API usage except for the primary account holder (`davidawitkin@gmail.com`). Both keys showed 0 successes and 11 failures.
 
@@ -156,12 +161,9 @@ As of April 2026, Google AI Studio has restricted model access **per account/key
 | Gemini 3.1 Flash Lite  | ✅ Available             |
 | Gemma (open-source)    | ✅ Available             |
 
-**Key takeaway:** Only Dave's key (`davidawitkin@gmail.com`) is active in the proxy. Raquel's and Tiberius's keys were removed on 2026-05-02 after Google changed the family plan to restrict API access to the primary account only. Both keys had 0 successes and 11 failures at time of removal.
+**Key takeaway (updated 2026-09-04):** The proxy pool now holds 6 keys and rotates automatically (see `KEY_STATUS.md` in the proxy folder). The 2026-05-02 family-plan restriction that disabled Raquel's and Tiberius's keys (0 successes, 11 failures at removal) still applies to family-member accounts; the current pool includes Dave's personal key, the Scrum Inc key (`dave.witkin@scruminc.com`, added 2026-09-03), and four keys from the 2026-05-20 reissue whose ownership is not named in `key_names.json`.
 
-**Proxy behavior impact:** Single-key operation means no round-robin rotation. All requests go through Dave's key. Rate limits will be hit sooner under heavy use. If additional quota is needed, consider:
-1. Using a different Google Cloud project with paid billing enabled
-2. Using alternative providers (OpenAI, Anthropic) for additional capacity
-3. Optimizing prompts to stay within single-key quota
+**Proxy behavior impact:** With 6 keys the proxy rotates across the pool and applies exponential backoff per key on 429s, so effective free-tier quota is roughly the sum of the per-key limits. Per-key model availability can still differ by account: re-verify any newly added key against the model table above before relying on Pro-tier models. If additional capacity is still needed, consider a paid Google Cloud project or alternative providers (OpenAI, Anthropic).
 
 ---
 
@@ -376,7 +378,7 @@ All Google Gemini API endpoints are proxied:
 ## Related Documentation
 
 - **Troubleshooting:** `C:\development\opencode\docs\troubleshooting\active\gemini-proxy-down.md`
-- **AGENTS.md Reference:** Line 95-100 in `C:\Users\DaveWitkin\.config\opencode\AGENTS.md`
+- **Key Status:** `C:\Users\DaveWitkin\.local\gemini-proxy\KEY_STATUS.md`
 - **Original Proxy Docs:** `C:\Users\DaveWitkin\.local\gemini-proxy\README.md`
 - **Evaluation Report:** `C:\development\playground\gemini-proxy-evaluation-report.md`
 
@@ -398,6 +400,8 @@ All Google Gemini API endpoints are proxied:
 | 2026-04-20 | **Emergency key rotation** | All 3 keys flagged as leaked by Google (403). Replaced all keys in `api_keys.txt` and `key_names.json`. Reloaded via `/reload-keys` (no restart needed). |
 | 2026-04-20 | **Model access revoked (per-key)** | Google removed Pro-tier access for Raquel and Tiberius keys (0 quota). Dave's key retains both Gemini 3.1 Pro and 2.5 Pro (limited). Only Flash models + Gemma universally available across all keys. |
 | 2026-05-02 | **Family plan keys removed** | Google changed the family plan — only the primary account (`davidawitkin@gmail.com`) can use the API. Removed Raquel and Tiberius keys from `api_keys.txt` (both had 0 successes, 11 failures). Proxy now running single-key. Reloaded via `/reload-keys`. Updated docs. |
+| 2026-09-03 | **Scrum Inc key added** | Added 6th key from Google AI Studio (`dave.witkin@scruminc.com`) to `api_keys.txt` + `key_names.json`; validated 200 OK (50 models). Corrected "Current API Keys" section — pool had grown to 5 keys on 2026-05-20 but this doc still said 1 active key. |
+| 2026-09-04 | **Doc refresh** | Rewrote stale current-state paragraphs (single-key -> 6-key rotation), replaced dead AGENTS.md pointer (file is 53 lines, no proxy section), verified all Related Documentation links resolve. Follow-up logged: `docs/reference/global-skills-index.md` still lists a `gemini-proxy` skill with no canonical directory (owned by the 20260831-skill-health-validator track). |
 
 ---
 
