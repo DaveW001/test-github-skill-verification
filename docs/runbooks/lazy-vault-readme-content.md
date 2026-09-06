@@ -28,3 +28,11 @@ To restore a skill or the whole vault, clone the backup repo and copy entries ba
 - New skills are real folders directly under this root (not junctions). See `C:\\development\\opencode\\docs\\runbooks\\codex-skill-architecture.md`.
 - Symlinked entries (agent-creator, conductor, conductor-pipeline, git-push, opencode-scheduler, osgrep, perplexity-search, skill-discovery, ...) resolve into the backup as copied content, so the backup is self-contained.
 - Secrets are excluded from the backup via the repo `.gitignore`; never commit `.env` files here expecting them to sync.
+
+## Backup repo layout
+
+- `*/` - individual skills, each with a `SKILL.md` entrypoint
+- `_archived_skills/` - superseded or merged skills kept for reference
+- `.system/` - OpenAI-bundled system skills (imagegen, openai-docs, skill-creator, etc.)
+- Excluded by `.gitignore`: `.env` secrets (only `.env.example` tracked), `__pycache__/`, `*.pyc`, `*.bak`/`*.backup-*`, IDE files.
+- Note: at sync time this vault README overwrites the backup repo's root README (same filename, -Force copy). Keep this file as the single source of truth.
