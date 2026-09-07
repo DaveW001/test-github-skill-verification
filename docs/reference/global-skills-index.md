@@ -98,7 +98,7 @@
 | `plugin-creator` | Create OpenCode plugins and know where to load them (vault bridge) |
 | `get-started` | Guide users through get-started setup and demos (vault bridge) |
 | `workspace-guide` | Workspace guide to introduce OpenWork and onboard new users (vault bridge) |
-| `gemini-proxy` | Manage local Gemini API Key Rotator Proxy |
+| `gemini-proxy` | ~~Manage local Gemini API Key Rotator Proxy~~ RETIRED 2026-09-07 (proxy no longer runs; skill folder retained but stale) |
 | `notebooklm-meta-prompt` | NotebookLM Meta-Prompt v5.1 insight extraction |
 
 ---

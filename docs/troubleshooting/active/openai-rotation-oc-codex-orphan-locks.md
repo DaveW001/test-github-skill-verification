@@ -36,7 +36,7 @@ The validated remediation was to preserve rollback assets, refresh the cache to 
 
 ### Do not chase these false leads
 
-- **Gemini proxy:** `127.0.0.1:8000`, Gemini API keys, and its scheduled task serve Google models only.
+- **Gemini proxy (RETIRED 2026-09-07):** was `127.0.0.1:8000`; no longer runs. OpenCode calls Google directly and OpenCodex uses its own google provider 2-key pool.
 - **Antigravity state:** `%APPDATA%\opencode\antigravity-accounts.json` belongs to a separate auth container.
 - **A single successful OpenAI prompt:** that can be a quota reset or built-in/single-account auth and does not prove rotation.
 
@@ -428,7 +428,7 @@ Avoid `CODEX_PLUGIN_LOG_BODIES=1` unless explicitly required; request bodies may
 
 - Detailed July 21 spec and safety boundaries: `.conductor/tracks/20260721-openai-rotation-validation/spec.md`
 - Detailed July 21 execution evidence: `.conductor/tracks/20260721-openai-rotation-validation/execution-log.md`
-- Gemini proxy, separate mechanism: `docs/troubleshooting/active/gemini-proxy-down.md`
+- Gemini proxy, separate mechanism (retired 2026-09-07): `docs/troubleshooting/active/gemini-proxy-down.md`
 - Tool-context distinction: `docs/troubleshooting/active/codex-refresh-not-recognized-and-proxy-10048.md`
 - OpenCode configuration reference: `docs/reference/opencode-configuration.md`
 - Plugin upstream: https://github.com/ndycode/oc-codex-multi-auth

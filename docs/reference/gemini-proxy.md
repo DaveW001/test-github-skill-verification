@@ -1,9 +1,15 @@
-# Gemini API Key Rotator Proxy - Reference Guide
+# Gemini API Key Rotator Proxy - Reference Guide (RETIRED 2026-09-07)
+
+> **Status: RETIRED 2026-09-07.** The local gemini-proxy was retired; scheduled
+> tasks are disabled and no proxy process is running. OpenCode now calls Google
+> directly with `GEMINI_FREE_API_KEY`, and Codex routed Gemini uses the OpenCodex
+> google provider 2-key pool (Premium ...5LB4 + Free ...WmgY). Do not restart
+> this proxy. The rest of this document is retained as historical reference.
 
 **Location:** `C:\Users\DaveWitkin\.local\gemini-proxy\`  
 **Port:** `127.0.0.1:8000`  
-**Purpose:** Load-balanced proxy for Google Gemini API with automatic key rotation  
-**Last Updated:** September 4, 2026
+**Purpose:** ~~Load-balanced proxy for Google Gemini API with automatic key rotation~~ (retired; see status banner above)  
+**Last Updated:** September 7, 2026
 
 ---
 
@@ -402,6 +408,7 @@ All Google Gemini API endpoints are proxied:
 | 2026-05-02 | **Family plan keys removed** | Google changed the family plan — only the primary account (`davidawitkin@gmail.com`) can use the API. Removed Raquel and Tiberius keys from `api_keys.txt` (both had 0 successes, 11 failures). Proxy now running single-key. Reloaded via `/reload-keys`. Updated docs. |
 | 2026-09-03 | **Scrum Inc key added** | Added 6th key from Google AI Studio (`dave.witkin@scruminc.com`) to `api_keys.txt` + `key_names.json`; validated 200 OK (50 models). Corrected "Current API Keys" section — pool had grown to 5 keys on 2026-05-20 but this doc still said 1 active key. |
 | 2026-09-04 | **Doc refresh** | Rewrote stale current-state paragraphs (single-key -> 6-key rotation), replaced dead AGENTS.md pointer (file is 53 lines, no proxy section), verified all Related Documentation links resolve. Follow-up logged: `docs/reference/global-skills-index.md` still lists a `gemini-proxy` skill with no canonical directory (owned by the 20260831-skill-health-validator track). |
+| 2026-09-07 | **Proxy retired** | gemini-proxy stopped, scheduled tasks disabled, and folder archived. OpenCode google provider now calls Google directly (no proxy URL). OpenCodex google provider pool collapsed to 2 keys: Premium (...5LB4, Dave-billing) + Free (...WmgY, Scrum Inc). This document is retained as historical reference only; see the status banner above. |
 
 ---
 
