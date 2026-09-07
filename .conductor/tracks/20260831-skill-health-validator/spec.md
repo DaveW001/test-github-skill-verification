@@ -1,35 +1,45 @@
-# Skill Health Validator — Revised Scope
+# Skill Health Validator — Safe Runtime Specification
 
 ## Goal
 
-Replace the unsafe prompt-only validator path with a bounded validator for the active skill store, while preserving the existing 06:00 scheduled-job contract. The active skill set is the union of `C:\Users\DaveWitkin\.opencode-lazy-vault` and the seven always-on skills under `C:\Users\DaveWitkin\.config\opencode\skill`, deduplicated by resolved path. The global index is historical and curated, not exhaustive.
+Replace the prompt-only validator with a bounded, fixture-tested PowerShell validator while preserving the existing scheduled-job contract: `0 6 * * *`, scope/workdir `C:\development`, and `timeoutSeconds=300`.
 
-## In scope
+## Authoritative scope and safety
 
-- Validate every immediate vault/canonical child containing `SKILL.md`, excluding `_` and `.` prefixed directories and package/project roots.
-- Flag malformed frontmatter only; never rewrite `SKILL.md`.
-- Treat the global index as curated: suppress `INDEX_MISSING` for valid active skills; flag index-only names only when they are not present in the active union; auto-fix only an explicitly supplied, evidence-backed rename map and only one exact table row.
-- Assert the Codex root is a reparse-point parent junction targeting the exact lazy-vault path. Healthy state is recorded; any missing, real, wrong-target, or unknown topology is flagged and stops the Codex phase. No live Codex child creation or cleanup is ever allowed.
-- Scan the vault for self-referential child junctions as flag-only.
-- On the independent Agents surface, remove only confirmed orphan reparse-point children matching archived names, using `cmd /c rmdir`; retain real directories and ambiguous/unknown reparse types. An absent Agents root is healthy and is never recreated.
-- Produce the required report and one current-date CSV row with same-date replacement semantics.
-- Migrate the existing scheduled launcher only as a separately backed-up, validated task; the schedule, scope, workdir, and 300-second timeout remain unchanged.
+- Inventory immediate child skill directories in `C:\Users\DaveWitkin\.opencode-lazy-vault` plus `C:\Users\DaveWitkin\.config\opencode\skill`, deduplicated by resolved path. Exclude names beginning `_` or `.` and package/project roots.
+- Frontmatter is flag-only: `name` must equal the directory name and match `^[a-z0-9]+(-[a-z0-9]+)*$`; non-empty `description` must be 1–1024 characters.
+- The index at `C:\development\opencode\docs\reference\global-skills-index.md` is curated, not exhaustive: do not flag active skills as missing; flag index-only names as stale; auto-fix only an explicit evidence-backed rename map and one exact table row.
+- `C:\Users\DaveWitkin\.codex\skills` must be a reparse-point parent junction targeting exactly `C:\Users\DaveWitkin\.opencode-lazy-vault`. Healthy topology skips all Codex child operations. Missing, real, wrong-target, or unknown topology emits `CODEX_SURFACE_NOT_PARENT_JUNCTION|codex|<reason>` and stops that phase.
+- Scan vault children for self-referential junctions and emit `SELF_REFERENTIAL|<name>|vault`; never repair them automatically.
+- `.agents\skills` is legacy and must not be recreated. If an existing real Agents root is encountered, remove only an exact archived-name child proven to be a directory junction, using `cmd /c rmdir`; retain real directories and unknown reparse types. Record `ORPHAN_REMOVED|<name>|agents`.
+- No frontmatter repair, new index entries, categorization, Codex child junction creation, partial Agents mirror, real-directory deletion, package/project validation, deployment, publication, communication, or credential access.
 
-## Out of scope
+## Persistence and event contract
 
-No frontmatter repair, new index entries, skill categorization, live Codex child junction creation, `.agents\skills` recreation, real-directory deletion, package/project skill validation, deployment, publication, external communication, or credential access.
+Before mutation, back up index, latest report, CSV, launcher, prompt, and log to a timestamped track backup with SHA-256 hashes. Rollback restores bytes only in isolated fixtures; junction removals record path/type/target before `cmd /c rmdir`.
 
-## Safety and idempotency contract
+Events use exactly pipe-delimited records: `FRONTMATTER_ISSUE|name|reason`, `INDEX_STALE|name|reason`, `SELF_REFERENTIAL|name|surface`, `CODEX_SURFACE_NOT_PARENT_JUNCTION|surface|reason`, `ORPHAN_REMOVED|name|surface`, and `INDEX_RENAMED|old|new|row`.
 
-- Before any mutation, back up the index, latest report, CSV, and launcher/prompt to a timestamped track backup and record hashes. Rollback is a byte-for-byte restore from that backup; junction removal records path, reparse type, and target before `cmd /c rmdir`.
-- A same-date CSV row is retained when values match and replaced in place when values differ; never duplicate dates or headers. The report is rewritten only when generated bytes differ.
-- An unexpected live Codex topology is `CODEX_SURFACE_NOT_PARENT_JUNCTION|<reason>` and is fail-closed for the Codex phase. It is never repaired automatically.
-- Every event has a stable pipe-delimited schema: `FRONTMATTER_ISSUE|name|reason`, `INDEX_STALE|name|reason`, `SELF_REFERENTIAL|name|surface`, `CODEX_SURFACE_NOT_PARENT_JUNCTION|surface|reason`, `ORPHAN_REMOVED|name|surface`, and `INDEX_RENAMED|old|new|row`.
+Report path: `C:\development\opencode\docs\reports\skill-health-latest.md`. Its exact sections are `# Skill Health Report — <TODAY>`, Date, Total skills checked, Issues found, `## Auto-Fixes Applied`, `## Flags (Manual Review Needed)`, and `## Summary`. Rewrite only when generated bytes differ.
+
+CSV path: `C:\development\opencode\docs\reports\skill-health-log.csv`; header is exactly `Date,Status,AutoFixes,Flags`. Retain a matching same-date row, replace a differing same-date row in place, and never duplicate headers/dates.
+
+Console output is exactly five ordered lines:
+
+```text
+Status: success | issues
+Reason: <1-line summary>
+Auto-fixes: <N>
+Flags: <N>
+Outputs: skill-health-latest.md, skill-health-log.csv
+```
+
+If preflight fails, perform no mutation and emit one concise reason (the five-line contract is not emitted because the run did not start).
 
 ## Acceptance criteria
 
-1. Fixture tests cover frontmatter, curated-index semantics, explicit rename, parent-junction health, unexpected topology stop, self-reference flagging, reparse-only archive cleanup, real-directory retention, preflight no-mutation, report bytes, and CSV same-date replacement.
-2. Two identical fixture runs produce no duplicate links, rows, headers, or index drift.
-3. Live dry-run proves no live skill/index/junction/report/log mutation.
-4. The scheduled launcher invokes the validated implementation (or an explicitly documented adapter) while retaining `0 6 * * *`, `C:\development`, and `300` seconds.
-5. Latest report, CSV, execution log, validation report, both Conductor ledgers, and metadata agree on counts and status.
+1. Fixture tests cover isolation, frontmatter, curated index/rename, Codex parent health and fail-closed topology, vault self-reference, Agents cleanup/retention, report bytes, CSV replacement, rollback, and idempotency.
+2. Two identical fixture runs produce no duplicate links, headers, dates, or index drift.
+3. Live `-WhatIf` proves hashes and topology metadata are unchanged and emits the exact five-line contract.
+4. The launcher delegates to the validated implementation while scheduler schedule, workdir, timeout, and launcher path remain unchanged.
+5. Report, CSV, execution/validation logs, both ledgers, and metadata agree on counts and status.

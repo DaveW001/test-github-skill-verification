@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "created": "2026-09-07",
+  "updated": "2026-09-07",
+  "owner": "Dave Witkin",
+  "canonical_roots": [
+    {
+      "path": "C:\\Users\\DaveWitkin\\.opencode-lazy-vault",
+      "type": "lazy-vault",
+      "role": "skill source of truth"
+    },
+    {
+      "path": "C:\\Users\\DaveWitkin\\.codex\\skills",
+      "type": "codex-symlink",
+      "role": "codex skill access"
+    },
+    {
+      "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\skill",
+      "type": "opencode-symlink",
+      "role": "opencode skill access"
+    }
+  ],
+  "active_harnesses": [
+    {
+      "name": "OpenCode",
+      "version": "floating",
+      "version_exception": "no version pinning mechanism available",
+      "config": "C:\\Users\\DaveWitkin\\.config\\opencode\\opencode.jsonc"
+    },
+    {
+      "name": "Codex Desktop",
+      "version": "floating",
+      "version_exception": "no version pinning mechanism available",
+      "config": "C:\\Users\\DaveWitkin\\.codex\\config.toml"
+    }
+  ],
+  "plugin_contributed_skills": {
+    "coverage": "partial-gap",
+    "known_plugins": [
+      "codex-slides",
+      "documents",
+      "pdf",
+      "presentations",
+      "spreadsheets",
+      "visualize",
+      "deep-research-work",
+      "plugin-management",
+      "template-creator"
+    ],
+    "gap": "Plugin cache versions change independently; no version pinning. Explicit exception.",
+    "disposition": "gap"
+  },
+  "instruction_loaders": {
+    "coverage": "covered",
+    "entries": [
+      {
+        "name": "codex-agents-md",
+        "path": "C:\\Users\\DaveWitkin\\.codex\\AGENTS.md",
+        "disposition": "covered"
+      },
+      {
+        "name": "opencode-agents-md",
+        "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\AGENTS.md",
+        "disposition": "covered"
+      },
+      {
+        "name": "common-core",
+        "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent-rules\\common-core.md",
+        "disposition": "covered"
+      },
+      {
+        "name": "reference-index",
+        "path": "C:\\Users\\DaveWitkin\\.config\\opencode\\agent-rules\\reference-index.md",
+        "disposition": "covered"
+      }
+    ],
+    "gap": "none"
+  },
+  "lifecycle": {
+    "canary": "run relevant test suite before any shared config/skill change",
+    "validation": "run all-suites acceptance; verify baseline",
+    "promotion": "commit owned-change record; update manifest hash",
+    "rollback": "restore from owned-changes.jsonl backup hash; re-run acceptance",
+    "deprecation": "mark in manifest with deprecation_date; remove after 30-day grace"
+  },
+  "same_junction_exception": "SkillShare and lazy-vault share junction topology; recorded as explicit compatibility exception"
+}

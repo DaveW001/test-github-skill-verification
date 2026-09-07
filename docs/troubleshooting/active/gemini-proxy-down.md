@@ -1,9 +1,9 @@
-# Gemini Proxy Down - Troubleshooting Guide
+# Gemini Proxy Down - RETIRED 2026-09-07
 
-**Status:** Active troubleshooting guide  
+**Status:** RETIRED 2026-09-07. The local gemini-proxy was retired; scheduled tasks are disabled and no proxy process is running. OpenCode now calls Google directly with GEMINI_FREE_API_KEY, and Codex routed Gemini uses the OpenCodex google provider 2-key pool. Do not restart this proxy.
+
 **Applies To:** OpenCode agents using Google Gemini models via local proxy  
-**Symptoms:** `fetch failed`, `ECONNREFUSED 127.0.0.1:8000`, `429 Too Many Requests`, proxy not responding  
-**Last Updated:** May 2, 2026
+**Last Updated:** 2026-09-07
 
 ---
 

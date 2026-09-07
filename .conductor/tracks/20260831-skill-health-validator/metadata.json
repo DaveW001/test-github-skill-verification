@@ -6,7 +6,7 @@
   "status": "blocked-plan-review",
   "phase": "plan-review",
   "baseline_status": "PASS",
-  "baseline_evidence": "C:\\development\\opencode\\.conductor\\baselines\\baseline-report-2026-08-31-000000.md",
+  "baseline_evidence": "C:\\development\\opencode\\.conductor\\baselines\\baseline-report-2026-09-02-skill-health-validator.md",
   "plan_creator": "01-Planner",
   "plan_creator_model": "openai/gpt-5.6-luna",
   "reviewer": "Peer Review Agent",
