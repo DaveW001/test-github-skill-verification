@@ -111,7 +111,7 @@ Use `opencode auth login` when you specifically want to open browser OAuth and r
 
 ## Related Documentation
 
-- Gemini proxy active guide:  
+- Gemini proxy guide (retired 2026-09-07):  
   [gemini-proxy-down.md](file:///C:/development/opencode/docs/troubleshooting/active/gemini-proxy-down.md)
 - Gemini proxy reference:  
   [gemini-proxy.md](file:///C:/development/opencode/docs/reference/gemini-proxy.md)
